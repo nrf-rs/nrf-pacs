@@ -1,4 +1,4 @@
-use std::{collections::HashMap, env};
+use std::{collections::BTreeMap, env};
 use xshell::cmd;
 
 fn main() {
@@ -19,7 +19,7 @@ fn main() {
     // Test that every PAC builds for the intended target.
     // We group them by target so that we can have Cargo build some of them in parallel.
     // FIXME: With https://github.com/rust-lang/cargo/issues/8176 this could be a single invocation.
-    let mut target_map: HashMap<_, Vec<_>> = HashMap::new();
+    let mut target_map: BTreeMap<_, Vec<_>> = BTreeMap::new();
     for (pac, target) in xtask::PACS {
         target_map.entry(target).or_default().push(pac);
     }
