@@ -1,0 +1,21 @@
+PROVIDE(CLOCK_POWER = DefaultHandler);
+PROVIDE(RADIO = DefaultHandler);
+PROVIDE(RNG = DefaultHandler);
+PROVIDE(GPIOTE = DefaultHandler);
+PROVIDE(WDT = DefaultHandler);
+PROVIDE(TIMER0 = DefaultHandler);
+PROVIDE(ECB = DefaultHandler);
+PROVIDE(AAR_CCM = DefaultHandler);
+PROVIDE(TEMP = DefaultHandler);
+PROVIDE(RTC0 = DefaultHandler);
+PROVIDE(IPC = DefaultHandler);
+PROVIDE(SERIAL0 = DefaultHandler);
+PROVIDE(EGU0 = DefaultHandler);
+PROVIDE(RTC1 = DefaultHandler);
+PROVIDE(TIMER1 = DefaultHandler);
+PROVIDE(TIMER2 = DefaultHandler);
+PROVIDE(SWI0 = DefaultHandler);
+PROVIDE(SWI1 = DefaultHandler);
+PROVIDE(SWI2 = DefaultHandler);
+PROVIDE(SWI3 = DefaultHandler);
+

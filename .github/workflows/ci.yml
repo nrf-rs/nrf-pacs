@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [ master, staging, trying ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    continue-on-error: ${{ matrix.rust_version == 'nightly' }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Rust stable
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        profile: minimal
+        components: rustfmt
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ matrix.rust_version }}
+        profile: minimal
+        override: true
+    - name: Build Crates
+      run: cargo test -p xtask
+      env:
+        RUSTFLAGS: ${{ matrix.rustflags }}
+
+    strategy:
+      matrix:
+        rust_version: [beta, nightly]
+        include:
+          - rust_version: stable
+            rustflags: --deny warnings
+
+  ci:
+    if: ${{ success() }}
+    # all new jobs must be added to this list
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: CI succeeded
+        run: exit 0
