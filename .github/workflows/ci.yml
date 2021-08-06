@@ -9,7 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    continue-on-error: ${{ matrix.rust_version == 'nightly' }}
 
     steps:
     - uses: actions/checkout@v2
