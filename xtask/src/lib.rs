@@ -69,3 +69,14 @@ pub fn generate() {
 
     cmd!("cargo fmt").run().unwrap();
 }
+
+pub fn publish(dry_run: bool) {
+    for (pac, target) in PACS {
+        let mut cmd =
+            cmd!("cargo publish --manifest-path pacs/{pac}-pac/Cargo.toml --target {target}");
+        if dry_run {
+            cmd = cmd.arg("--dry-run");
+        }
+        cmd.run().unwrap();
+    }
+}
