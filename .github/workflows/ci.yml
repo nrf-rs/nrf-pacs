@@ -13,29 +13,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install Rust stable
+    - name: Install Rust
       uses: actions-rs/toolchain@v1
       with:
         toolchain: stable
         profile: minimal
         components: rustfmt
-    - name: Install Rust
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: ${{ matrix.rust_version }}
-        profile: minimal
-        override: true
     - name: Build Crates
       run: cargo test -p xtask
       env:
-        RUSTFLAGS: ${{ matrix.rustflags }}
-
-    strategy:
-      matrix:
-        rust_version: [beta, nightly]
-        include:
-          - rust_version: stable
-            rustflags: --deny warnings
+        RUSTFLAGS: --deny warnings
 
   ci:
     if: ${{ success() }}
