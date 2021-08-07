@@ -70,7 +70,81 @@ pub fn generate() {
     cmd!("cargo fmt").run().unwrap();
 }
 
+pub fn is_git_clean() -> bool {
+    cmd!("git status --porcelain").read().unwrap().is_empty()
+}
+
+fn file_replace(path: &str, from: &str, to: &str, dry_run: bool) {
+    let old_contents = fs::read_to_string(path).unwrap();
+    let new_contents = old_contents.replacen(from, to, 1);
+    if old_contents == new_contents {
+        panic!("failed to replace `{}` -> `{}` in `{}`", from, to, path);
+    }
+
+    if !dry_run {
+        fs::write(path, new_contents).unwrap();
+    }
+}
+
 pub fn publish(dry_run: bool) {
+    // Pre-publish checks.
+
+    generate();
+
+    assert!(
+        !is_git_clean(),
+        "working directory clean, please leave it dirty, containing the desired version bump"
+    );
+
+    let toml = fs::read_to_string("Cargo.template.toml").unwrap();
+    let needle = "version = \"";
+    let version_pos = toml.find(needle).unwrap() + needle.len();
+    let version_rest = &toml[version_pos..];
+    let end_pos = version_rest.find('"').unwrap();
+    let version = &version_rest[..end_pos];
+
+    // Bump the changelog first, also check that it isn't empty.
+    let changelog_path = "CHANGELOG.md";
+    let changelog = fs::read_to_string(changelog_path).unwrap();
+
+    if changelog.contains(&format!("## [{}]", version)) {
+        println!(
+            "changelog already contains section for version {}, not updating",
+            version
+        );
+    } else {
+        // (ignore empty changelog when this is a dry_run, since that runs in normal CI)
+        assert!(
+            dry_run || !changelog.contains("(no entries)"),
+            "changelog contains `(no entries)`; please fill it"
+        );
+
+        println!("bumping changelog to {}", version);
+
+        // Prepend empty "Unreleased" section, promote the current one.
+        let from = String::from("## Unreleased");
+        let to = format!("## Unreleased\n\n(no changes)\n\n## [{}]", version);
+        file_replace(changelog_path, &from, &to, dry_run);
+
+        // Append release link at the end.
+        let mut changelog = fs::read_to_string(changelog_path).unwrap();
+        changelog.push_str(&format!(
+            "[{vers}]: https://github.com/nrf-rs/nrf-pacs/releases/tag/v{vers}\n",
+            vers = version
+        ));
+        if !dry_run {
+            fs::write(changelog_path, changelog).unwrap();
+        }
+    }
+
+    if !dry_run {
+        let message = format!("Release v{}", version);
+        let tag = format!("v{}", version);
+        cmd!("git commit -am {message}").run().unwrap();
+        cmd!("git tag -a {tag} -m {tag}").run().unwrap();
+    }
+
+    // Run `cargo publish` on each crate.
     for (pac, target) in PACS {
         let mut cmd =
             cmd!("cargo publish --manifest-path pacs/{pac}-pac/Cargo.toml --target {target}");
