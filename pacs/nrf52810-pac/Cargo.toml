@@ -4,7 +4,7 @@
 
 [package]
 name = "nrf52810-pac"
-version = "0.9.0"
+version = "0.10.0"
 edition = "2018"
 description = "Peripheral Access Crate for Nordic's nrf52810 microcontroller"
 keywords = ["no-std", "arm", "cortex-m", "nrf", "peripherals"]
