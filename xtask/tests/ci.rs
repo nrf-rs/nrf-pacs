@@ -11,9 +11,11 @@ fn main() {
     let was_clean = cmd!("git status --porcelain").read().unwrap().is_empty();
     xtask::generate();
     let is_clean = cmd!("git status --porcelain").read().unwrap().is_empty();
-    if was_clean && !is_clean {
+    if !is_clean {
         cmd!("git status").run().unwrap();
-        panic!("working directory not clean, run `cargo xtask generate` and push the result");
+        if was_clean {
+            panic!("working directory not clean, run `cargo xtask generate` and push the result");
+        }
     }
 
     // Test that every PAC builds for the intended target.
