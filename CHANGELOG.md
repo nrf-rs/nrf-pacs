@@ -4,6 +4,10 @@
 
 (no changes)
 
+## [0.10.1]
+
+- Allow use with both `0.6` and `0.7` versions of `cortex-m-rt`.
+
 ## [0.10.0]
 
 - Regenerate all PACs with svd2rust 0.19.0
