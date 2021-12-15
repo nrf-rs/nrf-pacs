@@ -20,6 +20,7 @@ fn main() {
             eprintln!();
             eprintln!("subcommands:");
             eprintln!("    generate - regenerate crates");
+            eprintln!("    publish [--dry-run] - publish crates to crates.io");
         }
     }
 }
