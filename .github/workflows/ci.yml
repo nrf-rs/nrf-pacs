@@ -19,7 +19,7 @@ jobs:
         profile: minimal
         components: rustfmt
     - name: Build Crates
-      run: cargo test -p xtask
+      run: cargo test
       env:
         RUSTFLAGS: --deny warnings
 
