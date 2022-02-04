@@ -51,6 +51,7 @@ impl From<EVENTS_USBRESET_A> for bool {
 #[doc = "Field `EVENTS_USBRESET` reader - Signals that a USB reset condition has been detected on USB lines"]
 pub struct EVENTS_USBRESET_R(crate::FieldReader<bool, EVENTS_USBRESET_A>);
 impl EVENTS_USBRESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_USBRESET_R(crate::FieldReader::new(bits))
     }

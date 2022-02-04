@@ -51,6 +51,7 @@ impl From<PARITY_A> for bool {
 #[doc = "Field `PARITY` reader - Indicates if parity expected in RX frame"]
 pub struct PARITY_R(crate::FieldReader<bool, PARITY_A>);
 impl PARITY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PARITY_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<SOF_A> for bool {
 #[doc = "Field `SOF` reader - SoF expected or not in RX frames"]
 pub struct SOF_R(crate::FieldReader<bool, SOF_A>);
 impl SOF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SOF_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<CRCMODERX_A> for bool {
 #[doc = "Field `CRCMODERX` reader - CRC mode for incoming frames"]
 pub struct CRCMODERX_R(crate::FieldReader<bool, CRCMODERX_A>);
 impl CRCMODERX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CRCMODERX_R(crate::FieldReader::new(bits))
     }

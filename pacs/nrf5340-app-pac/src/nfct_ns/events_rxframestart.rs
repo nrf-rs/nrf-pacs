@@ -51,6 +51,7 @@ impl From<EVENTS_RXFRAMESTART_A> for bool {
 #[doc = "Field `EVENTS_RXFRAMESTART` reader - Marks the end of the first symbol of a received frame"]
 pub struct EVENTS_RXFRAMESTART_R(crate::FieldReader<bool, EVENTS_RXFRAMESTART_A>);
 impl EVENTS_RXFRAMESTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RXFRAMESTART_R(crate::FieldReader::new(bits))
     }

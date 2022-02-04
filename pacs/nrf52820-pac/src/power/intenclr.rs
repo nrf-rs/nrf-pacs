@@ -51,6 +51,7 @@ impl From<POFWARN_A> for bool {
 #[doc = "Field `POFWARN` reader - Write '1' to disable interrupt for event POFWARN"]
 pub struct POFWARN_R(crate::FieldReader<bool, POFWARN_A>);
 impl POFWARN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POFWARN_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<SLEEPENTER_A> for bool {
 #[doc = "Field `SLEEPENTER` reader - Write '1' to disable interrupt for event SLEEPENTER"]
 pub struct SLEEPENTER_R(crate::FieldReader<bool, SLEEPENTER_A>);
 impl SLEEPENTER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLEEPENTER_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<SLEEPEXIT_A> for bool {
 #[doc = "Field `SLEEPEXIT` reader - Write '1' to disable interrupt for event SLEEPEXIT"]
 pub struct SLEEPEXIT_R(crate::FieldReader<bool, SLEEPEXIT_A>);
 impl SLEEPEXIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLEEPEXIT_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<USBDETECTED_A> for bool {
 #[doc = "Field `USBDETECTED` reader - Write '1' to disable interrupt for event USBDETECTED"]
 pub struct USBDETECTED_R(crate::FieldReader<bool, USBDETECTED_A>);
 impl USBDETECTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBDETECTED_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +415,7 @@ impl From<USBREMOVED_A> for bool {
 #[doc = "Field `USBREMOVED` reader - Write '1' to disable interrupt for event USBREMOVED"]
 pub struct USBREMOVED_R(crate::FieldReader<bool, USBREMOVED_A>);
 impl USBREMOVED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBREMOVED_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +506,7 @@ impl From<USBPWRRDY_A> for bool {
 #[doc = "Field `USBPWRRDY` reader - Write '1' to disable interrupt for event USBPWRRDY"]
 pub struct USBPWRRDY_R(crate::FieldReader<bool, USBPWRRDY_A>);
 impl USBPWRRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBPWRRDY_R(crate::FieldReader::new(bits))
     }

@@ -58,6 +58,7 @@ impl From<READOC_A> for u8 {
 #[doc = "Field `READOC` reader - Configure number of data lines and opcode used for reading."]
 pub struct READOC_R(crate::FieldReader<u8, READOC_A>);
 impl READOC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         READOC_R(crate::FieldReader::new(bits))
     }
@@ -170,6 +171,7 @@ impl From<WRITEOC_A> for u8 {
 #[doc = "Field `WRITEOC` reader - Configure number of data lines and opcode used for writing."]
 pub struct WRITEOC_R(crate::FieldReader<u8, WRITEOC_A>);
 impl WRITEOC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         WRITEOC_R(crate::FieldReader::new(bits))
     }
@@ -266,6 +268,7 @@ impl From<ADDRMODE_A> for bool {
 #[doc = "Field `ADDRMODE` reader - Addressing mode."]
 pub struct ADDRMODE_R(crate::FieldReader<bool, ADDRMODE_A>);
 impl ADDRMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDRMODE_R(crate::FieldReader::new(bits))
     }
@@ -349,6 +352,7 @@ impl From<DPMENABLE_A> for bool {
 #[doc = "Field `DPMENABLE` reader - Enable deep power-down mode (DPM) feature."]
 pub struct DPMENABLE_R(crate::FieldReader<bool, DPMENABLE_A>);
 impl DPMENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DPMENABLE_R(crate::FieldReader::new(bits))
     }
@@ -432,6 +436,7 @@ impl From<PPSIZE_A> for bool {
 #[doc = "Field `PPSIZE` reader - Page size for commands PP, PP2O, PP4O and PP4IO."]
 pub struct PPSIZE_R(crate::FieldReader<bool, PPSIZE_A>);
 impl PPSIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PPSIZE_R(crate::FieldReader::new(bits))
     }

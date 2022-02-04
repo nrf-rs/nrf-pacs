@@ -50,6 +50,7 @@ impl From<DISABLE_A> for u8 {
 #[doc = "Field `DISABLE` reader - Software disable APPROTECT mechanism"]
 pub struct DISABLE_R(crate::FieldReader<u8, DISABLE_A>);
 impl DISABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DISABLE_R(crate::FieldReader::new(bits))
     }

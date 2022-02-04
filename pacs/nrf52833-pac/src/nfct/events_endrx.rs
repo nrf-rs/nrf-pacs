@@ -51,6 +51,7 @@ impl From<EVENTS_ENDRX_A> for bool {
 #[doc = "Field `EVENTS_ENDRX` reader - RX buffer (as defined by PACKETPTR and MAXLEN) in Data RAM full."]
 pub struct EVENTS_ENDRX_R(crate::FieldReader<bool, EVENTS_ENDRX_A>);
 impl EVENTS_ENDRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ENDRX_R(crate::FieldReader::new(bits))
     }

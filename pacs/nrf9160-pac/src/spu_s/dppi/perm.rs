@@ -51,6 +51,7 @@ impl From<CHANNEL0_A> for bool {
 #[doc = "Field `CHANNEL0` reader - Select secure attribute."]
 pub struct CHANNEL0_R(crate::FieldReader<bool, CHANNEL0_A>);
 impl CHANNEL0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<CHANNEL1_A> for bool {
 #[doc = "Field `CHANNEL1` reader - Select secure attribute."]
 pub struct CHANNEL1_R(crate::FieldReader<bool, CHANNEL1_A>);
 impl CHANNEL1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<CHANNEL2_A> for bool {
 #[doc = "Field `CHANNEL2` reader - Select secure attribute."]
 pub struct CHANNEL2_R(crate::FieldReader<bool, CHANNEL2_A>);
 impl CHANNEL2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL2_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<CHANNEL3_A> for bool {
 #[doc = "Field `CHANNEL3` reader - Select secure attribute."]
 pub struct CHANNEL3_R(crate::FieldReader<bool, CHANNEL3_A>);
 impl CHANNEL3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL3_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<CHANNEL4_A> for bool {
 #[doc = "Field `CHANNEL4` reader - Select secure attribute."]
 pub struct CHANNEL4_R(crate::FieldReader<bool, CHANNEL4_A>);
 impl CHANNEL4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL4_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<CHANNEL5_A> for bool {
 #[doc = "Field `CHANNEL5` reader - Select secure attribute."]
 pub struct CHANNEL5_R(crate::FieldReader<bool, CHANNEL5_A>);
 impl CHANNEL5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL5_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<CHANNEL6_A> for bool {
 #[doc = "Field `CHANNEL6` reader - Select secure attribute."]
 pub struct CHANNEL6_R(crate::FieldReader<bool, CHANNEL6_A>);
 impl CHANNEL6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL6_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<CHANNEL7_A> for bool {
 #[doc = "Field `CHANNEL7` reader - Select secure attribute."]
 pub struct CHANNEL7_R(crate::FieldReader<bool, CHANNEL7_A>);
 impl CHANNEL7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL7_R(crate::FieldReader::new(bits))
     }
@@ -715,6 +723,7 @@ impl From<CHANNEL8_A> for bool {
 #[doc = "Field `CHANNEL8` reader - Select secure attribute."]
 pub struct CHANNEL8_R(crate::FieldReader<bool, CHANNEL8_A>);
 impl CHANNEL8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL8_R(crate::FieldReader::new(bits))
     }
@@ -798,6 +807,7 @@ impl From<CHANNEL9_A> for bool {
 #[doc = "Field `CHANNEL9` reader - Select secure attribute."]
 pub struct CHANNEL9_R(crate::FieldReader<bool, CHANNEL9_A>);
 impl CHANNEL9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL9_R(crate::FieldReader::new(bits))
     }
@@ -881,6 +891,7 @@ impl From<CHANNEL10_A> for bool {
 #[doc = "Field `CHANNEL10` reader - Select secure attribute."]
 pub struct CHANNEL10_R(crate::FieldReader<bool, CHANNEL10_A>);
 impl CHANNEL10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL10_R(crate::FieldReader::new(bits))
     }
@@ -964,6 +975,7 @@ impl From<CHANNEL11_A> for bool {
 #[doc = "Field `CHANNEL11` reader - Select secure attribute."]
 pub struct CHANNEL11_R(crate::FieldReader<bool, CHANNEL11_A>);
 impl CHANNEL11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL11_R(crate::FieldReader::new(bits))
     }
@@ -1047,6 +1059,7 @@ impl From<CHANNEL12_A> for bool {
 #[doc = "Field `CHANNEL12` reader - Select secure attribute."]
 pub struct CHANNEL12_R(crate::FieldReader<bool, CHANNEL12_A>);
 impl CHANNEL12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL12_R(crate::FieldReader::new(bits))
     }
@@ -1130,6 +1143,7 @@ impl From<CHANNEL13_A> for bool {
 #[doc = "Field `CHANNEL13` reader - Select secure attribute."]
 pub struct CHANNEL13_R(crate::FieldReader<bool, CHANNEL13_A>);
 impl CHANNEL13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL13_R(crate::FieldReader::new(bits))
     }
@@ -1213,6 +1227,7 @@ impl From<CHANNEL14_A> for bool {
 #[doc = "Field `CHANNEL14` reader - Select secure attribute."]
 pub struct CHANNEL14_R(crate::FieldReader<bool, CHANNEL14_A>);
 impl CHANNEL14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL14_R(crate::FieldReader::new(bits))
     }
@@ -1296,6 +1311,7 @@ impl From<CHANNEL15_A> for bool {
 #[doc = "Field `CHANNEL15` reader - Select secure attribute."]
 pub struct CHANNEL15_R(crate::FieldReader<bool, CHANNEL15_A>);
 impl CHANNEL15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHANNEL15_R(crate::FieldReader::new(bits))
     }

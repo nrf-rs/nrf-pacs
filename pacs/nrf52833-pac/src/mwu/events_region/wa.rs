@@ -51,6 +51,7 @@ impl From<WA_A> for bool {
 #[doc = "Field `WA` reader - Write access to region n detected"]
 pub struct WA_R(crate::FieldReader<bool, WA_A>);
 impl WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WA_R(crate::FieldReader::new(bits))
     }

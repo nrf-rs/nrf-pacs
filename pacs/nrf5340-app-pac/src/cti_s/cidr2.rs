@@ -32,6 +32,7 @@ impl From<PRMBL_2_A> for u8 {
 of the component identification code."]
 pub struct PRMBL_2_R(crate::FieldReader<u8, PRMBL_2_A>);
 impl PRMBL_2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRMBL_2_R(crate::FieldReader::new(bits))
     }

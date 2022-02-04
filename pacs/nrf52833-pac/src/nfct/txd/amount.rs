@@ -37,6 +37,7 @@ impl From<crate::W<AMOUNT_SPEC>> for W {
 #[doc = "Field `TXDATABITS` reader - Number of bits in the last or first byte read from RAM that shall be included in the frame (excluding parity bit)."]
 pub struct TXDATABITS_R(crate::FieldReader<u8, u8>);
 impl TXDATABITS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TXDATABITS_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> TXDATABITS_W<'a> {
 #[doc = "Field `TXDATABYTES` reader - Number of complete bytes that shall be included in the frame, excluding CRC, parity and framing"]
 pub struct TXDATABYTES_R(crate::FieldReader<u16, u16>);
 impl TXDATABYTES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         TXDATABYTES_R(crate::FieldReader::new(bits))
     }

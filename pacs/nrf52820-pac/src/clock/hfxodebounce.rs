@@ -52,6 +52,7 @@ impl From<HFXODEBOUNCE_A> for u8 {
 #[doc = "Field `HFXODEBOUNCE` reader - HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us."]
 pub struct HFXODEBOUNCE_R(crate::FieldReader<u8, HFXODEBOUNCE_A>);
 impl HFXODEBOUNCE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         HFXODEBOUNCE_R(crate::FieldReader::new(bits))
     }

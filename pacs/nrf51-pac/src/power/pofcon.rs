@@ -51,6 +51,7 @@ impl From<POF_A> for bool {
 #[doc = "Field `POF` reader - Power failure comparator enable."]
 pub struct POF_R(crate::FieldReader<bool, POF_A>);
 impl POF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POF_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +140,7 @@ impl From<THRESHOLD_A> for u8 {
 #[doc = "Field `THRESHOLD` reader - Set threshold level."]
 pub struct THRESHOLD_R(crate::FieldReader<u8, THRESHOLD_A>);
 impl THRESHOLD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         THRESHOLD_R(crate::FieldReader::new(bits))
     }

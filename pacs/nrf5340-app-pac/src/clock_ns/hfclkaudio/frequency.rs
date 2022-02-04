@@ -37,6 +37,7 @@ impl From<crate::W<FREQUENCY_SPEC>> for W {
 #[doc = "Field `FREQUENCY` reader - Frequency 0: 10.666 MHz 65535: 13.333 MHz"]
 pub struct FREQUENCY_R(crate::FieldReader<u16, u16>);
 impl FREQUENCY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         FREQUENCY_R(crate::FieldReader::new(bits))
     }

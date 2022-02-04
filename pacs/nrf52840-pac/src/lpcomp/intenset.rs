@@ -51,6 +51,7 @@ impl From<READY_A> for bool {
 #[doc = "Field `READY` reader - Write '1' to enable interrupt for READY event"]
 pub struct READY_R(crate::FieldReader<bool, READY_A>);
 impl READY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READY_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<DOWN_A> for bool {
 #[doc = "Field `DOWN` reader - Write '1' to enable interrupt for DOWN event"]
 pub struct DOWN_R(crate::FieldReader<bool, DOWN_A>);
 impl DOWN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DOWN_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<UP_A> for bool {
 #[doc = "Field `UP` reader - Write '1' to enable interrupt for UP event"]
 pub struct UP_R(crate::FieldReader<bool, UP_A>);
 impl UP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UP_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<CROSS_A> for bool {
 #[doc = "Field `CROSS` reader - Write '1' to enable interrupt for CROSS event"]
 pub struct CROSS_R(crate::FieldReader<bool, CROSS_A>);
 impl CROSS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CROSS_R(crate::FieldReader::new(bits))
     }

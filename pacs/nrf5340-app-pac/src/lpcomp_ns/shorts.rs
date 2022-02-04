@@ -51,6 +51,7 @@ impl From<READY_SAMPLE_A> for bool {
 #[doc = "Field `READY_SAMPLE` reader - Shortcut between event READY and task SAMPLE"]
 pub struct READY_SAMPLE_R(crate::FieldReader<bool, READY_SAMPLE_A>);
 impl READY_SAMPLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READY_SAMPLE_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<READY_STOP_A> for bool {
 #[doc = "Field `READY_STOP` reader - Shortcut between event READY and task STOP"]
 pub struct READY_STOP_R(crate::FieldReader<bool, READY_STOP_A>);
 impl READY_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READY_STOP_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<DOWN_STOP_A> for bool {
 #[doc = "Field `DOWN_STOP` reader - Shortcut between event DOWN and task STOP"]
 pub struct DOWN_STOP_R(crate::FieldReader<bool, DOWN_STOP_A>);
 impl DOWN_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DOWN_STOP_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<UP_STOP_A> for bool {
 #[doc = "Field `UP_STOP` reader - Shortcut between event UP and task STOP"]
 pub struct UP_STOP_R(crate::FieldReader<bool, UP_STOP_A>);
 impl UP_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UP_STOP_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<CROSS_STOP_A> for bool {
 #[doc = "Field `CROSS_STOP` reader - Shortcut between event CROSS and task STOP"]
 pub struct CROSS_STOP_R(crate::FieldReader<bool, CROSS_STOP_A>);
 impl CROSS_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CROSS_STOP_R(crate::FieldReader::new(bits))
     }

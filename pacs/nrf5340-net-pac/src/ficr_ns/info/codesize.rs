@@ -29,6 +29,7 @@ impl From<CODESIZE_A> for u32 {
 #[doc = "Field `CODESIZE` reader - Code memory size in number of pages"]
 pub struct CODESIZE_R(crate::FieldReader<u32, CODESIZE_A>);
 impl CODESIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         CODESIZE_R(crate::FieldReader::new(bits))
     }
@@ -57,7 +58,7 @@ impl R {
     #[doc = "Bits 0:31 - Code memory size in number of pages"]
     #[inline(always)]
     pub fn codesize(&self) -> CODESIZE_R {
-        CODESIZE_R::new((self.bits & 0xffff_ffff) as u32)
+        CODESIZE_R::new(self.bits)
     }
 }
 #[doc = "Code memory size\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [codesize](index.html) module"]

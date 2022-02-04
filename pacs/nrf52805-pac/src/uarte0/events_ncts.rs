@@ -51,6 +51,7 @@ impl From<EVENTS_NCTS_A> for bool {
 #[doc = "Field `EVENTS_NCTS` reader - CTS is deactivated (set high). Not Clear To Send."]
 pub struct EVENTS_NCTS_R(crate::FieldReader<bool, EVENTS_NCTS_A>);
 impl EVENTS_NCTS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_NCTS_R(crate::FieldReader::new(bits))
     }

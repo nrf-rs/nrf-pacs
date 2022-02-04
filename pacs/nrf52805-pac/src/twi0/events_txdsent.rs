@@ -51,6 +51,7 @@ impl From<EVENTS_TXDSENT_A> for bool {
 #[doc = "Field `EVENTS_TXDSENT` reader - TWI TXD byte sent"]
 pub struct EVENTS_TXDSENT_R(crate::FieldReader<bool, EVENTS_TXDSENT_A>);
 impl EVENTS_TXDSENT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_TXDSENT_R(crate::FieldReader::new(bits))
     }

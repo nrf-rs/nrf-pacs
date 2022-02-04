@@ -51,6 +51,7 @@ impl From<MCKEN_A> for bool {
 #[doc = "Field `MCKEN` reader - Master clock generator enable."]
 pub struct MCKEN_R(crate::FieldReader<bool, MCKEN_A>);
 impl MCKEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MCKEN_R(crate::FieldReader::new(bits))
     }

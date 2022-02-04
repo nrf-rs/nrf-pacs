@@ -37,6 +37,7 @@ impl From<crate::W<DAP_SPEC>> for W {
 #[doc = "Field `DAP` reader - Device address prefix."]
 pub struct DAP_R(crate::FieldReader<u16, u16>);
 impl DAP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         DAP_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<EVENTS_EDSTOPPED_A> for bool {
 #[doc = "Field `EVENTS_EDSTOPPED` reader - The sampling of energy detection has stopped"]
 pub struct EVENTS_EDSTOPPED_R(crate::FieldReader<bool, EVENTS_EDSTOPPED_A>);
 impl EVENTS_EDSTOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_EDSTOPPED_R(crate::FieldReader::new(bits))
     }

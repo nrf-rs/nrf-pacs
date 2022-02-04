@@ -52,6 +52,7 @@ impl From<PALL_A> for u8 {
 #[doc = "Field `PALL` reader - Enable or disable access port protection."]
 pub struct PALL_R(crate::FieldReader<u8, PALL_A>);
 impl PALL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PALL_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<PREFIX1_SPEC>> for W {
 #[doc = "Field `AP4` reader - Address prefix 4. Decision point: START task."]
 pub struct AP4_R(crate::FieldReader<u8, u8>);
 impl AP4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AP4_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> AP4_W<'a> {
 #[doc = "Field `AP5` reader - Address prefix 5. Decision point: START task."]
 pub struct AP5_R(crate::FieldReader<u8, u8>);
 impl AP5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AP5_R(crate::FieldReader::new(bits))
     }
@@ -89,6 +91,7 @@ impl<'a> AP5_W<'a> {
 #[doc = "Field `AP6` reader - Address prefix 6. Decision point: START task."]
 pub struct AP6_R(crate::FieldReader<u8, u8>);
 impl AP6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AP6_R(crate::FieldReader::new(bits))
     }
@@ -115,6 +118,7 @@ impl<'a> AP6_W<'a> {
 #[doc = "Field `AP7` reader - Address prefix 7. Decision point: START task."]
 pub struct AP7_R(crate::FieldReader<u8, u8>);
 impl AP7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AP7_R(crate::FieldReader::new(bits))
     }

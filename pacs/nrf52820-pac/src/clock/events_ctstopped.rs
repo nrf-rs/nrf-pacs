@@ -51,6 +51,7 @@ impl From<EVENTS_CTSTOPPED_A> for bool {
 #[doc = "Field `EVENTS_CTSTOPPED` reader - Calibration timer has been stopped and is ready to process new tasks"]
 pub struct EVENTS_CTSTOPPED_R(crate::FieldReader<bool, EVENTS_CTSTOPPED_A>);
 impl EVENTS_CTSTOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_CTSTOPPED_R(crate::FieldReader::new(bits))
     }

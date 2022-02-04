@@ -27,7 +27,7 @@ impl<'a> HOST_IOT_KDR3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value;
         self.w
     }
 }

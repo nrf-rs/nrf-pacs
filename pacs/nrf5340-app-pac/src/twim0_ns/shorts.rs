@@ -51,6 +51,7 @@ impl From<LASTTX_STARTRX_A> for bool {
 #[doc = "Field `LASTTX_STARTRX` reader - Shortcut between event LASTTX and task STARTRX"]
 pub struct LASTTX_STARTRX_R(crate::FieldReader<bool, LASTTX_STARTRX_A>);
 impl LASTTX_STARTRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LASTTX_STARTRX_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<LASTTX_SUSPEND_A> for bool {
 #[doc = "Field `LASTTX_SUSPEND` reader - Shortcut between event LASTTX and task SUSPEND"]
 pub struct LASTTX_SUSPEND_R(crate::FieldReader<bool, LASTTX_SUSPEND_A>);
 impl LASTTX_SUSPEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LASTTX_SUSPEND_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<LASTTX_STOP_A> for bool {
 #[doc = "Field `LASTTX_STOP` reader - Shortcut between event LASTTX and task STOP"]
 pub struct LASTTX_STOP_R(crate::FieldReader<bool, LASTTX_STOP_A>);
 impl LASTTX_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LASTTX_STOP_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<LASTRX_STARTTX_A> for bool {
 #[doc = "Field `LASTRX_STARTTX` reader - Shortcut between event LASTRX and task STARTTX"]
 pub struct LASTRX_STARTTX_R(crate::FieldReader<bool, LASTRX_STARTTX_A>);
 impl LASTRX_STARTTX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LASTRX_STARTTX_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<LASTRX_STOP_A> for bool {
 #[doc = "Field `LASTRX_STOP` reader - Shortcut between event LASTRX and task STOP"]
 pub struct LASTRX_STOP_R(crate::FieldReader<bool, LASTRX_STOP_A>);
 impl LASTRX_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LASTRX_STOP_R(crate::FieldReader::new(bits))
     }

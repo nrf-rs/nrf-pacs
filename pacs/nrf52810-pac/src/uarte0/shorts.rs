@@ -51,6 +51,7 @@ impl From<ENDRX_STARTRX_A> for bool {
 #[doc = "Field `ENDRX_STARTRX` reader - Shortcut between event ENDRX and task STARTRX"]
 pub struct ENDRX_STARTRX_R(crate::FieldReader<bool, ENDRX_STARTRX_A>);
 impl ENDRX_STARTRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDRX_STARTRX_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<ENDRX_STOPRX_A> for bool {
 #[doc = "Field `ENDRX_STOPRX` reader - Shortcut between event ENDRX and task STOPRX"]
 pub struct ENDRX_STOPRX_R(crate::FieldReader<bool, ENDRX_STOPRX_A>);
 impl ENDRX_STOPRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDRX_STOPRX_R(crate::FieldReader::new(bits))
     }

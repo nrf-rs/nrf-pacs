@@ -51,6 +51,7 @@ impl From<MODE_A> for bool {
 #[doc = "Field `MODE` reader - I2S mode."]
 pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }

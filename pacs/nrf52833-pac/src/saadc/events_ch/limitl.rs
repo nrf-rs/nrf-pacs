@@ -51,6 +51,7 @@ impl From<LIMITL_A> for bool {
 #[doc = "Field `LIMITL` reader - Last result is equal or below CH\\[n\\].LIMIT.LOW"]
 pub struct LIMITL_R(crate::FieldReader<bool, LIMITL_A>);
 impl LIMITL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LIMITL_R(crate::FieldReader::new(bits))
     }

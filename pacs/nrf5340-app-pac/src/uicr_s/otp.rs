@@ -37,6 +37,7 @@ impl From<crate::W<OTP_SPEC>> for W {
 #[doc = "Field `LOWER` reader - Lower half word"]
 pub struct LOWER_R(crate::FieldReader<u16, u16>);
 impl LOWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         LOWER_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> LOWER_W<'a> {
 #[doc = "Field `UPPER` reader - Upper half word"]
 pub struct UPPER_R(crate::FieldReader<u16, u16>);
 impl UPPER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         UPPER_R(crate::FieldReader::new(bits))
     }

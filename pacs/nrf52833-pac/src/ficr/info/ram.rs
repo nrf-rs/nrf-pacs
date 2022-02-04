@@ -39,6 +39,7 @@ impl From<RAM_A> for u32 {
 #[doc = "Field `RAM` reader - RAM variant"]
 pub struct RAM_R(crate::FieldReader<u32, RAM_A>);
 impl RAM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         RAM_R(crate::FieldReader::new(bits))
     }
@@ -97,7 +98,7 @@ impl R {
     #[doc = "Bits 0:31 - RAM variant"]
     #[inline(always)]
     pub fn ram(&self) -> RAM_R {
-        RAM_R::new((self.bits & 0xffff_ffff) as u32)
+        RAM_R::new(self.bits)
     }
 }
 #[doc = "RAM variant\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ram](index.html) module"]

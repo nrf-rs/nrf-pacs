@@ -51,6 +51,7 @@ impl From<EVENTS_CTTO_A> for bool {
 #[doc = "Field `EVENTS_CTTO` reader - Calibration timer timeout"]
 pub struct EVENTS_CTTO_R(crate::FieldReader<bool, EVENTS_CTTO_A>);
 impl EVENTS_CTTO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_CTTO_R(crate::FieldReader::new(bits))
     }

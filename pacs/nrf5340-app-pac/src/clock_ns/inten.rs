@@ -51,6 +51,7 @@ impl From<HFCLKSTARTED_A> for bool {
 #[doc = "Field `HFCLKSTARTED` reader - Enable or disable interrupt for event HFCLKSTARTED"]
 pub struct HFCLKSTARTED_R(crate::FieldReader<bool, HFCLKSTARTED_A>);
 impl HFCLKSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HFCLKSTARTED_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<LFCLKSTARTED_A> for bool {
 #[doc = "Field `LFCLKSTARTED` reader - Enable or disable interrupt for event LFCLKSTARTED"]
 pub struct LFCLKSTARTED_R(crate::FieldReader<bool, LFCLKSTARTED_A>);
 impl LFCLKSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LFCLKSTARTED_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<DONE_A> for bool {
 #[doc = "Field `DONE` reader - Enable or disable interrupt for event DONE"]
 pub struct DONE_R(crate::FieldReader<bool, DONE_A>);
 impl DONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DONE_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<HFCLKAUDIOSTARTED_A> for bool {
 #[doc = "Field `HFCLKAUDIOSTARTED` reader - Enable or disable interrupt for event HFCLKAUDIOSTARTED"]
 pub struct HFCLKAUDIOSTARTED_R(crate::FieldReader<bool, HFCLKAUDIOSTARTED_A>);
 impl HFCLKAUDIOSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HFCLKAUDIOSTARTED_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<HFCLK192MSTARTED_A> for bool {
 #[doc = "Field `HFCLK192MSTARTED` reader - Enable or disable interrupt for event HFCLK192MSTARTED"]
 pub struct HFCLK192MSTARTED_R(crate::FieldReader<bool, HFCLK192MSTARTED_A>);
 impl HFCLK192MSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HFCLK192MSTARTED_R(crate::FieldReader::new(bits))
     }

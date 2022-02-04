@@ -31,6 +31,7 @@ impl From<DEVICETYPE_A> for u32 {
 #[doc = "Field `DEVICETYPE` reader - Device type"]
 pub struct DEVICETYPE_R(crate::FieldReader<u32, DEVICETYPE_A>);
 impl DEVICETYPE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         DEVICETYPE_R(crate::FieldReader::new(bits))
     }
@@ -65,7 +66,7 @@ impl R {
     #[doc = "Bits 0:31 - Device type"]
     #[inline(always)]
     pub fn devicetype(&self) -> DEVICETYPE_R {
-        DEVICETYPE_R::new((self.bits & 0xffff_ffff) as u32)
+        DEVICETYPE_R::new(self.bits)
     }
 }
 #[doc = "Device type\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [devicetype](index.html) module"]

@@ -37,6 +37,7 @@ impl From<crate::W<IFCONFIG1_SPEC>> for W {
 #[doc = "Field `SCKDELAY` reader - Minimum amount of time that the CSN pin must stay high before it can go low again. Value is specified in number of 16 MHz periods (62.5 ns)."]
 pub struct SCKDELAY_R(crate::FieldReader<u8, u8>);
 impl SCKDELAY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SCKDELAY_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +78,7 @@ impl From<DPMEN_A> for bool {
 #[doc = "Field `DPMEN` reader - Enter/exit deep power-down mode (DPM) for external flash memory."]
 pub struct DPMEN_R(crate::FieldReader<bool, DPMEN_A>);
 impl DPMEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DPMEN_R(crate::FieldReader::new(bits))
     }
@@ -160,6 +162,7 @@ impl From<SPIMODE_A> for bool {
 #[doc = "Field `SPIMODE` reader - Select SPI mode."]
 pub struct SPIMODE_R(crate::FieldReader<bool, SPIMODE_A>);
 impl SPIMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SPIMODE_R(crate::FieldReader::new(bits))
     }
@@ -229,6 +232,7 @@ impl<'a> SPIMODE_W<'a> {
 #[doc = "Field `SCKFREQ` reader - SCK frequency is given as 32 MHz / (SCKFREQ + 1)."]
 pub struct SCKFREQ_R(crate::FieldReader<u8, u8>);
 impl SCKFREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SCKFREQ_R(crate::FieldReader::new(bits))
     }

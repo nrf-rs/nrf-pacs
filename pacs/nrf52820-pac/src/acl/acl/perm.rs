@@ -51,6 +51,7 @@ impl From<WRITE_A> for bool {
 #[doc = "Field `WRITE` reader - Configure write and erase permissions for region n. Write '0' has no effect."]
 pub struct WRITE_R(crate::FieldReader<bool, WRITE_A>);
 impl WRITE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WRITE_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<READ_A> for bool {
 #[doc = "Field `READ` reader - Configure read permissions for region n. Write '0' has no effect."]
 pub struct READ_R(crate::FieldReader<bool, READ_A>);
 impl READ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READ_R(crate::FieldReader::new(bits))
     }

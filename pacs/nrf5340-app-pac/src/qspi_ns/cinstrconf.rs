@@ -37,6 +37,7 @@ impl From<crate::W<CINSTRCONF_SPEC>> for W {
 #[doc = "Field `OPCODE` reader - Opcode of Custom instruction."]
 pub struct OPCODE_R(crate::FieldReader<u8, u8>);
 impl OPCODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         OPCODE_R(crate::FieldReader::new(bits))
     }
@@ -92,6 +93,7 @@ impl From<LENGTH_A> for u8 {
 #[doc = "Field `LENGTH` reader - Length of custom instruction in number of bytes."]
 pub struct LENGTH_R(crate::FieldReader<u8, LENGTH_A>);
 impl LENGTH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LENGTH_R(crate::FieldReader::new(bits))
     }
@@ -229,6 +231,7 @@ impl<'a> LENGTH_W<'a> {
 #[doc = "Field `LIO2` reader - Level of the IO2 pin (if connected) during transmission of custom instruction."]
 pub struct LIO2_R(crate::FieldReader<bool, bool>);
 impl LIO2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LIO2_R(crate::FieldReader::new(bits))
     }
@@ -265,6 +268,7 @@ impl<'a> LIO2_W<'a> {
 #[doc = "Field `LIO3` reader - Level of the IO3 pin (if connected) during transmission of custom instruction."]
 pub struct LIO3_R(crate::FieldReader<bool, bool>);
 impl LIO3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LIO3_R(crate::FieldReader::new(bits))
     }
@@ -315,6 +319,7 @@ impl From<WIPWAIT_A> for bool {
 #[doc = "Field `WIPWAIT` reader - Wait for write complete before sending command."]
 pub struct WIPWAIT_R(crate::FieldReader<bool, WIPWAIT_A>);
 impl WIPWAIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WIPWAIT_R(crate::FieldReader::new(bits))
     }
@@ -398,6 +403,7 @@ impl From<WREN_A> for bool {
 #[doc = "Field `WREN` reader - Send WREN (write enable opcode 0x06) before instruction."]
 pub struct WREN_R(crate::FieldReader<bool, WREN_A>);
 impl WREN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WREN_R(crate::FieldReader::new(bits))
     }
@@ -481,6 +487,7 @@ impl From<LFEN_A> for bool {
 #[doc = "Field `LFEN` reader - Enable Long frame mode. When enabled, a custom instruction transaction has to be ended by writing the LFSTOP field."]
 pub struct LFEN_R(crate::FieldReader<bool, LFEN_A>);
 impl LFEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LFEN_R(crate::FieldReader::new(bits))
     }
@@ -562,6 +569,7 @@ impl From<LFSTOP_A> for bool {
 #[doc = "Field `LFSTOP` reader - Stop (finalize) long frame transaction"]
 pub struct LFSTOP_R(crate::FieldReader<bool, LFSTOP_A>);
 impl LFSTOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LFSTOP_R(crate::FieldReader::new(bits))
     }

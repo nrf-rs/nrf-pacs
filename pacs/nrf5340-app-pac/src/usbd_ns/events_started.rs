@@ -51,6 +51,7 @@ impl From<EVENTS_STARTED_A> for bool {
 #[doc = "Field `EVENTS_STARTED` reader - Confirms that the EPIN\\[n\\].PTR and EPIN\\[n\\].MAXCNT, or EPOUT\\[n\\].PTR and EPOUT\\[n\\].MAXCNT registers have been captured on all endpoints reported in the EPSTATUS register"]
 pub struct EVENTS_STARTED_R(crate::FieldReader<bool, EVENTS_STARTED_A>);
 impl EVENTS_STARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_STARTED_R(crate::FieldReader::new(bits))
     }

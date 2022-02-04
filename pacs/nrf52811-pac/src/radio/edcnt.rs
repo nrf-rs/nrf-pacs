@@ -37,6 +37,7 @@ impl From<crate::W<EDCNT_SPEC>> for W {
 #[doc = "Field `EDCNT` reader - IEEE 802.15.4 energy detect loop count"]
 pub struct EDCNT_R(crate::FieldReader<u32, u32>);
 impl EDCNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         EDCNT_R(crate::FieldReader::new(bits))
     }

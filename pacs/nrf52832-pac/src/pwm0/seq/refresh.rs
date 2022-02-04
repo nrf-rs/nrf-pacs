@@ -50,6 +50,7 @@ impl From<CNT_A> for u32 {
 #[doc = "Field `CNT` reader - Amount of additional PWM periods between samples loaded into compare register (load every REFRESH.CNT+1 PWM periods)"]
 pub struct CNT_R(crate::FieldReader<u32, CNT_A>);
 impl CNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         CNT_R(crate::FieldReader::new(bits))
     }

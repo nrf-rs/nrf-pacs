@@ -51,6 +51,7 @@ impl From<SRC_A> for bool {
 #[doc = "Field `SRC` reader - Master clock source selection"]
 pub struct SRC_R(crate::FieldReader<bool, SRC_A>);
 impl SRC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SRC_R(crate::FieldReader::new(bits))
     }

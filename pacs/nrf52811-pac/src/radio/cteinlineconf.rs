@@ -51,6 +51,7 @@ impl From<CTEINLINECTRLEN_A> for bool {
 #[doc = "Field `CTEINLINECTRLEN` reader - Enable parsing of CTEInfo from received packet in BLE modes"]
 pub struct CTEINLINECTRLEN_R(crate::FieldReader<bool, CTEINLINECTRLEN_A>);
 impl CTEINLINECTRLEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTEINLINECTRLEN_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<CTEINFOINS1_A> for bool {
 #[doc = "Field `CTEINFOINS1` reader - CTEInfo is S1 byte or not"]
 pub struct CTEINFOINS1_R(crate::FieldReader<bool, CTEINFOINS1_A>);
 impl CTEINFOINS1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTEINFOINS1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<CTEERRORHANDLING_A> for bool {
 #[doc = "Field `CTEERRORHANDLING` reader - Sampling/switching if CRC is not OK"]
 pub struct CTEERRORHANDLING_R(crate::FieldReader<bool, CTEERRORHANDLING_A>);
 impl CTEERRORHANDLING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTEERRORHANDLING_R(crate::FieldReader::new(bits))
     }
@@ -303,6 +306,7 @@ impl From<CTETIMEVALIDRANGE_A> for u8 {
 #[doc = "Field `CTETIMEVALIDRANGE` reader - Max range of CTETime"]
 pub struct CTETIMEVALIDRANGE_R(crate::FieldReader<u8, CTETIMEVALIDRANGE_A>);
 impl CTETIMEVALIDRANGE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTETIMEVALIDRANGE_R(crate::FieldReader::new(bits))
     }
@@ -397,6 +401,7 @@ impl From<CTEINLINERXMODE1US_A> for u8 {
 #[doc = "Field `CTEINLINERXMODE1US` reader - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set"]
 pub struct CTEINLINERXMODE1US_R(crate::FieldReader<u8, CTEINLINERXMODE1US_A>);
 impl CTEINLINERXMODE1US_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTEINLINERXMODE1US_R(crate::FieldReader::new(bits))
     }
@@ -524,6 +529,7 @@ impl From<CTEINLINERXMODE2US_A> for u8 {
 #[doc = "Field `CTEINLINERXMODE2US` reader - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set"]
 pub struct CTEINLINERXMODE2US_R(crate::FieldReader<u8, CTEINLINERXMODE2US_A>);
 impl CTEINLINERXMODE2US_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTEINLINERXMODE2US_R(crate::FieldReader::new(bits))
     }
@@ -628,6 +634,7 @@ impl<'a> CTEINLINERXMODE2US_W<'a> {
 #[doc = "Field `S0CONF` reader - S0 bit pattern to match"]
 pub struct S0CONF_R(crate::FieldReader<u8, u8>);
 impl S0CONF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         S0CONF_R(crate::FieldReader::new(bits))
     }
@@ -654,6 +661,7 @@ impl<'a> S0CONF_W<'a> {
 #[doc = "Field `S0MASK` reader - S0 bit mask to set which bit to match"]
 pub struct S0MASK_R(crate::FieldReader<u8, u8>);
 impl S0MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         S0MASK_R(crate::FieldReader::new(bits))
     }

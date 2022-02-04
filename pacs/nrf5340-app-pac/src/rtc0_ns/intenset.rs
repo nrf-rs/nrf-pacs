@@ -51,6 +51,7 @@ impl From<TICK_A> for bool {
 #[doc = "Field `TICK` reader - Write '1' to enable interrupt for event TICK"]
 pub struct TICK_R(crate::FieldReader<bool, TICK_A>);
 impl TICK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TICK_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<OVRFLW_A> for bool {
 #[doc = "Field `OVRFLW` reader - Write '1' to enable interrupt for event OVRFLW"]
 pub struct OVRFLW_R(crate::FieldReader<bool, OVRFLW_A>);
 impl OVRFLW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OVRFLW_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<COMPARE0_A> for bool {
 #[doc = "Field `COMPARE0` reader - Write '1' to enable interrupt for event COMPARE\\[0\\]"]
 pub struct COMPARE0_R(crate::FieldReader<bool, COMPARE0_A>);
 impl COMPARE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         COMPARE0_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<COMPARE1_A> for bool {
 #[doc = "Field `COMPARE1` reader - Write '1' to enable interrupt for event COMPARE\\[1\\]"]
 pub struct COMPARE1_R(crate::FieldReader<bool, COMPARE1_A>);
 impl COMPARE1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         COMPARE1_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +415,7 @@ impl From<COMPARE2_A> for bool {
 #[doc = "Field `COMPARE2` reader - Write '1' to enable interrupt for event COMPARE\\[2\\]"]
 pub struct COMPARE2_R(crate::FieldReader<bool, COMPARE2_A>);
 impl COMPARE2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         COMPARE2_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +506,7 @@ impl From<COMPARE3_A> for bool {
 #[doc = "Field `COMPARE3` reader - Write '1' to enable interrupt for event COMPARE\\[3\\]"]
 pub struct COMPARE3_R(crate::FieldReader<bool, COMPARE3_A>);
 impl COMPARE3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         COMPARE3_R(crate::FieldReader::new(bits))
     }

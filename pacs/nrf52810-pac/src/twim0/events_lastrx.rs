@@ -51,6 +51,7 @@ impl From<EVENTS_LASTRX_A> for bool {
 #[doc = "Field `EVENTS_LASTRX` reader - Byte boundary, starting to receive the last byte"]
 pub struct EVENTS_LASTRX_R(crate::FieldReader<bool, EVENTS_LASTRX_A>);
 impl EVENTS_LASTRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_LASTRX_R(crate::FieldReader::new(bits))
     }

@@ -30,6 +30,7 @@ impl From<SLEEPSTATE_A> for bool {
 #[doc = "Field `SLEEPSTATE` reader - Reflects the sleep state during automatic collision resolution. Set to IDLE by a GOIDLE task. Set to SLEEP_A when a valid SLEEP_REQ frame is received or by a GOSLEEP task."]
 pub struct SLEEPSTATE_R(crate::FieldReader<bool, SLEEPSTATE_A>);
 impl SLEEPSTATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLEEPSTATE_R(crate::FieldReader::new(bits))
     }

@@ -16,6 +16,7 @@ impl From<crate::R<AMOUNT_SPEC>> for R {
 #[doc = "Field `AMOUNT` reader - Number of buffer words transferred since last START. This register can be read after an END or STOPPED event."]
 pub struct AMOUNT_R(crate::FieldReader<u16, u16>);
 impl AMOUNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         AMOUNT_R(crate::FieldReader::new(bits))
     }

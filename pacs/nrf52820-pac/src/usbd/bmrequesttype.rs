@@ -35,6 +35,7 @@ impl From<RECIPIENT_A> for u8 {
 #[doc = "Field `RECIPIENT` reader - Data transfer type"]
 pub struct RECIPIENT_R(crate::FieldReader<u8, RECIPIENT_A>);
 impl RECIPIENT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RECIPIENT_R(crate::FieldReader::new(bits))
     }
@@ -97,6 +98,7 @@ impl From<TYPE_A> for u8 {
 #[doc = "Field `TYPE` reader - Data transfer type"]
 pub struct TYPE_R(crate::FieldReader<u8, TYPE_A>);
 impl TYPE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TYPE_R(crate::FieldReader::new(bits))
     }
@@ -150,6 +152,7 @@ impl From<DIRECTION_A> for bool {
 #[doc = "Field `DIRECTION` reader - Data transfer direction"]
 pub struct DIRECTION_R(crate::FieldReader<bool, DIRECTION_A>);
 impl DIRECTION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DIRECTION_R(crate::FieldReader::new(bits))
     }

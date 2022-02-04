@@ -37,6 +37,7 @@ impl From<crate::W<FRAMEDELAYMIN_SPEC>> for W {
 #[doc = "Field `FRAMEDELAYMIN` reader - Minimum frame delay in number of 13.56 MHz clock cycles"]
 pub struct FRAMEDELAYMIN_R(crate::FieldReader<u16, u16>);
 impl FRAMEDELAYMIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         FRAMEDELAYMIN_R(crate::FieldReader::new(bits))
     }

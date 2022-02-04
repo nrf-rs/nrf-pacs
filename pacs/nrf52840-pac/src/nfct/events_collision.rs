@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_COLLISION_SPEC>> for W {
 #[doc = "Field `EVENTS_COLLISION` reader - "]
 pub struct EVENTS_COLLISION_R(crate::FieldReader<bool, bool>);
 impl EVENTS_COLLISION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_COLLISION_R(crate::FieldReader::new(bits))
     }

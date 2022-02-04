@@ -51,6 +51,7 @@ impl From<EVENTS_RXTO_A> for bool {
 #[doc = "Field `EVENTS_RXTO` reader - Receiver timeout"]
 pub struct EVENTS_RXTO_R(crate::FieldReader<bool, EVENTS_RXTO_A>);
 impl EVENTS_RXTO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RXTO_R(crate::FieldReader::new(bits))
     }

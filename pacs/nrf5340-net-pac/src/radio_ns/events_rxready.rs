@@ -51,6 +51,7 @@ impl From<EVENTS_RXREADY_A> for bool {
 #[doc = "Field `EVENTS_RXREADY` reader - RADIO has ramped up and is ready to be started RX path"]
 pub struct EVENTS_RXREADY_R(crate::FieldReader<bool, EVENTS_RXREADY_A>);
 impl EVENTS_RXREADY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RXREADY_R(crate::FieldReader::new(bits))
     }

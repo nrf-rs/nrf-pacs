@@ -51,6 +51,7 @@ impl From<EVENTS_TXFRAMESTART_A> for bool {
 #[doc = "Field `EVENTS_TXFRAMESTART` reader - Marks the start of the first symbol of a transmitted frame"]
 pub struct EVENTS_TXFRAMESTART_R(crate::FieldReader<bool, EVENTS_TXFRAMESTART_A>);
 impl EVENTS_TXFRAMESTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_TXFRAMESTART_R(crate::FieldReader::new(bits))
     }

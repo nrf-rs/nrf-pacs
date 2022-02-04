@@ -16,6 +16,7 @@ impl From<crate::R<VALUE_SPEC>> for R {
 #[doc = "Field `VALUE` reader - Generated random number"]
 pub struct VALUE_R(crate::FieldReader<u8, u8>);
 impl VALUE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         VALUE_R(crate::FieldReader::new(bits))
     }

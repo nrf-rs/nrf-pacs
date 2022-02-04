@@ -51,6 +51,7 @@ impl From<ERASESTATUS_A> for bool {
 #[doc = "Field `ERASESTATUS` reader - Cache erase status"]
 pub struct ERASESTATUS_R(crate::FieldReader<bool, ERASESTATUS_A>);
 impl ERASESTATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERASESTATUS_R(crate::FieldReader::new(bits))
     }

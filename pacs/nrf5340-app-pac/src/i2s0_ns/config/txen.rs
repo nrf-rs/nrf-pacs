@@ -51,6 +51,7 @@ impl From<TXEN_A> for bool {
 #[doc = "Field `TXEN` reader - Transmission (TX) enable"]
 pub struct TXEN_R(crate::FieldReader<bool, TXEN_A>);
 impl TXEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXEN_R(crate::FieldReader::new(bits))
     }

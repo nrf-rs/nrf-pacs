@@ -51,6 +51,7 @@ impl From<EVENTS_VALRDY_A> for bool {
 #[doc = "Field `EVENTS_VALRDY` reader - Event being generated for every new random number written to the VALUE register"]
 pub struct EVENTS_VALRDY_R(crate::FieldReader<bool, EVENTS_VALRDY_A>);
 impl EVENTS_VALRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_VALRDY_R(crate::FieldReader::new(bits))
     }

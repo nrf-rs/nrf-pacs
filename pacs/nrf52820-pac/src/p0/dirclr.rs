@@ -51,6 +51,7 @@ impl From<PIN0_A> for bool {
 #[doc = "Field `PIN0` reader - Set as input pin 0"]
 pub struct PIN0_R(crate::FieldReader<bool, PIN0_A>);
 impl PIN0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN0_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<PIN1_A> for bool {
 #[doc = "Field `PIN1` reader - Set as input pin 1"]
 pub struct PIN1_R(crate::FieldReader<bool, PIN1_A>);
 impl PIN1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN1_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<PIN2_A> for bool {
 #[doc = "Field `PIN2` reader - Set as input pin 2"]
 pub struct PIN2_R(crate::FieldReader<bool, PIN2_A>);
 impl PIN2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN2_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<PIN3_A> for bool {
 #[doc = "Field `PIN3` reader - Set as input pin 3"]
 pub struct PIN3_R(crate::FieldReader<bool, PIN3_A>);
 impl PIN3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN3_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +415,7 @@ impl From<PIN4_A> for bool {
 #[doc = "Field `PIN4` reader - Set as input pin 4"]
 pub struct PIN4_R(crate::FieldReader<bool, PIN4_A>);
 impl PIN4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN4_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +506,7 @@ impl From<PIN5_A> for bool {
 #[doc = "Field `PIN5` reader - Set as input pin 5"]
 pub struct PIN5_R(crate::FieldReader<bool, PIN5_A>);
 impl PIN5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN5_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +597,7 @@ impl From<PIN6_A> for bool {
 #[doc = "Field `PIN6` reader - Set as input pin 6"]
 pub struct PIN6_R(crate::FieldReader<bool, PIN6_A>);
 impl PIN6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN6_R(crate::FieldReader::new(bits))
     }
@@ -681,6 +688,7 @@ impl From<PIN7_A> for bool {
 #[doc = "Field `PIN7` reader - Set as input pin 7"]
 pub struct PIN7_R(crate::FieldReader<bool, PIN7_A>);
 impl PIN7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN7_R(crate::FieldReader::new(bits))
     }
@@ -771,6 +779,7 @@ impl From<PIN8_A> for bool {
 #[doc = "Field `PIN8` reader - Set as input pin 8"]
 pub struct PIN8_R(crate::FieldReader<bool, PIN8_A>);
 impl PIN8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN8_R(crate::FieldReader::new(bits))
     }
@@ -861,6 +870,7 @@ impl From<PIN9_A> for bool {
 #[doc = "Field `PIN9` reader - Set as input pin 9"]
 pub struct PIN9_R(crate::FieldReader<bool, PIN9_A>);
 impl PIN9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN9_R(crate::FieldReader::new(bits))
     }
@@ -951,6 +961,7 @@ impl From<PIN10_A> for bool {
 #[doc = "Field `PIN10` reader - Set as input pin 10"]
 pub struct PIN10_R(crate::FieldReader<bool, PIN10_A>);
 impl PIN10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN10_R(crate::FieldReader::new(bits))
     }
@@ -1041,6 +1052,7 @@ impl From<PIN11_A> for bool {
 #[doc = "Field `PIN11` reader - Set as input pin 11"]
 pub struct PIN11_R(crate::FieldReader<bool, PIN11_A>);
 impl PIN11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN11_R(crate::FieldReader::new(bits))
     }
@@ -1131,6 +1143,7 @@ impl From<PIN12_A> for bool {
 #[doc = "Field `PIN12` reader - Set as input pin 12"]
 pub struct PIN12_R(crate::FieldReader<bool, PIN12_A>);
 impl PIN12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN12_R(crate::FieldReader::new(bits))
     }
@@ -1221,6 +1234,7 @@ impl From<PIN13_A> for bool {
 #[doc = "Field `PIN13` reader - Set as input pin 13"]
 pub struct PIN13_R(crate::FieldReader<bool, PIN13_A>);
 impl PIN13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN13_R(crate::FieldReader::new(bits))
     }
@@ -1311,6 +1325,7 @@ impl From<PIN14_A> for bool {
 #[doc = "Field `PIN14` reader - Set as input pin 14"]
 pub struct PIN14_R(crate::FieldReader<bool, PIN14_A>);
 impl PIN14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN14_R(crate::FieldReader::new(bits))
     }
@@ -1401,6 +1416,7 @@ impl From<PIN15_A> for bool {
 #[doc = "Field `PIN15` reader - Set as input pin 15"]
 pub struct PIN15_R(crate::FieldReader<bool, PIN15_A>);
 impl PIN15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN15_R(crate::FieldReader::new(bits))
     }
@@ -1491,6 +1507,7 @@ impl From<PIN16_A> for bool {
 #[doc = "Field `PIN16` reader - Set as input pin 16"]
 pub struct PIN16_R(crate::FieldReader<bool, PIN16_A>);
 impl PIN16_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN16_R(crate::FieldReader::new(bits))
     }
@@ -1581,6 +1598,7 @@ impl From<PIN17_A> for bool {
 #[doc = "Field `PIN17` reader - Set as input pin 17"]
 pub struct PIN17_R(crate::FieldReader<bool, PIN17_A>);
 impl PIN17_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN17_R(crate::FieldReader::new(bits))
     }
@@ -1671,6 +1689,7 @@ impl From<PIN18_A> for bool {
 #[doc = "Field `PIN18` reader - Set as input pin 18"]
 pub struct PIN18_R(crate::FieldReader<bool, PIN18_A>);
 impl PIN18_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN18_R(crate::FieldReader::new(bits))
     }
@@ -1761,6 +1780,7 @@ impl From<PIN19_A> for bool {
 #[doc = "Field `PIN19` reader - Set as input pin 19"]
 pub struct PIN19_R(crate::FieldReader<bool, PIN19_A>);
 impl PIN19_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN19_R(crate::FieldReader::new(bits))
     }
@@ -1851,6 +1871,7 @@ impl From<PIN20_A> for bool {
 #[doc = "Field `PIN20` reader - Set as input pin 20"]
 pub struct PIN20_R(crate::FieldReader<bool, PIN20_A>);
 impl PIN20_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN20_R(crate::FieldReader::new(bits))
     }
@@ -1941,6 +1962,7 @@ impl From<PIN21_A> for bool {
 #[doc = "Field `PIN21` reader - Set as input pin 21"]
 pub struct PIN21_R(crate::FieldReader<bool, PIN21_A>);
 impl PIN21_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN21_R(crate::FieldReader::new(bits))
     }
@@ -2031,6 +2053,7 @@ impl From<PIN22_A> for bool {
 #[doc = "Field `PIN22` reader - Set as input pin 22"]
 pub struct PIN22_R(crate::FieldReader<bool, PIN22_A>);
 impl PIN22_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN22_R(crate::FieldReader::new(bits))
     }
@@ -2121,6 +2144,7 @@ impl From<PIN23_A> for bool {
 #[doc = "Field `PIN23` reader - Set as input pin 23"]
 pub struct PIN23_R(crate::FieldReader<bool, PIN23_A>);
 impl PIN23_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN23_R(crate::FieldReader::new(bits))
     }
@@ -2211,6 +2235,7 @@ impl From<PIN24_A> for bool {
 #[doc = "Field `PIN24` reader - Set as input pin 24"]
 pub struct PIN24_R(crate::FieldReader<bool, PIN24_A>);
 impl PIN24_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN24_R(crate::FieldReader::new(bits))
     }
@@ -2301,6 +2326,7 @@ impl From<PIN25_A> for bool {
 #[doc = "Field `PIN25` reader - Set as input pin 25"]
 pub struct PIN25_R(crate::FieldReader<bool, PIN25_A>);
 impl PIN25_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN25_R(crate::FieldReader::new(bits))
     }
@@ -2391,6 +2417,7 @@ impl From<PIN26_A> for bool {
 #[doc = "Field `PIN26` reader - Set as input pin 26"]
 pub struct PIN26_R(crate::FieldReader<bool, PIN26_A>);
 impl PIN26_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN26_R(crate::FieldReader::new(bits))
     }
@@ -2481,6 +2508,7 @@ impl From<PIN27_A> for bool {
 #[doc = "Field `PIN27` reader - Set as input pin 27"]
 pub struct PIN27_R(crate::FieldReader<bool, PIN27_A>);
 impl PIN27_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN27_R(crate::FieldReader::new(bits))
     }
@@ -2571,6 +2599,7 @@ impl From<PIN28_A> for bool {
 #[doc = "Field `PIN28` reader - Set as input pin 28"]
 pub struct PIN28_R(crate::FieldReader<bool, PIN28_A>);
 impl PIN28_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN28_R(crate::FieldReader::new(bits))
     }
@@ -2661,6 +2690,7 @@ impl From<PIN29_A> for bool {
 #[doc = "Field `PIN29` reader - Set as input pin 29"]
 pub struct PIN29_R(crate::FieldReader<bool, PIN29_A>);
 impl PIN29_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN29_R(crate::FieldReader::new(bits))
     }
@@ -2751,6 +2781,7 @@ impl From<PIN30_A> for bool {
 #[doc = "Field `PIN30` reader - Set as input pin 30"]
 pub struct PIN30_R(crate::FieldReader<bool, PIN30_A>);
 impl PIN30_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN30_R(crate::FieldReader::new(bits))
     }
@@ -2841,6 +2872,7 @@ impl From<PIN31_A> for bool {
 #[doc = "Field `PIN31` reader - Set as input pin 31"]
 pub struct PIN31_R(crate::FieldReader<bool, PIN31_A>);
 impl PIN31_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIN31_R(crate::FieldReader::new(bits))
     }

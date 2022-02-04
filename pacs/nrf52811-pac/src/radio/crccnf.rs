@@ -56,6 +56,7 @@ impl From<LEN_A> for u8 {
 #[doc = "Field `LEN` reader - CRC length in number of bytes."]
 pub struct LEN_R(crate::FieldReader<u8, LEN_A>);
 impl LEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LEN_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +156,7 @@ impl From<SKIPADDR_A> for u8 {
 #[doc = "Field `SKIPADDR` reader - Include or exclude packet address field out of CRC calculation."]
 pub struct SKIPADDR_R(crate::FieldReader<u8, SKIPADDR_A>);
 impl SKIPADDR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SKIPADDR_R(crate::FieldReader::new(bits))
     }

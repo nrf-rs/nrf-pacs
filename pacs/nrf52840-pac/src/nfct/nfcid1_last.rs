@@ -37,6 +37,7 @@ impl From<crate::W<NFCID1_LAST_SPEC>> for W {
 #[doc = "Field `NFCID1_Z` reader - NFCID1 byte Z (very last byte sent)"]
 pub struct NFCID1_Z_R(crate::FieldReader<u8, u8>);
 impl NFCID1_Z_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NFCID1_Z_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> NFCID1_Z_W<'a> {
 #[doc = "Field `NFCID1_Y` reader - NFCID1 byte Y"]
 pub struct NFCID1_Y_R(crate::FieldReader<u8, u8>);
 impl NFCID1_Y_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NFCID1_Y_R(crate::FieldReader::new(bits))
     }
@@ -89,6 +91,7 @@ impl<'a> NFCID1_Y_W<'a> {
 #[doc = "Field `NFCID1_X` reader - NFCID1 byte X"]
 pub struct NFCID1_X_R(crate::FieldReader<u8, u8>);
 impl NFCID1_X_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NFCID1_X_R(crate::FieldReader::new(bits))
     }
@@ -115,6 +118,7 @@ impl<'a> NFCID1_X_W<'a> {
 #[doc = "Field `NFCID1_W` reader - NFCID1 byte W"]
 pub struct NFCID1_W_R(crate::FieldReader<u8, u8>);
 impl NFCID1_W_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NFCID1_W_R(crate::FieldReader::new(bits))
     }

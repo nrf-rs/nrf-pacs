@@ -16,6 +16,7 @@ impl From<crate::R<DMISS_SPEC>> for R {
 #[doc = "Field `MISSES` reader - Number of data cache misses"]
 pub struct MISSES_R(crate::FieldReader<u32, u32>);
 impl MISSES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         MISSES_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Number of data cache misses"]
     #[inline(always)]
     pub fn misses(&self) -> MISSES_R {
-        MISSES_R::new((self.bits & 0xffff_ffff) as u32)
+        MISSES_R::new(self.bits)
     }
 }
 #[doc = "Description cluster: Data fetch cache miss counter for cache region n, where n=0 means Flash and n=1 means XIP.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmiss](index.html) module"]

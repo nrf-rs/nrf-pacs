@@ -16,6 +16,7 @@ impl From<crate::R<CONFIGID_SPEC>> for R {
 #[doc = "Field `HWID` reader - Identification number for the HW"]
 pub struct HWID_R(crate::FieldReader<u16, u16>);
 impl HWID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         HWID_R(crate::FieldReader::new(bits))
     }

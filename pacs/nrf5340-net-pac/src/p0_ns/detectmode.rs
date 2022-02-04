@@ -51,6 +51,7 @@ impl From<DETECTMODE_A> for bool {
 #[doc = "Field `DETECTMODE` reader - Select between default DETECT signal behavior and LDETECT mode"]
 pub struct DETECTMODE_R(crate::FieldReader<bool, DETECTMODE_A>);
 impl DETECTMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DETECTMODE_R(crate::FieldReader::new(bits))
     }

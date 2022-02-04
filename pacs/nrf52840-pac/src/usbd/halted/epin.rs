@@ -31,6 +31,7 @@ impl From<GETSTATUS_A> for u16 {
 #[doc = "Field `GETSTATUS` reader - IN endpoint halted status. Can be used as is as response to a GetStatus() request to endpoint."]
 pub struct GETSTATUS_R(crate::FieldReader<u16, GETSTATUS_A>);
 impl GETSTATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         GETSTATUS_R(crate::FieldReader::new(bits))
     }

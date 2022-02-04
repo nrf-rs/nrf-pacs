@@ -54,6 +54,7 @@ impl From<WEN_A> for u8 {
 #[doc = "Field `WEN` reader - Program memory access mode. It is strongly recommended to activate erase and write modes only when they are actively used."]
 pub struct WEN_R(crate::FieldReader<u8, WEN_A>);
 impl WEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         WEN_R(crate::FieldReader::new(bits))
     }

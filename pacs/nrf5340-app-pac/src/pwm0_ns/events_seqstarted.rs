@@ -51,6 +51,7 @@ impl From<EVENTS_SEQSTARTED_A> for bool {
 #[doc = "Field `EVENTS_SEQSTARTED` reader - First PWM period started on sequence n"]
 pub struct EVENTS_SEQSTARTED_R(crate::FieldReader<bool, EVENTS_SEQSTARTED_A>);
 impl EVENTS_SEQSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_SEQSTARTED_R(crate::FieldReader::new(bits))
     }

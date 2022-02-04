@@ -37,6 +37,7 @@ impl From<crate::W<DISABLE_SPEC>> for W {
 #[doc = "Field `KEY` reader - The ERASEALL sequence is initiated if the value of the KEY fields are non-zero and the KEY fields match on both the CPU and debugger sides."]
 pub struct KEY_R(crate::FieldReader<u32, u32>);
 impl KEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         KEY_R(crate::FieldReader::new(bits))
     }
@@ -56,7 +57,7 @@ impl<'a> KEY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value;
         self.w
     }
 }
@@ -64,7 +65,7 @@ impl R {
     #[doc = "Bits 0:31 - The ERASEALL sequence is initiated if the value of the KEY fields are non-zero and the KEY fields match on both the CPU and debugger sides."]
     #[inline(always)]
     pub fn key(&self) -> KEY_R {
-        KEY_R::new((self.bits & 0xffff_ffff) as u32)
+        KEY_R::new(self.bits)
     }
 }
 impl W {

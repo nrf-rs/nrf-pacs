@@ -16,6 +16,7 @@ impl From<crate::R<DEVID_SPEC>> for R {
 #[doc = "Field `EXTMUXNUM` reader - Indicates the number of multiplexers available on Trigger Inputs and Trigger Outputs that are using asicctl. The default value of 0b00000 indicates that no multiplexing is present."]
 pub struct EXTMUXNUM_R(crate::FieldReader<u8, u8>);
 impl EXTMUXNUM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         EXTMUXNUM_R(crate::FieldReader::new(bits))
     }
@@ -30,6 +31,7 @@ impl core::ops::Deref for EXTMUXNUM_R {
 #[doc = "Field `NUMTRIG` reader - Number of ECT triggers available."]
 pub struct NUMTRIG_R(crate::FieldReader<u8, u8>);
 impl NUMTRIG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NUMTRIG_R(crate::FieldReader::new(bits))
     }
@@ -44,6 +46,7 @@ impl core::ops::Deref for NUMTRIG_R {
 #[doc = "Field `NUMCH` reader - Number of ECT channels available."]
 pub struct NUMCH_R(crate::FieldReader<u8, u8>);
 impl NUMCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NUMCH_R(crate::FieldReader::new(bits))
     }

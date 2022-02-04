@@ -53,6 +53,7 @@ impl From<SEQEND0_STOP_A> for bool {
 event and STOP task"]
 pub struct SEQEND0_STOP_R(crate::FieldReader<bool, SEQEND0_STOP_A>);
 impl SEQEND0_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEQEND0_STOP_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +140,7 @@ impl From<SEQEND1_STOP_A> for bool {
 event and STOP task"]
 pub struct SEQEND1_STOP_R(crate::FieldReader<bool, SEQEND1_STOP_A>);
 impl SEQEND1_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEQEND1_STOP_R(crate::FieldReader::new(bits))
     }
@@ -225,6 +227,7 @@ impl From<LOOPSDONE_SEQSTART0_A> for bool {
 task"]
 pub struct LOOPSDONE_SEQSTART0_R(crate::FieldReader<bool, LOOPSDONE_SEQSTART0_A>);
 impl LOOPSDONE_SEQSTART0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOOPSDONE_SEQSTART0_R(crate::FieldReader::new(bits))
     }
@@ -311,6 +314,7 @@ impl From<LOOPSDONE_SEQSTART1_A> for bool {
 task"]
 pub struct LOOPSDONE_SEQSTART1_R(crate::FieldReader<bool, LOOPSDONE_SEQSTART1_A>);
 impl LOOPSDONE_SEQSTART1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOOPSDONE_SEQSTART1_R(crate::FieldReader::new(bits))
     }
@@ -395,6 +399,7 @@ impl From<LOOPSDONE_STOP_A> for bool {
 #[doc = "Field `LOOPSDONE_STOP` reader - Shortcut between LOOPSDONE event and STOP task"]
 pub struct LOOPSDONE_STOP_R(crate::FieldReader<bool, LOOPSDONE_STOP_A>);
 impl LOOPSDONE_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOOPSDONE_STOP_R(crate::FieldReader::new(bits))
     }

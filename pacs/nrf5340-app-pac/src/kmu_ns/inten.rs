@@ -51,6 +51,7 @@ impl From<KEYSLOT_PUSHED_A> for bool {
 #[doc = "Field `KEYSLOT_PUSHED` reader - Enable or disable interrupt for event KEYSLOT_PUSHED"]
 pub struct KEYSLOT_PUSHED_R(crate::FieldReader<bool, KEYSLOT_PUSHED_A>);
 impl KEYSLOT_PUSHED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         KEYSLOT_PUSHED_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<KEYSLOT_REVOKED_A> for bool {
 #[doc = "Field `KEYSLOT_REVOKED` reader - Enable or disable interrupt for event KEYSLOT_REVOKED"]
 pub struct KEYSLOT_REVOKED_R(crate::FieldReader<bool, KEYSLOT_REVOKED_A>);
 impl KEYSLOT_REVOKED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         KEYSLOT_REVOKED_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<KEYSLOT_ERROR_A> for bool {
 #[doc = "Field `KEYSLOT_ERROR` reader - Enable or disable interrupt for event KEYSLOT_ERROR"]
 pub struct KEYSLOT_ERROR_R(crate::FieldReader<bool, KEYSLOT_ERROR_A>);
 impl KEYSLOT_ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         KEYSLOT_ERROR_R(crate::FieldReader::new(bits))
     }

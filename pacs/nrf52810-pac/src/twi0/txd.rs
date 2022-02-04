@@ -37,6 +37,7 @@ impl From<crate::W<TXD_SPEC>> for W {
 #[doc = "Field `TXD` reader - TXD register"]
 pub struct TXD_R(crate::FieldReader<u8, u8>);
 impl TXD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TXD_R(crate::FieldReader::new(bits))
     }

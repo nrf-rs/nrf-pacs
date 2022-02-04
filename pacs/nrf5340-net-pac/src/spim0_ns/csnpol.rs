@@ -51,6 +51,7 @@ impl From<CSNPOL_A> for bool {
 #[doc = "Field `CSNPOL` reader - Polarity of CSN output"]
 pub struct CSNPOL_R(crate::FieldReader<bool, CSNPOL_A>);
 impl CSNPOL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CSNPOL_R(crate::FieldReader::new(bits))
     }

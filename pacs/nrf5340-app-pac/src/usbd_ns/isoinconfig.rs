@@ -51,6 +51,7 @@ impl From<RESPONSE_A> for bool {
 #[doc = "Field `RESPONSE` reader - Controls the response of the ISO IN endpoint to an IN token when no data is ready to be sent"]
 pub struct RESPONSE_R(crate::FieldReader<bool, RESPONSE_A>);
 impl RESPONSE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESPONSE_R(crate::FieldReader::new(bits))
     }

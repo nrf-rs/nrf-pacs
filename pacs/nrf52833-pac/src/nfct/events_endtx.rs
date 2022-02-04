@@ -51,6 +51,7 @@ impl From<EVENTS_ENDTX_A> for bool {
 #[doc = "Field `EVENTS_ENDTX` reader - Transmission of data in RAM has ended, and EasyDMA has ended accessing the TX buffer"]
 pub struct EVENTS_ENDTX_R(crate::FieldReader<bool, EVENTS_ENDTX_A>);
 impl EVENTS_ENDTX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ENDTX_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<NIRK_SPEC>> for W {
 #[doc = "Field `NIRK` reader - Number of Identity root keys available in the IRK data structure"]
 pub struct NIRK_R(crate::FieldReader<u8, u8>);
 impl NIRK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NIRK_R(crate::FieldReader::new(bits))
     }

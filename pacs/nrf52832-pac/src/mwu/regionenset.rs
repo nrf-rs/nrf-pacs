@@ -51,6 +51,7 @@ impl From<RGN0WA_A> for bool {
 #[doc = "Field `RGN0WA` reader - Enable write access watch in region\\[0\\]"]
 pub struct RGN0WA_R(crate::FieldReader<bool, RGN0WA_A>);
 impl RGN0WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RGN0WA_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<RGN0RA_A> for bool {
 #[doc = "Field `RGN0RA` reader - Enable read access watch in region\\[0\\]"]
 pub struct RGN0RA_R(crate::FieldReader<bool, RGN0RA_A>);
 impl RGN0RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RGN0RA_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<RGN1WA_A> for bool {
 #[doc = "Field `RGN1WA` reader - Enable write access watch in region\\[1\\]"]
 pub struct RGN1WA_R(crate::FieldReader<bool, RGN1WA_A>);
 impl RGN1WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RGN1WA_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<RGN1RA_A> for bool {
 #[doc = "Field `RGN1RA` reader - Enable read access watch in region\\[1\\]"]
 pub struct RGN1RA_R(crate::FieldReader<bool, RGN1RA_A>);
 impl RGN1RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RGN1RA_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +415,7 @@ impl From<RGN2WA_A> for bool {
 #[doc = "Field `RGN2WA` reader - Enable write access watch in region\\[2\\]"]
 pub struct RGN2WA_R(crate::FieldReader<bool, RGN2WA_A>);
 impl RGN2WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RGN2WA_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +506,7 @@ impl From<RGN2RA_A> for bool {
 #[doc = "Field `RGN2RA` reader - Enable read access watch in region\\[2\\]"]
 pub struct RGN2RA_R(crate::FieldReader<bool, RGN2RA_A>);
 impl RGN2RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RGN2RA_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +597,7 @@ impl From<RGN3WA_A> for bool {
 #[doc = "Field `RGN3WA` reader - Enable write access watch in region\\[3\\]"]
 pub struct RGN3WA_R(crate::FieldReader<bool, RGN3WA_A>);
 impl RGN3WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RGN3WA_R(crate::FieldReader::new(bits))
     }
@@ -681,6 +688,7 @@ impl From<RGN3RA_A> for bool {
 #[doc = "Field `RGN3RA` reader - Enable read access watch in region\\[3\\]"]
 pub struct RGN3RA_R(crate::FieldReader<bool, RGN3RA_A>);
 impl RGN3RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RGN3RA_R(crate::FieldReader::new(bits))
     }
@@ -771,6 +779,7 @@ impl From<PRGN0WA_A> for bool {
 #[doc = "Field `PRGN0WA` reader - Enable write access watch in PREGION\\[0\\]"]
 pub struct PRGN0WA_R(crate::FieldReader<bool, PRGN0WA_A>);
 impl PRGN0WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PRGN0WA_R(crate::FieldReader::new(bits))
     }
@@ -861,6 +870,7 @@ impl From<PRGN0RA_A> for bool {
 #[doc = "Field `PRGN0RA` reader - Enable read access watch in PREGION\\[0\\]"]
 pub struct PRGN0RA_R(crate::FieldReader<bool, PRGN0RA_A>);
 impl PRGN0RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PRGN0RA_R(crate::FieldReader::new(bits))
     }
@@ -951,6 +961,7 @@ impl From<PRGN1WA_A> for bool {
 #[doc = "Field `PRGN1WA` reader - Enable write access watch in PREGION\\[1\\]"]
 pub struct PRGN1WA_R(crate::FieldReader<bool, PRGN1WA_A>);
 impl PRGN1WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PRGN1WA_R(crate::FieldReader::new(bits))
     }
@@ -1041,6 +1052,7 @@ impl From<PRGN1RA_A> for bool {
 #[doc = "Field `PRGN1RA` reader - Enable read access watch in PREGION\\[1\\]"]
 pub struct PRGN1RA_R(crate::FieldReader<bool, PRGN1RA_A>);
 impl PRGN1RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PRGN1RA_R(crate::FieldReader::new(bits))
     }

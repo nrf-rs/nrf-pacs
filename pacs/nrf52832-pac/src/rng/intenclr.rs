@@ -51,6 +51,7 @@ impl From<VALRDY_A> for bool {
 #[doc = "Field `VALRDY` reader - Write '1' to Disable interrupt for VALRDY event"]
 pub struct VALRDY_R(crate::FieldReader<bool, VALRDY_A>);
 impl VALRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VALRDY_R(crate::FieldReader::new(bits))
     }

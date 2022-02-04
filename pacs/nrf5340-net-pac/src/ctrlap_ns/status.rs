@@ -30,6 +30,7 @@ impl From<UICRAPPROTECT_A> for bool {
 #[doc = "Field `UICRAPPROTECT` reader - Status bit for UICR part of access port protection at last reset."]
 pub struct UICRAPPROTECT_R(crate::FieldReader<bool, UICRAPPROTECT_A>);
 impl UICRAPPROTECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UICRAPPROTECT_R(crate::FieldReader::new(bits))
     }
@@ -76,6 +77,7 @@ impl From<DBGIFACEMODE_A> for bool {
 #[doc = "Field `DBGIFACEMODE` reader - Status bit for device debug interface mode"]
 pub struct DBGIFACEMODE_R(crate::FieldReader<bool, DBGIFACEMODE_A>);
 impl DBGIFACEMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DBGIFACEMODE_R(crate::FieldReader::new(bits))
     }

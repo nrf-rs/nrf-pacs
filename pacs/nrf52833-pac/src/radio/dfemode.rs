@@ -54,6 +54,7 @@ impl From<DFEOPMODE_A> for u8 {
 #[doc = "Field `DFEOPMODE` reader - Direction finding operation mode"]
 pub struct DFEOPMODE_R(crate::FieldReader<u8, DFEOPMODE_A>);
 impl DFEOPMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DFEOPMODE_R(crate::FieldReader::new(bits))
     }

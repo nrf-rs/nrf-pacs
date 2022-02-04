@@ -64,6 +64,7 @@ impl From<TXPOWER_A> for u8 {
 #[doc = "Field `TXPOWER` reader - Radio output power. Decision point: TXEN task."]
 pub struct TXPOWER_R(crate::FieldReader<u8, TXPOWER_A>);
 impl TXPOWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TXPOWER_R(crate::FieldReader::new(bits))
     }

@@ -56,6 +56,7 @@ impl From<LOAD_A> for u8 {
 #[doc = "Field `LOAD` reader - How a sequence is read from RAM and spread to the compare register"]
 pub struct LOAD_R(crate::FieldReader<u8, LOAD_A>);
 impl LOAD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LOAD_R(crate::FieldReader::new(bits))
     }
@@ -152,6 +153,7 @@ impl From<MODE_A> for bool {
 #[doc = "Field `MODE` reader - Selects source for advancing the active sequence"]
 pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }

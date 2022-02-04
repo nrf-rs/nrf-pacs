@@ -16,6 +16,7 @@ impl From<crate::R<DEVARCH_SPEC>> for R {
 #[doc = "Field `Architecture` reader - Contains the CTI device architecture."]
 pub struct ARCHITECTURE_R(crate::FieldReader<bool, bool>);
 impl ARCHITECTURE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ARCHITECTURE_R(crate::FieldReader::new(bits))
     }

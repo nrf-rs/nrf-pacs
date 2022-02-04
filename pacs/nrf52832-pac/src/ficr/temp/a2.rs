@@ -16,6 +16,7 @@ impl From<crate::R<A2_SPEC>> for R {
 #[doc = "Field `A` reader - A (slope definition) register."]
 pub struct A_R(crate::FieldReader<u16, u16>);
 impl A_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         A_R(crate::FieldReader::new(bits))
     }

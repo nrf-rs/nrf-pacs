@@ -51,6 +51,7 @@ impl From<LFXODEBOUNCE_A> for bool {
 #[doc = "Field `LFXODEBOUNCE` reader - LFXO debounce time."]
 pub struct LFXODEBOUNCE_R(crate::FieldReader<bool, LFXODEBOUNCE_A>);
 impl LFXODEBOUNCE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LFXODEBOUNCE_R(crate::FieldReader::new(bits))
     }

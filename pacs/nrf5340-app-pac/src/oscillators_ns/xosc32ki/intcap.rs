@@ -56,6 +56,7 @@ impl From<INTCAP_A> for u8 {
 #[doc = "Field `INTCAP` reader - Control usage of internal load capacitors"]
 pub struct INTCAP_R(crate::FieldReader<u8, INTCAP_A>);
 impl INTCAP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INTCAP_R(crate::FieldReader::new(bits))
     }

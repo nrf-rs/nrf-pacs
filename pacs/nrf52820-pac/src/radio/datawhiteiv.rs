@@ -37,6 +37,7 @@ impl From<crate::W<DATAWHITEIV_SPEC>> for W {
 #[doc = "Field `DATAWHITEIV` reader - Data whitening initial value. Bit 6 is hardwired to '1', writing '0' to it has no effect, and it will always be read back and used by the device as '1'."]
 pub struct DATAWHITEIV_R(crate::FieldReader<u8, u8>);
 impl DATAWHITEIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DATAWHITEIV_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<SELRES_SPEC>> for W {
 #[doc = "Field `RFU10` reader - Reserved for future use. Shall be 0."]
 pub struct RFU10_R(crate::FieldReader<u8, u8>);
 impl RFU10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RFU10_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +78,7 @@ impl From<CASCADE_A> for bool {
 #[doc = "Field `CASCADE` reader - Cascade bit (controlled by hardware, write has no effect)"]
 pub struct CASCADE_R(crate::FieldReader<bool, CASCADE_A>);
 impl CASCADE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CASCADE_R(crate::FieldReader::new(bits))
     }
@@ -146,6 +148,7 @@ impl<'a> CASCADE_W<'a> {
 #[doc = "Field `RFU43` reader - Reserved for future use. Shall be 0."]
 pub struct RFU43_R(crate::FieldReader<u8, u8>);
 impl RFU43_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RFU43_R(crate::FieldReader::new(bits))
     }
@@ -172,6 +175,7 @@ impl<'a> RFU43_W<'a> {
 #[doc = "Field `PROTOCOL` reader - Protocol as defined by the b7:b6 of SEL_RES response in the NFC Forum, NFC Digital Protocol Technical Specification"]
 pub struct PROTOCOL_R(crate::FieldReader<u8, u8>);
 impl PROTOCOL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PROTOCOL_R(crate::FieldReader::new(bits))
     }
@@ -198,6 +202,7 @@ impl<'a> PROTOCOL_W<'a> {
 #[doc = "Field `RFU7` reader - Reserved for future use. Shall be 0."]
 pub struct RFU7_R(crate::FieldReader<bool, bool>);
 impl RFU7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RFU7_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<RECEIVE0_A> for bool {
 #[doc = "Field `RECEIVE0` reader - Write '1' to disable interrupt for event RECEIVE\\[0\\]"]
 pub struct RECEIVE0_R(crate::FieldReader<bool, RECEIVE0_A>);
 impl RECEIVE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE0_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<RECEIVE1_A> for bool {
 #[doc = "Field `RECEIVE1` reader - Write '1' to disable interrupt for event RECEIVE\\[1\\]"]
 pub struct RECEIVE1_R(crate::FieldReader<bool, RECEIVE1_A>);
 impl RECEIVE1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE1_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<RECEIVE2_A> for bool {
 #[doc = "Field `RECEIVE2` reader - Write '1' to disable interrupt for event RECEIVE\\[2\\]"]
 pub struct RECEIVE2_R(crate::FieldReader<bool, RECEIVE2_A>);
 impl RECEIVE2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE2_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<RECEIVE3_A> for bool {
 #[doc = "Field `RECEIVE3` reader - Write '1' to disable interrupt for event RECEIVE\\[3\\]"]
 pub struct RECEIVE3_R(crate::FieldReader<bool, RECEIVE3_A>);
 impl RECEIVE3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE3_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +415,7 @@ impl From<RECEIVE4_A> for bool {
 #[doc = "Field `RECEIVE4` reader - Write '1' to disable interrupt for event RECEIVE\\[4\\]"]
 pub struct RECEIVE4_R(crate::FieldReader<bool, RECEIVE4_A>);
 impl RECEIVE4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE4_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +506,7 @@ impl From<RECEIVE5_A> for bool {
 #[doc = "Field `RECEIVE5` reader - Write '1' to disable interrupt for event RECEIVE\\[5\\]"]
 pub struct RECEIVE5_R(crate::FieldReader<bool, RECEIVE5_A>);
 impl RECEIVE5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE5_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +597,7 @@ impl From<RECEIVE6_A> for bool {
 #[doc = "Field `RECEIVE6` reader - Write '1' to disable interrupt for event RECEIVE\\[6\\]"]
 pub struct RECEIVE6_R(crate::FieldReader<bool, RECEIVE6_A>);
 impl RECEIVE6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE6_R(crate::FieldReader::new(bits))
     }
@@ -681,6 +688,7 @@ impl From<RECEIVE7_A> for bool {
 #[doc = "Field `RECEIVE7` reader - Write '1' to disable interrupt for event RECEIVE\\[7\\]"]
 pub struct RECEIVE7_R(crate::FieldReader<bool, RECEIVE7_A>);
 impl RECEIVE7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE7_R(crate::FieldReader::new(bits))
     }
@@ -771,6 +779,7 @@ impl From<RECEIVE8_A> for bool {
 #[doc = "Field `RECEIVE8` reader - Write '1' to disable interrupt for event RECEIVE\\[8\\]"]
 pub struct RECEIVE8_R(crate::FieldReader<bool, RECEIVE8_A>);
 impl RECEIVE8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE8_R(crate::FieldReader::new(bits))
     }
@@ -861,6 +870,7 @@ impl From<RECEIVE9_A> for bool {
 #[doc = "Field `RECEIVE9` reader - Write '1' to disable interrupt for event RECEIVE\\[9\\]"]
 pub struct RECEIVE9_R(crate::FieldReader<bool, RECEIVE9_A>);
 impl RECEIVE9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE9_R(crate::FieldReader::new(bits))
     }
@@ -951,6 +961,7 @@ impl From<RECEIVE10_A> for bool {
 #[doc = "Field `RECEIVE10` reader - Write '1' to disable interrupt for event RECEIVE\\[10\\]"]
 pub struct RECEIVE10_R(crate::FieldReader<bool, RECEIVE10_A>);
 impl RECEIVE10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE10_R(crate::FieldReader::new(bits))
     }
@@ -1041,6 +1052,7 @@ impl From<RECEIVE11_A> for bool {
 #[doc = "Field `RECEIVE11` reader - Write '1' to disable interrupt for event RECEIVE\\[11\\]"]
 pub struct RECEIVE11_R(crate::FieldReader<bool, RECEIVE11_A>);
 impl RECEIVE11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE11_R(crate::FieldReader::new(bits))
     }
@@ -1131,6 +1143,7 @@ impl From<RECEIVE12_A> for bool {
 #[doc = "Field `RECEIVE12` reader - Write '1' to disable interrupt for event RECEIVE\\[12\\]"]
 pub struct RECEIVE12_R(crate::FieldReader<bool, RECEIVE12_A>);
 impl RECEIVE12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE12_R(crate::FieldReader::new(bits))
     }
@@ -1221,6 +1234,7 @@ impl From<RECEIVE13_A> for bool {
 #[doc = "Field `RECEIVE13` reader - Write '1' to disable interrupt for event RECEIVE\\[13\\]"]
 pub struct RECEIVE13_R(crate::FieldReader<bool, RECEIVE13_A>);
 impl RECEIVE13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE13_R(crate::FieldReader::new(bits))
     }
@@ -1311,6 +1325,7 @@ impl From<RECEIVE14_A> for bool {
 #[doc = "Field `RECEIVE14` reader - Write '1' to disable interrupt for event RECEIVE\\[14\\]"]
 pub struct RECEIVE14_R(crate::FieldReader<bool, RECEIVE14_A>);
 impl RECEIVE14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE14_R(crate::FieldReader::new(bits))
     }
@@ -1401,6 +1416,7 @@ impl From<RECEIVE15_A> for bool {
 #[doc = "Field `RECEIVE15` reader - Write '1' to disable interrupt for event RECEIVE\\[15\\]"]
 pub struct RECEIVE15_R(crate::FieldReader<bool, RECEIVE15_A>);
 impl RECEIVE15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RECEIVE15_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<TIMEOUT_A> for bool {
 #[doc = "Field `TIMEOUT` reader - Enable interrupt on TIMEOUT event."]
 pub struct TIMEOUT_R(crate::FieldReader<bool, TIMEOUT_A>);
 impl TIMEOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TIMEOUT_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<POF_A> for bool {
 #[doc = "Field `POF` reader - Enable or disable power-fail comparator"]
 pub struct POF_R(crate::FieldReader<bool, POF_A>);
 impl POF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POF_R(crate::FieldReader::new(bits))
     }
@@ -151,6 +152,7 @@ impl From<THRESHOLD_A> for u8 {
 #[doc = "Field `THRESHOLD` reader - Power-fail comparator threshold setting"]
 pub struct THRESHOLD_R(crate::FieldReader<u8, THRESHOLD_A>);
 impl THRESHOLD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         THRESHOLD_R(crate::FieldReader::new(bits))
     }
@@ -342,6 +344,7 @@ impl From<THRESHOLDVDDH_A> for u8 {
 #[doc = "Field `THRESHOLDVDDH` reader - Power-fail comparator threshold setting for voltage supply on VDDH"]
 pub struct THRESHOLDVDDH_R(crate::FieldReader<u8, THRESHOLDVDDH_A>);
 impl THRESHOLDVDDH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         THRESHOLDVDDH_R(crate::FieldReader::new(bits))
     }

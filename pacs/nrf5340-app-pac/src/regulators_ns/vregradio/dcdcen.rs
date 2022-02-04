@@ -51,6 +51,7 @@ impl From<DCDCEN_A> for bool {
 #[doc = "Field `DCDCEN` reader - Enable or disable DC/DC converter"]
 pub struct DCDCEN_R(crate::FieldReader<bool, DCDCEN_A>);
 impl DCDCEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DCDCEN_R(crate::FieldReader::new(bits))
     }

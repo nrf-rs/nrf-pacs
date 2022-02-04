@@ -29,6 +29,7 @@ impl From<CMOD_A> for u8 {
 #[doc = "Field `CMOD` reader - Customer Modified. Indicates whether the customer has modified the behavior of the component. In most cases, this field is 0b0000. Customers change this value when they make authorized modifications to this component."]
 pub struct CMOD_R(crate::FieldReader<u8, CMOD_A>);
 impl CMOD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CMOD_R(crate::FieldReader::new(bits))
     }
@@ -69,6 +70,7 @@ impl From<REVAND_A> for u8 {
 #[doc = "Field `REVAND` reader - Indicates minor errata fixes specific to the revision of the component being used, for example metal fixes after implementation. In most cases, this field is 0b0000. Arm recommends that the component designers ensure that a metal fix can change this field if required, for example, by driving it from registers that reset to 0b0000."]
 pub struct REVAND_R(crate::FieldReader<u8, REVAND_A>);
 impl REVAND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REVAND_R(crate::FieldReader::new(bits))
     }

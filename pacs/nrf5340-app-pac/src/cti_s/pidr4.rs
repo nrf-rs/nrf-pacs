@@ -29,6 +29,7 @@ impl From<DES_2_A> for u8 {
 #[doc = "Field `DES_2` reader - Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component."]
 pub struct DES_2_R(crate::FieldReader<u8, DES_2_A>);
 impl DES_2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DES_2_R(crate::FieldReader::new(bits))
     }
@@ -56,6 +57,7 @@ impl core::ops::Deref for DES_2_R {
 #[doc = "Field `SIZE` reader - Always 0b0000. Indicates that the device only occupies 4KB of memory."]
 pub struct SIZE_R(crate::FieldReader<u8, u8>);
 impl SIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SIZE_R(crate::FieldReader::new(bits))
     }

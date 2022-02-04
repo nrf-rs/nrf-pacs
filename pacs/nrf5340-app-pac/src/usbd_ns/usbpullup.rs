@@ -51,6 +51,7 @@ impl From<CONNECT_A> for bool {
 #[doc = "Field `CONNECT` reader - Control of the USB pull-up on the D+ line"]
 pub struct CONNECT_R(crate::FieldReader<bool, CONNECT_A>);
 impl CONNECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CONNECT_R(crate::FieldReader::new(bits))
     }

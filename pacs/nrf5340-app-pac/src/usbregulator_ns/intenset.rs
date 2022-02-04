@@ -51,6 +51,7 @@ impl From<USBDETECTED_A> for bool {
 #[doc = "Field `USBDETECTED` reader - Write '1' to enable interrupt for event USBDETECTED"]
 pub struct USBDETECTED_R(crate::FieldReader<bool, USBDETECTED_A>);
 impl USBDETECTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBDETECTED_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<USBREMOVED_A> for bool {
 #[doc = "Field `USBREMOVED` reader - Write '1' to enable interrupt for event USBREMOVED"]
 pub struct USBREMOVED_R(crate::FieldReader<bool, USBREMOVED_A>);
 impl USBREMOVED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBREMOVED_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<USBPWRRDY_A> for bool {
 #[doc = "Field `USBPWRRDY` reader - Write '1' to enable interrupt for event USBPWRRDY"]
 pub struct USBPWRRDY_R(crate::FieldReader<bool, USBPWRRDY_A>);
 impl USBPWRRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBPWRRDY_R(crate::FieldReader::new(bits))
     }

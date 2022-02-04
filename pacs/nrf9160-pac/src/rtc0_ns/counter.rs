@@ -16,6 +16,7 @@ impl From<crate::R<COUNTER_SPEC>> for R {
 #[doc = "Field `COUNTER` reader - Counter value"]
 pub struct COUNTER_R(crate::FieldReader<u32, u32>);
 impl COUNTER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         COUNTER_R(crate::FieldReader::new(bits))
     }

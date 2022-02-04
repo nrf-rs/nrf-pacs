@@ -51,6 +51,7 @@ impl From<VALRDY_STOP_A> for bool {
 #[doc = "Field `VALRDY_STOP` reader - Shortcut between VALRDY event and STOP task."]
 pub struct VALRDY_STOP_R(crate::FieldReader<bool, VALRDY_STOP_A>);
 impl VALRDY_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VALRDY_STOP_R(crate::FieldReader::new(bits))
     }

@@ -30,6 +30,7 @@ impl From<FIELDPRESENT_A> for bool {
 #[doc = "Field `FIELDPRESENT` reader - Indicates if a valid field is present. Available only in the activated state."]
 pub struct FIELDPRESENT_R(crate::FieldReader<bool, FIELDPRESENT_A>);
 impl FIELDPRESENT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIELDPRESENT_R(crate::FieldReader::new(bits))
     }
@@ -76,6 +77,7 @@ impl From<LOCKDETECT_A> for bool {
 #[doc = "Field `LOCKDETECT` reader - Indicates if the low level has locked to the field"]
 pub struct LOCKDETECT_R(crate::FieldReader<bool, LOCKDETECT_A>);
 impl LOCKDETECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCKDETECT_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<DPMDUR_SPEC>> for W {
 #[doc = "Field `ENTER` reader - Duration needed by external flash to enter DPM. Duration is given as ENTER * 256 * 62.5 ns."]
 pub struct ENTER_R(crate::FieldReader<u16, u16>);
 impl ENTER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         ENTER_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> ENTER_W<'a> {
 #[doc = "Field `EXIT` reader - Duration needed by external flash to exit DPM. Duration is given as EXIT * 256 * 62.5 ns."]
 pub struct EXIT_R(crate::FieldReader<u16, u16>);
 impl EXIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         EXIT_R(crate::FieldReader::new(bits))
     }

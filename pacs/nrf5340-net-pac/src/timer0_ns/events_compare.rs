@@ -53,6 +53,7 @@ impl From<EVENTS_COMPARE_A> for bool {
 match"]
 pub struct EVENTS_COMPARE_R(crate::FieldReader<bool, EVENTS_COMPARE_A>);
 impl EVENTS_COMPARE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_COMPARE_R(crate::FieldReader::new(bits))
     }

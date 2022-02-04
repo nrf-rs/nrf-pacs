@@ -51,6 +51,7 @@ impl From<ALIGN_A> for bool {
 #[doc = "Field `ALIGN` reader - Alignment of sample within a frame."]
 pub struct ALIGN_R(crate::FieldReader<bool, ALIGN_A>);
 impl ALIGN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ALIGN_R(crate::FieldReader::new(bits))
     }

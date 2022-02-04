@@ -51,6 +51,7 @@ impl From<EXTREFSEL_A> for bool {
 #[doc = "Field `EXTREFSEL` reader - External analog reference pin selection."]
 pub struct EXTREFSEL_R(crate::FieldReader<bool, EXTREFSEL_A>);
 impl EXTREFSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EXTREFSEL_R(crate::FieldReader::new(bits))
     }

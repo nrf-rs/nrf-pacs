@@ -37,6 +37,7 @@ impl From<crate::W<SAMPLERATE_SPEC>> for W {
 #[doc = "Field `CC` reader - Capture and compare value. Sample rate is 16 MHz/CC"]
 pub struct CC_R(crate::FieldReader<u16, u16>);
 impl CC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CC_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +78,7 @@ impl From<MODE_A> for bool {
 #[doc = "Field `MODE` reader - Select mode for sample rate control"]
 pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }

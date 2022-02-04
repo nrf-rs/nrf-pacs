@@ -51,6 +51,7 @@ impl From<EVENTS_DEVMATCH_A> for bool {
 #[doc = "Field `EVENTS_DEVMATCH` reader - A device address match occurred on the last received packet"]
 pub struct EVENTS_DEVMATCH_R(crate::FieldReader<bool, EVENTS_DEVMATCH_A>);
 impl EVENTS_DEVMATCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_DEVMATCH_R(crate::FieldReader::new(bits))
     }

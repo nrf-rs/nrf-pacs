@@ -51,6 +51,7 @@ impl From<END_A> for bool {
 #[doc = "Field `END` reader - Write '1' to disable interrupt for event END"]
 pub struct END_R(crate::FieldReader<bool, END_A>);
 impl END_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         END_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<RESOLVED_A> for bool {
 #[doc = "Field `RESOLVED` reader - Write '1' to disable interrupt for event RESOLVED"]
 pub struct RESOLVED_R(crate::FieldReader<bool, RESOLVED_A>);
 impl RESOLVED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESOLVED_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<NOTRESOLVED_A> for bool {
 #[doc = "Field `NOTRESOLVED` reader - Write '1' to disable interrupt for event NOTRESOLVED"]
 pub struct NOTRESOLVED_R(crate::FieldReader<bool, NOTRESOLVED_A>);
 impl NOTRESOLVED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NOTRESOLVED_R(crate::FieldReader::new(bits))
     }

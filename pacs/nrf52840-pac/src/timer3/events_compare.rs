@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_COMPARE_SPEC>> for W {
 #[doc = "Field `EVENTS_COMPARE` reader - "]
 pub struct EVENTS_COMPARE_R(crate::FieldReader<bool, bool>);
 impl EVENTS_COMPARE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_COMPARE_R(crate::FieldReader::new(bits))
     }

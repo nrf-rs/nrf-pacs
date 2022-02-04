@@ -29,6 +29,7 @@ impl From<MAJOR_A> for u8 {
 #[doc = "Field `MAJOR` reader - Major classification of the type of the debug component as specified in the Arm Architecture Specification for this debug and trace component."]
 pub struct MAJOR_R(crate::FieldReader<u8, MAJOR_A>);
 impl MAJOR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MAJOR_R(crate::FieldReader::new(bits))
     }
@@ -69,6 +70,7 @@ impl From<SUB_A> for u8 {
 #[doc = "Field `SUB` reader - Sub-classification of the type of the debug component as specified in the Arm Architecture Specification within the major classification as specified in the MAJOR field."]
 pub struct SUB_R(crate::FieldReader<u8, SUB_A>);
 impl SUB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SUB_R(crate::FieldReader::new(bits))
     }

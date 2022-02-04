@@ -37,6 +37,7 @@ impl From<crate::W<PACKETPTR_SPEC>> for W {
 #[doc = "Field `PACKETPTR` reader - Packet pointer"]
 pub struct PACKETPTR_R(crate::FieldReader<u32, u32>);
 impl PACKETPTR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         PACKETPTR_R(crate::FieldReader::new(bits))
     }
@@ -56,7 +57,7 @@ impl<'a> PACKETPTR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value;
         self.w
     }
 }
@@ -64,7 +65,7 @@ impl R {
     #[doc = "Bits 0:31 - Packet pointer"]
     #[inline(always)]
     pub fn packetptr(&self) -> PACKETPTR_R {
-        PACKETPTR_R::new((self.bits & 0xffff_ffff) as u32)
+        PACKETPTR_R::new(self.bits)
     }
 }
 impl W {

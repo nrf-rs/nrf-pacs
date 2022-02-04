@@ -38,6 +38,7 @@ impl From<crate::W<SUBSCRIBE_CLR_SPEC>> for W {
 will subscribe to"]
 pub struct CHIDX_R(crate::FieldReader<u8, u8>);
 impl CHIDX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CHIDX_R(crate::FieldReader::new(bits))
     }
@@ -79,6 +80,7 @@ impl From<EN_A> for bool {
 #[doc = "Field `EN` reader - "]
 pub struct EN_R(crate::FieldReader<bool, EN_A>);
 impl EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EN_R(crate::FieldReader::new(bits))
     }

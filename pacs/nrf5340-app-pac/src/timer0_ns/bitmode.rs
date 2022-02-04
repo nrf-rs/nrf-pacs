@@ -56,6 +56,7 @@ impl From<BITMODE_A> for u8 {
 #[doc = "Field `BITMODE` reader - Timer bit width"]
 pub struct BITMODE_R(crate::FieldReader<u8, BITMODE_A>);
 impl BITMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BITMODE_R(crate::FieldReader::new(bits))
     }

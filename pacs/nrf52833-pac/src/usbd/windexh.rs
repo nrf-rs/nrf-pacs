@@ -16,6 +16,7 @@ impl From<crate::R<WINDEXH_SPEC>> for R {
 #[doc = "Field `WINDEXH` reader - SETUP data, byte 5, MSB of wIndex"]
 pub struct WINDEXH_R(crate::FieldReader<u8, u8>);
 impl WINDEXH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         WINDEXH_R(crate::FieldReader::new(bits))
     }

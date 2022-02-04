@@ -37,6 +37,7 @@ impl From<crate::W<ENDDELAY_SPEC>> for W {
 #[doc = "Field `CNT` reader - Time added after the sequence in PWM periods"]
 pub struct CNT_R(crate::FieldReader<u32, u32>);
 impl CNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         CNT_R(crate::FieldReader::new(bits))
     }

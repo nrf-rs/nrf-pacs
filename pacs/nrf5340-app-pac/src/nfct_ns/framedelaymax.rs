@@ -37,6 +37,7 @@ impl From<crate::W<FRAMEDELAYMAX_SPEC>> for W {
 #[doc = "Field `FRAMEDELAYMAX` reader - Maximum frame delay in number of 13.56 MHz clock cycles"]
 pub struct FRAMEDELAYMAX_R(crate::FieldReader<u32, u32>);
 impl FRAMEDELAYMAX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         FRAMEDELAYMAX_R(crate::FieldReader::new(bits))
     }

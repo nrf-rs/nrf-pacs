@@ -16,6 +16,7 @@ impl From<crate::R<TEMP_SPEC>> for R {
 #[doc = "Field `TEMP` reader - Temperature in degC (0.25deg steps)"]
 pub struct TEMP_R(crate::FieldReader<u32, u32>);
 impl TEMP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         TEMP_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Temperature in degC (0.25deg steps)"]
     #[inline(always)]
     pub fn temp(&self) -> TEMP_R {
-        TEMP_R::new((self.bits & 0xffff_ffff) as u32)
+        TEMP_R::new(self.bits)
     }
 }
 #[doc = "Temperature in degC (0.25deg steps)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [temp](index.html) module"]

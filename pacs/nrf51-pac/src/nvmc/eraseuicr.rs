@@ -51,6 +51,7 @@ impl From<ERASEUICR_A> for bool {
 #[doc = "Field `ERASEUICR` reader - It can only be used when all contents of code region 1 are erased."]
 pub struct ERASEUICR_R(crate::FieldReader<bool, ERASEUICR_A>);
 impl ERASEUICR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERASEUICR_R(crate::FieldReader::new(bits))
     }

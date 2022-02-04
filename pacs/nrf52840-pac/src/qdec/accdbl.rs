@@ -16,6 +16,7 @@ impl From<crate::R<ACCDBL_SPEC>> for R {
 #[doc = "Field `ACCDBL` reader - Register accumulating the number of detected double or illegal transitions. ( SAMPLE = 2 )."]
 pub struct ACCDBL_R(crate::FieldReader<u8, u8>);
 impl ACCDBL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ACCDBL_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<EVENTS_SOF_A> for bool {
 #[doc = "Field `EVENTS_SOF` reader - Signals that a SOF (start of frame) condition has been detected on USB lines"]
 pub struct EVENTS_SOF_R(crate::FieldReader<bool, EVENTS_SOF_A>);
 impl EVENTS_SOF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_SOF_R(crate::FieldReader::new(bits))
     }

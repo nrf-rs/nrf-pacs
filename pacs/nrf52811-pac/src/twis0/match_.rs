@@ -16,6 +16,7 @@ impl From<crate::R<MATCH_SPEC>> for R {
 #[doc = "Field `MATCH` reader - Which of the addresses in {ADDRESS} matched the incoming address"]
 pub struct MATCH_R(crate::FieldReader<bool, bool>);
 impl MATCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MATCH_R(crate::FieldReader::new(bits))
     }

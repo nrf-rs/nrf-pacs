@@ -37,6 +37,7 @@ impl From<crate::W<BASE1_SPEC>> for W {
 #[doc = "Field `BASE1` reader - Base address 1"]
 pub struct BASE1_R(crate::FieldReader<u32, u32>);
 impl BASE1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         BASE1_R(crate::FieldReader::new(bits))
     }
@@ -56,7 +57,7 @@ impl<'a> BASE1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value;
         self.w
     }
 }
@@ -64,7 +65,7 @@ impl R {
     #[doc = "Bits 0:31 - Base address 1"]
     #[inline(always)]
     pub fn base1(&self) -> BASE1_R {
-        BASE1_R::new((self.bits & 0xffff_ffff) as u32)
+        BASE1_R::new(self.bits)
     }
 }
 impl W {

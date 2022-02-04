@@ -62,6 +62,7 @@ impl From<VOUT_A> for u8 {
 #[doc = "Field `VOUT` reader - Output voltage from of REG0 regulator stage. The maximum output voltage from this stage is given as VDDH - VEXDIF."]
 pub struct VOUT_R(crate::FieldReader<u8, VOUT_A>);
 impl VOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         VOUT_R(crate::FieldReader::new(bits))
     }

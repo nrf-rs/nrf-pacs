@@ -51,6 +51,7 @@ impl From<EVENTS_STARTED_A> for bool {
 #[doc = "Field `EVENTS_STARTED` reader - The ADC has started"]
 pub struct EVENTS_STARTED_R(crate::FieldReader<bool, EVENTS_STARTED_A>);
 impl EVENTS_STARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_STARTED_R(crate::FieldReader::new(bits))
     }

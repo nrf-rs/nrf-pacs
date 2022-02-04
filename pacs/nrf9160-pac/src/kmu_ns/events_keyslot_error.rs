@@ -51,6 +51,7 @@ impl From<EVENTS_KEYSLOT_ERROR_A> for bool {
 #[doc = "Field `EVENTS_KEYSLOT_ERROR` reader - No key slot selected, no destination address defined, or error during push operation"]
 pub struct EVENTS_KEYSLOT_ERROR_R(crate::FieldReader<bool, EVENTS_KEYSLOT_ERROR_A>);
 impl EVENTS_KEYSLOT_ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_KEYSLOT_ERROR_R(crate::FieldReader::new(bits))
     }

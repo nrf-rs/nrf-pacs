@@ -51,6 +51,7 @@ impl From<STOPPED_A> for bool {
 #[doc = "Field `STOPPED` reader - Enable or disable interrupt for STOPPED event"]
 pub struct STOPPED_R(crate::FieldReader<bool, STOPPED_A>);
 impl STOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STOPPED_R(crate::FieldReader::new(bits))
     }
@@ -136,6 +137,7 @@ impl From<SEQSTARTED0_A> for bool {
 event"]
 pub struct SEQSTARTED0_R(crate::FieldReader<bool, SEQSTARTED0_A>);
 impl SEQSTARTED0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEQSTARTED0_R(crate::FieldReader::new(bits))
     }
@@ -222,6 +224,7 @@ impl From<SEQSTARTED1_A> for bool {
 event"]
 pub struct SEQSTARTED1_R(crate::FieldReader<bool, SEQSTARTED1_A>);
 impl SEQSTARTED1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEQSTARTED1_R(crate::FieldReader::new(bits))
     }
@@ -308,6 +311,7 @@ impl From<SEQEND0_A> for bool {
 event"]
 pub struct SEQEND0_R(crate::FieldReader<bool, SEQEND0_A>);
 impl SEQEND0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEQEND0_R(crate::FieldReader::new(bits))
     }
@@ -394,6 +398,7 @@ impl From<SEQEND1_A> for bool {
 event"]
 pub struct SEQEND1_R(crate::FieldReader<bool, SEQEND1_A>);
 impl SEQEND1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEQEND1_R(crate::FieldReader::new(bits))
     }
@@ -478,6 +483,7 @@ impl From<PWMPERIODEND_A> for bool {
 #[doc = "Field `PWMPERIODEND` reader - Enable or disable interrupt for PWMPERIODEND event"]
 pub struct PWMPERIODEND_R(crate::FieldReader<bool, PWMPERIODEND_A>);
 impl PWMPERIODEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PWMPERIODEND_R(crate::FieldReader::new(bits))
     }
@@ -561,6 +567,7 @@ impl From<LOOPSDONE_A> for bool {
 #[doc = "Field `LOOPSDONE` reader - Enable or disable interrupt for LOOPSDONE event"]
 pub struct LOOPSDONE_R(crate::FieldReader<bool, LOOPSDONE_A>);
 impl LOOPSDONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOOPSDONE_R(crate::FieldReader::new(bits))
     }

@@ -16,6 +16,7 @@ impl From<crate::R<ER_SPEC>> for R {
 #[doc = "Field `ER` reader - Encryption root, word n"]
 pub struct ER_R(crate::FieldReader<u32, u32>);
 impl ER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         ER_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Encryption root, word n"]
     #[inline(always)]
     pub fn er(&self) -> ER_R {
-        ER_R::new((self.bits & 0xffff_ffff) as u32)
+        ER_R::new(self.bits)
     }
 }
 #[doc = "Description collection\\[n\\]: Encryption root, word n\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [er](index.html) module"]

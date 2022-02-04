@@ -51,6 +51,7 @@ impl From<ENDECB_A> for bool {
 #[doc = "Field `ENDECB` reader - Enable interrupt on ENDECB event."]
 pub struct ENDECB_R(crate::FieldReader<bool, ENDECB_A>);
 impl ENDECB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDECB_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<ERRORECB_A> for bool {
 #[doc = "Field `ERRORECB` reader - Enable interrupt on ERRORECB event."]
 pub struct ERRORECB_R(crate::FieldReader<bool, ERRORECB_A>);
 impl ERRORECB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERRORECB_R(crate::FieldReader::new(bits))
     }

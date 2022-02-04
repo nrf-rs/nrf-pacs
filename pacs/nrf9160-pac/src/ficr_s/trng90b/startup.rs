@@ -16,6 +16,7 @@ impl From<crate::R<STARTUP_SPEC>> for R {
 #[doc = "Field `STARTUP` reader - Amount of bytes for the startup tests"]
 pub struct STARTUP_R(crate::FieldReader<u32, u32>);
 impl STARTUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         STARTUP_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Amount of bytes for the startup tests"]
     #[inline(always)]
     pub fn startup(&self) -> STARTUP_R {
-        STARTUP_R::new((self.bits & 0xffff_ffff) as u32)
+        STARTUP_R::new(self.bits)
     }
 }
 #[doc = "Amount of bytes for the startup tests\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [startup](index.html) module"]

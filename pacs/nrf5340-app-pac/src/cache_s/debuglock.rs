@@ -51,6 +51,7 @@ impl From<DEBUGLOCK_A> for bool {
 #[doc = "Field `DEBUGLOCK` reader - Lock debug mode"]
 pub struct DEBUGLOCK_R(crate::FieldReader<bool, DEBUGLOCK_A>);
 impl DEBUGLOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEBUGLOCK_R(crate::FieldReader::new(bits))
     }

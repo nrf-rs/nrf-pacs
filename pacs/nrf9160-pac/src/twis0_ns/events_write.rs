@@ -51,6 +51,7 @@ impl From<EVENTS_WRITE_A> for bool {
 #[doc = "Field `EVENTS_WRITE` reader - Write command received"]
 pub struct EVENTS_WRITE_R(crate::FieldReader<bool, EVENTS_WRITE_A>);
 impl EVENTS_WRITE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_WRITE_R(crate::FieldReader::new(bits))
     }

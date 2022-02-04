@@ -30,6 +30,7 @@ impl From<STATUS_A> for bool {
 #[doc = "Field `STATUS` reader - Task HFCLKSTART trigger status."]
 pub struct STATUS_R(crate::FieldReader<bool, STATUS_A>);
 impl STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STATUS_R(crate::FieldReader::new(bits))
     }

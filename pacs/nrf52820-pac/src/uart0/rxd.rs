@@ -16,6 +16,7 @@ impl From<crate::R<RXD_SPEC>> for R {
 #[doc = "Field `RXD` reader - RX data received in previous transfers, double buffered"]
 pub struct RXD_R(crate::FieldReader<u8, u8>);
 impl RXD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RXD_R(crate::FieldReader::new(bits))
     }

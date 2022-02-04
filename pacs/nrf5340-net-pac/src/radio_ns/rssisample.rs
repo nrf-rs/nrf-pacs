@@ -16,6 +16,7 @@ impl From<crate::R<RSSISAMPLE_SPEC>> for R {
 #[doc = "Field `RSSISAMPLE` reader - RSSI sample."]
 pub struct RSSISAMPLE_R(crate::FieldReader<u8, u8>);
 impl RSSISAMPLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RSSISAMPLE_R(crate::FieldReader::new(bits))
     }

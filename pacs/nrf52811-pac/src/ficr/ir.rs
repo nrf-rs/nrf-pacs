@@ -16,6 +16,7 @@ impl From<crate::R<IR_SPEC>> for R {
 #[doc = "Field `IR` reader - Identity root, word n"]
 pub struct IR_R(crate::FieldReader<u32, u32>);
 impl IR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         IR_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Identity root, word n"]
     #[inline(always)]
     pub fn ir(&self) -> IR_R {
-        IR_R::new((self.bits & 0xffff_ffff) as u32)
+        IR_R::new(self.bits)
     }
 }
 #[doc = "Description collection: Identity root, word n\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ir](index.html) module"]

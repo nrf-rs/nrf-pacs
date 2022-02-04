@@ -58,6 +58,7 @@ impl From<CCAMODE_A> for u8 {
 #[doc = "Field `CCAMODE` reader - CCA mode of operation"]
 pub struct CCAMODE_R(crate::FieldReader<u8, CCAMODE_A>);
 impl CCAMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CCAMODE_R(crate::FieldReader::new(bits))
     }
@@ -151,6 +152,7 @@ impl<'a> CCAMODE_W<'a> {
 #[doc = "Field `CCAEDTHRES` reader - CCA energy busy threshold. Used in all the CCA modes except CarrierMode."]
 pub struct CCAEDTHRES_R(crate::FieldReader<u8, u8>);
 impl CCAEDTHRES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CCAEDTHRES_R(crate::FieldReader::new(bits))
     }
@@ -177,6 +179,7 @@ impl<'a> CCAEDTHRES_W<'a> {
 #[doc = "Field `CCACORRTHRES` reader - CCA correlator busy threshold. Only relevant to CarrierMode, CarrierAndEdMode, and CarrierOrEdMode."]
 pub struct CCACORRTHRES_R(crate::FieldReader<u8, u8>);
 impl CCACORRTHRES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CCACORRTHRES_R(crate::FieldReader::new(bits))
     }
@@ -203,6 +206,7 @@ impl<'a> CCACORRTHRES_W<'a> {
 #[doc = "Field `CCACORRCNT` reader - Limit for occurances above CCACORRTHRES. When not equal to zero the corrolator based signal detect is enabled."]
 pub struct CCACORRCNT_R(crate::FieldReader<u8, u8>);
 impl CCACORRCNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CCACORRCNT_R(crate::FieldReader::new(bits))
     }

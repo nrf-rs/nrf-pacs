@@ -51,6 +51,7 @@ impl From<STOPPED_A> for bool {
 #[doc = "Field `STOPPED` reader - Enable or disable interrupt for event STOPPED"]
 pub struct STOPPED_R(crate::FieldReader<bool, STOPPED_A>);
 impl STOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STOPPED_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<ERROR_A> for bool {
 #[doc = "Field `ERROR` reader - Enable or disable interrupt for event ERROR"]
 pub struct ERROR_R(crate::FieldReader<bool, ERROR_A>);
 impl ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERROR_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<SUSPENDED_A> for bool {
 #[doc = "Field `SUSPENDED` reader - Enable or disable interrupt for event SUSPENDED"]
 pub struct SUSPENDED_R(crate::FieldReader<bool, SUSPENDED_A>);
 impl SUSPENDED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUSPENDED_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<RXSTARTED_A> for bool {
 #[doc = "Field `RXSTARTED` reader - Enable or disable interrupt for event RXSTARTED"]
 pub struct RXSTARTED_R(crate::FieldReader<bool, RXSTARTED_A>);
 impl RXSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXSTARTED_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<TXSTARTED_A> for bool {
 #[doc = "Field `TXSTARTED` reader - Enable or disable interrupt for event TXSTARTED"]
 pub struct TXSTARTED_R(crate::FieldReader<bool, TXSTARTED_A>);
 impl TXSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXSTARTED_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<LASTRX_A> for bool {
 #[doc = "Field `LASTRX` reader - Enable or disable interrupt for event LASTRX"]
 pub struct LASTRX_R(crate::FieldReader<bool, LASTRX_A>);
 impl LASTRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LASTRX_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<LASTTX_A> for bool {
 #[doc = "Field `LASTTX` reader - Enable or disable interrupt for event LASTTX"]
 pub struct LASTTX_R(crate::FieldReader<bool, LASTTX_A>);
 impl LASTTX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LASTTX_R(crate::FieldReader::new(bits))
     }

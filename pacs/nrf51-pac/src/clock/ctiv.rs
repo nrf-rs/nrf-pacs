@@ -37,6 +37,7 @@ impl From<crate::W<CTIV_SPEC>> for W {
 #[doc = "Field `CTIV` reader - Calibration timer interval in 0.25s resolution."]
 pub struct CTIV_R(crate::FieldReader<u8, u8>);
 impl CTIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTIV_R(crate::FieldReader::new(bits))
     }

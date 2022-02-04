@@ -51,6 +51,7 @@ impl From<EVENTS_LOOPSDONE_A> for bool {
 #[doc = "Field `EVENTS_LOOPSDONE` reader - Concatenated sequences have been played the amount of times defined in LOOP.CNT"]
 pub struct EVENTS_LOOPSDONE_R(crate::FieldReader<bool, EVENTS_LOOPSDONE_A>);
 impl EVENTS_LOOPSDONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_LOOPSDONE_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<PARITY_A> for bool {
 #[doc = "Field `PARITY` reader - Adding parity or not in the frame"]
 pub struct PARITY_R(crate::FieldReader<bool, PARITY_A>);
 impl PARITY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PARITY_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<DISCARDMODE_A> for bool {
 #[doc = "Field `DISCARDMODE` reader - Discarding unused bits in start or at end of a Frame"]
 pub struct DISCARDMODE_R(crate::FieldReader<bool, DISCARDMODE_A>);
 impl DISCARDMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DISCARDMODE_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<SOF_A> for bool {
 #[doc = "Field `SOF` reader - Adding SoF or not in TX frames"]
 pub struct SOF_R(crate::FieldReader<bool, SOF_A>);
 impl SOF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SOF_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<CRCMODETX_A> for bool {
 #[doc = "Field `CRCMODETX` reader - CRC mode for outgoing frames"]
 pub struct CRCMODETX_R(crate::FieldReader<bool, CRCMODETX_A>);
 impl CRCMODETX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CRCMODETX_R(crate::FieldReader::new(bits))
     }

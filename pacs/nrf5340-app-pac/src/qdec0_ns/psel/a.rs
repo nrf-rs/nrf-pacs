@@ -37,6 +37,7 @@ impl From<crate::W<A_SPEC>> for W {
 #[doc = "Field `PIN` reader - Pin number"]
 pub struct PIN_R(crate::FieldReader<u8, u8>);
 impl PIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PIN_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> PIN_W<'a> {
 #[doc = "Field `PORT` reader - Port number"]
 pub struct PORT_R(crate::FieldReader<bool, bool>);
 impl PORT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PORT_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +115,7 @@ impl From<CONNECT_A> for bool {
 #[doc = "Field `CONNECT` reader - Connection"]
 pub struct CONNECT_R(crate::FieldReader<bool, CONNECT_A>);
 impl CONNECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CONNECT_R(crate::FieldReader::new(bits))
     }

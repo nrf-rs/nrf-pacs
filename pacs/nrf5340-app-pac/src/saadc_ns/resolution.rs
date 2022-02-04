@@ -56,6 +56,7 @@ impl From<VAL_A> for u8 {
 #[doc = "Field `VAL` reader - Set the resolution"]
 pub struct VAL_R(crate::FieldReader<u8, VAL_A>);
 impl VAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         VAL_R(crate::FieldReader::new(bits))
     }

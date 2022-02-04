@@ -51,6 +51,7 @@ impl From<ENDKSGEN_CRYPT_A> for bool {
 #[doc = "Field `ENDKSGEN_CRYPT` reader - Shortcut between event ENDKSGEN and task CRYPT"]
 pub struct ENDKSGEN_CRYPT_R(crate::FieldReader<bool, ENDKSGEN_CRYPT_A>);
 impl ENDKSGEN_CRYPT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDKSGEN_CRYPT_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<CRCPOLY_SPEC>> for W {
 #[doc = "Field `CRCPOLY` reader - CRC polynomial"]
 pub struct CRCPOLY_R(crate::FieldReader<u32, u32>);
 impl CRCPOLY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         CRCPOLY_R(crate::FieldReader::new(bits))
     }

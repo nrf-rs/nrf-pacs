@@ -16,6 +16,7 @@ impl From<crate::R<SAMPLE_SPEC>> for R {
 #[doc = "Field `SAMPLE` reader - Last motion sample"]
 pub struct SAMPLE_R(crate::FieldReader<u32, u32>);
 impl SAMPLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         SAMPLE_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Last motion sample"]
     #[inline(always)]
     pub fn sample(&self) -> SAMPLE_R {
-        SAMPLE_R::new((self.bits & 0xffff_ffff) as u32)
+        SAMPLE_R::new(self.bits)
     }
 }
 #[doc = "Motion sample value\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sample](index.html) module"]

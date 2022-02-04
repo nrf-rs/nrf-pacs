@@ -51,6 +51,7 @@ impl From<EVENTS_ENDISOOUT_A> for bool {
 #[doc = "Field `EVENTS_ENDISOOUT` reader - The whole ISOOUT buffer has been consumed. The buffer can be accessed safely by software."]
 pub struct EVENTS_ENDISOOUT_R(crate::FieldReader<bool, EVENTS_ENDISOOUT_A>);
 impl EVENTS_ENDISOOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ENDISOOUT_R(crate::FieldReader::new(bits))
     }

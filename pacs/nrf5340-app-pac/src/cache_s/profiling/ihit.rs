@@ -16,6 +16,7 @@ impl From<crate::R<IHIT_SPEC>> for R {
 #[doc = "Field `HITS` reader - Number of instruction cache hits"]
 pub struct HITS_R(crate::FieldReader<u32, u32>);
 impl HITS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         HITS_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Number of instruction cache hits"]
     #[inline(always)]
     pub fn hits(&self) -> HITS_R {
-        HITS_R::new((self.bits & 0xffff_ffff) as u32)
+        HITS_R::new(self.bits)
     }
 }
 #[doc = "Description cluster: Instruction fetch cache hit counter for cache region n, where n=0 means Flash and n=1 means XIP.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ihit](index.html) module"]

@@ -51,6 +51,7 @@ impl From<EVENTS_PHYEND_A> for bool {
 #[doc = "Field `EVENTS_PHYEND` reader - Generated when last bit is sent on air, or received from air"]
 pub struct EVENTS_PHYEND_R(crate::FieldReader<bool, EVENTS_PHYEND_A>);
 impl EVENTS_PHYEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_PHYEND_R(crate::FieldReader::new(bits))
     }

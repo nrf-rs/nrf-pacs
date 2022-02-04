@@ -51,6 +51,7 @@ impl From<OUT0_A> for bool {
 #[doc = "Field `OUT0` reader - Enable OUT endpoint 0"]
 pub struct OUT0_R(crate::FieldReader<bool, OUT0_A>);
 impl OUT0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OUT0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<OUT1_A> for bool {
 #[doc = "Field `OUT1` reader - Enable OUT endpoint 1"]
 pub struct OUT1_R(crate::FieldReader<bool, OUT1_A>);
 impl OUT1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OUT1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<OUT2_A> for bool {
 #[doc = "Field `OUT2` reader - Enable OUT endpoint 2"]
 pub struct OUT2_R(crate::FieldReader<bool, OUT2_A>);
 impl OUT2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OUT2_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<OUT3_A> for bool {
 #[doc = "Field `OUT3` reader - Enable OUT endpoint 3"]
 pub struct OUT3_R(crate::FieldReader<bool, OUT3_A>);
 impl OUT3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OUT3_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<OUT4_A> for bool {
 #[doc = "Field `OUT4` reader - Enable OUT endpoint 4"]
 pub struct OUT4_R(crate::FieldReader<bool, OUT4_A>);
 impl OUT4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OUT4_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<OUT5_A> for bool {
 #[doc = "Field `OUT5` reader - Enable OUT endpoint 5"]
 pub struct OUT5_R(crate::FieldReader<bool, OUT5_A>);
 impl OUT5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OUT5_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<OUT6_A> for bool {
 #[doc = "Field `OUT6` reader - Enable OUT endpoint 6"]
 pub struct OUT6_R(crate::FieldReader<bool, OUT6_A>);
 impl OUT6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OUT6_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<OUT7_A> for bool {
 #[doc = "Field `OUT7` reader - Enable OUT endpoint 7"]
 pub struct OUT7_R(crate::FieldReader<bool, OUT7_A>);
 impl OUT7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OUT7_R(crate::FieldReader::new(bits))
     }
@@ -715,6 +723,7 @@ impl From<ISOOUT_A> for bool {
 #[doc = "Field `ISOOUT` reader - Enable ISO OUT endpoint 8"]
 pub struct ISOOUT_R(crate::FieldReader<bool, ISOOUT_A>);
 impl ISOOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ISOOUT_R(crate::FieldReader::new(bits))
     }

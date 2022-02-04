@@ -37,6 +37,7 @@ impl From<crate::W<ORC_SPEC>> for W {
 #[doc = "Field `ORC` reader - Over-read character. Character sent out in case of an over-read of the transmit buffer."]
 pub struct ORC_R(crate::FieldReader<u8, u8>);
 impl ORC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ORC_R(crate::FieldReader::new(bits))
     }

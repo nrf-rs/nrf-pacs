@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_TXFRAMESTART_SPEC>> for W {
 #[doc = "Field `EVENTS_TXFRAMESTART` reader - "]
 pub struct EVENTS_TXFRAMESTART_R(crate::FieldReader<bool, bool>);
 impl EVENTS_TXFRAMESTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_TXFRAMESTART_R(crate::FieldReader::new(bits))
     }

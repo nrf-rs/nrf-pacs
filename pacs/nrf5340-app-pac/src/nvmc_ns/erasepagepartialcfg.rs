@@ -37,6 +37,7 @@ impl From<crate::W<ERASEPAGEPARTIALCFG_SPEC>> for W {
 #[doc = "Field `DURATION` reader - Duration of the partial erase in milliseconds"]
 pub struct DURATION_R(crate::FieldReader<u8, u8>);
 impl DURATION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DURATION_R(crate::FieldReader::new(bits))
     }

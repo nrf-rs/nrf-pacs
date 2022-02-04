@@ -16,6 +16,7 @@ impl From<crate::R<TAGHEADER1_SPEC>> for R {
 #[doc = "Field `UD4` reader - Unique identifier byte 4"]
 pub struct UD4_R(crate::FieldReader<u8, u8>);
 impl UD4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UD4_R(crate::FieldReader::new(bits))
     }
@@ -30,6 +31,7 @@ impl core::ops::Deref for UD4_R {
 #[doc = "Field `UD5` reader - Unique identifier byte 5"]
 pub struct UD5_R(crate::FieldReader<u8, u8>);
 impl UD5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UD5_R(crate::FieldReader::new(bits))
     }
@@ -44,6 +46,7 @@ impl core::ops::Deref for UD5_R {
 #[doc = "Field `UD6` reader - Unique identifier byte 6"]
 pub struct UD6_R(crate::FieldReader<u8, u8>);
 impl UD6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UD6_R(crate::FieldReader::new(bits))
     }
@@ -58,6 +61,7 @@ impl core::ops::Deref for UD6_R {
 #[doc = "Field `UD7` reader - Unique identifier byte 7"]
 pub struct UD7_R(crate::FieldReader<u8, u8>);
 impl UD7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UD7_R(crate::FieldReader::new(bits))
     }

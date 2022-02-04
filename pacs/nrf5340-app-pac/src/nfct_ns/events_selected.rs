@@ -51,6 +51,7 @@ impl From<EVENTS_SELECTED_A> for bool {
 #[doc = "Field `EVENTS_SELECTED` reader - NFC auto collision resolution successfully completed"]
 pub struct EVENTS_SELECTED_R(crate::FieldReader<bool, EVENTS_SELECTED_A>);
 impl EVENTS_SELECTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_SELECTED_R(crate::FieldReader::new(bits))
     }

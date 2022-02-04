@@ -30,6 +30,7 @@ impl From<RUNSTATUSWDT_A> for bool {
 #[doc = "Field `RUNSTATUSWDT` reader - Indicates whether or not the watchdog is running"]
 pub struct RUNSTATUSWDT_R(crate::FieldReader<bool, RUNSTATUSWDT_A>);
 impl RUNSTATUSWDT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RUNSTATUSWDT_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<FORCEOFF_A> for bool {
 #[doc = "Field `FORCEOFF` reader - DCDC power-up force off."]
 pub struct FORCEOFF_R(crate::FieldReader<bool, FORCEOFF_A>);
 impl FORCEOFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FORCEOFF_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<FORCEON_A> for bool {
 #[doc = "Field `FORCEON` reader - DCDC power-up force on."]
 pub struct FORCEON_R(crate::FieldReader<bool, FORCEON_A>);
 impl FORCEON_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FORCEON_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<SWITCHPATTERN_SPEC>> for W {
 #[doc = "Field `SWITCHPATTERN` reader - Fill array of GPIO patterns for antenna control."]
 pub struct SWITCHPATTERN_R(crate::FieldReader<u8, u8>);
 impl SWITCHPATTERN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SWITCHPATTERN_R(crate::FieldReader::new(bits))
     }

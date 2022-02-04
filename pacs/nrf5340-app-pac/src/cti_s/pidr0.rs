@@ -32,6 +32,7 @@ impl From<PART_0_A> for u8 {
 of the 12-bit part number of the component. The designer of the component assigns this part number."]
 pub struct PART_0_R(crate::FieldReader<u8, PART_0_A>);
 impl PART_0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PART_0_R(crate::FieldReader::new(bits))
     }

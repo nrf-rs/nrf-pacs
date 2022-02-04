@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_SUSPENDED_SPEC>> for W {
 #[doc = "Field `EVENTS_SUSPENDED` reader - "]
 pub struct EVENTS_SUSPENDED_R(crate::FieldReader<bool, bool>);
 impl EVENTS_SUSPENDED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_SUSPENDED_R(crate::FieldReader::new(bits))
     }

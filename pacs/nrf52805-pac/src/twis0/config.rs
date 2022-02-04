@@ -51,6 +51,7 @@ impl From<ADDRESS0_A> for bool {
 #[doc = "Field `ADDRESS0` reader - Enable or disable address matching on ADDRESS\\[0\\]"]
 pub struct ADDRESS0_R(crate::FieldReader<bool, ADDRESS0_A>);
 impl ADDRESS0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDRESS0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<ADDRESS1_A> for bool {
 #[doc = "Field `ADDRESS1` reader - Enable or disable address matching on ADDRESS\\[1\\]"]
 pub struct ADDRESS1_R(crate::FieldReader<bool, ADDRESS1_A>);
 impl ADDRESS1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDRESS1_R(crate::FieldReader::new(bits))
     }

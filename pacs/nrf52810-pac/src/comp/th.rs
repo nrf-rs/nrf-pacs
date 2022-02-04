@@ -37,6 +37,7 @@ impl From<crate::W<TH_SPEC>> for W {
 #[doc = "Field `THDOWN` reader - VDOWN = (THDOWN+1)/64*VREF"]
 pub struct THDOWN_R(crate::FieldReader<u8, u8>);
 impl THDOWN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         THDOWN_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> THDOWN_W<'a> {
 #[doc = "Field `THUP` reader - VUP = (THUP+1)/64*VREF"]
 pub struct THUP_R(crate::FieldReader<u8, u8>);
 impl THUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         THUP_R(crate::FieldReader::new(bits))
     }

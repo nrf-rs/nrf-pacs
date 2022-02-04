@@ -51,6 +51,7 @@ impl From<ALWAYSRUN_A> for bool {
 #[doc = "Field `ALWAYSRUN` reader - Ensure clock is always running"]
 pub struct ALWAYSRUN_R(crate::FieldReader<bool, ALWAYSRUN_A>);
 impl ALWAYSRUN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ALWAYSRUN_R(crate::FieldReader::new(bits))
     }

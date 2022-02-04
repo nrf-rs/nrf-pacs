@@ -37,6 +37,7 @@ impl From<crate::W<DATAWHITEIV_SPEC>> for W {
 #[doc = "Field `DATAWHITEIV` reader - Data whitening initial value. Bit 0 corresponds to Position 0 of the LSFR, Bit 1 to position 5... Decision point: TXEN or RXEN task."]
 pub struct DATAWHITEIV_R(crate::FieldReader<u8, u8>);
 impl DATAWHITEIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DATAWHITEIV_R(crate::FieldReader::new(bits))
     }

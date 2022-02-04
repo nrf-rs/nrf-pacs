@@ -51,6 +51,7 @@ impl From<CACHEEN_A> for bool {
 #[doc = "Field `CACHEEN` reader - Cache enable"]
 pub struct CACHEEN_R(crate::FieldReader<bool, CACHEEN_A>);
 impl CACHEEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CACHEEN_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<CACHEPROFEN_A> for bool {
 #[doc = "Field `CACHEPROFEN` reader - Cache profiling enable"]
 pub struct CACHEPROFEN_R(crate::FieldReader<bool, CACHEPROFEN_A>);
 impl CACHEPROFEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CACHEPROFEN_R(crate::FieldReader::new(bits))
     }

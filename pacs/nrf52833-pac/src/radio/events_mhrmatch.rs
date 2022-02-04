@@ -51,6 +51,7 @@ impl From<EVENTS_MHRMATCH_A> for bool {
 #[doc = "Field `EVENTS_MHRMATCH` reader - MAC header match found"]
 pub struct EVENTS_MHRMATCH_R(crate::FieldReader<bool, EVENTS_MHRMATCH_A>);
 impl EVENTS_MHRMATCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_MHRMATCH_R(crate::FieldReader::new(bits))
     }

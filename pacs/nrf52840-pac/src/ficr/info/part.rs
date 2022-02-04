@@ -31,6 +31,7 @@ impl From<PART_A> for u32 {
 #[doc = "Field `PART` reader - Part code"]
 pub struct PART_R(crate::FieldReader<u32, PART_A>);
 impl PART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         PART_R(crate::FieldReader::new(bits))
     }
@@ -65,7 +66,7 @@ impl R {
     #[doc = "Bits 0:31 - Part code"]
     #[inline(always)]
     pub fn part(&self) -> PART_R {
-        PART_R::new((self.bits & 0xffff_ffff) as u32)
+        PART_R::new(self.bits)
     }
 }
 #[doc = "Part code\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [part](index.html) module"]

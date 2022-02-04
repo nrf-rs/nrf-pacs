@@ -52,6 +52,7 @@ impl From<LIST_A> for u8 {
 #[doc = "Field `LIST` reader - List type"]
 pub struct LIST_R(crate::FieldReader<u8, LIST_A>);
 impl LIST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LIST_R(crate::FieldReader::new(bits))
     }

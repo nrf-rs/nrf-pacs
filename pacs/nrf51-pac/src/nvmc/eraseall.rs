@@ -51,6 +51,7 @@ impl From<ERASEALL_A> for bool {
 #[doc = "Field `ERASEALL` reader - Starts the erasing of all user NVM (code region 0/1 and UICR registers)."]
 pub struct ERASEALL_R(crate::FieldReader<bool, ERASEALL_A>);
 impl ERASEALL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERASEALL_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<EVENTS_REPORTRDY_A> for bool {
 #[doc = "Field `EVENTS_REPORTRDY` reader - Non-null report ready"]
 pub struct EVENTS_REPORTRDY_R(crate::FieldReader<bool, EVENTS_REPORTRDY_A>);
 impl EVENTS_REPORTRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_REPORTRDY_R(crate::FieldReader::new(bits))
     }

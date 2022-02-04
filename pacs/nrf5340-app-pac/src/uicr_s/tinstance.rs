@@ -37,6 +37,7 @@ impl From<crate::W<TINSTANCE_SPEC>> for W {
 #[doc = "Field `TINSTANCE` reader - TINSTANCE bits are negated and used in the SW-DP DLPIDR.TINSTANCE field. E.g. 0xF in this field is translated to 0x0 in DLPIDR.TINSTANCE field."]
 pub struct TINSTANCE_R(crate::FieldReader<u8, u8>);
 impl TINSTANCE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TINSTANCE_R(crate::FieldReader::new(bits))
     }

@@ -16,6 +16,7 @@ impl From<crate::R<WLENGTHL_SPEC>> for R {
 #[doc = "Field `WLENGTHL` reader - SETUP data, byte 6, LSB of wLength"]
 pub struct WLENGTHL_R(crate::FieldReader<u8, u8>);
 impl WLENGTHL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         WLENGTHL_R(crate::FieldReader::new(bits))
     }

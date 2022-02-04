@@ -51,6 +51,7 @@ impl From<REGION0_A> for bool {
 #[doc = "Field `REGION0` reader - Enable protection for region 0. Write '0' has no effect."]
 pub struct REGION0_R(crate::FieldReader<bool, REGION0_A>);
 impl REGION0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<REGION1_A> for bool {
 #[doc = "Field `REGION1` reader - Enable protection for region 1. Write '0' has no effect."]
 pub struct REGION1_R(crate::FieldReader<bool, REGION1_A>);
 impl REGION1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<REGION2_A> for bool {
 #[doc = "Field `REGION2` reader - Enable protection for region 2. Write '0' has no effect."]
 pub struct REGION2_R(crate::FieldReader<bool, REGION2_A>);
 impl REGION2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION2_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<REGION3_A> for bool {
 #[doc = "Field `REGION3` reader - Enable protection for region 3. Write '0' has no effect."]
 pub struct REGION3_R(crate::FieldReader<bool, REGION3_A>);
 impl REGION3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION3_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<REGION4_A> for bool {
 #[doc = "Field `REGION4` reader - Enable protection for region 4. Write '0' has no effect."]
 pub struct REGION4_R(crate::FieldReader<bool, REGION4_A>);
 impl REGION4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION4_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<REGION5_A> for bool {
 #[doc = "Field `REGION5` reader - Enable protection for region 5. Write '0' has no effect."]
 pub struct REGION5_R(crate::FieldReader<bool, REGION5_A>);
 impl REGION5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION5_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<REGION6_A> for bool {
 #[doc = "Field `REGION6` reader - Enable protection for region 6. Write '0' has no effect."]
 pub struct REGION6_R(crate::FieldReader<bool, REGION6_A>);
 impl REGION6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION6_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<REGION7_A> for bool {
 #[doc = "Field `REGION7` reader - Enable protection for region 7. Write '0' has no effect."]
 pub struct REGION7_R(crate::FieldReader<bool, REGION7_A>);
 impl REGION7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION7_R(crate::FieldReader::new(bits))
     }
@@ -715,6 +723,7 @@ impl From<REGION8_A> for bool {
 #[doc = "Field `REGION8` reader - Enable protection for region 8. Write '0' has no effect."]
 pub struct REGION8_R(crate::FieldReader<bool, REGION8_A>);
 impl REGION8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION8_R(crate::FieldReader::new(bits))
     }
@@ -798,6 +807,7 @@ impl From<REGION9_A> for bool {
 #[doc = "Field `REGION9` reader - Enable protection for region 9. Write '0' has no effect."]
 pub struct REGION9_R(crate::FieldReader<bool, REGION9_A>);
 impl REGION9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION9_R(crate::FieldReader::new(bits))
     }
@@ -881,6 +891,7 @@ impl From<REGION10_A> for bool {
 #[doc = "Field `REGION10` reader - Enable protection for region 10. Write '0' has no effect."]
 pub struct REGION10_R(crate::FieldReader<bool, REGION10_A>);
 impl REGION10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION10_R(crate::FieldReader::new(bits))
     }
@@ -964,6 +975,7 @@ impl From<REGION11_A> for bool {
 #[doc = "Field `REGION11` reader - Enable protection for region 11. Write '0' has no effect."]
 pub struct REGION11_R(crate::FieldReader<bool, REGION11_A>);
 impl REGION11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION11_R(crate::FieldReader::new(bits))
     }
@@ -1047,6 +1059,7 @@ impl From<REGION12_A> for bool {
 #[doc = "Field `REGION12` reader - Enable protection for region 12. Write '0' has no effect."]
 pub struct REGION12_R(crate::FieldReader<bool, REGION12_A>);
 impl REGION12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION12_R(crate::FieldReader::new(bits))
     }
@@ -1130,6 +1143,7 @@ impl From<REGION13_A> for bool {
 #[doc = "Field `REGION13` reader - Enable protection for region 13. Write '0' has no effect."]
 pub struct REGION13_R(crate::FieldReader<bool, REGION13_A>);
 impl REGION13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION13_R(crate::FieldReader::new(bits))
     }
@@ -1213,6 +1227,7 @@ impl From<REGION14_A> for bool {
 #[doc = "Field `REGION14` reader - Enable protection for region 14. Write '0' has no effect."]
 pub struct REGION14_R(crate::FieldReader<bool, REGION14_A>);
 impl REGION14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION14_R(crate::FieldReader::new(bits))
     }
@@ -1296,6 +1311,7 @@ impl From<REGION15_A> for bool {
 #[doc = "Field `REGION15` reader - Enable protection for region 15. Write '0' has no effect."]
 pub struct REGION15_R(crate::FieldReader<bool, REGION15_A>);
 impl REGION15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION15_R(crate::FieldReader::new(bits))
     }
@@ -1379,6 +1395,7 @@ impl From<REGION16_A> for bool {
 #[doc = "Field `REGION16` reader - Enable protection for region 16. Write '0' has no effect."]
 pub struct REGION16_R(crate::FieldReader<bool, REGION16_A>);
 impl REGION16_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION16_R(crate::FieldReader::new(bits))
     }
@@ -1462,6 +1479,7 @@ impl From<REGION17_A> for bool {
 #[doc = "Field `REGION17` reader - Enable protection for region 17. Write '0' has no effect."]
 pub struct REGION17_R(crate::FieldReader<bool, REGION17_A>);
 impl REGION17_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION17_R(crate::FieldReader::new(bits))
     }
@@ -1545,6 +1563,7 @@ impl From<REGION18_A> for bool {
 #[doc = "Field `REGION18` reader - Enable protection for region 18. Write '0' has no effect."]
 pub struct REGION18_R(crate::FieldReader<bool, REGION18_A>);
 impl REGION18_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION18_R(crate::FieldReader::new(bits))
     }
@@ -1628,6 +1647,7 @@ impl From<REGION19_A> for bool {
 #[doc = "Field `REGION19` reader - Enable protection for region 19. Write '0' has no effect."]
 pub struct REGION19_R(crate::FieldReader<bool, REGION19_A>);
 impl REGION19_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION19_R(crate::FieldReader::new(bits))
     }
@@ -1711,6 +1731,7 @@ impl From<REGION20_A> for bool {
 #[doc = "Field `REGION20` reader - Enable protection for region 20. Write '0' has no effect."]
 pub struct REGION20_R(crate::FieldReader<bool, REGION20_A>);
 impl REGION20_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION20_R(crate::FieldReader::new(bits))
     }
@@ -1794,6 +1815,7 @@ impl From<REGION21_A> for bool {
 #[doc = "Field `REGION21` reader - Enable protection for region 21. Write '0' has no effect."]
 pub struct REGION21_R(crate::FieldReader<bool, REGION21_A>);
 impl REGION21_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION21_R(crate::FieldReader::new(bits))
     }
@@ -1877,6 +1899,7 @@ impl From<REGION22_A> for bool {
 #[doc = "Field `REGION22` reader - Enable protection for region 22. Write '0' has no effect."]
 pub struct REGION22_R(crate::FieldReader<bool, REGION22_A>);
 impl REGION22_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION22_R(crate::FieldReader::new(bits))
     }
@@ -1960,6 +1983,7 @@ impl From<REGION23_A> for bool {
 #[doc = "Field `REGION23` reader - Enable protection for region 23. Write '0' has no effect."]
 pub struct REGION23_R(crate::FieldReader<bool, REGION23_A>);
 impl REGION23_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION23_R(crate::FieldReader::new(bits))
     }
@@ -2043,6 +2067,7 @@ impl From<REGION24_A> for bool {
 #[doc = "Field `REGION24` reader - Enable protection for region 24. Write '0' has no effect."]
 pub struct REGION24_R(crate::FieldReader<bool, REGION24_A>);
 impl REGION24_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION24_R(crate::FieldReader::new(bits))
     }
@@ -2126,6 +2151,7 @@ impl From<REGION25_A> for bool {
 #[doc = "Field `REGION25` reader - Enable protection for region 25. Write '0' has no effect."]
 pub struct REGION25_R(crate::FieldReader<bool, REGION25_A>);
 impl REGION25_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION25_R(crate::FieldReader::new(bits))
     }
@@ -2209,6 +2235,7 @@ impl From<REGION26_A> for bool {
 #[doc = "Field `REGION26` reader - Enable protection for region 26. Write '0' has no effect."]
 pub struct REGION26_R(crate::FieldReader<bool, REGION26_A>);
 impl REGION26_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION26_R(crate::FieldReader::new(bits))
     }
@@ -2292,6 +2319,7 @@ impl From<REGION27_A> for bool {
 #[doc = "Field `REGION27` reader - Enable protection for region 27. Write '0' has no effect."]
 pub struct REGION27_R(crate::FieldReader<bool, REGION27_A>);
 impl REGION27_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION27_R(crate::FieldReader::new(bits))
     }
@@ -2375,6 +2403,7 @@ impl From<REGION28_A> for bool {
 #[doc = "Field `REGION28` reader - Enable protection for region 28. Write '0' has no effect."]
 pub struct REGION28_R(crate::FieldReader<bool, REGION28_A>);
 impl REGION28_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION28_R(crate::FieldReader::new(bits))
     }
@@ -2458,6 +2487,7 @@ impl From<REGION29_A> for bool {
 #[doc = "Field `REGION29` reader - Enable protection for region 29. Write '0' has no effect."]
 pub struct REGION29_R(crate::FieldReader<bool, REGION29_A>);
 impl REGION29_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION29_R(crate::FieldReader::new(bits))
     }
@@ -2541,6 +2571,7 @@ impl From<REGION30_A> for bool {
 #[doc = "Field `REGION30` reader - Enable protection for region 30. Write '0' has no effect."]
 pub struct REGION30_R(crate::FieldReader<bool, REGION30_A>);
 impl REGION30_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION30_R(crate::FieldReader::new(bits))
     }
@@ -2624,6 +2655,7 @@ impl From<REGION31_A> for bool {
 #[doc = "Field `REGION31` reader - Enable protection for region 31. Write '0' has no effect."]
 pub struct REGION31_R(crate::FieldReader<bool, REGION31_A>);
 impl REGION31_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION31_R(crate::FieldReader::new(bits))
     }

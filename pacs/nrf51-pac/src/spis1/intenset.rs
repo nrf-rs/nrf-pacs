@@ -51,6 +51,7 @@ impl From<END_A> for bool {
 #[doc = "Field `END` reader - Enable interrupt on END event."]
 pub struct END_R(crate::FieldReader<bool, END_A>);
 impl END_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         END_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<ENDRX_A> for bool {
 #[doc = "Field `ENDRX` reader - enable interrupt on ENDRX event."]
 pub struct ENDRX_R(crate::FieldReader<bool, ENDRX_A>);
 impl ENDRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDRX_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<ACQUIRED_A> for bool {
 #[doc = "Field `ACQUIRED` reader - Enable interrupt on ACQUIRED event."]
 pub struct ACQUIRED_R(crate::FieldReader<bool, ACQUIRED_A>);
 impl ACQUIRED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ACQUIRED_R(crate::FieldReader::new(bits))
     }

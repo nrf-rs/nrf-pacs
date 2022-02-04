@@ -51,6 +51,7 @@ impl From<EVENTS_SYNC_A> for bool {
 #[doc = "Field `EVENTS_SYNC` reader - Preamble indicator"]
 pub struct EVENTS_SYNC_R(crate::FieldReader<bool, EVENTS_SYNC_A>);
 impl EVENTS_SYNC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_SYNC_R(crate::FieldReader::new(bits))
     }

@@ -16,6 +16,7 @@ impl From<crate::R<RCCUTOFF_SPEC>> for R {
 #[doc = "Field `RCCUTOFF` reader - Repetition counter cutoff"]
 pub struct RCCUTOFF_R(crate::FieldReader<u32, u32>);
 impl RCCUTOFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         RCCUTOFF_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Repetition counter cutoff"]
     #[inline(always)]
     pub fn rccutoff(&self) -> RCCUTOFF_R {
-        RCCUTOFF_R::new((self.bits & 0xffff_ffff) as u32)
+        RCCUTOFF_R::new(self.bits)
     }
 }
 #[doc = "Repetition counter cutoff\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rccutoff](index.html) module"]

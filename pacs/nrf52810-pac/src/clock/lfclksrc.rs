@@ -54,6 +54,7 @@ impl From<SRC_A> for u8 {
 #[doc = "Field `SRC` reader - Clock source"]
 pub struct SRC_R(crate::FieldReader<u8, SRC_A>);
 impl SRC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SRC_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +140,7 @@ impl From<BYPASS_A> for bool {
 #[doc = "Field `BYPASS` reader - Enable or disable bypass of LFCLK crystal oscillator with external clock source"]
 pub struct BYPASS_R(crate::FieldReader<bool, BYPASS_A>);
 impl BYPASS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BYPASS_R(crate::FieldReader::new(bits))
     }
@@ -222,6 +224,7 @@ impl From<EXTERNAL_A> for bool {
 #[doc = "Field `EXTERNAL` reader - Enable or disable external source for LFCLK"]
 pub struct EXTERNAL_R(crate::FieldReader<bool, EXTERNAL_A>);
 impl EXTERNAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EXTERNAL_R(crate::FieldReader::new(bits))
     }

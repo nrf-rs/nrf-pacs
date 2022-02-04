@@ -37,6 +37,7 @@ impl From<crate::W<MAXLEN_SPEC>> for W {
 #[doc = "Field `MAXLEN` reader - Size of allocated for TXD and RXD data storage buffer in Data RAM"]
 pub struct MAXLEN_R(crate::FieldReader<u16, u16>);
 impl MAXLEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         MAXLEN_R(crate::FieldReader::new(bits))
     }

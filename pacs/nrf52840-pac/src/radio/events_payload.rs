@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_PAYLOAD_SPEC>> for W {
 #[doc = "Field `EVENTS_PAYLOAD` reader - "]
 pub struct EVENTS_PAYLOAD_R(crate::FieldReader<bool, bool>);
 impl EVENTS_PAYLOAD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_PAYLOAD_R(crate::FieldReader::new(bits))
     }

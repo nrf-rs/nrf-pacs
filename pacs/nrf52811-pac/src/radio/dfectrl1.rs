@@ -37,6 +37,7 @@ impl From<crate::W<DFECTRL1_SPEC>> for W {
 #[doc = "Field `NUMBEROF8US` reader - Length of the AoA/AoD procedure in number of 8 us units"]
 pub struct NUMBEROF8US_R(crate::FieldReader<u8, u8>);
 impl NUMBEROF8US_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NUMBEROF8US_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +78,7 @@ impl From<DFEINEXTENSION_A> for bool {
 #[doc = "Field `DFEINEXTENSION` reader - Add CTE extension and do antenna switching/sampling in this extension"]
 pub struct DFEINEXTENSION_R(crate::FieldReader<bool, DFEINEXTENSION_A>);
 impl DFEINEXTENSION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DFEINEXTENSION_R(crate::FieldReader::new(bits))
     }
@@ -163,6 +165,7 @@ impl From<TSWITCHSPACING_A> for u8 {
 #[doc = "Field `TSWITCHSPACING` reader - Interval between every time the antenna is changed in the SWITCHING state"]
 pub struct TSWITCHSPACING_R(crate::FieldReader<u8, TSWITCHSPACING_A>);
 impl TSWITCHSPACING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TSWITCHSPACING_R(crate::FieldReader::new(bits))
     }
@@ -257,6 +260,7 @@ impl From<TSAMPLESPACINGREF_A> for u8 {
 #[doc = "Field `TSAMPLESPACINGREF` reader - Interval between samples in the REFERENCE period"]
 pub struct TSAMPLESPACINGREF_R(crate::FieldReader<u8, TSAMPLESPACINGREF_A>);
 impl TSAMPLESPACINGREF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TSAMPLESPACINGREF_R(crate::FieldReader::new(bits))
     }
@@ -375,6 +379,7 @@ impl From<SAMPLETYPE_A> for bool {
 #[doc = "Field `SAMPLETYPE` reader - Whether to sample I/Q or magnitude/phase"]
 pub struct SAMPLETYPE_R(crate::FieldReader<bool, SAMPLETYPE_A>);
 impl SAMPLETYPE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SAMPLETYPE_R(crate::FieldReader::new(bits))
     }
@@ -467,6 +472,7 @@ impl From<TSAMPLESPACING_A> for u8 {
 #[doc = "Field `TSAMPLESPACING` reader - Interval between samples in the SWITCHING period when CTEINLINECTRLEN is 0"]
 pub struct TSAMPLESPACING_R(crate::FieldReader<u8, TSAMPLESPACING_A>);
 impl TSAMPLESPACING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TSAMPLESPACING_R(crate::FieldReader::new(bits))
     }
@@ -571,6 +577,7 @@ impl<'a> TSAMPLESPACING_W<'a> {
 #[doc = "Field `AGCBACKOFFGAIN` reader - Gain will be lowered by the specified number of gain steps at the start of CTE"]
 pub struct AGCBACKOFFGAIN_R(crate::FieldReader<u8, u8>);
 impl AGCBACKOFFGAIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AGCBACKOFFGAIN_R(crate::FieldReader::new(bits))
     }

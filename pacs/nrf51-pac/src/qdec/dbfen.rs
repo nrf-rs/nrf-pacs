@@ -51,6 +51,7 @@ impl From<DBFEN_A> for bool {
 #[doc = "Field `DBFEN` reader - Enable debounce input filters."]
 pub struct DBFEN_R(crate::FieldReader<bool, DBFEN_A>);
 impl DBFEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DBFEN_R(crate::FieldReader::new(bits))
     }

@@ -31,6 +31,7 @@ impl From<PRODTEST_A> for u32 {
 #[doc = "Field `PRODTEST` reader - Production test signature n"]
 pub struct PRODTEST_R(crate::FieldReader<u32, PRODTEST_A>);
 impl PRODTEST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         PRODTEST_R(crate::FieldReader::new(bits))
     }
@@ -65,7 +66,7 @@ impl R {
     #[doc = "Bits 0:31 - Production test signature n"]
     #[inline(always)]
     pub fn prodtest(&self) -> PRODTEST_R {
-        PRODTEST_R::new((self.bits & 0xffff_ffff) as u32)
+        PRODTEST_R::new(self.bits)
     }
 }
 #[doc = "Description collection: Production test signature n\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prodtest](index.html) module"]

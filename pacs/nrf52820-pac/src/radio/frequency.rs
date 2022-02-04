@@ -37,6 +37,7 @@ impl From<crate::W<FREQUENCY_SPEC>> for W {
 #[doc = "Field `FREQUENCY` reader - Radio channel frequency"]
 pub struct FREQUENCY_R(crate::FieldReader<u8, u8>);
 impl FREQUENCY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FREQUENCY_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +78,7 @@ impl From<MAP_A> for bool {
 #[doc = "Field `MAP` reader - Channel map selection"]
 pub struct MAP_R(crate::FieldReader<bool, MAP_A>);
 impl MAP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MAP_R(crate::FieldReader::new(bits))
     }

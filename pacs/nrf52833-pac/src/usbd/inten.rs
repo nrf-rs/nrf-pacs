@@ -51,6 +51,7 @@ impl From<USBRESET_A> for bool {
 #[doc = "Field `USBRESET` reader - Enable or disable interrupt for event USBRESET"]
 pub struct USBRESET_R(crate::FieldReader<bool, USBRESET_A>);
 impl USBRESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBRESET_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<STARTED_A> for bool {
 #[doc = "Field `STARTED` reader - Enable or disable interrupt for event STARTED"]
 pub struct STARTED_R(crate::FieldReader<bool, STARTED_A>);
 impl STARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STARTED_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<ENDEPIN0_A> for bool {
 #[doc = "Field `ENDEPIN0` reader - Enable or disable interrupt for event ENDEPIN\\[0\\]"]
 pub struct ENDEPIN0_R(crate::FieldReader<bool, ENDEPIN0_A>);
 impl ENDEPIN0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPIN0_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<ENDEPIN1_A> for bool {
 #[doc = "Field `ENDEPIN1` reader - Enable or disable interrupt for event ENDEPIN\\[1\\]"]
 pub struct ENDEPIN1_R(crate::FieldReader<bool, ENDEPIN1_A>);
 impl ENDEPIN1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPIN1_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<ENDEPIN2_A> for bool {
 #[doc = "Field `ENDEPIN2` reader - Enable or disable interrupt for event ENDEPIN\\[2\\]"]
 pub struct ENDEPIN2_R(crate::FieldReader<bool, ENDEPIN2_A>);
 impl ENDEPIN2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPIN2_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<ENDEPIN3_A> for bool {
 #[doc = "Field `ENDEPIN3` reader - Enable or disable interrupt for event ENDEPIN\\[3\\]"]
 pub struct ENDEPIN3_R(crate::FieldReader<bool, ENDEPIN3_A>);
 impl ENDEPIN3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPIN3_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<ENDEPIN4_A> for bool {
 #[doc = "Field `ENDEPIN4` reader - Enable or disable interrupt for event ENDEPIN\\[4\\]"]
 pub struct ENDEPIN4_R(crate::FieldReader<bool, ENDEPIN4_A>);
 impl ENDEPIN4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPIN4_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<ENDEPIN5_A> for bool {
 #[doc = "Field `ENDEPIN5` reader - Enable or disable interrupt for event ENDEPIN\\[5\\]"]
 pub struct ENDEPIN5_R(crate::FieldReader<bool, ENDEPIN5_A>);
 impl ENDEPIN5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPIN5_R(crate::FieldReader::new(bits))
     }
@@ -715,6 +723,7 @@ impl From<ENDEPIN6_A> for bool {
 #[doc = "Field `ENDEPIN6` reader - Enable or disable interrupt for event ENDEPIN\\[6\\]"]
 pub struct ENDEPIN6_R(crate::FieldReader<bool, ENDEPIN6_A>);
 impl ENDEPIN6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPIN6_R(crate::FieldReader::new(bits))
     }
@@ -798,6 +807,7 @@ impl From<ENDEPIN7_A> for bool {
 #[doc = "Field `ENDEPIN7` reader - Enable or disable interrupt for event ENDEPIN\\[7\\]"]
 pub struct ENDEPIN7_R(crate::FieldReader<bool, ENDEPIN7_A>);
 impl ENDEPIN7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPIN7_R(crate::FieldReader::new(bits))
     }
@@ -881,6 +891,7 @@ impl From<EP0DATADONE_A> for bool {
 #[doc = "Field `EP0DATADONE` reader - Enable or disable interrupt for event EP0DATADONE"]
 pub struct EP0DATADONE_R(crate::FieldReader<bool, EP0DATADONE_A>);
 impl EP0DATADONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP0DATADONE_R(crate::FieldReader::new(bits))
     }
@@ -964,6 +975,7 @@ impl From<ENDISOIN_A> for bool {
 #[doc = "Field `ENDISOIN` reader - Enable or disable interrupt for event ENDISOIN"]
 pub struct ENDISOIN_R(crate::FieldReader<bool, ENDISOIN_A>);
 impl ENDISOIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDISOIN_R(crate::FieldReader::new(bits))
     }
@@ -1047,6 +1059,7 @@ impl From<ENDEPOUT0_A> for bool {
 #[doc = "Field `ENDEPOUT0` reader - Enable or disable interrupt for event ENDEPOUT\\[0\\]"]
 pub struct ENDEPOUT0_R(crate::FieldReader<bool, ENDEPOUT0_A>);
 impl ENDEPOUT0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPOUT0_R(crate::FieldReader::new(bits))
     }
@@ -1130,6 +1143,7 @@ impl From<ENDEPOUT1_A> for bool {
 #[doc = "Field `ENDEPOUT1` reader - Enable or disable interrupt for event ENDEPOUT\\[1\\]"]
 pub struct ENDEPOUT1_R(crate::FieldReader<bool, ENDEPOUT1_A>);
 impl ENDEPOUT1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPOUT1_R(crate::FieldReader::new(bits))
     }
@@ -1213,6 +1227,7 @@ impl From<ENDEPOUT2_A> for bool {
 #[doc = "Field `ENDEPOUT2` reader - Enable or disable interrupt for event ENDEPOUT\\[2\\]"]
 pub struct ENDEPOUT2_R(crate::FieldReader<bool, ENDEPOUT2_A>);
 impl ENDEPOUT2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPOUT2_R(crate::FieldReader::new(bits))
     }
@@ -1296,6 +1311,7 @@ impl From<ENDEPOUT3_A> for bool {
 #[doc = "Field `ENDEPOUT3` reader - Enable or disable interrupt for event ENDEPOUT\\[3\\]"]
 pub struct ENDEPOUT3_R(crate::FieldReader<bool, ENDEPOUT3_A>);
 impl ENDEPOUT3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPOUT3_R(crate::FieldReader::new(bits))
     }
@@ -1379,6 +1395,7 @@ impl From<ENDEPOUT4_A> for bool {
 #[doc = "Field `ENDEPOUT4` reader - Enable or disable interrupt for event ENDEPOUT\\[4\\]"]
 pub struct ENDEPOUT4_R(crate::FieldReader<bool, ENDEPOUT4_A>);
 impl ENDEPOUT4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPOUT4_R(crate::FieldReader::new(bits))
     }
@@ -1462,6 +1479,7 @@ impl From<ENDEPOUT5_A> for bool {
 #[doc = "Field `ENDEPOUT5` reader - Enable or disable interrupt for event ENDEPOUT\\[5\\]"]
 pub struct ENDEPOUT5_R(crate::FieldReader<bool, ENDEPOUT5_A>);
 impl ENDEPOUT5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPOUT5_R(crate::FieldReader::new(bits))
     }
@@ -1545,6 +1563,7 @@ impl From<ENDEPOUT6_A> for bool {
 #[doc = "Field `ENDEPOUT6` reader - Enable or disable interrupt for event ENDEPOUT\\[6\\]"]
 pub struct ENDEPOUT6_R(crate::FieldReader<bool, ENDEPOUT6_A>);
 impl ENDEPOUT6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPOUT6_R(crate::FieldReader::new(bits))
     }
@@ -1628,6 +1647,7 @@ impl From<ENDEPOUT7_A> for bool {
 #[doc = "Field `ENDEPOUT7` reader - Enable or disable interrupt for event ENDEPOUT\\[7\\]"]
 pub struct ENDEPOUT7_R(crate::FieldReader<bool, ENDEPOUT7_A>);
 impl ENDEPOUT7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPOUT7_R(crate::FieldReader::new(bits))
     }
@@ -1711,6 +1731,7 @@ impl From<ENDISOOUT_A> for bool {
 #[doc = "Field `ENDISOOUT` reader - Enable or disable interrupt for event ENDISOOUT"]
 pub struct ENDISOOUT_R(crate::FieldReader<bool, ENDISOOUT_A>);
 impl ENDISOOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDISOOUT_R(crate::FieldReader::new(bits))
     }
@@ -1794,6 +1815,7 @@ impl From<SOF_A> for bool {
 #[doc = "Field `SOF` reader - Enable or disable interrupt for event SOF"]
 pub struct SOF_R(crate::FieldReader<bool, SOF_A>);
 impl SOF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SOF_R(crate::FieldReader::new(bits))
     }
@@ -1877,6 +1899,7 @@ impl From<USBEVENT_A> for bool {
 #[doc = "Field `USBEVENT` reader - Enable or disable interrupt for event USBEVENT"]
 pub struct USBEVENT_R(crate::FieldReader<bool, USBEVENT_A>);
 impl USBEVENT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBEVENT_R(crate::FieldReader::new(bits))
     }
@@ -1960,6 +1983,7 @@ impl From<EP0SETUP_A> for bool {
 #[doc = "Field `EP0SETUP` reader - Enable or disable interrupt for event EP0SETUP"]
 pub struct EP0SETUP_R(crate::FieldReader<bool, EP0SETUP_A>);
 impl EP0SETUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP0SETUP_R(crate::FieldReader::new(bits))
     }
@@ -2043,6 +2067,7 @@ impl From<EPDATA_A> for bool {
 #[doc = "Field `EPDATA` reader - Enable or disable interrupt for event EPDATA"]
 pub struct EPDATA_R(crate::FieldReader<bool, EPDATA_A>);
 impl EPDATA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPDATA_R(crate::FieldReader::new(bits))
     }

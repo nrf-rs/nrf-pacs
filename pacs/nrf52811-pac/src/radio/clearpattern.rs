@@ -49,6 +49,7 @@ impl From<CLEARPATTERN_A> for bool {
 #[doc = "Field `CLEARPATTERN` reader - Clears GPIO pattern array for antenna control"]
 pub struct CLEARPATTERN_R(crate::FieldReader<bool, CLEARPATTERN_A>);
 impl CLEARPATTERN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CLEARPATTERN_R(crate::FieldReader::new(bits))
     }

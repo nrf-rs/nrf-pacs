@@ -51,6 +51,7 @@ impl From<EVENTS_POFWARN_A> for bool {
 #[doc = "Field `EVENTS_POFWARN` reader - Power failure warning"]
 pub struct EVENTS_POFWARN_R(crate::FieldReader<bool, EVENTS_POFWARN_A>);
 impl EVENTS_POFWARN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_POFWARN_R(crate::FieldReader::new(bits))
     }

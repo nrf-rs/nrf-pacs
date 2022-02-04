@@ -16,6 +16,7 @@ impl From<crate::R<ISOOUT_SPEC>> for R {
 #[doc = "Field `SIZE` reader - Number of bytes received last on this ISO OUT data endpoint"]
 pub struct SIZE_R(crate::FieldReader<u16, u16>);
 impl SIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         SIZE_R(crate::FieldReader::new(bits))
     }
@@ -44,6 +45,7 @@ impl From<ZERO_A> for bool {
 #[doc = "Field `ZERO` reader - Zero-length data packet received"]
 pub struct ZERO_R(crate::FieldReader<bool, ZERO_A>);
 impl ZERO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ZERO_R(crate::FieldReader::new(bits))
     }

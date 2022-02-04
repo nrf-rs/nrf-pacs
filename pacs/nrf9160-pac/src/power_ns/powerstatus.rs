@@ -30,6 +30,7 @@ impl From<LTEMODEM_A> for bool {
 #[doc = "Field `LTEMODEM` reader - LTE modem domain status"]
 pub struct LTEMODEM_R(crate::FieldReader<bool, LTEMODEM_A>);
 impl LTEMODEM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LTEMODEM_R(crate::FieldReader::new(bits))
     }

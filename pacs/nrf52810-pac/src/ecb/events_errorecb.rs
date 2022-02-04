@@ -51,6 +51,7 @@ impl From<EVENTS_ERRORECB_A> for bool {
 #[doc = "Field `EVENTS_ERRORECB` reader - ECB block encrypt aborted because of a STOPECB task or due to an error"]
 pub struct EVENTS_ERRORECB_R(crate::FieldReader<bool, EVENTS_ERRORECB_A>);
 impl EVENTS_ERRORECB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ERRORECB_R(crate::FieldReader::new(bits))
     }

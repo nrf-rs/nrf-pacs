@@ -51,6 +51,7 @@ impl From<EVENTS_RATEBOOST_A> for bool {
 #[doc = "Field `EVENTS_RATEBOOST` reader - Ble_LR CI field received, receive mode is changed from Ble_LR125Kbit to Ble_LR500Kbit."]
 pub struct EVENTS_RATEBOOST_R(crate::FieldReader<bool, EVENTS_RATEBOOST_A>);
 impl EVENTS_RATEBOOST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RATEBOOST_R(crate::FieldReader::new(bits))
     }

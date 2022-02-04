@@ -51,6 +51,7 @@ impl From<APPSET_0_A> for bool {
 #[doc = "Field `APPSET_0` reader - Application trigger event for channel 0."]
 pub struct APPSET_0_R(crate::FieldReader<bool, APPSET_0_A>);
 impl APPSET_0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         APPSET_0_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<APPSET_1_A> for bool {
 #[doc = "Field `APPSET_1` reader - Application trigger event for channel 1."]
 pub struct APPSET_1_R(crate::FieldReader<bool, APPSET_1_A>);
 impl APPSET_1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         APPSET_1_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<APPSET_2_A> for bool {
 #[doc = "Field `APPSET_2` reader - Application trigger event for channel 2."]
 pub struct APPSET_2_R(crate::FieldReader<bool, APPSET_2_A>);
 impl APPSET_2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         APPSET_2_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<APPSET_3_A> for bool {
 #[doc = "Field `APPSET_3` reader - Application trigger event for channel 3."]
 pub struct APPSET_3_R(crate::FieldReader<bool, APPSET_3_A>);
 impl APPSET_3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         APPSET_3_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<HYST_A> for bool {
 #[doc = "Field `HYST` reader - Comparator hysteresis enable"]
 pub struct HYST_R(crate::FieldReader<bool, HYST_A>);
 impl HYST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HYST_R(crate::FieldReader::new(bits))
     }

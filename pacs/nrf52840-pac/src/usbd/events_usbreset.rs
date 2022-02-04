@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_USBRESET_SPEC>> for W {
 #[doc = "Field `EVENTS_USBRESET` reader - "]
 pub struct EVENTS_USBRESET_R(crate::FieldReader<bool, bool>);
 impl EVENTS_USBRESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_USBRESET_R(crate::FieldReader::new(bits))
     }

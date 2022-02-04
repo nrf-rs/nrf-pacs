@@ -30,6 +30,7 @@ impl From<DEBUGREQ_A> for bool {
 #[doc = "Field `DEBUGREQ` reader - Processor debug request"]
 pub struct DEBUGREQ_R(crate::FieldReader<bool, DEBUGREQ_A>);
 impl DEBUGREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEBUGREQ_R(crate::FieldReader::new(bits))
     }
@@ -76,6 +77,7 @@ impl From<CPURESTART_A> for bool {
 #[doc = "Field `CPURESTART` reader - Processor Restart"]
 pub struct CPURESTART_R(crate::FieldReader<bool, CPURESTART_A>);
 impl CPURESTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPURESTART_R(crate::FieldReader::new(bits))
     }
@@ -122,6 +124,7 @@ impl From<UNUSED0_A> for bool {
 #[doc = "Field `UNUSED0` reader - N/A"]
 pub struct UNUSED0_R(crate::FieldReader<bool, UNUSED0_A>);
 impl UNUSED0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UNUSED0_R(crate::FieldReader::new(bits))
     }
@@ -168,6 +171,7 @@ impl From<UNUSED1_A> for bool {
 #[doc = "Field `UNUSED1` reader - N/A"]
 pub struct UNUSED1_R(crate::FieldReader<bool, UNUSED1_A>);
 impl UNUSED1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UNUSED1_R(crate::FieldReader::new(bits))
     }
@@ -214,6 +218,7 @@ impl From<ETMEVTIN0_A> for bool {
 #[doc = "Field `ETMEVTIN0` reader - ETM Event Input 0"]
 pub struct ETMEVTIN0_R(crate::FieldReader<bool, ETMEVTIN0_A>);
 impl ETMEVTIN0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ETMEVTIN0_R(crate::FieldReader::new(bits))
     }
@@ -260,6 +265,7 @@ impl From<ETMEVTIN1_A> for bool {
 #[doc = "Field `ETMEVTIN1` reader - ETM Event Input 1"]
 pub struct ETMEVTIN1_R(crate::FieldReader<bool, ETMEVTIN1_A>);
 impl ETMEVTIN1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ETMEVTIN1_R(crate::FieldReader::new(bits))
     }
@@ -306,6 +312,7 @@ impl From<ETMEVTIN2_A> for bool {
 #[doc = "Field `ETMEVTIN2` reader - ETM Event Input 2"]
 pub struct ETMEVTIN2_R(crate::FieldReader<bool, ETMEVTIN2_A>);
 impl ETMEVTIN2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ETMEVTIN2_R(crate::FieldReader::new(bits))
     }
@@ -352,6 +359,7 @@ impl From<ETMEVTIN3_A> for bool {
 #[doc = "Field `ETMEVTIN3` reader - ETM Event Input 3"]
 pub struct ETMEVTIN3_R(crate::FieldReader<bool, ETMEVTIN3_A>);
 impl ETMEVTIN3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ETMEVTIN3_R(crate::FieldReader::new(bits))
     }

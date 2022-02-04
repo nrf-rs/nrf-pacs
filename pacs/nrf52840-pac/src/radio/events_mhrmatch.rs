@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_MHRMATCH_SPEC>> for W {
 #[doc = "Field `EVENTS_MHRMATCH` reader - "]
 pub struct EVENTS_MHRMATCH_R(crate::FieldReader<bool, bool>);
 impl EVENTS_MHRMATCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_MHRMATCH_R(crate::FieldReader::new(bits))
     }

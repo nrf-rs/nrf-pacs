@@ -56,6 +56,7 @@ impl From<RATEOVERRIDE_A> for u8 {
 #[doc = "Field `RATEOVERRIDE` reader - Data rate override setting"]
 pub struct RATEOVERRIDE_R(crate::FieldReader<u8, RATEOVERRIDE_A>);
 impl RATEOVERRIDE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RATEOVERRIDE_R(crate::FieldReader::new(bits))
     }

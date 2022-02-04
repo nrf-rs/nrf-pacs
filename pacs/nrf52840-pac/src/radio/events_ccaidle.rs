@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_CCAIDLE_SPEC>> for W {
 #[doc = "Field `EVENTS_CCAIDLE` reader - "]
 pub struct EVENTS_CCAIDLE_R(crate::FieldReader<bool, bool>);
 impl EVENTS_CCAIDLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_CCAIDLE_R(crate::FieldReader::new(bits))
     }

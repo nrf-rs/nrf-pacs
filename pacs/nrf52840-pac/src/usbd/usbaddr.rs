@@ -16,6 +16,7 @@ impl From<crate::R<USBADDR_SPEC>> for R {
 #[doc = "Field `ADDR` reader - Device USB address"]
 pub struct ADDR_R(crate::FieldReader<u8, u8>);
 impl ADDR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ADDR_R(crate::FieldReader::new(bits))
     }

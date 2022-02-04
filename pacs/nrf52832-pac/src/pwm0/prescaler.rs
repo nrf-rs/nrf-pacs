@@ -38,19 +38,19 @@ impl From<crate::W<PRESCALER_SPEC>> for W {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PRESCALER_A {
-    #[doc = "0: Divide by   1 (16MHz)"]
+    #[doc = "0: Divide by 1 (16MHz)"]
     DIV_1 = 0,
-    #[doc = "1: Divide by   2 ( 8MHz)"]
+    #[doc = "1: Divide by 2 ( 8MHz)"]
     DIV_2 = 1,
-    #[doc = "2: Divide by   4 ( 4MHz)"]
+    #[doc = "2: Divide by 4 ( 4MHz)"]
     DIV_4 = 2,
-    #[doc = "3: Divide by   8 ( 2MHz)"]
+    #[doc = "3: Divide by 8 ( 2MHz)"]
     DIV_8 = 3,
-    #[doc = "4: Divide by  16 ( 1MHz)"]
+    #[doc = "4: Divide by 16 ( 1MHz)"]
     DIV_16 = 4,
-    #[doc = "5: Divide by  32 ( 500kHz)"]
+    #[doc = "5: Divide by 32 ( 500kHz)"]
     DIV_32 = 5,
-    #[doc = "6: Divide by  64 ( 250kHz)"]
+    #[doc = "6: Divide by 64 ( 250kHz)"]
     DIV_64 = 6,
     #[doc = "7: Divide by 128 ( 125kHz)"]
     DIV_128 = 7,
@@ -64,6 +64,7 @@ impl From<PRESCALER_A> for u8 {
 #[doc = "Field `PRESCALER` reader - Pre-scaler of PWM_CLK"]
 pub struct PRESCALER_R(crate::FieldReader<u8, PRESCALER_A>);
 impl PRESCALER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRESCALER_R(crate::FieldReader::new(bits))
     }

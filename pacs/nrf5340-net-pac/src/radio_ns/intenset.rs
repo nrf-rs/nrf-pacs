@@ -51,6 +51,7 @@ impl From<READY_A> for bool {
 #[doc = "Field `READY` reader - Write '1' to enable interrupt for event READY"]
 pub struct READY_R(crate::FieldReader<bool, READY_A>);
 impl READY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READY_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<ADDRESS_A> for bool {
 #[doc = "Field `ADDRESS` reader - Write '1' to enable interrupt for event ADDRESS"]
 pub struct ADDRESS_R(crate::FieldReader<bool, ADDRESS_A>);
 impl ADDRESS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDRESS_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<PAYLOAD_A> for bool {
 #[doc = "Field `PAYLOAD` reader - Write '1' to enable interrupt for event PAYLOAD"]
 pub struct PAYLOAD_R(crate::FieldReader<bool, PAYLOAD_A>);
 impl PAYLOAD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PAYLOAD_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<END_A> for bool {
 #[doc = "Field `END` reader - Write '1' to enable interrupt for event END"]
 pub struct END_R(crate::FieldReader<bool, END_A>);
 impl END_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         END_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +415,7 @@ impl From<DISABLED_A> for bool {
 #[doc = "Field `DISABLED` reader - Write '1' to enable interrupt for event DISABLED"]
 pub struct DISABLED_R(crate::FieldReader<bool, DISABLED_A>);
 impl DISABLED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DISABLED_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +506,7 @@ impl From<DEVMATCH_A> for bool {
 #[doc = "Field `DEVMATCH` reader - Write '1' to enable interrupt for event DEVMATCH"]
 pub struct DEVMATCH_R(crate::FieldReader<bool, DEVMATCH_A>);
 impl DEVMATCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEVMATCH_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +597,7 @@ impl From<DEVMISS_A> for bool {
 #[doc = "Field `DEVMISS` reader - Write '1' to enable interrupt for event DEVMISS"]
 pub struct DEVMISS_R(crate::FieldReader<bool, DEVMISS_A>);
 impl DEVMISS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEVMISS_R(crate::FieldReader::new(bits))
     }
@@ -681,6 +688,7 @@ impl From<RSSIEND_A> for bool {
 #[doc = "Field `RSSIEND` reader - Write '1' to enable interrupt for event RSSIEND"]
 pub struct RSSIEND_R(crate::FieldReader<bool, RSSIEND_A>);
 impl RSSIEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RSSIEND_R(crate::FieldReader::new(bits))
     }
@@ -771,6 +779,7 @@ impl From<BCMATCH_A> for bool {
 #[doc = "Field `BCMATCH` reader - Write '1' to enable interrupt for event BCMATCH"]
 pub struct BCMATCH_R(crate::FieldReader<bool, BCMATCH_A>);
 impl BCMATCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BCMATCH_R(crate::FieldReader::new(bits))
     }
@@ -861,6 +870,7 @@ impl From<CRCOK_A> for bool {
 #[doc = "Field `CRCOK` reader - Write '1' to enable interrupt for event CRCOK"]
 pub struct CRCOK_R(crate::FieldReader<bool, CRCOK_A>);
 impl CRCOK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CRCOK_R(crate::FieldReader::new(bits))
     }
@@ -951,6 +961,7 @@ impl From<CRCERROR_A> for bool {
 #[doc = "Field `CRCERROR` reader - Write '1' to enable interrupt for event CRCERROR"]
 pub struct CRCERROR_R(crate::FieldReader<bool, CRCERROR_A>);
 impl CRCERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CRCERROR_R(crate::FieldReader::new(bits))
     }
@@ -1041,6 +1052,7 @@ impl From<FRAMESTART_A> for bool {
 #[doc = "Field `FRAMESTART` reader - Write '1' to enable interrupt for event FRAMESTART"]
 pub struct FRAMESTART_R(crate::FieldReader<bool, FRAMESTART_A>);
 impl FRAMESTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRAMESTART_R(crate::FieldReader::new(bits))
     }
@@ -1131,6 +1143,7 @@ impl From<EDEND_A> for bool {
 #[doc = "Field `EDEND` reader - Write '1' to enable interrupt for event EDEND"]
 pub struct EDEND_R(crate::FieldReader<bool, EDEND_A>);
 impl EDEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EDEND_R(crate::FieldReader::new(bits))
     }
@@ -1221,6 +1234,7 @@ impl From<EDSTOPPED_A> for bool {
 #[doc = "Field `EDSTOPPED` reader - Write '1' to enable interrupt for event EDSTOPPED"]
 pub struct EDSTOPPED_R(crate::FieldReader<bool, EDSTOPPED_A>);
 impl EDSTOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EDSTOPPED_R(crate::FieldReader::new(bits))
     }
@@ -1311,6 +1325,7 @@ impl From<CCAIDLE_A> for bool {
 #[doc = "Field `CCAIDLE` reader - Write '1' to enable interrupt for event CCAIDLE"]
 pub struct CCAIDLE_R(crate::FieldReader<bool, CCAIDLE_A>);
 impl CCAIDLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCAIDLE_R(crate::FieldReader::new(bits))
     }
@@ -1401,6 +1416,7 @@ impl From<CCABUSY_A> for bool {
 #[doc = "Field `CCABUSY` reader - Write '1' to enable interrupt for event CCABUSY"]
 pub struct CCABUSY_R(crate::FieldReader<bool, CCABUSY_A>);
 impl CCABUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCABUSY_R(crate::FieldReader::new(bits))
     }
@@ -1491,6 +1507,7 @@ impl From<CCASTOPPED_A> for bool {
 #[doc = "Field `CCASTOPPED` reader - Write '1' to enable interrupt for event CCASTOPPED"]
 pub struct CCASTOPPED_R(crate::FieldReader<bool, CCASTOPPED_A>);
 impl CCASTOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCASTOPPED_R(crate::FieldReader::new(bits))
     }
@@ -1581,6 +1598,7 @@ impl From<RATEBOOST_A> for bool {
 #[doc = "Field `RATEBOOST` reader - Write '1' to enable interrupt for event RATEBOOST"]
 pub struct RATEBOOST_R(crate::FieldReader<bool, RATEBOOST_A>);
 impl RATEBOOST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RATEBOOST_R(crate::FieldReader::new(bits))
     }
@@ -1671,6 +1689,7 @@ impl From<TXREADY_A> for bool {
 #[doc = "Field `TXREADY` reader - Write '1' to enable interrupt for event TXREADY"]
 pub struct TXREADY_R(crate::FieldReader<bool, TXREADY_A>);
 impl TXREADY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXREADY_R(crate::FieldReader::new(bits))
     }
@@ -1761,6 +1780,7 @@ impl From<RXREADY_A> for bool {
 #[doc = "Field `RXREADY` reader - Write '1' to enable interrupt for event RXREADY"]
 pub struct RXREADY_R(crate::FieldReader<bool, RXREADY_A>);
 impl RXREADY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXREADY_R(crate::FieldReader::new(bits))
     }
@@ -1851,6 +1871,7 @@ impl From<MHRMATCH_A> for bool {
 #[doc = "Field `MHRMATCH` reader - Write '1' to enable interrupt for event MHRMATCH"]
 pub struct MHRMATCH_R(crate::FieldReader<bool, MHRMATCH_A>);
 impl MHRMATCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MHRMATCH_R(crate::FieldReader::new(bits))
     }
@@ -1941,6 +1962,7 @@ impl From<SYNC_A> for bool {
 #[doc = "Field `SYNC` reader - Write '1' to enable interrupt for event SYNC"]
 pub struct SYNC_R(crate::FieldReader<bool, SYNC_A>);
 impl SYNC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SYNC_R(crate::FieldReader::new(bits))
     }
@@ -2031,6 +2053,7 @@ impl From<PHYEND_A> for bool {
 #[doc = "Field `PHYEND` reader - Write '1' to enable interrupt for event PHYEND"]
 pub struct PHYEND_R(crate::FieldReader<bool, PHYEND_A>);
 impl PHYEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PHYEND_R(crate::FieldReader::new(bits))
     }
@@ -2121,6 +2144,7 @@ impl From<CTEPRESENT_A> for bool {
 #[doc = "Field `CTEPRESENT` reader - Write '1' to enable interrupt for event CTEPRESENT"]
 pub struct CTEPRESENT_R(crate::FieldReader<bool, CTEPRESENT_A>);
 impl CTEPRESENT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTEPRESENT_R(crate::FieldReader::new(bits))
     }

@@ -53,6 +53,7 @@ impl From<EVENTS_ENDEPIN_A> for bool {
 buffer has been consumed. The buffer can be accessed safely by software."]
 pub struct EVENTS_ENDEPIN_R(crate::FieldReader<bool, EVENTS_ENDEPIN_A>);
 impl EVENTS_ENDEPIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ENDEPIN_R(crate::FieldReader::new(bits))
     }

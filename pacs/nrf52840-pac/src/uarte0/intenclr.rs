@@ -51,6 +51,7 @@ impl From<CTS_A> for bool {
 #[doc = "Field `CTS` reader - Write '1' to disable interrupt for CTS event"]
 pub struct CTS_R(crate::FieldReader<bool, CTS_A>);
 impl CTS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTS_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<NCTS_A> for bool {
 #[doc = "Field `NCTS` reader - Write '1' to disable interrupt for NCTS event"]
 pub struct NCTS_R(crate::FieldReader<bool, NCTS_A>);
 impl NCTS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NCTS_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<RXDRDY_A> for bool {
 #[doc = "Field `RXDRDY` reader - Write '1' to disable interrupt for RXDRDY event"]
 pub struct RXDRDY_R(crate::FieldReader<bool, RXDRDY_A>);
 impl RXDRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXDRDY_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<ENDRX_A> for bool {
 #[doc = "Field `ENDRX` reader - Write '1' to disable interrupt for ENDRX event"]
 pub struct ENDRX_R(crate::FieldReader<bool, ENDRX_A>);
 impl ENDRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDRX_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +415,7 @@ impl From<TXDRDY_A> for bool {
 #[doc = "Field `TXDRDY` reader - Write '1' to disable interrupt for TXDRDY event"]
 pub struct TXDRDY_R(crate::FieldReader<bool, TXDRDY_A>);
 impl TXDRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXDRDY_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +506,7 @@ impl From<ENDTX_A> for bool {
 #[doc = "Field `ENDTX` reader - Write '1' to disable interrupt for ENDTX event"]
 pub struct ENDTX_R(crate::FieldReader<bool, ENDTX_A>);
 impl ENDTX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDTX_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +597,7 @@ impl From<ERROR_A> for bool {
 #[doc = "Field `ERROR` reader - Write '1' to disable interrupt for ERROR event"]
 pub struct ERROR_R(crate::FieldReader<bool, ERROR_A>);
 impl ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERROR_R(crate::FieldReader::new(bits))
     }
@@ -681,6 +688,7 @@ impl From<RXTO_A> for bool {
 #[doc = "Field `RXTO` reader - Write '1' to disable interrupt for RXTO event"]
 pub struct RXTO_R(crate::FieldReader<bool, RXTO_A>);
 impl RXTO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXTO_R(crate::FieldReader::new(bits))
     }
@@ -771,6 +779,7 @@ impl From<RXSTARTED_A> for bool {
 #[doc = "Field `RXSTARTED` reader - Write '1' to disable interrupt for RXSTARTED event"]
 pub struct RXSTARTED_R(crate::FieldReader<bool, RXSTARTED_A>);
 impl RXSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXSTARTED_R(crate::FieldReader::new(bits))
     }
@@ -861,6 +870,7 @@ impl From<TXSTARTED_A> for bool {
 #[doc = "Field `TXSTARTED` reader - Write '1' to disable interrupt for TXSTARTED event"]
 pub struct TXSTARTED_R(crate::FieldReader<bool, TXSTARTED_A>);
 impl TXSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXSTARTED_R(crate::FieldReader::new(bits))
     }
@@ -951,6 +961,7 @@ impl From<TXSTOPPED_A> for bool {
 #[doc = "Field `TXSTOPPED` reader - Write '1' to disable interrupt for TXSTOPPED event"]
 pub struct TXSTOPPED_R(crate::FieldReader<bool, TXSTOPPED_A>);
 impl TXSTOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXSTOPPED_R(crate::FieldReader::new(bits))
     }

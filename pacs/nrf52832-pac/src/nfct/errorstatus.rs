@@ -37,6 +37,7 @@ impl From<crate::W<ERRORSTATUS_SPEC>> for W {
 #[doc = "Field `FRAMEDELAYTIMEOUT` reader - No STARTTX task triggered before expiration of the time set in FRAMEDELAYMAX"]
 pub struct FRAMEDELAYTIMEOUT_R(crate::FieldReader<bool, bool>);
 impl FRAMEDELAYTIMEOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRAMEDELAYTIMEOUT_R(crate::FieldReader::new(bits))
     }
@@ -73,6 +74,7 @@ impl<'a> FRAMEDELAYTIMEOUT_W<'a> {
 #[doc = "Field `NFCFIELDTOOSTRONG` reader - Field level is too high at max load resistance"]
 pub struct NFCFIELDTOOSTRONG_R(crate::FieldReader<bool, bool>);
 impl NFCFIELDTOOSTRONG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NFCFIELDTOOSTRONG_R(crate::FieldReader::new(bits))
     }
@@ -109,6 +111,7 @@ impl<'a> NFCFIELDTOOSTRONG_W<'a> {
 #[doc = "Field `NFCFIELDTOOWEAK` reader - Field level is too low at min load resistance"]
 pub struct NFCFIELDTOOWEAK_R(crate::FieldReader<bool, bool>);
 impl NFCFIELDTOOWEAK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NFCFIELDTOOWEAK_R(crate::FieldReader::new(bits))
     }

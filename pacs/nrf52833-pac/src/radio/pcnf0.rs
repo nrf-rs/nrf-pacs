@@ -37,6 +37,7 @@ impl From<crate::W<PCNF0_SPEC>> for W {
 #[doc = "Field `LFLEN` reader - Length on air of LENGTH field in number of bits."]
 pub struct LFLEN_R(crate::FieldReader<u8, u8>);
 impl LFLEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LFLEN_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> LFLEN_W<'a> {
 #[doc = "Field `S0LEN` reader - Length on air of S0 field in number of bytes."]
 pub struct S0LEN_R(crate::FieldReader<bool, bool>);
 impl S0LEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S0LEN_R(crate::FieldReader::new(bits))
     }
@@ -99,6 +101,7 @@ impl<'a> S0LEN_W<'a> {
 #[doc = "Field `S1LEN` reader - Length on air of S1 field in number of bits."]
 pub struct S1LEN_R(crate::FieldReader<u8, u8>);
 impl S1LEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         S1LEN_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +142,7 @@ impl From<S1INCL_A> for bool {
 #[doc = "Field `S1INCL` reader - Include or exclude S1 field in RAM"]
 pub struct S1INCL_R(crate::FieldReader<bool, S1INCL_A>);
 impl S1INCL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S1INCL_R(crate::FieldReader::new(bits))
     }
@@ -208,6 +212,7 @@ impl<'a> S1INCL_W<'a> {
 #[doc = "Field `CILEN` reader - Length of code indicator - long range"]
 pub struct CILEN_R(crate::FieldReader<u8, u8>);
 impl CILEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CILEN_R(crate::FieldReader::new(bits))
     }
@@ -253,6 +258,7 @@ impl From<PLEN_A> for u8 {
 #[doc = "Field `PLEN` reader - Length of preamble on air. Decision point: TASKS_START task"]
 pub struct PLEN_R(crate::FieldReader<u8, PLEN_A>);
 impl PLEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PLEN_R(crate::FieldReader::new(bits))
     }
@@ -349,6 +355,7 @@ impl From<CRCINC_A> for bool {
 #[doc = "Field `CRCINC` reader - Indicates if LENGTH field contains CRC or not"]
 pub struct CRCINC_R(crate::FieldReader<bool, CRCINC_A>);
 impl CRCINC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CRCINC_R(crate::FieldReader::new(bits))
     }
@@ -418,6 +425,7 @@ impl<'a> CRCINC_W<'a> {
 #[doc = "Field `TERMLEN` reader - Length of TERM field in Long Range operation"]
 pub struct TERMLEN_R(crate::FieldReader<u8, u8>);
 impl TERMLEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TERMLEN_R(crate::FieldReader::new(bits))
     }

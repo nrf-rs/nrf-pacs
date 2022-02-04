@@ -70,6 +70,7 @@ impl From<PSELP_A> for u8 {
 #[doc = "Field `PSELP` reader - Analog positive input channel"]
 pub struct PSELP_R(crate::FieldReader<u8, PSELP_A>);
 impl PSELP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PSELP_R(crate::FieldReader::new(bits))
     }

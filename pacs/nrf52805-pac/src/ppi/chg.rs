@@ -51,6 +51,7 @@ impl From<CH0_A> for bool {
 #[doc = "Field `CH0` reader - Include or exclude channel 0"]
 pub struct CH0_R(crate::FieldReader<bool, CH0_A>);
 impl CH0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<CH1_A> for bool {
 #[doc = "Field `CH1` reader - Include or exclude channel 1"]
 pub struct CH1_R(crate::FieldReader<bool, CH1_A>);
 impl CH1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<CH2_A> for bool {
 #[doc = "Field `CH2` reader - Include or exclude channel 2"]
 pub struct CH2_R(crate::FieldReader<bool, CH2_A>);
 impl CH2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH2_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<CH3_A> for bool {
 #[doc = "Field `CH3` reader - Include or exclude channel 3"]
 pub struct CH3_R(crate::FieldReader<bool, CH3_A>);
 impl CH3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH3_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<CH4_A> for bool {
 #[doc = "Field `CH4` reader - Include or exclude channel 4"]
 pub struct CH4_R(crate::FieldReader<bool, CH4_A>);
 impl CH4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH4_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<CH5_A> for bool {
 #[doc = "Field `CH5` reader - Include or exclude channel 5"]
 pub struct CH5_R(crate::FieldReader<bool, CH5_A>);
 impl CH5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH5_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<CH6_A> for bool {
 #[doc = "Field `CH6` reader - Include or exclude channel 6"]
 pub struct CH6_R(crate::FieldReader<bool, CH6_A>);
 impl CH6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH6_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<CH7_A> for bool {
 #[doc = "Field `CH7` reader - Include or exclude channel 7"]
 pub struct CH7_R(crate::FieldReader<bool, CH7_A>);
 impl CH7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH7_R(crate::FieldReader::new(bits))
     }
@@ -715,6 +723,7 @@ impl From<CH8_A> for bool {
 #[doc = "Field `CH8` reader - Include or exclude channel 8"]
 pub struct CH8_R(crate::FieldReader<bool, CH8_A>);
 impl CH8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH8_R(crate::FieldReader::new(bits))
     }
@@ -798,6 +807,7 @@ impl From<CH9_A> for bool {
 #[doc = "Field `CH9` reader - Include or exclude channel 9"]
 pub struct CH9_R(crate::FieldReader<bool, CH9_A>);
 impl CH9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH9_R(crate::FieldReader::new(bits))
     }
@@ -881,6 +891,7 @@ impl From<CH20_A> for bool {
 #[doc = "Field `CH20` reader - Include or exclude channel 20"]
 pub struct CH20_R(crate::FieldReader<bool, CH20_A>);
 impl CH20_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH20_R(crate::FieldReader::new(bits))
     }
@@ -964,6 +975,7 @@ impl From<CH21_A> for bool {
 #[doc = "Field `CH21` reader - Include or exclude channel 21"]
 pub struct CH21_R(crate::FieldReader<bool, CH21_A>);
 impl CH21_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH21_R(crate::FieldReader::new(bits))
     }
@@ -1047,6 +1059,7 @@ impl From<CH22_A> for bool {
 #[doc = "Field `CH22` reader - Include or exclude channel 22"]
 pub struct CH22_R(crate::FieldReader<bool, CH22_A>);
 impl CH22_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH22_R(crate::FieldReader::new(bits))
     }
@@ -1130,6 +1143,7 @@ impl From<CH23_A> for bool {
 #[doc = "Field `CH23` reader - Include or exclude channel 23"]
 pub struct CH23_R(crate::FieldReader<bool, CH23_A>);
 impl CH23_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH23_R(crate::FieldReader::new(bits))
     }
@@ -1213,6 +1227,7 @@ impl From<CH24_A> for bool {
 #[doc = "Field `CH24` reader - Include or exclude channel 24"]
 pub struct CH24_R(crate::FieldReader<bool, CH24_A>);
 impl CH24_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH24_R(crate::FieldReader::new(bits))
     }
@@ -1296,6 +1311,7 @@ impl From<CH25_A> for bool {
 #[doc = "Field `CH25` reader - Include or exclude channel 25"]
 pub struct CH25_R(crate::FieldReader<bool, CH25_A>);
 impl CH25_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH25_R(crate::FieldReader::new(bits))
     }
@@ -1379,6 +1395,7 @@ impl From<CH26_A> for bool {
 #[doc = "Field `CH26` reader - Include or exclude channel 26"]
 pub struct CH26_R(crate::FieldReader<bool, CH26_A>);
 impl CH26_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH26_R(crate::FieldReader::new(bits))
     }
@@ -1462,6 +1479,7 @@ impl From<CH27_A> for bool {
 #[doc = "Field `CH27` reader - Include or exclude channel 27"]
 pub struct CH27_R(crate::FieldReader<bool, CH27_A>);
 impl CH27_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH27_R(crate::FieldReader::new(bits))
     }
@@ -1545,6 +1563,7 @@ impl From<CH28_A> for bool {
 #[doc = "Field `CH28` reader - Include or exclude channel 28"]
 pub struct CH28_R(crate::FieldReader<bool, CH28_A>);
 impl CH28_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH28_R(crate::FieldReader::new(bits))
     }
@@ -1628,6 +1647,7 @@ impl From<CH29_A> for bool {
 #[doc = "Field `CH29` reader - Include or exclude channel 29"]
 pub struct CH29_R(crate::FieldReader<bool, CH29_A>);
 impl CH29_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH29_R(crate::FieldReader::new(bits))
     }
@@ -1711,6 +1731,7 @@ impl From<CH30_A> for bool {
 #[doc = "Field `CH30` reader - Include or exclude channel 30"]
 pub struct CH30_R(crate::FieldReader<bool, CH30_A>);
 impl CH30_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH30_R(crate::FieldReader::new(bits))
     }
@@ -1794,6 +1815,7 @@ impl From<CH31_A> for bool {
 #[doc = "Field `CH31` reader - Include or exclude channel 31"]
 pub struct CH31_R(crate::FieldReader<bool, CH31_A>);
 impl CH31_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH31_R(crate::FieldReader::new(bits))
     }

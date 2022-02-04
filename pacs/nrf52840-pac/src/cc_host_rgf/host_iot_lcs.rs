@@ -52,6 +52,7 @@ impl From<LCS_A> for u8 {
 #[doc = "Field `LCS` reader - Lifecycle state value. This field is write-once per reset."]
 pub struct LCS_R(crate::FieldReader<u8, LCS_A>);
 impl LCS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LCS_R(crate::FieldReader::new(bits))
     }
@@ -126,6 +127,7 @@ impl From<LCS_IS_VALID_A> for bool {
 #[doc = "Field `LCS_IS_VALID` reader - This field is read-only and indicates if CRYPTOCELL LCS has been successfully configured since last reset"]
 pub struct LCS_IS_VALID_R(crate::FieldReader<bool, LCS_IS_VALID_A>);
 impl LCS_IS_VALID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LCS_IS_VALID_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<FREQUENCY_SPEC>> for W {
 #[doc = "Field `FREQUENCY` reader - Radio channel frequency offset in MHz: RF Frequency = 2400 + FREQUENCY (MHz). Decision point: TXEN or RXEN task."]
 pub struct FREQUENCY_R(crate::FieldReader<u8, u8>);
 impl FREQUENCY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FREQUENCY_R(crate::FieldReader::new(bits))
     }

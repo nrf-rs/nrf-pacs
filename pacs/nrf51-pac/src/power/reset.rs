@@ -51,6 +51,7 @@ impl From<RESET_A> for bool {
 #[doc = "Field `RESET` reader - Enable or disable pin reset in debug interface mode."]
 pub struct RESET_R(crate::FieldReader<bool, RESET_A>);
 impl RESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESET_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<PRESCALER_SPEC>> for W {
 #[doc = "Field `PRESCALER` reader - Prescaler value"]
 pub struct PRESCALER_R(crate::FieldReader<u16, u16>);
 impl PRESCALER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         PRESCALER_R(crate::FieldReader::new(bits))
     }

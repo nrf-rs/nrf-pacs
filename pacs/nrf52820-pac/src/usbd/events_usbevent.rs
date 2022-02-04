@@ -51,6 +51,7 @@ impl From<EVENTS_USBEVENT_A> for bool {
 #[doc = "Field `EVENTS_USBEVENT` reader - An event or an error not covered by specific events has occurred. Check EVENTCAUSE register to find the cause."]
 pub struct EVENTS_USBEVENT_R(crate::FieldReader<bool, EVENTS_USBEVENT_A>);
 impl EVENTS_USBEVENT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_USBEVENT_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_RATEBOOST_SPEC>> for W {
 #[doc = "Field `EVENTS_RATEBOOST` reader - "]
 pub struct EVENTS_RATEBOOST_R(crate::FieldReader<bool, bool>);
 impl EVENTS_RATEBOOST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RATEBOOST_R(crate::FieldReader::new(bits))
     }

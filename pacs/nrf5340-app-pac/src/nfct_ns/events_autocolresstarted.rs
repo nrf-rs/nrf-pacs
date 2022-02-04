@@ -51,6 +51,7 @@ impl From<EVENTS_AUTOCOLRESSTARTED_A> for bool {
 #[doc = "Field `EVENTS_AUTOCOLRESSTARTED` reader - Auto collision resolution process has started"]
 pub struct EVENTS_AUTOCOLRESSTARTED_R(crate::FieldReader<bool, EVENTS_AUTOCOLRESSTARTED_A>);
 impl EVENTS_AUTOCOLRESSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_AUTOCOLRESSTARTED_R(crate::FieldReader::new(bits))
     }

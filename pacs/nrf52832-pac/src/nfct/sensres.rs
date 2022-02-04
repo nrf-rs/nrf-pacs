@@ -60,6 +60,7 @@ impl From<BITFRAMESDD_A> for u8 {
 #[doc = "Field `BITFRAMESDD` reader - Bit frame SDD as defined by the b5:b1 of byte 1 in SENS_RES response in the NFC Forum, NFC Digital Protocol Technical Specification"]
 pub struct BITFRAMESDD_R(crate::FieldReader<u8, BITFRAMESDD_A>);
 impl BITFRAMESDD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BITFRAMESDD_R(crate::FieldReader::new(bits))
     }
@@ -164,6 +165,7 @@ impl<'a> BITFRAMESDD_W<'a> {
 #[doc = "Field `RFU5` reader - Reserved for future use. Shall be 0."]
 pub struct RFU5_R(crate::FieldReader<bool, bool>);
 impl RFU5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RFU5_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<NFCIDSIZE_A> for u8 {
 #[doc = "Field `NFCIDSIZE` reader - NFCID1 size. This value is used by the Auto collision resolution engine."]
 pub struct NFCIDSIZE_R(crate::FieldReader<u8, NFCIDSIZE_A>);
 impl NFCIDSIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NFCIDSIZE_R(crate::FieldReader::new(bits))
     }
@@ -288,6 +291,7 @@ impl<'a> NFCIDSIZE_W<'a> {
 #[doc = "Field `PLATFCONFIG` reader - Tag platform configuration as defined by the b4:b1 of byte 2 in SENS_RES response in the NFC Forum, NFC Digital Protocol Technical Specification"]
 pub struct PLATFCONFIG_R(crate::FieldReader<u8, u8>);
 impl PLATFCONFIG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PLATFCONFIG_R(crate::FieldReader::new(bits))
     }
@@ -314,6 +318,7 @@ impl<'a> PLATFCONFIG_W<'a> {
 #[doc = "Field `RFU74` reader - Reserved for future use. Shall be 0."]
 pub struct RFU74_R(crate::FieldReader<u8, u8>);
 impl RFU74_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RFU74_R(crate::FieldReader::new(bits))
     }

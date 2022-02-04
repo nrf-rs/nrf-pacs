@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_PWMPERIODEND_SPEC>> for W {
 #[doc = "Field `EVENTS_PWMPERIODEND` reader - "]
 pub struct EVENTS_PWMPERIODEND_R(crate::FieldReader<bool, bool>);
 impl EVENTS_PWMPERIODEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_PWMPERIODEND_R(crate::FieldReader::new(bits))
     }

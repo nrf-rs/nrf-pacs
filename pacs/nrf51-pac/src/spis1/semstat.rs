@@ -35,6 +35,7 @@ impl From<SEMSTAT_A> for u8 {
 #[doc = "Field `SEMSTAT` reader - Semaphore status."]
 pub struct SEMSTAT_R(crate::FieldReader<u8, SEMSTAT_A>);
 impl SEMSTAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SEMSTAT_R(crate::FieldReader::new(bits))
     }

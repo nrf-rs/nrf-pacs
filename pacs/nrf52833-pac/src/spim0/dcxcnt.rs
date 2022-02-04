@@ -37,6 +37,7 @@ impl From<crate::W<DCXCNT_SPEC>> for W {
 #[doc = "Field `DCXCNT` reader - This register specifies the number of command bytes preceding the data bytes. The PSEL.DCX line will be low during transmission of command bytes and high during transmission of data bytes. Value 0xF indicates that all bytes are command bytes."]
 pub struct DCXCNT_R(crate::FieldReader<u8, u8>);
 impl DCXCNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DCXCNT_R(crate::FieldReader::new(bits))
     }

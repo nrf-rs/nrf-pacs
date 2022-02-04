@@ -51,6 +51,7 @@ impl From<CTS_STARTRX_A> for bool {
 #[doc = "Field `CTS_STARTRX` reader - Shortcut between CTS event and STARTRX task"]
 pub struct CTS_STARTRX_R(crate::FieldReader<bool, CTS_STARTRX_A>);
 impl CTS_STARTRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTS_STARTRX_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<NCTS_STOPRX_A> for bool {
 #[doc = "Field `NCTS_STOPRX` reader - Shortcut between NCTS event and STOPRX task"]
 pub struct NCTS_STOPRX_R(crate::FieldReader<bool, NCTS_STOPRX_A>);
 impl NCTS_STOPRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NCTS_STOPRX_R(crate::FieldReader::new(bits))
     }

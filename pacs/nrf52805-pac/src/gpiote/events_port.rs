@@ -51,6 +51,7 @@ impl From<EVENTS_PORT_A> for bool {
 #[doc = "Field `EVENTS_PORT` reader - Event generated from multiple input GPIO pins with SENSE mechanism enabled"]
 pub struct EVENTS_PORT_R(crate::FieldReader<bool, EVENTS_PORT_A>);
 impl EVENTS_PORT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_PORT_R(crate::FieldReader::new(bits))
     }

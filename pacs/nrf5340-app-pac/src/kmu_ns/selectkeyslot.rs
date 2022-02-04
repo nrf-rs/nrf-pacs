@@ -39,6 +39,7 @@ and UICR-&gt;KEYSLOT.CONFIG\\[N\\]
 corresponds to KMU key slot ID=N+1."]
 pub struct ID_R(crate::FieldReader<u8, u8>);
 impl ID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ID_R(crate::FieldReader::new(bits))
     }

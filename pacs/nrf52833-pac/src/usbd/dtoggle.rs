@@ -37,6 +37,7 @@ impl From<crate::W<DTOGGLE_SPEC>> for W {
 #[doc = "Field `EP` reader - Select bulk endpoint number"]
 pub struct EP_R(crate::FieldReader<u8, u8>);
 impl EP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         EP_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +78,7 @@ impl From<IO_A> for bool {
 #[doc = "Field `IO` reader - Selects IN or OUT endpoint"]
 pub struct IO_R(crate::FieldReader<bool, IO_A>);
 impl IO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         IO_R(crate::FieldReader::new(bits))
     }
@@ -163,6 +165,7 @@ impl From<VALUE_A> for u8 {
 #[doc = "Field `VALUE` reader - Data toggle value"]
 pub struct VALUE_R(crate::FieldReader<u8, VALUE_A>);
 impl VALUE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         VALUE_R(crate::FieldReader::new(bits))
     }

@@ -64,6 +64,7 @@ impl From<SAMPLEPER_A> for u8 {
 #[doc = "Field `SAMPLEPER` reader - Sample period."]
 pub struct SAMPLEPER_R(crate::FieldReader<u8, SAMPLEPER_A>);
 impl SAMPLEPER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SAMPLEPER_R(crate::FieldReader::new(bits))
     }

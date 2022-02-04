@@ -37,6 +37,7 @@ impl From<crate::W<T4_SPEC>> for W {
 #[doc = "Field `T4` reader - Endpoint of fifth piecewise linear function"]
 pub struct T4_R(crate::FieldReader<u8, u8>);
 impl T4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         T4_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<HEADERMASK_SPEC>> for W {
 #[doc = "Field `HEADERMASK` reader - Header (S0) mask"]
 pub struct HEADERMASK_R(crate::FieldReader<u8, u8>);
 impl HEADERMASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         HEADERMASK_R(crate::FieldReader::new(bits))
     }

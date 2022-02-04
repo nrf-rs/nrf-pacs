@@ -51,6 +51,7 @@ impl From<HOST_IOT_KPRTL_LOCK_A> for bool {
 #[doc = "Field `HOST_IOT_KPRTL_LOCK` reader - This register is the K_PRTL lock register. When this register is set, K_PRTL can not be used and a zeroed key will be used instead. The value of this register is saved in the CRYPTOCELL AO power domain."]
 pub struct HOST_IOT_KPRTL_LOCK_R(crate::FieldReader<bool, HOST_IOT_KPRTL_LOCK_A>);
 impl HOST_IOT_KPRTL_LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HOST_IOT_KPRTL_LOCK_R(crate::FieldReader::new(bits))
     }

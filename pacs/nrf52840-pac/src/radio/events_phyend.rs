@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_PHYEND_SPEC>> for W {
 #[doc = "Field `EVENTS_PHYEND` reader - "]
 pub struct EVENTS_PHYEND_R(crate::FieldReader<bool, bool>);
 impl EVENTS_PHYEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_PHYEND_R(crate::FieldReader::new(bits))
     }

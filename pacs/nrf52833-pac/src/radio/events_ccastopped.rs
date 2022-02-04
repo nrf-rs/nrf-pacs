@@ -51,6 +51,7 @@ impl From<EVENTS_CCASTOPPED_A> for bool {
 #[doc = "Field `EVENTS_CCASTOPPED` reader - The CCA has stopped"]
 pub struct EVENTS_CCASTOPPED_R(crate::FieldReader<bool, EVENTS_CCASTOPPED_A>);
 impl EVENTS_CCASTOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_CCASTOPPED_R(crate::FieldReader::new(bits))
     }

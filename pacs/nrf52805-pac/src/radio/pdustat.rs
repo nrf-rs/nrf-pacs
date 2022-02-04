@@ -30,6 +30,7 @@ impl From<PDUSTAT_A> for bool {
 #[doc = "Field `PDUSTAT` reader - Status on payload length vs. PCNF1.MAXLEN"]
 pub struct PDUSTAT_R(crate::FieldReader<bool, PDUSTAT_A>);
 impl PDUSTAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDUSTAT_R(crate::FieldReader::new(bits))
     }

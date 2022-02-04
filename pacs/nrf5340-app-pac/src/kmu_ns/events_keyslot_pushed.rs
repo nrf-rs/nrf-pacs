@@ -51,6 +51,7 @@ impl From<EVENTS_KEYSLOT_PUSHED_A> for bool {
 #[doc = "Field `EVENTS_KEYSLOT_PUSHED` reader - Key slot successfully pushed over secure APB"]
 pub struct EVENTS_KEYSLOT_PUSHED_R(crate::FieldReader<bool, EVENTS_KEYSLOT_PUSHED_A>);
 impl EVENTS_KEYSLOT_PUSHED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_KEYSLOT_PUSHED_R(crate::FieldReader::new(bits))
     }

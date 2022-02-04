@@ -37,6 +37,7 @@ impl From<crate::W<LIMITL_SPEC>> for W {
 #[doc = "Field `LIMITL` reader - "]
 pub struct LIMITL_R(crate::FieldReader<bool, bool>);
 impl LIMITL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LIMITL_R(crate::FieldReader::new(bits))
     }

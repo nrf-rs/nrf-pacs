@@ -51,6 +51,7 @@ impl From<ERASEALL_A> for bool {
 #[doc = "Field `ERASEALL` reader - Erase all non-volatile memory including UICR registers. Note that code erase has to be enabled by CONFIG.EEN before the UICR can be erased."]
 pub struct ERASEALL_R(crate::FieldReader<bool, ERASEALL_A>);
 impl ERASEALL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERASEALL_R(crate::FieldReader::new(bits))
     }

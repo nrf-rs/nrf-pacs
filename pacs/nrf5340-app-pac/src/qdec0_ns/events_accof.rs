@@ -51,6 +51,7 @@ impl From<EVENTS_ACCOF_A> for bool {
 #[doc = "Field `EVENTS_ACCOF` reader - ACC or ACCDBL register overflow"]
 pub struct EVENTS_ACCOF_R(crate::FieldReader<bool, EVENTS_ACCOF_A>);
 impl EVENTS_ACCOF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ACCOF_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<PCNF1_SPEC>> for W {
 #[doc = "Field `MAXLEN` reader - Maximum length of packet payload. If the packet payload is larger than MAXLEN, the radio will truncate the payload to MAXLEN."]
 pub struct MAXLEN_R(crate::FieldReader<u8, u8>);
 impl MAXLEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MAXLEN_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> MAXLEN_W<'a> {
 #[doc = "Field `STATLEN` reader - Static length in number of bytes"]
 pub struct STATLEN_R(crate::FieldReader<u8, u8>);
 impl STATLEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         STATLEN_R(crate::FieldReader::new(bits))
     }
@@ -89,6 +91,7 @@ impl<'a> STATLEN_W<'a> {
 #[doc = "Field `BALEN` reader - Base address length in number of bytes"]
 pub struct BALEN_R(crate::FieldReader<u8, u8>);
 impl BALEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BALEN_R(crate::FieldReader::new(bits))
     }
@@ -129,6 +132,7 @@ impl From<ENDIAN_A> for bool {
 #[doc = "Field `ENDIAN` reader - On air endianness of packet, this applies to the S0, LENGTH, S1 and the PAYLOAD fields."]
 pub struct ENDIAN_R(crate::FieldReader<bool, ENDIAN_A>);
 impl ENDIAN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDIAN_R(crate::FieldReader::new(bits))
     }
@@ -212,6 +216,7 @@ impl From<WHITEEN_A> for bool {
 #[doc = "Field `WHITEEN` reader - Enable or disable packet whitening"]
 pub struct WHITEEN_R(crate::FieldReader<bool, WHITEEN_A>);
 impl WHITEEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WHITEEN_R(crate::FieldReader::new(bits))
     }

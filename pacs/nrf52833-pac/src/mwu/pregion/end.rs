@@ -16,6 +16,7 @@ impl From<crate::R<END_SPEC>> for R {
 #[doc = "Field `END` reader - Reserved for future use"]
 pub struct END_R(crate::FieldReader<u32, u32>);
 impl END_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         END_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Reserved for future use"]
     #[inline(always)]
     pub fn end(&self) -> END_R {
-        END_R::new((self.bits & 0xffff_ffff) as u32)
+        END_R::new(self.bits)
     }
 }
 #[doc = "Description cluster: Reserved for future use\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [end](index.html) module"]

@@ -51,6 +51,7 @@ impl From<EVENTS_DISABLED_A> for bool {
 #[doc = "Field `EVENTS_DISABLED` reader - RADIO has been disabled"]
 pub struct EVENTS_DISABLED_R(crate::FieldReader<bool, EVENTS_DISABLED_A>);
 impl EVENTS_DISABLED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_DISABLED_R(crate::FieldReader::new(bits))
     }

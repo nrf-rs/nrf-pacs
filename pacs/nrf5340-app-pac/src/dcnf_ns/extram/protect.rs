@@ -51,6 +51,7 @@ impl From<SLAVE0_A> for bool {
 #[doc = "Field `SLAVE0` reader - Control access to slave 0 of master EXTRAM\\[n\\]"]
 pub struct SLAVE0_R(crate::FieldReader<bool, SLAVE0_A>);
 impl SLAVE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLAVE0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<SLAVE1_A> for bool {
 #[doc = "Field `SLAVE1` reader - Control access to slave 1 of master EXTRAM\\[n\\]"]
 pub struct SLAVE1_R(crate::FieldReader<bool, SLAVE1_A>);
 impl SLAVE1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLAVE1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<SLAVE2_A> for bool {
 #[doc = "Field `SLAVE2` reader - Control access to slave 2 of master EXTRAM\\[n\\]"]
 pub struct SLAVE2_R(crate::FieldReader<bool, SLAVE2_A>);
 impl SLAVE2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLAVE2_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<SLAVE3_A> for bool {
 #[doc = "Field `SLAVE3` reader - Control access to slave 3 of master EXTRAM\\[n\\]"]
 pub struct SLAVE3_R(crate::FieldReader<bool, SLAVE3_A>);
 impl SLAVE3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLAVE3_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<SLAVE4_A> for bool {
 #[doc = "Field `SLAVE4` reader - Control access to slave 4 of master EXTRAM\\[n\\]"]
 pub struct SLAVE4_R(crate::FieldReader<bool, SLAVE4_A>);
 impl SLAVE4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLAVE4_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<SLAVE5_A> for bool {
 #[doc = "Field `SLAVE5` reader - Control access to slave 5 of master EXTRAM\\[n\\]"]
 pub struct SLAVE5_R(crate::FieldReader<bool, SLAVE5_A>);
 impl SLAVE5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLAVE5_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<SLAVE6_A> for bool {
 #[doc = "Field `SLAVE6` reader - Control access to slave 6 of master EXTRAM\\[n\\]"]
 pub struct SLAVE6_R(crate::FieldReader<bool, SLAVE6_A>);
 impl SLAVE6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLAVE6_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<SLAVE7_A> for bool {
 #[doc = "Field `SLAVE7` reader - Control access to slave 7 of master EXTRAM\\[n\\]"]
 pub struct SLAVE7_R(crate::FieldReader<bool, SLAVE7_A>);
 impl SLAVE7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLAVE7_R(crate::FieldReader::new(bits))
     }

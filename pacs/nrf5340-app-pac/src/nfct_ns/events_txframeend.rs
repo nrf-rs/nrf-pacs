@@ -51,6 +51,7 @@ impl From<EVENTS_TXFRAMEEND_A> for bool {
 #[doc = "Field `EVENTS_TXFRAMEEND` reader - Marks the end of the last transmitted on-air symbol of a frame"]
 pub struct EVENTS_TXFRAMEEND_R(crate::FieldReader<bool, EVENTS_TXFRAMEEND_A>);
 impl EVENTS_TXFRAMEEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_TXFRAMEEND_R(crate::FieldReader::new(bits))
     }

@@ -30,6 +30,7 @@ impl From<SELECTED_A> for bool {
 #[doc = "Field `SELECTED` reader - Key slot ID successfully selected by the KMU"]
 pub struct SELECTED_R(crate::FieldReader<bool, SELECTED_A>);
 impl SELECTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SELECTED_R(crate::FieldReader::new(bits))
     }
@@ -76,6 +77,7 @@ impl From<BLOCKED_A> for bool {
 #[doc = "Field `BLOCKED` reader - Violation status"]
 pub struct BLOCKED_R(crate::FieldReader<bool, BLOCKED_A>);
 impl BLOCKED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BLOCKED_R(crate::FieldReader::new(bits))
     }

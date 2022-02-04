@@ -30,6 +30,7 @@ impl From<RUNSTATUS_A> for bool {
 #[doc = "Field `RUNSTATUS` reader - Watchdog running status."]
 pub struct RUNSTATUS_R(crate::FieldReader<bool, RUNSTATUS_A>);
 impl RUNSTATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RUNSTATUS_R(crate::FieldReader::new(bits))
     }
