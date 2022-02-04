@@ -51,6 +51,7 @@ impl From<RU_A> for bool {
 #[doc = "Field `RU` reader - Radio ramp-up time"]
 pub struct RU_R(crate::FieldReader<bool, RU_A>);
 impl RU_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RU_R(crate::FieldReader::new(bits))
     }
@@ -137,6 +138,7 @@ impl From<DTX_A> for u8 {
 #[doc = "Field `DTX` reader - Default TX value"]
 pub struct DTX_R(crate::FieldReader<u8, DTX_A>);
 impl DTX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DTX_R(crate::FieldReader::new(bits))
     }

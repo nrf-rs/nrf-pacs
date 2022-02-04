@@ -51,6 +51,7 @@ impl From<SR0_A> for bool {
 #[doc = "Field `SR0` reader - Include or exclude subregion 0 in region"]
 pub struct SR0_R(crate::FieldReader<bool, SR0_A>);
 impl SR0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<SR1_A> for bool {
 #[doc = "Field `SR1` reader - Include or exclude subregion 1 in region"]
 pub struct SR1_R(crate::FieldReader<bool, SR1_A>);
 impl SR1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<SR2_A> for bool {
 #[doc = "Field `SR2` reader - Include or exclude subregion 2 in region"]
 pub struct SR2_R(crate::FieldReader<bool, SR2_A>);
 impl SR2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR2_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<SR3_A> for bool {
 #[doc = "Field `SR3` reader - Include or exclude subregion 3 in region"]
 pub struct SR3_R(crate::FieldReader<bool, SR3_A>);
 impl SR3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR3_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<SR4_A> for bool {
 #[doc = "Field `SR4` reader - Include or exclude subregion 4 in region"]
 pub struct SR4_R(crate::FieldReader<bool, SR4_A>);
 impl SR4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR4_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<SR5_A> for bool {
 #[doc = "Field `SR5` reader - Include or exclude subregion 5 in region"]
 pub struct SR5_R(crate::FieldReader<bool, SR5_A>);
 impl SR5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR5_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<SR6_A> for bool {
 #[doc = "Field `SR6` reader - Include or exclude subregion 6 in region"]
 pub struct SR6_R(crate::FieldReader<bool, SR6_A>);
 impl SR6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR6_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<SR7_A> for bool {
 #[doc = "Field `SR7` reader - Include or exclude subregion 7 in region"]
 pub struct SR7_R(crate::FieldReader<bool, SR7_A>);
 impl SR7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR7_R(crate::FieldReader::new(bits))
     }
@@ -715,6 +723,7 @@ impl From<SR8_A> for bool {
 #[doc = "Field `SR8` reader - Include or exclude subregion 8 in region"]
 pub struct SR8_R(crate::FieldReader<bool, SR8_A>);
 impl SR8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR8_R(crate::FieldReader::new(bits))
     }
@@ -798,6 +807,7 @@ impl From<SR9_A> for bool {
 #[doc = "Field `SR9` reader - Include or exclude subregion 9 in region"]
 pub struct SR9_R(crate::FieldReader<bool, SR9_A>);
 impl SR9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR9_R(crate::FieldReader::new(bits))
     }
@@ -881,6 +891,7 @@ impl From<SR10_A> for bool {
 #[doc = "Field `SR10` reader - Include or exclude subregion 10 in region"]
 pub struct SR10_R(crate::FieldReader<bool, SR10_A>);
 impl SR10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR10_R(crate::FieldReader::new(bits))
     }
@@ -964,6 +975,7 @@ impl From<SR11_A> for bool {
 #[doc = "Field `SR11` reader - Include or exclude subregion 11 in region"]
 pub struct SR11_R(crate::FieldReader<bool, SR11_A>);
 impl SR11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR11_R(crate::FieldReader::new(bits))
     }
@@ -1047,6 +1059,7 @@ impl From<SR12_A> for bool {
 #[doc = "Field `SR12` reader - Include or exclude subregion 12 in region"]
 pub struct SR12_R(crate::FieldReader<bool, SR12_A>);
 impl SR12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR12_R(crate::FieldReader::new(bits))
     }
@@ -1130,6 +1143,7 @@ impl From<SR13_A> for bool {
 #[doc = "Field `SR13` reader - Include or exclude subregion 13 in region"]
 pub struct SR13_R(crate::FieldReader<bool, SR13_A>);
 impl SR13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR13_R(crate::FieldReader::new(bits))
     }
@@ -1213,6 +1227,7 @@ impl From<SR14_A> for bool {
 #[doc = "Field `SR14` reader - Include or exclude subregion 14 in region"]
 pub struct SR14_R(crate::FieldReader<bool, SR14_A>);
 impl SR14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR14_R(crate::FieldReader::new(bits))
     }
@@ -1296,6 +1311,7 @@ impl From<SR15_A> for bool {
 #[doc = "Field `SR15` reader - Include or exclude subregion 15 in region"]
 pub struct SR15_R(crate::FieldReader<bool, SR15_A>);
 impl SR15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR15_R(crate::FieldReader::new(bits))
     }
@@ -1379,6 +1395,7 @@ impl From<SR16_A> for bool {
 #[doc = "Field `SR16` reader - Include or exclude subregion 16 in region"]
 pub struct SR16_R(crate::FieldReader<bool, SR16_A>);
 impl SR16_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR16_R(crate::FieldReader::new(bits))
     }
@@ -1462,6 +1479,7 @@ impl From<SR17_A> for bool {
 #[doc = "Field `SR17` reader - Include or exclude subregion 17 in region"]
 pub struct SR17_R(crate::FieldReader<bool, SR17_A>);
 impl SR17_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR17_R(crate::FieldReader::new(bits))
     }
@@ -1545,6 +1563,7 @@ impl From<SR18_A> for bool {
 #[doc = "Field `SR18` reader - Include or exclude subregion 18 in region"]
 pub struct SR18_R(crate::FieldReader<bool, SR18_A>);
 impl SR18_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR18_R(crate::FieldReader::new(bits))
     }
@@ -1628,6 +1647,7 @@ impl From<SR19_A> for bool {
 #[doc = "Field `SR19` reader - Include or exclude subregion 19 in region"]
 pub struct SR19_R(crate::FieldReader<bool, SR19_A>);
 impl SR19_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR19_R(crate::FieldReader::new(bits))
     }
@@ -1711,6 +1731,7 @@ impl From<SR20_A> for bool {
 #[doc = "Field `SR20` reader - Include or exclude subregion 20 in region"]
 pub struct SR20_R(crate::FieldReader<bool, SR20_A>);
 impl SR20_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR20_R(crate::FieldReader::new(bits))
     }
@@ -1794,6 +1815,7 @@ impl From<SR21_A> for bool {
 #[doc = "Field `SR21` reader - Include or exclude subregion 21 in region"]
 pub struct SR21_R(crate::FieldReader<bool, SR21_A>);
 impl SR21_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR21_R(crate::FieldReader::new(bits))
     }
@@ -1877,6 +1899,7 @@ impl From<SR22_A> for bool {
 #[doc = "Field `SR22` reader - Include or exclude subregion 22 in region"]
 pub struct SR22_R(crate::FieldReader<bool, SR22_A>);
 impl SR22_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR22_R(crate::FieldReader::new(bits))
     }
@@ -1960,6 +1983,7 @@ impl From<SR23_A> for bool {
 #[doc = "Field `SR23` reader - Include or exclude subregion 23 in region"]
 pub struct SR23_R(crate::FieldReader<bool, SR23_A>);
 impl SR23_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR23_R(crate::FieldReader::new(bits))
     }
@@ -2043,6 +2067,7 @@ impl From<SR24_A> for bool {
 #[doc = "Field `SR24` reader - Include or exclude subregion 24 in region"]
 pub struct SR24_R(crate::FieldReader<bool, SR24_A>);
 impl SR24_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR24_R(crate::FieldReader::new(bits))
     }
@@ -2126,6 +2151,7 @@ impl From<SR25_A> for bool {
 #[doc = "Field `SR25` reader - Include or exclude subregion 25 in region"]
 pub struct SR25_R(crate::FieldReader<bool, SR25_A>);
 impl SR25_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR25_R(crate::FieldReader::new(bits))
     }
@@ -2209,6 +2235,7 @@ impl From<SR26_A> for bool {
 #[doc = "Field `SR26` reader - Include or exclude subregion 26 in region"]
 pub struct SR26_R(crate::FieldReader<bool, SR26_A>);
 impl SR26_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR26_R(crate::FieldReader::new(bits))
     }
@@ -2292,6 +2319,7 @@ impl From<SR27_A> for bool {
 #[doc = "Field `SR27` reader - Include or exclude subregion 27 in region"]
 pub struct SR27_R(crate::FieldReader<bool, SR27_A>);
 impl SR27_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR27_R(crate::FieldReader::new(bits))
     }
@@ -2375,6 +2403,7 @@ impl From<SR28_A> for bool {
 #[doc = "Field `SR28` reader - Include or exclude subregion 28 in region"]
 pub struct SR28_R(crate::FieldReader<bool, SR28_A>);
 impl SR28_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR28_R(crate::FieldReader::new(bits))
     }
@@ -2458,6 +2487,7 @@ impl From<SR29_A> for bool {
 #[doc = "Field `SR29` reader - Include or exclude subregion 29 in region"]
 pub struct SR29_R(crate::FieldReader<bool, SR29_A>);
 impl SR29_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR29_R(crate::FieldReader::new(bits))
     }
@@ -2541,6 +2571,7 @@ impl From<SR30_A> for bool {
 #[doc = "Field `SR30` reader - Include or exclude subregion 30 in region"]
 pub struct SR30_R(crate::FieldReader<bool, SR30_A>);
 impl SR30_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR30_R(crate::FieldReader::new(bits))
     }
@@ -2624,6 +2655,7 @@ impl From<SR31_A> for bool {
 #[doc = "Field `SR31` reader - Include or exclude subregion 31 in region"]
 pub struct SR31_R(crate::FieldReader<bool, SR31_A>);
 impl SR31_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SR31_R(crate::FieldReader::new(bits))
     }

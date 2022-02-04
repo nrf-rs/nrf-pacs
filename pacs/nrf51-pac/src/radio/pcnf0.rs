@@ -37,6 +37,7 @@ impl From<crate::W<PCNF0_SPEC>> for W {
 #[doc = "Field `LFLEN` reader - Length of length field in number of bits. Decision point: START task."]
 pub struct LFLEN_R(crate::FieldReader<u8, u8>);
 impl LFLEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LFLEN_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> LFLEN_W<'a> {
 #[doc = "Field `S0LEN` reader - Length of S0 field in number of bytes. Decision point: START task."]
 pub struct S0LEN_R(crate::FieldReader<bool, bool>);
 impl S0LEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S0LEN_R(crate::FieldReader::new(bits))
     }
@@ -99,6 +101,7 @@ impl<'a> S0LEN_W<'a> {
 #[doc = "Field `S1LEN` reader - Length of S1 field in number of bits. Decision point: START task."]
 pub struct S1LEN_R(crate::FieldReader<u8, u8>);
 impl S1LEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         S1LEN_R(crate::FieldReader::new(bits))
     }

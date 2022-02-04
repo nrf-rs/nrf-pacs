@@ -51,6 +51,7 @@ impl From<EVENTS_CTEPRESENT_A> for bool {
 #[doc = "Field `EVENTS_CTEPRESENT` reader - CTE is present (early warning right after receiving CTEInfo byte)"]
 pub struct EVENTS_CTEPRESENT_R(crate::FieldReader<bool, EVENTS_CTEPRESENT_A>);
 impl EVENTS_CTEPRESENT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_CTEPRESENT_R(crate::FieldReader::new(bits))
     }

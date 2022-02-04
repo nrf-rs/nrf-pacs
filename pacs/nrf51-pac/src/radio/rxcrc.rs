@@ -16,6 +16,7 @@ impl From<crate::R<RXCRC_SPEC>> for R {
 #[doc = "Field `RXCRC` reader - CRC field of previously received packet."]
 pub struct RXCRC_R(crate::FieldReader<u32, u32>);
 impl RXCRC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         RXCRC_R(crate::FieldReader::new(bits))
     }

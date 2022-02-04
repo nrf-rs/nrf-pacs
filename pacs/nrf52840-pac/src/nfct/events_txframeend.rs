@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_TXFRAMEEND_SPEC>> for W {
 #[doc = "Field `EVENTS_TXFRAMEEND` reader - "]
 pub struct EVENTS_TXFRAMEEND_R(crate::FieldReader<bool, bool>);
 impl EVENTS_TXFRAMEEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_TXFRAMEEND_R(crate::FieldReader::new(bits))
     }

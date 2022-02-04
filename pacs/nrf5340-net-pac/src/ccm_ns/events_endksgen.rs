@@ -51,6 +51,7 @@ impl From<EVENTS_ENDKSGEN_A> for bool {
 #[doc = "Field `EVENTS_ENDKSGEN` reader - Keystream generation complete"]
 pub struct EVENTS_ENDKSGEN_R(crate::FieldReader<bool, EVENTS_ENDKSGEN_A>);
 impl EVENTS_ENDKSGEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ENDKSGEN_R(crate::FieldReader::new(bits))
     }

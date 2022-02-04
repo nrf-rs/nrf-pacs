@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_PORT_SPEC>> for W {
 #[doc = "Field `EVENTS_PORT` reader - "]
 pub struct EVENTS_PORT_R(crate::FieldReader<bool, bool>);
 impl EVENTS_PORT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_PORT_R(crate::FieldReader::new(bits))
     }

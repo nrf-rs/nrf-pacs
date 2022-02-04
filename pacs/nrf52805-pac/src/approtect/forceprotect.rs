@@ -50,6 +50,7 @@ impl From<FORCEPROTECT_A> for u8 {
 #[doc = "Field `FORCEPROTECT` reader - Write 0x0 to force enable APPROTECT mechanism"]
 pub struct FORCEPROTECT_R(crate::FieldReader<u8, FORCEPROTECT_A>);
 impl FORCEPROTECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FORCEPROTECT_R(crate::FieldReader::new(bits))
     }

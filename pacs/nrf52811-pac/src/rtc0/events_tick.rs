@@ -51,6 +51,7 @@ impl From<EVENTS_TICK_A> for bool {
 #[doc = "Field `EVENTS_TICK` reader - Event on COUNTER increment"]
 pub struct EVENTS_TICK_R(crate::FieldReader<bool, EVENTS_TICK_A>);
 impl EVENTS_TICK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_TICK_R(crate::FieldReader::new(bits))
     }

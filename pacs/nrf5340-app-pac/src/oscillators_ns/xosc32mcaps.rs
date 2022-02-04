@@ -37,6 +37,7 @@ impl From<crate::W<XOSC32MCAPS_SPEC>> for W {
 #[doc = "Field `CAPVALUE` reader - Value representing capacitance, calculated using provided equation"]
 pub struct CAPVALUE_R(crate::FieldReader<u8, u8>);
 impl CAPVALUE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CAPVALUE_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +78,7 @@ impl From<ENABLE_A> for bool {
 #[doc = "Field `ENABLE` reader - Enable on-chip capacitors on XC1 and XC2"]
 pub struct ENABLE_R(crate::FieldReader<bool, ENABLE_A>);
 impl ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENABLE_R(crate::FieldReader::new(bits))
     }

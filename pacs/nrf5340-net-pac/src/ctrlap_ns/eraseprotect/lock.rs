@@ -51,6 +51,7 @@ impl From<LOCK_A> for bool {
 #[doc = "Field `LOCK` reader - Lock ERASEPROTECT.DISABLE register from being written until next reset"]
 pub struct LOCK_R(crate::FieldReader<bool, LOCK_A>);
 impl LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCK_R(crate::FieldReader::new(bits))
     }

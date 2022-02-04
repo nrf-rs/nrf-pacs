@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_CTTO_SPEC>> for W {
 #[doc = "Field `EVENTS_CTTO` reader - "]
 pub struct EVENTS_CTTO_R(crate::FieldReader<bool, bool>);
 impl EVENTS_CTTO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_CTTO_R(crate::FieldReader::new(bits))
     }

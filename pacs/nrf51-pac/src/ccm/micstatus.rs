@@ -30,6 +30,7 @@ impl From<MICSTATUS_A> for bool {
 #[doc = "Field `MICSTATUS` reader - Result of the MIC check performed during the previous CCM RX STARTCRYPT"]
 pub struct MICSTATUS_R(crate::FieldReader<bool, MICSTATUS_A>);
 impl MICSTATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MICSTATUS_R(crate::FieldReader::new(bits))
     }

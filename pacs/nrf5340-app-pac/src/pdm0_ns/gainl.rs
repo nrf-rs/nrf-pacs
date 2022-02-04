@@ -54,6 +54,7 @@ impl From<GAINL_A> for u8 {
 #[doc = "Field `GAINL` reader - Left output gain adjustment, in 0.5 dB steps, around the default module gain (see electrical parameters) 0x00 -20 dB gain adjust 0x01 -19.5 dB gain adjust (...) 0x27 -0.5 dB gain adjust 0x28 0 dB gain adjust 0x29 +0.5 dB gain adjust (...) 0x4F +19.5 dB gain adjust 0x50 +20 dB gain adjust"]
 pub struct GAINL_R(crate::FieldReader<u8, GAINL_A>);
 impl GAINL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         GAINL_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<MAXCNT_SPEC>> for W {
 #[doc = "Field `BUFFSIZE` reader - Length of DMA RAM allocation in number of samples"]
 pub struct BUFFSIZE_R(crate::FieldReader<u16, u16>);
 impl BUFFSIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         BUFFSIZE_R(crate::FieldReader::new(bits))
     }

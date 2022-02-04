@@ -51,6 +51,7 @@ impl From<POFWARN_A> for bool {
 #[doc = "Field `POFWARN` reader - Write '1' to disable interrupt for event POFWARN"]
 pub struct POFWARN_R(crate::FieldReader<bool, POFWARN_A>);
 impl POFWARN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POFWARN_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<SLEEPENTER_A> for bool {
 #[doc = "Field `SLEEPENTER` reader - Write '1' to disable interrupt for event SLEEPENTER"]
 pub struct SLEEPENTER_R(crate::FieldReader<bool, SLEEPENTER_A>);
 impl SLEEPENTER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLEEPENTER_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<SLEEPEXIT_A> for bool {
 #[doc = "Field `SLEEPEXIT` reader - Write '1' to disable interrupt for event SLEEPEXIT"]
 pub struct SLEEPEXIT_R(crate::FieldReader<bool, SLEEPEXIT_A>);
 impl SLEEPEXIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLEEPEXIT_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_SLEEPEXIT_SPEC>> for W {
 #[doc = "Field `EVENTS_SLEEPEXIT` reader - "]
 pub struct EVENTS_SLEEPEXIT_R(crate::FieldReader<bool, bool>);
 impl EVENTS_SLEEPEXIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_SLEEPEXIT_R(crate::FieldReader::new(bits))
     }

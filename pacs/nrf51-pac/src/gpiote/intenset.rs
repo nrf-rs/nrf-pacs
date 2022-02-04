@@ -53,6 +53,7 @@ impl From<IN0_A> for bool {
 event."]
 pub struct IN0_R(crate::FieldReader<bool, IN0_A>);
 impl IN0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         IN0_R(crate::FieldReader::new(bits))
     }
@@ -147,6 +148,7 @@ impl From<IN1_A> for bool {
 event."]
 pub struct IN1_R(crate::FieldReader<bool, IN1_A>);
 impl IN1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         IN1_R(crate::FieldReader::new(bits))
     }
@@ -241,6 +243,7 @@ impl From<IN2_A> for bool {
 event."]
 pub struct IN2_R(crate::FieldReader<bool, IN2_A>);
 impl IN2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         IN2_R(crate::FieldReader::new(bits))
     }
@@ -335,6 +338,7 @@ impl From<IN3_A> for bool {
 event."]
 pub struct IN3_R(crate::FieldReader<bool, IN3_A>);
 impl IN3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         IN3_R(crate::FieldReader::new(bits))
     }
@@ -427,6 +431,7 @@ impl From<PORT_A> for bool {
 #[doc = "Field `PORT` reader - Enable interrupt on PORT event."]
 pub struct PORT_R(crate::FieldReader<bool, PORT_A>);
 impl PORT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PORT_R(crate::FieldReader::new(bits))
     }

@@ -16,6 +16,7 @@ impl From<crate::R<CTESTATUS_SPEC>> for R {
 #[doc = "Field `CTETIME` reader - CTETime parsed from packet"]
 pub struct CTETIME_R(crate::FieldReader<u8, u8>);
 impl CTETIME_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTETIME_R(crate::FieldReader::new(bits))
     }
@@ -30,6 +31,7 @@ impl core::ops::Deref for CTETIME_R {
 #[doc = "Field `RFU` reader - RFU parsed from packet"]
 pub struct RFU_R(crate::FieldReader<bool, bool>);
 impl RFU_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RFU_R(crate::FieldReader::new(bits))
     }
@@ -44,6 +46,7 @@ impl core::ops::Deref for RFU_R {
 #[doc = "Field `CTETYPE` reader - CTEType parsed from packet"]
 pub struct CTETYPE_R(crate::FieldReader<u8, u8>);
 impl CTETYPE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTETYPE_R(crate::FieldReader::new(bits))
     }

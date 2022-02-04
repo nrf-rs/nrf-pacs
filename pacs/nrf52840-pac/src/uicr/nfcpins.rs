@@ -51,6 +51,7 @@ impl From<PROTECT_A> for bool {
 #[doc = "Field `PROTECT` reader - Setting of pins dedicated to NFC functionality"]
 pub struct PROTECT_R(crate::FieldReader<bool, PROTECT_A>);
 impl PROTECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PROTECT_R(crate::FieldReader::new(bits))
     }

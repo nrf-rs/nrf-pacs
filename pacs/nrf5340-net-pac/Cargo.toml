@@ -4,7 +4,7 @@
 
 [package]
 name = "nrf5340-net-pac"
-version = "0.10.1"
+version = "0.11.0"
 edition = "2018"
 description = "Peripheral Access Crate for Nordic's nrf5340-net microcontroller"
 keywords = ["no-std", "arm", "cortex-m", "nrf", "peripherals"]

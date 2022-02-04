@@ -53,6 +53,7 @@ impl From<TRIGGERED0_A> for bool {
 event"]
 pub struct TRIGGERED0_R(crate::FieldReader<bool, TRIGGERED0_A>);
 impl TRIGGERED0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED0_R(crate::FieldReader::new(bits))
     }
@@ -147,6 +148,7 @@ impl From<TRIGGERED1_A> for bool {
 event"]
 pub struct TRIGGERED1_R(crate::FieldReader<bool, TRIGGERED1_A>);
 impl TRIGGERED1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED1_R(crate::FieldReader::new(bits))
     }
@@ -241,6 +243,7 @@ impl From<TRIGGERED2_A> for bool {
 event"]
 pub struct TRIGGERED2_R(crate::FieldReader<bool, TRIGGERED2_A>);
 impl TRIGGERED2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED2_R(crate::FieldReader::new(bits))
     }
@@ -335,6 +338,7 @@ impl From<TRIGGERED3_A> for bool {
 event"]
 pub struct TRIGGERED3_R(crate::FieldReader<bool, TRIGGERED3_A>);
 impl TRIGGERED3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED3_R(crate::FieldReader::new(bits))
     }
@@ -429,6 +433,7 @@ impl From<TRIGGERED4_A> for bool {
 event"]
 pub struct TRIGGERED4_R(crate::FieldReader<bool, TRIGGERED4_A>);
 impl TRIGGERED4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED4_R(crate::FieldReader::new(bits))
     }
@@ -523,6 +528,7 @@ impl From<TRIGGERED5_A> for bool {
 event"]
 pub struct TRIGGERED5_R(crate::FieldReader<bool, TRIGGERED5_A>);
 impl TRIGGERED5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED5_R(crate::FieldReader::new(bits))
     }
@@ -617,6 +623,7 @@ impl From<TRIGGERED6_A> for bool {
 event"]
 pub struct TRIGGERED6_R(crate::FieldReader<bool, TRIGGERED6_A>);
 impl TRIGGERED6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED6_R(crate::FieldReader::new(bits))
     }
@@ -711,6 +718,7 @@ impl From<TRIGGERED7_A> for bool {
 event"]
 pub struct TRIGGERED7_R(crate::FieldReader<bool, TRIGGERED7_A>);
 impl TRIGGERED7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED7_R(crate::FieldReader::new(bits))
     }
@@ -805,6 +813,7 @@ impl From<TRIGGERED8_A> for bool {
 event"]
 pub struct TRIGGERED8_R(crate::FieldReader<bool, TRIGGERED8_A>);
 impl TRIGGERED8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED8_R(crate::FieldReader::new(bits))
     }
@@ -899,6 +908,7 @@ impl From<TRIGGERED9_A> for bool {
 event"]
 pub struct TRIGGERED9_R(crate::FieldReader<bool, TRIGGERED9_A>);
 impl TRIGGERED9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED9_R(crate::FieldReader::new(bits))
     }
@@ -993,6 +1003,7 @@ impl From<TRIGGERED10_A> for bool {
 event"]
 pub struct TRIGGERED10_R(crate::FieldReader<bool, TRIGGERED10_A>);
 impl TRIGGERED10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED10_R(crate::FieldReader::new(bits))
     }
@@ -1087,6 +1098,7 @@ impl From<TRIGGERED11_A> for bool {
 event"]
 pub struct TRIGGERED11_R(crate::FieldReader<bool, TRIGGERED11_A>);
 impl TRIGGERED11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED11_R(crate::FieldReader::new(bits))
     }
@@ -1181,6 +1193,7 @@ impl From<TRIGGERED12_A> for bool {
 event"]
 pub struct TRIGGERED12_R(crate::FieldReader<bool, TRIGGERED12_A>);
 impl TRIGGERED12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED12_R(crate::FieldReader::new(bits))
     }
@@ -1275,6 +1288,7 @@ impl From<TRIGGERED13_A> for bool {
 event"]
 pub struct TRIGGERED13_R(crate::FieldReader<bool, TRIGGERED13_A>);
 impl TRIGGERED13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED13_R(crate::FieldReader::new(bits))
     }
@@ -1369,6 +1383,7 @@ impl From<TRIGGERED14_A> for bool {
 event"]
 pub struct TRIGGERED14_R(crate::FieldReader<bool, TRIGGERED14_A>);
 impl TRIGGERED14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED14_R(crate::FieldReader::new(bits))
     }
@@ -1463,6 +1478,7 @@ impl From<TRIGGERED15_A> for bool {
 event"]
 pub struct TRIGGERED15_R(crate::FieldReader<bool, TRIGGERED15_A>);
 impl TRIGGERED15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGGERED15_R(crate::FieldReader::new(bits))
     }

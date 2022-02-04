@@ -51,6 +51,7 @@ impl From<POF_A> for bool {
 #[doc = "Field `POF` reader - Enable or disable power failure warning"]
 pub struct POF_R(crate::FieldReader<bool, POF_A>);
 impl POF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POF_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +156,7 @@ impl From<THRESHOLD_A> for u8 {
 #[doc = "Field `THRESHOLD` reader - Power-fail comparator threshold setting. This setting applies both for normal voltage mode (supply connected to both VDD and VDDH) and high voltage mode (supply connected to VDDH only). Values 0-3 set threshold below 1.7 V and should not be used as brown out detection will be activated before power failure warning on such low voltages."]
 pub struct THRESHOLD_R(crate::FieldReader<u8, THRESHOLD_A>);
 impl THRESHOLD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         THRESHOLD_R(crate::FieldReader::new(bits))
     }
@@ -368,6 +370,7 @@ impl From<THRESHOLDVDDH_A> for u8 {
 #[doc = "Field `THRESHOLDVDDH` reader - Power-fail comparator threshold setting for high voltage mode (supply connected to VDDH only). This setting does not apply for normal voltage mode (supply connected to both VDD and VDDH)."]
 pub struct THRESHOLDVDDH_R(crate::FieldReader<u8, THRESHOLDVDDH_A>);
 impl THRESHOLDVDDH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         THRESHOLDVDDH_R(crate::FieldReader::new(bits))
     }

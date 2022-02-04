@@ -37,6 +37,7 @@ impl From<crate::W<B1_SPEC>> for W {
 #[doc = "Field `B1` reader - y-intercept of second piecewise linear function"]
 pub struct B1_R(crate::FieldReader<u16, u16>);
 impl B1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         B1_R(crate::FieldReader::new(bits))
     }

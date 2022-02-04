@@ -56,6 +56,7 @@ impl From<TRACEPORTSPEED_A> for u8 {
 #[doc = "Field `TRACEPORTSPEED` reader - Speed of Trace Port clock. Note that the TRACECLK pin output will be divided again by two from the Trace Port clock."]
 pub struct TRACEPORTSPEED_R(crate::FieldReader<u8, TRACEPORTSPEED_A>);
 impl TRACEPORTSPEED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TRACEPORTSPEED_R(crate::FieldReader::new(bits))
     }

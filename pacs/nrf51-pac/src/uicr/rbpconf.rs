@@ -52,6 +52,7 @@ impl From<PR0_A> for u8 {
 #[doc = "Field `PR0` reader - Readback protect region 0. Will be ignored if pre-programmed factory code is present on the chip."]
 pub struct PR0_R(crate::FieldReader<u8, PR0_A>);
 impl PR0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PR0_R(crate::FieldReader::new(bits))
     }
@@ -127,6 +128,7 @@ impl From<PALL_A> for u8 {
 #[doc = "Field `PALL` reader - Readback protect all code in the device."]
 pub struct PALL_R(crate::FieldReader<u8, PALL_A>);
 impl PALL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PALL_R(crate::FieldReader::new(bits))
     }

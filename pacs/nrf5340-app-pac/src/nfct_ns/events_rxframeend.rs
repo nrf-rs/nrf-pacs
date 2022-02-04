@@ -51,6 +51,7 @@ impl From<EVENTS_RXFRAMEEND_A> for bool {
 #[doc = "Field `EVENTS_RXFRAMEEND` reader - Received data has been checked (CRC, parity) and transferred to RAM, and EasyDMA has ended accessing the RX buffer"]
 pub struct EVENTS_RXFRAMEEND_R(crate::FieldReader<bool, EVENTS_RXFRAMEEND_A>);
 impl EVENTS_RXFRAMEEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RXFRAMEEND_R(crate::FieldReader::new(bits))
     }

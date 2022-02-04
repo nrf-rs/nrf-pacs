@@ -51,6 +51,7 @@ impl From<END_ACQUIRE_A> for bool {
 #[doc = "Field `END_ACQUIRE` reader - Shortcut between END event and the ACQUIRE task."]
 pub struct END_ACQUIRE_R(crate::FieldReader<bool, END_ACQUIRE_A>);
 impl END_ACQUIRE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         END_ACQUIRE_R(crate::FieldReader::new(bits))
     }

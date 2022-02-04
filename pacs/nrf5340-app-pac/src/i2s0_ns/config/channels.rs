@@ -54,6 +54,7 @@ impl From<CHANNELS_A> for u8 {
 #[doc = "Field `CHANNELS` reader - Enable channels"]
 pub struct CHANNELS_R(crate::FieldReader<u8, CHANNELS_A>);
 impl CHANNELS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CHANNELS_R(crate::FieldReader::new(bits))
     }

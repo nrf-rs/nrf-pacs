@@ -64,6 +64,7 @@ impl From<PSEL_A> for u8 {
 #[doc = "Field `PSEL` reader - Analog input pin select."]
 pub struct PSEL_R(crate::FieldReader<u8, PSEL_A>);
 impl PSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PSEL_R(crate::FieldReader::new(bits))
     }

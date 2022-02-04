@@ -51,6 +51,7 @@ impl From<EVENTS_FLASHACCERR_A> for bool {
 #[doc = "Field `EVENTS_FLASHACCERR` reader - A security violation has been detected for the flash memory space"]
 pub struct EVENTS_FLASHACCERR_R(crate::FieldReader<bool, EVENTS_FLASHACCERR_A>);
 impl EVENTS_FLASHACCERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_FLASHACCERR_R(crate::FieldReader::new(bits))
     }

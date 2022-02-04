@@ -51,6 +51,7 @@ impl From<EVENTS_ADDRESS_A> for bool {
 #[doc = "Field `EVENTS_ADDRESS` reader - Address sent or received"]
 pub struct EVENTS_ADDRESS_R(crate::FieldReader<bool, EVENTS_ADDRESS_A>);
 impl EVENTS_ADDRESS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ADDRESS_R(crate::FieldReader::new(bits))
     }

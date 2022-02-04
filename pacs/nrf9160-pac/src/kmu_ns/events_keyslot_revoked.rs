@@ -51,6 +51,7 @@ impl From<EVENTS_KEYSLOT_REVOKED_A> for bool {
 #[doc = "Field `EVENTS_KEYSLOT_REVOKED` reader - Key slot has been revoked and cannot be tasked for selection"]
 pub struct EVENTS_KEYSLOT_REVOKED_R(crate::FieldReader<bool, EVENTS_KEYSLOT_REVOKED_A>);
 impl EVENTS_KEYSLOT_REVOKED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_KEYSLOT_REVOKED_R(crate::FieldReader::new(bits))
     }

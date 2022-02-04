@@ -51,6 +51,7 @@ impl From<CH0_A> for bool {
 #[doc = "Field `CH0` reader - Channel 0 enable set register. Writing '0' has no effect"]
 pub struct CH0_R(crate::FieldReader<bool, CH0_A>);
 impl CH0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH0_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<CH1_A> for bool {
 #[doc = "Field `CH1` reader - Channel 1 enable set register. Writing '0' has no effect"]
 pub struct CH1_R(crate::FieldReader<bool, CH1_A>);
 impl CH1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH1_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<CH2_A> for bool {
 #[doc = "Field `CH2` reader - Channel 2 enable set register. Writing '0' has no effect"]
 pub struct CH2_R(crate::FieldReader<bool, CH2_A>);
 impl CH2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH2_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<CH3_A> for bool {
 #[doc = "Field `CH3` reader - Channel 3 enable set register. Writing '0' has no effect"]
 pub struct CH3_R(crate::FieldReader<bool, CH3_A>);
 impl CH3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH3_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +415,7 @@ impl From<CH4_A> for bool {
 #[doc = "Field `CH4` reader - Channel 4 enable set register. Writing '0' has no effect"]
 pub struct CH4_R(crate::FieldReader<bool, CH4_A>);
 impl CH4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH4_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +506,7 @@ impl From<CH5_A> for bool {
 #[doc = "Field `CH5` reader - Channel 5 enable set register. Writing '0' has no effect"]
 pub struct CH5_R(crate::FieldReader<bool, CH5_A>);
 impl CH5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH5_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +597,7 @@ impl From<CH6_A> for bool {
 #[doc = "Field `CH6` reader - Channel 6 enable set register. Writing '0' has no effect"]
 pub struct CH6_R(crate::FieldReader<bool, CH6_A>);
 impl CH6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH6_R(crate::FieldReader::new(bits))
     }
@@ -681,6 +688,7 @@ impl From<CH7_A> for bool {
 #[doc = "Field `CH7` reader - Channel 7 enable set register. Writing '0' has no effect"]
 pub struct CH7_R(crate::FieldReader<bool, CH7_A>);
 impl CH7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH7_R(crate::FieldReader::new(bits))
     }
@@ -771,6 +779,7 @@ impl From<CH8_A> for bool {
 #[doc = "Field `CH8` reader - Channel 8 enable set register. Writing '0' has no effect"]
 pub struct CH8_R(crate::FieldReader<bool, CH8_A>);
 impl CH8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH8_R(crate::FieldReader::new(bits))
     }
@@ -861,6 +870,7 @@ impl From<CH9_A> for bool {
 #[doc = "Field `CH9` reader - Channel 9 enable set register. Writing '0' has no effect"]
 pub struct CH9_R(crate::FieldReader<bool, CH9_A>);
 impl CH9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH9_R(crate::FieldReader::new(bits))
     }
@@ -951,6 +961,7 @@ impl From<CH10_A> for bool {
 #[doc = "Field `CH10` reader - Channel 10 enable set register. Writing '0' has no effect"]
 pub struct CH10_R(crate::FieldReader<bool, CH10_A>);
 impl CH10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH10_R(crate::FieldReader::new(bits))
     }
@@ -1041,6 +1052,7 @@ impl From<CH11_A> for bool {
 #[doc = "Field `CH11` reader - Channel 11 enable set register. Writing '0' has no effect"]
 pub struct CH11_R(crate::FieldReader<bool, CH11_A>);
 impl CH11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH11_R(crate::FieldReader::new(bits))
     }
@@ -1131,6 +1143,7 @@ impl From<CH12_A> for bool {
 #[doc = "Field `CH12` reader - Channel 12 enable set register. Writing '0' has no effect"]
 pub struct CH12_R(crate::FieldReader<bool, CH12_A>);
 impl CH12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH12_R(crate::FieldReader::new(bits))
     }
@@ -1221,6 +1234,7 @@ impl From<CH13_A> for bool {
 #[doc = "Field `CH13` reader - Channel 13 enable set register. Writing '0' has no effect"]
 pub struct CH13_R(crate::FieldReader<bool, CH13_A>);
 impl CH13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH13_R(crate::FieldReader::new(bits))
     }
@@ -1311,6 +1325,7 @@ impl From<CH14_A> for bool {
 #[doc = "Field `CH14` reader - Channel 14 enable set register. Writing '0' has no effect"]
 pub struct CH14_R(crate::FieldReader<bool, CH14_A>);
 impl CH14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH14_R(crate::FieldReader::new(bits))
     }
@@ -1401,6 +1416,7 @@ impl From<CH15_A> for bool {
 #[doc = "Field `CH15` reader - Channel 15 enable set register. Writing '0' has no effect"]
 pub struct CH15_R(crate::FieldReader<bool, CH15_A>);
 impl CH15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH15_R(crate::FieldReader::new(bits))
     }
@@ -1491,6 +1507,7 @@ impl From<CH16_A> for bool {
 #[doc = "Field `CH16` reader - Channel 16 enable set register. Writing '0' has no effect"]
 pub struct CH16_R(crate::FieldReader<bool, CH16_A>);
 impl CH16_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH16_R(crate::FieldReader::new(bits))
     }
@@ -1581,6 +1598,7 @@ impl From<CH17_A> for bool {
 #[doc = "Field `CH17` reader - Channel 17 enable set register. Writing '0' has no effect"]
 pub struct CH17_R(crate::FieldReader<bool, CH17_A>);
 impl CH17_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH17_R(crate::FieldReader::new(bits))
     }
@@ -1671,6 +1689,7 @@ impl From<CH18_A> for bool {
 #[doc = "Field `CH18` reader - Channel 18 enable set register. Writing '0' has no effect"]
 pub struct CH18_R(crate::FieldReader<bool, CH18_A>);
 impl CH18_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH18_R(crate::FieldReader::new(bits))
     }
@@ -1761,6 +1780,7 @@ impl From<CH19_A> for bool {
 #[doc = "Field `CH19` reader - Channel 19 enable set register. Writing '0' has no effect"]
 pub struct CH19_R(crate::FieldReader<bool, CH19_A>);
 impl CH19_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH19_R(crate::FieldReader::new(bits))
     }
@@ -1851,6 +1871,7 @@ impl From<CH20_A> for bool {
 #[doc = "Field `CH20` reader - Channel 20 enable set register. Writing '0' has no effect"]
 pub struct CH20_R(crate::FieldReader<bool, CH20_A>);
 impl CH20_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH20_R(crate::FieldReader::new(bits))
     }
@@ -1941,6 +1962,7 @@ impl From<CH21_A> for bool {
 #[doc = "Field `CH21` reader - Channel 21 enable set register. Writing '0' has no effect"]
 pub struct CH21_R(crate::FieldReader<bool, CH21_A>);
 impl CH21_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH21_R(crate::FieldReader::new(bits))
     }
@@ -2031,6 +2053,7 @@ impl From<CH22_A> for bool {
 #[doc = "Field `CH22` reader - Channel 22 enable set register. Writing '0' has no effect"]
 pub struct CH22_R(crate::FieldReader<bool, CH22_A>);
 impl CH22_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH22_R(crate::FieldReader::new(bits))
     }
@@ -2121,6 +2144,7 @@ impl From<CH23_A> for bool {
 #[doc = "Field `CH23` reader - Channel 23 enable set register. Writing '0' has no effect"]
 pub struct CH23_R(crate::FieldReader<bool, CH23_A>);
 impl CH23_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH23_R(crate::FieldReader::new(bits))
     }
@@ -2211,6 +2235,7 @@ impl From<CH24_A> for bool {
 #[doc = "Field `CH24` reader - Channel 24 enable set register. Writing '0' has no effect"]
 pub struct CH24_R(crate::FieldReader<bool, CH24_A>);
 impl CH24_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH24_R(crate::FieldReader::new(bits))
     }
@@ -2301,6 +2326,7 @@ impl From<CH25_A> for bool {
 #[doc = "Field `CH25` reader - Channel 25 enable set register. Writing '0' has no effect"]
 pub struct CH25_R(crate::FieldReader<bool, CH25_A>);
 impl CH25_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH25_R(crate::FieldReader::new(bits))
     }
@@ -2391,6 +2417,7 @@ impl From<CH26_A> for bool {
 #[doc = "Field `CH26` reader - Channel 26 enable set register. Writing '0' has no effect"]
 pub struct CH26_R(crate::FieldReader<bool, CH26_A>);
 impl CH26_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH26_R(crate::FieldReader::new(bits))
     }
@@ -2481,6 +2508,7 @@ impl From<CH27_A> for bool {
 #[doc = "Field `CH27` reader - Channel 27 enable set register. Writing '0' has no effect"]
 pub struct CH27_R(crate::FieldReader<bool, CH27_A>);
 impl CH27_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH27_R(crate::FieldReader::new(bits))
     }
@@ -2571,6 +2599,7 @@ impl From<CH28_A> for bool {
 #[doc = "Field `CH28` reader - Channel 28 enable set register. Writing '0' has no effect"]
 pub struct CH28_R(crate::FieldReader<bool, CH28_A>);
 impl CH28_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH28_R(crate::FieldReader::new(bits))
     }
@@ -2661,6 +2690,7 @@ impl From<CH29_A> for bool {
 #[doc = "Field `CH29` reader - Channel 29 enable set register. Writing '0' has no effect"]
 pub struct CH29_R(crate::FieldReader<bool, CH29_A>);
 impl CH29_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH29_R(crate::FieldReader::new(bits))
     }
@@ -2751,6 +2781,7 @@ impl From<CH30_A> for bool {
 #[doc = "Field `CH30` reader - Channel 30 enable set register. Writing '0' has no effect"]
 pub struct CH30_R(crate::FieldReader<bool, CH30_A>);
 impl CH30_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH30_R(crate::FieldReader::new(bits))
     }
@@ -2841,6 +2872,7 @@ impl From<CH31_A> for bool {
 #[doc = "Field `CH31` reader - Channel 31 enable set register. Writing '0' has no effect"]
 pub struct CH31_R(crate::FieldReader<bool, CH31_A>);
 impl CH31_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH31_R(crate::FieldReader::new(bits))
     }

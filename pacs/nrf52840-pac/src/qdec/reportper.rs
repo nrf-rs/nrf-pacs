@@ -66,6 +66,7 @@ impl From<REPORTPER_A> for u8 {
 #[doc = "Field `REPORTPER` reader - Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated"]
 pub struct REPORTPER_R(crate::FieldReader<u8, REPORTPER_A>);
 impl REPORTPER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REPORTPER_R(crate::FieldReader::new(bits))
     }

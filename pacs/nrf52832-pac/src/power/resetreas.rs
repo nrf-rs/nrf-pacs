@@ -51,6 +51,7 @@ impl From<RESETPIN_A> for bool {
 #[doc = "Field `RESETPIN` reader - Reset from pin-reset detected"]
 pub struct RESETPIN_R(crate::FieldReader<bool, RESETPIN_A>);
 impl RESETPIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESETPIN_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<DOG_A> for bool {
 #[doc = "Field `DOG` reader - Reset from watchdog detected"]
 pub struct DOG_R(crate::FieldReader<bool, DOG_A>);
 impl DOG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DOG_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<SREQ_A> for bool {
 #[doc = "Field `SREQ` reader - Reset from soft reset detected"]
 pub struct SREQ_R(crate::FieldReader<bool, SREQ_A>);
 impl SREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SREQ_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<LOCKUP_A> for bool {
 #[doc = "Field `LOCKUP` reader - Reset from CPU lock-up detected"]
 pub struct LOCKUP_R(crate::FieldReader<bool, LOCKUP_A>);
 impl LOCKUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCKUP_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<OFF_A> for bool {
 #[doc = "Field `OFF` reader - Reset due to wake up from System OFF mode when wakeup is triggered from DETECT signal from GPIO"]
 pub struct OFF_R(crate::FieldReader<bool, OFF_A>);
 impl OFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OFF_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<LPCOMP_A> for bool {
 #[doc = "Field `LPCOMP` reader - Reset due to wake up from System OFF mode when wakeup is triggered from ANADETECT signal from LPCOMP"]
 pub struct LPCOMP_R(crate::FieldReader<bool, LPCOMP_A>);
 impl LPCOMP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LPCOMP_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<DIF_A> for bool {
 #[doc = "Field `DIF` reader - Reset due to wake up from System OFF mode when wakeup is triggered from entering into debug interface mode"]
 pub struct DIF_R(crate::FieldReader<bool, DIF_A>);
 impl DIF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DIF_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<NFC_A> for bool {
 #[doc = "Field `NFC` reader - Reset due to wake up from System OFF mode by NFC field detect"]
 pub struct NFC_R(crate::FieldReader<bool, NFC_A>);
 impl NFC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NFC_R(crate::FieldReader::new(bits))
     }

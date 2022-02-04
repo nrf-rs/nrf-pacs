@@ -37,6 +37,7 @@ impl From<crate::W<MAXRX_SPEC>> for W {
 #[doc = "Field `MAXRX` reader - Maximum number of bytes in the receive buffer."]
 pub struct MAXRX_R(crate::FieldReader<u8, u8>);
 impl MAXRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MAXRX_R(crate::FieldReader::new(bits))
     }

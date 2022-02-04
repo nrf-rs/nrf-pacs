@@ -37,6 +37,7 @@ impl From<crate::W<ERRORSTATUS_SPEC>> for W {
 #[doc = "Field `FRAMEDELAYTIMEOUT` reader - No STARTTX task triggered before expiration of the time set in FRAMEDELAYMAX"]
 pub struct FRAMEDELAYTIMEOUT_R(crate::FieldReader<bool, bool>);
 impl FRAMEDELAYTIMEOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRAMEDELAYTIMEOUT_R(crate::FieldReader::new(bits))
     }

@@ -49,6 +49,7 @@ impl From<BREQUEST_A> for u8 {
 #[doc = "Field `BREQUEST` reader - SETUP data, byte 1, bRequest. Values provided for standard requests only, user must implement class and vendor values."]
 pub struct BREQUEST_R(crate::FieldReader<u8, BREQUEST_A>);
 impl BREQUEST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BREQUEST_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<EVENTS_END_A> for bool {
 #[doc = "Field `EVENTS_END` reader - Address resolution procedure complete"]
 pub struct EVENTS_END_R(crate::FieldReader<bool, EVENTS_END_A>);
 impl EVENTS_END_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_END_R(crate::FieldReader::new(bits))
     }

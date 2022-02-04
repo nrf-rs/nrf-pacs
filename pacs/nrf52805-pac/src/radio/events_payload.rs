@@ -51,6 +51,7 @@ impl From<EVENTS_PAYLOAD_A> for bool {
 #[doc = "Field `EVENTS_PAYLOAD` reader - Packet payload sent or received"]
 pub struct EVENTS_PAYLOAD_R(crate::FieldReader<bool, EVENTS_PAYLOAD_A>);
 impl EVENTS_PAYLOAD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_PAYLOAD_R(crate::FieldReader::new(bits))
     }

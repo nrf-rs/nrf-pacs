@@ -51,6 +51,7 @@ impl From<TIMEOUT_A> for bool {
 #[doc = "Field `TIMEOUT` reader - Write '1' to disable interrupt for event TIMEOUT"]
 pub struct TIMEOUT_R(crate::FieldReader<bool, TIMEOUT_A>);
 impl TIMEOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TIMEOUT_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<STOPPED_A> for bool {
 #[doc = "Field `STOPPED` reader - Write '1' to disable interrupt for event STOPPED"]
 pub struct STOPPED_R(crate::FieldReader<bool, STOPPED_A>);
 impl STOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STOPPED_R(crate::FieldReader::new(bits))
     }

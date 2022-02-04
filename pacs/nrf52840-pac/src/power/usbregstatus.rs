@@ -30,6 +30,7 @@ impl From<VBUSDETECT_A> for bool {
 #[doc = "Field `VBUSDETECT` reader - VBUS input detection status (USBDETECTED and USBREMOVED events are derived from this information)"]
 pub struct VBUSDETECT_R(crate::FieldReader<bool, VBUSDETECT_A>);
 impl VBUSDETECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VBUSDETECT_R(crate::FieldReader::new(bits))
     }
@@ -76,6 +77,7 @@ impl From<OUTPUTRDY_A> for bool {
 #[doc = "Field `OUTPUTRDY` reader - USB supply output settling time elapsed"]
 pub struct OUTPUTRDY_R(crate::FieldReader<bool, OUTPUTRDY_A>);
 impl OUTPUTRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OUTPUTRDY_R(crate::FieldReader::new(bits))
     }

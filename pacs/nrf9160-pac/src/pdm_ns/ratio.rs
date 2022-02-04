@@ -51,6 +51,7 @@ impl From<RATIO_A> for bool {
 #[doc = "Field `RATIO` reader - Selects the ratio between PDM_CLK and output sample rate"]
 pub struct RATIO_R(crate::FieldReader<bool, RATIO_A>);
 impl RATIO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RATIO_R(crate::FieldReader::new(bits))
     }

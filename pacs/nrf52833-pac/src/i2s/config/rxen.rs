@@ -51,6 +51,7 @@ impl From<RXEN_A> for bool {
 #[doc = "Field `RXEN` reader - Reception (RX) enable."]
 pub struct RXEN_R(crate::FieldReader<bool, RXEN_A>);
 impl RXEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXEN_R(crate::FieldReader::new(bits))
     }

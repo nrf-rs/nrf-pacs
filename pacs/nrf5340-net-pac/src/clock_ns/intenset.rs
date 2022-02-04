@@ -51,6 +51,7 @@ impl From<HFCLKSTARTED_A> for bool {
 #[doc = "Field `HFCLKSTARTED` reader - Write '1' to enable interrupt for event HFCLKSTARTED"]
 pub struct HFCLKSTARTED_R(crate::FieldReader<bool, HFCLKSTARTED_A>);
 impl HFCLKSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HFCLKSTARTED_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<LFCLKSTARTED_A> for bool {
 #[doc = "Field `LFCLKSTARTED` reader - Write '1' to enable interrupt for event LFCLKSTARTED"]
 pub struct LFCLKSTARTED_R(crate::FieldReader<bool, LFCLKSTARTED_A>);
 impl LFCLKSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LFCLKSTARTED_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<DONE_A> for bool {
 #[doc = "Field `DONE` reader - Write '1' to enable interrupt for event DONE"]
 pub struct DONE_R(crate::FieldReader<bool, DONE_A>);
 impl DONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DONE_R(crate::FieldReader::new(bits))
     }

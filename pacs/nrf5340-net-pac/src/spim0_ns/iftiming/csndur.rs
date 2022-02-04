@@ -37,6 +37,7 @@ impl From<crate::W<CSNDUR_SPEC>> for W {
 #[doc = "Field `CSNDUR` reader - Minimum duration between edge of CSN and edge of SCK and minimum duration CSN must stay high between transactions. The value is specified in number of 64 MHz clock cycles (15.625 ns)."]
 pub struct CSNDUR_R(crate::FieldReader<u8, u8>);
 impl CSNDUR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CSNDUR_R(crate::FieldReader::new(bits))
     }

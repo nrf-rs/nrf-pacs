@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_TXREADY_SPEC>> for W {
 #[doc = "Field `EVENTS_TXREADY` reader - "]
 pub struct EVENTS_TXREADY_R(crate::FieldReader<bool, bool>);
 impl EVENTS_TXREADY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_TXREADY_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<CRCINIT_SPEC>> for W {
 #[doc = "Field `CRCINIT` reader - CRC initial value"]
 pub struct CRCINIT_R(crate::FieldReader<u32, u32>);
 impl CRCINIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         CRCINIT_R(crate::FieldReader::new(bits))
     }

@@ -64,6 +64,7 @@ impl From<PRESCALER_A> for u8 {
 #[doc = "Field `PRESCALER` reader - Prescaler of PWM_CLK"]
 pub struct PRESCALER_R(crate::FieldReader<u8, PRESCALER_A>);
 impl PRESCALER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRESCALER_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<EVENTS_EP0DATADONE_A> for bool {
 #[doc = "Field `EVENTS_EP0DATADONE` reader - An acknowledged data transfer has taken place on the control endpoint"]
 pub struct EVENTS_EP0DATADONE_R(crate::FieldReader<bool, EVENTS_EP0DATADONE_A>);
 impl EVENTS_EP0DATADONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_EP0DATADONE_R(crate::FieldReader::new(bits))
     }

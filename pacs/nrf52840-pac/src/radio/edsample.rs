@@ -37,6 +37,7 @@ impl From<crate::W<EDSAMPLE_SPEC>> for W {
 #[doc = "Field `EDLVL` reader - IEEE 802.15.4 energy detect level"]
 pub struct EDLVL_R(crate::FieldReader<u8, u8>);
 impl EDLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         EDLVL_R(crate::FieldReader::new(bits))
     }

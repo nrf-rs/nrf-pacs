@@ -30,6 +30,7 @@ impl From<BUSY_A> for bool {
 #[doc = "Field `BUSY` reader - ADC busy register."]
 pub struct BUSY_R(crate::FieldReader<bool, BUSY_A>);
 impl BUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BUSY_R(crate::FieldReader::new(bits))
     }

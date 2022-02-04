@@ -51,6 +51,7 @@ impl From<CHEN0_A> for bool {
 #[doc = "Field `CHEN0` reader - Enable broadcasting on IPC channel 0"]
 pub struct CHEN0_R(crate::FieldReader<bool, CHEN0_A>);
 impl CHEN0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<CHEN1_A> for bool {
 #[doc = "Field `CHEN1` reader - Enable broadcasting on IPC channel 1"]
 pub struct CHEN1_R(crate::FieldReader<bool, CHEN1_A>);
 impl CHEN1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<CHEN2_A> for bool {
 #[doc = "Field `CHEN2` reader - Enable broadcasting on IPC channel 2"]
 pub struct CHEN2_R(crate::FieldReader<bool, CHEN2_A>);
 impl CHEN2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN2_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<CHEN3_A> for bool {
 #[doc = "Field `CHEN3` reader - Enable broadcasting on IPC channel 3"]
 pub struct CHEN3_R(crate::FieldReader<bool, CHEN3_A>);
 impl CHEN3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN3_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<CHEN4_A> for bool {
 #[doc = "Field `CHEN4` reader - Enable broadcasting on IPC channel 4"]
 pub struct CHEN4_R(crate::FieldReader<bool, CHEN4_A>);
 impl CHEN4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN4_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<CHEN5_A> for bool {
 #[doc = "Field `CHEN5` reader - Enable broadcasting on IPC channel 5"]
 pub struct CHEN5_R(crate::FieldReader<bool, CHEN5_A>);
 impl CHEN5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN5_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<CHEN6_A> for bool {
 #[doc = "Field `CHEN6` reader - Enable broadcasting on IPC channel 6"]
 pub struct CHEN6_R(crate::FieldReader<bool, CHEN6_A>);
 impl CHEN6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN6_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<CHEN7_A> for bool {
 #[doc = "Field `CHEN7` reader - Enable broadcasting on IPC channel 7"]
 pub struct CHEN7_R(crate::FieldReader<bool, CHEN7_A>);
 impl CHEN7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN7_R(crate::FieldReader::new(bits))
     }
@@ -715,6 +723,7 @@ impl From<CHEN8_A> for bool {
 #[doc = "Field `CHEN8` reader - Enable broadcasting on IPC channel 8"]
 pub struct CHEN8_R(crate::FieldReader<bool, CHEN8_A>);
 impl CHEN8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN8_R(crate::FieldReader::new(bits))
     }
@@ -798,6 +807,7 @@ impl From<CHEN9_A> for bool {
 #[doc = "Field `CHEN9` reader - Enable broadcasting on IPC channel 9"]
 pub struct CHEN9_R(crate::FieldReader<bool, CHEN9_A>);
 impl CHEN9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN9_R(crate::FieldReader::new(bits))
     }
@@ -881,6 +891,7 @@ impl From<CHEN10_A> for bool {
 #[doc = "Field `CHEN10` reader - Enable broadcasting on IPC channel 10"]
 pub struct CHEN10_R(crate::FieldReader<bool, CHEN10_A>);
 impl CHEN10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN10_R(crate::FieldReader::new(bits))
     }
@@ -964,6 +975,7 @@ impl From<CHEN11_A> for bool {
 #[doc = "Field `CHEN11` reader - Enable broadcasting on IPC channel 11"]
 pub struct CHEN11_R(crate::FieldReader<bool, CHEN11_A>);
 impl CHEN11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN11_R(crate::FieldReader::new(bits))
     }
@@ -1047,6 +1059,7 @@ impl From<CHEN12_A> for bool {
 #[doc = "Field `CHEN12` reader - Enable broadcasting on IPC channel 12"]
 pub struct CHEN12_R(crate::FieldReader<bool, CHEN12_A>);
 impl CHEN12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN12_R(crate::FieldReader::new(bits))
     }
@@ -1130,6 +1143,7 @@ impl From<CHEN13_A> for bool {
 #[doc = "Field `CHEN13` reader - Enable broadcasting on IPC channel 13"]
 pub struct CHEN13_R(crate::FieldReader<bool, CHEN13_A>);
 impl CHEN13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN13_R(crate::FieldReader::new(bits))
     }
@@ -1213,6 +1227,7 @@ impl From<CHEN14_A> for bool {
 #[doc = "Field `CHEN14` reader - Enable broadcasting on IPC channel 14"]
 pub struct CHEN14_R(crate::FieldReader<bool, CHEN14_A>);
 impl CHEN14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN14_R(crate::FieldReader::new(bits))
     }
@@ -1296,6 +1311,7 @@ impl From<CHEN15_A> for bool {
 #[doc = "Field `CHEN15` reader - Enable broadcasting on IPC channel 15"]
 pub struct CHEN15_R(crate::FieldReader<bool, CHEN15_A>);
 impl CHEN15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHEN15_R(crate::FieldReader::new(bits))
     }

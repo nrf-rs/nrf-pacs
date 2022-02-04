@@ -51,6 +51,7 @@ impl From<EVENTS_INVALIDOPERATION_A> for bool {
 #[doc = "Field `EVENTS_INVALIDOPERATION` reader - An FPUIOC exception triggered by an invalid operation has occurred in the FPU"]
 pub struct EVENTS_INVALIDOPERATION_R(crate::FieldReader<bool, EVENTS_INVALIDOPERATION_A>);
 impl EVENTS_INVALIDOPERATION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_INVALIDOPERATION_R(crate::FieldReader::new(bits))
     }

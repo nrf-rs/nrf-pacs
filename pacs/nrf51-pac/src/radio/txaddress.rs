@@ -37,6 +37,7 @@ impl From<crate::W<TXADDRESS_SPEC>> for W {
 #[doc = "Field `TXADDRESS` reader - Logical address to be used when transmitting a packet. Decision point: START task."]
 pub struct TXADDRESS_R(crate::FieldReader<u8, u8>);
 impl TXADDRESS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TXADDRESS_R(crate::FieldReader::new(bits))
     }

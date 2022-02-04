@@ -37,6 +37,7 @@ impl From<crate::W<CNT_SPEC>> for W {
 #[doc = "Field `CNT` reader - Read transfer length in number of bytes. The length must be a multiple of 4 bytes."]
 pub struct CNT_R(crate::FieldReader<u32, u32>);
 impl CNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         CNT_R(crate::FieldReader::new(bits))
     }

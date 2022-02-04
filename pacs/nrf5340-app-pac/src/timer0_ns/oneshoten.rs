@@ -51,6 +51,7 @@ impl From<ONESHOTEN_A> for bool {
 #[doc = "Field `ONESHOTEN` reader - Enable one-shot operation"]
 pub struct ONESHOTEN_R(crate::FieldReader<bool, ONESHOTEN_A>);
 impl ONESHOTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ONESHOTEN_R(crate::FieldReader::new(bits))
     }

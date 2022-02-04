@@ -51,6 +51,7 @@ impl From<EVENTS_CRCERROR_A> for bool {
 #[doc = "Field `EVENTS_CRCERROR` reader - Packet received with CRC error"]
 pub struct EVENTS_CRCERROR_R(crate::FieldReader<bool, EVENTS_CRCERROR_A>);
 impl EVENTS_CRCERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_CRCERROR_R(crate::FieldReader::new(bits))
     }

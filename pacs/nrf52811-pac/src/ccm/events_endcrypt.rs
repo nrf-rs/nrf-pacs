@@ -51,6 +51,7 @@ impl From<EVENTS_ENDCRYPT_A> for bool {
 #[doc = "Field `EVENTS_ENDCRYPT` reader - Encrypt/decrypt complete"]
 pub struct EVENTS_ENDCRYPT_R(crate::FieldReader<bool, EVENTS_ENDCRYPT_A>);
 impl EVENTS_ENDCRYPT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ENDCRYPT_R(crate::FieldReader::new(bits))
     }

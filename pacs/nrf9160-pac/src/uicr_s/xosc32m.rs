@@ -37,6 +37,7 @@ impl From<crate::W<XOSC32M_SPEC>> for W {
 #[doc = "Field `CTRL` reader - Pierce current DAC control signals"]
 pub struct CTRL_R(crate::FieldReader<u8, u8>);
 impl CTRL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTRL_R(crate::FieldReader::new(bits))
     }

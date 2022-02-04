@@ -51,6 +51,7 @@ impl From<EVENTS_DBLRDY_A> for bool {
 #[doc = "Field `EVENTS_DBLRDY` reader - Double displacement(s) detected"]
 pub struct EVENTS_DBLRDY_R(crate::FieldReader<bool, EVENTS_DBLRDY_A>);
 impl EVENTS_DBLRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_DBLRDY_R(crate::FieldReader::new(bits))
     }

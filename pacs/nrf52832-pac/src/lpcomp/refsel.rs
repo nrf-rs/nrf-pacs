@@ -80,6 +80,7 @@ impl From<REFSEL_A> for u8 {
 #[doc = "Field `REFSEL` reader - Reference select"]
 pub struct REFSEL_R(crate::FieldReader<u8, REFSEL_A>);
 impl REFSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REFSEL_R(crate::FieldReader::new(bits))
     }

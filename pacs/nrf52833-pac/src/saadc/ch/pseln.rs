@@ -70,6 +70,7 @@ impl From<PSELN_A> for u8 {
 #[doc = "Field `PSELN` reader - Analog negative input, enables differential channel"]
 pub struct PSELN_R(crate::FieldReader<u8, PSELN_A>);
 impl PSELN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PSELN_R(crate::FieldReader::new(bits))
     }

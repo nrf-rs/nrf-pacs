@@ -54,6 +54,7 @@ impl From<SP_A> for u8 {
 #[doc = "Field `SP` reader - Speed and power modes"]
 pub struct SP_R(crate::FieldReader<u8, SP_A>);
 impl SP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SP_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +140,7 @@ impl From<MAIN_A> for bool {
 #[doc = "Field `MAIN` reader - Main operation modes"]
 pub struct MAIN_R(crate::FieldReader<bool, MAIN_A>);
 impl MAIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MAIN_R(crate::FieldReader::new(bits))
     }

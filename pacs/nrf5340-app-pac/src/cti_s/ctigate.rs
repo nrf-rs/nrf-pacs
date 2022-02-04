@@ -51,6 +51,7 @@ impl From<CTIGATEEN_0_A> for bool {
 #[doc = "Field `CTIGATEEN_0` reader - Enable ctichout0."]
 pub struct CTIGATEEN_0_R(crate::FieldReader<bool, CTIGATEEN_0_A>);
 impl CTIGATEEN_0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTIGATEEN_0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<CTIGATEEN_1_A> for bool {
 #[doc = "Field `CTIGATEEN_1` reader - Enable ctichout1."]
 pub struct CTIGATEEN_1_R(crate::FieldReader<bool, CTIGATEEN_1_A>);
 impl CTIGATEEN_1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTIGATEEN_1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<CTIGATEEN_2_A> for bool {
 #[doc = "Field `CTIGATEEN_2` reader - Enable ctichout2."]
 pub struct CTIGATEEN_2_R(crate::FieldReader<bool, CTIGATEEN_2_A>);
 impl CTIGATEEN_2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTIGATEEN_2_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<CTIGATEEN_3_A> for bool {
 #[doc = "Field `CTIGATEEN_3` reader - Enable ctichout3."]
 pub struct CTIGATEEN_3_R(crate::FieldReader<bool, CTIGATEEN_3_A>);
 impl CTIGATEEN_3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTIGATEEN_3_R(crate::FieldReader::new(bits))
     }

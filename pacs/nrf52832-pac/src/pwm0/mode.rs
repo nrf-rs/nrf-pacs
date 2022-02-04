@@ -51,6 +51,7 @@ impl From<UPDOWN_A> for bool {
 #[doc = "Field `UPDOWN` reader - Selects up or up and down as wave counter mode"]
 pub struct UPDOWN_R(crate::FieldReader<bool, UPDOWN_A>);
 impl UPDOWN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UPDOWN_R(crate::FieldReader::new(bits))
     }

@@ -53,6 +53,7 @@ impl From<EVENTS_TRIGGERED_A> for bool {
 task"]
 pub struct EVENTS_TRIGGERED_R(crate::FieldReader<bool, EVENTS_TRIGGERED_A>);
 impl EVENTS_TRIGGERED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_TRIGGERED_R(crate::FieldReader::new(bits))
     }

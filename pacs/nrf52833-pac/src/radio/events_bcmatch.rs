@@ -51,6 +51,7 @@ impl From<EVENTS_BCMATCH_A> for bool {
 #[doc = "Field `EVENTS_BCMATCH` reader - Bit counter reached bit count value"]
 pub struct EVENTS_BCMATCH_R(crate::FieldReader<bool, EVENTS_BCMATCH_A>);
 impl EVENTS_BCMATCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_BCMATCH_R(crate::FieldReader::new(bits))
     }

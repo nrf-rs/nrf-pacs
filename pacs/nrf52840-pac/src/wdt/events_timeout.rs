@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_TIMEOUT_SPEC>> for W {
 #[doc = "Field `EVENTS_TIMEOUT` reader - "]
 pub struct EVENTS_TIMEOUT_R(crate::FieldReader<bool, bool>);
 impl EVENTS_TIMEOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_TIMEOUT_R(crate::FieldReader::new(bits))
     }

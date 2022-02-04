@@ -37,6 +37,7 @@ impl From<crate::W<LIMIT_SPEC>> for W {
 #[doc = "Field `LOW` reader - Low level limit"]
 pub struct LOW_R(crate::FieldReader<u16, u16>);
 impl LOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         LOW_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> LOW_W<'a> {
 #[doc = "Field `HIGH` reader - High level limit"]
 pub struct HIGH_R(crate::FieldReader<u16, u16>);
 impl HIGH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         HIGH_R(crate::FieldReader::new(bits))
     }

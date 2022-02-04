@@ -54,6 +54,7 @@ impl From<HOST_CRYPTOKEY_SEL_A> for u8 {
 #[doc = "Field `HOST_CRYPTOKEY_SEL` reader - Select the source of the HW key that is used by the AES engine"]
 pub struct HOST_CRYPTOKEY_SEL_R(crate::FieldReader<u8, HOST_CRYPTOKEY_SEL_A>);
 impl HOST_CRYPTOKEY_SEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         HOST_CRYPTOKEY_SEL_R(crate::FieldReader::new(bits))
     }

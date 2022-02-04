@@ -51,6 +51,7 @@ impl From<GLBEN_A> for bool {
 #[doc = "Field `GLBEN` reader - Enables or disables the CTI."]
 pub struct GLBEN_R(crate::FieldReader<bool, GLBEN_A>);
 impl GLBEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         GLBEN_R(crate::FieldReader::new(bits))
     }

@@ -55,6 +55,7 @@ impl From<RR0_A> for bool {
 register"]
 pub struct RR0_R(crate::FieldReader<bool, RR0_A>);
 impl RR0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RR0_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +146,7 @@ impl From<RR1_A> for bool {
 register"]
 pub struct RR1_R(crate::FieldReader<bool, RR1_A>);
 impl RR1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RR1_R(crate::FieldReader::new(bits))
     }
@@ -235,6 +237,7 @@ impl From<RR2_A> for bool {
 register"]
 pub struct RR2_R(crate::FieldReader<bool, RR2_A>);
 impl RR2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RR2_R(crate::FieldReader::new(bits))
     }
@@ -325,6 +328,7 @@ impl From<RR3_A> for bool {
 register"]
 pub struct RR3_R(crate::FieldReader<bool, RR3_A>);
 impl RR3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RR3_R(crate::FieldReader::new(bits))
     }
@@ -415,6 +419,7 @@ impl From<RR4_A> for bool {
 register"]
 pub struct RR4_R(crate::FieldReader<bool, RR4_A>);
 impl RR4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RR4_R(crate::FieldReader::new(bits))
     }
@@ -505,6 +510,7 @@ impl From<RR5_A> for bool {
 register"]
 pub struct RR5_R(crate::FieldReader<bool, RR5_A>);
 impl RR5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RR5_R(crate::FieldReader::new(bits))
     }
@@ -595,6 +601,7 @@ impl From<RR6_A> for bool {
 register"]
 pub struct RR6_R(crate::FieldReader<bool, RR6_A>);
 impl RR6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RR6_R(crate::FieldReader::new(bits))
     }
@@ -685,6 +692,7 @@ impl From<RR7_A> for bool {
 register"]
 pub struct RR7_R(crate::FieldReader<bool, RR7_A>);
 impl RR7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RR7_R(crate::FieldReader::new(bits))
     }

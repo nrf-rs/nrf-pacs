@@ -51,6 +51,7 @@ impl From<ISOOUTCRC_A> for bool {
 #[doc = "Field `ISOOUTCRC` reader - CRC error was detected on isochronous OUT endpoint 8. Write '1' to clear."]
 pub struct ISOOUTCRC_R(crate::FieldReader<bool, ISOOUTCRC_A>);
 impl ISOOUTCRC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ISOOUTCRC_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<SUSPEND_A> for bool {
 #[doc = "Field `SUSPEND` reader - Signals that USB lines have been idle long enough for the device to enter suspend. Write '1' to clear."]
 pub struct SUSPEND_R(crate::FieldReader<bool, SUSPEND_A>);
 impl SUSPEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUSPEND_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<RESUME_A> for bool {
 #[doc = "Field `RESUME` reader - Signals that a RESUME condition (K state or activity restart) has been detected on USB lines. Write '1' to clear."]
 pub struct RESUME_R(crate::FieldReader<bool, RESUME_A>);
 impl RESUME_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESUME_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<USBWUALLOWED_A> for bool {
 #[doc = "Field `USBWUALLOWED` reader - USB MAC has been woken up and operational. Write '1' to clear."]
 pub struct USBWUALLOWED_R(crate::FieldReader<bool, USBWUALLOWED_A>);
 impl USBWUALLOWED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBWUALLOWED_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<READY_A> for bool {
 #[doc = "Field `READY` reader - USB device is ready for normal operation. Write '1' to clear."]
 pub struct READY_R(crate::FieldReader<bool, READY_A>);
 impl READY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READY_R(crate::FieldReader::new(bits))
     }

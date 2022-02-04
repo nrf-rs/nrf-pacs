@@ -50,6 +50,7 @@ impl From<CNT_A> for u16 {
 #[doc = "Field `CNT` reader - Amount of values (duty cycles) in this sequence"]
 pub struct CNT_R(crate::FieldReader<u16, CNT_A>);
 impl CNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CNT_R(crate::FieldReader::new(bits))
     }

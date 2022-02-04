@@ -53,6 +53,7 @@ impl From<EP0DATADONE_STARTEPIN0_A> for bool {
 task"]
 pub struct EP0DATADONE_STARTEPIN0_R(crate::FieldReader<bool, EP0DATADONE_STARTEPIN0_A>);
 impl EP0DATADONE_STARTEPIN0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP0DATADONE_STARTEPIN0_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +140,7 @@ impl From<EP0DATADONE_STARTEPOUT0_A> for bool {
 task"]
 pub struct EP0DATADONE_STARTEPOUT0_R(crate::FieldReader<bool, EP0DATADONE_STARTEPOUT0_A>);
 impl EP0DATADONE_STARTEPOUT0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP0DATADONE_STARTEPOUT0_R(crate::FieldReader::new(bits))
     }
@@ -223,6 +225,7 @@ impl From<EP0DATADONE_EP0STATUS_A> for bool {
 #[doc = "Field `EP0DATADONE_EP0STATUS` reader - Shortcut between EP0DATADONE event and EP0STATUS task"]
 pub struct EP0DATADONE_EP0STATUS_R(crate::FieldReader<bool, EP0DATADONE_EP0STATUS_A>);
 impl EP0DATADONE_EP0STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP0DATADONE_EP0STATUS_R(crate::FieldReader::new(bits))
     }
@@ -308,6 +311,7 @@ impl From<ENDEPOUT0_EP0STATUS_A> for bool {
 event and EP0STATUS task"]
 pub struct ENDEPOUT0_EP0STATUS_R(crate::FieldReader<bool, ENDEPOUT0_EP0STATUS_A>);
 impl ENDEPOUT0_EP0STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPOUT0_EP0STATUS_R(crate::FieldReader::new(bits))
     }
@@ -394,6 +398,7 @@ impl From<ENDEPOUT0_EP0RCVOUT_A> for bool {
 event and EP0RCVOUT task"]
 pub struct ENDEPOUT0_EP0RCVOUT_R(crate::FieldReader<bool, ENDEPOUT0_EP0RCVOUT_A>);
 impl ENDEPOUT0_EP0RCVOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEPOUT0_EP0RCVOUT_R(crate::FieldReader::new(bits))
     }

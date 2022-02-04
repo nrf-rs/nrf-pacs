@@ -51,6 +51,7 @@ impl From<EVENTS_FRAMESTART_A> for bool {
 #[doc = "Field `EVENTS_FRAMESTART` reader - IEEE 802.15.4 length field received"]
 pub struct EVENTS_FRAMESTART_R(crate::FieldReader<bool, EVENTS_FRAMESTART_A>);
 impl EVENTS_FRAMESTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_FRAMESTART_R(crate::FieldReader::new(bits))
     }

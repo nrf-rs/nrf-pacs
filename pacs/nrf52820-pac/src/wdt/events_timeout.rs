@@ -51,6 +51,7 @@ impl From<EVENTS_TIMEOUT_A> for bool {
 #[doc = "Field `EVENTS_TIMEOUT` reader - Watchdog timeout"]
 pub struct EVENTS_TIMEOUT_R(crate::FieldReader<bool, EVENTS_TIMEOUT_A>);
 impl EVENTS_TIMEOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_TIMEOUT_R(crate::FieldReader::new(bits))
     }

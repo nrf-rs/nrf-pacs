@@ -45,6 +45,7 @@ impl From<STATE_A> for u8 {
 #[doc = "Field `STATE` reader - Current radio state"]
 pub struct STATE_R(crate::FieldReader<u8, STATE_A>);
 impl STATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         STATE_R(crate::FieldReader::new(bits))
     }

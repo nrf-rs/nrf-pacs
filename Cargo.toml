@@ -6,5 +6,5 @@ members = [
 default-members = ["xtask"]
 
 # meta-dependencies (upgrade as needed, they apply to all PACs):
-# @svd2rust = 0.19.0
+# @svd2rust = 0.21.0
 # @form = 0.8.0

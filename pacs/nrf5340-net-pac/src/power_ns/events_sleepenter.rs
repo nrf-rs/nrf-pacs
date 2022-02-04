@@ -51,6 +51,7 @@ impl From<EVENTS_SLEEPENTER_A> for bool {
 #[doc = "Field `EVENTS_SLEEPENTER` reader - CPU entered WFI/WFE sleep"]
 pub struct EVENTS_SLEEPENTER_R(crate::FieldReader<bool, EVENTS_SLEEPENTER_A>);
 impl EVENTS_SLEEPENTER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_SLEEPENTER_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<FORCEOFF_A> for bool {
 #[doc = "Field `FORCEOFF` reader - Force network core off"]
 pub struct FORCEOFF_R(crate::FieldReader<bool, FORCEOFF_A>);
 impl FORCEOFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FORCEOFF_R(crate::FieldReader::new(bits))
     }

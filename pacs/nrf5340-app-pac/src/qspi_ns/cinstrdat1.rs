@@ -37,6 +37,7 @@ impl From<crate::W<CINSTRDAT1_SPEC>> for W {
 #[doc = "Field `BYTE4` reader - Data byte 4"]
 pub struct BYTE4_R(crate::FieldReader<u8, u8>);
 impl BYTE4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BYTE4_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> BYTE4_W<'a> {
 #[doc = "Field `BYTE5` reader - Data byte 5"]
 pub struct BYTE5_R(crate::FieldReader<u8, u8>);
 impl BYTE5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BYTE5_R(crate::FieldReader::new(bits))
     }
@@ -89,6 +91,7 @@ impl<'a> BYTE5_W<'a> {
 #[doc = "Field `BYTE6` reader - Data byte 6"]
 pub struct BYTE6_R(crate::FieldReader<u8, u8>);
 impl BYTE6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BYTE6_R(crate::FieldReader::new(bits))
     }
@@ -115,6 +118,7 @@ impl<'a> BYTE6_W<'a> {
 #[doc = "Field `BYTE7` reader - Data byte 7"]
 pub struct BYTE7_R(crate::FieldReader<u8, u8>);
 impl BYTE7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BYTE7_R(crate::FieldReader::new(bits))
     }

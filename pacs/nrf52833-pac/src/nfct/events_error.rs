@@ -51,6 +51,7 @@ impl From<EVENTS_ERROR_A> for bool {
 #[doc = "Field `EVENTS_ERROR` reader - NFC error reported. The ERRORSTATUS register contains details on the source of the error."]
 pub struct EVENTS_ERROR_R(crate::FieldReader<bool, EVENTS_ERROR_A>);
 impl EVENTS_ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ERROR_R(crate::FieldReader::new(bits))
     }

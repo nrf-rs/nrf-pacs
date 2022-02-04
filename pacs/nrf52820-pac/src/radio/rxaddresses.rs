@@ -51,6 +51,7 @@ impl From<ADDR0_A> for bool {
 #[doc = "Field `ADDR0` reader - Enable or disable reception on logical address 0."]
 pub struct ADDR0_R(crate::FieldReader<bool, ADDR0_A>);
 impl ADDR0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDR0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<ADDR1_A> for bool {
 #[doc = "Field `ADDR1` reader - Enable or disable reception on logical address 1."]
 pub struct ADDR1_R(crate::FieldReader<bool, ADDR1_A>);
 impl ADDR1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDR1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<ADDR2_A> for bool {
 #[doc = "Field `ADDR2` reader - Enable or disable reception on logical address 2."]
 pub struct ADDR2_R(crate::FieldReader<bool, ADDR2_A>);
 impl ADDR2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDR2_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<ADDR3_A> for bool {
 #[doc = "Field `ADDR3` reader - Enable or disable reception on logical address 3."]
 pub struct ADDR3_R(crate::FieldReader<bool, ADDR3_A>);
 impl ADDR3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDR3_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<ADDR4_A> for bool {
 #[doc = "Field `ADDR4` reader - Enable or disable reception on logical address 4."]
 pub struct ADDR4_R(crate::FieldReader<bool, ADDR4_A>);
 impl ADDR4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDR4_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<ADDR5_A> for bool {
 #[doc = "Field `ADDR5` reader - Enable or disable reception on logical address 5."]
 pub struct ADDR5_R(crate::FieldReader<bool, ADDR5_A>);
 impl ADDR5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDR5_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<ADDR6_A> for bool {
 #[doc = "Field `ADDR6` reader - Enable or disable reception on logical address 6."]
 pub struct ADDR6_R(crate::FieldReader<bool, ADDR6_A>);
 impl ADDR6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDR6_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<ADDR7_A> for bool {
 #[doc = "Field `ADDR7` reader - Enable or disable reception on logical address 7."]
 pub struct ADDR7_R(crate::FieldReader<bool, ADDR7_A>);
 impl ADDR7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDR7_R(crate::FieldReader::new(bits))
     }

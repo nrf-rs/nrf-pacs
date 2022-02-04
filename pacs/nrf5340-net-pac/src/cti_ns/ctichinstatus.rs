@@ -30,6 +30,7 @@ impl From<CTICHINSTATUS_0_A> for bool {
 #[doc = "Field `CTICHINSTATUS_0` reader - Shows the status of the ctitrigin 0 input."]
 pub struct CTICHINSTATUS_0_R(crate::FieldReader<bool, CTICHINSTATUS_0_A>);
 impl CTICHINSTATUS_0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTICHINSTATUS_0_R(crate::FieldReader::new(bits))
     }
@@ -76,6 +77,7 @@ impl From<CTICHINSTATUS_1_A> for bool {
 #[doc = "Field `CTICHINSTATUS_1` reader - Shows the status of the ctitrigin 1 input."]
 pub struct CTICHINSTATUS_1_R(crate::FieldReader<bool, CTICHINSTATUS_1_A>);
 impl CTICHINSTATUS_1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTICHINSTATUS_1_R(crate::FieldReader::new(bits))
     }
@@ -122,6 +124,7 @@ impl From<CTICHINSTATUS_2_A> for bool {
 #[doc = "Field `CTICHINSTATUS_2` reader - Shows the status of the ctitrigin 2 input."]
 pub struct CTICHINSTATUS_2_R(crate::FieldReader<bool, CTICHINSTATUS_2_A>);
 impl CTICHINSTATUS_2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTICHINSTATUS_2_R(crate::FieldReader::new(bits))
     }
@@ -168,6 +171,7 @@ impl From<CTICHINSTATUS_3_A> for bool {
 #[doc = "Field `CTICHINSTATUS_3` reader - Shows the status of the ctitrigin 3 input."]
 pub struct CTICHINSTATUS_3_R(crate::FieldReader<bool, CTICHINSTATUS_3_A>);
 impl CTICHINSTATUS_3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTICHINSTATUS_3_R(crate::FieldReader::new(bits))
     }

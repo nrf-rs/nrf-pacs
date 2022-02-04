@@ -52,6 +52,7 @@ impl From<SPLIT_A> for u16 {
 #[doc = "Field `SPLIT` reader - Controls the split of ISO buffers"]
 pub struct SPLIT_R(crate::FieldReader<u16, SPLIT_A>);
 impl SPLIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         SPLIT_R(crate::FieldReader::new(bits))
     }

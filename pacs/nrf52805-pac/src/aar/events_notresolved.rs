@@ -51,6 +51,7 @@ impl From<EVENTS_NOTRESOLVED_A> for bool {
 #[doc = "Field `EVENTS_NOTRESOLVED` reader - Address not resolved"]
 pub struct EVENTS_NOTRESOLVED_R(crate::FieldReader<bool, EVENTS_NOTRESOLVED_A>);
 impl EVENTS_NOTRESOLVED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_NOTRESOLVED_R(crate::FieldReader::new(bits))
     }

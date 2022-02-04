@@ -51,6 +51,7 @@ impl From<OVERREAD_A> for bool {
 #[doc = "Field `OVERREAD` reader - TX buffer over-read detected, and prevented"]
 pub struct OVERREAD_R(crate::FieldReader<bool, OVERREAD_A>);
 impl OVERREAD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OVERREAD_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<OVERFLOW_A> for bool {
 #[doc = "Field `OVERFLOW` reader - RX buffer overflow detected, and prevented"]
 pub struct OVERFLOW_R(crate::FieldReader<bool, OVERFLOW_A>);
 impl OVERFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OVERFLOW_R(crate::FieldReader::new(bits))
     }

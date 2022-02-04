@@ -37,6 +37,7 @@ impl From<crate::W<IFTIMING_SPEC>> for W {
 #[doc = "Field `RXDELAY` reader - Timing related to sampling of the input serial data. The value of RXDELAY specifies the number of prescaled 192 MHz cycles delay from the the rising edge of the SPI Clock (SCK) until the input serial data is sampled. For example, if RXDELAY is set to 0, the input serial data is sampled on the rising edge of SCK."]
 pub struct RXDELAY_R(crate::FieldReader<u8, u8>);
 impl RXDELAY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RXDELAY_R(crate::FieldReader::new(bits))
     }

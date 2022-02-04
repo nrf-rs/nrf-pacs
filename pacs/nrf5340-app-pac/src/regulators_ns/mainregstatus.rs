@@ -30,6 +30,7 @@ impl From<VREGH_A> for bool {
 #[doc = "Field `VREGH` reader - VREGH status"]
 pub struct VREGH_R(crate::FieldReader<bool, VREGH_A>);
 impl VREGH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VREGH_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<DATARDY_A> for bool {
 #[doc = "Field `DATARDY` reader - Enable interrupt on DATARDY event."]
 pub struct DATARDY_R(crate::FieldReader<bool, DATARDY_A>);
 impl DATARDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DATARDY_R(crate::FieldReader::new(bits))
     }

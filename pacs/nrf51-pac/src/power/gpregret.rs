@@ -37,6 +37,7 @@ impl From<crate::W<GPREGRET_SPEC>> for W {
 #[doc = "Field `GPREGRET` reader - General purpose retention register."]
 pub struct GPREGRET_R(crate::FieldReader<u8, u8>);
 impl GPREGRET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         GPREGRET_R(crate::FieldReader::new(bits))
     }

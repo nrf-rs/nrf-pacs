@@ -56,6 +56,7 @@ impl From<FRAMEDELAYMODE_A> for u8 {
 #[doc = "Field `FRAMEDELAYMODE` reader - Configuration register for the Frame Delay Timer"]
 pub struct FRAMEDELAYMODE_R(crate::FieldReader<u8, FRAMEDELAYMODE_A>);
 impl FRAMEDELAYMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FRAMEDELAYMODE_R(crate::FieldReader::new(bits))
     }

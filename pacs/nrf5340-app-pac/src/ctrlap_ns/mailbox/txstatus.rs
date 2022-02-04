@@ -30,6 +30,7 @@ impl From<TXSTATUS_A> for bool {
 #[doc = "Field `TXSTATUS` reader - Status of data in register TXDATA"]
 pub struct TXSTATUS_R(crate::FieldReader<bool, TXSTATUS_A>);
 impl TXSTATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXSTATUS_R(crate::FieldReader::new(bits))
     }

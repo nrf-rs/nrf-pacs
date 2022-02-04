@@ -51,6 +51,7 @@ impl From<ERASEUICR_A> for bool {
 #[doc = "Field `ERASEUICR` reader - Register starting erase of all User Information Configuration Registers. Note that code erase has to be enabled by CONFIG.EEN before the UICR can be erased."]
 pub struct ERASEUICR_R(crate::FieldReader<bool, ERASEUICR_A>);
 impl ERASEUICR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERASEUICR_R(crate::FieldReader::new(bits))
     }

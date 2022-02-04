@@ -51,6 +51,7 @@ impl From<EVENTS_DEVMISS_A> for bool {
 #[doc = "Field `EVENTS_DEVMISS` reader - No device address match occurred on the last received packet"]
 pub struct EVENTS_DEVMISS_R(crate::FieldReader<bool, EVENTS_DEVMISS_A>);
 impl EVENTS_DEVMISS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_DEVMISS_R(crate::FieldReader::new(bits))
     }

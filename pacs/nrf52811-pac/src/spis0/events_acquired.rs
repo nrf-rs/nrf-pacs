@@ -51,6 +51,7 @@ impl From<EVENTS_ACQUIRED_A> for bool {
 #[doc = "Field `EVENTS_ACQUIRED` reader - Semaphore acquired"]
 pub struct EVENTS_ACQUIRED_R(crate::FieldReader<bool, EVENTS_ACQUIRED_A>);
 impl EVENTS_ACQUIRED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ACQUIRED_R(crate::FieldReader::new(bits))
     }

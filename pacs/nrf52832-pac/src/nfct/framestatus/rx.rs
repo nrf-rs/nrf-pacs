@@ -51,6 +51,7 @@ impl From<CRCERROR_A> for bool {
 #[doc = "Field `CRCERROR` reader - No valid End of Frame detected"]
 pub struct CRCERROR_R(crate::FieldReader<bool, CRCERROR_A>);
 impl CRCERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CRCERROR_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<PARITYSTATUS_A> for bool {
 #[doc = "Field `PARITYSTATUS` reader - Parity status of received frame"]
 pub struct PARITYSTATUS_R(crate::FieldReader<bool, PARITYSTATUS_A>);
 impl PARITYSTATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PARITYSTATUS_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<OVERRUN_A> for bool {
 #[doc = "Field `OVERRUN` reader - Overrun detected"]
 pub struct OVERRUN_R(crate::FieldReader<bool, OVERRUN_A>);
 impl OVERRUN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OVERRUN_R(crate::FieldReader::new(bits))
     }

@@ -16,6 +16,7 @@ impl From<crate::R<AMOUNT_SPEC>> for R {
 #[doc = "Field `RXDATABITS` reader - Number of bits in the last byte in the frame, if less than 8 (including CRC, but excluding parity and SoF/EoF framing)."]
 pub struct RXDATABITS_R(crate::FieldReader<u8, u8>);
 impl RXDATABITS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RXDATABITS_R(crate::FieldReader::new(bits))
     }
@@ -30,6 +31,7 @@ impl core::ops::Deref for RXDATABITS_R {
 #[doc = "Field `RXDATABYTES` reader - Number of complete bytes received in the frame (including CRC, but excluding parity and SoF/EoF framing)"]
 pub struct RXDATABYTES_R(crate::FieldReader<u16, u16>);
 impl RXDATABYTES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         RXDATABYTES_R(crate::FieldReader::new(bits))
     }

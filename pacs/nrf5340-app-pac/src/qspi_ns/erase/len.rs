@@ -54,6 +54,7 @@ impl From<LEN_A> for u8 {
 #[doc = "Field `LEN` reader - LEN"]
 pub struct LEN_R(crate::FieldReader<u8, LEN_A>);
 impl LEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LEN_R(crate::FieldReader::new(bits))
     }

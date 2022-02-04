@@ -54,6 +54,7 @@ impl From<SECUREMAPPING_A> for u8 {
 #[doc = "Field `SECUREMAPPING` reader - Define configuration capabilities for TrustZone Cortex-M secure attribute"]
 pub struct SECUREMAPPING_R(crate::FieldReader<u8, SECUREMAPPING_A>);
 impl SECUREMAPPING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SECUREMAPPING_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +140,7 @@ impl From<SECATTR_A> for bool {
 #[doc = "Field `SECATTR` reader - Peripheral security mapping"]
 pub struct SECATTR_R(crate::FieldReader<bool, SECATTR_A>);
 impl SECATTR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SECATTR_R(crate::FieldReader::new(bits))
     }
@@ -222,6 +224,7 @@ impl From<LOCK_A> for bool {
 #[doc = "Field `LOCK` reader - "]
 pub struct LOCK_R(crate::FieldReader<bool, LOCK_A>);
 impl LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCK_R(crate::FieldReader::new(bits))
     }

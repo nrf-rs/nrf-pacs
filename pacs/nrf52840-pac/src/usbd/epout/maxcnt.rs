@@ -37,6 +37,7 @@ impl From<crate::W<MAXCNT_SPEC>> for W {
 #[doc = "Field `MAXCNT` reader - Maximum number of bytes to transfer"]
 pub struct MAXCNT_R(crate::FieldReader<u8, u8>);
 impl MAXCNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MAXCNT_R(crate::FieldReader::new(bits))
     }

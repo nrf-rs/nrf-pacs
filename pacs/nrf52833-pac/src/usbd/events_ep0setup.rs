@@ -51,6 +51,7 @@ impl From<EVENTS_EP0SETUP_A> for bool {
 #[doc = "Field `EVENTS_EP0SETUP` reader - A valid SETUP token has been received (and acknowledged) on the control endpoint"]
 pub struct EVENTS_EP0SETUP_R(crate::FieldReader<bool, EVENTS_EP0SETUP_A>);
 impl EVENTS_EP0SETUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_EP0SETUP_R(crate::FieldReader::new(bits))
     }

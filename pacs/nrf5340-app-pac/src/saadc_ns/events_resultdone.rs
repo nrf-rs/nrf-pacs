@@ -51,6 +51,7 @@ impl From<EVENTS_RESULTDONE_A> for bool {
 #[doc = "Field `EVENTS_RESULTDONE` reader - A result is ready to get transferred to RAM"]
 pub struct EVENTS_RESULTDONE_R(crate::FieldReader<bool, EVENTS_RESULTDONE_A>);
 impl EVENTS_RESULTDONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RESULTDONE_R(crate::FieldReader::new(bits))
     }

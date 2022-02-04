@@ -51,6 +51,7 @@ impl From<LEDPOL_A> for bool {
 #[doc = "Field `LEDPOL` reader - LED output pin polarity."]
 pub struct LEDPOL_R(crate::FieldReader<bool, LEDPOL_A>);
 impl LEDPOL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LEDPOL_R(crate::FieldReader::new(bits))
     }

@@ -16,6 +16,7 @@ impl From<crate::R<WVALUEL_SPEC>> for R {
 #[doc = "Field `WVALUEL` reader - SETUP data, byte 2, LSB of wValue"]
 pub struct WVALUEL_R(crate::FieldReader<u8, u8>);
 impl WVALUEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         WVALUEL_R(crate::FieldReader::new(bits))
     }

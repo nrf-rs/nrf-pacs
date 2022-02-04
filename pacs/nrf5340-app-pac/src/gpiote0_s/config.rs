@@ -54,6 +54,7 @@ impl From<MODE_A> for u8 {
 #[doc = "Field `MODE` reader - Mode"]
 pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -127,6 +128,7 @@ tasks and IN\\[n\\]
 event"]
 pub struct PSEL_R(crate::FieldReader<u8, u8>);
 impl PSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PSEL_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +157,7 @@ impl<'a> PSEL_W<'a> {
 #[doc = "Field `PORT` reader - Port number"]
 pub struct PORT_R(crate::FieldReader<bool, bool>);
 impl PORT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PORT_R(crate::FieldReader::new(bits))
     }
@@ -221,6 +224,7 @@ task is triggered. When In event mode: Operation on input that shall trigger IN\
 event."]
 pub struct POLARITY_R(crate::FieldReader<u8, POLARITY_A>);
 impl POLARITY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         POLARITY_R(crate::FieldReader::new(bits))
     }
@@ -326,6 +330,7 @@ impl From<OUTINIT_A> for bool {
 #[doc = "Field `OUTINIT` reader - When in task mode: Initial value of the output when the GPIOTE channel is configured. When in event mode: No effect."]
 pub struct OUTINIT_R(crate::FieldReader<bool, OUTINIT_A>);
 impl OUTINIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OUTINIT_R(crate::FieldReader::new(bits))
     }

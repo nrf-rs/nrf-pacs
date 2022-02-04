@@ -54,6 +54,7 @@ impl From<ANADETECT_A> for u8 {
 #[doc = "Field `ANADETECT` reader - Analog detect configuration."]
 pub struct ANADETECT_R(crate::FieldReader<u8, ANADETECT_A>);
 impl ANADETECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ANADETECT_R(crate::FieldReader::new(bits))
     }

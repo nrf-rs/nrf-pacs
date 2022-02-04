@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_EPDATA_SPEC>> for W {
 #[doc = "Field `EVENTS_EPDATA` reader - "]
 pub struct EVENTS_EPDATA_R(crate::FieldReader<bool, bool>);
 impl EVENTS_EPDATA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_EPDATA_R(crate::FieldReader::new(bits))
     }

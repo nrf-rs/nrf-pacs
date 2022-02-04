@@ -51,6 +51,7 @@ impl From<END_START_A> for bool {
 #[doc = "Field `END_START` reader - Shortcut between event END and task START"]
 pub struct END_START_R(crate::FieldReader<bool, END_START_A>);
 impl END_START_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         END_START_R(crate::FieldReader::new(bits))
     }

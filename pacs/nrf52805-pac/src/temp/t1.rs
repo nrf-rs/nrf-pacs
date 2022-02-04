@@ -37,6 +37,7 @@ impl From<crate::W<T1_SPEC>> for W {
 #[doc = "Field `T1` reader - End point of second piecewise linear function"]
 pub struct T1_R(crate::FieldReader<u8, u8>);
 impl T1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         T1_R(crate::FieldReader::new(bits))
     }

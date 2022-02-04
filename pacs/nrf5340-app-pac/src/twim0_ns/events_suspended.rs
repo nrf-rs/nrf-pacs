@@ -51,6 +51,7 @@ impl From<EVENTS_SUSPENDED_A> for bool {
 #[doc = "Field `EVENTS_SUSPENDED` reader - SUSPEND task has been issued, TWI traffic is now suspended."]
 pub struct EVENTS_SUSPENDED_R(crate::FieldReader<bool, EVENTS_SUSPENDED_A>);
 impl EVENTS_SUSPENDED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_SUSPENDED_R(crate::FieldReader::new(bits))
     }

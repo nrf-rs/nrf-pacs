@@ -37,6 +37,7 @@ impl From<crate::W<SFD_SPEC>> for W {
 #[doc = "Field `SFD` reader - IEEE 802.15.4 start of frame delimiter"]
 pub struct SFD_R(crate::FieldReader<u8, u8>);
 impl SFD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SFD_R(crate::FieldReader::new(bits))
     }

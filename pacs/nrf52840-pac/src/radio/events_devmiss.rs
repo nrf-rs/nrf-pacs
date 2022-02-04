@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_DEVMISS_SPEC>> for W {
 #[doc = "Field `EVENTS_DEVMISS` reader - "]
 pub struct EVENTS_DEVMISS_R(crate::FieldReader<bool, bool>);
 impl EVENTS_DEVMISS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_DEVMISS_R(crate::FieldReader::new(bits))
     }

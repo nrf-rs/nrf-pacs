@@ -37,6 +37,7 @@ impl From<crate::W<CC_SPEC>> for W {
 #[doc = "Field `COMPARE` reader - Compare value"]
 pub struct COMPARE_R(crate::FieldReader<u32, u32>);
 impl COMPARE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         COMPARE_R(crate::FieldReader::new(bits))
     }

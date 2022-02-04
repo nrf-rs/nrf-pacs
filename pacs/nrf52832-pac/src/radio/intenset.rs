@@ -51,6 +51,7 @@ impl From<READY_A> for bool {
 #[doc = "Field `READY` reader - Write '1' to Enable interrupt for READY event"]
 pub struct READY_R(crate::FieldReader<bool, READY_A>);
 impl READY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READY_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<ADDRESS_A> for bool {
 #[doc = "Field `ADDRESS` reader - Write '1' to Enable interrupt for ADDRESS event"]
 pub struct ADDRESS_R(crate::FieldReader<bool, ADDRESS_A>);
 impl ADDRESS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDRESS_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<PAYLOAD_A> for bool {
 #[doc = "Field `PAYLOAD` reader - Write '1' to Enable interrupt for PAYLOAD event"]
 pub struct PAYLOAD_R(crate::FieldReader<bool, PAYLOAD_A>);
 impl PAYLOAD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PAYLOAD_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<END_A> for bool {
 #[doc = "Field `END` reader - Write '1' to Enable interrupt for END event"]
 pub struct END_R(crate::FieldReader<bool, END_A>);
 impl END_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         END_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +415,7 @@ impl From<DISABLED_A> for bool {
 #[doc = "Field `DISABLED` reader - Write '1' to Enable interrupt for DISABLED event"]
 pub struct DISABLED_R(crate::FieldReader<bool, DISABLED_A>);
 impl DISABLED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DISABLED_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +506,7 @@ impl From<DEVMATCH_A> for bool {
 #[doc = "Field `DEVMATCH` reader - Write '1' to Enable interrupt for DEVMATCH event"]
 pub struct DEVMATCH_R(crate::FieldReader<bool, DEVMATCH_A>);
 impl DEVMATCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEVMATCH_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +597,7 @@ impl From<DEVMISS_A> for bool {
 #[doc = "Field `DEVMISS` reader - Write '1' to Enable interrupt for DEVMISS event"]
 pub struct DEVMISS_R(crate::FieldReader<bool, DEVMISS_A>);
 impl DEVMISS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEVMISS_R(crate::FieldReader::new(bits))
     }
@@ -681,6 +688,7 @@ impl From<RSSIEND_A> for bool {
 #[doc = "Field `RSSIEND` reader - Write '1' to Enable interrupt for RSSIEND event"]
 pub struct RSSIEND_R(crate::FieldReader<bool, RSSIEND_A>);
 impl RSSIEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RSSIEND_R(crate::FieldReader::new(bits))
     }
@@ -771,6 +779,7 @@ impl From<BCMATCH_A> for bool {
 #[doc = "Field `BCMATCH` reader - Write '1' to Enable interrupt for BCMATCH event"]
 pub struct BCMATCH_R(crate::FieldReader<bool, BCMATCH_A>);
 impl BCMATCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BCMATCH_R(crate::FieldReader::new(bits))
     }
@@ -861,6 +870,7 @@ impl From<CRCOK_A> for bool {
 #[doc = "Field `CRCOK` reader - Write '1' to Enable interrupt for CRCOK event"]
 pub struct CRCOK_R(crate::FieldReader<bool, CRCOK_A>);
 impl CRCOK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CRCOK_R(crate::FieldReader::new(bits))
     }
@@ -951,6 +961,7 @@ impl From<CRCERROR_A> for bool {
 #[doc = "Field `CRCERROR` reader - Write '1' to Enable interrupt for CRCERROR event"]
 pub struct CRCERROR_R(crate::FieldReader<bool, CRCERROR_A>);
 impl CRCERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CRCERROR_R(crate::FieldReader::new(bits))
     }

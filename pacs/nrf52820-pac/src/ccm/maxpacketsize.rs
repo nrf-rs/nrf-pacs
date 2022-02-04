@@ -37,6 +37,7 @@ impl From<crate::W<MAXPACKETSIZE_SPEC>> for W {
 #[doc = "Field `MAXPACKETSIZE` reader - Length of keystream generated when MODE.LENGTH = Extended. This value must be greater or equal to the subsequent packet payload to be encrypted/decrypted."]
 pub struct MAXPACKETSIZE_R(crate::FieldReader<u8, u8>);
 impl MAXPACKETSIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MAXPACKETSIZE_R(crate::FieldReader::new(bits))
     }

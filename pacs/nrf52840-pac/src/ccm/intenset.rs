@@ -51,6 +51,7 @@ impl From<ENDKSGEN_A> for bool {
 #[doc = "Field `ENDKSGEN` reader - Write '1' to enable interrupt for ENDKSGEN event"]
 pub struct ENDKSGEN_R(crate::FieldReader<bool, ENDKSGEN_A>);
 impl ENDKSGEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDKSGEN_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<ENDCRYPT_A> for bool {
 #[doc = "Field `ENDCRYPT` reader - Write '1' to enable interrupt for ENDCRYPT event"]
 pub struct ENDCRYPT_R(crate::FieldReader<bool, ENDCRYPT_A>);
 impl ENDCRYPT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDCRYPT_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<ERROR_A> for bool {
 #[doc = "Field `ERROR` reader - Write '1' to enable interrupt for ERROR event"]
 pub struct ERROR_R(crate::FieldReader<bool, ERROR_A>);
 impl ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERROR_R(crate::FieldReader::new(bits))
     }

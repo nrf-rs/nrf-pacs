@@ -64,6 +64,7 @@ impl From<REPORTPER_A> for u8 {
 #[doc = "Field `REPORTPER` reader - Number of samples to generate an EVENT_REPORTRDY."]
 pub struct REPORTPER_R(crate::FieldReader<u8, REPORTPER_A>);
 impl REPORTPER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REPORTPER_R(crate::FieldReader::new(bits))
     }

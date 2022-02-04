@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_LOOPSDONE_SPEC>> for W {
 #[doc = "Field `EVENTS_LOOPSDONE` reader - "]
 pub struct EVENTS_LOOPSDONE_R(crate::FieldReader<bool, bool>);
 impl EVENTS_LOOPSDONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_LOOPSDONE_R(crate::FieldReader::new(bits))
     }

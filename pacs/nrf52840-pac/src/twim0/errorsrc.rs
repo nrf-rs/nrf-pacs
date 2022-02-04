@@ -51,6 +51,7 @@ impl From<OVERRUN_A> for bool {
 #[doc = "Field `OVERRUN` reader - Overrun error"]
 pub struct OVERRUN_R(crate::FieldReader<bool, OVERRUN_A>);
 impl OVERRUN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OVERRUN_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<ANACK_A> for bool {
 #[doc = "Field `ANACK` reader - NACK received after sending the address (write '1' to clear)"]
 pub struct ANACK_R(crate::FieldReader<bool, ANACK_A>);
 impl ANACK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ANACK_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<DNACK_A> for bool {
 #[doc = "Field `DNACK` reader - NACK received after sending a data byte (write '1' to clear)"]
 pub struct DNACK_R(crate::FieldReader<bool, DNACK_A>);
 impl DNACK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DNACK_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<HWFC_A> for bool {
 #[doc = "Field `HWFC` reader - Hardware flow control"]
 pub struct HWFC_R(crate::FieldReader<bool, HWFC_A>);
 impl HWFC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HWFC_R(crate::FieldReader::new(bits))
     }
@@ -135,6 +136,7 @@ impl From<PARITY_A> for u8 {
 #[doc = "Field `PARITY` reader - Parity"]
 pub struct PARITY_R(crate::FieldReader<u8, PARITY_A>);
 impl PARITY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PARITY_R(crate::FieldReader::new(bits))
     }
@@ -209,6 +211,7 @@ impl From<STOP_A> for bool {
 #[doc = "Field `STOP` reader - Stop bits"]
 pub struct STOP_R(crate::FieldReader<bool, STOP_A>);
 impl STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STOP_R(crate::FieldReader::new(bits))
     }
@@ -292,6 +295,7 @@ impl From<PARITYTYPE_A> for bool {
 #[doc = "Field `PARITYTYPE` reader - Even or odd parity type"]
 pub struct PARITYTYPE_R(crate::FieldReader<bool, PARITYTYPE_A>);
 impl PARITYTYPE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PARITYTYPE_R(crate::FieldReader::new(bits))
     }

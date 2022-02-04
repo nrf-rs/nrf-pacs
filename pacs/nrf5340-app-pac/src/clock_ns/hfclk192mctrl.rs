@@ -54,6 +54,7 @@ impl From<HCLK192M_A> for u8 {
 #[doc = "Field `HCLK192M` reader - High frequency clock HCLK192M"]
 pub struct HCLK192M_R(crate::FieldReader<u8, HCLK192M_A>);
 impl HCLK192M_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         HCLK192M_R(crate::FieldReader::new(bits))
     }

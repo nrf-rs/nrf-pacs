@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_SEQSTARTED_SPEC>> for W {
 #[doc = "Field `EVENTS_SEQSTARTED` reader - "]
 pub struct EVENTS_SEQSTARTED_R(crate::FieldReader<bool, bool>);
 impl EVENTS_SEQSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_SEQSTARTED_R(crate::FieldReader::new(bits))
     }

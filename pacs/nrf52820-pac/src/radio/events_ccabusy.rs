@@ -51,6 +51,7 @@ impl From<EVENTS_CCABUSY_A> for bool {
 #[doc = "Field `EVENTS_CCABUSY` reader - Wireless medium busy - do not send"]
 pub struct EVENTS_CCABUSY_R(crate::FieldReader<bool, EVENTS_CCABUSY_A>);
 impl EVENTS_CCABUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_CCABUSY_R(crate::FieldReader::new(bits))
     }

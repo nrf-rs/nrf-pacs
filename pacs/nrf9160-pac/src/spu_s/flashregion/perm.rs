@@ -51,6 +51,7 @@ impl From<EXECUTE_A> for bool {
 #[doc = "Field `EXECUTE` reader - Configure instruction fetch permissions from flash region n"]
 pub struct EXECUTE_R(crate::FieldReader<bool, EXECUTE_A>);
 impl EXECUTE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EXECUTE_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<WRITE_A> for bool {
 #[doc = "Field `WRITE` reader - Configure write permission for flash region n"]
 pub struct WRITE_R(crate::FieldReader<bool, WRITE_A>);
 impl WRITE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WRITE_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<READ_A> for bool {
 #[doc = "Field `READ` reader - Configure read permissions for flash region n"]
 pub struct READ_R(crate::FieldReader<bool, READ_A>);
 impl READ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READ_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<SECATTR_A> for bool {
 #[doc = "Field `SECATTR` reader - Security attribute for flash region n"]
 pub struct SECATTR_R(crate::FieldReader<bool, SECATTR_A>);
 impl SECATTR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SECATTR_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<LOCK_A> for bool {
 #[doc = "Field `LOCK` reader - "]
 pub struct LOCK_R(crate::FieldReader<bool, LOCK_A>);
 impl LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCK_R(crate::FieldReader::new(bits))
     }

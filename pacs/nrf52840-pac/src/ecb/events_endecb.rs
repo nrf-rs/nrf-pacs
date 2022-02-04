@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_ENDECB_SPEC>> for W {
 #[doc = "Field `EVENTS_ENDECB` reader - "]
 pub struct EVENTS_ENDECB_R(crate::FieldReader<bool, bool>);
 impl EVENTS_ENDECB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ENDECB_R(crate::FieldReader::new(bits))
     }

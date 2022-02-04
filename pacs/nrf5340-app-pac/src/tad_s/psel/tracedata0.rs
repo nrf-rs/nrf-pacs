@@ -50,6 +50,7 @@ impl From<PIN_A> for u8 {
 #[doc = "Field `PIN` reader - Pin number"]
 pub struct PIN_R(crate::FieldReader<u8, PIN_A>);
 impl PIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PIN_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +114,7 @@ impl From<CONNECT_A> for bool {
 #[doc = "Field `CONNECT` reader - Connection"]
 pub struct CONNECT_R(crate::FieldReader<bool, CONNECT_A>);
 impl CONNECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CONNECT_R(crate::FieldReader::new(bits))
     }

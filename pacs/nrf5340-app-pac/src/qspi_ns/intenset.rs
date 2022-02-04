@@ -51,6 +51,7 @@ impl From<READY_A> for bool {
 #[doc = "Field `READY` reader - Write '1' to enable interrupt for event READY"]
 pub struct READY_R(crate::FieldReader<bool, READY_A>);
 impl READY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READY_R(crate::FieldReader::new(bits))
     }

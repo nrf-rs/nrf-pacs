@@ -51,6 +51,7 @@ impl From<EVENTS_OVERFLOW_A> for bool {
 #[doc = "Field `EVENTS_OVERFLOW` reader - An FPUOFC exception triggered by a floating-point overflow has occurred in the FPU"]
 pub struct EVENTS_OVERFLOW_R(crate::FieldReader<bool, EVENTS_OVERFLOW_A>);
 impl EVENTS_OVERFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_OVERFLOW_R(crate::FieldReader::new(bits))
     }

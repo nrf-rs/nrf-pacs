@@ -51,6 +51,7 @@ impl From<REGION0WA_A> for bool {
 #[doc = "Field `REGION0WA` reader - Enable or disable interrupt for event REGION0WA"]
 pub struct REGION0WA_R(crate::FieldReader<bool, REGION0WA_A>);
 impl REGION0WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION0WA_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<REGION0RA_A> for bool {
 #[doc = "Field `REGION0RA` reader - Enable or disable interrupt for event REGION0RA"]
 pub struct REGION0RA_R(crate::FieldReader<bool, REGION0RA_A>);
 impl REGION0RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION0RA_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<REGION1WA_A> for bool {
 #[doc = "Field `REGION1WA` reader - Enable or disable interrupt for event REGION1WA"]
 pub struct REGION1WA_R(crate::FieldReader<bool, REGION1WA_A>);
 impl REGION1WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION1WA_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<REGION1RA_A> for bool {
 #[doc = "Field `REGION1RA` reader - Enable or disable interrupt for event REGION1RA"]
 pub struct REGION1RA_R(crate::FieldReader<bool, REGION1RA_A>);
 impl REGION1RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION1RA_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<REGION2WA_A> for bool {
 #[doc = "Field `REGION2WA` reader - Enable or disable interrupt for event REGION2WA"]
 pub struct REGION2WA_R(crate::FieldReader<bool, REGION2WA_A>);
 impl REGION2WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION2WA_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<REGION2RA_A> for bool {
 #[doc = "Field `REGION2RA` reader - Enable or disable interrupt for event REGION2RA"]
 pub struct REGION2RA_R(crate::FieldReader<bool, REGION2RA_A>);
 impl REGION2RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION2RA_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<REGION3WA_A> for bool {
 #[doc = "Field `REGION3WA` reader - Enable or disable interrupt for event REGION3WA"]
 pub struct REGION3WA_R(crate::FieldReader<bool, REGION3WA_A>);
 impl REGION3WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION3WA_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<REGION3RA_A> for bool {
 #[doc = "Field `REGION3RA` reader - Enable or disable interrupt for event REGION3RA"]
 pub struct REGION3RA_R(crate::FieldReader<bool, REGION3RA_A>);
 impl REGION3RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REGION3RA_R(crate::FieldReader::new(bits))
     }
@@ -715,6 +723,7 @@ impl From<PREGION0WA_A> for bool {
 #[doc = "Field `PREGION0WA` reader - Enable or disable interrupt for event PREGION0WA"]
 pub struct PREGION0WA_R(crate::FieldReader<bool, PREGION0WA_A>);
 impl PREGION0WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PREGION0WA_R(crate::FieldReader::new(bits))
     }
@@ -798,6 +807,7 @@ impl From<PREGION0RA_A> for bool {
 #[doc = "Field `PREGION0RA` reader - Enable or disable interrupt for event PREGION0RA"]
 pub struct PREGION0RA_R(crate::FieldReader<bool, PREGION0RA_A>);
 impl PREGION0RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PREGION0RA_R(crate::FieldReader::new(bits))
     }
@@ -881,6 +891,7 @@ impl From<PREGION1WA_A> for bool {
 #[doc = "Field `PREGION1WA` reader - Enable or disable interrupt for event PREGION1WA"]
 pub struct PREGION1WA_R(crate::FieldReader<bool, PREGION1WA_A>);
 impl PREGION1WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PREGION1WA_R(crate::FieldReader::new(bits))
     }
@@ -964,6 +975,7 @@ impl From<PREGION1RA_A> for bool {
 #[doc = "Field `PREGION1RA` reader - Enable or disable interrupt for event PREGION1RA"]
 pub struct PREGION1RA_R(crate::FieldReader<bool, PREGION1RA_A>);
 impl PREGION1RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PREGION1RA_R(crate::FieldReader::new(bits))
     }

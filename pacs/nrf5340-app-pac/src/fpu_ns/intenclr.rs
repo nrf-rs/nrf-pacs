@@ -51,6 +51,7 @@ impl From<INVALIDOPERATION_A> for bool {
 #[doc = "Field `INVALIDOPERATION` reader - Write '1' to disable interrupt for event INVALIDOPERATION"]
 pub struct INVALIDOPERATION_R(crate::FieldReader<bool, INVALIDOPERATION_A>);
 impl INVALIDOPERATION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INVALIDOPERATION_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<DIVIDEBYZERO_A> for bool {
 #[doc = "Field `DIVIDEBYZERO` reader - Write '1' to disable interrupt for event DIVIDEBYZERO"]
 pub struct DIVIDEBYZERO_R(crate::FieldReader<bool, DIVIDEBYZERO_A>);
 impl DIVIDEBYZERO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DIVIDEBYZERO_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<OVERFLOW_A> for bool {
 #[doc = "Field `OVERFLOW` reader - Write '1' to disable interrupt for event OVERFLOW"]
 pub struct OVERFLOW_R(crate::FieldReader<bool, OVERFLOW_A>);
 impl OVERFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OVERFLOW_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<UNDERFLOW_A> for bool {
 #[doc = "Field `UNDERFLOW` reader - Write '1' to disable interrupt for event UNDERFLOW"]
 pub struct UNDERFLOW_R(crate::FieldReader<bool, UNDERFLOW_A>);
 impl UNDERFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UNDERFLOW_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +415,7 @@ impl From<INEXACT_A> for bool {
 #[doc = "Field `INEXACT` reader - Write '1' to disable interrupt for event INEXACT"]
 pub struct INEXACT_R(crate::FieldReader<bool, INEXACT_A>);
 impl INEXACT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INEXACT_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +506,7 @@ impl From<DENORMALINPUT_A> for bool {
 #[doc = "Field `DENORMALINPUT` reader - Write '1' to disable interrupt for event DENORMALINPUT"]
 pub struct DENORMALINPUT_R(crate::FieldReader<bool, DENORMALINPUT_A>);
 impl DENORMALINPUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DENORMALINPUT_R(crate::FieldReader::new(bits))
     }

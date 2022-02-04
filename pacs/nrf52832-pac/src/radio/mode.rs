@@ -42,7 +42,7 @@ pub enum MODE_A {
     NRF_1MBIT = 0,
     #[doc = "1: 2 Mbit/s Nordic proprietary radio mode"]
     NRF_2MBIT = 1,
-    #[doc = "2: Deprecated enumerator -  250 kbit/s Nordic proprietary radio mode"]
+    #[doc = "2: Deprecated enumerator - 250 kbit/s Nordic proprietary radio mode"]
     NRF_250KBIT = 2,
     #[doc = "3: 1 Mbit/s Bluetooth Low Energy"]
     BLE_1MBIT = 3,
@@ -58,6 +58,7 @@ impl From<MODE_A> for u8 {
 #[doc = "Field `MODE` reader - Radio data rate and modulation setting. The radio supports Frequency-shift Keying (FSK) modulation."]
 pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }

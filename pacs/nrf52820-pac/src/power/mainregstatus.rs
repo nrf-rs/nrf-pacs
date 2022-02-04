@@ -30,6 +30,7 @@ impl From<MAINREGSTATUS_A> for bool {
 #[doc = "Field `MAINREGSTATUS` reader - Main supply status"]
 pub struct MAINREGSTATUS_R(crate::FieldReader<bool, MAINREGSTATUS_A>);
 impl MAINREGSTATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MAINREGSTATUS_R(crate::FieldReader::new(bits))
     }

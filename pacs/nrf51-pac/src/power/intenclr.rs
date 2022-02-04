@@ -51,6 +51,7 @@ impl From<POFWARN_A> for bool {
 #[doc = "Field `POFWARN` reader - Disable interrupt on POFWARN event."]
 pub struct POFWARN_R(crate::FieldReader<bool, POFWARN_A>);
 impl POFWARN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POFWARN_R(crate::FieldReader::new(bits))
     }

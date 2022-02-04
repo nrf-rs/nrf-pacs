@@ -51,6 +51,7 @@ impl From<RAMACCERR_A> for bool {
 #[doc = "Field `RAMACCERR` reader - Enable or disable interrupt for event RAMACCERR"]
 pub struct RAMACCERR_R(crate::FieldReader<bool, RAMACCERR_A>);
 impl RAMACCERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RAMACCERR_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<FLASHACCERR_A> for bool {
 #[doc = "Field `FLASHACCERR` reader - Enable or disable interrupt for event FLASHACCERR"]
 pub struct FLASHACCERR_R(crate::FieldReader<bool, FLASHACCERR_A>);
 impl FLASHACCERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FLASHACCERR_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<PERIPHACCERR_A> for bool {
 #[doc = "Field `PERIPHACCERR` reader - Enable or disable interrupt for event PERIPHACCERR"]
 pub struct PERIPHACCERR_R(crate::FieldReader<bool, PERIPHACCERR_A>);
 impl PERIPHACCERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PERIPHACCERR_R(crate::FieldReader::new(bits))
     }

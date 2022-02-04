@@ -37,6 +37,7 @@ impl From<crate::W<WA_SPEC>> for W {
 #[doc = "Field `WA` reader - "]
 pub struct WA_R(crate::FieldReader<bool, bool>);
 impl WA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WA_R(crate::FieldReader::new(bits))
     }

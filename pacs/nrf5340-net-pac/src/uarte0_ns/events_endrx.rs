@@ -51,6 +51,7 @@ impl From<EVENTS_ENDRX_A> for bool {
 #[doc = "Field `EVENTS_ENDRX` reader - Receive buffer is filled up"]
 pub struct EVENTS_ENDRX_R(crate::FieldReader<bool, EVENTS_ENDRX_A>);
 impl EVENTS_ENDRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ENDRX_R(crate::FieldReader::new(bits))
     }

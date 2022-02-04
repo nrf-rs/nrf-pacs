@@ -51,6 +51,7 @@ impl From<FORMAT_A> for bool {
 #[doc = "Field `FORMAT` reader - Frame format"]
 pub struct FORMAT_R(crate::FieldReader<bool, FORMAT_A>);
 impl FORMAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FORMAT_R(crate::FieldReader::new(bits))
     }

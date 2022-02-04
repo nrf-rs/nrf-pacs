@@ -51,6 +51,7 @@ impl From<EVENTS_EPDATA_A> for bool {
 #[doc = "Field `EVENTS_EPDATA` reader - A data transfer has occurred on a data endpoint, indicated by the EPDATASTATUS register"]
 pub struct EVENTS_EPDATA_R(crate::FieldReader<bool, EVENTS_EPDATA_A>);
 impl EVENTS_EPDATA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_EPDATA_R(crate::FieldReader::new(bits))
     }

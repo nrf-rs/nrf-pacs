@@ -51,6 +51,7 @@ impl From<EVENTS_OVRFLW_A> for bool {
 #[doc = "Field `EVENTS_OVRFLW` reader - Event on COUNTER overflow"]
 pub struct EVENTS_OVRFLW_R(crate::FieldReader<bool, EVENTS_OVRFLW_A>);
 impl EVENTS_OVRFLW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_OVRFLW_R(crate::FieldReader::new(bits))
     }

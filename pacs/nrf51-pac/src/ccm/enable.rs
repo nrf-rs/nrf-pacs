@@ -52,6 +52,7 @@ impl From<ENABLE_A> for u8 {
 #[doc = "Field `ENABLE` reader - CCM enable."]
 pub struct ENABLE_R(crate::FieldReader<u8, ENABLE_A>);
 impl ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ENABLE_R(crate::FieldReader::new(bits))
     }

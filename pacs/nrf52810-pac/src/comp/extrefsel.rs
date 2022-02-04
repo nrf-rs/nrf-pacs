@@ -64,6 +64,7 @@ impl From<EXTREFSEL_A> for u8 {
 #[doc = "Field `EXTREFSEL` reader - External analog reference select"]
 pub struct EXTREFSEL_R(crate::FieldReader<u8, EXTREFSEL_A>);
 impl EXTREFSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         EXTREFSEL_R(crate::FieldReader::new(bits))
     }

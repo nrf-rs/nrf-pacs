@@ -51,6 +51,7 @@ impl From<EVENTS_UP_A> for bool {
 #[doc = "Field `EVENTS_UP` reader - Upward crossing"]
 pub struct EVENTS_UP_R(crate::FieldReader<bool, EVENTS_UP_A>);
 impl EVENTS_UP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_UP_R(crate::FieldReader::new(bits))
     }

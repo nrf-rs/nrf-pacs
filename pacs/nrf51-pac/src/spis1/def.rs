@@ -37,6 +37,7 @@ impl From<crate::W<DEF_SPEC>> for W {
 #[doc = "Field `DEF` reader - Default character."]
 pub struct DEF_R(crate::FieldReader<u8, u8>);
 impl DEF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DEF_R(crate::FieldReader::new(bits))
     }

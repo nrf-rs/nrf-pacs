@@ -51,6 +51,7 @@ impl From<ENABLE_A> for bool {
 #[doc = "Field `ENABLE` reader - Enable or disable stream cipher for EasyDMA"]
 pub struct ENABLE_R(crate::FieldReader<bool, ENABLE_A>);
 impl ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENABLE_R(crate::FieldReader::new(bits))
     }

@@ -52,6 +52,7 @@ impl From<CPUNIDEN_A> for u8 {
 #[doc = "Field `CPUNIDEN` reader - Configure CPU non-intrusive debug features"]
 pub struct CPUNIDEN_R(crate::FieldReader<u8, CPUNIDEN_A>);
 impl CPUNIDEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPUNIDEN_R(crate::FieldReader::new(bits))
     }
@@ -127,6 +128,7 @@ impl From<CPUFPBEN_A> for u8 {
 #[doc = "Field `CPUFPBEN` reader - Configure CPU flash patch and breakpoint (FPB) unit behavior"]
 pub struct CPUFPBEN_R(crate::FieldReader<u8, CPUFPBEN_A>);
 impl CPUFPBEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPUFPBEN_R(crate::FieldReader::new(bits))
     }

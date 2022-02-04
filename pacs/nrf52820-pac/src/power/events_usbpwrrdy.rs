@@ -51,6 +51,7 @@ impl From<EVENTS_USBPWRRDY_A> for bool {
 #[doc = "Field `EVENTS_USBPWRRDY` reader - USB 3.3 V supply ready"]
 pub struct EVENTS_USBPWRRDY_R(crate::FieldReader<bool, EVENTS_USBPWRRDY_A>);
 impl EVENTS_USBPWRRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_USBPWRRDY_R(crate::FieldReader::new(bits))
     }

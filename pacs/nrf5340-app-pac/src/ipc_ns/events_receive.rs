@@ -51,6 +51,7 @@ impl From<EVENTS_RECEIVE_A> for bool {
 #[doc = "Field `EVENTS_RECEIVE` reader - Event received on one or more of the enabled IPC channels in RECEIVE_CNF\\[n\\]"]
 pub struct EVENTS_RECEIVE_R(crate::FieldReader<bool, EVENTS_RECEIVE_A>);
 impl EVENTS_RECEIVE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RECEIVE_R(crate::FieldReader::new(bits))
     }

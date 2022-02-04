@@ -51,6 +51,7 @@ impl From<LOCKSVTAIRCR_A> for bool {
 #[doc = "Field `LOCKSVTAIRCR` reader - Write '1' to prevent updating the secure interrupt configuration until the next reset"]
 pub struct LOCKSVTAIRCR_R(crate::FieldReader<bool, LOCKSVTAIRCR_A>);
 impl LOCKSVTAIRCR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCKSVTAIRCR_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<LOCKNSVTOR_A> for bool {
 #[doc = "Field `LOCKNSVTOR` reader - Write '1' to prevent updating the non-secure vector table base address until the next reset"]
 pub struct LOCKNSVTOR_R(crate::FieldReader<bool, LOCKNSVTOR_A>);
 impl LOCKNSVTOR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCKNSVTOR_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<LOCKSMPU_A> for bool {
 #[doc = "Field `LOCKSMPU` reader - Write '1' to prevent updating the secure MPU regions until the next reset"]
 pub struct LOCKSMPU_R(crate::FieldReader<bool, LOCKSMPU_A>);
 impl LOCKSMPU_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCKSMPU_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<LOCKNSMPU_A> for bool {
 #[doc = "Field `LOCKNSMPU` reader - Write '1' to prevent updating the Non-secure MPU regions until the next reset"]
 pub struct LOCKNSMPU_R(crate::FieldReader<bool, LOCKNSMPU_A>);
 impl LOCKNSMPU_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCKNSMPU_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<LOCKSAU_A> for bool {
 #[doc = "Field `LOCKSAU` reader - Write '1' to prevent updating the secure SAU regions until the next reset"]
 pub struct LOCKSAU_R(crate::FieldReader<bool, LOCKSAU_A>);
 impl LOCKSAU_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCKSAU_R(crate::FieldReader::new(bits))
     }

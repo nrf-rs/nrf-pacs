@@ -51,6 +51,7 @@ impl From<EVENTS_RXPTRUPD_A> for bool {
 #[doc = "Field `EVENTS_RXPTRUPD` reader - The RXD.PTR register has been copied to internal double-buffers. When the I2S module is started and RX is enabled, this event will be generated for every RXTXD.MAXCNT words received on the SDIN pin."]
 pub struct EVENTS_RXPTRUPD_R(crate::FieldReader<bool, EVENTS_RXPTRUPD_A>);
 impl EVENTS_RXPTRUPD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RXPTRUPD_R(crate::FieldReader::new(bits))
     }

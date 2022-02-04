@@ -51,6 +51,7 @@ impl From<WRITE_SUSPEND_A> for bool {
 #[doc = "Field `WRITE_SUSPEND` reader - Shortcut between event WRITE and task SUSPEND"]
 pub struct WRITE_SUSPEND_R(crate::FieldReader<bool, WRITE_SUSPEND_A>);
 impl WRITE_SUSPEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WRITE_SUSPEND_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<READ_SUSPEND_A> for bool {
 #[doc = "Field `READ_SUSPEND` reader - Shortcut between event READ and task SUSPEND"]
 pub struct READ_SUSPEND_R(crate::FieldReader<bool, READ_SUSPEND_A>);
 impl READ_SUSPEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READ_SUSPEND_R(crate::FieldReader::new(bits))
     }

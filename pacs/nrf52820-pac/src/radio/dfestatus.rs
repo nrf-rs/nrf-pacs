@@ -39,6 +39,7 @@ impl From<SWITCHINGSTATE_A> for u8 {
 #[doc = "Field `SWITCHINGSTATE` reader - Internal state of switching state machine"]
 pub struct SWITCHINGSTATE_R(crate::FieldReader<u8, SWITCHINGSTATE_A>);
 impl SWITCHINGSTATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SWITCHINGSTATE_R(crate::FieldReader::new(bits))
     }
@@ -110,6 +111,7 @@ impl From<SAMPLINGSTATE_A> for bool {
 #[doc = "Field `SAMPLINGSTATE` reader - Internal state of sampling state machine"]
 pub struct SAMPLINGSTATE_R(crate::FieldReader<bool, SAMPLINGSTATE_A>);
 impl SAMPLINGSTATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SAMPLINGSTATE_R(crate::FieldReader::new(bits))
     }

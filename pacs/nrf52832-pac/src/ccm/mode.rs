@@ -51,6 +51,7 @@ impl From<MODE_A> for bool {
 #[doc = "Field `MODE` reader - The mode of operation to be used"]
 pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<DATARATE_A> for bool {
 #[doc = "Field `DATARATE` reader - Data rate that the CCM shall run in synch with"]
 pub struct DATARATE_R(crate::FieldReader<bool, DATARATE_A>);
 impl DATARATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DATARATE_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<LENGTH_A> for bool {
 #[doc = "Field `LENGTH` reader - Packet length configuration"]
 pub struct LENGTH_R(crate::FieldReader<bool, LENGTH_A>);
 impl LENGTH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LENGTH_R(crate::FieldReader::new(bits))
     }

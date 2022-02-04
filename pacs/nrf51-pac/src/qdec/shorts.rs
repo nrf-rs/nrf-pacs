@@ -51,6 +51,7 @@ impl From<REPORTRDY_READCLRACC_A> for bool {
 #[doc = "Field `REPORTRDY_READCLRACC` reader - Shortcut between REPORTRDY event and READCLRACC task."]
 pub struct REPORTRDY_READCLRACC_R(crate::FieldReader<bool, REPORTRDY_READCLRACC_A>);
 impl REPORTRDY_READCLRACC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REPORTRDY_READCLRACC_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<SAMPLERDY_STOP_A> for bool {
 #[doc = "Field `SAMPLERDY_STOP` reader - Shortcut between SAMPLERDY event and STOP task."]
 pub struct SAMPLERDY_STOP_R(crate::FieldReader<bool, SAMPLERDY_STOP_A>);
 impl SAMPLERDY_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SAMPLERDY_STOP_R(crate::FieldReader::new(bits))
     }

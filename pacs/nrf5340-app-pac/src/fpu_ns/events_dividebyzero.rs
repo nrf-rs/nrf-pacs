@@ -51,6 +51,7 @@ impl From<EVENTS_DIVIDEBYZERO_A> for bool {
 #[doc = "Field `EVENTS_DIVIDEBYZERO` reader - An FPUDZC exception triggered by a floating-point divide-by-zero operation has occurred in the FPU"]
 pub struct EVENTS_DIVIDEBYZERO_R(crate::FieldReader<bool, EVENTS_DIVIDEBYZERO_A>);
 impl EVENTS_DIVIDEBYZERO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_DIVIDEBYZERO_R(crate::FieldReader::new(bits))
     }

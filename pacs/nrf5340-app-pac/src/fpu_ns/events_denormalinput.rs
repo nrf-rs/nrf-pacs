@@ -51,6 +51,7 @@ impl From<EVENTS_DENORMALINPUT_A> for bool {
 #[doc = "Field `EVENTS_DENORMALINPUT` reader - An FPUIDC exception triggered by a denormal floating-point input has occurred in the FPU"]
 pub struct EVENTS_DENORMALINPUT_R(crate::FieldReader<bool, EVENTS_DENORMALINPUT_A>);
 impl EVENTS_DENORMALINPUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_DENORMALINPUT_R(crate::FieldReader::new(bits))
     }

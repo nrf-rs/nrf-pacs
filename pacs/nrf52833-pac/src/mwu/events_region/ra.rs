@@ -51,6 +51,7 @@ impl From<RA_A> for bool {
 #[doc = "Field `RA` reader - Read access to region n detected"]
 pub struct RA_R(crate::FieldReader<bool, RA_A>);
 impl RA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RA_R(crate::FieldReader::new(bits))
     }

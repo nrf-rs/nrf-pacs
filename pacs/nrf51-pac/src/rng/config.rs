@@ -51,6 +51,7 @@ impl From<DERCEN_A> for bool {
 #[doc = "Field `DERCEN` reader - Digital error correction enable."]
 pub struct DERCEN_R(crate::FieldReader<bool, DERCEN_A>);
 impl DERCEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DERCEN_R(crate::FieldReader::new(bits))
     }

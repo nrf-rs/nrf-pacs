@@ -51,6 +51,7 @@ impl From<EVENTS_DATARDY_A> for bool {
 #[doc = "Field `EVENTS_DATARDY` reader - Temperature measurement complete, data ready"]
 pub struct EVENTS_DATARDY_R(crate::FieldReader<bool, EVENTS_DATARDY_A>);
 impl EVENTS_DATARDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_DATARDY_R(crate::FieldReader::new(bits))
     }

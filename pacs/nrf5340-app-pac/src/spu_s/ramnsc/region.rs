@@ -37,6 +37,7 @@ impl From<crate::W<REGION_SPEC>> for W {
 #[doc = "Field `REGION` reader - Region number"]
 pub struct REGION_R(crate::FieldReader<u8, u8>);
 impl REGION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REGION_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +78,7 @@ impl From<LOCK_A> for bool {
 #[doc = "Field `LOCK` reader - "]
 pub struct LOCK_R(crate::FieldReader<bool, LOCK_A>);
 impl LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCK_R(crate::FieldReader::new(bits))
     }

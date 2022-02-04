@@ -53,6 +53,7 @@ impl From<S0POWER_A> for bool {
 on or off in System ON mode"]
 pub struct S0POWER_R(crate::FieldReader<bool, S0POWER_A>);
 impl S0POWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S0POWER_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +140,7 @@ impl From<S1POWER_A> for bool {
 on or off in System ON mode"]
 pub struct S1POWER_R(crate::FieldReader<bool, S1POWER_A>);
 impl S1POWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S1POWER_R(crate::FieldReader::new(bits))
     }
@@ -225,6 +227,7 @@ impl From<S2POWER_A> for bool {
 on or off in System ON mode"]
 pub struct S2POWER_R(crate::FieldReader<bool, S2POWER_A>);
 impl S2POWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S2POWER_R(crate::FieldReader::new(bits))
     }
@@ -311,6 +314,7 @@ impl From<S3POWER_A> for bool {
 on or off in System ON mode"]
 pub struct S3POWER_R(crate::FieldReader<bool, S3POWER_A>);
 impl S3POWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S3POWER_R(crate::FieldReader::new(bits))
     }
@@ -397,6 +401,7 @@ impl From<S0RETENTION_A> for bool {
 when RAM section is switched off"]
 pub struct S0RETENTION_R(crate::FieldReader<bool, S0RETENTION_A>);
 impl S0RETENTION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S0RETENTION_R(crate::FieldReader::new(bits))
     }
@@ -483,6 +488,7 @@ impl From<S1RETENTION_A> for bool {
 when RAM section is switched off"]
 pub struct S1RETENTION_R(crate::FieldReader<bool, S1RETENTION_A>);
 impl S1RETENTION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S1RETENTION_R(crate::FieldReader::new(bits))
     }
@@ -569,6 +575,7 @@ impl From<S2RETENTION_A> for bool {
 when RAM section is switched off"]
 pub struct S2RETENTION_R(crate::FieldReader<bool, S2RETENTION_A>);
 impl S2RETENTION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S2RETENTION_R(crate::FieldReader::new(bits))
     }
@@ -655,6 +662,7 @@ impl From<S3RETENTION_A> for bool {
 when RAM section is switched off"]
 pub struct S3RETENTION_R(crate::FieldReader<bool, S3RETENTION_A>);
 impl S3RETENTION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S3RETENTION_R(crate::FieldReader::new(bits))
     }

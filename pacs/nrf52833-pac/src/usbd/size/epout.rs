@@ -37,6 +37,7 @@ impl From<crate::W<EPOUT_SPEC>> for W {
 #[doc = "Field `SIZE` reader - Number of bytes received last in the data stage of this OUT endpoint"]
 pub struct SIZE_R(crate::FieldReader<u8, u8>);
 impl SIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SIZE_R(crate::FieldReader::new(bits))
     }

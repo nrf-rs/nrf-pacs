@@ -51,6 +51,7 @@ impl From<TX_A> for bool {
 #[doc = "Field `TX` reader - Stall status for EasyDMA RAM reads"]
 pub struct TX_R(crate::FieldReader<bool, TX_A>);
 impl TX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TX_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<RX_A> for bool {
 #[doc = "Field `RX` reader - Stall status for EasyDMA RAM writes"]
 pub struct RX_R(crate::FieldReader<bool, RX_A>);
 impl RX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RX_R(crate::FieldReader::new(bits))
     }

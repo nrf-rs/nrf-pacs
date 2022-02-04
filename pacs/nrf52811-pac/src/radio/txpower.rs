@@ -54,7 +54,7 @@ pub enum TXPOWER_A {
     NEG16DBM = 240,
     #[doc = "236: -20 dBm"]
     NEG20DBM = 236,
-    #[doc = "226: Deprecated enumerator -  -40 dBm"]
+    #[doc = "226: Deprecated enumerator - -40 dBm"]
     NEG30DBM = 226,
     #[doc = "216: -40 dBm"]
     NEG40DBM = 216,
@@ -68,6 +68,7 @@ impl From<TXPOWER_A> for u8 {
 #[doc = "Field `TXPOWER` reader - RADIO output power"]
 pub struct TXPOWER_R(crate::FieldReader<u8, TXPOWER_A>);
 impl TXPOWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TXPOWER_R(crate::FieldReader::new(bits))
     }

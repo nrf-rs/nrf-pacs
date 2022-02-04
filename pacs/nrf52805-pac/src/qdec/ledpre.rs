@@ -37,6 +37,7 @@ impl From<crate::W<LEDPRE_SPEC>> for W {
 #[doc = "Field `LEDPRE` reader - Period in us the LED is switched on prior to sampling"]
 pub struct LEDPRE_R(crate::FieldReader<u16, u16>);
 impl LEDPRE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         LEDPRE_R(crate::FieldReader::new(bits))
     }

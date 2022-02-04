@@ -37,6 +37,7 @@ impl From<crate::W<DFECTRL2_SPEC>> for W {
 #[doc = "Field `TSWITCHOFFSET` reader - Signed value offset after the end of the CRC before starting switching in number of 16M cycles"]
 pub struct TSWITCHOFFSET_R(crate::FieldReader<u16, u16>);
 impl TSWITCHOFFSET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         TSWITCHOFFSET_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> TSWITCHOFFSET_W<'a> {
 #[doc = "Field `TSAMPLEOFFSET` reader - Signed value offset before starting sampling in number of 16M cycles relative to the beginning of the REFERENCE state - 12 us after switching start"]
 pub struct TSAMPLEOFFSET_R(crate::FieldReader<u16, u16>);
 impl TSAMPLEOFFSET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         TSAMPLEOFFSET_R(crate::FieldReader::new(bits))
     }

@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_AUTOCOLRESSTARTED_SPEC>> for W {
 #[doc = "Field `EVENTS_AUTOCOLRESSTARTED` reader - "]
 pub struct EVENTS_AUTOCOLRESSTARTED_R(crate::FieldReader<bool, bool>);
 impl EVENTS_AUTOCOLRESSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_AUTOCOLRESSTARTED_R(crate::FieldReader::new(bits))
     }

@@ -31,6 +31,7 @@ impl From<VARIANT_A> for u32 {
 #[doc = "Field `VARIANT` reader - Part Variant, Hardware version and Production configuration, encoded as ASCII"]
 pub struct VARIANT_R(crate::FieldReader<u32, VARIANT_A>);
 impl VARIANT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         VARIANT_R(crate::FieldReader::new(bits))
     }
@@ -65,7 +66,7 @@ impl R {
     #[doc = "Bits 0:31 - Part Variant, Hardware version and Production configuration, encoded as ASCII"]
     #[inline(always)]
     pub fn variant(&self) -> VARIANT_R {
-        VARIANT_R::new((self.bits & 0xffff_ffff) as u32)
+        VARIANT_R::new(self.bits)
     }
 }
 #[doc = "Part Variant, Hardware version and Production configuration\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [variant](index.html) module"]

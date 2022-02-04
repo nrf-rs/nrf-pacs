@@ -51,6 +51,7 @@ impl From<EVENTS_RXSTARTED_A> for bool {
 #[doc = "Field `EVENTS_RXSTARTED` reader - UART receiver has started"]
 pub struct EVENTS_RXSTARTED_R(crate::FieldReader<bool, EVENTS_RXSTARTED_A>);
 impl EVENTS_RXSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RXSTARTED_R(crate::FieldReader::new(bits))
     }

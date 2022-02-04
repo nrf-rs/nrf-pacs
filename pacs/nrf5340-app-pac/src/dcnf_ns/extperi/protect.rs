@@ -51,6 +51,7 @@ impl From<SLAVE0_A> for bool {
 #[doc = "Field `SLAVE0` reader - Control access to slave 0 of master EXTPERI\\[n\\]"]
 pub struct SLAVE0_R(crate::FieldReader<bool, SLAVE0_A>);
 impl SLAVE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLAVE0_R(crate::FieldReader::new(bits))
     }

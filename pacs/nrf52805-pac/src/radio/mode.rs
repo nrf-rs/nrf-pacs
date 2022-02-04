@@ -56,6 +56,7 @@ impl From<MODE_A> for u8 {
 #[doc = "Field `MODE` reader - Radio data rate and modulation setting. The radio supports frequency-shift keying (FSK) modulation."]
 pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }

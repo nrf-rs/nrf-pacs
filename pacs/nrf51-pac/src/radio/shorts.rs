@@ -51,6 +51,7 @@ impl From<READY_START_A> for bool {
 #[doc = "Field `READY_START` reader - Shortcut between READY event and START task."]
 pub struct READY_START_R(crate::FieldReader<bool, READY_START_A>);
 impl READY_START_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READY_START_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<END_DISABLE_A> for bool {
 #[doc = "Field `END_DISABLE` reader - Shortcut between END event and DISABLE task."]
 pub struct END_DISABLE_R(crate::FieldReader<bool, END_DISABLE_A>);
 impl END_DISABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         END_DISABLE_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<DISABLED_TXEN_A> for bool {
 #[doc = "Field `DISABLED_TXEN` reader - Shortcut between DISABLED event and TXEN task."]
 pub struct DISABLED_TXEN_R(crate::FieldReader<bool, DISABLED_TXEN_A>);
 impl DISABLED_TXEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DISABLED_TXEN_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<DISABLED_RXEN_A> for bool {
 #[doc = "Field `DISABLED_RXEN` reader - Shortcut between DISABLED event and RXEN task."]
 pub struct DISABLED_RXEN_R(crate::FieldReader<bool, DISABLED_RXEN_A>);
 impl DISABLED_RXEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DISABLED_RXEN_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<ADDRESS_RSSISTART_A> for bool {
 #[doc = "Field `ADDRESS_RSSISTART` reader - Shortcut between ADDRESS event and RSSISTART task."]
 pub struct ADDRESS_RSSISTART_R(crate::FieldReader<bool, ADDRESS_RSSISTART_A>);
 impl ADDRESS_RSSISTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDRESS_RSSISTART_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<END_START_A> for bool {
 #[doc = "Field `END_START` reader - Shortcut between END event and START task."]
 pub struct END_START_R(crate::FieldReader<bool, END_START_A>);
 impl END_START_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         END_START_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<ADDRESS_BCSTART_A> for bool {
 #[doc = "Field `ADDRESS_BCSTART` reader - Shortcut between ADDRESS event and BCSTART task."]
 pub struct ADDRESS_BCSTART_R(crate::FieldReader<bool, ADDRESS_BCSTART_A>);
 impl ADDRESS_BCSTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADDRESS_BCSTART_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<DISABLED_RSSISTOP_A> for bool {
 #[doc = "Field `DISABLED_RSSISTOP` reader - Shortcut between DISABLED event and RSSISTOP task."]
 pub struct DISABLED_RSSISTOP_R(crate::FieldReader<bool, DISABLED_RSSISTOP_A>);
 impl DISABLED_RSSISTOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DISABLED_RSSISTOP_R(crate::FieldReader::new(bits))
     }

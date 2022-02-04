@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_USBDETECTED_SPEC>> for W {
 #[doc = "Field `EVENTS_USBDETECTED` reader - "]
 pub struct EVENTS_USBDETECTED_R(crate::FieldReader<bool, bool>);
 impl EVENTS_USBDETECTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_USBDETECTED_R(crate::FieldReader::new(bits))
     }

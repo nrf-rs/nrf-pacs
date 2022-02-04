@@ -17,6 +17,7 @@ impl From<crate::R<DAI_SPEC>> for R {
 and DAP\\[n\\]) that obtained an address match."]
 pub struct DAI_R(crate::FieldReader<u8, u8>);
 impl DAI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DAI_R(crate::FieldReader::new(bits))
     }

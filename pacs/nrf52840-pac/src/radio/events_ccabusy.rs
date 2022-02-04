@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_CCABUSY_SPEC>> for W {
 #[doc = "Field `EVENTS_CCABUSY` reader - "]
 pub struct EVENTS_CCABUSY_R(crate::FieldReader<bool, bool>);
 impl EVENTS_CCABUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_CCABUSY_R(crate::FieldReader::new(bits))
     }

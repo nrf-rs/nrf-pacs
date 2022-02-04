@@ -30,6 +30,7 @@ impl From<DES_1_A> for u8 {
 #[doc = "Field `DES_1` reader - Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component."]
 pub struct DES_1_R(crate::FieldReader<u8, DES_1_A>);
 impl DES_1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DES_1_R(crate::FieldReader::new(bits))
     }
@@ -57,6 +58,7 @@ impl core::ops::Deref for DES_1_R {
 #[doc = "Field `JEDEC` reader - Always 1. Indicates that the JEDEC-assigned designer ID is used."]
 pub struct JEDEC_R(crate::FieldReader<bool, bool>);
 impl JEDEC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         JEDEC_R(crate::FieldReader::new(bits))
     }
@@ -84,6 +86,7 @@ impl From<REVISION_A> for u8 {
 #[doc = "Field `REVISION` reader - Peripheral revision"]
 pub struct REVISION_R(crate::FieldReader<u8, REVISION_A>);
 impl REVISION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REVISION_R(crate::FieldReader::new(bits))
     }

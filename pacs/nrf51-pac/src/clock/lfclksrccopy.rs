@@ -33,6 +33,7 @@ impl From<SRC_A> for u8 {
 #[doc = "Field `SRC` reader - Clock source for the LFCLK clock, set when task LKCLKSTART is triggered."]
 pub struct SRC_R(crate::FieldReader<u8, SRC_A>);
 impl SRC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SRC_R(crate::FieldReader::new(bits))
     }

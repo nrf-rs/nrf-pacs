@@ -30,6 +30,7 @@ impl From<CRCSTATUS_A> for bool {
 #[doc = "Field `CRCSTATUS` reader - CRC status of packet received"]
 pub struct CRCSTATUS_R(crate::FieldReader<bool, CRCSTATUS_A>);
 impl CRCSTATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CRCSTATUS_R(crate::FieldReader::new(bits))
     }

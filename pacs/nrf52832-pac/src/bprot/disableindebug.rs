@@ -51,6 +51,7 @@ impl From<DISABLEINDEBUG_A> for bool {
 #[doc = "Field `DISABLEINDEBUG` reader - Disable the protection mechanism for NVM regions while in debug interface mode. This register will only disable the protection mechanism if the device is in debug interface mode."]
 pub struct DISABLEINDEBUG_R(crate::FieldReader<bool, DISABLEINDEBUG_A>);
 impl DISABLEINDEBUG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DISABLEINDEBUG_R(crate::FieldReader::new(bits))
     }

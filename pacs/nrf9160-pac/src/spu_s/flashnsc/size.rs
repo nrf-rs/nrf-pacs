@@ -66,6 +66,7 @@ impl From<SIZE_A> for u8 {
 #[doc = "Field `SIZE` reader - Size of the non-secure callable (NSC) region n"]
 pub struct SIZE_R(crate::FieldReader<u8, SIZE_A>);
 impl SIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SIZE_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +218,7 @@ impl From<LOCK_A> for bool {
 #[doc = "Field `LOCK` reader - "]
 pub struct LOCK_R(crate::FieldReader<bool, LOCK_A>);
 impl LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCK_R(crate::FieldReader::new(bits))
     }

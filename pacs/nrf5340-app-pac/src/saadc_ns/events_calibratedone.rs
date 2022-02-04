@@ -51,6 +51,7 @@ impl From<EVENTS_CALIBRATEDONE_A> for bool {
 #[doc = "Field `EVENTS_CALIBRATEDONE` reader - Calibration is complete"]
 pub struct EVENTS_CALIBRATEDONE_R(crate::FieldReader<bool, EVENTS_CALIBRATEDONE_A>);
 impl EVENTS_CALIBRATEDONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_CALIBRATEDONE_R(crate::FieldReader::new(bits))
     }

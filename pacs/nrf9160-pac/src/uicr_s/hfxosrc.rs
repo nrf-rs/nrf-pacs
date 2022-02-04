@@ -51,6 +51,7 @@ impl From<HFXOSRC_A> for bool {
 #[doc = "Field `HFXOSRC` reader - HFXO clock source selection"]
 pub struct HFXOSRC_R(crate::FieldReader<bool, HFXOSRC_A>);
 impl HFXOSRC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HFXOSRC_R(crate::FieldReader::new(bits))
     }

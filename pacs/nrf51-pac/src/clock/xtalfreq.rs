@@ -52,6 +52,7 @@ impl From<XTALFREQ_A> for u8 {
 #[doc = "Field `XTALFREQ` reader - External Xtal frequency selection."]
 pub struct XTALFREQ_R(crate::FieldReader<u8, XTALFREQ_A>);
 impl XTALFREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         XTALFREQ_R(crate::FieldReader::new(bits))
     }

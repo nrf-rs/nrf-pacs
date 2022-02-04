@@ -30,6 +30,7 @@ impl From<READYNEXT_A> for bool {
 #[doc = "Field `READYNEXT` reader - NVMC can accept a new write operation"]
 pub struct READYNEXT_R(crate::FieldReader<bool, READYNEXT_A>);
 impl READYNEXT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READYNEXT_R(crate::FieldReader::new(bits))
     }

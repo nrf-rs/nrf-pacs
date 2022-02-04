@@ -37,6 +37,7 @@ impl From<crate::W<RXDELAY_SPEC>> for W {
 #[doc = "Field `RXDELAY` reader - Sample delay for input serial data on MISO. The value specifies the number of 64 MHz clock cycles (15.625 ns) delay from the the sampling edge of SCK (leading edge for CONFIG.CPHA = 0, trailing edge for CONFIG.CPHA = 1) until the input serial data is sampled. As en example, if RXDELAY = 0 and CONFIG.CPHA = 0, the input serial data is sampled on the rising edge of SCK."]
 pub struct RXDELAY_R(crate::FieldReader<u8, u8>);
 impl RXDELAY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RXDELAY_R(crate::FieldReader::new(bits))
     }

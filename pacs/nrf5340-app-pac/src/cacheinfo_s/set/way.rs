@@ -37,6 +37,7 @@ impl From<crate::W<WAY_SPEC>> for W {
 #[doc = "Field `TAG` reader - Cache tag."]
 pub struct TAG_R(crate::FieldReader<u32, u32>);
 impl TAG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         TAG_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +78,7 @@ impl From<V_A> for bool {
 #[doc = "Field `V` reader - Valid bit"]
 pub struct V_R(crate::FieldReader<bool, V_A>);
 impl V_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         V_R(crate::FieldReader::new(bits))
     }
@@ -123,6 +125,7 @@ impl From<MRU_A> for bool {
 #[doc = "Field `MRU` reader - Most recently used way."]
 pub struct MRU_R(crate::FieldReader<bool, MRU_A>);
 impl MRU_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MRU_R(crate::FieldReader::new(bits))
     }

@@ -50,6 +50,7 @@ impl From<PSELSDA_A> for u32 {
 #[doc = "Field `PSELSDA` reader - Pin number configuration for TWI SDA signal"]
 pub struct PSELSDA_R(crate::FieldReader<u32, PSELSDA_A>);
 impl PSELSDA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         PSELSDA_R(crate::FieldReader::new(bits))
     }
@@ -92,7 +93,7 @@ impl<'a> PSELSDA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value;
         self.w
     }
 }
@@ -100,7 +101,7 @@ impl R {
     #[doc = "Bits 0:31 - Pin number configuration for TWI SDA signal"]
     #[inline(always)]
     pub fn pselsda(&self) -> PSELSDA_R {
-        PSELSDA_R::new((self.bits & 0xffff_ffff) as u32)
+        PSELSDA_R::new(self.bits)
     }
 }
 impl W {

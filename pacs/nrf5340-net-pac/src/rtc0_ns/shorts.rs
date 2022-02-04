@@ -53,6 +53,7 @@ impl From<COMPARE0_CLEAR_A> for bool {
 and task CLEAR"]
 pub struct COMPARE0_CLEAR_R(crate::FieldReader<bool, COMPARE0_CLEAR_A>);
 impl COMPARE0_CLEAR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         COMPARE0_CLEAR_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +140,7 @@ impl From<COMPARE1_CLEAR_A> for bool {
 and task CLEAR"]
 pub struct COMPARE1_CLEAR_R(crate::FieldReader<bool, COMPARE1_CLEAR_A>);
 impl COMPARE1_CLEAR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         COMPARE1_CLEAR_R(crate::FieldReader::new(bits))
     }
@@ -225,6 +227,7 @@ impl From<COMPARE2_CLEAR_A> for bool {
 and task CLEAR"]
 pub struct COMPARE2_CLEAR_R(crate::FieldReader<bool, COMPARE2_CLEAR_A>);
 impl COMPARE2_CLEAR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         COMPARE2_CLEAR_R(crate::FieldReader::new(bits))
     }
@@ -311,6 +314,7 @@ impl From<COMPARE3_CLEAR_A> for bool {
 and task CLEAR"]
 pub struct COMPARE3_CLEAR_R(crate::FieldReader<bool, COMPARE3_CLEAR_A>);
 impl COMPARE3_CLEAR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         COMPARE3_CLEAR_R(crate::FieldReader::new(bits))
     }

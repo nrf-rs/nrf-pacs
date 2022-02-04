@@ -66,6 +66,7 @@ impl From<RATIO_A> for u8 {
 #[doc = "Field `RATIO` reader - MCK / LRCK ratio"]
 pub struct RATIO_R(crate::FieldReader<u8, RATIO_A>);
 impl RATIO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RATIO_R(crate::FieldReader::new(bits))
     }

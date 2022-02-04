@@ -56,6 +56,7 @@ impl From<RESP_A> for u8 {
 #[doc = "Field `RESP` reader - Positive channel resistor control"]
 pub struct RESP_R(crate::FieldReader<u8, RESP_A>);
 impl RESP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RESP_R(crate::FieldReader::new(bits))
     }
@@ -157,6 +158,7 @@ impl From<RESN_A> for u8 {
 #[doc = "Field `RESN` reader - Negative channel resistor control"]
 pub struct RESN_R(crate::FieldReader<u8, RESN_A>);
 impl RESN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RESN_R(crate::FieldReader::new(bits))
     }
@@ -266,6 +268,7 @@ impl From<GAIN_A> for u8 {
 #[doc = "Field `GAIN` reader - Gain control"]
 pub struct GAIN_R(crate::FieldReader<u8, GAIN_A>);
 impl GAIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         GAIN_R(crate::FieldReader::new(bits))
     }
@@ -406,6 +409,7 @@ impl From<REFSEL_A> for bool {
 #[doc = "Field `REFSEL` reader - Reference control"]
 pub struct REFSEL_R(crate::FieldReader<bool, REFSEL_A>);
 impl REFSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REFSEL_R(crate::FieldReader::new(bits))
     }
@@ -498,6 +502,7 @@ impl From<TACQ_A> for u8 {
 #[doc = "Field `TACQ` reader - Acquisition time, the time the SAADC uses to sample the input voltage"]
 pub struct TACQ_R(crate::FieldReader<u8, TACQ_A>);
 impl TACQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TACQ_R(crate::FieldReader::new(bits))
     }
@@ -616,6 +621,7 @@ impl From<MODE_A> for bool {
 #[doc = "Field `MODE` reader - Enable differential mode"]
 pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -699,6 +705,7 @@ impl From<BURST_A> for bool {
 #[doc = "Field `BURST` reader - Enable burst mode"]
 pub struct BURST_R(crate::FieldReader<bool, BURST_A>);
 impl BURST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BURST_R(crate::FieldReader::new(bits))
     }

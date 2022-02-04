@@ -16,6 +16,7 @@ impl From<crate::R<ACCDBLREAD_SPEC>> for R {
 #[doc = "Field `ACCDBLREAD` reader - Snapshot of accumulated double (error) transitions."]
 pub struct ACCDBLREAD_R(crate::FieldReader<u8, u8>);
 impl ACCDBLREAD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ACCDBLREAD_R(crate::FieldReader::new(bits))
     }

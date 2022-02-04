@@ -51,6 +51,7 @@ impl From<BYPASS_A> for bool {
 #[doc = "Field `BYPASS` reader - Enable or disable bypass of LFCLK crystal oscillator with external clock source"]
 pub struct BYPASS_R(crate::FieldReader<bool, BYPASS_A>);
 impl BYPASS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BYPASS_R(crate::FieldReader::new(bits))
     }

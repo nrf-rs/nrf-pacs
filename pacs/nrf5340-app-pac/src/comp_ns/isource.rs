@@ -56,6 +56,7 @@ impl From<ISOURCE_A> for u8 {
 #[doc = "Field `ISOURCE` reader - Comparator hysteresis"]
 pub struct ISOURCE_R(crate::FieldReader<u8, ISOURCE_A>);
 impl ISOURCE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ISOURCE_R(crate::FieldReader::new(bits))
     }

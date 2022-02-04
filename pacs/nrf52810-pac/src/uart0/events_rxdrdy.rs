@@ -51,6 +51,7 @@ impl From<EVENTS_RXDRDY_A> for bool {
 #[doc = "Field `EVENTS_RXDRDY` reader - Data received in RXD"]
 pub struct EVENTS_RXDRDY_R(crate::FieldReader<bool, EVENTS_RXDRDY_A>);
 impl EVENTS_RXDRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RXDRDY_R(crate::FieldReader::new(bits))
     }

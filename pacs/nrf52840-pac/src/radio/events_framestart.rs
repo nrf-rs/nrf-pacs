@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_FRAMESTART_SPEC>> for W {
 #[doc = "Field `EVENTS_FRAMESTART` reader - "]
 pub struct EVENTS_FRAMESTART_R(crate::FieldReader<bool, bool>);
 impl EVENTS_FRAMESTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_FRAMESTART_R(crate::FieldReader::new(bits))
     }

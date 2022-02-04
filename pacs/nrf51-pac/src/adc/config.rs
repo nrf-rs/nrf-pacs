@@ -54,6 +54,7 @@ impl From<RES_A> for u8 {
 #[doc = "Field `RES` reader - ADC resolution."]
 pub struct RES_R(crate::FieldReader<u8, RES_A>);
 impl RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RES_R(crate::FieldReader::new(bits))
     }
@@ -146,6 +147,7 @@ impl From<INPSEL_A> for u8 {
 #[doc = "Field `INPSEL` reader - ADC input selection."]
 pub struct INPSEL_R(crate::FieldReader<u8, INPSEL_A>);
 impl INPSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INPSEL_R(crate::FieldReader::new(bits))
     }
@@ -258,6 +260,7 @@ impl From<REFSEL_A> for u8 {
 #[doc = "Field `REFSEL` reader - ADC reference selection."]
 pub struct REFSEL_R(crate::FieldReader<u8, REFSEL_A>);
 impl REFSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REFSEL_R(crate::FieldReader::new(bits))
     }
@@ -369,6 +372,7 @@ impl From<PSEL_A> for u8 {
 #[doc = "Field `PSEL` reader - ADC analog pin selection."]
 pub struct PSEL_R(crate::FieldReader<u8, PSEL_A>);
 impl PSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PSEL_R(crate::FieldReader::new(bits))
     }
@@ -523,6 +527,7 @@ impl From<EXTREFSEL_A> for u8 {
 #[doc = "Field `EXTREFSEL` reader - ADC external reference pin selection."]
 pub struct EXTREFSEL_R(crate::FieldReader<u8, EXTREFSEL_A>);
 impl EXTREFSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         EXTREFSEL_R(crate::FieldReader::new(bits))
     }

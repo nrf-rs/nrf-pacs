@@ -56,6 +56,7 @@ impl From<TRACEPORTSPEED_A> for u8 {
 #[doc = "Field `TRACEPORTSPEED` reader - Speed of Trace Port clock. Note that the TRACECLK pin will output this clock divided by two."]
 pub struct TRACEPORTSPEED_R(crate::FieldReader<u8, TRACEPORTSPEED_A>);
 impl TRACEPORTSPEED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TRACEPORTSPEED_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +156,7 @@ impl From<TRACEMUX_A> for u8 {
 #[doc = "Field `TRACEMUX` reader - Pin multiplexing of trace signals."]
 pub struct TRACEMUX_R(crate::FieldReader<u8, TRACEMUX_A>);
 impl TRACEMUX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TRACEMUX_R(crate::FieldReader::new(bits))
     }

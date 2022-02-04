@@ -62,6 +62,7 @@ impl From<VREGHVOUT_A> for u8 {
 #[doc = "Field `VREGHVOUT` reader - VREGH regulator output voltage."]
 pub struct VREGHVOUT_R(crate::FieldReader<u8, VREGHVOUT_A>);
 impl VREGHVOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         VREGHVOUT_R(crate::FieldReader::new(bits))
     }

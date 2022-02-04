@@ -30,6 +30,7 @@ impl From<RESULT_A> for bool {
 #[doc = "Field `RESULT` reader - Result of last compare. Decision point SAMPLE task."]
 pub struct RESULT_R(crate::FieldReader<bool, RESULT_A>);
 impl RESULT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESULT_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<VREQH_A> for bool {
 #[doc = "Field `VREQH` reader - Request high voltage"]
 pub struct VREQH_R(crate::FieldReader<bool, VREQH_A>);
 impl VREQH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VREQH_R(crate::FieldReader::new(bits))
     }

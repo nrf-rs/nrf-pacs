@@ -16,6 +16,7 @@ impl From<crate::R<AMOUNTRX_SPEC>> for R {
 #[doc = "Field `AMOUNTRX` reader - Number of bytes received in last granted transaction."]
 pub struct AMOUNTRX_R(crate::FieldReader<u8, u8>);
 impl AMOUNTRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AMOUNTRX_R(crate::FieldReader::new(bits))
     }

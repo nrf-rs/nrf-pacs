@@ -51,6 +51,7 @@ impl From<LOWPOWER_A> for bool {
 #[doc = "Field `LOWPOWER` reader - Controls USBD peripheral low-power mode during USB suspend"]
 pub struct LOWPOWER_R(crate::FieldReader<bool, LOWPOWER_A>);
 impl LOWPOWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOWPOWER_R(crate::FieldReader::new(bits))
     }

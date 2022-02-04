@@ -16,6 +16,7 @@ impl From<crate::R<ACC_SPEC>> for R {
 #[doc = "Field `ACC` reader - Register accumulating all valid samples (not double transition) read from the SAMPLE register."]
 pub struct ACC_R(crate::FieldReader<u32, u32>);
 impl ACC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         ACC_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Register accumulating all valid samples (not double transition) read from the SAMPLE register."]
     #[inline(always)]
     pub fn acc(&self) -> ACC_R {
-        ACC_R::new((self.bits & 0xffff_ffff) as u32)
+        ACC_R::new(self.bits)
     }
 }
 #[doc = "Register accumulating the valid transitions\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [acc](index.html) module"]

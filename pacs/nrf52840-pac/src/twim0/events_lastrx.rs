@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_LASTRX_SPEC>> for W {
 #[doc = "Field `EVENTS_LASTRX` reader - "]
 pub struct EVENTS_LASTRX_R(crate::FieldReader<bool, bool>);
 impl EVENTS_LASTRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_LASTRX_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<HWFC_A> for bool {
 #[doc = "Field `HWFC` reader - Hardware flow control"]
 pub struct HWFC_R(crate::FieldReader<bool, HWFC_A>);
 impl HWFC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HWFC_R(crate::FieldReader::new(bits))
     }
@@ -135,6 +136,7 @@ impl From<PARITY_A> for u8 {
 #[doc = "Field `PARITY` reader - Parity"]
 pub struct PARITY_R(crate::FieldReader<u8, PARITY_A>);
 impl PARITY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PARITY_R(crate::FieldReader::new(bits))
     }

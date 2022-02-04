@@ -51,6 +51,7 @@ impl From<EVENTS_RAMACCERR_A> for bool {
 #[doc = "Field `EVENTS_RAMACCERR` reader - A security violation has been detected for the RAM memory space"]
 pub struct EVENTS_RAMACCERR_R(crate::FieldReader<bool, EVENTS_RAMACCERR_A>);
 impl EVENTS_RAMACCERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_RAMACCERR_R(crate::FieldReader::new(bits))
     }

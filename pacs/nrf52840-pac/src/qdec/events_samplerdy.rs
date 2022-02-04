@@ -37,6 +37,7 @@ impl From<crate::W<EVENTS_SAMPLERDY_SPEC>> for W {
 #[doc = "Field `EVENTS_SAMPLERDY` reader - "]
 pub struct EVENTS_SAMPLERDY_R(crate::FieldReader<bool, bool>);
 impl EVENTS_SAMPLERDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_SAMPLERDY_R(crate::FieldReader::new(bits))
     }

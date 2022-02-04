@@ -37,6 +37,7 @@ impl From<crate::W<OVERRIDE4_SPEC>> for W {
 #[doc = "Field `OVERRIDE4` reader - Trim value override 4."]
 pub struct OVERRIDE4_R(crate::FieldReader<u32, u32>);
 impl OVERRIDE4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         OVERRIDE4_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +78,7 @@ impl From<ENABLE_A> for bool {
 #[doc = "Field `ENABLE` reader - Enable or disable override of default trim values."]
 pub struct ENABLE_R(crate::FieldReader<bool, ENABLE_A>);
 impl ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENABLE_R(crate::FieldReader::new(bits))
     }

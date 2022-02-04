@@ -16,6 +16,7 @@ impl From<crate::R<ACCREAD_SPEC>> for R {
 #[doc = "Field `ACCREAD` reader - Snapshot of the ACC register."]
 pub struct ACCREAD_R(crate::FieldReader<u32, u32>);
 impl ACCREAD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         ACCREAD_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Snapshot of the ACC register."]
     #[inline(always)]
     pub fn accread(&self) -> ACCREAD_R {
-        ACCREAD_R::new((self.bits & 0xffff_ffff) as u32)
+        ACCREAD_R::new(self.bits)
     }
 }
 #[doc = "Snapshot of the ACC register, updated by the READCLRACC or RDCLRACC task\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [accread](index.html) module"]

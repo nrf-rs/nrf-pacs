@@ -51,6 +51,7 @@ impl From<EVENTS_BB_A> for bool {
 #[doc = "Field `EVENTS_BB` reader - TWI byte boundary, generated before each byte that is sent or received"]
 pub struct EVENTS_BB_R(crate::FieldReader<bool, EVENTS_BB_A>);
 impl EVENTS_BB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_BB_R(crate::FieldReader::new(bits))
     }

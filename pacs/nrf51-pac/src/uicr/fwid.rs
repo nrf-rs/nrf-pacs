@@ -16,6 +16,7 @@ impl From<crate::R<FWID_SPEC>> for R {
 #[doc = "Field `FWID` reader - Identification number for the firmware loaded into the chip."]
 pub struct FWID_R(crate::FieldReader<u16, u16>);
 impl FWID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         FWID_R(crate::FieldReader::new(bits))
     }

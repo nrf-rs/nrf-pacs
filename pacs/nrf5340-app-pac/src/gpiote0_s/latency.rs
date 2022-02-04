@@ -51,6 +51,7 @@ impl From<LATENCY_A> for bool {
 #[doc = "Field `LATENCY` reader - Latency setting"]
 pub struct LATENCY_R(crate::FieldReader<bool, LATENCY_A>);
 impl LATENCY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LATENCY_R(crate::FieldReader::new(bits))
     }

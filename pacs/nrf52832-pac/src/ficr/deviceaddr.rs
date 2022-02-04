@@ -16,6 +16,7 @@ impl From<crate::R<DEVICEADDR_SPEC>> for R {
 #[doc = "Field `DEVICEADDR` reader - 48 bit device address"]
 pub struct DEVICEADDR_R(crate::FieldReader<u32, u32>);
 impl DEVICEADDR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         DEVICEADDR_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - 48 bit device address"]
     #[inline(always)]
     pub fn deviceaddr(&self) -> DEVICEADDR_R {
-        DEVICEADDR_R::new((self.bits & 0xffff_ffff) as u32)
+        DEVICEADDR_R::new(self.bits)
     }
 }
 #[doc = "Description collection\\[0\\]: Device address 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [deviceaddr](index.html) module"]

@@ -30,6 +30,7 @@ impl From<DPM_A> for bool {
 #[doc = "Field `DPM` reader - Deep power-down mode (DPM) status of external flash."]
 pub struct DPM_R(crate::FieldReader<bool, DPM_A>);
 impl DPM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DPM_R(crate::FieldReader::new(bits))
     }
@@ -76,6 +77,7 @@ impl From<READY_A> for bool {
 #[doc = "Field `READY` reader - Ready status."]
 pub struct READY_R(crate::FieldReader<bool, READY_A>);
 impl READY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READY_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +110,7 @@ impl core::ops::Deref for READY_R {
 #[doc = "Field `SREG` reader - Value of external flash device Status Register. When the external flash has two bytes status register this field includes the value of the low byte."]
 pub struct SREG_R(crate::FieldReader<u8, u8>);
 impl SREG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SREG_R(crate::FieldReader::new(bits))
     }

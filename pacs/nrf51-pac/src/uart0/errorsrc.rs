@@ -51,6 +51,7 @@ impl From<OVERRUN_A> for bool {
 #[doc = "Field `OVERRUN` reader - A start bit is received while the previous data still lies in RXD. (Data loss)."]
 pub struct OVERRUN_R(crate::FieldReader<bool, OVERRUN_A>);
 impl OVERRUN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OVERRUN_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<PARITY_A> for bool {
 #[doc = "Field `PARITY` reader - A character with bad parity is received. Only checked if HW parity control is enabled."]
 pub struct PARITY_R(crate::FieldReader<bool, PARITY_A>);
 impl PARITY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PARITY_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<FRAMING_A> for bool {
 #[doc = "Field `FRAMING` reader - A valid stop bit is not detected on the serial data input after all bits in a character have been received."]
 pub struct FRAMING_R(crate::FieldReader<bool, FRAMING_A>);
 impl FRAMING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRAMING_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<BREAK_A> for bool {
 #[doc = "Field `BREAK` reader - The serial data input is '0' for longer than the length of a data frame."]
 pub struct BREAK_R(crate::FieldReader<bool, BREAK_A>);
 impl BREAK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BREAK_R(crate::FieldReader::new(bits))
     }

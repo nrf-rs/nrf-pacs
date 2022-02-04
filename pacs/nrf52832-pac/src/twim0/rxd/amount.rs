@@ -16,6 +16,7 @@ impl From<crate::R<AMOUNT_SPEC>> for R {
 #[doc = "Field `AMOUNT` reader - Number of bytes transferred in the last transaction. In case of NACK error, includes the NACK'ed byte."]
 pub struct AMOUNT_R(crate::FieldReader<u8, u8>);
 impl AMOUNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AMOUNT_R(crate::FieldReader::new(bits))
     }

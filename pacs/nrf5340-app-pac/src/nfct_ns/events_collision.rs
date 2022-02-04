@@ -51,6 +51,7 @@ impl From<EVENTS_COLLISION_A> for bool {
 #[doc = "Field `EVENTS_COLLISION` reader - NFC auto collision resolution error reported."]
 pub struct EVENTS_COLLISION_R(crate::FieldReader<bool, EVENTS_COLLISION_A>);
 impl EVENTS_COLLISION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_COLLISION_R(crate::FieldReader::new(bits))
     }

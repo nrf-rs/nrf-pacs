@@ -51,6 +51,7 @@ impl From<EVENTS_EDEND_A> for bool {
 #[doc = "Field `EVENTS_EDEND` reader - Sampling of energy detection complete. A new ED sample is ready for readout from the RADIO.EDSAMPLE register"]
 pub struct EVENTS_EDEND_R(crate::FieldReader<bool, EVENTS_EDEND_A>);
 impl EVENTS_EDEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_EDEND_R(crate::FieldReader::new(bits))
     }

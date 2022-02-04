@@ -51,6 +51,7 @@ impl From<WRITELOCK_A> for bool {
 #[doc = "Field `WRITELOCK` reader - Lock cache updates"]
 pub struct WRITELOCK_R(crate::FieldReader<bool, WRITELOCK_A>);
 impl WRITELOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WRITELOCK_R(crate::FieldReader::new(bits))
     }

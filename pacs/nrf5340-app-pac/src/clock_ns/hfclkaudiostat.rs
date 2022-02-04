@@ -30,6 +30,7 @@ impl From<ALWAYSRUNNING_A> for bool {
 #[doc = "Field `ALWAYSRUNNING` reader - ALWAYSRUN activated"]
 pub struct ALWAYSRUNNING_R(crate::FieldReader<bool, ALWAYSRUNNING_A>);
 impl ALWAYSRUNNING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ALWAYSRUNNING_R(crate::FieldReader::new(bits))
     }
@@ -76,6 +77,7 @@ impl From<STATE_A> for bool {
 #[doc = "Field `STATE` reader - HFCLKAUDIO state"]
 pub struct STATE_R(crate::FieldReader<bool, STATE_A>);
 impl STATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STATE_R(crate::FieldReader::new(bits))
     }

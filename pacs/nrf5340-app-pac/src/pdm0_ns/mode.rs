@@ -51,6 +51,7 @@ impl From<OPERATION_A> for bool {
 #[doc = "Field `OPERATION` reader - Mono or stereo operation"]
 pub struct OPERATION_R(crate::FieldReader<bool, OPERATION_A>);
 impl OPERATION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OPERATION_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<EDGE_A> for bool {
 #[doc = "Field `EDGE` reader - Defines on which PDM_CLK edge left (or mono) is sampled"]
 pub struct EDGE_R(crate::FieldReader<bool, EDGE_A>);
 impl EDGE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EDGE_R(crate::FieldReader::new(bits))
     }

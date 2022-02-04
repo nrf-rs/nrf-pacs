@@ -51,6 +51,7 @@ impl From<MUTEX_A> for bool {
 #[doc = "Field `MUTEX` reader - Mutex register n"]
 pub struct MUTEX_R(crate::FieldReader<bool, MUTEX_A>);
 impl MUTEX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MUTEX_R(crate::FieldReader::new(bits))
     }

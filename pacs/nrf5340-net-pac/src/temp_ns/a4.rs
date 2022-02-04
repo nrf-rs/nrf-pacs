@@ -37,6 +37,7 @@ impl From<crate::W<A4_SPEC>> for W {
 #[doc = "Field `A4` reader - Slope of fifth piecewise linear function"]
 pub struct A4_R(crate::FieldReader<u16, u16>);
 impl A4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         A4_R(crate::FieldReader::new(bits))
     }

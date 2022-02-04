@@ -51,6 +51,7 @@ impl From<POWER_A> for bool {
 #[doc = "Field `POWER` reader - Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again."]
 pub struct POWER_R(crate::FieldReader<bool, POWER_A>);
 impl POWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POWER_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<MODE_A> for bool {
 #[doc = "Field `MODE` reader - The mode of operation to be used. The settings in this register apply whenever either the KSGEN or CRYPT tasks are triggered."]
 pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +140,7 @@ impl From<DATARATE_A> for u8 {
 #[doc = "Field `DATARATE` reader - Radio data rate that the CCM shall run synchronous with"]
 pub struct DATARATE_R(crate::FieldReader<u8, DATARATE_A>);
 impl DATARATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DATARATE_R(crate::FieldReader::new(bits))
     }
@@ -235,6 +237,7 @@ impl From<LENGTH_A> for bool {
 #[doc = "Field `LENGTH` reader - Packet length configuration"]
 pub struct LENGTH_R(crate::FieldReader<bool, LENGTH_A>);
 impl LENGTH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LENGTH_R(crate::FieldReader::new(bits))
     }

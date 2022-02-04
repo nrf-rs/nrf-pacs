@@ -51,6 +51,7 @@ impl From<CONSTCARRIER_A> for bool {
 #[doc = "Field `CONSTCARRIER` reader - Constant carrier. Decision point: TXEN task."]
 pub struct CONSTCARRIER_R(crate::FieldReader<bool, CONSTCARRIER_A>);
 impl CONSTCARRIER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CONSTCARRIER_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<PLLLOCK_A> for bool {
 #[doc = "Field `PLLLOCK` reader - PLL lock. Decision point: TXEN or RXEN task."]
 pub struct PLLLOCK_R(crate::FieldReader<bool, PLLLOCK_A>);
 impl PLLLOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PLLLOCK_R(crate::FieldReader::new(bits))
     }

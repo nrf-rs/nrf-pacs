@@ -16,6 +16,7 @@ impl From<crate::R<RXDATA_SPEC>> for R {
 #[doc = "Field `RXDATA` reader - Data received from debugger"]
 pub struct RXDATA_R(crate::FieldReader<u32, u32>);
 impl RXDATA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         RXDATA_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Data received from debugger"]
     #[inline(always)]
     pub fn rxdata(&self) -> RXDATA_R {
-        RXDATA_R::new((self.bits & 0xffff_ffff) as u32)
+        RXDATA_R::new(self.bits)
     }
 }
 #[doc = "Data sent from the debugger to the CPU.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdata](index.html) module"]

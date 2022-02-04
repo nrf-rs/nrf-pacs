@@ -16,6 +16,7 @@ impl From<crate::R<RXMATCH_SPEC>> for R {
 #[doc = "Field `RXMATCH` reader - Logical address in which previous packet was received."]
 pub struct RXMATCH_R(crate::FieldReader<u8, u8>);
 impl RXMATCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RXMATCH_R(crate::FieldReader::new(bits))
     }

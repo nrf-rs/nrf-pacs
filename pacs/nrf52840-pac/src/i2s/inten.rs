@@ -51,6 +51,7 @@ impl From<RXPTRUPD_A> for bool {
 #[doc = "Field `RXPTRUPD` reader - Enable or disable interrupt for RXPTRUPD event"]
 pub struct RXPTRUPD_R(crate::FieldReader<bool, RXPTRUPD_A>);
 impl RXPTRUPD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXPTRUPD_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<STOPPED_A> for bool {
 #[doc = "Field `STOPPED` reader - Enable or disable interrupt for STOPPED event"]
 pub struct STOPPED_R(crate::FieldReader<bool, STOPPED_A>);
 impl STOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STOPPED_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<TXPTRUPD_A> for bool {
 #[doc = "Field `TXPTRUPD` reader - Enable or disable interrupt for TXPTRUPD event"]
 pub struct TXPTRUPD_R(crate::FieldReader<bool, TXPTRUPD_A>);
 impl TXPTRUPD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXPTRUPD_R(crate::FieldReader::new(bits))
     }

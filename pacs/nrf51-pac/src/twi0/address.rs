@@ -37,6 +37,7 @@ impl From<crate::W<ADDRESS_SPEC>> for W {
 #[doc = "Field `ADDRESS` reader - Two-wire address."]
 pub struct ADDRESS_R(crate::FieldReader<u8, u8>);
 impl ADDRESS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ADDRESS_R(crate::FieldReader::new(bits))
     }

@@ -16,6 +16,7 @@ impl From<crate::R<ROSC3_SPEC>> for R {
 #[doc = "Field `ROSC3` reader - Sample count for ring oscillator 3"]
 pub struct ROSC3_R(crate::FieldReader<u32, u32>);
 impl ROSC3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         ROSC3_R(crate::FieldReader::new(bits))
     }
@@ -31,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Sample count for ring oscillator 3"]
     #[inline(always)]
     pub fn rosc3(&self) -> ROSC3_R {
-        ROSC3_R::new((self.bits & 0xffff_ffff) as u32)
+        ROSC3_R::new(self.bits)
     }
 }
 #[doc = "Sample count for ring oscillator 3\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rosc3](index.html) module"]

@@ -37,6 +37,7 @@ impl From<crate::W<B0_SPEC>> for W {
 #[doc = "Field `B0` reader - y-intercept of 1st piece wise linear function"]
 pub struct B0_R(crate::FieldReader<u16, u16>);
 impl B0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         B0_R(crate::FieldReader::new(bits))
     }

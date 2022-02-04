@@ -30,6 +30,7 @@ impl From<DEBUGREQ_A> for bool {
 #[doc = "Field `DEBUGREQ` reader - Processor debug request"]
 pub struct DEBUGREQ_R(crate::FieldReader<bool, DEBUGREQ_A>);
 impl DEBUGREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEBUGREQ_R(crate::FieldReader::new(bits))
     }
@@ -76,6 +77,7 @@ impl From<CPURESTART_A> for bool {
 #[doc = "Field `CPURESTART` reader - Processor Restart"]
 pub struct CPURESTART_R(crate::FieldReader<bool, CPURESTART_A>);
 impl CPURESTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPURESTART_R(crate::FieldReader::new(bits))
     }
@@ -122,6 +124,7 @@ impl From<UNUSED0_A> for bool {
 #[doc = "Field `UNUSED0` reader - N/A"]
 pub struct UNUSED0_R(crate::FieldReader<bool, UNUSED0_A>);
 impl UNUSED0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UNUSED0_R(crate::FieldReader::new(bits))
     }
@@ -168,6 +171,7 @@ impl From<UNUSED1_A> for bool {
 #[doc = "Field `UNUSED1` reader - N/A"]
 pub struct UNUSED1_R(crate::FieldReader<bool, UNUSED1_A>);
 impl UNUSED1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UNUSED1_R(crate::FieldReader::new(bits))
     }
@@ -214,6 +218,7 @@ impl From<UNUSED2_A> for bool {
 #[doc = "Field `UNUSED2` reader - N/A"]
 pub struct UNUSED2_R(crate::FieldReader<bool, UNUSED2_A>);
 impl UNUSED2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UNUSED2_R(crate::FieldReader::new(bits))
     }
@@ -260,6 +265,7 @@ impl From<UNUSED3_A> for bool {
 #[doc = "Field `UNUSED3` reader - N/A"]
 pub struct UNUSED3_R(crate::FieldReader<bool, UNUSED3_A>);
 impl UNUSED3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UNUSED3_R(crate::FieldReader::new(bits))
     }
@@ -306,6 +312,7 @@ impl From<UNUSED4_A> for bool {
 #[doc = "Field `UNUSED4` reader - N/A"]
 pub struct UNUSED4_R(crate::FieldReader<bool, UNUSED4_A>);
 impl UNUSED4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UNUSED4_R(crate::FieldReader::new(bits))
     }
@@ -352,6 +359,7 @@ impl From<UNUSED5_A> for bool {
 #[doc = "Field `UNUSED5` reader - N/A"]
 pub struct UNUSED5_R(crate::FieldReader<bool, UNUSED5_A>);
 impl UNUSED5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UNUSED5_R(crate::FieldReader::new(bits))
     }

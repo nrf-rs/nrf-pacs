@@ -51,6 +51,7 @@ impl From<ONRAM0_A> for bool {
 #[doc = "Field `ONRAM0` reader - Keep RAM block 0 on or off in system ON Mode"]
 pub struct ONRAM0_R(crate::FieldReader<bool, ONRAM0_A>);
 impl ONRAM0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ONRAM0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<ONRAM1_A> for bool {
 #[doc = "Field `ONRAM1` reader - Keep RAM block 1 on or off in system ON Mode"]
 pub struct ONRAM1_R(crate::FieldReader<bool, ONRAM1_A>);
 impl ONRAM1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ONRAM1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<OFFRAM0_A> for bool {
 #[doc = "Field `OFFRAM0` reader - Keep retention on RAM block 0 when RAM block is switched off"]
 pub struct OFFRAM0_R(crate::FieldReader<bool, OFFRAM0_A>);
 impl OFFRAM0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OFFRAM0_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<OFFRAM1_A> for bool {
 #[doc = "Field `OFFRAM1` reader - Keep retention on RAM block 1 when RAM block is switched off"]
 pub struct OFFRAM1_R(crate::FieldReader<bool, OFFRAM1_A>);
 impl OFFRAM1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OFFRAM1_R(crate::FieldReader::new(bits))
     }

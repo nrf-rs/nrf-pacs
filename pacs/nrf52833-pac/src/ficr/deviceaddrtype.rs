@@ -30,6 +30,7 @@ impl From<DEVICEADDRTYPE_A> for bool {
 #[doc = "Field `DEVICEADDRTYPE` reader - Device address type"]
 pub struct DEVICEADDRTYPE_R(crate::FieldReader<bool, DEVICEADDRTYPE_A>);
 impl DEVICEADDRTYPE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEVICEADDRTYPE_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<EVENTS_PERIPHACCERR_A> for bool {
 #[doc = "Field `EVENTS_PERIPHACCERR` reader - A security violation has been detected on one or several peripherals"]
 pub struct EVENTS_PERIPHACCERR_R(crate::FieldReader<bool, EVENTS_PERIPHACCERR_A>);
 impl EVENTS_PERIPHACCERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_PERIPHACCERR_R(crate::FieldReader::new(bits))
     }

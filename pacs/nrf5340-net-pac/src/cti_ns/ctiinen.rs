@@ -51,6 +51,7 @@ impl From<TRIGINEN_0_A> for bool {
 #[doc = "Field `TRIGINEN_0` reader - Enables a cross trigger event to channel 0 when a ctitrigin input is activated."]
 pub struct TRIGINEN_0_R(crate::FieldReader<bool, TRIGINEN_0_A>);
 impl TRIGINEN_0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGINEN_0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<TRIGINEN_1_A> for bool {
 #[doc = "Field `TRIGINEN_1` reader - Enables a cross trigger event to channel 1 when a ctitrigin input is activated."]
 pub struct TRIGINEN_1_R(crate::FieldReader<bool, TRIGINEN_1_A>);
 impl TRIGINEN_1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGINEN_1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<TRIGINEN_2_A> for bool {
 #[doc = "Field `TRIGINEN_2` reader - Enables a cross trigger event to channel 2 when a ctitrigin input is activated."]
 pub struct TRIGINEN_2_R(crate::FieldReader<bool, TRIGINEN_2_A>);
 impl TRIGINEN_2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGINEN_2_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<TRIGINEN_3_A> for bool {
 #[doc = "Field `TRIGINEN_3` reader - Enables a cross trigger event to channel 3 when a ctitrigin input is activated."]
 pub struct TRIGINEN_3_R(crate::FieldReader<bool, TRIGINEN_3_A>);
 impl TRIGINEN_3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIGINEN_3_R(crate::FieldReader::new(bits))
     }

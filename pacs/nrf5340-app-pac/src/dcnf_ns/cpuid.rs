@@ -16,6 +16,7 @@ impl From<crate::R<CPUID_SPEC>> for R {
 #[doc = "Field `CPUID` reader - CPU ID"]
 pub struct CPUID_R(crate::FieldReader<u8, u8>);
 impl CPUID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPUID_R(crate::FieldReader::new(bits))
     }

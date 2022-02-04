@@ -37,6 +37,7 @@ impl From<crate::W<MAXCNT_SPEC>> for W {
 #[doc = "Field `MAXCNT` reader - Size of RXD and TXD buffers in number of 32 bit words"]
 pub struct MAXCNT_R(crate::FieldReader<u16, u16>);
 impl MAXCNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         MAXCNT_R(crate::FieldReader::new(bits))
     }

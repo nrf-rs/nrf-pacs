@@ -51,6 +51,7 @@ impl From<EVENTS_HFCLK192MSTARTED_A> for bool {
 #[doc = "Field `EVENTS_HFCLK192MSTARTED` reader - HFCLK192M source started"]
 pub struct EVENTS_HFCLK192MSTARTED_R(crate::FieldReader<bool, EVENTS_HFCLK192MSTARTED_A>);
 impl EVENTS_HFCLK192MSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_HFCLK192MSTARTED_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<EVENTS_SEQEND_A> for bool {
 #[doc = "Field `EVENTS_SEQEND` reader - Emitted at end of every sequence n, when last value from RAM has been applied to wave counter"]
 pub struct EVENTS_SEQEND_R(crate::FieldReader<bool, EVENTS_SEQEND_A>);
 impl EVENTS_SEQEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_SEQEND_R(crate::FieldReader::new(bits))
     }

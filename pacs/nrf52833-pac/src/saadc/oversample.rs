@@ -66,6 +66,7 @@ impl From<OVERSAMPLE_A> for u8 {
 #[doc = "Field `OVERSAMPLE` reader - Oversample control"]
 pub struct OVERSAMPLE_R(crate::FieldReader<u8, OVERSAMPLE_A>);
 impl OVERSAMPLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         OVERSAMPLE_R(crate::FieldReader::new(bits))
     }

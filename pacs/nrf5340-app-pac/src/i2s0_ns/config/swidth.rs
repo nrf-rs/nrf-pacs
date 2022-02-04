@@ -64,6 +64,7 @@ impl From<SWIDTH_A> for u8 {
 #[doc = "Field `SWIDTH` reader - Sample and half-frame width"]
 pub struct SWIDTH_R(crate::FieldReader<u8, SWIDTH_A>);
 impl SWIDTH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SWIDTH_R(crate::FieldReader::new(bits))
     }

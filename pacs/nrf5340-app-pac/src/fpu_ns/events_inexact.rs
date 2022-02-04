@@ -51,6 +51,7 @@ impl From<EVENTS_INEXACT_A> for bool {
 #[doc = "Field `EVENTS_INEXACT` reader - An FPUIXC exception triggered by an inexact floating-point operation has occurred in the FPU"]
 pub struct EVENTS_INEXACT_R(crate::FieldReader<bool, EVENTS_INEXACT_A>);
 impl EVENTS_INEXACT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_INEXACT_R(crate::FieldReader::new(bits))
     }

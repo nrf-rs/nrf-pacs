@@ -62,6 +62,7 @@ impl From<FREQUENCY_A> for u32 {
 #[doc = "Field `FREQUENCY` reader - SPI data rate."]
 pub struct FREQUENCY_R(crate::FieldReader<u32, FREQUENCY_A>);
 impl FREQUENCY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         FREQUENCY_R(crate::FieldReader::new(bits))
     }
@@ -170,7 +171,7 @@ impl<'a> FREQUENCY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value;
         self.w
     }
 }
@@ -178,7 +179,7 @@ impl R {
     #[doc = "Bits 0:31 - SPI data rate."]
     #[inline(always)]
     pub fn frequency(&self) -> FREQUENCY_R {
-        FREQUENCY_R::new((self.bits & 0xffff_ffff) as u32)
+        FREQUENCY_R::new(self.bits)
     }
 }
 impl W {

@@ -51,6 +51,7 @@ impl From<EPIN1_A> for bool {
 #[doc = "Field `EPIN1` reader - Acknowledged data transfer on this IN endpoint. Write '1' to clear."]
 pub struct EPIN1_R(crate::FieldReader<bool, EPIN1_A>);
 impl EPIN1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPIN1_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<EPIN2_A> for bool {
 #[doc = "Field `EPIN2` reader - Acknowledged data transfer on this IN endpoint. Write '1' to clear."]
 pub struct EPIN2_R(crate::FieldReader<bool, EPIN2_A>);
 impl EPIN2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPIN2_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<EPIN3_A> for bool {
 #[doc = "Field `EPIN3` reader - Acknowledged data transfer on this IN endpoint. Write '1' to clear."]
 pub struct EPIN3_R(crate::FieldReader<bool, EPIN3_A>);
 impl EPIN3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPIN3_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<EPIN4_A> for bool {
 #[doc = "Field `EPIN4` reader - Acknowledged data transfer on this IN endpoint. Write '1' to clear."]
 pub struct EPIN4_R(crate::FieldReader<bool, EPIN4_A>);
 impl EPIN4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPIN4_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<EPIN5_A> for bool {
 #[doc = "Field `EPIN5` reader - Acknowledged data transfer on this IN endpoint. Write '1' to clear."]
 pub struct EPIN5_R(crate::FieldReader<bool, EPIN5_A>);
 impl EPIN5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPIN5_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<EPIN6_A> for bool {
 #[doc = "Field `EPIN6` reader - Acknowledged data transfer on this IN endpoint. Write '1' to clear."]
 pub struct EPIN6_R(crate::FieldReader<bool, EPIN6_A>);
 impl EPIN6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPIN6_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<EPIN7_A> for bool {
 #[doc = "Field `EPIN7` reader - Acknowledged data transfer on this IN endpoint. Write '1' to clear."]
 pub struct EPIN7_R(crate::FieldReader<bool, EPIN7_A>);
 impl EPIN7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPIN7_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<EPOUT1_A> for bool {
 #[doc = "Field `EPOUT1` reader - Acknowledged data transfer on this OUT endpoint. Write '1' to clear."]
 pub struct EPOUT1_R(crate::FieldReader<bool, EPOUT1_A>);
 impl EPOUT1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPOUT1_R(crate::FieldReader::new(bits))
     }
@@ -715,6 +723,7 @@ impl From<EPOUT2_A> for bool {
 #[doc = "Field `EPOUT2` reader - Acknowledged data transfer on this OUT endpoint. Write '1' to clear."]
 pub struct EPOUT2_R(crate::FieldReader<bool, EPOUT2_A>);
 impl EPOUT2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPOUT2_R(crate::FieldReader::new(bits))
     }
@@ -798,6 +807,7 @@ impl From<EPOUT3_A> for bool {
 #[doc = "Field `EPOUT3` reader - Acknowledged data transfer on this OUT endpoint. Write '1' to clear."]
 pub struct EPOUT3_R(crate::FieldReader<bool, EPOUT3_A>);
 impl EPOUT3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPOUT3_R(crate::FieldReader::new(bits))
     }
@@ -881,6 +891,7 @@ impl From<EPOUT4_A> for bool {
 #[doc = "Field `EPOUT4` reader - Acknowledged data transfer on this OUT endpoint. Write '1' to clear."]
 pub struct EPOUT4_R(crate::FieldReader<bool, EPOUT4_A>);
 impl EPOUT4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPOUT4_R(crate::FieldReader::new(bits))
     }
@@ -964,6 +975,7 @@ impl From<EPOUT5_A> for bool {
 #[doc = "Field `EPOUT5` reader - Acknowledged data transfer on this OUT endpoint. Write '1' to clear."]
 pub struct EPOUT5_R(crate::FieldReader<bool, EPOUT5_A>);
 impl EPOUT5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPOUT5_R(crate::FieldReader::new(bits))
     }
@@ -1047,6 +1059,7 @@ impl From<EPOUT6_A> for bool {
 #[doc = "Field `EPOUT6` reader - Acknowledged data transfer on this OUT endpoint. Write '1' to clear."]
 pub struct EPOUT6_R(crate::FieldReader<bool, EPOUT6_A>);
 impl EPOUT6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPOUT6_R(crate::FieldReader::new(bits))
     }
@@ -1130,6 +1143,7 @@ impl From<EPOUT7_A> for bool {
 #[doc = "Field `EPOUT7` reader - Acknowledged data transfer on this OUT endpoint. Write '1' to clear."]
 pub struct EPOUT7_R(crate::FieldReader<bool, EPOUT7_A>);
 impl EPOUT7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EPOUT7_R(crate::FieldReader::new(bits))
     }

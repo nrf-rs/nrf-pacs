@@ -16,6 +16,7 @@ impl From<crate::R<B5_SPEC>> for R {
 #[doc = "Field `B` reader - B (y-intercept)"]
 pub struct B_R(crate::FieldReader<u16, u16>);
 impl B_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         B_R(crate::FieldReader::new(bits))
     }

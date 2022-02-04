@@ -30,6 +30,7 @@ impl From<RAMBLOCK0_A> for bool {
 #[doc = "Field `RAMBLOCK0` reader - RAM block 0 is on or off/powering up"]
 pub struct RAMBLOCK0_R(crate::FieldReader<bool, RAMBLOCK0_A>);
 impl RAMBLOCK0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RAMBLOCK0_R(crate::FieldReader::new(bits))
     }
@@ -76,6 +77,7 @@ impl From<RAMBLOCK1_A> for bool {
 #[doc = "Field `RAMBLOCK1` reader - RAM block 1 is on or off/powering up"]
 pub struct RAMBLOCK1_R(crate::FieldReader<bool, RAMBLOCK1_A>);
 impl RAMBLOCK1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RAMBLOCK1_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<SLEEP_A> for bool {
 #[doc = "Field `SLEEP` reader - Configure WDT to either be paused, or kept running, while the CPU is sleeping"]
 pub struct SLEEP_R(crate::FieldReader<bool, SLEEP_A>);
 impl SLEEP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLEEP_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<HALT_A> for bool {
 #[doc = "Field `HALT` reader - Configure WDT to either be paused, or kept running, while the CPU is halted by the debugger"]
 pub struct HALT_R(crate::FieldReader<bool, HALT_A>);
 impl HALT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HALT_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<STOPEN_A> for bool {
 #[doc = "Field `STOPEN` reader - Allow stopping WDT"]
 pub struct STOPEN_R(crate::FieldReader<bool, STOPEN_A>);
 impl STOPEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STOPEN_R(crate::FieldReader::new(bits))
     }

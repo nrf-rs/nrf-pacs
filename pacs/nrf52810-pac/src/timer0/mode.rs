@@ -40,7 +40,7 @@ impl From<crate::W<MODE_SPEC>> for W {
 pub enum MODE_A {
     #[doc = "0: Select Timer mode"]
     TIMER = 0,
-    #[doc = "1: Deprecated enumerator -  Select Counter mode"]
+    #[doc = "1: Deprecated enumerator - Select Counter mode"]
     COUNTER = 1,
     #[doc = "2: Select Low Power Counter mode"]
     LOWPOWERCOUNTER = 2,
@@ -54,6 +54,7 @@ impl From<MODE_A> for u8 {
 #[doc = "Field `MODE` reader - Timer mode"]
 pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }

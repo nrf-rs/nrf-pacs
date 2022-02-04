@@ -37,6 +37,7 @@ impl From<crate::W<ADDRCONF_SPEC>> for W {
 #[doc = "Field `OPCODE` reader - Opcode that enters the 32-bit addressing mode."]
 pub struct OPCODE_R(crate::FieldReader<u8, u8>);
 impl OPCODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         OPCODE_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +64,7 @@ impl<'a> OPCODE_W<'a> {
 #[doc = "Field `BYTE0` reader - Byte 0 following opcode."]
 pub struct BYTE0_R(crate::FieldReader<u8, u8>);
 impl BYTE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BYTE0_R(crate::FieldReader::new(bits))
     }
@@ -89,6 +91,7 @@ impl<'a> BYTE0_W<'a> {
 #[doc = "Field `BYTE1` reader - Byte 1 following byte 0."]
 pub struct BYTE1_R(crate::FieldReader<u8, u8>);
 impl BYTE1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BYTE1_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +137,7 @@ impl From<MODE_A> for u8 {
 #[doc = "Field `MODE` reader - Extended addressing mode."]
 pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -230,6 +234,7 @@ impl From<WIPWAIT_A> for bool {
 #[doc = "Field `WIPWAIT` reader - Wait for write complete before sending command."]
 pub struct WIPWAIT_R(crate::FieldReader<bool, WIPWAIT_A>);
 impl WIPWAIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WIPWAIT_R(crate::FieldReader::new(bits))
     }
@@ -313,6 +318,7 @@ impl From<WREN_A> for bool {
 #[doc = "Field `WREN` reader - Send WREN (write enable opcode 0x06) before instruction."]
 pub struct WREN_R(crate::FieldReader<bool, WREN_A>);
 impl WREN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WREN_R(crate::FieldReader::new(bits))
     }

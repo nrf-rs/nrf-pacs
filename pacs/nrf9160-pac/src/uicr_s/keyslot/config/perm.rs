@@ -51,6 +51,7 @@ impl From<WRITE_A> for bool {
 #[doc = "Field `WRITE` reader - Write permission for key slot"]
 pub struct WRITE_R(crate::FieldReader<bool, WRITE_A>);
 impl WRITE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WRITE_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<READ_A> for bool {
 #[doc = "Field `READ` reader - Read permission for key slot"]
 pub struct READ_R(crate::FieldReader<bool, READ_A>);
 impl READ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READ_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<PUSH_A> for bool {
 #[doc = "Field `PUSH` reader - Push permission for key slot"]
 pub struct PUSH_R(crate::FieldReader<bool, PUSH_A>);
 impl PUSH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PUSH_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<STATE_A> for bool {
 #[doc = "Field `STATE` reader - Revocation state for the key slot"]
 pub struct STATE_R(crate::FieldReader<bool, STATE_A>);
 impl STATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STATE_R(crate::FieldReader::new(bits))
     }

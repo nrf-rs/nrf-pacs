@@ -51,6 +51,7 @@ impl From<FIELDDETECTED_ACTIVATE_A> for bool {
 #[doc = "Field `FIELDDETECTED_ACTIVATE` reader - Shortcut between event FIELDDETECTED and task ACTIVATE"]
 pub struct FIELDDETECTED_ACTIVATE_R(crate::FieldReader<bool, FIELDDETECTED_ACTIVATE_A>);
 impl FIELDDETECTED_ACTIVATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIELDDETECTED_ACTIVATE_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<FIELDLOST_SENSE_A> for bool {
 #[doc = "Field `FIELDLOST_SENSE` reader - Shortcut between event FIELDLOST and task SENSE"]
 pub struct FIELDLOST_SENSE_R(crate::FieldReader<bool, FIELDLOST_SENSE_A>);
 impl FIELDLOST_SENSE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIELDLOST_SENSE_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<TXFRAMEEND_ENABLERXDATA_A> for bool {
 #[doc = "Field `TXFRAMEEND_ENABLERXDATA` reader - Shortcut between event TXFRAMEEND and task ENABLERXDATA"]
 pub struct TXFRAMEEND_ENABLERXDATA_R(crate::FieldReader<bool, TXFRAMEEND_ENABLERXDATA_A>);
 impl TXFRAMEEND_ENABLERXDATA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXFRAMEEND_ENABLERXDATA_R(crate::FieldReader::new(bits))
     }

@@ -51,6 +51,7 @@ impl From<EVENTS_STOPPED_A> for bool {
 #[doc = "Field `EVENTS_STOPPED` reader - I2S transfer stopped."]
 pub struct EVENTS_STOPPED_R(crate::FieldReader<bool, EVENTS_STOPPED_A>);
 impl EVENTS_STOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_STOPPED_R(crate::FieldReader::new(bits))
     }

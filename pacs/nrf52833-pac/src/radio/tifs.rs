@@ -37,6 +37,7 @@ impl From<crate::W<TIFS_SPEC>> for W {
 #[doc = "Field `TIFS` reader - Interframe spacing in us"]
 pub struct TIFS_R(crate::FieldReader<u16, u16>);
 impl TIFS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         TIFS_R(crate::FieldReader::new(bits))
     }

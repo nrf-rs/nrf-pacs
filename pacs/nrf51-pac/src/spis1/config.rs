@@ -51,6 +51,7 @@ impl From<ORDER_A> for bool {
 #[doc = "Field `ORDER` reader - Bit order."]
 pub struct ORDER_R(crate::FieldReader<bool, ORDER_A>);
 impl ORDER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ORDER_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<CPHA_A> for bool {
 #[doc = "Field `CPHA` reader - Serial clock (SCK) phase."]
 pub struct CPHA_R(crate::FieldReader<bool, CPHA_A>);
 impl CPHA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPHA_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<CPOL_A> for bool {
 #[doc = "Field `CPOL` reader - Serial clock (SCK) polarity."]
 pub struct CPOL_R(crate::FieldReader<bool, CPOL_A>);
 impl CPOL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPOL_R(crate::FieldReader::new(bits))
     }

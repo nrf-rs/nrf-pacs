@@ -51,6 +51,7 @@ impl From<SAMPLERDY_A> for bool {
 #[doc = "Field `SAMPLERDY` reader - Disable interrupt on SAMPLERDY event."]
 pub struct SAMPLERDY_R(crate::FieldReader<bool, SAMPLERDY_A>);
 impl SAMPLERDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SAMPLERDY_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<REPORTRDY_A> for bool {
 #[doc = "Field `REPORTRDY` reader - Disable interrupt on REPORTRDY event."]
 pub struct REPORTRDY_R(crate::FieldReader<bool, REPORTRDY_A>);
 impl REPORTRDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REPORTRDY_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<ACCOF_A> for bool {
 #[doc = "Field `ACCOF` reader - Disable interrupt on ACCOF event."]
 pub struct ACCOF_R(crate::FieldReader<bool, ACCOF_A>);
 impl ACCOF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ACCOF_R(crate::FieldReader::new(bits))
     }

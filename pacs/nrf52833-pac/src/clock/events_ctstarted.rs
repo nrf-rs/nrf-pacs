@@ -51,6 +51,7 @@ impl From<EVENTS_CTSTARTED_A> for bool {
 #[doc = "Field `EVENTS_CTSTARTED` reader - Calibration timer has been started and is ready to process new tasks"]
 pub struct EVENTS_CTSTARTED_R(crate::FieldReader<bool, EVENTS_CTSTARTED_A>);
 impl EVENTS_CTSTARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_CTSTARTED_R(crate::FieldReader::new(bits))
     }

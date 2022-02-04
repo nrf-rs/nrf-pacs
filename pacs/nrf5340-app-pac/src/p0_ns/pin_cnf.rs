@@ -51,6 +51,7 @@ impl From<DIR_A> for bool {
 #[doc = "Field `DIR` reader - Pin direction. Same physical register as DIR register"]
 pub struct DIR_R(crate::FieldReader<bool, DIR_A>);
 impl DIR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DIR_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<INPUT_A> for bool {
 #[doc = "Field `INPUT` reader - Connect or disconnect input buffer"]
 pub struct INPUT_R(crate::FieldReader<bool, INPUT_A>);
 impl INPUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INPUT_R(crate::FieldReader::new(bits))
     }
@@ -220,6 +222,7 @@ impl From<PULL_A> for u8 {
 #[doc = "Field `PULL` reader - Pull configuration"]
 pub struct PULL_R(crate::FieldReader<u8, PULL_A>);
 impl PULL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PULL_R(crate::FieldReader::new(bits))
     }
@@ -320,6 +323,7 @@ impl From<DRIVE_A> for u8 {
 #[doc = "Field `DRIVE` reader - Drive configuration"]
 pub struct DRIVE_R(crate::FieldReader<u8, DRIVE_A>);
 impl DRIVE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DRIVE_R(crate::FieldReader::new(bits))
     }
@@ -474,6 +478,7 @@ impl From<SENSE_A> for u8 {
 #[doc = "Field `SENSE` reader - Pin sensing mechanism"]
 pub struct SENSE_R(crate::FieldReader<u8, SENSE_A>);
 impl SENSE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SENSE_R(crate::FieldReader::new(bits))
     }
@@ -564,6 +569,7 @@ impl From<MCUSEL_A> for u8 {
 #[doc = "Field `MCUSEL` reader - Select which MCU/Subsystem controls this pin Note: this field is only accessible from secure code."]
 pub struct MCUSEL_R(crate::FieldReader<u8, MCUSEL_A>);
 impl MCUSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MCUSEL_R(crate::FieldReader::new(bits))
     }

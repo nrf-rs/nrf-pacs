@@ -37,6 +37,7 @@ impl From<crate::W<COUNTERTOP_SPEC>> for W {
 #[doc = "Field `COUNTERTOP` reader - Value up to which the pulse generator counter counts. This register is ignored when DECODER.MODE=WaveForm and only values from RAM will be used."]
 pub struct COUNTERTOP_R(crate::FieldReader<u16, u16>);
 impl COUNTERTOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         COUNTERTOP_R(crate::FieldReader::new(bits))
     }

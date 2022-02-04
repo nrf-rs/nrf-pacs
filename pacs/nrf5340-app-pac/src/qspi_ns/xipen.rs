@@ -51,6 +51,7 @@ impl From<XIPEN_A> for bool {
 #[doc = "Field `XIPEN` reader - Enable XIP AHB Slave interface and access to XIP memory range"]
 pub struct XIPEN_R(crate::FieldReader<bool, XIPEN_A>);
 impl XIPEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         XIPEN_R(crate::FieldReader::new(bits))
     }

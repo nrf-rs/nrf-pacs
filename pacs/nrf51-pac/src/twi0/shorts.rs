@@ -51,6 +51,7 @@ impl From<BB_SUSPEND_A> for bool {
 #[doc = "Field `BB_SUSPEND` reader - Shortcut between BB event and the SUSPEND task."]
 pub struct BB_SUSPEND_R(crate::FieldReader<bool, BB_SUSPEND_A>);
 impl BB_SUSPEND_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BB_SUSPEND_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<BB_STOP_A> for bool {
 #[doc = "Field `BB_STOP` reader - Shortcut between BB event and the STOP task."]
 pub struct BB_STOP_R(crate::FieldReader<bool, BB_STOP_A>);
 impl BB_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BB_STOP_R(crate::FieldReader::new(bits))
     }

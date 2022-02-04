@@ -51,6 +51,7 @@ impl From<EVENTS_IN_A> for bool {
 #[doc = "Field `EVENTS_IN` reader - Event generated from pin specified in CONFIG\\[n\\].PSEL"]
 pub struct EVENTS_IN_R(crate::FieldReader<bool, EVENTS_IN_A>);
 impl EVENTS_IN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_IN_R(crate::FieldReader::new(bits))
     }

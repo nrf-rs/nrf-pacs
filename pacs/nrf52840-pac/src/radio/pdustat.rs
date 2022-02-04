@@ -30,6 +30,7 @@ impl From<PDUSTAT_A> for bool {
 #[doc = "Field `PDUSTAT` reader - Status on payload length vs. PCNF1.MAXLEN"]
 pub struct PDUSTAT_R(crate::FieldReader<bool, PDUSTAT_A>);
 impl PDUSTAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDUSTAT_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +78,7 @@ impl From<CISTAT_A> for u8 {
 #[doc = "Field `CISTAT` reader - Status on what rate packet is received with in Long Range"]
 pub struct CISTAT_R(crate::FieldReader<u8, CISTAT_A>);
 impl CISTAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CISTAT_R(crate::FieldReader::new(bits))
     }

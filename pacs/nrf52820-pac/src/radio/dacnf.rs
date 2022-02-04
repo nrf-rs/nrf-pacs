@@ -51,6 +51,7 @@ impl From<ENA0_A> for bool {
 #[doc = "Field `ENA0` reader - Enable or disable device address matching using device address 0"]
 pub struct ENA0_R(crate::FieldReader<bool, ENA0_A>);
 impl ENA0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENA0_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<ENA1_A> for bool {
 #[doc = "Field `ENA1` reader - Enable or disable device address matching using device address 1"]
 pub struct ENA1_R(crate::FieldReader<bool, ENA1_A>);
 impl ENA1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENA1_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<ENA2_A> for bool {
 #[doc = "Field `ENA2` reader - Enable or disable device address matching using device address 2"]
 pub struct ENA2_R(crate::FieldReader<bool, ENA2_A>);
 impl ENA2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENA2_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<ENA3_A> for bool {
 #[doc = "Field `ENA3` reader - Enable or disable device address matching using device address 3"]
 pub struct ENA3_R(crate::FieldReader<bool, ENA3_A>);
 impl ENA3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENA3_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<ENA4_A> for bool {
 #[doc = "Field `ENA4` reader - Enable or disable device address matching using device address 4"]
 pub struct ENA4_R(crate::FieldReader<bool, ENA4_A>);
 impl ENA4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENA4_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<ENA5_A> for bool {
 #[doc = "Field `ENA5` reader - Enable or disable device address matching using device address 5"]
 pub struct ENA5_R(crate::FieldReader<bool, ENA5_A>);
 impl ENA5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENA5_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<ENA6_A> for bool {
 #[doc = "Field `ENA6` reader - Enable or disable device address matching using device address 6"]
 pub struct ENA6_R(crate::FieldReader<bool, ENA6_A>);
 impl ENA6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENA6_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<ENA7_A> for bool {
 #[doc = "Field `ENA7` reader - Enable or disable device address matching using device address 7"]
 pub struct ENA7_R(crate::FieldReader<bool, ENA7_A>);
 impl ENA7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENA7_R(crate::FieldReader::new(bits))
     }
@@ -701,6 +709,7 @@ impl<'a> ENA7_W<'a> {
 #[doc = "Field `TXADD0` reader - TxAdd for device address 0"]
 pub struct TXADD0_R(crate::FieldReader<bool, bool>);
 impl TXADD0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXADD0_R(crate::FieldReader::new(bits))
     }
@@ -737,6 +746,7 @@ impl<'a> TXADD0_W<'a> {
 #[doc = "Field `TXADD1` reader - TxAdd for device address 1"]
 pub struct TXADD1_R(crate::FieldReader<bool, bool>);
 impl TXADD1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXADD1_R(crate::FieldReader::new(bits))
     }
@@ -773,6 +783,7 @@ impl<'a> TXADD1_W<'a> {
 #[doc = "Field `TXADD2` reader - TxAdd for device address 2"]
 pub struct TXADD2_R(crate::FieldReader<bool, bool>);
 impl TXADD2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXADD2_R(crate::FieldReader::new(bits))
     }
@@ -809,6 +820,7 @@ impl<'a> TXADD2_W<'a> {
 #[doc = "Field `TXADD3` reader - TxAdd for device address 3"]
 pub struct TXADD3_R(crate::FieldReader<bool, bool>);
 impl TXADD3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXADD3_R(crate::FieldReader::new(bits))
     }
@@ -845,6 +857,7 @@ impl<'a> TXADD3_W<'a> {
 #[doc = "Field `TXADD4` reader - TxAdd for device address 4"]
 pub struct TXADD4_R(crate::FieldReader<bool, bool>);
 impl TXADD4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXADD4_R(crate::FieldReader::new(bits))
     }
@@ -881,6 +894,7 @@ impl<'a> TXADD4_W<'a> {
 #[doc = "Field `TXADD5` reader - TxAdd for device address 5"]
 pub struct TXADD5_R(crate::FieldReader<bool, bool>);
 impl TXADD5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXADD5_R(crate::FieldReader::new(bits))
     }
@@ -917,6 +931,7 @@ impl<'a> TXADD5_W<'a> {
 #[doc = "Field `TXADD6` reader - TxAdd for device address 6"]
 pub struct TXADD6_R(crate::FieldReader<bool, bool>);
 impl TXADD6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXADD6_R(crate::FieldReader::new(bits))
     }
@@ -953,6 +968,7 @@ impl<'a> TXADD6_W<'a> {
 #[doc = "Field `TXADD7` reader - TxAdd for device address 7"]
 pub struct TXADD7_R(crate::FieldReader<bool, bool>);
 impl TXADD7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXADD7_R(crate::FieldReader::new(bits))
     }

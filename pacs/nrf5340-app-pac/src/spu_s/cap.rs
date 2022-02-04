@@ -30,6 +30,7 @@ impl From<TZM_A> for bool {
 #[doc = "Field `TZM` reader - Show Arm TrustZone status"]
 pub struct TZM_R(crate::FieldReader<bool, TZM_A>);
 impl TZM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TZM_R(crate::FieldReader::new(bits))
     }

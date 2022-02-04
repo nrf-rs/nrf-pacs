@@ -39,6 +39,7 @@ impl From<NFCTAGSTATE_A> for u8 {
 #[doc = "Field `NFCTAGSTATE` reader - NfcTag state"]
 pub struct NFCTAGSTATE_R(crate::FieldReader<u8, NFCTAGSTATE_A>);
 impl NFCTAGSTATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NFCTAGSTATE_R(crate::FieldReader::new(bits))
     }

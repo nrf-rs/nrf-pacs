@@ -51,6 +51,7 @@ impl From<CH0_A> for bool {
 #[doc = "Field `CH0` reader - Channel 0 enable clear register. Writing 0 has no effect."]
 pub struct CH0_R(crate::FieldReader<bool, CH0_A>);
 impl CH0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH0_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +142,7 @@ impl From<CH1_A> for bool {
 #[doc = "Field `CH1` reader - Channel 1 enable clear register. Writing 0 has no effect."]
 pub struct CH1_R(crate::FieldReader<bool, CH1_A>);
 impl CH1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH1_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +233,7 @@ impl From<CH2_A> for bool {
 #[doc = "Field `CH2` reader - Channel 2 enable clear register. Writing 0 has no effect."]
 pub struct CH2_R(crate::FieldReader<bool, CH2_A>);
 impl CH2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH2_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +324,7 @@ impl From<CH3_A> for bool {
 #[doc = "Field `CH3` reader - Channel 3 enable clear register. Writing 0 has no effect."]
 pub struct CH3_R(crate::FieldReader<bool, CH3_A>);
 impl CH3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH3_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +415,7 @@ impl From<CH4_A> for bool {
 #[doc = "Field `CH4` reader - Channel 4 enable clear register. Writing 0 has no effect."]
 pub struct CH4_R(crate::FieldReader<bool, CH4_A>);
 impl CH4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH4_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +506,7 @@ impl From<CH5_A> for bool {
 #[doc = "Field `CH5` reader - Channel 5 enable clear register. Writing 0 has no effect."]
 pub struct CH5_R(crate::FieldReader<bool, CH5_A>);
 impl CH5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH5_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +597,7 @@ impl From<CH6_A> for bool {
 #[doc = "Field `CH6` reader - Channel 6 enable clear register. Writing 0 has no effect."]
 pub struct CH6_R(crate::FieldReader<bool, CH6_A>);
 impl CH6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH6_R(crate::FieldReader::new(bits))
     }
@@ -681,6 +688,7 @@ impl From<CH7_A> for bool {
 #[doc = "Field `CH7` reader - Channel 7 enable clear register. Writing 0 has no effect."]
 pub struct CH7_R(crate::FieldReader<bool, CH7_A>);
 impl CH7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH7_R(crate::FieldReader::new(bits))
     }
@@ -771,6 +779,7 @@ impl From<CH8_A> for bool {
 #[doc = "Field `CH8` reader - Channel 8 enable clear register. Writing 0 has no effect."]
 pub struct CH8_R(crate::FieldReader<bool, CH8_A>);
 impl CH8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH8_R(crate::FieldReader::new(bits))
     }
@@ -861,6 +870,7 @@ impl From<CH9_A> for bool {
 #[doc = "Field `CH9` reader - Channel 9 enable clear register. Writing 0 has no effect."]
 pub struct CH9_R(crate::FieldReader<bool, CH9_A>);
 impl CH9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH9_R(crate::FieldReader::new(bits))
     }
@@ -951,6 +961,7 @@ impl From<CH10_A> for bool {
 #[doc = "Field `CH10` reader - Channel 10 enable clear register. Writing 0 has no effect."]
 pub struct CH10_R(crate::FieldReader<bool, CH10_A>);
 impl CH10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH10_R(crate::FieldReader::new(bits))
     }
@@ -1041,6 +1052,7 @@ impl From<CH11_A> for bool {
 #[doc = "Field `CH11` reader - Channel 11 enable clear register. Writing 0 has no effect."]
 pub struct CH11_R(crate::FieldReader<bool, CH11_A>);
 impl CH11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH11_R(crate::FieldReader::new(bits))
     }
@@ -1131,6 +1143,7 @@ impl From<CH12_A> for bool {
 #[doc = "Field `CH12` reader - Channel 12 enable clear register. Writing 0 has no effect."]
 pub struct CH12_R(crate::FieldReader<bool, CH12_A>);
 impl CH12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH12_R(crate::FieldReader::new(bits))
     }
@@ -1221,6 +1234,7 @@ impl From<CH13_A> for bool {
 #[doc = "Field `CH13` reader - Channel 13 enable clear register. Writing 0 has no effect."]
 pub struct CH13_R(crate::FieldReader<bool, CH13_A>);
 impl CH13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH13_R(crate::FieldReader::new(bits))
     }
@@ -1311,6 +1325,7 @@ impl From<CH14_A> for bool {
 #[doc = "Field `CH14` reader - Channel 14 enable clear register. Writing 0 has no effect."]
 pub struct CH14_R(crate::FieldReader<bool, CH14_A>);
 impl CH14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH14_R(crate::FieldReader::new(bits))
     }
@@ -1401,6 +1416,7 @@ impl From<CH15_A> for bool {
 #[doc = "Field `CH15` reader - Channel 15 enable clear register. Writing 0 has no effect."]
 pub struct CH15_R(crate::FieldReader<bool, CH15_A>);
 impl CH15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH15_R(crate::FieldReader::new(bits))
     }

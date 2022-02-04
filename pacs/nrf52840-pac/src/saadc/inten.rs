@@ -51,6 +51,7 @@ impl From<STARTED_A> for bool {
 #[doc = "Field `STARTED` reader - Enable or disable interrupt for STARTED event"]
 pub struct STARTED_R(crate::FieldReader<bool, STARTED_A>);
 impl STARTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STARTED_R(crate::FieldReader::new(bits))
     }
@@ -134,6 +135,7 @@ impl From<END_A> for bool {
 #[doc = "Field `END` reader - Enable or disable interrupt for END event"]
 pub struct END_R(crate::FieldReader<bool, END_A>);
 impl END_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         END_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +219,7 @@ impl From<DONE_A> for bool {
 #[doc = "Field `DONE` reader - Enable or disable interrupt for DONE event"]
 pub struct DONE_R(crate::FieldReader<bool, DONE_A>);
 impl DONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DONE_R(crate::FieldReader::new(bits))
     }
@@ -300,6 +303,7 @@ impl From<RESULTDONE_A> for bool {
 #[doc = "Field `RESULTDONE` reader - Enable or disable interrupt for RESULTDONE event"]
 pub struct RESULTDONE_R(crate::FieldReader<bool, RESULTDONE_A>);
 impl RESULTDONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESULTDONE_R(crate::FieldReader::new(bits))
     }
@@ -383,6 +387,7 @@ impl From<CALIBRATEDONE_A> for bool {
 #[doc = "Field `CALIBRATEDONE` reader - Enable or disable interrupt for CALIBRATEDONE event"]
 pub struct CALIBRATEDONE_R(crate::FieldReader<bool, CALIBRATEDONE_A>);
 impl CALIBRATEDONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CALIBRATEDONE_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +471,7 @@ impl From<STOPPED_A> for bool {
 #[doc = "Field `STOPPED` reader - Enable or disable interrupt for STOPPED event"]
 pub struct STOPPED_R(crate::FieldReader<bool, STOPPED_A>);
 impl STOPPED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STOPPED_R(crate::FieldReader::new(bits))
     }
@@ -549,6 +555,7 @@ impl From<CH0LIMITH_A> for bool {
 #[doc = "Field `CH0LIMITH` reader - Enable or disable interrupt for CH\\[0\\].LIMITH event"]
 pub struct CH0LIMITH_R(crate::FieldReader<bool, CH0LIMITH_A>);
 impl CH0LIMITH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH0LIMITH_R(crate::FieldReader::new(bits))
     }
@@ -632,6 +639,7 @@ impl From<CH0LIMITL_A> for bool {
 #[doc = "Field `CH0LIMITL` reader - Enable or disable interrupt for CH\\[0\\].LIMITL event"]
 pub struct CH0LIMITL_R(crate::FieldReader<bool, CH0LIMITL_A>);
 impl CH0LIMITL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH0LIMITL_R(crate::FieldReader::new(bits))
     }
@@ -715,6 +723,7 @@ impl From<CH1LIMITH_A> for bool {
 #[doc = "Field `CH1LIMITH` reader - Enable or disable interrupt for CH\\[1\\].LIMITH event"]
 pub struct CH1LIMITH_R(crate::FieldReader<bool, CH1LIMITH_A>);
 impl CH1LIMITH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH1LIMITH_R(crate::FieldReader::new(bits))
     }
@@ -798,6 +807,7 @@ impl From<CH1LIMITL_A> for bool {
 #[doc = "Field `CH1LIMITL` reader - Enable or disable interrupt for CH\\[1\\].LIMITL event"]
 pub struct CH1LIMITL_R(crate::FieldReader<bool, CH1LIMITL_A>);
 impl CH1LIMITL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH1LIMITL_R(crate::FieldReader::new(bits))
     }
@@ -881,6 +891,7 @@ impl From<CH2LIMITH_A> for bool {
 #[doc = "Field `CH2LIMITH` reader - Enable or disable interrupt for CH\\[2\\].LIMITH event"]
 pub struct CH2LIMITH_R(crate::FieldReader<bool, CH2LIMITH_A>);
 impl CH2LIMITH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH2LIMITH_R(crate::FieldReader::new(bits))
     }
@@ -964,6 +975,7 @@ impl From<CH2LIMITL_A> for bool {
 #[doc = "Field `CH2LIMITL` reader - Enable or disable interrupt for CH\\[2\\].LIMITL event"]
 pub struct CH2LIMITL_R(crate::FieldReader<bool, CH2LIMITL_A>);
 impl CH2LIMITL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH2LIMITL_R(crate::FieldReader::new(bits))
     }
@@ -1047,6 +1059,7 @@ impl From<CH3LIMITH_A> for bool {
 #[doc = "Field `CH3LIMITH` reader - Enable or disable interrupt for CH\\[3\\].LIMITH event"]
 pub struct CH3LIMITH_R(crate::FieldReader<bool, CH3LIMITH_A>);
 impl CH3LIMITH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH3LIMITH_R(crate::FieldReader::new(bits))
     }
@@ -1130,6 +1143,7 @@ impl From<CH3LIMITL_A> for bool {
 #[doc = "Field `CH3LIMITL` reader - Enable or disable interrupt for CH\\[3\\].LIMITL event"]
 pub struct CH3LIMITL_R(crate::FieldReader<bool, CH3LIMITL_A>);
 impl CH3LIMITL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH3LIMITL_R(crate::FieldReader::new(bits))
     }
@@ -1213,6 +1227,7 @@ impl From<CH4LIMITH_A> for bool {
 #[doc = "Field `CH4LIMITH` reader - Enable or disable interrupt for CH\\[4\\].LIMITH event"]
 pub struct CH4LIMITH_R(crate::FieldReader<bool, CH4LIMITH_A>);
 impl CH4LIMITH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH4LIMITH_R(crate::FieldReader::new(bits))
     }
@@ -1296,6 +1311,7 @@ impl From<CH4LIMITL_A> for bool {
 #[doc = "Field `CH4LIMITL` reader - Enable or disable interrupt for CH\\[4\\].LIMITL event"]
 pub struct CH4LIMITL_R(crate::FieldReader<bool, CH4LIMITL_A>);
 impl CH4LIMITL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH4LIMITL_R(crate::FieldReader::new(bits))
     }
@@ -1379,6 +1395,7 @@ impl From<CH5LIMITH_A> for bool {
 #[doc = "Field `CH5LIMITH` reader - Enable or disable interrupt for CH\\[5\\].LIMITH event"]
 pub struct CH5LIMITH_R(crate::FieldReader<bool, CH5LIMITH_A>);
 impl CH5LIMITH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH5LIMITH_R(crate::FieldReader::new(bits))
     }
@@ -1462,6 +1479,7 @@ impl From<CH5LIMITL_A> for bool {
 #[doc = "Field `CH5LIMITL` reader - Enable or disable interrupt for CH\\[5\\].LIMITL event"]
 pub struct CH5LIMITL_R(crate::FieldReader<bool, CH5LIMITL_A>);
 impl CH5LIMITL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH5LIMITL_R(crate::FieldReader::new(bits))
     }
@@ -1545,6 +1563,7 @@ impl From<CH6LIMITH_A> for bool {
 #[doc = "Field `CH6LIMITH` reader - Enable or disable interrupt for CH\\[6\\].LIMITH event"]
 pub struct CH6LIMITH_R(crate::FieldReader<bool, CH6LIMITH_A>);
 impl CH6LIMITH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH6LIMITH_R(crate::FieldReader::new(bits))
     }
@@ -1628,6 +1647,7 @@ impl From<CH6LIMITL_A> for bool {
 #[doc = "Field `CH6LIMITL` reader - Enable or disable interrupt for CH\\[6\\].LIMITL event"]
 pub struct CH6LIMITL_R(crate::FieldReader<bool, CH6LIMITL_A>);
 impl CH6LIMITL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH6LIMITL_R(crate::FieldReader::new(bits))
     }
@@ -1711,6 +1731,7 @@ impl From<CH7LIMITH_A> for bool {
 #[doc = "Field `CH7LIMITH` reader - Enable or disable interrupt for CH\\[7\\].LIMITH event"]
 pub struct CH7LIMITH_R(crate::FieldReader<bool, CH7LIMITH_A>);
 impl CH7LIMITH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH7LIMITH_R(crate::FieldReader::new(bits))
     }
@@ -1794,6 +1815,7 @@ impl From<CH7LIMITL_A> for bool {
 #[doc = "Field `CH7LIMITL` reader - Enable or disable interrupt for CH\\[7\\].LIMITL event"]
 pub struct CH7LIMITL_R(crate::FieldReader<bool, CH7LIMITL_A>);
 impl CH7LIMITL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CH7LIMITL_R(crate::FieldReader::new(bits))
     }

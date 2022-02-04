@@ -51,6 +51,7 @@ impl From<EVENTS_ENDECB_A> for bool {
 #[doc = "Field `EVENTS_ENDECB` reader - ECB block encrypt complete"]
 pub struct EVENTS_ENDECB_R(crate::FieldReader<bool, EVENTS_ENDECB_A>);
 impl EVENTS_ENDECB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_ENDECB_R(crate::FieldReader::new(bits))
     }

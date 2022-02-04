@@ -51,6 +51,7 @@ impl From<EVENTS_UNDERFLOW_A> for bool {
 #[doc = "Field `EVENTS_UNDERFLOW` reader - An FPUUFC exception triggered by a floating-point underflow has occurred in the FPU"]
 pub struct EVENTS_UNDERFLOW_R(crate::FieldReader<bool, EVENTS_UNDERFLOW_A>);
 impl EVENTS_UNDERFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENTS_UNDERFLOW_R(crate::FieldReader::new(bits))
     }

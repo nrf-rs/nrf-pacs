@@ -56,6 +56,7 @@ impl From<MODULATIONCTRL_A> for u8 {
 #[doc = "Field `MODULATIONCTRL` reader - Configuration of modulation control."]
 pub struct MODULATIONCTRL_R(crate::FieldReader<u8, MODULATIONCTRL_A>);
 impl MODULATIONCTRL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODULATIONCTRL_R(crate::FieldReader::new(bits))
     }
