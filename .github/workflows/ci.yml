@@ -22,6 +22,8 @@ jobs:
       run: cargo test
       env:
         RUSTFLAGS: --deny warnings
+    - name: Dry Run Publish
+      run: cargo xtask publish --dry-run
 
   ci:
     if: ${{ success() }}

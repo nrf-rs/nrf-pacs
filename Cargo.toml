@@ -1,9 +1,18 @@
 [workspace]
-members = [
-  "xtask",
-  "pacs/*",
-]
+members = ["xtask", "pacs/*"]
 default-members = ["xtask"]
+
+[workspace.package]
+version = "0.11.0"
+keywords = ["no-std", "arm", "cortex-m", "nrf", "peripherals"]
+license = "0BSD"
+repository = "https://github.com/nrf-rs/nrf-pacs"
+edition = "2018"
+
+[workspace.dependencies]
+cortex-m = "0.7.3"
+vcell = "0.1.3"
+cortex-m-rt = ">=0.6.15,<0.8"
 
 # meta-dependencies (upgrade as needed, they apply to all PACs):
 # @svd2rust = 0.21.0
