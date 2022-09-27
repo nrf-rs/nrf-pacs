@@ -13,6 +13,8 @@ impl From<crate::R<READYNEXT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `READYNEXT` reader - NVMC can accept a new write operation"]
+pub type READYNEXT_R = crate::BitReader<READYNEXT_A>;
 #[doc = "NVMC can accept a new write operation\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READYNEXT_A {
@@ -27,14 +29,8 @@ impl From<READYNEXT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `READYNEXT` reader - NVMC can accept a new write operation"]
-pub struct READYNEXT_R(crate::FieldReader<bool, READYNEXT_A>);
 impl READYNEXT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        READYNEXT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> READYNEXT_A {
         match self.bits {
@@ -45,26 +41,19 @@ impl READYNEXT_R {
     #[doc = "Checks if the value of the field is `BUSY`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        **self == READYNEXT_A::BUSY
+        *self == READYNEXT_A::BUSY
     }
     #[doc = "Checks if the value of the field is `READY`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        **self == READYNEXT_A::READY
-    }
-}
-impl core::ops::Deref for READYNEXT_R {
-    type Target = crate::FieldReader<bool, READYNEXT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == READYNEXT_A::READY
     }
 }
 impl R {
     #[doc = "Bit 0 - NVMC can accept a new write operation"]
     #[inline(always)]
     pub fn readynext(&self) -> READYNEXT_R {
-        READYNEXT_R::new((self.bits & 0x01) != 0)
+        READYNEXT_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Ready flag\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [readynext](index.html) module"]

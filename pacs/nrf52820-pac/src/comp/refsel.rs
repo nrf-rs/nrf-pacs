@@ -34,6 +34,8 @@ impl From<crate::W<REFSEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `REFSEL` reader - Reference select"]
+pub type REFSEL_R = crate::FieldReader<u8, REFSEL_A>;
 #[doc = "Reference select\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -55,14 +57,8 @@ impl From<REFSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `REFSEL` reader - Reference select"]
-pub struct REFSEL_R(crate::FieldReader<u8, REFSEL_A>);
 impl REFSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        REFSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<REFSEL_A> {
         match self.bits {
@@ -77,46 +73,32 @@ impl REFSEL_R {
     #[doc = "Checks if the value of the field is `INT1V2`"]
     #[inline(always)]
     pub fn is_int1v2(&self) -> bool {
-        **self == REFSEL_A::INT1V2
+        *self == REFSEL_A::INT1V2
     }
     #[doc = "Checks if the value of the field is `INT1V8`"]
     #[inline(always)]
     pub fn is_int1v8(&self) -> bool {
-        **self == REFSEL_A::INT1V8
+        *self == REFSEL_A::INT1V8
     }
     #[doc = "Checks if the value of the field is `INT2V4`"]
     #[inline(always)]
     pub fn is_int2v4(&self) -> bool {
-        **self == REFSEL_A::INT2V4
+        *self == REFSEL_A::INT2V4
     }
     #[doc = "Checks if the value of the field is `VDD`"]
     #[inline(always)]
     pub fn is_vdd(&self) -> bool {
-        **self == REFSEL_A::VDD
+        *self == REFSEL_A::VDD
     }
     #[doc = "Checks if the value of the field is `AREF`"]
     #[inline(always)]
     pub fn is_aref(&self) -> bool {
-        **self == REFSEL_A::AREF
-    }
-}
-impl core::ops::Deref for REFSEL_R {
-    type Target = crate::FieldReader<u8, REFSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REFSEL_A::AREF
     }
 }
 #[doc = "Field `REFSEL` writer - Reference select"]
-pub struct REFSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REFSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REFSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type REFSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REFSEL_SPEC, u8, REFSEL_A, 3, O>;
+impl<'a, const O: u8> REFSEL_W<'a, O> {
     #[doc = "VREF = internal 1.2 V reference (VDD &gt;= 1.7 V)"]
     #[inline(always)]
     pub fn int1v2(self) -> &'a mut W {
@@ -142,25 +124,19 @@ impl<'a> REFSEL_W<'a> {
     pub fn aref(self) -> &'a mut W {
         self.variant(REFSEL_A::AREF)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Reference select"]
     #[inline(always)]
     pub fn refsel(&self) -> REFSEL_R {
-        REFSEL_R::new((self.bits & 0x07) as u8)
+        REFSEL_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Reference select"]
     #[inline(always)]
-    pub fn refsel(&mut self) -> REFSEL_W {
-        REFSEL_W { w: self }
+    pub fn refsel(&mut self) -> REFSEL_W<0> {
+        REFSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

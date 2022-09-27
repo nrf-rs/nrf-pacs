@@ -13,6 +13,9 @@ impl From<crate::R<PIDR1_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `PART_1` reader - Bits\\[11:8\\]
+of the 12-bit part number of the component. The designer of the component assigns this part number."]
+pub type PART_1_R = crate::FieldReader<u8, PART_1_A>;
 #[doc = "Bits\\[11:8\\]
 of the 12-bit part number of the component. The designer of the component assigns this part number.\n\nValue on reset: 13"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -20,7 +23,7 @@ of the 12-bit part number of the component. The designer of the component assign
 pub enum PART_1_A {
     #[doc = "13: Indicates bits\\[11:8\\]
 of the part number of the component."]
-    PARTNUMBERH = 13,
+    PARTNUMBER_H = 13,
 }
 impl From<PART_1_A> for u8 {
     #[inline(always)]
@@ -28,35 +31,23 @@ impl From<PART_1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PART_1` reader - Bits\\[11:8\\]
-of the 12-bit part number of the component. The designer of the component assigns this part number."]
-pub struct PART_1_R(crate::FieldReader<u8, PART_1_A>);
 impl PART_1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PART_1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PART_1_A> {
         match self.bits {
-            13 => Some(PART_1_A::PARTNUMBERH),
+            13 => Some(PART_1_A::PARTNUMBER_H),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `PARTNUMBERH`"]
+    #[doc = "Checks if the value of the field is `PARTNUMBER_H`"]
     #[inline(always)]
     pub fn is_partnumber_h(&self) -> bool {
-        **self == PART_1_A::PARTNUMBERH
+        *self == PART_1_A::PARTNUMBER_H
     }
 }
-impl core::ops::Deref for PART_1_R {
-    type Target = crate::FieldReader<u8, PART_1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `DES_0` reader - Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component."]
+pub type DES_0_R = crate::FieldReader<u8, DES_0_A>;
 #[doc = "Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component.\n\nValue on reset: 11"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -71,14 +62,8 @@ impl From<DES_0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DES_0` reader - Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component."]
-pub struct DES_0_R(crate::FieldReader<u8, DES_0_A>);
 impl DES_0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DES_0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DES_0_A> {
         match self.bits {
@@ -89,14 +74,7 @@ impl DES_0_R {
     #[doc = "Checks if the value of the field is `ARM`"]
     #[inline(always)]
     pub fn is_arm(&self) -> bool {
-        **self == DES_0_A::ARM
-    }
-}
-impl core::ops::Deref for DES_0_R {
-    type Target = crate::FieldReader<u8, DES_0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DES_0_A::ARM
     }
 }
 impl R {

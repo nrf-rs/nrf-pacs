@@ -34,6 +34,8 @@ impl From<crate::W<SCK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PSELSCK` reader - Pin number configuration for SPI SCK signal"]
+pub type PSELSCK_R = crate::FieldReader<u32, PSELSCK_A>;
 #[doc = "Pin number configuration for SPI SCK signal\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -47,14 +49,8 @@ impl From<PSELSCK_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `PSELSCK` reader - Pin number configuration for SPI SCK signal"]
-pub struct PSELSCK_R(crate::FieldReader<u32, PSELSCK_A>);
 impl PSELSCK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PSELSCK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PSELSCK_A> {
         match self.bits {
@@ -65,36 +61,16 @@ impl PSELSCK_R {
     #[doc = "Checks if the value of the field is `DISCONNECTED`"]
     #[inline(always)]
     pub fn is_disconnected(&self) -> bool {
-        **self == PSELSCK_A::DISCONNECTED
-    }
-}
-impl core::ops::Deref for PSELSCK_R {
-    type Target = crate::FieldReader<u32, PSELSCK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PSELSCK_A::DISCONNECTED
     }
 }
 #[doc = "Field `PSELSCK` writer - Pin number configuration for SPI SCK signal"]
-pub struct PSELSCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSELSCK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PSELSCK_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PSELSCK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCK_SPEC, u32, PSELSCK_A, 32, O>;
+impl<'a, const O: u8> PSELSCK_W<'a, O> {
     #[doc = "Disconnect"]
     #[inline(always)]
     pub fn disconnected(self) -> &'a mut W {
         self.variant(PSELSCK_A::DISCONNECTED)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
     }
 }
 impl R {
@@ -107,8 +83,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Pin number configuration for SPI SCK signal"]
     #[inline(always)]
-    pub fn pselsck(&mut self) -> PSELSCK_W {
-        PSELSCK_W { w: self }
+    pub fn pselsck(&mut self) -> PSELSCK_W<0> {
+        PSELSCK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

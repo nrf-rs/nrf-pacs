@@ -13,6 +13,8 @@ impl From<crate::R<RESULT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `RESULT` reader - Result of last compare. Decision point SAMPLE task."]
+pub type RESULT_R = crate::BitReader<RESULT_A>;
 #[doc = "Result of last compare. Decision point SAMPLE task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESULT_A {
@@ -27,14 +29,8 @@ impl From<RESULT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESULT` reader - Result of last compare. Decision point SAMPLE task."]
-pub struct RESULT_R(crate::FieldReader<bool, RESULT_A>);
 impl RESULT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RESULT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESULT_A {
         match self.bits {
@@ -45,26 +41,19 @@ impl RESULT_R {
     #[doc = "Checks if the value of the field is `BELOW`"]
     #[inline(always)]
     pub fn is_below(&self) -> bool {
-        **self == RESULT_A::BELOW
+        *self == RESULT_A::BELOW
     }
     #[doc = "Checks if the value of the field is `ABOVE`"]
     #[inline(always)]
     pub fn is_above(&self) -> bool {
-        **self == RESULT_A::ABOVE
-    }
-}
-impl core::ops::Deref for RESULT_R {
-    type Target = crate::FieldReader<bool, RESULT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RESULT_A::ABOVE
     }
 }
 impl R {
     #[doc = "Bit 0 - Result of last compare. Decision point SAMPLE task."]
     #[inline(always)]
     pub fn result(&self) -> RESULT_R {
-        RESULT_R::new((self.bits & 0x01) != 0)
+        RESULT_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Compare result\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [result](index.html) module"]

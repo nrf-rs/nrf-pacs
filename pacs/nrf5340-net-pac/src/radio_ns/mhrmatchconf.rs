@@ -35,32 +35,10 @@ impl From<crate::W<MHRMATCHCONF_SPEC>> for W {
     }
 }
 #[doc = "Field `MHRMATCHCONF` reader - Search pattern configuration"]
-pub struct MHRMATCHCONF_R(crate::FieldReader<u32, u32>);
-impl MHRMATCHCONF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        MHRMATCHCONF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MHRMATCHCONF_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MHRMATCHCONF_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `MHRMATCHCONF` writer - Search pattern configuration"]
-pub struct MHRMATCHCONF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MHRMATCHCONF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type MHRMATCHCONF_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, MHRMATCHCONF_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Search pattern configuration"]
     #[inline(always)]
@@ -71,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Search pattern configuration"]
     #[inline(always)]
-    pub fn mhrmatchconf(&mut self) -> MHRMATCHCONF_W {
-        MHRMATCHCONF_W { w: self }
+    pub fn mhrmatchconf(&mut self) -> MHRMATCHCONF_W<0> {
+        MHRMATCHCONF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

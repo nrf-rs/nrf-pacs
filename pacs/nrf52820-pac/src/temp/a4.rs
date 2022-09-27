@@ -35,32 +35,9 @@ impl From<crate::W<A4_SPEC>> for W {
     }
 }
 #[doc = "Field `A4` reader - Slope of fifth piecewise linear function"]
-pub struct A4_R(crate::FieldReader<u16, u16>);
-impl A4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        A4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for A4_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type A4_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `A4` writer - Slope of fifth piecewise linear function"]
-pub struct A4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> A4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type A4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, A4_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - Slope of fifth piecewise linear function"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Slope of fifth piecewise linear function"]
     #[inline(always)]
-    pub fn a4(&mut self) -> A4_W {
-        A4_W { w: self }
+    pub fn a4(&mut self) -> A4_W<0> {
+        A4_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

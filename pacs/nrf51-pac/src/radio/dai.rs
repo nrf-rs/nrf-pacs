@@ -15,26 +15,13 @@ impl From<crate::R<DAI_SPEC>> for R {
 }
 #[doc = "Field `DAI` reader - Index (n) of device address (see DAB\\[n\\]
 and DAP\\[n\\]) that obtained an address match."]
-pub struct DAI_R(crate::FieldReader<u8, u8>);
-impl DAI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DAI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAI_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAI_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:2 - Index (n) of device address (see DAB\\[n\\]
 and DAP\\[n\\]) that obtained an address match."]
     #[inline(always)]
     pub fn dai(&self) -> DAI_R {
-        DAI_R::new((self.bits & 0x07) as u8)
+        DAI_R::new((self.bits & 7) as u8)
     }
 }
 #[doc = "Device address match index.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dai](index.html) module"]

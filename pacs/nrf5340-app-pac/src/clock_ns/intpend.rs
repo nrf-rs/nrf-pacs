@@ -13,11 +13,13 @@ impl From<crate::R<INTPEND_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `HFCLKSTARTED` reader - Read pending status of interrupt for event HFCLKSTARTED"]
+pub type HFCLKSTARTED_R = crate::BitReader<HFCLKSTARTED_A>;
 #[doc = "Read pending status of interrupt for event HFCLKSTARTED\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HFCLKSTARTED_A {
     #[doc = "0: Read: Not pending"]
-    NOTPENDING = 0,
+    NOT_PENDING = 0,
     #[doc = "1: Read: Pending"]
     PENDING = 1,
 }
@@ -27,44 +29,33 @@ impl From<HFCLKSTARTED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HFCLKSTARTED` reader - Read pending status of interrupt for event HFCLKSTARTED"]
-pub struct HFCLKSTARTED_R(crate::FieldReader<bool, HFCLKSTARTED_A>);
 impl HFCLKSTARTED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HFCLKSTARTED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFCLKSTARTED_A {
         match self.bits {
-            false => HFCLKSTARTED_A::NOTPENDING,
+            false => HFCLKSTARTED_A::NOT_PENDING,
             true => HFCLKSTARTED_A::PENDING,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTPENDING`"]
+    #[doc = "Checks if the value of the field is `NOT_PENDING`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        **self == HFCLKSTARTED_A::NOTPENDING
+        *self == HFCLKSTARTED_A::NOT_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == HFCLKSTARTED_A::PENDING
+        *self == HFCLKSTARTED_A::PENDING
     }
 }
-impl core::ops::Deref for HFCLKSTARTED_R {
-    type Target = crate::FieldReader<bool, HFCLKSTARTED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LFCLKSTARTED` reader - Read pending status of interrupt for event LFCLKSTARTED"]
+pub type LFCLKSTARTED_R = crate::BitReader<LFCLKSTARTED_A>;
 #[doc = "Read pending status of interrupt for event LFCLKSTARTED\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LFCLKSTARTED_A {
     #[doc = "0: Read: Not pending"]
-    NOTPENDING = 0,
+    NOT_PENDING = 0,
     #[doc = "1: Read: Pending"]
     PENDING = 1,
 }
@@ -74,44 +65,33 @@ impl From<LFCLKSTARTED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LFCLKSTARTED` reader - Read pending status of interrupt for event LFCLKSTARTED"]
-pub struct LFCLKSTARTED_R(crate::FieldReader<bool, LFCLKSTARTED_A>);
 impl LFCLKSTARTED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LFCLKSTARTED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFCLKSTARTED_A {
         match self.bits {
-            false => LFCLKSTARTED_A::NOTPENDING,
+            false => LFCLKSTARTED_A::NOT_PENDING,
             true => LFCLKSTARTED_A::PENDING,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTPENDING`"]
+    #[doc = "Checks if the value of the field is `NOT_PENDING`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        **self == LFCLKSTARTED_A::NOTPENDING
+        *self == LFCLKSTARTED_A::NOT_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == LFCLKSTARTED_A::PENDING
+        *self == LFCLKSTARTED_A::PENDING
     }
 }
-impl core::ops::Deref for LFCLKSTARTED_R {
-    type Target = crate::FieldReader<bool, LFCLKSTARTED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `DONE` reader - Read pending status of interrupt for event DONE"]
+pub type DONE_R = crate::BitReader<DONE_A>;
 #[doc = "Read pending status of interrupt for event DONE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DONE_A {
     #[doc = "0: Read: Not pending"]
-    NOTPENDING = 0,
+    NOT_PENDING = 0,
     #[doc = "1: Read: Pending"]
     PENDING = 1,
 }
@@ -121,44 +101,33 @@ impl From<DONE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DONE` reader - Read pending status of interrupt for event DONE"]
-pub struct DONE_R(crate::FieldReader<bool, DONE_A>);
 impl DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DONE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DONE_A {
         match self.bits {
-            false => DONE_A::NOTPENDING,
+            false => DONE_A::NOT_PENDING,
             true => DONE_A::PENDING,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTPENDING`"]
+    #[doc = "Checks if the value of the field is `NOT_PENDING`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        **self == DONE_A::NOTPENDING
+        *self == DONE_A::NOT_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == DONE_A::PENDING
+        *self == DONE_A::PENDING
     }
 }
-impl core::ops::Deref for DONE_R {
-    type Target = crate::FieldReader<bool, DONE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `HFCLKAUDIOSTARTED` reader - Read pending status of interrupt for event HFCLKAUDIOSTARTED"]
+pub type HFCLKAUDIOSTARTED_R = crate::BitReader<HFCLKAUDIOSTARTED_A>;
 #[doc = "Read pending status of interrupt for event HFCLKAUDIOSTARTED\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HFCLKAUDIOSTARTED_A {
     #[doc = "0: Read: Not pending"]
-    NOTPENDING = 0,
+    NOT_PENDING = 0,
     #[doc = "1: Read: Pending"]
     PENDING = 1,
 }
@@ -168,44 +137,33 @@ impl From<HFCLKAUDIOSTARTED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HFCLKAUDIOSTARTED` reader - Read pending status of interrupt for event HFCLKAUDIOSTARTED"]
-pub struct HFCLKAUDIOSTARTED_R(crate::FieldReader<bool, HFCLKAUDIOSTARTED_A>);
 impl HFCLKAUDIOSTARTED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HFCLKAUDIOSTARTED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFCLKAUDIOSTARTED_A {
         match self.bits {
-            false => HFCLKAUDIOSTARTED_A::NOTPENDING,
+            false => HFCLKAUDIOSTARTED_A::NOT_PENDING,
             true => HFCLKAUDIOSTARTED_A::PENDING,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTPENDING`"]
+    #[doc = "Checks if the value of the field is `NOT_PENDING`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        **self == HFCLKAUDIOSTARTED_A::NOTPENDING
+        *self == HFCLKAUDIOSTARTED_A::NOT_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == HFCLKAUDIOSTARTED_A::PENDING
+        *self == HFCLKAUDIOSTARTED_A::PENDING
     }
 }
-impl core::ops::Deref for HFCLKAUDIOSTARTED_R {
-    type Target = crate::FieldReader<bool, HFCLKAUDIOSTARTED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `HFCLK192MSTARTED` reader - Read pending status of interrupt for event HFCLK192MSTARTED"]
+pub type HFCLK192MSTARTED_R = crate::BitReader<HFCLK192MSTARTED_A>;
 #[doc = "Read pending status of interrupt for event HFCLK192MSTARTED\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HFCLK192MSTARTED_A {
     #[doc = "0: Read: Not pending"]
-    NOTPENDING = 0,
+    NOT_PENDING = 0,
     #[doc = "1: Read: Pending"]
     PENDING = 1,
 }
@@ -215,64 +173,51 @@ impl From<HFCLK192MSTARTED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HFCLK192MSTARTED` reader - Read pending status of interrupt for event HFCLK192MSTARTED"]
-pub struct HFCLK192MSTARTED_R(crate::FieldReader<bool, HFCLK192MSTARTED_A>);
 impl HFCLK192MSTARTED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HFCLK192MSTARTED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFCLK192MSTARTED_A {
         match self.bits {
-            false => HFCLK192MSTARTED_A::NOTPENDING,
+            false => HFCLK192MSTARTED_A::NOT_PENDING,
             true => HFCLK192MSTARTED_A::PENDING,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTPENDING`"]
+    #[doc = "Checks if the value of the field is `NOT_PENDING`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        **self == HFCLK192MSTARTED_A::NOTPENDING
+        *self == HFCLK192MSTARTED_A::NOT_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == HFCLK192MSTARTED_A::PENDING
-    }
-}
-impl core::ops::Deref for HFCLK192MSTARTED_R {
-    type Target = crate::FieldReader<bool, HFCLK192MSTARTED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HFCLK192MSTARTED_A::PENDING
     }
 }
 impl R {
     #[doc = "Bit 0 - Read pending status of interrupt for event HFCLKSTARTED"]
     #[inline(always)]
     pub fn hfclkstarted(&self) -> HFCLKSTARTED_R {
-        HFCLKSTARTED_R::new((self.bits & 0x01) != 0)
+        HFCLKSTARTED_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Read pending status of interrupt for event LFCLKSTARTED"]
     #[inline(always)]
     pub fn lfclkstarted(&self) -> LFCLKSTARTED_R {
-        LFCLKSTARTED_R::new(((self.bits >> 1) & 0x01) != 0)
+        LFCLKSTARTED_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 7 - Read pending status of interrupt for event DONE"]
     #[inline(always)]
     pub fn done(&self) -> DONE_R {
-        DONE_R::new(((self.bits >> 7) & 0x01) != 0)
+        DONE_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Read pending status of interrupt for event HFCLKAUDIOSTARTED"]
     #[inline(always)]
     pub fn hfclkaudiostarted(&self) -> HFCLKAUDIOSTARTED_R {
-        HFCLKAUDIOSTARTED_R::new(((self.bits >> 8) & 0x01) != 0)
+        HFCLKAUDIOSTARTED_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Read pending status of interrupt for event HFCLK192MSTARTED"]
     #[inline(always)]
     pub fn hfclk192mstarted(&self) -> HFCLK192MSTARTED_R {
-        HFCLK192MSTARTED_R::new(((self.bits >> 9) & 0x01) != 0)
+        HFCLK192MSTARTED_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 #[doc = "Pending interrupts\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intpend](index.html) module"]

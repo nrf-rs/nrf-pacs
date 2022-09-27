@@ -35,32 +35,9 @@ impl From<crate::W<B2_SPEC>> for W {
     }
 }
 #[doc = "Field `B2` reader - y-intercept of third piecewise linear function"]
-pub struct B2_R(crate::FieldReader<u16, u16>);
-impl B2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        B2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for B2_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type B2_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `B2` writer - y-intercept of third piecewise linear function"]
-pub struct B2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> B2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type B2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, B2_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - y-intercept of third piecewise linear function"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - y-intercept of third piecewise linear function"]
     #[inline(always)]
-    pub fn b2(&mut self) -> B2_W {
-        B2_W { w: self }
+    pub fn b2(&mut self) -> B2_W<0> {
+        B2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

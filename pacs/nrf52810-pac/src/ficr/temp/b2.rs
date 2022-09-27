@@ -14,20 +14,7 @@ impl From<crate::R<B2_SPEC>> for R {
     }
 }
 #[doc = "Field `B` reader - B (y-intercept)"]
-pub struct B_R(crate::FieldReader<u16, u16>);
-impl B_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        B_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for B_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type B_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:13 - B (y-intercept)"]
     #[inline(always)]

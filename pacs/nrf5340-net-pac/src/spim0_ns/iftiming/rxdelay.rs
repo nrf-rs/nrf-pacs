@@ -35,44 +35,21 @@ impl From<crate::W<RXDELAY_SPEC>> for W {
     }
 }
 #[doc = "Field `RXDELAY` reader - Sample delay for input serial data on MISO. The value specifies the number of 64 MHz clock cycles (15.625 ns) delay from the the sampling edge of SCK (leading edge for CONFIG.CPHA = 0, trailing edge for CONFIG.CPHA = 1) until the input serial data is sampled. As en example, if RXDELAY = 0 and CONFIG.CPHA = 0, the input serial data is sampled on the rising edge of SCK."]
-pub struct RXDELAY_R(crate::FieldReader<u8, u8>);
-impl RXDELAY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RXDELAY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDELAY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDELAY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RXDELAY` writer - Sample delay for input serial data on MISO. The value specifies the number of 64 MHz clock cycles (15.625 ns) delay from the the sampling edge of SCK (leading edge for CONFIG.CPHA = 0, trailing edge for CONFIG.CPHA = 1) until the input serial data is sampled. As en example, if RXDELAY = 0 and CONFIG.CPHA = 0, the input serial data is sampled on the rising edge of SCK."]
-pub struct RXDELAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXDELAY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type RXDELAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RXDELAY_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - Sample delay for input serial data on MISO. The value specifies the number of 64 MHz clock cycles (15.625 ns) delay from the the sampling edge of SCK (leading edge for CONFIG.CPHA = 0, trailing edge for CONFIG.CPHA = 1) until the input serial data is sampled. As en example, if RXDELAY = 0 and CONFIG.CPHA = 0, the input serial data is sampled on the rising edge of SCK."]
     #[inline(always)]
     pub fn rxdelay(&self) -> RXDELAY_R {
-        RXDELAY_R::new((self.bits & 0x07) as u8)
+        RXDELAY_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Sample delay for input serial data on MISO. The value specifies the number of 64 MHz clock cycles (15.625 ns) delay from the the sampling edge of SCK (leading edge for CONFIG.CPHA = 0, trailing edge for CONFIG.CPHA = 1) until the input serial data is sampled. As en example, if RXDELAY = 0 and CONFIG.CPHA = 0, the input serial data is sampled on the rising edge of SCK."]
     #[inline(always)]
-    pub fn rxdelay(&mut self) -> RXDELAY_W {
-        RXDELAY_W { w: self }
+    pub fn rxdelay(&mut self) -> RXDELAY_W<0> {
+        RXDELAY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

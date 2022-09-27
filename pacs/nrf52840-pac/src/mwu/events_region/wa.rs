@@ -35,54 +35,21 @@ impl From<crate::W<WA_SPEC>> for W {
     }
 }
 #[doc = "Field `WA` reader - "]
-pub struct WA_R(crate::FieldReader<bool, bool>);
-impl WA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WA_R = crate::BitReader<bool>;
 #[doc = "Field `WA` writer - "]
-pub struct WA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type WA_W<'a, const O: u8> = crate::BitWriter<'a, u32, WA_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn wa(&self) -> WA_R {
-        WA_R::new((self.bits & 0x01) != 0)
+        WA_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn wa(&mut self) -> WA_W {
-        WA_W { w: self }
+    pub fn wa(&mut self) -> WA_W<0> {
+        WA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<TRACECONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TRACEPORTSPEED` reader - Speed of Trace Port clock. Note that the TRACECLK pin will output this clock divided by two."]
+pub type TRACEPORTSPEED_R = crate::FieldReader<u8, TRACEPORTSPEED_A>;
 #[doc = "Speed of Trace Port clock. Note that the TRACECLK pin will output this clock divided by two.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,14 +55,8 @@ impl From<TRACEPORTSPEED_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TRACEPORTSPEED` reader - Speed of Trace Port clock. Note that the TRACECLK pin will output this clock divided by two."]
-pub struct TRACEPORTSPEED_R(crate::FieldReader<u8, TRACEPORTSPEED_A>);
 impl TRACEPORTSPEED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TRACEPORTSPEED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRACEPORTSPEED_A {
         match self.bits {
@@ -74,41 +70,28 @@ impl TRACEPORTSPEED_R {
     #[doc = "Checks if the value of the field is `_32MHZ`"]
     #[inline(always)]
     pub fn is_32mhz(&self) -> bool {
-        **self == TRACEPORTSPEED_A::_32MHZ
+        *self == TRACEPORTSPEED_A::_32MHZ
     }
     #[doc = "Checks if the value of the field is `_16MHZ`"]
     #[inline(always)]
     pub fn is_16mhz(&self) -> bool {
-        **self == TRACEPORTSPEED_A::_16MHZ
+        *self == TRACEPORTSPEED_A::_16MHZ
     }
     #[doc = "Checks if the value of the field is `_8MHZ`"]
     #[inline(always)]
     pub fn is_8mhz(&self) -> bool {
-        **self == TRACEPORTSPEED_A::_8MHZ
+        *self == TRACEPORTSPEED_A::_8MHZ
     }
     #[doc = "Checks if the value of the field is `_4MHZ`"]
     #[inline(always)]
     pub fn is_4mhz(&self) -> bool {
-        **self == TRACEPORTSPEED_A::_4MHZ
-    }
-}
-impl core::ops::Deref for TRACEPORTSPEED_R {
-    type Target = crate::FieldReader<u8, TRACEPORTSPEED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRACEPORTSPEED_A::_4MHZ
     }
 }
 #[doc = "Field `TRACEPORTSPEED` writer - Speed of Trace Port clock. Note that the TRACECLK pin will output this clock divided by two."]
-pub struct TRACEPORTSPEED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRACEPORTSPEED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRACEPORTSPEED_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type TRACEPORTSPEED_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TRACECONFIG_SPEC, u8, TRACEPORTSPEED_A, 2, O>;
+impl<'a, const O: u8> TRACEPORTSPEED_W<'a, O> {
     #[doc = "32 MHz Trace Port clock (TRACECLK = 16 MHz)"]
     #[inline(always)]
     pub fn _32mhz(self) -> &'a mut W {
@@ -129,13 +112,9 @@ impl<'a> TRACEPORTSPEED_W<'a> {
     pub fn _4mhz(self) -> &'a mut W {
         self.variant(TRACEPORTSPEED_A::_4MHZ)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
+#[doc = "Field `TRACEMUX` reader - Pin multiplexing of trace signals."]
+pub type TRACEMUX_R = crate::FieldReader<u8, TRACEMUX_A>;
 #[doc = "Pin multiplexing of trace signals.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -153,14 +132,8 @@ impl From<TRACEMUX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TRACEMUX` reader - Pin multiplexing of trace signals."]
-pub struct TRACEMUX_R(crate::FieldReader<u8, TRACEMUX_A>);
 impl TRACEMUX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TRACEMUX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TRACEMUX_A> {
         match self.bits {
@@ -173,36 +146,23 @@ impl TRACEMUX_R {
     #[doc = "Checks if the value of the field is `GPIO`"]
     #[inline(always)]
     pub fn is_gpio(&self) -> bool {
-        **self == TRACEMUX_A::GPIO
+        *self == TRACEMUX_A::GPIO
     }
     #[doc = "Checks if the value of the field is `SERIAL`"]
     #[inline(always)]
     pub fn is_serial(&self) -> bool {
-        **self == TRACEMUX_A::SERIAL
+        *self == TRACEMUX_A::SERIAL
     }
     #[doc = "Checks if the value of the field is `PARALLEL`"]
     #[inline(always)]
     pub fn is_parallel(&self) -> bool {
-        **self == TRACEMUX_A::PARALLEL
-    }
-}
-impl core::ops::Deref for TRACEMUX_R {
-    type Target = crate::FieldReader<u8, TRACEMUX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRACEMUX_A::PARALLEL
     }
 }
 #[doc = "Field `TRACEMUX` writer - Pin multiplexing of trace signals."]
-pub struct TRACEMUX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRACEMUX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRACEMUX_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TRACEMUX_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TRACECONFIG_SPEC, u8, TRACEMUX_A, 2, O>;
+impl<'a, const O: u8> TRACEMUX_W<'a, O> {
     #[doc = "GPIOs multiplexed onto all trace-pins"]
     #[inline(always)]
     pub fn gpio(self) -> &'a mut W {
@@ -218,35 +178,29 @@ impl<'a> TRACEMUX_W<'a> {
     pub fn parallel(self) -> &'a mut W {
         self.variant(TRACEMUX_A::PARALLEL)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Speed of Trace Port clock. Note that the TRACECLK pin will output this clock divided by two."]
     #[inline(always)]
     pub fn traceportspeed(&self) -> TRACEPORTSPEED_R {
-        TRACEPORTSPEED_R::new((self.bits & 0x03) as u8)
+        TRACEPORTSPEED_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 16:17 - Pin multiplexing of trace signals."]
     #[inline(always)]
     pub fn tracemux(&self) -> TRACEMUX_R {
-        TRACEMUX_R::new(((self.bits >> 16) & 0x03) as u8)
+        TRACEMUX_R::new(((self.bits >> 16) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Speed of Trace Port clock. Note that the TRACECLK pin will output this clock divided by two."]
     #[inline(always)]
-    pub fn traceportspeed(&mut self) -> TRACEPORTSPEED_W {
-        TRACEPORTSPEED_W { w: self }
+    pub fn traceportspeed(&mut self) -> TRACEPORTSPEED_W<0> {
+        TRACEPORTSPEED_W::new(self)
     }
     #[doc = "Bits 16:17 - Pin multiplexing of trace signals."]
     #[inline(always)]
-    pub fn tracemux(&mut self) -> TRACEMUX_W {
-        TRACEMUX_W { w: self }
+    pub fn tracemux(&mut self) -> TRACEMUX_W<16> {
+        TRACEMUX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

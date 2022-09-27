@@ -34,6 +34,8 @@ impl From<crate::W<PERM_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `WRITE` reader - Write permission for key slot"]
+pub type WRITE_R = crate::BitReader<WRITE_A>;
 #[doc = "Write permission for key slot\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WRITE_A {
@@ -48,14 +50,8 @@ impl From<WRITE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WRITE` reader - Write permission for key slot"]
-pub struct WRITE_R(crate::FieldReader<bool, WRITE_A>);
 impl WRITE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WRITE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WRITE_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl WRITE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == WRITE_A::DISABLED
+        *self == WRITE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == WRITE_A::ENABLED
-    }
-}
-impl core::ops::Deref for WRITE_R {
-    type Target = crate::FieldReader<bool, WRITE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WRITE_A::ENABLED
     }
 }
 #[doc = "Field `WRITE` writer - Write permission for key slot"]
-pub struct WRITE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WRITE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WRITE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERM_SPEC, WRITE_A, O>;
+impl<'a, const O: u8> WRITE_W<'a, O> {
     #[doc = "Disable write to the key value registers"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> WRITE_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(WRITE_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `READ` reader - Read permission for key slot"]
+pub type READ_R = crate::BitReader<READ_A>;
 #[doc = "Read permission for key slot\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READ_A {
@@ -132,14 +100,8 @@ impl From<READ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `READ` reader - Read permission for key slot"]
-pub struct READ_R(crate::FieldReader<bool, READ_A>);
 impl READ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        READ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> READ_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl READ_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == READ_A::DISABLED
+        *self == READ_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == READ_A::ENABLED
-    }
-}
-impl core::ops::Deref for READ_R {
-    type Target = crate::FieldReader<bool, READ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == READ_A::ENABLED
     }
 }
 #[doc = "Field `READ` writer - Read permission for key slot"]
-pub struct READ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> READ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: READ_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type READ_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERM_SPEC, READ_A, O>;
+impl<'a, const O: u8> READ_W<'a, O> {
     #[doc = "Disable read from key value registers"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,23 +133,9 @@ impl<'a> READ_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(READ_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `PUSH` reader - Push permission for key slot"]
+pub type PUSH_R = crate::BitReader<PUSH_A>;
 #[doc = "Push permission for key slot\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PUSH_A {
@@ -216,14 +150,8 @@ impl From<PUSH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PUSH` reader - Push permission for key slot"]
-pub struct PUSH_R(crate::FieldReader<bool, PUSH_A>);
 impl PUSH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PUSH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PUSH_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl PUSH_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PUSH_A::DISABLED
+        *self == PUSH_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PUSH_A::ENABLED
-    }
-}
-impl core::ops::Deref for PUSH_R {
-    type Target = crate::FieldReader<bool, PUSH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PUSH_A::ENABLED
     }
 }
 #[doc = "Field `PUSH` writer - Push permission for key slot"]
-pub struct PUSH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PUSH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PUSH_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PUSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERM_SPEC, PUSH_A, O>;
+impl<'a, const O: u8> PUSH_W<'a, O> {
     #[doc = "Disable pushing of key value registers over secure APB, but can be read if field READ is Enabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -269,23 +183,9 @@ impl<'a> PUSH_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(PUSH_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `STATE` reader - Revocation state for the key slot"]
+pub type STATE_R = crate::BitReader<STATE_A>;
 #[doc = "Revocation state for the key slot\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STATE_A {
@@ -300,14 +200,8 @@ impl From<STATE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STATE` reader - Revocation state for the key slot"]
-pub struct STATE_R(crate::FieldReader<bool, STATE_A>);
 impl STATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STATE_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl STATE_R {
     #[doc = "Checks if the value of the field is `REVOKED`"]
     #[inline(always)]
     pub fn is_revoked(&self) -> bool {
-        **self == STATE_A::REVOKED
+        *self == STATE_A::REVOKED
     }
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == STATE_A::ACTIVE
-    }
-}
-impl core::ops::Deref for STATE_R {
-    type Target = crate::FieldReader<bool, STATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STATE_A::ACTIVE
     }
 }
 #[doc = "Field `STATE` writer - Revocation state for the key slot"]
-pub struct STATE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STATE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STATE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type STATE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERM_SPEC, STATE_A, O>;
+impl<'a, const O: u8> STATE_W<'a, O> {
     #[doc = "Key value registers can no longer be read or pushed"]
     #[inline(always)]
     pub fn revoked(self) -> &'a mut W {
@@ -353,65 +233,49 @@ impl<'a> STATE_W<'a> {
     pub fn active(self) -> &'a mut W {
         self.variant(STATE_A::ACTIVE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Write permission for key slot"]
     #[inline(always)]
     pub fn write(&self) -> WRITE_R {
-        WRITE_R::new((self.bits & 0x01) != 0)
+        WRITE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Read permission for key slot"]
     #[inline(always)]
     pub fn read(&self) -> READ_R {
-        READ_R::new(((self.bits >> 1) & 0x01) != 0)
+        READ_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Push permission for key slot"]
     #[inline(always)]
     pub fn push(&self) -> PUSH_R {
-        PUSH_R::new(((self.bits >> 2) & 0x01) != 0)
+        PUSH_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 16 - Revocation state for the key slot"]
     #[inline(always)]
     pub fn state(&self) -> STATE_R {
-        STATE_R::new(((self.bits >> 16) & 0x01) != 0)
+        STATE_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write permission for key slot"]
     #[inline(always)]
-    pub fn write(&mut self) -> WRITE_W {
-        WRITE_W { w: self }
+    pub fn write(&mut self) -> WRITE_W<0> {
+        WRITE_W::new(self)
     }
     #[doc = "Bit 1 - Read permission for key slot"]
     #[inline(always)]
-    pub fn read(&mut self) -> READ_W {
-        READ_W { w: self }
+    pub fn read(&mut self) -> READ_W<1> {
+        READ_W::new(self)
     }
     #[doc = "Bit 2 - Push permission for key slot"]
     #[inline(always)]
-    pub fn push(&mut self) -> PUSH_W {
-        PUSH_W { w: self }
+    pub fn push(&mut self) -> PUSH_W<2> {
+        PUSH_W::new(self)
     }
     #[doc = "Bit 16 - Revocation state for the key slot"]
     #[inline(always)]
-    pub fn state(&mut self) -> STATE_W {
-        STATE_W { w: self }
+    pub fn state(&mut self) -> STATE_W<16> {
+        STATE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,16 +34,18 @@ impl From<crate::W<PERM_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SECUREMAPPING` reader - Define configuration capabilities for TrustZone Cortex-M secure attribute"]
+pub type SECUREMAPPING_R = crate::FieldReader<u8, SECUREMAPPING_A>;
 #[doc = "Define configuration capabilities for TrustZone Cortex-M secure attribute\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SECUREMAPPING_A {
     #[doc = "0: This peripheral is always accessible as a non-secure peripheral"]
-    NONSECURE = 0,
+    NON_SECURE = 0,
     #[doc = "1: This peripheral is always accessible as a secure peripheral"]
     SECURE = 1,
     #[doc = "2: Non-secure or secure attribute for this peripheral is defined by the PERIPHID\\[n\\].PERM register"]
-    USERSELECTABLE = 2,
+    USER_SELECTABLE = 2,
     #[doc = "3: This peripheral implements the split security mechanism. Non-secure or secure attribute for this peripheral is defined by the PERIPHID\\[n\\].PERM register."]
     SPLIT = 3,
 }
@@ -53,62 +55,51 @@ impl From<SECUREMAPPING_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SECUREMAPPING` reader - Define configuration capabilities for TrustZone Cortex-M secure attribute"]
-pub struct SECUREMAPPING_R(crate::FieldReader<u8, SECUREMAPPING_A>);
 impl SECUREMAPPING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SECUREMAPPING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SECUREMAPPING_A {
         match self.bits {
-            0 => SECUREMAPPING_A::NONSECURE,
+            0 => SECUREMAPPING_A::NON_SECURE,
             1 => SECUREMAPPING_A::SECURE,
-            2 => SECUREMAPPING_A::USERSELECTABLE,
+            2 => SECUREMAPPING_A::USER_SELECTABLE,
             3 => SECUREMAPPING_A::SPLIT,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONSECURE`"]
+    #[doc = "Checks if the value of the field is `NON_SECURE`"]
     #[inline(always)]
     pub fn is_non_secure(&self) -> bool {
-        **self == SECUREMAPPING_A::NONSECURE
+        *self == SECUREMAPPING_A::NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE`"]
     #[inline(always)]
     pub fn is_secure(&self) -> bool {
-        **self == SECUREMAPPING_A::SECURE
+        *self == SECUREMAPPING_A::SECURE
     }
-    #[doc = "Checks if the value of the field is `USERSELECTABLE`"]
+    #[doc = "Checks if the value of the field is `USER_SELECTABLE`"]
     #[inline(always)]
     pub fn is_user_selectable(&self) -> bool {
-        **self == SECUREMAPPING_A::USERSELECTABLE
+        *self == SECUREMAPPING_A::USER_SELECTABLE
     }
     #[doc = "Checks if the value of the field is `SPLIT`"]
     #[inline(always)]
     pub fn is_split(&self) -> bool {
-        **self == SECUREMAPPING_A::SPLIT
+        *self == SECUREMAPPING_A::SPLIT
     }
 }
-impl core::ops::Deref for SECUREMAPPING_R {
-    type Target = crate::FieldReader<u8, SECUREMAPPING_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `DMA` reader - Indicate if the peripheral has DMA capabilities and if DMA transfer can be assigned to a different security attribute than the peripheral itself"]
+pub type DMA_R = crate::FieldReader<u8, DMA_A>;
 #[doc = "Indicate if the peripheral has DMA capabilities and if DMA transfer can be assigned to a different security attribute than the peripheral itself\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum DMA_A {
     #[doc = "0: Peripheral has no DMA capability"]
-    NODMA = 0,
+    NO_DMA = 0,
     #[doc = "1: Peripheral has DMA and DMA transfers always have the same security attribute as assigned to the peripheral"]
-    NOSEPARATEATTRIBUTE = 1,
+    NO_SEPARATE_ATTRIBUTE = 1,
     #[doc = "2: Peripheral has DMA and DMA transfers can have a different security attribute than the one assigned to the peripheral"]
-    SEPARATEATTRIBUTE = 2,
+    SEPARATE_ATTRIBUTE = 2,
 }
 impl From<DMA_A> for u8 {
     #[inline(always)]
@@ -116,53 +107,42 @@ impl From<DMA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DMA` reader - Indicate if the peripheral has DMA capabilities and if DMA transfer can be assigned to a different security attribute than the peripheral itself"]
-pub struct DMA_R(crate::FieldReader<u8, DMA_A>);
 impl DMA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DMA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DMA_A> {
         match self.bits {
-            0 => Some(DMA_A::NODMA),
-            1 => Some(DMA_A::NOSEPARATEATTRIBUTE),
-            2 => Some(DMA_A::SEPARATEATTRIBUTE),
+            0 => Some(DMA_A::NO_DMA),
+            1 => Some(DMA_A::NO_SEPARATE_ATTRIBUTE),
+            2 => Some(DMA_A::SEPARATE_ATTRIBUTE),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NODMA`"]
+    #[doc = "Checks if the value of the field is `NO_DMA`"]
     #[inline(always)]
     pub fn is_no_dma(&self) -> bool {
-        **self == DMA_A::NODMA
+        *self == DMA_A::NO_DMA
     }
-    #[doc = "Checks if the value of the field is `NOSEPARATEATTRIBUTE`"]
+    #[doc = "Checks if the value of the field is `NO_SEPARATE_ATTRIBUTE`"]
     #[inline(always)]
     pub fn is_no_separate_attribute(&self) -> bool {
-        **self == DMA_A::NOSEPARATEATTRIBUTE
+        *self == DMA_A::NO_SEPARATE_ATTRIBUTE
     }
-    #[doc = "Checks if the value of the field is `SEPARATEATTRIBUTE`"]
+    #[doc = "Checks if the value of the field is `SEPARATE_ATTRIBUTE`"]
     #[inline(always)]
     pub fn is_separate_attribute(&self) -> bool {
-        **self == DMA_A::SEPARATEATTRIBUTE
+        *self == DMA_A::SEPARATE_ATTRIBUTE
     }
 }
-impl core::ops::Deref for DMA_R {
-    type Target = crate::FieldReader<u8, DMA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SECATTR` reader - Peripheral security mapping"]
+pub type SECATTR_R = crate::BitReader<SECATTR_A>;
 #[doc = "Peripheral security mapping\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SECATTR_A {
     #[doc = "1: Peripheral is mapped in secure peripheral address space"]
     SECURE = 1,
     #[doc = "0: If SECUREMAPPING == UserSelectable: Peripheral is mapped in non-secure peripheral address space. If SECUREMAPPING == Split: Peripheral is mapped in non-secure and secure peripheral address space."]
-    NONSECURE = 0,
+    NON_SECURE = 0,
 }
 impl From<SECATTR_A> for bool {
     #[inline(always)]
@@ -170,49 +150,29 @@ impl From<SECATTR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SECATTR` reader - Peripheral security mapping"]
-pub struct SECATTR_R(crate::FieldReader<bool, SECATTR_A>);
 impl SECATTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SECATTR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SECATTR_A {
         match self.bits {
             true => SECATTR_A::SECURE,
-            false => SECATTR_A::NONSECURE,
+            false => SECATTR_A::NON_SECURE,
         }
     }
     #[doc = "Checks if the value of the field is `SECURE`"]
     #[inline(always)]
     pub fn is_secure(&self) -> bool {
-        **self == SECATTR_A::SECURE
+        *self == SECATTR_A::SECURE
     }
-    #[doc = "Checks if the value of the field is `NONSECURE`"]
+    #[doc = "Checks if the value of the field is `NON_SECURE`"]
     #[inline(always)]
     pub fn is_non_secure(&self) -> bool {
-        **self == SECATTR_A::NONSECURE
-    }
-}
-impl core::ops::Deref for SECATTR_R {
-    type Target = crate::FieldReader<bool, SECATTR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SECATTR_A::NON_SECURE
     }
 }
 #[doc = "Field `SECATTR` writer - Peripheral security mapping"]
-pub struct SECATTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SECATTR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SECATTR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SECATTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERM_SPEC, SECATTR_A, O>;
+impl<'a, const O: u8> SECATTR_W<'a, O> {
     #[doc = "Peripheral is mapped in secure peripheral address space"]
     #[inline(always)]
     pub fn secure(self) -> &'a mut W {
@@ -221,32 +181,18 @@ impl<'a> SECATTR_W<'a> {
     #[doc = "If SECUREMAPPING == UserSelectable: Peripheral is mapped in non-secure peripheral address space. If SECUREMAPPING == Split: Peripheral is mapped in non-secure and secure peripheral address space."]
     #[inline(always)]
     pub fn non_secure(self) -> &'a mut W {
-        self.variant(SECATTR_A::NONSECURE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
+        self.variant(SECATTR_A::NON_SECURE)
     }
 }
+#[doc = "Field `DMASEC` reader - Security attribution for the DMA transfer"]
+pub type DMASEC_R = crate::BitReader<DMASEC_A>;
 #[doc = "Security attribution for the DMA transfer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMASEC_A {
     #[doc = "1: DMA transfers initiated by this peripheral have the secure attribute set"]
     SECURE = 1,
     #[doc = "0: DMA transfers initiated by this peripheral have the non-secure attribute set"]
-    NONSECURE = 0,
+    NON_SECURE = 0,
 }
 impl From<DMASEC_A> for bool {
     #[inline(always)]
@@ -254,49 +200,29 @@ impl From<DMASEC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMASEC` reader - Security attribution for the DMA transfer"]
-pub struct DMASEC_R(crate::FieldReader<bool, DMASEC_A>);
 impl DMASEC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMASEC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMASEC_A {
         match self.bits {
             true => DMASEC_A::SECURE,
-            false => DMASEC_A::NONSECURE,
+            false => DMASEC_A::NON_SECURE,
         }
     }
     #[doc = "Checks if the value of the field is `SECURE`"]
     #[inline(always)]
     pub fn is_secure(&self) -> bool {
-        **self == DMASEC_A::SECURE
+        *self == DMASEC_A::SECURE
     }
-    #[doc = "Checks if the value of the field is `NONSECURE`"]
+    #[doc = "Checks if the value of the field is `NON_SECURE`"]
     #[inline(always)]
     pub fn is_non_secure(&self) -> bool {
-        **self == DMASEC_A::NONSECURE
-    }
-}
-impl core::ops::Deref for DMASEC_R {
-    type Target = crate::FieldReader<bool, DMASEC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMASEC_A::NON_SECURE
     }
 }
 #[doc = "Field `DMASEC` writer - Security attribution for the DMA transfer"]
-pub struct DMASEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMASEC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DMASEC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DMASEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERM_SPEC, DMASEC_A, O>;
+impl<'a, const O: u8> DMASEC_W<'a, O> {
     #[doc = "DMA transfers initiated by this peripheral have the secure attribute set"]
     #[inline(always)]
     pub fn secure(self) -> &'a mut W {
@@ -305,25 +231,11 @@ impl<'a> DMASEC_W<'a> {
     #[doc = "DMA transfers initiated by this peripheral have the non-secure attribute set"]
     #[inline(always)]
     pub fn non_secure(self) -> &'a mut W {
-        self.variant(DMASEC_A::NONSECURE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
+        self.variant(DMASEC_A::NON_SECURE)
     }
 }
+#[doc = "Field `LOCK` reader - "]
+pub type LOCK_R = crate::BitReader<LOCK_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCK_A {
@@ -338,14 +250,8 @@ impl From<LOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCK` reader - "]
-pub struct LOCK_R(crate::FieldReader<bool, LOCK_A>);
 impl LOCK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LOCK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LOCK_A {
         match self.bits {
@@ -356,31 +262,17 @@ impl LOCK_R {
     #[doc = "Checks if the value of the field is `UNLOCKED`"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        **self == LOCK_A::UNLOCKED
+        *self == LOCK_A::UNLOCKED
     }
     #[doc = "Checks if the value of the field is `LOCKED`"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        **self == LOCK_A::LOCKED
-    }
-}
-impl core::ops::Deref for LOCK_R {
-    type Target = crate::FieldReader<bool, LOCK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LOCK_A::LOCKED
     }
 }
 #[doc = "Field `LOCK` writer - "]
-pub struct LOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LOCK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERM_SPEC, LOCK_A, O>;
+impl<'a, const O: u8> LOCK_W<'a, O> {
     #[doc = "This register can be updated"]
     #[inline(always)]
     pub fn unlocked(self) -> &'a mut W {
@@ -391,30 +283,16 @@ impl<'a> LOCK_W<'a> {
     pub fn locked(self) -> &'a mut W {
         self.variant(LOCK_A::LOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `PRESENT` reader - Indicate if a peripheral is present with ID n"]
+pub type PRESENT_R = crate::BitReader<PRESENT_A>;
 #[doc = "Indicate if a peripheral is present with ID n\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRESENT_A {
     #[doc = "0: Peripheral is not present"]
-    NOTPRESENT = 0,
+    NOT_PRESENT = 0,
     #[doc = "1: Peripheral is present"]
-    ISPRESENT = 1,
+    IS_PRESENT = 1,
 }
 impl From<PRESENT_A> for bool {
     #[inline(always)]
@@ -422,86 +300,73 @@ impl From<PRESENT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PRESENT` reader - Indicate if a peripheral is present with ID n"]
-pub struct PRESENT_R(crate::FieldReader<bool, PRESENT_A>);
 impl PRESENT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PRESENT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRESENT_A {
         match self.bits {
-            false => PRESENT_A::NOTPRESENT,
-            true => PRESENT_A::ISPRESENT,
+            false => PRESENT_A::NOT_PRESENT,
+            true => PRESENT_A::IS_PRESENT,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
+    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        **self == PRESENT_A::NOTPRESENT
+        *self == PRESENT_A::NOT_PRESENT
     }
-    #[doc = "Checks if the value of the field is `ISPRESENT`"]
+    #[doc = "Checks if the value of the field is `IS_PRESENT`"]
     #[inline(always)]
     pub fn is_is_present(&self) -> bool {
-        **self == PRESENT_A::ISPRESENT
-    }
-}
-impl core::ops::Deref for PRESENT_R {
-    type Target = crate::FieldReader<bool, PRESENT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PRESENT_A::IS_PRESENT
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Define configuration capabilities for TrustZone Cortex-M secure attribute"]
     #[inline(always)]
     pub fn securemapping(&self) -> SECUREMAPPING_R {
-        SECUREMAPPING_R::new((self.bits & 0x03) as u8)
+        SECUREMAPPING_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - Indicate if the peripheral has DMA capabilities and if DMA transfer can be assigned to a different security attribute than the peripheral itself"]
     #[inline(always)]
     pub fn dma(&self) -> DMA_R {
-        DMA_R::new(((self.bits >> 2) & 0x03) as u8)
+        DMA_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bit 4 - Peripheral security mapping"]
     #[inline(always)]
     pub fn secattr(&self) -> SECATTR_R {
-        SECATTR_R::new(((self.bits >> 4) & 0x01) != 0)
+        SECATTR_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Security attribution for the DMA transfer"]
     #[inline(always)]
     pub fn dmasec(&self) -> DMASEC_R {
-        DMASEC_R::new(((self.bits >> 5) & 0x01) != 0)
+        DMASEC_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
     pub fn lock(&self) -> LOCK_R {
-        LOCK_R::new(((self.bits >> 8) & 0x01) != 0)
+        LOCK_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 31 - Indicate if a peripheral is present with ID n"]
     #[inline(always)]
     pub fn present(&self) -> PRESENT_R {
-        PRESENT_R::new(((self.bits >> 31) & 0x01) != 0)
+        PRESENT_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 4 - Peripheral security mapping"]
     #[inline(always)]
-    pub fn secattr(&mut self) -> SECATTR_W {
-        SECATTR_W { w: self }
+    pub fn secattr(&mut self) -> SECATTR_W<4> {
+        SECATTR_W::new(self)
     }
     #[doc = "Bit 5 - Security attribution for the DMA transfer"]
     #[inline(always)]
-    pub fn dmasec(&mut self) -> DMASEC_W {
-        DMASEC_W { w: self }
+    pub fn dmasec(&mut self) -> DMASEC_W<5> {
+        DMASEC_W::new(self)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LOCK_W {
-        LOCK_W { w: self }
+    pub fn lock(&mut self) -> LOCK_W<8> {
+        LOCK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

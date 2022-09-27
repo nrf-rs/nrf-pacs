@@ -34,12 +34,14 @@ impl From<crate::W<DISABLE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DISABLE` reader - Software disable APPROTECT mechanism"]
+pub type DISABLE_R = crate::FieldReader<u8, DISABLE_A>;
 #[doc = "Software disable APPROTECT mechanism\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum DISABLE_A {
     #[doc = "90: Software disable APPROTECT mechanism"]
-    SWDISABLE = 90,
+    SW_DISABLE = 90,
 }
 impl From<DISABLE_A> for u8 {
     #[inline(always)]
@@ -47,54 +49,29 @@ impl From<DISABLE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DISABLE` reader - Software disable APPROTECT mechanism"]
-pub struct DISABLE_R(crate::FieldReader<u8, DISABLE_A>);
 impl DISABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DISABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DISABLE_A> {
         match self.bits {
-            90 => Some(DISABLE_A::SWDISABLE),
+            90 => Some(DISABLE_A::SW_DISABLE),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `SWDISABLE`"]
+    #[doc = "Checks if the value of the field is `SW_DISABLE`"]
     #[inline(always)]
     pub fn is_sw_disable(&self) -> bool {
-        **self == DISABLE_A::SWDISABLE
-    }
-}
-impl core::ops::Deref for DISABLE_R {
-    type Target = crate::FieldReader<u8, DISABLE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DISABLE_A::SW_DISABLE
     }
 }
 #[doc = "Field `DISABLE` writer - Software disable APPROTECT mechanism"]
-pub struct DISABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DISABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DISABLE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DISABLE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DISABLE_SPEC, u8, DISABLE_A, 8, O>;
+impl<'a, const O: u8> DISABLE_W<'a, O> {
     #[doc = "Software disable APPROTECT mechanism"]
     #[inline(always)]
     pub fn sw_disable(self) -> &'a mut W {
-        self.variant(DISABLE_A::SWDISABLE)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
+        self.variant(DISABLE_A::SW_DISABLE)
     }
 }
 impl R {
@@ -107,8 +84,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Software disable APPROTECT mechanism"]
     #[inline(always)]
-    pub fn disable(&mut self) -> DISABLE_W {
-        DISABLE_W { w: self }
+    pub fn disable(&mut self) -> DISABLE_W<0> {
+        DISABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

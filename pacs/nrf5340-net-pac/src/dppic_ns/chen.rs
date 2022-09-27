@@ -34,6 +34,8 @@ impl From<crate::W<CHEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CH0` reader - Enable or disable channel 0"]
+pub type CH0_R = crate::BitReader<CH0_A>;
 #[doc = "Enable or disable channel 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0_A {
@@ -48,14 +50,8 @@ impl From<CH0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH0` reader - Enable or disable channel 0"]
-pub struct CH0_R(crate::FieldReader<bool, CH0_A>);
 impl CH0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH0_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl CH0_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH0_A::DISABLED
+        *self == CH0_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH0_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH0_R {
-    type Target = crate::FieldReader<bool, CH0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH0_A::ENABLED
     }
 }
 #[doc = "Field `CH0` writer - Enable or disable channel 0"]
-pub struct CH0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH0_A, O>;
+impl<'a, const O: u8> CH0_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> CH0_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH0_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `CH1` reader - Enable or disable channel 1"]
+pub type CH1_R = crate::BitReader<CH1_A>;
 #[doc = "Enable or disable channel 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1_A {
@@ -132,14 +100,8 @@ impl From<CH1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH1` reader - Enable or disable channel 1"]
-pub struct CH1_R(crate::FieldReader<bool, CH1_A>);
 impl CH1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH1_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl CH1_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH1_A::DISABLED
+        *self == CH1_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH1_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH1_R {
-    type Target = crate::FieldReader<bool, CH1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH1_A::ENABLED
     }
 }
 #[doc = "Field `CH1` writer - Enable or disable channel 1"]
-pub struct CH1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH1_A, O>;
+impl<'a, const O: u8> CH1_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,23 +133,9 @@ impl<'a> CH1_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH1_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `CH2` reader - Enable or disable channel 2"]
+pub type CH2_R = crate::BitReader<CH2_A>;
 #[doc = "Enable or disable channel 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2_A {
@@ -216,14 +150,8 @@ impl From<CH2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH2` reader - Enable or disable channel 2"]
-pub struct CH2_R(crate::FieldReader<bool, CH2_A>);
 impl CH2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH2_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl CH2_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH2_A::DISABLED
+        *self == CH2_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH2_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH2_R {
-    type Target = crate::FieldReader<bool, CH2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH2_A::ENABLED
     }
 }
 #[doc = "Field `CH2` writer - Enable or disable channel 2"]
-pub struct CH2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH2_A, O>;
+impl<'a, const O: u8> CH2_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -269,23 +183,9 @@ impl<'a> CH2_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH2_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `CH3` reader - Enable or disable channel 3"]
+pub type CH3_R = crate::BitReader<CH3_A>;
 #[doc = "Enable or disable channel 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3_A {
@@ -300,14 +200,8 @@ impl From<CH3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH3` reader - Enable or disable channel 3"]
-pub struct CH3_R(crate::FieldReader<bool, CH3_A>);
 impl CH3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH3_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl CH3_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH3_A::DISABLED
+        *self == CH3_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH3_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH3_R {
-    type Target = crate::FieldReader<bool, CH3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH3_A::ENABLED
     }
 }
 #[doc = "Field `CH3` writer - Enable or disable channel 3"]
-pub struct CH3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH3_A, O>;
+impl<'a, const O: u8> CH3_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -353,23 +233,9 @@ impl<'a> CH3_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH3_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `CH4` reader - Enable or disable channel 4"]
+pub type CH4_R = crate::BitReader<CH4_A>;
 #[doc = "Enable or disable channel 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4_A {
@@ -384,14 +250,8 @@ impl From<CH4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH4` reader - Enable or disable channel 4"]
-pub struct CH4_R(crate::FieldReader<bool, CH4_A>);
 impl CH4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH4_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH4_A {
         match self.bits {
@@ -402,31 +262,17 @@ impl CH4_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH4_A::DISABLED
+        *self == CH4_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH4_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH4_R {
-    type Target = crate::FieldReader<bool, CH4_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH4_A::ENABLED
     }
 }
 #[doc = "Field `CH4` writer - Enable or disable channel 4"]
-pub struct CH4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH4_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH4_A, O>;
+impl<'a, const O: u8> CH4_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -437,23 +283,9 @@ impl<'a> CH4_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH4_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `CH5` reader - Enable or disable channel 5"]
+pub type CH5_R = crate::BitReader<CH5_A>;
 #[doc = "Enable or disable channel 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5_A {
@@ -468,14 +300,8 @@ impl From<CH5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH5` reader - Enable or disable channel 5"]
-pub struct CH5_R(crate::FieldReader<bool, CH5_A>);
 impl CH5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH5_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH5_A {
         match self.bits {
@@ -486,31 +312,17 @@ impl CH5_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH5_A::DISABLED
+        *self == CH5_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH5_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH5_R {
-    type Target = crate::FieldReader<bool, CH5_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH5_A::ENABLED
     }
 }
 #[doc = "Field `CH5` writer - Enable or disable channel 5"]
-pub struct CH5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH5_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH5_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH5_A, O>;
+impl<'a, const O: u8> CH5_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -521,23 +333,9 @@ impl<'a> CH5_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH5_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `CH6` reader - Enable or disable channel 6"]
+pub type CH6_R = crate::BitReader<CH6_A>;
 #[doc = "Enable or disable channel 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6_A {
@@ -552,14 +350,8 @@ impl From<CH6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH6` reader - Enable or disable channel 6"]
-pub struct CH6_R(crate::FieldReader<bool, CH6_A>);
 impl CH6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH6_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH6_A {
         match self.bits {
@@ -570,31 +362,17 @@ impl CH6_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH6_A::DISABLED
+        *self == CH6_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH6_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH6_R {
-    type Target = crate::FieldReader<bool, CH6_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH6_A::ENABLED
     }
 }
 #[doc = "Field `CH6` writer - Enable or disable channel 6"]
-pub struct CH6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH6_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH6_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH6_A, O>;
+impl<'a, const O: u8> CH6_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -605,23 +383,9 @@ impl<'a> CH6_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH6_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `CH7` reader - Enable or disable channel 7"]
+pub type CH7_R = crate::BitReader<CH7_A>;
 #[doc = "Enable or disable channel 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7_A {
@@ -636,14 +400,8 @@ impl From<CH7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH7` reader - Enable or disable channel 7"]
-pub struct CH7_R(crate::FieldReader<bool, CH7_A>);
 impl CH7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH7_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH7_A {
         match self.bits {
@@ -654,31 +412,17 @@ impl CH7_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH7_A::DISABLED
+        *self == CH7_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH7_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH7_R {
-    type Target = crate::FieldReader<bool, CH7_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH7_A::ENABLED
     }
 }
 #[doc = "Field `CH7` writer - Enable or disable channel 7"]
-pub struct CH7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH7_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH7_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH7_A, O>;
+impl<'a, const O: u8> CH7_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -689,23 +433,9 @@ impl<'a> CH7_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH7_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `CH8` reader - Enable or disable channel 8"]
+pub type CH8_R = crate::BitReader<CH8_A>;
 #[doc = "Enable or disable channel 8\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH8_A {
@@ -720,14 +450,8 @@ impl From<CH8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH8` reader - Enable or disable channel 8"]
-pub struct CH8_R(crate::FieldReader<bool, CH8_A>);
 impl CH8_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH8_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH8_A {
         match self.bits {
@@ -738,31 +462,17 @@ impl CH8_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH8_A::DISABLED
+        *self == CH8_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH8_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH8_R {
-    type Target = crate::FieldReader<bool, CH8_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH8_A::ENABLED
     }
 }
 #[doc = "Field `CH8` writer - Enable or disable channel 8"]
-pub struct CH8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH8_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH8_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH8_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH8_A, O>;
+impl<'a, const O: u8> CH8_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -773,23 +483,9 @@ impl<'a> CH8_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH8_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `CH9` reader - Enable or disable channel 9"]
+pub type CH9_R = crate::BitReader<CH9_A>;
 #[doc = "Enable or disable channel 9\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH9_A {
@@ -804,14 +500,8 @@ impl From<CH9_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH9` reader - Enable or disable channel 9"]
-pub struct CH9_R(crate::FieldReader<bool, CH9_A>);
 impl CH9_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH9_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH9_A {
         match self.bits {
@@ -822,31 +512,17 @@ impl CH9_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH9_A::DISABLED
+        *self == CH9_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH9_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH9_R {
-    type Target = crate::FieldReader<bool, CH9_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH9_A::ENABLED
     }
 }
 #[doc = "Field `CH9` writer - Enable or disable channel 9"]
-pub struct CH9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH9_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH9_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH9_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH9_A, O>;
+impl<'a, const O: u8> CH9_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -857,23 +533,9 @@ impl<'a> CH9_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH9_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
+#[doc = "Field `CH10` reader - Enable or disable channel 10"]
+pub type CH10_R = crate::BitReader<CH10_A>;
 #[doc = "Enable or disable channel 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH10_A {
@@ -888,14 +550,8 @@ impl From<CH10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH10` reader - Enable or disable channel 10"]
-pub struct CH10_R(crate::FieldReader<bool, CH10_A>);
 impl CH10_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH10_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH10_A {
         match self.bits {
@@ -906,31 +562,17 @@ impl CH10_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH10_A::DISABLED
+        *self == CH10_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH10_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH10_R {
-    type Target = crate::FieldReader<bool, CH10_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH10_A::ENABLED
     }
 }
 #[doc = "Field `CH10` writer - Enable or disable channel 10"]
-pub struct CH10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH10_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH10_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH10_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH10_A, O>;
+impl<'a, const O: u8> CH10_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -941,23 +583,9 @@ impl<'a> CH10_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH10_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
+#[doc = "Field `CH11` reader - Enable or disable channel 11"]
+pub type CH11_R = crate::BitReader<CH11_A>;
 #[doc = "Enable or disable channel 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH11_A {
@@ -972,14 +600,8 @@ impl From<CH11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH11` reader - Enable or disable channel 11"]
-pub struct CH11_R(crate::FieldReader<bool, CH11_A>);
 impl CH11_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH11_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH11_A {
         match self.bits {
@@ -990,31 +612,17 @@ impl CH11_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH11_A::DISABLED
+        *self == CH11_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH11_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH11_R {
-    type Target = crate::FieldReader<bool, CH11_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH11_A::ENABLED
     }
 }
 #[doc = "Field `CH11` writer - Enable or disable channel 11"]
-pub struct CH11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH11_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH11_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH11_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH11_A, O>;
+impl<'a, const O: u8> CH11_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1025,23 +633,9 @@ impl<'a> CH11_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH11_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
 }
+#[doc = "Field `CH12` reader - Enable or disable channel 12"]
+pub type CH12_R = crate::BitReader<CH12_A>;
 #[doc = "Enable or disable channel 12\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH12_A {
@@ -1056,14 +650,8 @@ impl From<CH12_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH12` reader - Enable or disable channel 12"]
-pub struct CH12_R(crate::FieldReader<bool, CH12_A>);
 impl CH12_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH12_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH12_A {
         match self.bits {
@@ -1074,31 +662,17 @@ impl CH12_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH12_A::DISABLED
+        *self == CH12_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH12_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH12_R {
-    type Target = crate::FieldReader<bool, CH12_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH12_A::ENABLED
     }
 }
 #[doc = "Field `CH12` writer - Enable or disable channel 12"]
-pub struct CH12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH12_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH12_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH12_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH12_A, O>;
+impl<'a, const O: u8> CH12_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1109,23 +683,9 @@ impl<'a> CH12_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH12_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
+#[doc = "Field `CH13` reader - Enable or disable channel 13"]
+pub type CH13_R = crate::BitReader<CH13_A>;
 #[doc = "Enable or disable channel 13\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH13_A {
@@ -1140,14 +700,8 @@ impl From<CH13_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH13` reader - Enable or disable channel 13"]
-pub struct CH13_R(crate::FieldReader<bool, CH13_A>);
 impl CH13_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH13_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH13_A {
         match self.bits {
@@ -1158,31 +712,17 @@ impl CH13_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH13_A::DISABLED
+        *self == CH13_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH13_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH13_R {
-    type Target = crate::FieldReader<bool, CH13_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH13_A::ENABLED
     }
 }
 #[doc = "Field `CH13` writer - Enable or disable channel 13"]
-pub struct CH13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH13_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH13_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH13_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH13_A, O>;
+impl<'a, const O: u8> CH13_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1193,23 +733,9 @@ impl<'a> CH13_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH13_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
 }
+#[doc = "Field `CH14` reader - Enable or disable channel 14"]
+pub type CH14_R = crate::BitReader<CH14_A>;
 #[doc = "Enable or disable channel 14\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH14_A {
@@ -1224,14 +750,8 @@ impl From<CH14_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH14` reader - Enable or disable channel 14"]
-pub struct CH14_R(crate::FieldReader<bool, CH14_A>);
 impl CH14_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH14_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH14_A {
         match self.bits {
@@ -1242,31 +762,17 @@ impl CH14_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH14_A::DISABLED
+        *self == CH14_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH14_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH14_R {
-    type Target = crate::FieldReader<bool, CH14_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH14_A::ENABLED
     }
 }
 #[doc = "Field `CH14` writer - Enable or disable channel 14"]
-pub struct CH14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH14_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH14_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH14_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH14_A, O>;
+impl<'a, const O: u8> CH14_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1277,23 +783,9 @@ impl<'a> CH14_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH14_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
 }
+#[doc = "Field `CH15` reader - Enable or disable channel 15"]
+pub type CH15_R = crate::BitReader<CH15_A>;
 #[doc = "Enable or disable channel 15\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH15_A {
@@ -1308,14 +800,8 @@ impl From<CH15_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH15` reader - Enable or disable channel 15"]
-pub struct CH15_R(crate::FieldReader<bool, CH15_A>);
 impl CH15_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH15_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH15_A {
         match self.bits {
@@ -1326,31 +812,17 @@ impl CH15_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH15_A::DISABLED
+        *self == CH15_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH15_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH15_R {
-    type Target = crate::FieldReader<bool, CH15_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH15_A::ENABLED
     }
 }
 #[doc = "Field `CH15` writer - Enable or disable channel 15"]
-pub struct CH15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH15_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH15_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH15_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHEN_SPEC, CH15_A, O>;
+impl<'a, const O: u8> CH15_W<'a, O> {
     #[doc = "Disable channel"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1361,185 +833,169 @@ impl<'a> CH15_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH15_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable or disable channel 0"]
     #[inline(always)]
     pub fn ch0(&self) -> CH0_R {
-        CH0_R::new((self.bits & 0x01) != 0)
+        CH0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable or disable channel 1"]
     #[inline(always)]
     pub fn ch1(&self) -> CH1_R {
-        CH1_R::new(((self.bits >> 1) & 0x01) != 0)
+        CH1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable or disable channel 2"]
     #[inline(always)]
     pub fn ch2(&self) -> CH2_R {
-        CH2_R::new(((self.bits >> 2) & 0x01) != 0)
+        CH2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable or disable channel 3"]
     #[inline(always)]
     pub fn ch3(&self) -> CH3_R {
-        CH3_R::new(((self.bits >> 3) & 0x01) != 0)
+        CH3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable or disable channel 4"]
     #[inline(always)]
     pub fn ch4(&self) -> CH4_R {
-        CH4_R::new(((self.bits >> 4) & 0x01) != 0)
+        CH4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable or disable channel 5"]
     #[inline(always)]
     pub fn ch5(&self) -> CH5_R {
-        CH5_R::new(((self.bits >> 5) & 0x01) != 0)
+        CH5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable or disable channel 6"]
     #[inline(always)]
     pub fn ch6(&self) -> CH6_R {
-        CH6_R::new(((self.bits >> 6) & 0x01) != 0)
+        CH6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable or disable channel 7"]
     #[inline(always)]
     pub fn ch7(&self) -> CH7_R {
-        CH7_R::new(((self.bits >> 7) & 0x01) != 0)
+        CH7_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Enable or disable channel 8"]
     #[inline(always)]
     pub fn ch8(&self) -> CH8_R {
-        CH8_R::new(((self.bits >> 8) & 0x01) != 0)
+        CH8_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Enable or disable channel 9"]
     #[inline(always)]
     pub fn ch9(&self) -> CH9_R {
-        CH9_R::new(((self.bits >> 9) & 0x01) != 0)
+        CH9_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Enable or disable channel 10"]
     #[inline(always)]
     pub fn ch10(&self) -> CH10_R {
-        CH10_R::new(((self.bits >> 10) & 0x01) != 0)
+        CH10_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Enable or disable channel 11"]
     #[inline(always)]
     pub fn ch11(&self) -> CH11_R {
-        CH11_R::new(((self.bits >> 11) & 0x01) != 0)
+        CH11_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Enable or disable channel 12"]
     #[inline(always)]
     pub fn ch12(&self) -> CH12_R {
-        CH12_R::new(((self.bits >> 12) & 0x01) != 0)
+        CH12_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Enable or disable channel 13"]
     #[inline(always)]
     pub fn ch13(&self) -> CH13_R {
-        CH13_R::new(((self.bits >> 13) & 0x01) != 0)
+        CH13_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Enable or disable channel 14"]
     #[inline(always)]
     pub fn ch14(&self) -> CH14_R {
-        CH14_R::new(((self.bits >> 14) & 0x01) != 0)
+        CH14_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Enable or disable channel 15"]
     #[inline(always)]
     pub fn ch15(&self) -> CH15_R {
-        CH15_R::new(((self.bits >> 15) & 0x01) != 0)
+        CH15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable or disable channel 0"]
     #[inline(always)]
-    pub fn ch0(&mut self) -> CH0_W {
-        CH0_W { w: self }
+    pub fn ch0(&mut self) -> CH0_W<0> {
+        CH0_W::new(self)
     }
     #[doc = "Bit 1 - Enable or disable channel 1"]
     #[inline(always)]
-    pub fn ch1(&mut self) -> CH1_W {
-        CH1_W { w: self }
+    pub fn ch1(&mut self) -> CH1_W<1> {
+        CH1_W::new(self)
     }
     #[doc = "Bit 2 - Enable or disable channel 2"]
     #[inline(always)]
-    pub fn ch2(&mut self) -> CH2_W {
-        CH2_W { w: self }
+    pub fn ch2(&mut self) -> CH2_W<2> {
+        CH2_W::new(self)
     }
     #[doc = "Bit 3 - Enable or disable channel 3"]
     #[inline(always)]
-    pub fn ch3(&mut self) -> CH3_W {
-        CH3_W { w: self }
+    pub fn ch3(&mut self) -> CH3_W<3> {
+        CH3_W::new(self)
     }
     #[doc = "Bit 4 - Enable or disable channel 4"]
     #[inline(always)]
-    pub fn ch4(&mut self) -> CH4_W {
-        CH4_W { w: self }
+    pub fn ch4(&mut self) -> CH4_W<4> {
+        CH4_W::new(self)
     }
     #[doc = "Bit 5 - Enable or disable channel 5"]
     #[inline(always)]
-    pub fn ch5(&mut self) -> CH5_W {
-        CH5_W { w: self }
+    pub fn ch5(&mut self) -> CH5_W<5> {
+        CH5_W::new(self)
     }
     #[doc = "Bit 6 - Enable or disable channel 6"]
     #[inline(always)]
-    pub fn ch6(&mut self) -> CH6_W {
-        CH6_W { w: self }
+    pub fn ch6(&mut self) -> CH6_W<6> {
+        CH6_W::new(self)
     }
     #[doc = "Bit 7 - Enable or disable channel 7"]
     #[inline(always)]
-    pub fn ch7(&mut self) -> CH7_W {
-        CH7_W { w: self }
+    pub fn ch7(&mut self) -> CH7_W<7> {
+        CH7_W::new(self)
     }
     #[doc = "Bit 8 - Enable or disable channel 8"]
     #[inline(always)]
-    pub fn ch8(&mut self) -> CH8_W {
-        CH8_W { w: self }
+    pub fn ch8(&mut self) -> CH8_W<8> {
+        CH8_W::new(self)
     }
     #[doc = "Bit 9 - Enable or disable channel 9"]
     #[inline(always)]
-    pub fn ch9(&mut self) -> CH9_W {
-        CH9_W { w: self }
+    pub fn ch9(&mut self) -> CH9_W<9> {
+        CH9_W::new(self)
     }
     #[doc = "Bit 10 - Enable or disable channel 10"]
     #[inline(always)]
-    pub fn ch10(&mut self) -> CH10_W {
-        CH10_W { w: self }
+    pub fn ch10(&mut self) -> CH10_W<10> {
+        CH10_W::new(self)
     }
     #[doc = "Bit 11 - Enable or disable channel 11"]
     #[inline(always)]
-    pub fn ch11(&mut self) -> CH11_W {
-        CH11_W { w: self }
+    pub fn ch11(&mut self) -> CH11_W<11> {
+        CH11_W::new(self)
     }
     #[doc = "Bit 12 - Enable or disable channel 12"]
     #[inline(always)]
-    pub fn ch12(&mut self) -> CH12_W {
-        CH12_W { w: self }
+    pub fn ch12(&mut self) -> CH12_W<12> {
+        CH12_W::new(self)
     }
     #[doc = "Bit 13 - Enable or disable channel 13"]
     #[inline(always)]
-    pub fn ch13(&mut self) -> CH13_W {
-        CH13_W { w: self }
+    pub fn ch13(&mut self) -> CH13_W<13> {
+        CH13_W::new(self)
     }
     #[doc = "Bit 14 - Enable or disable channel 14"]
     #[inline(always)]
-    pub fn ch14(&mut self) -> CH14_W {
-        CH14_W { w: self }
+    pub fn ch14(&mut self) -> CH14_W<14> {
+        CH14_W::new(self)
     }
     #[doc = "Bit 15 - Enable or disable channel 15"]
     #[inline(always)]
-    pub fn ch15(&mut self) -> CH15_W {
-        CH15_W { w: self }
+    pub fn ch15(&mut self) -> CH15_W<15> {
+        CH15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

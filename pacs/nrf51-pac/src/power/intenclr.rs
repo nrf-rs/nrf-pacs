@@ -34,6 +34,8 @@ impl From<crate::W<INTENCLR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `POFWARN` reader - Disable interrupt on POFWARN event."]
+pub type POFWARN_R = crate::BitReader<POFWARN_A>;
 #[doc = "Disable interrupt on POFWARN event.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POFWARN_A {
@@ -48,14 +50,8 @@ impl From<POFWARN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `POFWARN` reader - Disable interrupt on POFWARN event."]
-pub struct POFWARN_R(crate::FieldReader<bool, POFWARN_A>);
 impl POFWARN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        POFWARN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> POFWARN_A {
         match self.bits {
@@ -66,19 +62,12 @@ impl POFWARN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == POFWARN_A::DISABLED
+        *self == POFWARN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == POFWARN_A::ENABLED
-    }
-}
-impl core::ops::Deref for POFWARN_R {
-    type Target = crate::FieldReader<bool, POFWARN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == POFWARN_A::ENABLED
     }
 }
 #[doc = "Disable interrupt on POFWARN event.\n\nValue on reset: 0"]
@@ -94,49 +83,26 @@ impl From<POFWARN_AW> for bool {
     }
 }
 #[doc = "Field `POFWARN` writer - Disable interrupt on POFWARN event."]
-pub struct POFWARN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POFWARN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: POFWARN_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type POFWARN_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, POFWARN_AW, O>;
+impl<'a, const O: u8> POFWARN_W<'a, O> {
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(POFWARN_AW::CLEAR)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
     }
 }
 impl R {
     #[doc = "Bit 2 - Disable interrupt on POFWARN event."]
     #[inline(always)]
     pub fn pofwarn(&self) -> POFWARN_R {
-        POFWARN_R::new(((self.bits >> 2) & 0x01) != 0)
+        POFWARN_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 2 - Disable interrupt on POFWARN event."]
     #[inline(always)]
-    pub fn pofwarn(&mut self) -> POFWARN_W {
-        POFWARN_W { w: self }
+    pub fn pofwarn(&mut self) -> POFWARN_W<2> {
+        POFWARN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<AUTOCOLRESCONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - Enables/disables auto collision resolution"]
+pub type MODE_R = crate::BitReader<MODE_A>;
 #[doc = "Enables/disables auto collision resolution\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
@@ -48,14 +50,8 @@ impl From<MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MODE` reader - Enables/disables auto collision resolution"]
-pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl MODE_R {
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == MODE_A::ENABLED
+        *self == MODE_A::ENABLED
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MODE_A::DISABLED
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<bool, MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE_A::DISABLED
     }
 }
 #[doc = "Field `MODE` writer - Enables/disables auto collision resolution"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, AUTOCOLRESCONFIG_SPEC, MODE_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Auto collision resolution enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> MODE_W<'a> {
     pub fn disabled(self) -> &'a mut W {
         self.variant(MODE_A::DISABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enables/disables auto collision resolution"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new((self.bits & 0x01) != 0)
+        MODE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enables/disables auto collision resolution"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    pub fn mode(&mut self) -> MODE_W<0> {
+        MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

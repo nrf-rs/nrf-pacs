@@ -13,6 +13,8 @@ impl From<crate::R<PRODTEST_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `PRODTEST` reader - Production test signature n"]
+pub type PRODTEST_R = crate::FieldReader<u32, PRODTEST_A>;
 #[doc = "Production test signature n\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -20,7 +22,7 @@ pub enum PRODTEST_A {
     #[doc = "3141677471: Production tests done"]
     DONE = 3141677471,
     #[doc = "4294967295: Production tests not done"]
-    NOTDONE = 4294967295,
+    NOT_DONE = 4294967295,
 }
 impl From<PRODTEST_A> for u32 {
     #[inline(always)]
@@ -28,38 +30,25 @@ impl From<PRODTEST_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `PRODTEST` reader - Production test signature n"]
-pub struct PRODTEST_R(crate::FieldReader<u32, PRODTEST_A>);
 impl PRODTEST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PRODTEST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PRODTEST_A> {
         match self.bits {
             3141677471 => Some(PRODTEST_A::DONE),
-            4294967295 => Some(PRODTEST_A::NOTDONE),
+            4294967295 => Some(PRODTEST_A::NOT_DONE),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DONE`"]
     #[inline(always)]
     pub fn is_done(&self) -> bool {
-        **self == PRODTEST_A::DONE
+        *self == PRODTEST_A::DONE
     }
-    #[doc = "Checks if the value of the field is `NOTDONE`"]
+    #[doc = "Checks if the value of the field is `NOT_DONE`"]
     #[inline(always)]
     pub fn is_not_done(&self) -> bool {
-        **self == PRODTEST_A::NOTDONE
-    }
-}
-impl core::ops::Deref for PRODTEST_R {
-    type Target = crate::FieldReader<u32, PRODTEST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PRODTEST_A::NOT_DONE
     }
 }
 impl R {

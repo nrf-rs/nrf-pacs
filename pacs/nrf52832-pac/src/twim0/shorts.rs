@@ -34,6 +34,8 @@ impl From<crate::W<SHORTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LASTTX_STARTRX` reader - Shortcut between LASTTX event and STARTRX task"]
+pub type LASTTX_STARTRX_R = crate::BitReader<LASTTX_STARTRX_A>;
 #[doc = "Shortcut between LASTTX event and STARTRX task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTTX_STARTRX_A {
@@ -48,14 +50,8 @@ impl From<LASTTX_STARTRX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LASTTX_STARTRX` reader - Shortcut between LASTTX event and STARTRX task"]
-pub struct LASTTX_STARTRX_R(crate::FieldReader<bool, LASTTX_STARTRX_A>);
 impl LASTTX_STARTRX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LASTTX_STARTRX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LASTTX_STARTRX_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl LASTTX_STARTRX_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LASTTX_STARTRX_A::DISABLED
+        *self == LASTTX_STARTRX_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LASTTX_STARTRX_A::ENABLED
-    }
-}
-impl core::ops::Deref for LASTTX_STARTRX_R {
-    type Target = crate::FieldReader<bool, LASTTX_STARTRX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LASTTX_STARTRX_A::ENABLED
     }
 }
 #[doc = "Field `LASTTX_STARTRX` writer - Shortcut between LASTTX event and STARTRX task"]
-pub struct LASTTX_STARTRX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LASTTX_STARTRX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LASTTX_STARTRX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LASTTX_STARTRX_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, LASTTX_STARTRX_A, O>;
+impl<'a, const O: u8> LASTTX_STARTRX_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +84,9 @@ impl<'a> LASTTX_STARTRX_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(LASTTX_STARTRX_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `LASTTX_SUSPEND` reader - Shortcut between LASTTX event and SUSPEND task"]
+pub type LASTTX_SUSPEND_R = crate::BitReader<LASTTX_SUSPEND_A>;
 #[doc = "Shortcut between LASTTX event and SUSPEND task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTTX_SUSPEND_A {
@@ -132,14 +101,8 @@ impl From<LASTTX_SUSPEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LASTTX_SUSPEND` reader - Shortcut between LASTTX event and SUSPEND task"]
-pub struct LASTTX_SUSPEND_R(crate::FieldReader<bool, LASTTX_SUSPEND_A>);
 impl LASTTX_SUSPEND_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LASTTX_SUSPEND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LASTTX_SUSPEND_A {
         match self.bits {
@@ -150,31 +113,18 @@ impl LASTTX_SUSPEND_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LASTTX_SUSPEND_A::DISABLED
+        *self == LASTTX_SUSPEND_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LASTTX_SUSPEND_A::ENABLED
-    }
-}
-impl core::ops::Deref for LASTTX_SUSPEND_R {
-    type Target = crate::FieldReader<bool, LASTTX_SUSPEND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LASTTX_SUSPEND_A::ENABLED
     }
 }
 #[doc = "Field `LASTTX_SUSPEND` writer - Shortcut between LASTTX event and SUSPEND task"]
-pub struct LASTTX_SUSPEND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LASTTX_SUSPEND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LASTTX_SUSPEND_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LASTTX_SUSPEND_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, LASTTX_SUSPEND_A, O>;
+impl<'a, const O: u8> LASTTX_SUSPEND_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,23 +135,9 @@ impl<'a> LASTTX_SUSPEND_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(LASTTX_SUSPEND_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `LASTTX_STOP` reader - Shortcut between LASTTX event and STOP task"]
+pub type LASTTX_STOP_R = crate::BitReader<LASTTX_STOP_A>;
 #[doc = "Shortcut between LASTTX event and STOP task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTTX_STOP_A {
@@ -216,14 +152,8 @@ impl From<LASTTX_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LASTTX_STOP` reader - Shortcut between LASTTX event and STOP task"]
-pub struct LASTTX_STOP_R(crate::FieldReader<bool, LASTTX_STOP_A>);
 impl LASTTX_STOP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LASTTX_STOP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LASTTX_STOP_A {
         match self.bits {
@@ -234,31 +164,17 @@ impl LASTTX_STOP_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LASTTX_STOP_A::DISABLED
+        *self == LASTTX_STOP_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LASTTX_STOP_A::ENABLED
-    }
-}
-impl core::ops::Deref for LASTTX_STOP_R {
-    type Target = crate::FieldReader<bool, LASTTX_STOP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LASTTX_STOP_A::ENABLED
     }
 }
 #[doc = "Field `LASTTX_STOP` writer - Shortcut between LASTTX event and STOP task"]
-pub struct LASTTX_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LASTTX_STOP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LASTTX_STOP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LASTTX_STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SHORTS_SPEC, LASTTX_STOP_A, O>;
+impl<'a, const O: u8> LASTTX_STOP_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -269,23 +185,9 @@ impl<'a> LASTTX_STOP_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(LASTTX_STOP_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
+#[doc = "Field `LASTRX_STARTTX` reader - Shortcut between LASTRX event and STARTTX task"]
+pub type LASTRX_STARTTX_R = crate::BitReader<LASTRX_STARTTX_A>;
 #[doc = "Shortcut between LASTRX event and STARTTX task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTRX_STARTTX_A {
@@ -300,14 +202,8 @@ impl From<LASTRX_STARTTX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LASTRX_STARTTX` reader - Shortcut between LASTRX event and STARTTX task"]
-pub struct LASTRX_STARTTX_R(crate::FieldReader<bool, LASTRX_STARTTX_A>);
 impl LASTRX_STARTTX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LASTRX_STARTTX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LASTRX_STARTTX_A {
         match self.bits {
@@ -318,31 +214,18 @@ impl LASTRX_STARTTX_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LASTRX_STARTTX_A::DISABLED
+        *self == LASTRX_STARTTX_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LASTRX_STARTTX_A::ENABLED
-    }
-}
-impl core::ops::Deref for LASTRX_STARTTX_R {
-    type Target = crate::FieldReader<bool, LASTRX_STARTTX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LASTRX_STARTTX_A::ENABLED
     }
 }
 #[doc = "Field `LASTRX_STARTTX` writer - Shortcut between LASTRX event and STARTTX task"]
-pub struct LASTRX_STARTTX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LASTRX_STARTTX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LASTRX_STARTTX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LASTRX_STARTTX_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, LASTRX_STARTTX_A, O>;
+impl<'a, const O: u8> LASTRX_STARTTX_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -353,23 +236,9 @@ impl<'a> LASTRX_STARTTX_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(LASTRX_STARTTX_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
+#[doc = "Field `LASTRX_STOP` reader - Shortcut between LASTRX event and STOP task"]
+pub type LASTRX_STOP_R = crate::BitReader<LASTRX_STOP_A>;
 #[doc = "Shortcut between LASTRX event and STOP task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTRX_STOP_A {
@@ -384,14 +253,8 @@ impl From<LASTRX_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LASTRX_STOP` reader - Shortcut between LASTRX event and STOP task"]
-pub struct LASTRX_STOP_R(crate::FieldReader<bool, LASTRX_STOP_A>);
 impl LASTRX_STOP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LASTRX_STOP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LASTRX_STOP_A {
         match self.bits {
@@ -402,31 +265,17 @@ impl LASTRX_STOP_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LASTRX_STOP_A::DISABLED
+        *self == LASTRX_STOP_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LASTRX_STOP_A::ENABLED
-    }
-}
-impl core::ops::Deref for LASTRX_STOP_R {
-    type Target = crate::FieldReader<bool, LASTRX_STOP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LASTRX_STOP_A::ENABLED
     }
 }
 #[doc = "Field `LASTRX_STOP` writer - Shortcut between LASTRX event and STOP task"]
-pub struct LASTRX_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LASTRX_STOP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LASTRX_STOP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LASTRX_STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SHORTS_SPEC, LASTRX_STOP_A, O>;
+impl<'a, const O: u8> LASTRX_STOP_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -437,75 +286,59 @@ impl<'a> LASTRX_STOP_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(LASTRX_STOP_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 7 - Shortcut between LASTTX event and STARTRX task"]
     #[inline(always)]
     pub fn lasttx_startrx(&self) -> LASTTX_STARTRX_R {
-        LASTTX_STARTRX_R::new(((self.bits >> 7) & 0x01) != 0)
+        LASTTX_STARTRX_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Shortcut between LASTTX event and SUSPEND task"]
     #[inline(always)]
     pub fn lasttx_suspend(&self) -> LASTTX_SUSPEND_R {
-        LASTTX_SUSPEND_R::new(((self.bits >> 8) & 0x01) != 0)
+        LASTTX_SUSPEND_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Shortcut between LASTTX event and STOP task"]
     #[inline(always)]
     pub fn lasttx_stop(&self) -> LASTTX_STOP_R {
-        LASTTX_STOP_R::new(((self.bits >> 9) & 0x01) != 0)
+        LASTTX_STOP_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Shortcut between LASTRX event and STARTTX task"]
     #[inline(always)]
     pub fn lastrx_starttx(&self) -> LASTRX_STARTTX_R {
-        LASTRX_STARTTX_R::new(((self.bits >> 10) & 0x01) != 0)
+        LASTRX_STARTTX_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 12 - Shortcut between LASTRX event and STOP task"]
     #[inline(always)]
     pub fn lastrx_stop(&self) -> LASTRX_STOP_R {
-        LASTRX_STOP_R::new(((self.bits >> 12) & 0x01) != 0)
+        LASTRX_STOP_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 7 - Shortcut between LASTTX event and STARTRX task"]
     #[inline(always)]
-    pub fn lasttx_startrx(&mut self) -> LASTTX_STARTRX_W {
-        LASTTX_STARTRX_W { w: self }
+    pub fn lasttx_startrx(&mut self) -> LASTTX_STARTRX_W<7> {
+        LASTTX_STARTRX_W::new(self)
     }
     #[doc = "Bit 8 - Shortcut between LASTTX event and SUSPEND task"]
     #[inline(always)]
-    pub fn lasttx_suspend(&mut self) -> LASTTX_SUSPEND_W {
-        LASTTX_SUSPEND_W { w: self }
+    pub fn lasttx_suspend(&mut self) -> LASTTX_SUSPEND_W<8> {
+        LASTTX_SUSPEND_W::new(self)
     }
     #[doc = "Bit 9 - Shortcut between LASTTX event and STOP task"]
     #[inline(always)]
-    pub fn lasttx_stop(&mut self) -> LASTTX_STOP_W {
-        LASTTX_STOP_W { w: self }
+    pub fn lasttx_stop(&mut self) -> LASTTX_STOP_W<9> {
+        LASTTX_STOP_W::new(self)
     }
     #[doc = "Bit 10 - Shortcut between LASTRX event and STARTTX task"]
     #[inline(always)]
-    pub fn lastrx_starttx(&mut self) -> LASTRX_STARTTX_W {
-        LASTRX_STARTTX_W { w: self }
+    pub fn lastrx_starttx(&mut self) -> LASTRX_STARTTX_W<10> {
+        LASTRX_STARTTX_W::new(self)
     }
     #[doc = "Bit 12 - Shortcut between LASTRX event and STOP task"]
     #[inline(always)]
-    pub fn lastrx_stop(&mut self) -> LASTRX_STOP_W {
-        LASTRX_STOP_W { w: self }
+    pub fn lastrx_stop(&mut self) -> LASTRX_STOP_W<12> {
+        LASTRX_STOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

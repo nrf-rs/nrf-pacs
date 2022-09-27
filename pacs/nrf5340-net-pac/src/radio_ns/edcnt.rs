@@ -35,32 +35,9 @@ impl From<crate::W<EDCNT_SPEC>> for W {
     }
 }
 #[doc = "Field `EDCNT` reader - IEEE 802.15.4 energy detect loop count"]
-pub struct EDCNT_R(crate::FieldReader<u32, u32>);
-impl EDCNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        EDCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EDCNT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EDCNT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `EDCNT` writer - IEEE 802.15.4 energy detect loop count"]
-pub struct EDCNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDCNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x001f_ffff) | (value as u32 & 0x001f_ffff);
-        self.w
-    }
-}
+pub type EDCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EDCNT_SPEC, u32, u32, 21, O>;
 impl R {
     #[doc = "Bits 0:20 - IEEE 802.15.4 energy detect loop count"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:20 - IEEE 802.15.4 energy detect loop count"]
     #[inline(always)]
-    pub fn edcnt(&mut self) -> EDCNT_W {
-        EDCNT_W { w: self }
+    pub fn edcnt(&mut self) -> EDCNT_W<0> {
+        EDCNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,32 +35,9 @@ impl From<crate::W<T4_SPEC>> for W {
     }
 }
 #[doc = "Field `T4` reader - End point of 5th piece wise linear function"]
-pub struct T4_R(crate::FieldReader<u8, u8>);
-impl T4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        T4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `T4` writer - End point of 5th piece wise linear function"]
-pub struct T4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type T4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, T4_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - End point of 5th piece wise linear function"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - End point of 5th piece wise linear function"]
     #[inline(always)]
-    pub fn t4(&mut self) -> T4_W {
-        T4_W { w: self }
+    pub fn t4(&mut self) -> T4_W<0> {
+        T4_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

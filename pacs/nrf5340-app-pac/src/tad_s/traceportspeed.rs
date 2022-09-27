@@ -34,6 +34,8 @@ impl From<crate::W<TRACEPORTSPEED_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TRACEPORTSPEED` reader - Speed of Trace Port clock. Note that the TRACECLK pin output will be divided again by two from the Trace Port clock."]
+pub type TRACEPORTSPEED_R = crate::FieldReader<u8, TRACEPORTSPEED_A>;
 #[doc = "Speed of Trace Port clock. Note that the TRACECLK pin output will be divided again by two from the Trace Port clock.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,14 +55,8 @@ impl From<TRACEPORTSPEED_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TRACEPORTSPEED` reader - Speed of Trace Port clock. Note that the TRACECLK pin output will be divided again by two from the Trace Port clock."]
-pub struct TRACEPORTSPEED_R(crate::FieldReader<u8, TRACEPORTSPEED_A>);
 impl TRACEPORTSPEED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TRACEPORTSPEED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRACEPORTSPEED_A {
         match self.bits {
@@ -74,41 +70,28 @@ impl TRACEPORTSPEED_R {
     #[doc = "Checks if the value of the field is `_64MHZ`"]
     #[inline(always)]
     pub fn is_64mhz(&self) -> bool {
-        **self == TRACEPORTSPEED_A::_64MHZ
+        *self == TRACEPORTSPEED_A::_64MHZ
     }
     #[doc = "Checks if the value of the field is `_32MHZ`"]
     #[inline(always)]
     pub fn is_32mhz(&self) -> bool {
-        **self == TRACEPORTSPEED_A::_32MHZ
+        *self == TRACEPORTSPEED_A::_32MHZ
     }
     #[doc = "Checks if the value of the field is `_16MHZ`"]
     #[inline(always)]
     pub fn is_16mhz(&self) -> bool {
-        **self == TRACEPORTSPEED_A::_16MHZ
+        *self == TRACEPORTSPEED_A::_16MHZ
     }
     #[doc = "Checks if the value of the field is `_8MHZ`"]
     #[inline(always)]
     pub fn is_8mhz(&self) -> bool {
-        **self == TRACEPORTSPEED_A::_8MHZ
-    }
-}
-impl core::ops::Deref for TRACEPORTSPEED_R {
-    type Target = crate::FieldReader<u8, TRACEPORTSPEED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRACEPORTSPEED_A::_8MHZ
     }
 }
 #[doc = "Field `TRACEPORTSPEED` writer - Speed of Trace Port clock. Note that the TRACECLK pin output will be divided again by two from the Trace Port clock."]
-pub struct TRACEPORTSPEED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRACEPORTSPEED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRACEPORTSPEED_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type TRACEPORTSPEED_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TRACEPORTSPEED_SPEC, u8, TRACEPORTSPEED_A, 2, O>;
+impl<'a, const O: u8> TRACEPORTSPEED_W<'a, O> {
     #[doc = "Trace Port clock is: 64MHz"]
     #[inline(always)]
     pub fn _64mhz(self) -> &'a mut W {
@@ -129,25 +112,19 @@ impl<'a> TRACEPORTSPEED_W<'a> {
     pub fn _8mhz(self) -> &'a mut W {
         self.variant(TRACEPORTSPEED_A::_8MHZ)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Speed of Trace Port clock. Note that the TRACECLK pin output will be divided again by two from the Trace Port clock."]
     #[inline(always)]
     pub fn traceportspeed(&self) -> TRACEPORTSPEED_R {
-        TRACEPORTSPEED_R::new((self.bits & 0x03) as u8)
+        TRACEPORTSPEED_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Speed of Trace Port clock. Note that the TRACECLK pin output will be divided again by two from the Trace Port clock."]
     #[inline(always)]
-    pub fn traceportspeed(&mut self) -> TRACEPORTSPEED_W {
-        TRACEPORTSPEED_W { w: self }
+    pub fn traceportspeed(&mut self) -> TRACEPORTSPEED_W<0> {
+        TRACEPORTSPEED_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

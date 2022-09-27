@@ -20,32 +20,13 @@ impl From<crate::W<TASKS_EP0RCVOUT_SPEC>> for W {
     }
 }
 #[doc = "Field `TASKS_EP0RCVOUT` writer - "]
-pub struct TASKS_EP0RCVOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASKS_EP0RCVOUT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TASKS_EP0RCVOUT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_EP0RCVOUT_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn tasks_ep0rcvout(&mut self) -> TASKS_EP0RCVOUT_W {
-        TASKS_EP0RCVOUT_W { w: self }
+    pub fn tasks_ep0rcvout(&mut self) -> TASKS_EP0RCVOUT_W<0> {
+        TASKS_EP0RCVOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

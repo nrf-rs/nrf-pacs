@@ -13,11 +13,13 @@ impl From<crate::R<HFCLKRUN_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `STATUS` reader - Task HFCLKSTART trigger status."]
+pub type STATUS_R = crate::BitReader<STATUS_A>;
 #[doc = "Task HFCLKSTART trigger status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STATUS_A {
     #[doc = "0: Task HFCLKSTART has not been triggered."]
-    NOTTRIGGERED = 0,
+    NOT_TRIGGERED = 0,
     #[doc = "1: Task HFCLKSTART has been triggered."]
     TRIGGERED = 1,
 }
@@ -27,44 +29,31 @@ impl From<STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STATUS` reader - Task HFCLKSTART trigger status."]
-pub struct STATUS_R(crate::FieldReader<bool, STATUS_A>);
 impl STATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STATUS_A {
         match self.bits {
-            false => STATUS_A::NOTTRIGGERED,
+            false => STATUS_A::NOT_TRIGGERED,
             true => STATUS_A::TRIGGERED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTTRIGGERED`"]
+    #[doc = "Checks if the value of the field is `NOT_TRIGGERED`"]
     #[inline(always)]
     pub fn is_not_triggered(&self) -> bool {
-        **self == STATUS_A::NOTTRIGGERED
+        *self == STATUS_A::NOT_TRIGGERED
     }
     #[doc = "Checks if the value of the field is `TRIGGERED`"]
     #[inline(always)]
     pub fn is_triggered(&self) -> bool {
-        **self == STATUS_A::TRIGGERED
-    }
-}
-impl core::ops::Deref for STATUS_R {
-    type Target = crate::FieldReader<bool, STATUS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STATUS_A::TRIGGERED
     }
 }
 impl R {
     #[doc = "Bit 0 - Task HFCLKSTART trigger status."]
     #[inline(always)]
     pub fn status(&self) -> STATUS_R {
-        STATUS_R::new((self.bits & 0x01) != 0)
+        STATUS_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Task HFCLKSTART trigger status.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfclkrun](index.html) module"]

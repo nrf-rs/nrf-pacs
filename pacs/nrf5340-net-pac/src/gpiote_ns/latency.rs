@@ -34,13 +34,15 @@ impl From<crate::W<LATENCY_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LATENCY` reader - Latency setting"]
+pub type LATENCY_R = crate::BitReader<LATENCY_A>;
 #[doc = "Latency setting\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LATENCY_A {
     #[doc = "0: Low power setting, for signals with minimum hold time tGPIOTE,HOLD,LP; refer to Electrical specification section"]
-    LOWPOWER = 0,
+    LOW_POWER = 0,
     #[doc = "1: Low latency setting, for signals with minimum hold time tGPIOTE,HOLD,LL; refer to Electrical specification section"]
-    LOWLATENCY = 1,
+    LOW_LATENCY = 1,
 }
 impl From<LATENCY_A> for bool {
     #[inline(always)]
@@ -48,88 +50,52 @@ impl From<LATENCY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LATENCY` reader - Latency setting"]
-pub struct LATENCY_R(crate::FieldReader<bool, LATENCY_A>);
 impl LATENCY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LATENCY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LATENCY_A {
         match self.bits {
-            false => LATENCY_A::LOWPOWER,
-            true => LATENCY_A::LOWLATENCY,
+            false => LATENCY_A::LOW_POWER,
+            true => LATENCY_A::LOW_LATENCY,
         }
     }
-    #[doc = "Checks if the value of the field is `LOWPOWER`"]
+    #[doc = "Checks if the value of the field is `LOW_POWER`"]
     #[inline(always)]
     pub fn is_low_power(&self) -> bool {
-        **self == LATENCY_A::LOWPOWER
+        *self == LATENCY_A::LOW_POWER
     }
-    #[doc = "Checks if the value of the field is `LOWLATENCY`"]
+    #[doc = "Checks if the value of the field is `LOW_LATENCY`"]
     #[inline(always)]
     pub fn is_low_latency(&self) -> bool {
-        **self == LATENCY_A::LOWLATENCY
-    }
-}
-impl core::ops::Deref for LATENCY_R {
-    type Target = crate::FieldReader<bool, LATENCY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LATENCY_A::LOW_LATENCY
     }
 }
 #[doc = "Field `LATENCY` writer - Latency setting"]
-pub struct LATENCY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LATENCY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LATENCY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LATENCY_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATENCY_SPEC, LATENCY_A, O>;
+impl<'a, const O: u8> LATENCY_W<'a, O> {
     #[doc = "Low power setting, for signals with minimum hold time tGPIOTE,HOLD,LP; refer to Electrical specification section"]
     #[inline(always)]
     pub fn low_power(self) -> &'a mut W {
-        self.variant(LATENCY_A::LOWPOWER)
+        self.variant(LATENCY_A::LOW_POWER)
     }
     #[doc = "Low latency setting, for signals with minimum hold time tGPIOTE,HOLD,LL; refer to Electrical specification section"]
     #[inline(always)]
     pub fn low_latency(self) -> &'a mut W {
-        self.variant(LATENCY_A::LOWLATENCY)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(LATENCY_A::LOW_LATENCY)
     }
 }
 impl R {
     #[doc = "Bit 0 - Latency setting"]
     #[inline(always)]
     pub fn latency(&self) -> LATENCY_R {
-        LATENCY_R::new((self.bits & 0x01) != 0)
+        LATENCY_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Latency setting"]
     #[inline(always)]
-    pub fn latency(&mut self) -> LATENCY_W {
-        LATENCY_W { w: self }
+    pub fn latency(&mut self) -> LATENCY_W<0> {
+        LATENCY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

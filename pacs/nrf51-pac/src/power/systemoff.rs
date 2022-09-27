@@ -32,42 +32,19 @@ impl From<SYSTEMOFF_AW> for bool {
     }
 }
 #[doc = "Field `SYSTEMOFF` writer - Enter system off mode."]
-pub struct SYSTEMOFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYSTEMOFF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYSTEMOFF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SYSTEMOFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYSTEMOFF_SPEC, SYSTEMOFF_AW, O>;
+impl<'a, const O: u8> SYSTEMOFF_W<'a, O> {
     #[doc = "Enter system off mode."]
     #[inline(always)]
     pub fn enter(self) -> &'a mut W {
         self.variant(SYSTEMOFF_AW::ENTER)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Enter system off mode."]
     #[inline(always)]
-    pub fn systemoff(&mut self) -> SYSTEMOFF_W {
-        SYSTEMOFF_W { w: self }
+    pub fn systemoff(&mut self) -> SYSTEMOFF_W<0> {
+        SYSTEMOFF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

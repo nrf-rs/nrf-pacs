@@ -32,42 +32,20 @@ impl From<TASKS_EP0STATUS_AW> for bool {
     }
 }
 #[doc = "Field `TASKS_EP0STATUS` writer - Allows status stage on control endpoint 0"]
-pub struct TASKS_EP0STATUS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASKS_EP0STATUS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TASKS_EP0STATUS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TASKS_EP0STATUS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_EP0STATUS_SPEC, TASKS_EP0STATUS_AW, O>;
+impl<'a, const O: u8> TASKS_EP0STATUS_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
     pub fn trigger(self) -> &'a mut W {
         self.variant(TASKS_EP0STATUS_AW::TRIGGER)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Allows status stage on control endpoint 0"]
     #[inline(always)]
-    pub fn tasks_ep0status(&mut self) -> TASKS_EP0STATUS_W {
-        TASKS_EP0STATUS_W { w: self }
+    pub fn tasks_ep0status(&mut self) -> TASKS_EP0STATUS_W<0> {
+        TASKS_EP0STATUS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

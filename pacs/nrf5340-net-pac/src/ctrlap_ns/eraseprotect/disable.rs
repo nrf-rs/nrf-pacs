@@ -35,32 +35,9 @@ impl From<crate::W<DISABLE_SPEC>> for W {
     }
 }
 #[doc = "Field `KEY` reader - The ERASEALL sequence is initiated if the value of the KEY fields are non-zero and the KEY fields match on both the CPU and debugger sides."]
-pub struct KEY_R(crate::FieldReader<u32, u32>);
-impl KEY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        KEY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KEY_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KEY_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `KEY` writer - The ERASEALL sequence is initiated if the value of the KEY fields are non-zero and the KEY fields match on both the CPU and debugger sides."]
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DISABLE_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - The ERASEALL sequence is initiated if the value of the KEY fields are non-zero and the KEY fields match on both the CPU and debugger sides."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - The ERASEALL sequence is initiated if the value of the KEY fields are non-zero and the KEY fields match on both the CPU and debugger sides."]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    pub fn key(&mut self) -> KEY_W<0> {
+        KEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

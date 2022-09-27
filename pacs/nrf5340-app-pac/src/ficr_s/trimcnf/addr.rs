@@ -35,32 +35,9 @@ impl From<crate::W<ADDR_SPEC>> for W {
     }
 }
 #[doc = "Field `Address` reader - Address"]
-pub struct ADDRESS_R(crate::FieldReader<u32, u32>);
-impl ADDRESS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        ADDRESS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDRESS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDRESS_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `Address` writer - Address"]
-pub struct ADDRESS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDRESS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type ADDRESS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ADDR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Address"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Address"]
     #[inline(always)]
-    pub fn address(&mut self) -> ADDRESS_W {
-        ADDRESS_W { w: self }
+    pub fn address(&mut self) -> ADDRESS_W<0> {
+        ADDRESS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

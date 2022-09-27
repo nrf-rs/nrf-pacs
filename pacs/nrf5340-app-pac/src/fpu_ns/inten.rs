@@ -34,6 +34,8 @@ impl From<crate::W<INTEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `INVALIDOPERATION` reader - Enable or disable interrupt for event INVALIDOPERATION"]
+pub type INVALIDOPERATION_R = crate::BitReader<INVALIDOPERATION_A>;
 #[doc = "Enable or disable interrupt for event INVALIDOPERATION\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INVALIDOPERATION_A {
@@ -48,14 +50,8 @@ impl From<INVALIDOPERATION_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INVALIDOPERATION` reader - Enable or disable interrupt for event INVALIDOPERATION"]
-pub struct INVALIDOPERATION_R(crate::FieldReader<bool, INVALIDOPERATION_A>);
 impl INVALIDOPERATION_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        INVALIDOPERATION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INVALIDOPERATION_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl INVALIDOPERATION_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == INVALIDOPERATION_A::DISABLED
+        *self == INVALIDOPERATION_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == INVALIDOPERATION_A::ENABLED
-    }
-}
-impl core::ops::Deref for INVALIDOPERATION_R {
-    type Target = crate::FieldReader<bool, INVALIDOPERATION_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == INVALIDOPERATION_A::ENABLED
     }
 }
 #[doc = "Field `INVALIDOPERATION` writer - Enable or disable interrupt for event INVALIDOPERATION"]
-pub struct INVALIDOPERATION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INVALIDOPERATION_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: INVALIDOPERATION_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type INVALIDOPERATION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTEN_SPEC, INVALIDOPERATION_A, O>;
+impl<'a, const O: u8> INVALIDOPERATION_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +84,9 @@ impl<'a> INVALIDOPERATION_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(INVALIDOPERATION_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `DIVIDEBYZERO` reader - Enable or disable interrupt for event DIVIDEBYZERO"]
+pub type DIVIDEBYZERO_R = crate::BitReader<DIVIDEBYZERO_A>;
 #[doc = "Enable or disable interrupt for event DIVIDEBYZERO\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIVIDEBYZERO_A {
@@ -132,14 +101,8 @@ impl From<DIVIDEBYZERO_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIVIDEBYZERO` reader - Enable or disable interrupt for event DIVIDEBYZERO"]
-pub struct DIVIDEBYZERO_R(crate::FieldReader<bool, DIVIDEBYZERO_A>);
 impl DIVIDEBYZERO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DIVIDEBYZERO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIVIDEBYZERO_A {
         match self.bits {
@@ -150,31 +113,17 @@ impl DIVIDEBYZERO_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DIVIDEBYZERO_A::DISABLED
+        *self == DIVIDEBYZERO_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DIVIDEBYZERO_A::ENABLED
-    }
-}
-impl core::ops::Deref for DIVIDEBYZERO_R {
-    type Target = crate::FieldReader<bool, DIVIDEBYZERO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DIVIDEBYZERO_A::ENABLED
     }
 }
 #[doc = "Field `DIVIDEBYZERO` writer - Enable or disable interrupt for event DIVIDEBYZERO"]
-pub struct DIVIDEBYZERO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIVIDEBYZERO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIVIDEBYZERO_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DIVIDEBYZERO_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, DIVIDEBYZERO_A, O>;
+impl<'a, const O: u8> DIVIDEBYZERO_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,23 +134,9 @@ impl<'a> DIVIDEBYZERO_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(DIVIDEBYZERO_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `OVERFLOW` reader - Enable or disable interrupt for event OVERFLOW"]
+pub type OVERFLOW_R = crate::BitReader<OVERFLOW_A>;
 #[doc = "Enable or disable interrupt for event OVERFLOW\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERFLOW_A {
@@ -216,14 +151,8 @@ impl From<OVERFLOW_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OVERFLOW` reader - Enable or disable interrupt for event OVERFLOW"]
-pub struct OVERFLOW_R(crate::FieldReader<bool, OVERFLOW_A>);
 impl OVERFLOW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OVERFLOW_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OVERFLOW_A {
         match self.bits {
@@ -234,31 +163,17 @@ impl OVERFLOW_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == OVERFLOW_A::DISABLED
+        *self == OVERFLOW_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == OVERFLOW_A::ENABLED
-    }
-}
-impl core::ops::Deref for OVERFLOW_R {
-    type Target = crate::FieldReader<bool, OVERFLOW_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OVERFLOW_A::ENABLED
     }
 }
 #[doc = "Field `OVERFLOW` writer - Enable or disable interrupt for event OVERFLOW"]
-pub struct OVERFLOW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVERFLOW_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OVERFLOW_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OVERFLOW_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, OVERFLOW_A, O>;
+impl<'a, const O: u8> OVERFLOW_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -269,23 +184,9 @@ impl<'a> OVERFLOW_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(OVERFLOW_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `UNDERFLOW` reader - Enable or disable interrupt for event UNDERFLOW"]
+pub type UNDERFLOW_R = crate::BitReader<UNDERFLOW_A>;
 #[doc = "Enable or disable interrupt for event UNDERFLOW\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UNDERFLOW_A {
@@ -300,14 +201,8 @@ impl From<UNDERFLOW_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNDERFLOW` reader - Enable or disable interrupt for event UNDERFLOW"]
-pub struct UNDERFLOW_R(crate::FieldReader<bool, UNDERFLOW_A>);
 impl UNDERFLOW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UNDERFLOW_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UNDERFLOW_A {
         match self.bits {
@@ -318,31 +213,17 @@ impl UNDERFLOW_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == UNDERFLOW_A::DISABLED
+        *self == UNDERFLOW_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == UNDERFLOW_A::ENABLED
-    }
-}
-impl core::ops::Deref for UNDERFLOW_R {
-    type Target = crate::FieldReader<bool, UNDERFLOW_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UNDERFLOW_A::ENABLED
     }
 }
 #[doc = "Field `UNDERFLOW` writer - Enable or disable interrupt for event UNDERFLOW"]
-pub struct UNDERFLOW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UNDERFLOW_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UNDERFLOW_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UNDERFLOW_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, UNDERFLOW_A, O>;
+impl<'a, const O: u8> UNDERFLOW_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -353,23 +234,9 @@ impl<'a> UNDERFLOW_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(UNDERFLOW_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `INEXACT` reader - Enable or disable interrupt for event INEXACT"]
+pub type INEXACT_R = crate::BitReader<INEXACT_A>;
 #[doc = "Enable or disable interrupt for event INEXACT\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INEXACT_A {
@@ -384,14 +251,8 @@ impl From<INEXACT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INEXACT` reader - Enable or disable interrupt for event INEXACT"]
-pub struct INEXACT_R(crate::FieldReader<bool, INEXACT_A>);
 impl INEXACT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        INEXACT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INEXACT_A {
         match self.bits {
@@ -402,31 +263,17 @@ impl INEXACT_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == INEXACT_A::DISABLED
+        *self == INEXACT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == INEXACT_A::ENABLED
-    }
-}
-impl core::ops::Deref for INEXACT_R {
-    type Target = crate::FieldReader<bool, INEXACT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == INEXACT_A::ENABLED
     }
 }
 #[doc = "Field `INEXACT` writer - Enable or disable interrupt for event INEXACT"]
-pub struct INEXACT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INEXACT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: INEXACT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type INEXACT_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, INEXACT_A, O>;
+impl<'a, const O: u8> INEXACT_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -437,23 +284,9 @@ impl<'a> INEXACT_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(INEXACT_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `DENORMALINPUT` reader - Enable or disable interrupt for event DENORMALINPUT"]
+pub type DENORMALINPUT_R = crate::BitReader<DENORMALINPUT_A>;
 #[doc = "Enable or disable interrupt for event DENORMALINPUT\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DENORMALINPUT_A {
@@ -468,14 +301,8 @@ impl From<DENORMALINPUT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DENORMALINPUT` reader - Enable or disable interrupt for event DENORMALINPUT"]
-pub struct DENORMALINPUT_R(crate::FieldReader<bool, DENORMALINPUT_A>);
 impl DENORMALINPUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DENORMALINPUT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DENORMALINPUT_A {
         match self.bits {
@@ -486,31 +313,18 @@ impl DENORMALINPUT_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DENORMALINPUT_A::DISABLED
+        *self == DENORMALINPUT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DENORMALINPUT_A::ENABLED
-    }
-}
-impl core::ops::Deref for DENORMALINPUT_R {
-    type Target = crate::FieldReader<bool, DENORMALINPUT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DENORMALINPUT_A::ENABLED
     }
 }
 #[doc = "Field `DENORMALINPUT` writer - Enable or disable interrupt for event DENORMALINPUT"]
-pub struct DENORMALINPUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DENORMALINPUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DENORMALINPUT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DENORMALINPUT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTEN_SPEC, DENORMALINPUT_A, O>;
+impl<'a, const O: u8> DENORMALINPUT_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -521,85 +335,69 @@ impl<'a> DENORMALINPUT_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(DENORMALINPUT_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable or disable interrupt for event INVALIDOPERATION"]
     #[inline(always)]
     pub fn invalidoperation(&self) -> INVALIDOPERATION_R {
-        INVALIDOPERATION_R::new((self.bits & 0x01) != 0)
+        INVALIDOPERATION_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable or disable interrupt for event DIVIDEBYZERO"]
     #[inline(always)]
     pub fn dividebyzero(&self) -> DIVIDEBYZERO_R {
-        DIVIDEBYZERO_R::new(((self.bits >> 1) & 0x01) != 0)
+        DIVIDEBYZERO_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable or disable interrupt for event OVERFLOW"]
     #[inline(always)]
     pub fn overflow(&self) -> OVERFLOW_R {
-        OVERFLOW_R::new(((self.bits >> 2) & 0x01) != 0)
+        OVERFLOW_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable or disable interrupt for event UNDERFLOW"]
     #[inline(always)]
     pub fn underflow(&self) -> UNDERFLOW_R {
-        UNDERFLOW_R::new(((self.bits >> 3) & 0x01) != 0)
+        UNDERFLOW_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable or disable interrupt for event INEXACT"]
     #[inline(always)]
     pub fn inexact(&self) -> INEXACT_R {
-        INEXACT_R::new(((self.bits >> 4) & 0x01) != 0)
+        INEXACT_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable or disable interrupt for event DENORMALINPUT"]
     #[inline(always)]
     pub fn denormalinput(&self) -> DENORMALINPUT_R {
-        DENORMALINPUT_R::new(((self.bits >> 5) & 0x01) != 0)
+        DENORMALINPUT_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable or disable interrupt for event INVALIDOPERATION"]
     #[inline(always)]
-    pub fn invalidoperation(&mut self) -> INVALIDOPERATION_W {
-        INVALIDOPERATION_W { w: self }
+    pub fn invalidoperation(&mut self) -> INVALIDOPERATION_W<0> {
+        INVALIDOPERATION_W::new(self)
     }
     #[doc = "Bit 1 - Enable or disable interrupt for event DIVIDEBYZERO"]
     #[inline(always)]
-    pub fn dividebyzero(&mut self) -> DIVIDEBYZERO_W {
-        DIVIDEBYZERO_W { w: self }
+    pub fn dividebyzero(&mut self) -> DIVIDEBYZERO_W<1> {
+        DIVIDEBYZERO_W::new(self)
     }
     #[doc = "Bit 2 - Enable or disable interrupt for event OVERFLOW"]
     #[inline(always)]
-    pub fn overflow(&mut self) -> OVERFLOW_W {
-        OVERFLOW_W { w: self }
+    pub fn overflow(&mut self) -> OVERFLOW_W<2> {
+        OVERFLOW_W::new(self)
     }
     #[doc = "Bit 3 - Enable or disable interrupt for event UNDERFLOW"]
     #[inline(always)]
-    pub fn underflow(&mut self) -> UNDERFLOW_W {
-        UNDERFLOW_W { w: self }
+    pub fn underflow(&mut self) -> UNDERFLOW_W<3> {
+        UNDERFLOW_W::new(self)
     }
     #[doc = "Bit 4 - Enable or disable interrupt for event INEXACT"]
     #[inline(always)]
-    pub fn inexact(&mut self) -> INEXACT_W {
-        INEXACT_W { w: self }
+    pub fn inexact(&mut self) -> INEXACT_W<4> {
+        INEXACT_W::new(self)
     }
     #[doc = "Bit 5 - Enable or disable interrupt for event DENORMALINPUT"]
     #[inline(always)]
-    pub fn denormalinput(&mut self) -> DENORMALINPUT_W {
-        DENORMALINPUT_W { w: self }
+    pub fn denormalinput(&mut self) -> DENORMALINPUT_W<5> {
+        DENORMALINPUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

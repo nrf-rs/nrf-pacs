@@ -35,32 +35,11 @@ impl From<crate::W<DTOGGLE_SPEC>> for W {
     }
 }
 #[doc = "Field `EP` reader - Select bulk endpoint number"]
-pub struct EP_R(crate::FieldReader<u8, u8>);
-impl EP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EP` writer - Select bulk endpoint number"]
-pub struct EP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type EP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTOGGLE_SPEC, u8, u8, 3, O>;
+#[doc = "Field `IO` reader - Selects IN or OUT endpoint"]
+pub type IO_R = crate::BitReader<IO_A>;
 #[doc = "Selects IN or OUT endpoint\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IO_A {
@@ -75,14 +54,8 @@ impl From<IO_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IO` reader - Selects IN or OUT endpoint"]
-pub struct IO_R(crate::FieldReader<bool, IO_A>);
 impl IO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        IO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IO_A {
         match self.bits {
@@ -93,31 +66,17 @@ impl IO_R {
     #[doc = "Checks if the value of the field is `OUT`"]
     #[inline(always)]
     pub fn is_out(&self) -> bool {
-        **self == IO_A::OUT
+        *self == IO_A::OUT
     }
     #[doc = "Checks if the value of the field is `IN`"]
     #[inline(always)]
     pub fn is_in(&self) -> bool {
-        **self == IO_A::IN
-    }
-}
-impl core::ops::Deref for IO_R {
-    type Target = crate::FieldReader<bool, IO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IO_A::IN
     }
 }
 #[doc = "Field `IO` writer - Selects IN or OUT endpoint"]
-pub struct IO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IO_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IO_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGGLE_SPEC, IO_A, O>;
+impl<'a, const O: u8> IO_W<'a, O> {
     #[doc = "Selects OUT endpoint"]
     #[inline(always)]
     pub fn out(self) -> &'a mut W {
@@ -128,23 +87,9 @@ impl<'a> IO_W<'a> {
     pub fn in_(self) -> &'a mut W {
         self.variant(IO_A::IN)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `VALUE` reader - Data toggle value"]
+pub type VALUE_R = crate::FieldReader<u8, VALUE_A>;
 #[doc = "Data toggle value\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -162,14 +107,8 @@ impl From<VALUE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VALUE` reader - Data toggle value"]
-pub struct VALUE_R(crate::FieldReader<u8, VALUE_A>);
 impl VALUE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        VALUE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<VALUE_A> {
         match self.bits {
@@ -182,36 +121,22 @@ impl VALUE_R {
     #[doc = "Checks if the value of the field is `NOP`"]
     #[inline(always)]
     pub fn is_nop(&self) -> bool {
-        **self == VALUE_A::NOP
+        *self == VALUE_A::NOP
     }
     #[doc = "Checks if the value of the field is `DATA0`"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
-        **self == VALUE_A::DATA0
+        *self == VALUE_A::DATA0
     }
     #[doc = "Checks if the value of the field is `DATA1`"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
-        **self == VALUE_A::DATA1
-    }
-}
-impl core::ops::Deref for VALUE_R {
-    type Target = crate::FieldReader<u8, VALUE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VALUE_A::DATA1
     }
 }
 #[doc = "Field `VALUE` writer - Data toggle value"]
-pub struct VALUE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VALUE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VALUE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type VALUE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTOGGLE_SPEC, u8, VALUE_A, 2, O>;
+impl<'a, const O: u8> VALUE_W<'a, O> {
     #[doc = "No action on data toggle when writing the register with this value"]
     #[inline(always)]
     pub fn nop(self) -> &'a mut W {
@@ -227,45 +152,39 @@ impl<'a> VALUE_W<'a> {
     pub fn data1(self) -> &'a mut W {
         self.variant(VALUE_A::DATA1)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Select bulk endpoint number"]
     #[inline(always)]
     pub fn ep(&self) -> EP_R {
-        EP_R::new((self.bits & 0x07) as u8)
+        EP_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 7 - Selects IN or OUT endpoint"]
     #[inline(always)]
     pub fn io(&self) -> IO_R {
-        IO_R::new(((self.bits >> 7) & 0x01) != 0)
+        IO_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Data toggle value"]
     #[inline(always)]
     pub fn value(&self) -> VALUE_R {
-        VALUE_R::new(((self.bits >> 8) & 0x03) as u8)
+        VALUE_R::new(((self.bits >> 8) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Select bulk endpoint number"]
     #[inline(always)]
-    pub fn ep(&mut self) -> EP_W {
-        EP_W { w: self }
+    pub fn ep(&mut self) -> EP_W<0> {
+        EP_W::new(self)
     }
     #[doc = "Bit 7 - Selects IN or OUT endpoint"]
     #[inline(always)]
-    pub fn io(&mut self) -> IO_W {
-        IO_W { w: self }
+    pub fn io(&mut self) -> IO_W<7> {
+        IO_W::new(self)
     }
     #[doc = "Bits 8:9 - Data toggle value"]
     #[inline(always)]
-    pub fn value(&mut self) -> VALUE_W {
-        VALUE_W { w: self }
+    pub fn value(&mut self) -> VALUE_W<8> {
+        VALUE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

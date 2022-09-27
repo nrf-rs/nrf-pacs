@@ -34,6 +34,8 @@ impl From<crate::W<SHORTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ENDRX_STARTRX` reader - Shortcut between ENDRX event and STARTRX task"]
+pub type ENDRX_STARTRX_R = crate::BitReader<ENDRX_STARTRX_A>;
 #[doc = "Shortcut between ENDRX event and STARTRX task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDRX_STARTRX_A {
@@ -48,14 +50,8 @@ impl From<ENDRX_STARTRX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ENDRX_STARTRX` reader - Shortcut between ENDRX event and STARTRX task"]
-pub struct ENDRX_STARTRX_R(crate::FieldReader<bool, ENDRX_STARTRX_A>);
 impl ENDRX_STARTRX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ENDRX_STARTRX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENDRX_STARTRX_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl ENDRX_STARTRX_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ENDRX_STARTRX_A::DISABLED
+        *self == ENDRX_STARTRX_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ENDRX_STARTRX_A::ENABLED
-    }
-}
-impl core::ops::Deref for ENDRX_STARTRX_R {
-    type Target = crate::FieldReader<bool, ENDRX_STARTRX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENDRX_STARTRX_A::ENABLED
     }
 }
 #[doc = "Field `ENDRX_STARTRX` writer - Shortcut between ENDRX event and STARTRX task"]
-pub struct ENDRX_STARTRX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENDRX_STARTRX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENDRX_STARTRX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ENDRX_STARTRX_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, ENDRX_STARTRX_A, O>;
+impl<'a, const O: u8> ENDRX_STARTRX_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +84,9 @@ impl<'a> ENDRX_STARTRX_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ENDRX_STARTRX_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `ENDRX_STOPRX` reader - Shortcut between ENDRX event and STOPRX task"]
+pub type ENDRX_STOPRX_R = crate::BitReader<ENDRX_STOPRX_A>;
 #[doc = "Shortcut between ENDRX event and STOPRX task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDRX_STOPRX_A {
@@ -132,14 +101,8 @@ impl From<ENDRX_STOPRX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ENDRX_STOPRX` reader - Shortcut between ENDRX event and STOPRX task"]
-pub struct ENDRX_STOPRX_R(crate::FieldReader<bool, ENDRX_STOPRX_A>);
 impl ENDRX_STOPRX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ENDRX_STOPRX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENDRX_STOPRX_A {
         match self.bits {
@@ -150,31 +113,18 @@ impl ENDRX_STOPRX_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ENDRX_STOPRX_A::DISABLED
+        *self == ENDRX_STOPRX_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ENDRX_STOPRX_A::ENABLED
-    }
-}
-impl core::ops::Deref for ENDRX_STOPRX_R {
-    type Target = crate::FieldReader<bool, ENDRX_STOPRX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENDRX_STOPRX_A::ENABLED
     }
 }
 #[doc = "Field `ENDRX_STOPRX` writer - Shortcut between ENDRX event and STOPRX task"]
-pub struct ENDRX_STOPRX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENDRX_STOPRX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENDRX_STOPRX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ENDRX_STOPRX_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, ENDRX_STOPRX_A, O>;
+impl<'a, const O: u8> ENDRX_STOPRX_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,45 +135,29 @@ impl<'a> ENDRX_STOPRX_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ENDRX_STOPRX_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 5 - Shortcut between ENDRX event and STARTRX task"]
     #[inline(always)]
     pub fn endrx_startrx(&self) -> ENDRX_STARTRX_R {
-        ENDRX_STARTRX_R::new(((self.bits >> 5) & 0x01) != 0)
+        ENDRX_STARTRX_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Shortcut between ENDRX event and STOPRX task"]
     #[inline(always)]
     pub fn endrx_stoprx(&self) -> ENDRX_STOPRX_R {
-        ENDRX_STOPRX_R::new(((self.bits >> 6) & 0x01) != 0)
+        ENDRX_STOPRX_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 5 - Shortcut between ENDRX event and STARTRX task"]
     #[inline(always)]
-    pub fn endrx_startrx(&mut self) -> ENDRX_STARTRX_W {
-        ENDRX_STARTRX_W { w: self }
+    pub fn endrx_startrx(&mut self) -> ENDRX_STARTRX_W<5> {
+        ENDRX_STARTRX_W::new(self)
     }
     #[doc = "Bit 6 - Shortcut between ENDRX event and STOPRX task"]
     #[inline(always)]
-    pub fn endrx_stoprx(&mut self) -> ENDRX_STOPRX_W {
-        ENDRX_STOPRX_W { w: self }
+    pub fn endrx_stoprx(&mut self) -> ENDRX_STOPRX_W<6> {
+        ENDRX_STOPRX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

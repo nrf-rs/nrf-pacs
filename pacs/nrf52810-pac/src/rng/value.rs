@@ -14,20 +14,7 @@ impl From<crate::R<VALUE_SPEC>> for R {
     }
 }
 #[doc = "Field `VALUE` reader - Generated random number"]
-pub struct VALUE_R(crate::FieldReader<u8, u8>);
-impl VALUE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        VALUE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VALUE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VALUE_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Generated random number"]
     #[inline(always)]

@@ -14,20 +14,7 @@ impl From<crate::R<IR_SPEC>> for R {
     }
 }
 #[doc = "Field `IR` reader - Identity Root, word n"]
-pub struct IR_R(crate::FieldReader<u32, u32>);
-impl IR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        IR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Identity Root, word n"]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<LOCK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LOCK` reader - "]
+pub type LOCK_R = crate::BitReader<LOCK_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCK_A {
@@ -48,14 +50,8 @@ impl From<LOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCK` reader - "]
-pub struct LOCK_R(crate::FieldReader<bool, LOCK_A>);
 impl LOCK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LOCK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LOCK_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl LOCK_R {
     #[doc = "Checks if the value of the field is `LOCKED`"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        **self == LOCK_A::LOCKED
+        *self == LOCK_A::LOCKED
     }
     #[doc = "Checks if the value of the field is `UNLOCKED`"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        **self == LOCK_A::UNLOCKED
-    }
-}
-impl core::ops::Deref for LOCK_R {
-    type Target = crate::FieldReader<bool, LOCK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LOCK_A::UNLOCKED
     }
 }
 #[doc = "Field `LOCK` writer - "]
-pub struct LOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LOCK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, LOCK_SPEC, LOCK_A, O>;
+impl<'a, const O: u8> LOCK_W<'a, O> {
     #[doc = "GPIOPORT\\[n\\].PERM register can't be changed until next reset"]
     #[inline(always)]
     pub fn locked(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> LOCK_W<'a> {
     pub fn unlocked(self) -> &'a mut W {
         self.variant(LOCK_A::UNLOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn lock(&self) -> LOCK_R {
-        LOCK_R::new((self.bits & 0x01) != 0)
+        LOCK_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LOCK_W {
-        LOCK_W { w: self }
+    pub fn lock(&mut self) -> LOCK_W<0> {
+        LOCK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

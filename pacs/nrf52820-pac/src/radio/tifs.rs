@@ -35,32 +35,9 @@ impl From<crate::W<TIFS_SPEC>> for W {
     }
 }
 #[doc = "Field `TIFS` reader - Interframe spacing in us."]
-pub struct TIFS_R(crate::FieldReader<u16, u16>);
-impl TIFS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TIFS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIFS_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIFS_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TIFS` writer - Interframe spacing in us."]
-pub struct TIFS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIFS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
-        self.w
-    }
-}
+pub type TIFS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIFS_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 0:9 - Interframe spacing in us."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Interframe spacing in us."]
     #[inline(always)]
-    pub fn tifs(&mut self) -> TIFS_W {
-        TIFS_W { w: self }
+    pub fn tifs(&mut self) -> TIFS_W<0> {
+        TIFS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

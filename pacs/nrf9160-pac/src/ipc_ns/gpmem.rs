@@ -35,32 +35,9 @@ impl From<crate::W<GPMEM_SPEC>> for W {
     }
 }
 #[doc = "Field `GPMEM` reader - General purpose memory"]
-pub struct GPMEM_R(crate::FieldReader<u32, u32>);
-impl GPMEM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        GPMEM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GPMEM_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GPMEM_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `GPMEM` writer - General purpose memory"]
-pub struct GPMEM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPMEM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type GPMEM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GPMEM_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - General purpose memory"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - General purpose memory"]
     #[inline(always)]
-    pub fn gpmem(&mut self) -> GPMEM_W {
-        GPMEM_W { w: self }
+    pub fn gpmem(&mut self) -> GPMEM_W<0> {
+        GPMEM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

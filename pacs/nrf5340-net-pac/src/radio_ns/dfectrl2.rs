@@ -35,59 +35,15 @@ impl From<crate::W<DFECTRL2_SPEC>> for W {
     }
 }
 #[doc = "Field `TSWITCHOFFSET` reader - Signed value offset after the end of the CRC before starting switching in number of 16 MHz clock cycles"]
-pub struct TSWITCHOFFSET_R(crate::FieldReader<u16, u16>);
-impl TSWITCHOFFSET_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TSWITCHOFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TSWITCHOFFSET_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TSWITCHOFFSET_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TSWITCHOFFSET` writer - Signed value offset after the end of the CRC before starting switching in number of 16 MHz clock cycles"]
-pub struct TSWITCHOFFSET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSWITCHOFFSET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1fff) | (value as u32 & 0x1fff);
-        self.w
-    }
-}
+pub type TSWITCHOFFSET_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DFECTRL2_SPEC, u16, u16, 13, O>;
 #[doc = "Field `TSAMPLEOFFSET` reader - Signed value offset in number of 16 MHz clock cycles for fine tuning of the sampling instant for all IQ samples. With TSAMPLEOFFSET=0 the first sample is taken immediately at the start of the reference period"]
-pub struct TSAMPLEOFFSET_R(crate::FieldReader<u16, u16>);
-impl TSAMPLEOFFSET_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TSAMPLEOFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TSAMPLEOFFSET_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TSAMPLEOFFSET_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TSAMPLEOFFSET` writer - Signed value offset in number of 16 MHz clock cycles for fine tuning of the sampling instant for all IQ samples. With TSAMPLEOFFSET=0 the first sample is taken immediately at the start of the reference period"]
-pub struct TSAMPLEOFFSET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSAMPLEOFFSET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 16)) | ((value as u32 & 0x0fff) << 16);
-        self.w
-    }
-}
+pub type TSAMPLEOFFSET_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DFECTRL2_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:12 - Signed value offset after the end of the CRC before starting switching in number of 16 MHz clock cycles"]
     #[inline(always)]
@@ -103,13 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:12 - Signed value offset after the end of the CRC before starting switching in number of 16 MHz clock cycles"]
     #[inline(always)]
-    pub fn tswitchoffset(&mut self) -> TSWITCHOFFSET_W {
-        TSWITCHOFFSET_W { w: self }
+    pub fn tswitchoffset(&mut self) -> TSWITCHOFFSET_W<0> {
+        TSWITCHOFFSET_W::new(self)
     }
     #[doc = "Bits 16:27 - Signed value offset in number of 16 MHz clock cycles for fine tuning of the sampling instant for all IQ samples. With TSAMPLEOFFSET=0 the first sample is taken immediately at the start of the reference period"]
     #[inline(always)]
-    pub fn tsampleoffset(&mut self) -> TSAMPLEOFFSET_W {
-        TSAMPLEOFFSET_W { w: self }
+    pub fn tsampleoffset(&mut self) -> TSAMPLEOFFSET_W<16> {
+        TSAMPLEOFFSET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -13,13 +13,15 @@ impl From<crate::R<MICSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `MICSTATUS` reader - The result of the MIC check performed during the previous decryption operation"]
+pub type MICSTATUS_R = crate::BitReader<MICSTATUS_A>;
 #[doc = "The result of the MIC check performed during the previous decryption operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MICSTATUS_A {
     #[doc = "0: MIC check failed"]
-    CHECKFAILED = 0,
+    CHECK_FAILED = 0,
     #[doc = "1: MIC check passed"]
-    CHECKPASSED = 1,
+    CHECK_PASSED = 1,
 }
 impl From<MICSTATUS_A> for bool {
     #[inline(always)]
@@ -27,44 +29,31 @@ impl From<MICSTATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MICSTATUS` reader - The result of the MIC check performed during the previous decryption operation"]
-pub struct MICSTATUS_R(crate::FieldReader<bool, MICSTATUS_A>);
 impl MICSTATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MICSTATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MICSTATUS_A {
         match self.bits {
-            false => MICSTATUS_A::CHECKFAILED,
-            true => MICSTATUS_A::CHECKPASSED,
+            false => MICSTATUS_A::CHECK_FAILED,
+            true => MICSTATUS_A::CHECK_PASSED,
         }
     }
-    #[doc = "Checks if the value of the field is `CHECKFAILED`"]
+    #[doc = "Checks if the value of the field is `CHECK_FAILED`"]
     #[inline(always)]
     pub fn is_check_failed(&self) -> bool {
-        **self == MICSTATUS_A::CHECKFAILED
+        *self == MICSTATUS_A::CHECK_FAILED
     }
-    #[doc = "Checks if the value of the field is `CHECKPASSED`"]
+    #[doc = "Checks if the value of the field is `CHECK_PASSED`"]
     #[inline(always)]
     pub fn is_check_passed(&self) -> bool {
-        **self == MICSTATUS_A::CHECKPASSED
-    }
-}
-impl core::ops::Deref for MICSTATUS_R {
-    type Target = crate::FieldReader<bool, MICSTATUS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MICSTATUS_A::CHECK_PASSED
     }
 }
 impl R {
     #[doc = "Bit 0 - The result of the MIC check performed during the previous decryption operation"]
     #[inline(always)]
     pub fn micstatus(&self) -> MICSTATUS_R {
-        MICSTATUS_R::new((self.bits & 0x01) != 0)
+        MICSTATUS_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "MIC check result\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [micstatus](index.html) module"]

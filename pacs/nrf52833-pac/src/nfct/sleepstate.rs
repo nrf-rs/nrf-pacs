@@ -13,13 +13,15 @@ impl From<crate::R<SLEEPSTATE_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `SLEEPSTATE` reader - Reflects the sleep state during automatic collision resolution. Set to IDLE by a GOIDLE task. Set to SLEEP_A when a valid SLEEP_REQ frame is received or by a GOSLEEP task."]
+pub type SLEEPSTATE_R = crate::BitReader<SLEEPSTATE_A>;
 #[doc = "Reflects the sleep state during automatic collision resolution. Set to IDLE by a GOIDLE task. Set to SLEEP_A when a valid SLEEP_REQ frame is received or by a GOSLEEP task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEEPSTATE_A {
     #[doc = "0: State is IDLE."]
     IDLE = 0,
     #[doc = "1: State is SLEEP_A."]
-    SLEEPA = 1,
+    SLEEP_A = 1,
 }
 impl From<SLEEPSTATE_A> for bool {
     #[inline(always)]
@@ -27,44 +29,31 @@ impl From<SLEEPSTATE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLEEPSTATE` reader - Reflects the sleep state during automatic collision resolution. Set to IDLE by a GOIDLE task. Set to SLEEP_A when a valid SLEEP_REQ frame is received or by a GOSLEEP task."]
-pub struct SLEEPSTATE_R(crate::FieldReader<bool, SLEEPSTATE_A>);
 impl SLEEPSTATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLEEPSTATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLEEPSTATE_A {
         match self.bits {
             false => SLEEPSTATE_A::IDLE,
-            true => SLEEPSTATE_A::SLEEPA,
+            true => SLEEPSTATE_A::SLEEP_A,
         }
     }
     #[doc = "Checks if the value of the field is `IDLE`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        **self == SLEEPSTATE_A::IDLE
+        *self == SLEEPSTATE_A::IDLE
     }
-    #[doc = "Checks if the value of the field is `SLEEPA`"]
+    #[doc = "Checks if the value of the field is `SLEEP_A`"]
     #[inline(always)]
     pub fn is_sleep_a(&self) -> bool {
-        **self == SLEEPSTATE_A::SLEEPA
-    }
-}
-impl core::ops::Deref for SLEEPSTATE_R {
-    type Target = crate::FieldReader<bool, SLEEPSTATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLEEPSTATE_A::SLEEP_A
     }
 }
 impl R {
     #[doc = "Bit 0 - Reflects the sleep state during automatic collision resolution. Set to IDLE by a GOIDLE task. Set to SLEEP_A when a valid SLEEP_REQ frame is received or by a GOSLEEP task."]
     #[inline(always)]
     pub fn sleepstate(&self) -> SLEEPSTATE_R {
-        SLEEPSTATE_R::new((self.bits & 0x01) != 0)
+        SLEEPSTATE_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Sleep state during automatic collision resolution\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sleepstate](index.html) module"]

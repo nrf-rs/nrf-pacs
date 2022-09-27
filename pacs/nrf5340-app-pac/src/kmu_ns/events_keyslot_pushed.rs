@@ -34,11 +34,13 @@ impl From<crate::W<EVENTS_KEYSLOT_PUSHED_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EVENTS_KEYSLOT_PUSHED` reader - Key slot successfully pushed over secure APB"]
+pub type EVENTS_KEYSLOT_PUSHED_R = crate::BitReader<EVENTS_KEYSLOT_PUSHED_A>;
 #[doc = "Key slot successfully pushed over secure APB\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EVENTS_KEYSLOT_PUSHED_A {
     #[doc = "0: Event not generated"]
-    NOTGENERATED = 0,
+    NOT_GENERATED = 0,
     #[doc = "1: Event generated"]
     GENERATED = 1,
 }
@@ -48,88 +50,53 @@ impl From<EVENTS_KEYSLOT_PUSHED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EVENTS_KEYSLOT_PUSHED` reader - Key slot successfully pushed over secure APB"]
-pub struct EVENTS_KEYSLOT_PUSHED_R(crate::FieldReader<bool, EVENTS_KEYSLOT_PUSHED_A>);
 impl EVENTS_KEYSLOT_PUSHED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EVENTS_KEYSLOT_PUSHED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EVENTS_KEYSLOT_PUSHED_A {
         match self.bits {
-            false => EVENTS_KEYSLOT_PUSHED_A::NOTGENERATED,
+            false => EVENTS_KEYSLOT_PUSHED_A::NOT_GENERATED,
             true => EVENTS_KEYSLOT_PUSHED_A::GENERATED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTGENERATED`"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        **self == EVENTS_KEYSLOT_PUSHED_A::NOTGENERATED
+        *self == EVENTS_KEYSLOT_PUSHED_A::NOT_GENERATED
     }
     #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        **self == EVENTS_KEYSLOT_PUSHED_A::GENERATED
-    }
-}
-impl core::ops::Deref for EVENTS_KEYSLOT_PUSHED_R {
-    type Target = crate::FieldReader<bool, EVENTS_KEYSLOT_PUSHED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EVENTS_KEYSLOT_PUSHED_A::GENERATED
     }
 }
 #[doc = "Field `EVENTS_KEYSLOT_PUSHED` writer - Key slot successfully pushed over secure APB"]
-pub struct EVENTS_KEYSLOT_PUSHED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVENTS_KEYSLOT_PUSHED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EVENTS_KEYSLOT_PUSHED_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EVENTS_KEYSLOT_PUSHED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_KEYSLOT_PUSHED_SPEC, EVENTS_KEYSLOT_PUSHED_A, O>;
+impl<'a, const O: u8> EVENTS_KEYSLOT_PUSHED_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
     pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_KEYSLOT_PUSHED_A::NOTGENERATED)
+        self.variant(EVENTS_KEYSLOT_PUSHED_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
     pub fn generated(self) -> &'a mut W {
         self.variant(EVENTS_KEYSLOT_PUSHED_A::GENERATED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Key slot successfully pushed over secure APB"]
     #[inline(always)]
     pub fn events_keyslot_pushed(&self) -> EVENTS_KEYSLOT_PUSHED_R {
-        EVENTS_KEYSLOT_PUSHED_R::new((self.bits & 0x01) != 0)
+        EVENTS_KEYSLOT_PUSHED_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Key slot successfully pushed over secure APB"]
     #[inline(always)]
-    pub fn events_keyslot_pushed(&mut self) -> EVENTS_KEYSLOT_PUSHED_W {
-        EVENTS_KEYSLOT_PUSHED_W { w: self }
+    pub fn events_keyslot_pushed(&mut self) -> EVENTS_KEYSLOT_PUSHED_W<0> {
+        EVENTS_KEYSLOT_PUSHED_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

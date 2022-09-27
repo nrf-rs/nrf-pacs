@@ -34,6 +34,8 @@ impl From<crate::W<INTENCLR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `VALRDY` reader - Write '1' to disable interrupt for event VALRDY"]
+pub type VALRDY_R = crate::BitReader<VALRDY_A>;
 #[doc = "Write '1' to disable interrupt for event VALRDY\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VALRDY_A {
@@ -48,14 +50,8 @@ impl From<VALRDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VALRDY` reader - Write '1' to disable interrupt for event VALRDY"]
-pub struct VALRDY_R(crate::FieldReader<bool, VALRDY_A>);
 impl VALRDY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        VALRDY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VALRDY_A {
         match self.bits {
@@ -66,19 +62,12 @@ impl VALRDY_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == VALRDY_A::DISABLED
+        *self == VALRDY_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == VALRDY_A::ENABLED
-    }
-}
-impl core::ops::Deref for VALRDY_R {
-    type Target = crate::FieldReader<bool, VALRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VALRDY_A::ENABLED
     }
 }
 #[doc = "Write '1' to disable interrupt for event VALRDY\n\nValue on reset: 0"]
@@ -94,49 +83,26 @@ impl From<VALRDY_AW> for bool {
     }
 }
 #[doc = "Field `VALRDY` writer - Write '1' to disable interrupt for event VALRDY"]
-pub struct VALRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VALRDY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VALRDY_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type VALRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, VALRDY_AW, O>;
+impl<'a, const O: u8> VALRDY_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(VALRDY_AW::CLEAR)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 impl R {
     #[doc = "Bit 0 - Write '1' to disable interrupt for event VALRDY"]
     #[inline(always)]
     pub fn valrdy(&self) -> VALRDY_R {
-        VALRDY_R::new((self.bits & 0x01) != 0)
+        VALRDY_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write '1' to disable interrupt for event VALRDY"]
     #[inline(always)]
-    pub fn valrdy(&mut self) -> VALRDY_W {
-        VALRDY_W { w: self }
+    pub fn valrdy(&mut self) -> VALRDY_W<0> {
+        VALRDY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

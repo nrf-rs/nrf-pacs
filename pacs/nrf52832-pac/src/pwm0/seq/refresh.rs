@@ -34,6 +34,8 @@ impl From<crate::W<REFRESH_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CNT` reader - Amount of additional PWM periods between samples loaded into compare register (load every REFRESH.CNT+1 PWM periods)"]
+pub type CNT_R = crate::FieldReader<u32, CNT_A>;
 #[doc = "Amount of additional PWM periods between samples loaded into compare register (load every REFRESH.CNT+1 PWM periods)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -47,14 +49,8 @@ impl From<CNT_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `CNT` reader - Amount of additional PWM periods between samples loaded into compare register (load every REFRESH.CNT+1 PWM periods)"]
-pub struct CNT_R(crate::FieldReader<u32, CNT_A>);
 impl CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CNT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CNT_A> {
         match self.bits {
@@ -65,36 +61,16 @@ impl CNT_R {
     #[doc = "Checks if the value of the field is `CONTINUOUS`"]
     #[inline(always)]
     pub fn is_continuous(&self) -> bool {
-        **self == CNT_A::CONTINUOUS
-    }
-}
-impl core::ops::Deref for CNT_R {
-    type Target = crate::FieldReader<u32, CNT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CNT_A::CONTINUOUS
     }
 }
 #[doc = "Field `CNT` writer - Amount of additional PWM periods between samples loaded into compare register (load every REFRESH.CNT+1 PWM periods)"]
-pub struct CNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CNT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CNT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REFRESH_SPEC, u32, CNT_A, 24, O>;
+impl<'a, const O: u8> CNT_W<'a, O> {
     #[doc = "Update every PWM period"]
     #[inline(always)]
     pub fn continuous(self) -> &'a mut W {
         self.variant(CNT_A::CONTINUOUS)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
     }
 }
 impl R {
@@ -107,8 +83,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Amount of additional PWM periods between samples loaded into compare register (load every REFRESH.CNT+1 PWM periods)"]
     #[inline(always)]
-    pub fn cnt(&mut self) -> CNT_W {
-        CNT_W { w: self }
+    pub fn cnt(&mut self) -> CNT_W<0> {
+        CNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

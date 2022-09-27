@@ -35,32 +35,9 @@ impl From<crate::W<FREQUENCY_SPEC>> for W {
     }
 }
 #[doc = "Field `FREQUENCY` reader - Radio channel frequency offset in MHz: RF Frequency = 2400 + FREQUENCY (MHz). Decision point: TXEN or RXEN task."]
-pub struct FREQUENCY_R(crate::FieldReader<u8, u8>);
-impl FREQUENCY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FREQUENCY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FREQUENCY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FREQUENCY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FREQUENCY` writer - Radio channel frequency offset in MHz: RF Frequency = 2400 + FREQUENCY (MHz). Decision point: TXEN or RXEN task."]
-pub struct FREQUENCY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FREQUENCY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type FREQUENCY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FREQUENCY_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bits 0:6 - Radio channel frequency offset in MHz: RF Frequency = 2400 + FREQUENCY (MHz). Decision point: TXEN or RXEN task."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Radio channel frequency offset in MHz: RF Frequency = 2400 + FREQUENCY (MHz). Decision point: TXEN or RXEN task."]
     #[inline(always)]
-    pub fn frequency(&mut self) -> FREQUENCY_W {
-        FREQUENCY_W { w: self }
+    pub fn frequency(&mut self) -> FREQUENCY_W<0> {
+        FREQUENCY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

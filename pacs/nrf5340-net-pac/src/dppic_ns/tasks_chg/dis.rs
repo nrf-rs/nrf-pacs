@@ -32,42 +32,19 @@ impl From<DIS_AW> for bool {
     }
 }
 #[doc = "Field `DIS` writer - Disable channel group n"]
-pub struct DIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIS_SPEC, DIS_AW, O>;
+impl<'a, const O: u8> DIS_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
     pub fn trigger(self) -> &'a mut W {
         self.variant(DIS_AW::TRIGGER)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Disable channel group n"]
     #[inline(always)]
-    pub fn dis(&mut self) -> DIS_W {
-        DIS_W { w: self }
+    pub fn dis(&mut self) -> DIS_W<0> {
+        DIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

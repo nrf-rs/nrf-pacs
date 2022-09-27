@@ -34,6 +34,8 @@ impl From<crate::W<VREGHVOUT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `VREGHVOUT` reader - VREGH regulator output voltage."]
+pub type VREGHVOUT_R = crate::FieldReader<u8, VREGHVOUT_A>;
 #[doc = "VREGH regulator output voltage.\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -59,14 +61,8 @@ impl From<VREGHVOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VREGHVOUT` reader - VREGH regulator output voltage."]
-pub struct VREGHVOUT_R(crate::FieldReader<u8, VREGHVOUT_A>);
 impl VREGHVOUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        VREGHVOUT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<VREGHVOUT_A> {
         match self.bits {
@@ -83,56 +79,43 @@ impl VREGHVOUT_R {
     #[doc = "Checks if the value of the field is `_1V8`"]
     #[inline(always)]
     pub fn is_1v8(&self) -> bool {
-        **self == VREGHVOUT_A::_1V8
+        *self == VREGHVOUT_A::_1V8
     }
     #[doc = "Checks if the value of the field is `_2V1`"]
     #[inline(always)]
     pub fn is_2v1(&self) -> bool {
-        **self == VREGHVOUT_A::_2V1
+        *self == VREGHVOUT_A::_2V1
     }
     #[doc = "Checks if the value of the field is `_2V4`"]
     #[inline(always)]
     pub fn is_2v4(&self) -> bool {
-        **self == VREGHVOUT_A::_2V4
+        *self == VREGHVOUT_A::_2V4
     }
     #[doc = "Checks if the value of the field is `_2V7`"]
     #[inline(always)]
     pub fn is_2v7(&self) -> bool {
-        **self == VREGHVOUT_A::_2V7
+        *self == VREGHVOUT_A::_2V7
     }
     #[doc = "Checks if the value of the field is `_3V0`"]
     #[inline(always)]
     pub fn is_3v0(&self) -> bool {
-        **self == VREGHVOUT_A::_3V0
+        *self == VREGHVOUT_A::_3V0
     }
     #[doc = "Checks if the value of the field is `_3V3`"]
     #[inline(always)]
     pub fn is_3v3(&self) -> bool {
-        **self == VREGHVOUT_A::_3V3
+        *self == VREGHVOUT_A::_3V3
     }
     #[doc = "Checks if the value of the field is `DEFAULT`"]
     #[inline(always)]
     pub fn is_default(&self) -> bool {
-        **self == VREGHVOUT_A::DEFAULT
-    }
-}
-impl core::ops::Deref for VREGHVOUT_R {
-    type Target = crate::FieldReader<u8, VREGHVOUT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VREGHVOUT_A::DEFAULT
     }
 }
 #[doc = "Field `VREGHVOUT` writer - VREGH regulator output voltage."]
-pub struct VREGHVOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VREGHVOUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VREGHVOUT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type VREGHVOUT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, VREGHVOUT_SPEC, u8, VREGHVOUT_A, 3, O>;
+impl<'a, const O: u8> VREGHVOUT_W<'a, O> {
     #[doc = "1.8 V"]
     #[inline(always)]
     pub fn _1v8(self) -> &'a mut W {
@@ -168,25 +151,19 @@ impl<'a> VREGHVOUT_W<'a> {
     pub fn default(self) -> &'a mut W {
         self.variant(VREGHVOUT_A::DEFAULT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - VREGH regulator output voltage."]
     #[inline(always)]
     pub fn vreghvout(&self) -> VREGHVOUT_R {
-        VREGHVOUT_R::new((self.bits & 0x07) as u8)
+        VREGHVOUT_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - VREGH regulator output voltage."]
     #[inline(always)]
-    pub fn vreghvout(&mut self) -> VREGHVOUT_W {
-        VREGHVOUT_W { w: self }
+    pub fn vreghvout(&mut self) -> VREGHVOUT_W<0> {
+        VREGHVOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

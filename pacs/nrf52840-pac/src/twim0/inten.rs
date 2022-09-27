@@ -34,6 +34,8 @@ impl From<crate::W<INTEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `STOPPED` reader - Enable or disable interrupt for STOPPED event"]
+pub type STOPPED_R = crate::BitReader<STOPPED_A>;
 #[doc = "Enable or disable interrupt for STOPPED event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPPED_A {
@@ -48,14 +50,8 @@ impl From<STOPPED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STOPPED` reader - Enable or disable interrupt for STOPPED event"]
-pub struct STOPPED_R(crate::FieldReader<bool, STOPPED_A>);
 impl STOPPED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STOPPED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STOPPED_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl STOPPED_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == STOPPED_A::DISABLED
+        *self == STOPPED_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == STOPPED_A::ENABLED
-    }
-}
-impl core::ops::Deref for STOPPED_R {
-    type Target = crate::FieldReader<bool, STOPPED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STOPPED_A::ENABLED
     }
 }
 #[doc = "Field `STOPPED` writer - Enable or disable interrupt for STOPPED event"]
-pub struct STOPPED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOPPED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STOPPED_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type STOPPED_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, STOPPED_A, O>;
+impl<'a, const O: u8> STOPPED_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> STOPPED_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(STOPPED_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `ERROR` reader - Enable or disable interrupt for ERROR event"]
+pub type ERROR_R = crate::BitReader<ERROR_A>;
 #[doc = "Enable or disable interrupt for ERROR event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_A {
@@ -132,14 +100,8 @@ impl From<ERROR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ERROR` reader - Enable or disable interrupt for ERROR event"]
-pub struct ERROR_R(crate::FieldReader<bool, ERROR_A>);
 impl ERROR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ERROR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ERROR_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl ERROR_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ERROR_A::DISABLED
+        *self == ERROR_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ERROR_A::ENABLED
-    }
-}
-impl core::ops::Deref for ERROR_R {
-    type Target = crate::FieldReader<bool, ERROR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ERROR_A::ENABLED
     }
 }
 #[doc = "Field `ERROR` writer - Enable or disable interrupt for ERROR event"]
-pub struct ERROR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERROR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ERROR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ERROR_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, ERROR_A, O>;
+impl<'a, const O: u8> ERROR_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,23 +133,9 @@ impl<'a> ERROR_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ERROR_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
+#[doc = "Field `SUSPENDED` reader - Enable or disable interrupt for SUSPENDED event"]
+pub type SUSPENDED_R = crate::BitReader<SUSPENDED_A>;
 #[doc = "Enable or disable interrupt for SUSPENDED event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUSPENDED_A {
@@ -216,14 +150,8 @@ impl From<SUSPENDED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SUSPENDED` reader - Enable or disable interrupt for SUSPENDED event"]
-pub struct SUSPENDED_R(crate::FieldReader<bool, SUSPENDED_A>);
 impl SUSPENDED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SUSPENDED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUSPENDED_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl SUSPENDED_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == SUSPENDED_A::DISABLED
+        *self == SUSPENDED_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == SUSPENDED_A::ENABLED
-    }
-}
-impl core::ops::Deref for SUSPENDED_R {
-    type Target = crate::FieldReader<bool, SUSPENDED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SUSPENDED_A::ENABLED
     }
 }
 #[doc = "Field `SUSPENDED` writer - Enable or disable interrupt for SUSPENDED event"]
-pub struct SUSPENDED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUSPENDED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SUSPENDED_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SUSPENDED_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, SUSPENDED_A, O>;
+impl<'a, const O: u8> SUSPENDED_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -269,23 +183,9 @@ impl<'a> SUSPENDED_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(SUSPENDED_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
 }
+#[doc = "Field `RXSTARTED` reader - Enable or disable interrupt for RXSTARTED event"]
+pub type RXSTARTED_R = crate::BitReader<RXSTARTED_A>;
 #[doc = "Enable or disable interrupt for RXSTARTED event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXSTARTED_A {
@@ -300,14 +200,8 @@ impl From<RXSTARTED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXSTARTED` reader - Enable or disable interrupt for RXSTARTED event"]
-pub struct RXSTARTED_R(crate::FieldReader<bool, RXSTARTED_A>);
 impl RXSTARTED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RXSTARTED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXSTARTED_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl RXSTARTED_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == RXSTARTED_A::DISABLED
+        *self == RXSTARTED_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == RXSTARTED_A::ENABLED
-    }
-}
-impl core::ops::Deref for RXSTARTED_R {
-    type Target = crate::FieldReader<bool, RXSTARTED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXSTARTED_A::ENABLED
     }
 }
 #[doc = "Field `RXSTARTED` writer - Enable or disable interrupt for RXSTARTED event"]
-pub struct RXSTARTED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXSTARTED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXSTARTED_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RXSTARTED_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RXSTARTED_A, O>;
+impl<'a, const O: u8> RXSTARTED_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -353,23 +233,9 @@ impl<'a> RXSTARTED_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(RXSTARTED_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
 }
+#[doc = "Field `TXSTARTED` reader - Enable or disable interrupt for TXSTARTED event"]
+pub type TXSTARTED_R = crate::BitReader<TXSTARTED_A>;
 #[doc = "Enable or disable interrupt for TXSTARTED event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXSTARTED_A {
@@ -384,14 +250,8 @@ impl From<TXSTARTED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXSTARTED` reader - Enable or disable interrupt for TXSTARTED event"]
-pub struct TXSTARTED_R(crate::FieldReader<bool, TXSTARTED_A>);
 impl TXSTARTED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TXSTARTED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXSTARTED_A {
         match self.bits {
@@ -402,31 +262,17 @@ impl TXSTARTED_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TXSTARTED_A::DISABLED
+        *self == TXSTARTED_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TXSTARTED_A::ENABLED
-    }
-}
-impl core::ops::Deref for TXSTARTED_R {
-    type Target = crate::FieldReader<bool, TXSTARTED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TXSTARTED_A::ENABLED
     }
 }
 #[doc = "Field `TXSTARTED` writer - Enable or disable interrupt for TXSTARTED event"]
-pub struct TXSTARTED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXSTARTED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXSTARTED_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TXSTARTED_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, TXSTARTED_A, O>;
+impl<'a, const O: u8> TXSTARTED_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -437,23 +283,9 @@ impl<'a> TXSTARTED_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(TXSTARTED_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
 }
+#[doc = "Field `LASTRX` reader - Enable or disable interrupt for LASTRX event"]
+pub type LASTRX_R = crate::BitReader<LASTRX_A>;
 #[doc = "Enable or disable interrupt for LASTRX event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTRX_A {
@@ -468,14 +300,8 @@ impl From<LASTRX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LASTRX` reader - Enable or disable interrupt for LASTRX event"]
-pub struct LASTRX_R(crate::FieldReader<bool, LASTRX_A>);
 impl LASTRX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LASTRX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LASTRX_A {
         match self.bits {
@@ -486,31 +312,17 @@ impl LASTRX_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LASTRX_A::DISABLED
+        *self == LASTRX_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LASTRX_A::ENABLED
-    }
-}
-impl core::ops::Deref for LASTRX_R {
-    type Target = crate::FieldReader<bool, LASTRX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LASTRX_A::ENABLED
     }
 }
 #[doc = "Field `LASTRX` writer - Enable or disable interrupt for LASTRX event"]
-pub struct LASTRX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LASTRX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LASTRX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LASTRX_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, LASTRX_A, O>;
+impl<'a, const O: u8> LASTRX_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -521,23 +333,9 @@ impl<'a> LASTRX_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(LASTRX_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
 }
+#[doc = "Field `LASTTX` reader - Enable or disable interrupt for LASTTX event"]
+pub type LASTTX_R = crate::BitReader<LASTTX_A>;
 #[doc = "Enable or disable interrupt for LASTTX event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTTX_A {
@@ -552,14 +350,8 @@ impl From<LASTTX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LASTTX` reader - Enable or disable interrupt for LASTTX event"]
-pub struct LASTTX_R(crate::FieldReader<bool, LASTTX_A>);
 impl LASTTX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LASTTX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LASTTX_A {
         match self.bits {
@@ -570,31 +362,17 @@ impl LASTTX_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LASTTX_A::DISABLED
+        *self == LASTTX_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LASTTX_A::ENABLED
-    }
-}
-impl core::ops::Deref for LASTTX_R {
-    type Target = crate::FieldReader<bool, LASTTX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LASTTX_A::ENABLED
     }
 }
 #[doc = "Field `LASTTX` writer - Enable or disable interrupt for LASTTX event"]
-pub struct LASTTX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LASTTX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LASTTX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LASTTX_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, LASTTX_A, O>;
+impl<'a, const O: u8> LASTTX_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -605,95 +383,79 @@ impl<'a> LASTTX_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(LASTTX_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 1 - Enable or disable interrupt for STOPPED event"]
     #[inline(always)]
     pub fn stopped(&self) -> STOPPED_R {
-        STOPPED_R::new(((self.bits >> 1) & 0x01) != 0)
+        STOPPED_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 9 - Enable or disable interrupt for ERROR event"]
     #[inline(always)]
     pub fn error(&self) -> ERROR_R {
-        ERROR_R::new(((self.bits >> 9) & 0x01) != 0)
+        ERROR_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 18 - Enable or disable interrupt for SUSPENDED event"]
     #[inline(always)]
     pub fn suspended(&self) -> SUSPENDED_R {
-        SUSPENDED_R::new(((self.bits >> 18) & 0x01) != 0)
+        SUSPENDED_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Enable or disable interrupt for RXSTARTED event"]
     #[inline(always)]
     pub fn rxstarted(&self) -> RXSTARTED_R {
-        RXSTARTED_R::new(((self.bits >> 19) & 0x01) != 0)
+        RXSTARTED_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Enable or disable interrupt for TXSTARTED event"]
     #[inline(always)]
     pub fn txstarted(&self) -> TXSTARTED_R {
-        TXSTARTED_R::new(((self.bits >> 20) & 0x01) != 0)
+        TXSTARTED_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 23 - Enable or disable interrupt for LASTRX event"]
     #[inline(always)]
     pub fn lastrx(&self) -> LASTRX_R {
-        LASTRX_R::new(((self.bits >> 23) & 0x01) != 0)
+        LASTRX_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - Enable or disable interrupt for LASTTX event"]
     #[inline(always)]
     pub fn lasttx(&self) -> LASTTX_R {
-        LASTTX_R::new(((self.bits >> 24) & 0x01) != 0)
+        LASTTX_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 1 - Enable or disable interrupt for STOPPED event"]
     #[inline(always)]
-    pub fn stopped(&mut self) -> STOPPED_W {
-        STOPPED_W { w: self }
+    pub fn stopped(&mut self) -> STOPPED_W<1> {
+        STOPPED_W::new(self)
     }
     #[doc = "Bit 9 - Enable or disable interrupt for ERROR event"]
     #[inline(always)]
-    pub fn error(&mut self) -> ERROR_W {
-        ERROR_W { w: self }
+    pub fn error(&mut self) -> ERROR_W<9> {
+        ERROR_W::new(self)
     }
     #[doc = "Bit 18 - Enable or disable interrupt for SUSPENDED event"]
     #[inline(always)]
-    pub fn suspended(&mut self) -> SUSPENDED_W {
-        SUSPENDED_W { w: self }
+    pub fn suspended(&mut self) -> SUSPENDED_W<18> {
+        SUSPENDED_W::new(self)
     }
     #[doc = "Bit 19 - Enable or disable interrupt for RXSTARTED event"]
     #[inline(always)]
-    pub fn rxstarted(&mut self) -> RXSTARTED_W {
-        RXSTARTED_W { w: self }
+    pub fn rxstarted(&mut self) -> RXSTARTED_W<19> {
+        RXSTARTED_W::new(self)
     }
     #[doc = "Bit 20 - Enable or disable interrupt for TXSTARTED event"]
     #[inline(always)]
-    pub fn txstarted(&mut self) -> TXSTARTED_W {
-        TXSTARTED_W { w: self }
+    pub fn txstarted(&mut self) -> TXSTARTED_W<20> {
+        TXSTARTED_W::new(self)
     }
     #[doc = "Bit 23 - Enable or disable interrupt for LASTRX event"]
     #[inline(always)]
-    pub fn lastrx(&mut self) -> LASTRX_W {
-        LASTRX_W { w: self }
+    pub fn lastrx(&mut self) -> LASTRX_W<23> {
+        LASTRX_W::new(self)
     }
     #[doc = "Bit 24 - Enable or disable interrupt for LASTTX event"]
     #[inline(always)]
-    pub fn lasttx(&mut self) -> LASTTX_W {
-        LASTTX_W { w: self }
+    pub fn lasttx(&mut self) -> LASTTX_W<24> {
+        LASTTX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

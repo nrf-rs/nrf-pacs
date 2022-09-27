@@ -34,6 +34,8 @@ impl From<crate::W<PDMCLKCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FREQ` reader - PDM_CLK frequency configuration"]
+pub type FREQ_R = crate::FieldReader<u32, FREQ_A>;
 #[doc = "PDM_CLK frequency configuration\n\nValue on reset: 138412032"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -57,14 +59,8 @@ impl From<FREQ_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `FREQ` reader - PDM_CLK frequency configuration"]
-pub struct FREQ_R(crate::FieldReader<u32, FREQ_A>);
 impl FREQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        FREQ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<FREQ_A> {
         match self.bits {
@@ -80,51 +76,37 @@ impl FREQ_R {
     #[doc = "Checks if the value of the field is `_1000K`"]
     #[inline(always)]
     pub fn is_1000k(&self) -> bool {
-        **self == FREQ_A::_1000K
+        *self == FREQ_A::_1000K
     }
     #[doc = "Checks if the value of the field is `DEFAULT`"]
     #[inline(always)]
     pub fn is_default(&self) -> bool {
-        **self == FREQ_A::DEFAULT
+        *self == FREQ_A::DEFAULT
     }
     #[doc = "Checks if the value of the field is `_1067K`"]
     #[inline(always)]
     pub fn is_1067k(&self) -> bool {
-        **self == FREQ_A::_1067K
+        *self == FREQ_A::_1067K
     }
     #[doc = "Checks if the value of the field is `_1231K`"]
     #[inline(always)]
     pub fn is_1231k(&self) -> bool {
-        **self == FREQ_A::_1231K
+        *self == FREQ_A::_1231K
     }
     #[doc = "Checks if the value of the field is `_1280K`"]
     #[inline(always)]
     pub fn is_1280k(&self) -> bool {
-        **self == FREQ_A::_1280K
+        *self == FREQ_A::_1280K
     }
     #[doc = "Checks if the value of the field is `_1333K`"]
     #[inline(always)]
     pub fn is_1333k(&self) -> bool {
-        **self == FREQ_A::_1333K
-    }
-}
-impl core::ops::Deref for FREQ_R {
-    type Target = crate::FieldReader<u32, FREQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FREQ_A::_1333K
     }
 }
 #[doc = "Field `FREQ` writer - PDM_CLK frequency configuration"]
-pub struct FREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FREQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FREQ_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type FREQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDMCLKCTRL_SPEC, u32, FREQ_A, 32, O>;
+impl<'a, const O: u8> FREQ_W<'a, O> {
     #[doc = "PDM_CLK = 32 MHz / 32 = 1.000 MHz"]
     #[inline(always)]
     pub fn _1000k(self) -> &'a mut W {
@@ -155,12 +137,6 @@ impl<'a> FREQ_W<'a> {
     pub fn _1333k(self) -> &'a mut W {
         self.variant(FREQ_A::_1333K)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:31 - PDM_CLK frequency configuration"]
@@ -172,8 +148,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - PDM_CLK frequency configuration"]
     #[inline(always)]
-    pub fn freq(&mut self) -> FREQ_W {
-        FREQ_W { w: self }
+    pub fn freq(&mut self) -> FREQ_W<0> {
+        FREQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,32 +35,10 @@ impl From<crate::W<ECBDATAPTR_SPEC>> for W {
     }
 }
 #[doc = "Field `ECBDATAPTR` reader - Pointer to the ECB data structure (see Table 1 ECB data structure overview)"]
-pub struct ECBDATAPTR_R(crate::FieldReader<u32, u32>);
-impl ECBDATAPTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        ECBDATAPTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ECBDATAPTR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ECBDATAPTR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `ECBDATAPTR` writer - Pointer to the ECB data structure (see Table 1 ECB data structure overview)"]
-pub struct ECBDATAPTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ECBDATAPTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type ECBDATAPTR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ECBDATAPTR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Pointer to the ECB data structure (see Table 1 ECB data structure overview)"]
     #[inline(always)]
@@ -71,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Pointer to the ECB data structure (see Table 1 ECB data structure overview)"]
     #[inline(always)]
-    pub fn ecbdataptr(&mut self) -> ECBDATAPTR_W {
-        ECBDATAPTR_W { w: self }
+    pub fn ecbdataptr(&mut self) -> ECBDATAPTR_W<0> {
+        ECBDATAPTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

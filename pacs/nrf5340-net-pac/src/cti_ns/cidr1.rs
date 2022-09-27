@@ -13,6 +13,9 @@ impl From<crate::R<CIDR1_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `PRMBL_1` reader - Preamble\\[1\\]. Contains bits\\[11:8\\]
+of the component identification code."]
+pub type PRMBL_1_R = crate::FieldReader<u8, PRMBL_1_A>;
 #[doc = "Preamble\\[1\\]. Contains bits\\[11:8\\]
 of the component identification code.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -28,15 +31,8 @@ impl From<PRMBL_1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRMBL_1` reader - Preamble\\[1\\]. Contains bits\\[11:8\\]
-of the component identification code."]
-pub struct PRMBL_1_R(crate::FieldReader<u8, PRMBL_1_A>);
 impl PRMBL_1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PRMBL_1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PRMBL_1_A> {
         match self.bits {
@@ -47,16 +43,12 @@ impl PRMBL_1_R {
     #[doc = "Checks if the value of the field is `VALUE`"]
     #[inline(always)]
     pub fn is_value(&self) -> bool {
-        **self == PRMBL_1_A::VALUE
+        *self == PRMBL_1_A::VALUE
     }
 }
-impl core::ops::Deref for PRMBL_1_R {
-    type Target = crate::FieldReader<u8, PRMBL_1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `CLASS` reader - Class of the component, for example, whether the component is a ROM table or a generic CoreSight component. Contains bits\\[15:12\\]
+of the component identification code"]
+pub type CLASS_R = crate::FieldReader<u8, CLASS_A>;
 #[doc = "Class of the component, for example, whether the component is a ROM table or a generic CoreSight component. Contains bits\\[15:12\\]
 of the component identification code\n\nValue on reset: 9"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -71,15 +63,8 @@ impl From<CLASS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLASS` reader - Class of the component, for example, whether the component is a ROM table or a generic CoreSight component. Contains bits\\[15:12\\]
-of the component identification code"]
-pub struct CLASS_R(crate::FieldReader<u8, CLASS_A>);
 impl CLASS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLASS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CLASS_A> {
         match self.bits {
@@ -90,14 +75,7 @@ impl CLASS_R {
     #[doc = "Checks if the value of the field is `CORESIGHT`"]
     #[inline(always)]
     pub fn is_coresight(&self) -> bool {
-        **self == CLASS_A::CORESIGHT
-    }
-}
-impl core::ops::Deref for CLASS_R {
-    type Target = crate::FieldReader<u8, CLASS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLASS_A::CORESIGHT
     }
 }
 impl R {

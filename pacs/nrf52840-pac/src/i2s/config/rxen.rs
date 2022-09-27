@@ -34,6 +34,8 @@ impl From<crate::W<RXEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RXEN` reader - Reception (RX) enable."]
+pub type RXEN_R = crate::BitReader<RXEN_A>;
 #[doc = "Reception (RX) enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXEN_A {
@@ -48,14 +50,8 @@ impl From<RXEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXEN` reader - Reception (RX) enable."]
-pub struct RXEN_R(crate::FieldReader<bool, RXEN_A>);
 impl RXEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RXEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXEN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl RXEN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == RXEN_A::DISABLED
+        *self == RXEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == RXEN_A::ENABLED
-    }
-}
-impl core::ops::Deref for RXEN_R {
-    type Target = crate::FieldReader<bool, RXEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXEN_A::ENABLED
     }
 }
 #[doc = "Field `RXEN` writer - Reception (RX) enable."]
-pub struct RXEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXEN_SPEC, RXEN_A, O>;
+impl<'a, const O: u8> RXEN_W<'a, O> {
     #[doc = "Reception disabled and now data will be written to the RXD.PTR address."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> RXEN_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(RXEN_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Reception (RX) enable."]
     #[inline(always)]
     pub fn rxen(&self) -> RXEN_R {
-        RXEN_R::new((self.bits & 0x01) != 0)
+        RXEN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Reception (RX) enable."]
     #[inline(always)]
-    pub fn rxen(&mut self) -> RXEN_W {
-        RXEN_W { w: self }
+    pub fn rxen(&mut self) -> RXEN_W<0> {
+        RXEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

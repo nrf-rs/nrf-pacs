@@ -14,20 +14,7 @@ impl From<crate::R<IMISS_SPEC>> for R {
     }
 }
 #[doc = "Field `MISSES` reader - Number of instruction cache misses"]
-pub struct MISSES_R(crate::FieldReader<u32, u32>);
-impl MISSES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        MISSES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MISSES_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MISSES_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Number of instruction cache misses"]
     #[inline(always)]

@@ -13,6 +13,8 @@ impl From<crate::R<STATE_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `STATE` reader - Current radio state"]
+pub type STATE_R = crate::FieldReader<u8, STATE_A>;
 #[doc = "Current radio state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -20,21 +22,21 @@ pub enum STATE_A {
     #[doc = "0: RADIO is in the Disabled state"]
     DISABLED = 0,
     #[doc = "1: RADIO is in the RXRU state"]
-    RXRU = 1,
+    RX_RU = 1,
     #[doc = "2: RADIO is in the RXIDLE state"]
-    RXIDLE = 2,
+    RX_IDLE = 2,
     #[doc = "3: RADIO is in the RX state"]
     RX = 3,
     #[doc = "4: RADIO is in the RXDISABLED state"]
-    RXDISABLE = 4,
+    RX_DISABLE = 4,
     #[doc = "9: RADIO is in the TXRU state"]
-    TXRU = 9,
+    TX_RU = 9,
     #[doc = "10: RADIO is in the TXIDLE state"]
-    TXIDLE = 10,
+    TX_IDLE = 10,
     #[doc = "11: RADIO is in the TX state"]
     TX = 11,
     #[doc = "12: RADIO is in the TXDISABLED state"]
-    TXDISABLE = 12,
+    TX_DISABLE = 12,
 }
 impl From<STATE_A> for u8 {
     #[inline(always)]
@@ -42,80 +44,67 @@ impl From<STATE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `STATE` reader - Current radio state"]
-pub struct STATE_R(crate::FieldReader<u8, STATE_A>);
 impl STATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        STATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<STATE_A> {
         match self.bits {
             0 => Some(STATE_A::DISABLED),
-            1 => Some(STATE_A::RXRU),
-            2 => Some(STATE_A::RXIDLE),
+            1 => Some(STATE_A::RX_RU),
+            2 => Some(STATE_A::RX_IDLE),
             3 => Some(STATE_A::RX),
-            4 => Some(STATE_A::RXDISABLE),
-            9 => Some(STATE_A::TXRU),
-            10 => Some(STATE_A::TXIDLE),
+            4 => Some(STATE_A::RX_DISABLE),
+            9 => Some(STATE_A::TX_RU),
+            10 => Some(STATE_A::TX_IDLE),
             11 => Some(STATE_A::TX),
-            12 => Some(STATE_A::TXDISABLE),
+            12 => Some(STATE_A::TX_DISABLE),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == STATE_A::DISABLED
+        *self == STATE_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `RXRU`"]
+    #[doc = "Checks if the value of the field is `RX_RU`"]
     #[inline(always)]
     pub fn is_rx_ru(&self) -> bool {
-        **self == STATE_A::RXRU
+        *self == STATE_A::RX_RU
     }
-    #[doc = "Checks if the value of the field is `RXIDLE`"]
+    #[doc = "Checks if the value of the field is `RX_IDLE`"]
     #[inline(always)]
     pub fn is_rx_idle(&self) -> bool {
-        **self == STATE_A::RXIDLE
+        *self == STATE_A::RX_IDLE
     }
     #[doc = "Checks if the value of the field is `RX`"]
     #[inline(always)]
     pub fn is_rx(&self) -> bool {
-        **self == STATE_A::RX
+        *self == STATE_A::RX
     }
-    #[doc = "Checks if the value of the field is `RXDISABLE`"]
+    #[doc = "Checks if the value of the field is `RX_DISABLE`"]
     #[inline(always)]
     pub fn is_rx_disable(&self) -> bool {
-        **self == STATE_A::RXDISABLE
+        *self == STATE_A::RX_DISABLE
     }
-    #[doc = "Checks if the value of the field is `TXRU`"]
+    #[doc = "Checks if the value of the field is `TX_RU`"]
     #[inline(always)]
     pub fn is_tx_ru(&self) -> bool {
-        **self == STATE_A::TXRU
+        *self == STATE_A::TX_RU
     }
-    #[doc = "Checks if the value of the field is `TXIDLE`"]
+    #[doc = "Checks if the value of the field is `TX_IDLE`"]
     #[inline(always)]
     pub fn is_tx_idle(&self) -> bool {
-        **self == STATE_A::TXIDLE
+        *self == STATE_A::TX_IDLE
     }
     #[doc = "Checks if the value of the field is `TX`"]
     #[inline(always)]
     pub fn is_tx(&self) -> bool {
-        **self == STATE_A::TX
+        *self == STATE_A::TX
     }
-    #[doc = "Checks if the value of the field is `TXDISABLE`"]
+    #[doc = "Checks if the value of the field is `TX_DISABLE`"]
     #[inline(always)]
     pub fn is_tx_disable(&self) -> bool {
-        **self == STATE_A::TXDISABLE
-    }
-}
-impl core::ops::Deref for STATE_R {
-    type Target = crate::FieldReader<u8, STATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STATE_A::TX_DISABLE
     }
 }
 impl R {

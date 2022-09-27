@@ -20,22 +20,12 @@ impl From<crate::W<NONCE1_SPEC>> for W {
     }
 }
 #[doc = "Field `NONCE1` writer - Bits 63:32 of XIP NONCE"]
-pub struct NONCE1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NONCE1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type NONCE1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NONCE1_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Bits 63:32 of XIP NONCE"]
     #[inline(always)]
-    pub fn nonce1(&mut self) -> NONCE1_W {
-        NONCE1_W { w: self }
+    pub fn nonce1(&mut self) -> NONCE1_W<0> {
+        NONCE1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

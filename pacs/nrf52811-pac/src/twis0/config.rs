@@ -34,6 +34,8 @@ impl From<crate::W<CONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ADDRESS0` reader - Enable or disable address matching on ADDRESS\\[0\\]"]
+pub type ADDRESS0_R = crate::BitReader<ADDRESS0_A>;
 #[doc = "Enable or disable address matching on ADDRESS\\[0\\]\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDRESS0_A {
@@ -48,14 +50,8 @@ impl From<ADDRESS0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDRESS0` reader - Enable or disable address matching on ADDRESS\\[0\\]"]
-pub struct ADDRESS0_R(crate::FieldReader<bool, ADDRESS0_A>);
 impl ADDRESS0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDRESS0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADDRESS0_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl ADDRESS0_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ADDRESS0_A::DISABLED
+        *self == ADDRESS0_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ADDRESS0_A::ENABLED
-    }
-}
-impl core::ops::Deref for ADDRESS0_R {
-    type Target = crate::FieldReader<bool, ADDRESS0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADDRESS0_A::ENABLED
     }
 }
 #[doc = "Field `ADDRESS0` writer - Enable or disable address matching on ADDRESS\\[0\\]"]
-pub struct ADDRESS0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDRESS0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADDRESS0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADDRESS0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, ADDRESS0_A, O>;
+impl<'a, const O: u8> ADDRESS0_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> ADDRESS0_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ADDRESS0_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `ADDRESS1` reader - Enable or disable address matching on ADDRESS\\[1\\]"]
+pub type ADDRESS1_R = crate::BitReader<ADDRESS1_A>;
 #[doc = "Enable or disable address matching on ADDRESS\\[1\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDRESS1_A {
@@ -132,14 +100,8 @@ impl From<ADDRESS1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDRESS1` reader - Enable or disable address matching on ADDRESS\\[1\\]"]
-pub struct ADDRESS1_R(crate::FieldReader<bool, ADDRESS1_A>);
 impl ADDRESS1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDRESS1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADDRESS1_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl ADDRESS1_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ADDRESS1_A::DISABLED
+        *self == ADDRESS1_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ADDRESS1_A::ENABLED
-    }
-}
-impl core::ops::Deref for ADDRESS1_R {
-    type Target = crate::FieldReader<bool, ADDRESS1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADDRESS1_A::ENABLED
     }
 }
 #[doc = "Field `ADDRESS1` writer - Enable or disable address matching on ADDRESS\\[1\\]"]
-pub struct ADDRESS1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDRESS1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADDRESS1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADDRESS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, ADDRESS1_A, O>;
+impl<'a, const O: u8> ADDRESS1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,45 +133,29 @@ impl<'a> ADDRESS1_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ADDRESS1_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable or disable address matching on ADDRESS\\[0\\]"]
     #[inline(always)]
     pub fn address0(&self) -> ADDRESS0_R {
-        ADDRESS0_R::new((self.bits & 0x01) != 0)
+        ADDRESS0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable or disable address matching on ADDRESS\\[1\\]"]
     #[inline(always)]
     pub fn address1(&self) -> ADDRESS1_R {
-        ADDRESS1_R::new(((self.bits >> 1) & 0x01) != 0)
+        ADDRESS1_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable or disable address matching on ADDRESS\\[0\\]"]
     #[inline(always)]
-    pub fn address0(&mut self) -> ADDRESS0_W {
-        ADDRESS0_W { w: self }
+    pub fn address0(&mut self) -> ADDRESS0_W<0> {
+        ADDRESS0_W::new(self)
     }
     #[doc = "Bit 1 - Enable or disable address matching on ADDRESS\\[1\\]"]
     #[inline(always)]
-    pub fn address1(&mut self) -> ADDRESS1_W {
-        ADDRESS1_W { w: self }
+    pub fn address1(&mut self) -> ADDRESS1_W<1> {
+        ADDRESS1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

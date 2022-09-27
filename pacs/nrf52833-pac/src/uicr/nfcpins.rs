@@ -34,6 +34,8 @@ impl From<crate::W<NFCPINS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PROTECT` reader - Setting of pins dedicated to NFC functionality"]
+pub type PROTECT_R = crate::BitReader<PROTECT_A>;
 #[doc = "Setting of pins dedicated to NFC functionality\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROTECT_A {
@@ -48,14 +50,8 @@ impl From<PROTECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PROTECT` reader - Setting of pins dedicated to NFC functionality"]
-pub struct PROTECT_R(crate::FieldReader<bool, PROTECT_A>);
 impl PROTECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PROTECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PROTECT_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl PROTECT_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PROTECT_A::DISABLED
+        *self == PROTECT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `NFC`"]
     #[inline(always)]
     pub fn is_nfc(&self) -> bool {
-        **self == PROTECT_A::NFC
-    }
-}
-impl core::ops::Deref for PROTECT_R {
-    type Target = crate::FieldReader<bool, PROTECT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PROTECT_A::NFC
     }
 }
 #[doc = "Field `PROTECT` writer - Setting of pins dedicated to NFC functionality"]
-pub struct PROTECT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PROTECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PROTECT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PROTECT_W<'a, const O: u8> = crate::BitWriter<'a, u32, NFCPINS_SPEC, PROTECT_A, O>;
+impl<'a, const O: u8> PROTECT_W<'a, O> {
     #[doc = "Operation as GPIO pins. Same protection as normal GPIO pins"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> PROTECT_W<'a> {
     pub fn nfc(self) -> &'a mut W {
         self.variant(PROTECT_A::NFC)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Setting of pins dedicated to NFC functionality"]
     #[inline(always)]
     pub fn protect(&self) -> PROTECT_R {
-        PROTECT_R::new((self.bits & 0x01) != 0)
+        PROTECT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Setting of pins dedicated to NFC functionality"]
     #[inline(always)]
-    pub fn protect(&mut self) -> PROTECT_W {
-        PROTECT_W { w: self }
+    pub fn protect(&mut self) -> PROTECT_W<0> {
+        PROTECT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

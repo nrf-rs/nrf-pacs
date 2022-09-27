@@ -34,13 +34,15 @@ impl From<crate::W<HFCLKAUDIOALWAYSRUN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ALWAYSRUN` reader - Ensure clock is always running"]
+pub type ALWAYSRUN_R = crate::BitReader<ALWAYSRUN_A>;
 #[doc = "Ensure clock is always running\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALWAYSRUN_A {
     #[doc = "0: Use automatic clock control"]
     AUTOMATIC = 0,
     #[doc = "1: Ensure clock is always running"]
-    ALWAYSRUN = 1,
+    ALWAYS_RUN = 1,
 }
 impl From<ALWAYSRUN_A> for bool {
     #[inline(always)]
@@ -48,49 +50,30 @@ impl From<ALWAYSRUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALWAYSRUN` reader - Ensure clock is always running"]
-pub struct ALWAYSRUN_R(crate::FieldReader<bool, ALWAYSRUN_A>);
 impl ALWAYSRUN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ALWAYSRUN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ALWAYSRUN_A {
         match self.bits {
             false => ALWAYSRUN_A::AUTOMATIC,
-            true => ALWAYSRUN_A::ALWAYSRUN,
+            true => ALWAYSRUN_A::ALWAYS_RUN,
         }
     }
     #[doc = "Checks if the value of the field is `AUTOMATIC`"]
     #[inline(always)]
     pub fn is_automatic(&self) -> bool {
-        **self == ALWAYSRUN_A::AUTOMATIC
+        *self == ALWAYSRUN_A::AUTOMATIC
     }
-    #[doc = "Checks if the value of the field is `ALWAYSRUN`"]
+    #[doc = "Checks if the value of the field is `ALWAYS_RUN`"]
     #[inline(always)]
     pub fn is_always_run(&self) -> bool {
-        **self == ALWAYSRUN_A::ALWAYSRUN
-    }
-}
-impl core::ops::Deref for ALWAYSRUN_R {
-    type Target = crate::FieldReader<bool, ALWAYSRUN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ALWAYSRUN_A::ALWAYS_RUN
     }
 }
 #[doc = "Field `ALWAYSRUN` writer - Ensure clock is always running"]
-pub struct ALWAYSRUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALWAYSRUN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ALWAYSRUN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ALWAYSRUN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HFCLKAUDIOALWAYSRUN_SPEC, ALWAYSRUN_A, O>;
+impl<'a, const O: u8> ALWAYSRUN_W<'a, O> {
     #[doc = "Use automatic clock control"]
     #[inline(always)]
     pub fn automatic(self) -> &'a mut W {
@@ -99,37 +82,21 @@ impl<'a> ALWAYSRUN_W<'a> {
     #[doc = "Ensure clock is always running"]
     #[inline(always)]
     pub fn always_run(self) -> &'a mut W {
-        self.variant(ALWAYSRUN_A::ALWAYSRUN)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(ALWAYSRUN_A::ALWAYS_RUN)
     }
 }
 impl R {
     #[doc = "Bit 0 - Ensure clock is always running"]
     #[inline(always)]
     pub fn alwaysrun(&self) -> ALWAYSRUN_R {
-        ALWAYSRUN_R::new((self.bits & 0x01) != 0)
+        ALWAYSRUN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Ensure clock is always running"]
     #[inline(always)]
-    pub fn alwaysrun(&mut self) -> ALWAYSRUN_W {
-        ALWAYSRUN_W { w: self }
+    pub fn alwaysrun(&mut self) -> ALWAYSRUN_W<0> {
+        ALWAYSRUN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

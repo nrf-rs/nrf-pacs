@@ -34,6 +34,8 @@ impl From<crate::W<RATIO_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RATIO` reader - Selects the ratio between PDM_CLK and output sample rate"]
+pub type RATIO_R = crate::BitReader<RATIO_A>;
 #[doc = "Selects the ratio between PDM_CLK and output sample rate\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RATIO_A {
@@ -48,14 +50,8 @@ impl From<RATIO_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RATIO` reader - Selects the ratio between PDM_CLK and output sample rate"]
-pub struct RATIO_R(crate::FieldReader<bool, RATIO_A>);
 impl RATIO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RATIO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RATIO_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl RATIO_R {
     #[doc = "Checks if the value of the field is `RATIO64`"]
     #[inline(always)]
     pub fn is_ratio64(&self) -> bool {
-        **self == RATIO_A::RATIO64
+        *self == RATIO_A::RATIO64
     }
     #[doc = "Checks if the value of the field is `RATIO80`"]
     #[inline(always)]
     pub fn is_ratio80(&self) -> bool {
-        **self == RATIO_A::RATIO80
-    }
-}
-impl core::ops::Deref for RATIO_R {
-    type Target = crate::FieldReader<bool, RATIO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RATIO_A::RATIO80
     }
 }
 #[doc = "Field `RATIO` writer - Selects the ratio between PDM_CLK and output sample rate"]
-pub struct RATIO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RATIO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RATIO_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RATIO_W<'a, const O: u8> = crate::BitWriter<'a, u32, RATIO_SPEC, RATIO_A, O>;
+impl<'a, const O: u8> RATIO_W<'a, O> {
     #[doc = "Ratio of 64"]
     #[inline(always)]
     pub fn ratio64(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> RATIO_W<'a> {
     pub fn ratio80(self) -> &'a mut W {
         self.variant(RATIO_A::RATIO80)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Selects the ratio between PDM_CLK and output sample rate"]
     #[inline(always)]
     pub fn ratio(&self) -> RATIO_R {
-        RATIO_R::new((self.bits & 0x01) != 0)
+        RATIO_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Selects the ratio between PDM_CLK and output sample rate"]
     #[inline(always)]
-    pub fn ratio(&mut self) -> RATIO_W {
-        RATIO_W { w: self }
+    pub fn ratio(&mut self) -> RATIO_W<0> {
+        RATIO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

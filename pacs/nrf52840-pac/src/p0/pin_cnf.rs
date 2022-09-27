@@ -34,6 +34,8 @@ impl From<crate::W<PIN_CNF_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DIR` reader - Pin direction. Same physical register as DIR register"]
+pub type DIR_R = crate::BitReader<DIR_A>;
 #[doc = "Pin direction. Same physical register as DIR register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIR_A {
@@ -48,14 +50,8 @@ impl From<DIR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIR` reader - Pin direction. Same physical register as DIR register"]
-pub struct DIR_R(crate::FieldReader<bool, DIR_A>);
 impl DIR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DIR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIR_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl DIR_R {
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == DIR_A::INPUT
+        *self == DIR_A::INPUT
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == DIR_A::OUTPUT
-    }
-}
-impl core::ops::Deref for DIR_R {
-    type Target = crate::FieldReader<bool, DIR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DIR_A::OUTPUT
     }
 }
 #[doc = "Field `DIR` writer - Pin direction. Same physical register as DIR register"]
-pub struct DIR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PIN_CNF_SPEC, DIR_A, O>;
+impl<'a, const O: u8> DIR_W<'a, O> {
     #[doc = "Configure pin as an input pin"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> DIR_W<'a> {
     pub fn output(self) -> &'a mut W {
         self.variant(DIR_A::OUTPUT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `INPUT` reader - Connect or disconnect input buffer"]
+pub type INPUT_R = crate::BitReader<INPUT_A>;
 #[doc = "Connect or disconnect input buffer\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT_A {
@@ -132,14 +100,8 @@ impl From<INPUT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INPUT` reader - Connect or disconnect input buffer"]
-pub struct INPUT_R(crate::FieldReader<bool, INPUT_A>);
 impl INPUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        INPUT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INPUT_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl INPUT_R {
     #[doc = "Checks if the value of the field is `CONNECT`"]
     #[inline(always)]
     pub fn is_connect(&self) -> bool {
-        **self == INPUT_A::CONNECT
+        *self == INPUT_A::CONNECT
     }
     #[doc = "Checks if the value of the field is `DISCONNECT`"]
     #[inline(always)]
     pub fn is_disconnect(&self) -> bool {
-        **self == INPUT_A::DISCONNECT
-    }
-}
-impl core::ops::Deref for INPUT_R {
-    type Target = crate::FieldReader<bool, INPUT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == INPUT_A::DISCONNECT
     }
 }
 #[doc = "Field `INPUT` writer - Connect or disconnect input buffer"]
-pub struct INPUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INPUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: INPUT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type INPUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, PIN_CNF_SPEC, INPUT_A, O>;
+impl<'a, const O: u8> INPUT_W<'a, O> {
     #[doc = "Connect input buffer"]
     #[inline(always)]
     pub fn connect(self) -> &'a mut W {
@@ -185,23 +133,9 @@ impl<'a> INPUT_W<'a> {
     pub fn disconnect(self) -> &'a mut W {
         self.variant(INPUT_A::DISCONNECT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `PULL` reader - Pull configuration"]
+pub type PULL_R = crate::FieldReader<u8, PULL_A>;
 #[doc = "Pull configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -219,14 +153,8 @@ impl From<PULL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PULL` reader - Pull configuration"]
-pub struct PULL_R(crate::FieldReader<u8, PULL_A>);
 impl PULL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PULL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PULL_A> {
         match self.bits {
@@ -239,36 +167,22 @@ impl PULL_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PULL_A::DISABLED
+        *self == PULL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `PULLDOWN`"]
     #[inline(always)]
     pub fn is_pulldown(&self) -> bool {
-        **self == PULL_A::PULLDOWN
+        *self == PULL_A::PULLDOWN
     }
     #[doc = "Checks if the value of the field is `PULLUP`"]
     #[inline(always)]
     pub fn is_pullup(&self) -> bool {
-        **self == PULL_A::PULLUP
-    }
-}
-impl core::ops::Deref for PULL_R {
-    type Target = crate::FieldReader<u8, PULL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PULL_A::PULLUP
     }
 }
 #[doc = "Field `PULL` writer - Pull configuration"]
-pub struct PULL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PULL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PULL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PULL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PIN_CNF_SPEC, u8, PULL_A, 2, O>;
+impl<'a, const O: u8> PULL_W<'a, O> {
     #[doc = "No pull"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -284,13 +198,9 @@ impl<'a> PULL_W<'a> {
     pub fn pullup(self) -> &'a mut W {
         self.variant(PULL_A::PULLUP)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
-    }
 }
+#[doc = "Field `DRIVE` reader - Drive configuration"]
+pub type DRIVE_R = crate::FieldReader<u8, DRIVE_A>;
 #[doc = "Drive configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -318,14 +228,8 @@ impl From<DRIVE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DRIVE` reader - Drive configuration"]
-pub struct DRIVE_R(crate::FieldReader<u8, DRIVE_A>);
 impl DRIVE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DRIVE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DRIVE_A {
         match self.bits {
@@ -343,61 +247,48 @@ impl DRIVE_R {
     #[doc = "Checks if the value of the field is `S0S1`"]
     #[inline(always)]
     pub fn is_s0s1(&self) -> bool {
-        **self == DRIVE_A::S0S1
+        *self == DRIVE_A::S0S1
     }
     #[doc = "Checks if the value of the field is `H0S1`"]
     #[inline(always)]
     pub fn is_h0s1(&self) -> bool {
-        **self == DRIVE_A::H0S1
+        *self == DRIVE_A::H0S1
     }
     #[doc = "Checks if the value of the field is `S0H1`"]
     #[inline(always)]
     pub fn is_s0h1(&self) -> bool {
-        **self == DRIVE_A::S0H1
+        *self == DRIVE_A::S0H1
     }
     #[doc = "Checks if the value of the field is `H0H1`"]
     #[inline(always)]
     pub fn is_h0h1(&self) -> bool {
-        **self == DRIVE_A::H0H1
+        *self == DRIVE_A::H0H1
     }
     #[doc = "Checks if the value of the field is `D0S1`"]
     #[inline(always)]
     pub fn is_d0s1(&self) -> bool {
-        **self == DRIVE_A::D0S1
+        *self == DRIVE_A::D0S1
     }
     #[doc = "Checks if the value of the field is `D0H1`"]
     #[inline(always)]
     pub fn is_d0h1(&self) -> bool {
-        **self == DRIVE_A::D0H1
+        *self == DRIVE_A::D0H1
     }
     #[doc = "Checks if the value of the field is `S0D1`"]
     #[inline(always)]
     pub fn is_s0d1(&self) -> bool {
-        **self == DRIVE_A::S0D1
+        *self == DRIVE_A::S0D1
     }
     #[doc = "Checks if the value of the field is `H0D1`"]
     #[inline(always)]
     pub fn is_h0d1(&self) -> bool {
-        **self == DRIVE_A::H0D1
-    }
-}
-impl core::ops::Deref for DRIVE_R {
-    type Target = crate::FieldReader<u8, DRIVE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DRIVE_A::H0D1
     }
 }
 #[doc = "Field `DRIVE` writer - Drive configuration"]
-pub struct DRIVE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DRIVE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DRIVE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type DRIVE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PIN_CNF_SPEC, u8, DRIVE_A, 3, O>;
+impl<'a, const O: u8> DRIVE_W<'a, O> {
     #[doc = "Standard '0', standard '1'"]
     #[inline(always)]
     pub fn s0s1(self) -> &'a mut W {
@@ -438,13 +329,9 @@ impl<'a> DRIVE_W<'a> {
     pub fn h0d1(self) -> &'a mut W {
         self.variant(DRIVE_A::H0D1)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
 }
+#[doc = "Field `SENSE` reader - Pin sensing mechanism"]
+pub type SENSE_R = crate::FieldReader<u8, SENSE_A>;
 #[doc = "Pin sensing mechanism\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -462,14 +349,8 @@ impl From<SENSE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SENSE` reader - Pin sensing mechanism"]
-pub struct SENSE_R(crate::FieldReader<u8, SENSE_A>);
 impl SENSE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SENSE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SENSE_A> {
         match self.bits {
@@ -482,36 +363,22 @@ impl SENSE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == SENSE_A::DISABLED
+        *self == SENSE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == SENSE_A::HIGH
+        *self == SENSE_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == SENSE_A::LOW
-    }
-}
-impl core::ops::Deref for SENSE_R {
-    type Target = crate::FieldReader<u8, SENSE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SENSE_A::LOW
     }
 }
 #[doc = "Field `SENSE` writer - Pin sensing mechanism"]
-pub struct SENSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SENSE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SENSE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SENSE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PIN_CNF_SPEC, u8, SENSE_A, 2, O>;
+impl<'a, const O: u8> SENSE_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -527,65 +394,59 @@ impl<'a> SENSE_W<'a> {
     pub fn low(self) -> &'a mut W {
         self.variant(SENSE_A::LOW)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Pin direction. Same physical register as DIR register"]
     #[inline(always)]
     pub fn dir(&self) -> DIR_R {
-        DIR_R::new((self.bits & 0x01) != 0)
+        DIR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Connect or disconnect input buffer"]
     #[inline(always)]
     pub fn input(&self) -> INPUT_R {
-        INPUT_R::new(((self.bits >> 1) & 0x01) != 0)
+        INPUT_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:3 - Pull configuration"]
     #[inline(always)]
     pub fn pull(&self) -> PULL_R {
-        PULL_R::new(((self.bits >> 2) & 0x03) as u8)
+        PULL_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 8:10 - Drive configuration"]
     #[inline(always)]
     pub fn drive(&self) -> DRIVE_R {
-        DRIVE_R::new(((self.bits >> 8) & 0x07) as u8)
+        DRIVE_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 16:17 - Pin sensing mechanism"]
     #[inline(always)]
     pub fn sense(&self) -> SENSE_R {
-        SENSE_R::new(((self.bits >> 16) & 0x03) as u8)
+        SENSE_R::new(((self.bits >> 16) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Pin direction. Same physical register as DIR register"]
     #[inline(always)]
-    pub fn dir(&mut self) -> DIR_W {
-        DIR_W { w: self }
+    pub fn dir(&mut self) -> DIR_W<0> {
+        DIR_W::new(self)
     }
     #[doc = "Bit 1 - Connect or disconnect input buffer"]
     #[inline(always)]
-    pub fn input(&mut self) -> INPUT_W {
-        INPUT_W { w: self }
+    pub fn input(&mut self) -> INPUT_W<1> {
+        INPUT_W::new(self)
     }
     #[doc = "Bits 2:3 - Pull configuration"]
     #[inline(always)]
-    pub fn pull(&mut self) -> PULL_W {
-        PULL_W { w: self }
+    pub fn pull(&mut self) -> PULL_W<2> {
+        PULL_W::new(self)
     }
     #[doc = "Bits 8:10 - Drive configuration"]
     #[inline(always)]
-    pub fn drive(&mut self) -> DRIVE_W {
-        DRIVE_W { w: self }
+    pub fn drive(&mut self) -> DRIVE_W<8> {
+        DRIVE_W::new(self)
     }
     #[doc = "Bits 16:17 - Pin sensing mechanism"]
     #[inline(always)]
-    pub fn sense(&mut self) -> SENSE_W {
-        SENSE_W { w: self }
+    pub fn sense(&mut self) -> SENSE_W<16> {
+        SENSE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -13,6 +13,8 @@ impl From<crate::R<STATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `DPM` reader - Deep power-down mode (DPM) status of external flash."]
+pub type DPM_R = crate::BitReader<DPM_A>;
 #[doc = "Deep power-down mode (DPM) status of external flash.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPM_A {
@@ -27,14 +29,8 @@ impl From<DPM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DPM` reader - Deep power-down mode (DPM) status of external flash."]
-pub struct DPM_R(crate::FieldReader<bool, DPM_A>);
 impl DPM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DPM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DPM_A {
         match self.bits {
@@ -45,21 +41,16 @@ impl DPM_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DPM_A::DISABLED
+        *self == DPM_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DPM_A::ENABLED
+        *self == DPM_A::ENABLED
     }
 }
-impl core::ops::Deref for DPM_R {
-    type Target = crate::FieldReader<bool, DPM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `READY` reader - Ready status."]
+pub type READY_R = crate::BitReader<READY_A>;
 #[doc = "Ready status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READY_A {
@@ -74,14 +65,8 @@ impl From<READY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `READY` reader - Ready status."]
-pub struct READY_R(crate::FieldReader<bool, READY_A>);
 impl READY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        READY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> READY_A {
         match self.bits {
@@ -92,46 +77,26 @@ impl READY_R {
     #[doc = "Checks if the value of the field is `READY`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        **self == READY_A::READY
+        *self == READY_A::READY
     }
     #[doc = "Checks if the value of the field is `BUSY`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        **self == READY_A::BUSY
-    }
-}
-impl core::ops::Deref for READY_R {
-    type Target = crate::FieldReader<bool, READY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == READY_A::BUSY
     }
 }
 #[doc = "Field `SREG` reader - Value of external flash device Status Register. When the external flash has two bytes status register this field includes the value of the low byte."]
-pub struct SREG_R(crate::FieldReader<u8, u8>);
-impl SREG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SREG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SREG_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SREG_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 2 - Deep power-down mode (DPM) status of external flash."]
     #[inline(always)]
     pub fn dpm(&self) -> DPM_R {
-        DPM_R::new(((self.bits >> 2) & 0x01) != 0)
+        DPM_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Ready status."]
     #[inline(always)]
     pub fn ready(&self) -> READY_R {
-        READY_R::new(((self.bits >> 3) & 0x01) != 0)
+        READY_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 24:31 - Value of external flash device Status Register. When the external flash has two bytes status register this field includes the value of the low byte."]
     #[inline(always)]

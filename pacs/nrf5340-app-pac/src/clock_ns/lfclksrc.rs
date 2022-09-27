@@ -34,6 +34,8 @@ impl From<crate::W<LFCLKSRC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SRC` reader - Select which LFCLK source is started by the LFCLKSTART task"]
+pub type SRC_R = crate::FieldReader<u8, SRC_A>;
 #[doc = "Select which LFCLK source is started by the LFCLKSTART task\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,14 +53,8 @@ impl From<SRC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SRC` reader - Select which LFCLK source is started by the LFCLKSTART task"]
-pub struct SRC_R(crate::FieldReader<u8, SRC_A>);
 impl SRC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SRC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SRC_A> {
         match self.bits {
@@ -71,36 +67,22 @@ impl SRC_R {
     #[doc = "Checks if the value of the field is `LFRC`"]
     #[inline(always)]
     pub fn is_lfrc(&self) -> bool {
-        **self == SRC_A::LFRC
+        *self == SRC_A::LFRC
     }
     #[doc = "Checks if the value of the field is `LFXO`"]
     #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
-        **self == SRC_A::LFXO
+        *self == SRC_A::LFXO
     }
     #[doc = "Checks if the value of the field is `LFSYNT`"]
     #[inline(always)]
     pub fn is_lfsynt(&self) -> bool {
-        **self == SRC_A::LFSYNT
-    }
-}
-impl core::ops::Deref for SRC_R {
-    type Target = crate::FieldReader<u8, SRC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SRC_A::LFSYNT
     }
 }
 #[doc = "Field `SRC` writer - Select which LFCLK source is started by the LFCLKSTART task"]
-pub struct SRC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SRC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFCLKSRC_SPEC, u8, SRC_A, 2, O>;
+impl<'a, const O: u8> SRC_W<'a, O> {
     #[doc = "32.768 kHz RC oscillator"]
     #[inline(always)]
     pub fn lfrc(self) -> &'a mut W {
@@ -116,25 +98,19 @@ impl<'a> SRC_W<'a> {
     pub fn lfsynt(self) -> &'a mut W {
         self.variant(SRC_A::LFSYNT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Select which LFCLK source is started by the LFCLKSTART task"]
     #[inline(always)]
     pub fn src(&self) -> SRC_R {
-        SRC_R::new((self.bits & 0x03) as u8)
+        SRC_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Select which LFCLK source is started by the LFCLKSTART task"]
     #[inline(always)]
-    pub fn src(&mut self) -> SRC_W {
-        SRC_W { w: self }
+    pub fn src(&mut self) -> SRC_W<0> {
+        SRC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

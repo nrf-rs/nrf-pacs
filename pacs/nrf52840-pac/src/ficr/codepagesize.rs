@@ -14,20 +14,7 @@ impl From<crate::R<CODEPAGESIZE_SPEC>> for R {
     }
 }
 #[doc = "Field `CODEPAGESIZE` reader - Code memory page size"]
-pub struct CODEPAGESIZE_R(crate::FieldReader<u32, u32>);
-impl CODEPAGESIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CODEPAGESIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CODEPAGESIZE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CODEPAGESIZE_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Code memory page size"]
     #[inline(always)]

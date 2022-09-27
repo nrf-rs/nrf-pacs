@@ -34,6 +34,8 @@ impl From<crate::W<LIST_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LIST` reader - List type"]
+pub type LIST_R = crate::FieldReader<u8, LIST_A>;
 #[doc = "List type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -41,7 +43,7 @@ pub enum LIST_A {
     #[doc = "0: Disable EasyDMA list"]
     DISABLED = 0,
     #[doc = "1: Use array list"]
-    ARRAYLIST = 1,
+    ARRAY_LIST = 1,
 }
 impl From<LIST_A> for u8 {
     #[inline(always)]
@@ -49,50 +51,30 @@ impl From<LIST_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LIST` reader - List type"]
-pub struct LIST_R(crate::FieldReader<u8, LIST_A>);
 impl LIST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LIST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LIST_A> {
         match self.bits {
             0 => Some(LIST_A::DISABLED),
-            1 => Some(LIST_A::ARRAYLIST),
+            1 => Some(LIST_A::ARRAY_LIST),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LIST_A::DISABLED
+        *self == LIST_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `ARRAYLIST`"]
+    #[doc = "Checks if the value of the field is `ARRAY_LIST`"]
     #[inline(always)]
     pub fn is_array_list(&self) -> bool {
-        **self == LIST_A::ARRAYLIST
-    }
-}
-impl core::ops::Deref for LIST_R {
-    type Target = crate::FieldReader<u8, LIST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LIST_A::ARRAY_LIST
     }
 }
 #[doc = "Field `LIST` writer - List type"]
-pub struct LIST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LIST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LIST_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type LIST_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LIST_SPEC, u8, LIST_A, 3, O>;
+impl<'a, const O: u8> LIST_W<'a, O> {
     #[doc = "Disable EasyDMA list"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,27 +83,21 @@ impl<'a> LIST_W<'a> {
     #[doc = "Use array list"]
     #[inline(always)]
     pub fn array_list(self) -> &'a mut W {
-        self.variant(LIST_A::ARRAYLIST)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
+        self.variant(LIST_A::ARRAY_LIST)
     }
 }
 impl R {
     #[doc = "Bits 0:2 - List type"]
     #[inline(always)]
     pub fn list(&self) -> LIST_R {
-        LIST_R::new((self.bits & 0x07) as u8)
+        LIST_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - List type"]
     #[inline(always)]
-    pub fn list(&mut self) -> LIST_W {
-        LIST_W { w: self }
+    pub fn list(&mut self) -> LIST_W<0> {
+        LIST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

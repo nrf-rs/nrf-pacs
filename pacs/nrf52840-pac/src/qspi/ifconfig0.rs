@@ -34,6 +34,8 @@ impl From<crate::W<IFCONFIG0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `READOC` reader - Configure number of data lines and opcode used for reading."]
+pub type READOC_R = crate::FieldReader<u8, READOC_A>;
 #[doc = "Configure number of data lines and opcode used for reading.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -55,14 +57,8 @@ impl From<READOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `READOC` reader - Configure number of data lines and opcode used for reading."]
-pub struct READOC_R(crate::FieldReader<u8, READOC_A>);
 impl READOC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        READOC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<READOC_A> {
         match self.bits {
@@ -77,46 +73,33 @@ impl READOC_R {
     #[doc = "Checks if the value of the field is `FASTREAD`"]
     #[inline(always)]
     pub fn is_fastread(&self) -> bool {
-        **self == READOC_A::FASTREAD
+        *self == READOC_A::FASTREAD
     }
     #[doc = "Checks if the value of the field is `READ2O`"]
     #[inline(always)]
     pub fn is_read2o(&self) -> bool {
-        **self == READOC_A::READ2O
+        *self == READOC_A::READ2O
     }
     #[doc = "Checks if the value of the field is `READ2IO`"]
     #[inline(always)]
     pub fn is_read2io(&self) -> bool {
-        **self == READOC_A::READ2IO
+        *self == READOC_A::READ2IO
     }
     #[doc = "Checks if the value of the field is `READ4O`"]
     #[inline(always)]
     pub fn is_read4o(&self) -> bool {
-        **self == READOC_A::READ4O
+        *self == READOC_A::READ4O
     }
     #[doc = "Checks if the value of the field is `READ4IO`"]
     #[inline(always)]
     pub fn is_read4io(&self) -> bool {
-        **self == READOC_A::READ4IO
-    }
-}
-impl core::ops::Deref for READOC_R {
-    type Target = crate::FieldReader<u8, READOC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == READOC_A::READ4IO
     }
 }
 #[doc = "Field `READOC` writer - Configure number of data lines and opcode used for reading."]
-pub struct READOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> READOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: READOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type READOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, IFCONFIG0_SPEC, u8, READOC_A, 3, O>;
+impl<'a, const O: u8> READOC_W<'a, O> {
     #[doc = "Single data line SPI. FAST_READ (opcode 0x0B)."]
     #[inline(always)]
     pub fn fastread(self) -> &'a mut W {
@@ -142,13 +125,9 @@ impl<'a> READOC_W<'a> {
     pub fn read4io(self) -> &'a mut W {
         self.variant(READOC_A::READ4IO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
+#[doc = "Field `WRITEOC` reader - Configure number of data lines and opcode used for writing."]
+pub type WRITEOC_R = crate::FieldReader<u8, WRITEOC_A>;
 #[doc = "Configure number of data lines and opcode used for writing.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -168,14 +147,8 @@ impl From<WRITEOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WRITEOC` reader - Configure number of data lines and opcode used for writing."]
-pub struct WRITEOC_R(crate::FieldReader<u8, WRITEOC_A>);
 impl WRITEOC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WRITEOC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<WRITEOC_A> {
         match self.bits {
@@ -189,41 +162,28 @@ impl WRITEOC_R {
     #[doc = "Checks if the value of the field is `PP`"]
     #[inline(always)]
     pub fn is_pp(&self) -> bool {
-        **self == WRITEOC_A::PP
+        *self == WRITEOC_A::PP
     }
     #[doc = "Checks if the value of the field is `PP2O`"]
     #[inline(always)]
     pub fn is_pp2o(&self) -> bool {
-        **self == WRITEOC_A::PP2O
+        *self == WRITEOC_A::PP2O
     }
     #[doc = "Checks if the value of the field is `PP4O`"]
     #[inline(always)]
     pub fn is_pp4o(&self) -> bool {
-        **self == WRITEOC_A::PP4O
+        *self == WRITEOC_A::PP4O
     }
     #[doc = "Checks if the value of the field is `PP4IO`"]
     #[inline(always)]
     pub fn is_pp4io(&self) -> bool {
-        **self == WRITEOC_A::PP4IO
-    }
-}
-impl core::ops::Deref for WRITEOC_R {
-    type Target = crate::FieldReader<u8, WRITEOC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WRITEOC_A::PP4IO
     }
 }
 #[doc = "Field `WRITEOC` writer - Configure number of data lines and opcode used for writing."]
-pub struct WRITEOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITEOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WRITEOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type WRITEOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, IFCONFIG0_SPEC, u8, WRITEOC_A, 3, O>;
+impl<'a, const O: u8> WRITEOC_W<'a, O> {
     #[doc = "Single data line SPI. PP (opcode 0x02)."]
     #[inline(always)]
     pub fn pp(self) -> &'a mut W {
@@ -244,13 +204,9 @@ impl<'a> WRITEOC_W<'a> {
     pub fn pp4io(self) -> &'a mut W {
         self.variant(WRITEOC_A::PP4IO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 3)) | ((value as u32 & 0x07) << 3);
-        self.w
-    }
 }
+#[doc = "Field `ADDRMODE` reader - Addressing mode."]
+pub type ADDRMODE_R = crate::BitReader<ADDRMODE_A>;
 #[doc = "Addressing mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDRMODE_A {
@@ -265,14 +221,8 @@ impl From<ADDRMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDRMODE` reader - Addressing mode."]
-pub struct ADDRMODE_R(crate::FieldReader<bool, ADDRMODE_A>);
 impl ADDRMODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDRMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADDRMODE_A {
         match self.bits {
@@ -283,31 +233,17 @@ impl ADDRMODE_R {
     #[doc = "Checks if the value of the field is `_24BIT`"]
     #[inline(always)]
     pub fn is_24bit(&self) -> bool {
-        **self == ADDRMODE_A::_24BIT
+        *self == ADDRMODE_A::_24BIT
     }
     #[doc = "Checks if the value of the field is `_32BIT`"]
     #[inline(always)]
     pub fn is_32bit(&self) -> bool {
-        **self == ADDRMODE_A::_32BIT
-    }
-}
-impl core::ops::Deref for ADDRMODE_R {
-    type Target = crate::FieldReader<bool, ADDRMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADDRMODE_A::_32BIT
     }
 }
 #[doc = "Field `ADDRMODE` writer - Addressing mode."]
-pub struct ADDRMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDRMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADDRMODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADDRMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFCONFIG0_SPEC, ADDRMODE_A, O>;
+impl<'a, const O: u8> ADDRMODE_W<'a, O> {
     #[doc = "24-bit addressing."]
     #[inline(always)]
     pub fn _24bit(self) -> &'a mut W {
@@ -318,23 +254,9 @@ impl<'a> ADDRMODE_W<'a> {
     pub fn _32bit(self) -> &'a mut W {
         self.variant(ADDRMODE_A::_32BIT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `DPMENABLE` reader - Enable deep power-down mode (DPM) feature."]
+pub type DPMENABLE_R = crate::BitReader<DPMENABLE_A>;
 #[doc = "Enable deep power-down mode (DPM) feature.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPMENABLE_A {
@@ -349,14 +271,8 @@ impl From<DPMENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DPMENABLE` reader - Enable deep power-down mode (DPM) feature."]
-pub struct DPMENABLE_R(crate::FieldReader<bool, DPMENABLE_A>);
 impl DPMENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DPMENABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DPMENABLE_A {
         match self.bits {
@@ -367,31 +283,17 @@ impl DPMENABLE_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == DPMENABLE_A::DISABLE
+        *self == DPMENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == DPMENABLE_A::ENABLE
-    }
-}
-impl core::ops::Deref for DPMENABLE_R {
-    type Target = crate::FieldReader<bool, DPMENABLE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DPMENABLE_A::ENABLE
     }
 }
 #[doc = "Field `DPMENABLE` writer - Enable deep power-down mode (DPM) feature."]
-pub struct DPMENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DPMENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DPMENABLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DPMENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFCONFIG0_SPEC, DPMENABLE_A, O>;
+impl<'a, const O: u8> DPMENABLE_W<'a, O> {
     #[doc = "Disable DPM feature."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -402,23 +304,9 @@ impl<'a> DPMENABLE_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(DPMENABLE_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `PPSIZE` reader - Page size for commands PP, PP2O, PP4O and PP4IO."]
+pub type PPSIZE_R = crate::BitReader<PPSIZE_A>;
 #[doc = "Page size for commands PP, PP2O, PP4O and PP4IO.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPSIZE_A {
@@ -433,14 +321,8 @@ impl From<PPSIZE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PPSIZE` reader - Page size for commands PP, PP2O, PP4O and PP4IO."]
-pub struct PPSIZE_R(crate::FieldReader<bool, PPSIZE_A>);
 impl PPSIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PPSIZE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPSIZE_A {
         match self.bits {
@@ -451,31 +333,17 @@ impl PPSIZE_R {
     #[doc = "Checks if the value of the field is `_256BYTES`"]
     #[inline(always)]
     pub fn is_256bytes(&self) -> bool {
-        **self == PPSIZE_A::_256BYTES
+        *self == PPSIZE_A::_256BYTES
     }
     #[doc = "Checks if the value of the field is `_512BYTES`"]
     #[inline(always)]
     pub fn is_512bytes(&self) -> bool {
-        **self == PPSIZE_A::_512BYTES
-    }
-}
-impl core::ops::Deref for PPSIZE_R {
-    type Target = crate::FieldReader<bool, PPSIZE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PPSIZE_A::_512BYTES
     }
 }
 #[doc = "Field `PPSIZE` writer - Page size for commands PP, PP2O, PP4O and PP4IO."]
-pub struct PPSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PPSIZE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PPSIZE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PPSIZE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFCONFIG0_SPEC, PPSIZE_A, O>;
+impl<'a, const O: u8> PPSIZE_W<'a, O> {
     #[doc = "256 bytes."]
     #[inline(always)]
     pub fn _256bytes(self) -> &'a mut W {
@@ -486,75 +354,59 @@ impl<'a> PPSIZE_W<'a> {
     pub fn _512bytes(self) -> &'a mut W {
         self.variant(PPSIZE_A::_512BYTES)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Configure number of data lines and opcode used for reading."]
     #[inline(always)]
     pub fn readoc(&self) -> READOC_R {
-        READOC_R::new((self.bits & 0x07) as u8)
+        READOC_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 3:5 - Configure number of data lines and opcode used for writing."]
     #[inline(always)]
     pub fn writeoc(&self) -> WRITEOC_R {
-        WRITEOC_R::new(((self.bits >> 3) & 0x07) as u8)
+        WRITEOC_R::new(((self.bits >> 3) & 7) as u8)
     }
     #[doc = "Bit 6 - Addressing mode."]
     #[inline(always)]
     pub fn addrmode(&self) -> ADDRMODE_R {
-        ADDRMODE_R::new(((self.bits >> 6) & 0x01) != 0)
+        ADDRMODE_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable deep power-down mode (DPM) feature."]
     #[inline(always)]
     pub fn dpmenable(&self) -> DPMENABLE_R {
-        DPMENABLE_R::new(((self.bits >> 7) & 0x01) != 0)
+        DPMENABLE_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 12 - Page size for commands PP, PP2O, PP4O and PP4IO."]
     #[inline(always)]
     pub fn ppsize(&self) -> PPSIZE_R {
-        PPSIZE_R::new(((self.bits >> 12) & 0x01) != 0)
+        PPSIZE_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Configure number of data lines and opcode used for reading."]
     #[inline(always)]
-    pub fn readoc(&mut self) -> READOC_W {
-        READOC_W { w: self }
+    pub fn readoc(&mut self) -> READOC_W<0> {
+        READOC_W::new(self)
     }
     #[doc = "Bits 3:5 - Configure number of data lines and opcode used for writing."]
     #[inline(always)]
-    pub fn writeoc(&mut self) -> WRITEOC_W {
-        WRITEOC_W { w: self }
+    pub fn writeoc(&mut self) -> WRITEOC_W<3> {
+        WRITEOC_W::new(self)
     }
     #[doc = "Bit 6 - Addressing mode."]
     #[inline(always)]
-    pub fn addrmode(&mut self) -> ADDRMODE_W {
-        ADDRMODE_W { w: self }
+    pub fn addrmode(&mut self) -> ADDRMODE_W<6> {
+        ADDRMODE_W::new(self)
     }
     #[doc = "Bit 7 - Enable deep power-down mode (DPM) feature."]
     #[inline(always)]
-    pub fn dpmenable(&mut self) -> DPMENABLE_W {
-        DPMENABLE_W { w: self }
+    pub fn dpmenable(&mut self) -> DPMENABLE_W<7> {
+        DPMENABLE_W::new(self)
     }
     #[doc = "Bit 12 - Page size for commands PP, PP2O, PP4O and PP4IO."]
     #[inline(always)]
-    pub fn ppsize(&mut self) -> PPSIZE_W {
-        PPSIZE_W { w: self }
+    pub fn ppsize(&mut self) -> PPSIZE_W<12> {
+        PPSIZE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

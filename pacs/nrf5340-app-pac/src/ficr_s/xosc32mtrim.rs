@@ -14,35 +14,9 @@ impl From<crate::R<XOSC32MTRIM_SPEC>> for R {
     }
 }
 #[doc = "Field `SLOPE` reader - Slope trim factor on twos complement form"]
-pub struct SLOPE_R(crate::FieldReader<u8, u8>);
-impl SLOPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SLOPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLOPE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLOPE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OFFSET` reader - Offset trim factor on integer form"]
-pub struct OFFSET_R(crate::FieldReader<u8, u8>);
-impl OFFSET_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        OFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OFFSET_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OFFSET_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:4 - Slope trim factor on twos complement form"]
     #[inline(always)]

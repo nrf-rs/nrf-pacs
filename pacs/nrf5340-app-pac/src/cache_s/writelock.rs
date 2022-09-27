@@ -34,6 +34,8 @@ impl From<crate::W<WRITELOCK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `WRITELOCK` reader - Lock cache updates"]
+pub type WRITELOCK_R = crate::BitReader<WRITELOCK_A>;
 #[doc = "Lock cache updates\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WRITELOCK_A {
@@ -48,14 +50,8 @@ impl From<WRITELOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WRITELOCK` reader - Lock cache updates"]
-pub struct WRITELOCK_R(crate::FieldReader<bool, WRITELOCK_A>);
 impl WRITELOCK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WRITELOCK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WRITELOCK_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl WRITELOCK_R {
     #[doc = "Checks if the value of the field is `UNLOCKED`"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        **self == WRITELOCK_A::UNLOCKED
+        *self == WRITELOCK_A::UNLOCKED
     }
     #[doc = "Checks if the value of the field is `LOCKED`"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        **self == WRITELOCK_A::LOCKED
-    }
-}
-impl core::ops::Deref for WRITELOCK_R {
-    type Target = crate::FieldReader<bool, WRITELOCK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WRITELOCK_A::LOCKED
     }
 }
 #[doc = "Field `WRITELOCK` writer - Lock cache updates"]
-pub struct WRITELOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITELOCK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WRITELOCK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WRITELOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITELOCK_SPEC, WRITELOCK_A, O>;
+impl<'a, const O: u8> WRITELOCK_W<'a, O> {
     #[doc = "Cache updates unlocked"]
     #[inline(always)]
     pub fn unlocked(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> WRITELOCK_W<'a> {
     pub fn locked(self) -> &'a mut W {
         self.variant(WRITELOCK_A::LOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Lock cache updates"]
     #[inline(always)]
     pub fn writelock(&self) -> WRITELOCK_R {
-        WRITELOCK_R::new((self.bits & 0x01) != 0)
+        WRITELOCK_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Lock cache updates"]
     #[inline(always)]
-    pub fn writelock(&mut self) -> WRITELOCK_W {
-        WRITELOCK_W { w: self }
+    pub fn writelock(&mut self) -> WRITELOCK_W<0> {
+        WRITELOCK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

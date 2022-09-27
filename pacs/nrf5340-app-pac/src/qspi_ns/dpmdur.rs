@@ -35,59 +35,13 @@ impl From<crate::W<DPMDUR_SPEC>> for W {
     }
 }
 #[doc = "Field `ENTER` reader - Duration needed by external flash to enter DPM. Duration is given as ENTER * 256 * 62.5 ns."]
-pub struct ENTER_R(crate::FieldReader<u16, u16>);
-impl ENTER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        ENTER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ENTER_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ENTER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ENTER` writer - Duration needed by external flash to enter DPM. Duration is given as ENTER * 256 * 62.5 ns."]
-pub struct ENTER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENTER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type ENTER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DPMDUR_SPEC, u16, u16, 16, O>;
 #[doc = "Field `EXIT` reader - Duration needed by external flash to exit DPM. Duration is given as EXIT * 256 * 62.5 ns."]
-pub struct EXIT_R(crate::FieldReader<u16, u16>);
-impl EXIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        EXIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXIT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXIT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `EXIT` writer - Duration needed by external flash to exit DPM. Duration is given as EXIT * 256 * 62.5 ns."]
-pub struct EXIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type EXIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DPMDUR_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Duration needed by external flash to enter DPM. Duration is given as ENTER * 256 * 62.5 ns."]
     #[inline(always)]
@@ -103,13 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Duration needed by external flash to enter DPM. Duration is given as ENTER * 256 * 62.5 ns."]
     #[inline(always)]
-    pub fn enter(&mut self) -> ENTER_W {
-        ENTER_W { w: self }
+    pub fn enter(&mut self) -> ENTER_W<0> {
+        ENTER_W::new(self)
     }
     #[doc = "Bits 16:31 - Duration needed by external flash to exit DPM. Duration is given as EXIT * 256 * 62.5 ns."]
     #[inline(always)]
-    pub fn exit(&mut self) -> EXIT_W {
-        EXIT_W { w: self }
+    pub fn exit(&mut self) -> EXIT_W<16> {
+        EXIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

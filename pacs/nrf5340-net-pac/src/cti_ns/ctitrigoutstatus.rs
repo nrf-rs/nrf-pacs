@@ -13,6 +13,8 @@ impl From<crate::R<CTITRIGOUTSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `DEBUGREQ` reader - Processor debug request"]
+pub type DEBUGREQ_R = crate::BitReader<DEBUGREQ_A>;
 #[doc = "Processor debug request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEBUGREQ_A {
@@ -27,14 +29,8 @@ impl From<DEBUGREQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DEBUGREQ` reader - Processor debug request"]
-pub struct DEBUGREQ_R(crate::FieldReader<bool, DEBUGREQ_A>);
 impl DEBUGREQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DEBUGREQ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DEBUGREQ_A {
         match self.bits {
@@ -45,21 +41,16 @@ impl DEBUGREQ_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == DEBUGREQ_A::ACTIVE
+        *self == DEBUGREQ_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == DEBUGREQ_A::INACTIVE
+        *self == DEBUGREQ_A::INACTIVE
     }
 }
-impl core::ops::Deref for DEBUGREQ_R {
-    type Target = crate::FieldReader<bool, DEBUGREQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `CPURESTART` reader - Processor Restart"]
+pub type CPURESTART_R = crate::BitReader<CPURESTART_A>;
 #[doc = "Processor Restart\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPURESTART_A {
@@ -74,14 +65,8 @@ impl From<CPURESTART_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CPURESTART` reader - Processor Restart"]
-pub struct CPURESTART_R(crate::FieldReader<bool, CPURESTART_A>);
 impl CPURESTART_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CPURESTART_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPURESTART_A {
         match self.bits {
@@ -92,21 +77,16 @@ impl CPURESTART_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == CPURESTART_A::ACTIVE
+        *self == CPURESTART_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == CPURESTART_A::INACTIVE
+        *self == CPURESTART_A::INACTIVE
     }
 }
-impl core::ops::Deref for CPURESTART_R {
-    type Target = crate::FieldReader<bool, CPURESTART_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `UNUSED0` reader - N/A"]
+pub type UNUSED0_R = crate::BitReader<UNUSED0_A>;
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UNUSED0_A {
@@ -121,14 +101,8 @@ impl From<UNUSED0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNUSED0` reader - N/A"]
-pub struct UNUSED0_R(crate::FieldReader<bool, UNUSED0_A>);
 impl UNUSED0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UNUSED0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UNUSED0_A {
         match self.bits {
@@ -139,21 +113,16 @@ impl UNUSED0_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == UNUSED0_A::ACTIVE
+        *self == UNUSED0_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == UNUSED0_A::INACTIVE
+        *self == UNUSED0_A::INACTIVE
     }
 }
-impl core::ops::Deref for UNUSED0_R {
-    type Target = crate::FieldReader<bool, UNUSED0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `UNUSED1` reader - N/A"]
+pub type UNUSED1_R = crate::BitReader<UNUSED1_A>;
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UNUSED1_A {
@@ -168,14 +137,8 @@ impl From<UNUSED1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNUSED1` reader - N/A"]
-pub struct UNUSED1_R(crate::FieldReader<bool, UNUSED1_A>);
 impl UNUSED1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UNUSED1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UNUSED1_A {
         match self.bits {
@@ -186,21 +149,16 @@ impl UNUSED1_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == UNUSED1_A::ACTIVE
+        *self == UNUSED1_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == UNUSED1_A::INACTIVE
+        *self == UNUSED1_A::INACTIVE
     }
 }
-impl core::ops::Deref for UNUSED1_R {
-    type Target = crate::FieldReader<bool, UNUSED1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `UNUSED2` reader - N/A"]
+pub type UNUSED2_R = crate::BitReader<UNUSED2_A>;
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UNUSED2_A {
@@ -215,14 +173,8 @@ impl From<UNUSED2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNUSED2` reader - N/A"]
-pub struct UNUSED2_R(crate::FieldReader<bool, UNUSED2_A>);
 impl UNUSED2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UNUSED2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UNUSED2_A {
         match self.bits {
@@ -233,21 +185,16 @@ impl UNUSED2_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == UNUSED2_A::ACTIVE
+        *self == UNUSED2_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == UNUSED2_A::INACTIVE
+        *self == UNUSED2_A::INACTIVE
     }
 }
-impl core::ops::Deref for UNUSED2_R {
-    type Target = crate::FieldReader<bool, UNUSED2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `UNUSED3` reader - N/A"]
+pub type UNUSED3_R = crate::BitReader<UNUSED3_A>;
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UNUSED3_A {
@@ -262,14 +209,8 @@ impl From<UNUSED3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNUSED3` reader - N/A"]
-pub struct UNUSED3_R(crate::FieldReader<bool, UNUSED3_A>);
 impl UNUSED3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UNUSED3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UNUSED3_A {
         match self.bits {
@@ -280,21 +221,16 @@ impl UNUSED3_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == UNUSED3_A::ACTIVE
+        *self == UNUSED3_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == UNUSED3_A::INACTIVE
+        *self == UNUSED3_A::INACTIVE
     }
 }
-impl core::ops::Deref for UNUSED3_R {
-    type Target = crate::FieldReader<bool, UNUSED3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `UNUSED4` reader - N/A"]
+pub type UNUSED4_R = crate::BitReader<UNUSED4_A>;
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UNUSED4_A {
@@ -309,14 +245,8 @@ impl From<UNUSED4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNUSED4` reader - N/A"]
-pub struct UNUSED4_R(crate::FieldReader<bool, UNUSED4_A>);
 impl UNUSED4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UNUSED4_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UNUSED4_A {
         match self.bits {
@@ -327,21 +257,16 @@ impl UNUSED4_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == UNUSED4_A::ACTIVE
+        *self == UNUSED4_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == UNUSED4_A::INACTIVE
+        *self == UNUSED4_A::INACTIVE
     }
 }
-impl core::ops::Deref for UNUSED4_R {
-    type Target = crate::FieldReader<bool, UNUSED4_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `UNUSED5` reader - N/A"]
+pub type UNUSED5_R = crate::BitReader<UNUSED5_A>;
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UNUSED5_A {
@@ -356,14 +281,8 @@ impl From<UNUSED5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNUSED5` reader - N/A"]
-pub struct UNUSED5_R(crate::FieldReader<bool, UNUSED5_A>);
 impl UNUSED5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UNUSED5_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UNUSED5_A {
         match self.bits {
@@ -374,61 +293,54 @@ impl UNUSED5_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == UNUSED5_A::ACTIVE
+        *self == UNUSED5_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == UNUSED5_A::INACTIVE
-    }
-}
-impl core::ops::Deref for UNUSED5_R {
-    type Target = crate::FieldReader<bool, UNUSED5_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UNUSED5_A::INACTIVE
     }
 }
 impl R {
     #[doc = "Bit 0 - Processor debug request"]
     #[inline(always)]
     pub fn debugreq(&self) -> DEBUGREQ_R {
-        DEBUGREQ_R::new((self.bits & 0x01) != 0)
+        DEBUGREQ_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Processor Restart"]
     #[inline(always)]
     pub fn cpurestart(&self) -> CPURESTART_R {
-        CPURESTART_R::new(((self.bits >> 1) & 0x01) != 0)
+        CPURESTART_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - N/A"]
     #[inline(always)]
     pub fn unused0(&self) -> UNUSED0_R {
-        UNUSED0_R::new(((self.bits >> 2) & 0x01) != 0)
+        UNUSED0_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - N/A"]
     #[inline(always)]
     pub fn unused1(&self) -> UNUSED1_R {
-        UNUSED1_R::new(((self.bits >> 3) & 0x01) != 0)
+        UNUSED1_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - N/A"]
     #[inline(always)]
     pub fn unused2(&self) -> UNUSED2_R {
-        UNUSED2_R::new(((self.bits >> 4) & 0x01) != 0)
+        UNUSED2_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - N/A"]
     #[inline(always)]
     pub fn unused3(&self) -> UNUSED3_R {
-        UNUSED3_R::new(((self.bits >> 5) & 0x01) != 0)
+        UNUSED3_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - N/A"]
     #[inline(always)]
     pub fn unused4(&self) -> UNUSED4_R {
-        UNUSED4_R::new(((self.bits >> 6) & 0x01) != 0)
+        UNUSED4_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - N/A"]
     #[inline(always)]
     pub fn unused5(&self) -> UNUSED5_R {
-        UNUSED5_R::new(((self.bits >> 7) & 0x01) != 0)
+        UNUSED5_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 #[doc = "CTI Trigger Out Status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctitrigoutstatus](index.html) module"]

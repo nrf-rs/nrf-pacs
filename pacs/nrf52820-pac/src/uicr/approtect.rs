@@ -34,6 +34,8 @@ impl From<crate::W<APPROTECT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PALL` reader - Enable or disable access port protection."]
+pub type PALL_R = crate::FieldReader<u8, PALL_A>;
 #[doc = "Enable or disable access port protection.\n\nValue on reset: 255"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -41,7 +43,7 @@ pub enum PALL_A {
     #[doc = "255: Hardware disable of access port protection for devices where access port protection is controlled by hardware"]
     DISABLED = 255,
     #[doc = "90: Hardware disable of access port protection for devices where access port protection is controlled by hardware and software"]
-    HWDISABLED = 90,
+    HW_DISABLED = 90,
     #[doc = "0: Enable"]
     ENABLED = 0,
 }
@@ -51,19 +53,13 @@ impl From<PALL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PALL` reader - Enable or disable access port protection."]
-pub struct PALL_R(crate::FieldReader<u8, PALL_A>);
 impl PALL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PALL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PALL_A> {
         match self.bits {
             255 => Some(PALL_A::DISABLED),
-            90 => Some(PALL_A::HWDISABLED),
+            90 => Some(PALL_A::HW_DISABLED),
             0 => Some(PALL_A::ENABLED),
             _ => None,
         }
@@ -71,36 +67,22 @@ impl PALL_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PALL_A::DISABLED
+        *self == PALL_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `HWDISABLED`"]
+    #[doc = "Checks if the value of the field is `HW_DISABLED`"]
     #[inline(always)]
     pub fn is_hw_disabled(&self) -> bool {
-        **self == PALL_A::HWDISABLED
+        *self == PALL_A::HW_DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PALL_A::ENABLED
-    }
-}
-impl core::ops::Deref for PALL_R {
-    type Target = crate::FieldReader<u8, PALL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PALL_A::ENABLED
     }
 }
 #[doc = "Field `PALL` writer - Enable or disable access port protection."]
-pub struct PALL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PALL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PALL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PALL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, APPROTECT_SPEC, u8, PALL_A, 8, O>;
+impl<'a, const O: u8> PALL_W<'a, O> {
     #[doc = "Hardware disable of access port protection for devices where access port protection is controlled by hardware"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -109,18 +91,12 @@ impl<'a> PALL_W<'a> {
     #[doc = "Hardware disable of access port protection for devices where access port protection is controlled by hardware and software"]
     #[inline(always)]
     pub fn hw_disabled(self) -> &'a mut W {
-        self.variant(PALL_A::HWDISABLED)
+        self.variant(PALL_A::HW_DISABLED)
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(PALL_A::ENABLED)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
     }
 }
 impl R {
@@ -133,8 +109,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Enable or disable access port protection."]
     #[inline(always)]
-    pub fn pall(&mut self) -> PALL_W {
-        PALL_W { w: self }
+    pub fn pall(&mut self) -> PALL_W<0> {
+        PALL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,32 +35,10 @@ impl From<crate::W<ERASEPAGEPARTIAL_SPEC>> for W {
     }
 }
 #[doc = "Field `ERASEPAGEPARTIAL` reader - Register for starting partial erase of a page in code area"]
-pub struct ERASEPAGEPARTIAL_R(crate::FieldReader<u32, u32>);
-impl ERASEPAGEPARTIAL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        ERASEPAGEPARTIAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERASEPAGEPARTIAL_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERASEPAGEPARTIAL_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `ERASEPAGEPARTIAL` writer - Register for starting partial erase of a page in code area"]
-pub struct ERASEPAGEPARTIAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASEPAGEPARTIAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type ERASEPAGEPARTIAL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ERASEPAGEPARTIAL_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Register for starting partial erase of a page in code area"]
     #[inline(always)]
@@ -71,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Register for starting partial erase of a page in code area"]
     #[inline(always)]
-    pub fn erasepagepartial(&mut self) -> ERASEPAGEPARTIAL_W {
-        ERASEPAGEPARTIAL_W { w: self }
+    pub fn erasepagepartial(&mut self) -> ERASEPAGEPARTIAL_W<0> {
+        ERASEPAGEPARTIAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

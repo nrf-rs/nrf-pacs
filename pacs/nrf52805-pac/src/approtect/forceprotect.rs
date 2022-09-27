@@ -34,6 +34,8 @@ impl From<crate::W<FORCEPROTECT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FORCEPROTECT` reader - Write 0x0 to force enable APPROTECT mechanism"]
+pub type FORCEPROTECT_R = crate::FieldReader<u8, FORCEPROTECT_A>;
 #[doc = "Write 0x0 to force enable APPROTECT mechanism\n\nValue on reset: 255"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -47,14 +49,8 @@ impl From<FORCEPROTECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FORCEPROTECT` reader - Write 0x0 to force enable APPROTECT mechanism"]
-pub struct FORCEPROTECT_R(crate::FieldReader<u8, FORCEPROTECT_A>);
 impl FORCEPROTECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FORCEPROTECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<FORCEPROTECT_A> {
         match self.bits {
@@ -65,36 +61,17 @@ impl FORCEPROTECT_R {
     #[doc = "Checks if the value of the field is `FORCE`"]
     #[inline(always)]
     pub fn is_force(&self) -> bool {
-        **self == FORCEPROTECT_A::FORCE
-    }
-}
-impl core::ops::Deref for FORCEPROTECT_R {
-    type Target = crate::FieldReader<u8, FORCEPROTECT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FORCEPROTECT_A::FORCE
     }
 }
 #[doc = "Field `FORCEPROTECT` writer - Write 0x0 to force enable APPROTECT mechanism"]
-pub struct FORCEPROTECT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FORCEPROTECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FORCEPROTECT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type FORCEPROTECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FORCEPROTECT_SPEC, u8, FORCEPROTECT_A, 8, O>;
+impl<'a, const O: u8> FORCEPROTECT_W<'a, O> {
     #[doc = "Software force enable APPROTECT mechanism"]
     #[inline(always)]
     pub fn force(self) -> &'a mut W {
         self.variant(FORCEPROTECT_A::FORCE)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
     }
 }
 impl R {
@@ -107,8 +84,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Write 0x0 to force enable APPROTECT mechanism"]
     #[inline(always)]
-    pub fn forceprotect(&mut self) -> FORCEPROTECT_W {
-        FORCEPROTECT_W { w: self }
+    pub fn forceprotect(&mut self) -> FORCEPROTECT_W<0> {
+        FORCEPROTECT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

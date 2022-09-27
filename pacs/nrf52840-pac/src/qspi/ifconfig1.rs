@@ -35,32 +35,11 @@ impl From<crate::W<IFCONFIG1_SPEC>> for W {
     }
 }
 #[doc = "Field `SCKDELAY` reader - Minimum amount of time that the CSN pin must stay high before it can go low again. Value is specified in number of 16 MHz periods (62.5 ns)."]
-pub struct SCKDELAY_R(crate::FieldReader<u8, u8>);
-impl SCKDELAY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SCKDELAY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCKDELAY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCKDELAY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SCKDELAY` writer - Minimum amount of time that the CSN pin must stay high before it can go low again. Value is specified in number of 16 MHz periods (62.5 ns)."]
-pub struct SCKDELAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCKDELAY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type SCKDELAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IFCONFIG1_SPEC, u8, u8, 8, O>;
+#[doc = "Field `DPMEN` reader - Enter/exit deep power-down mode (DPM) for external flash memory."]
+pub type DPMEN_R = crate::BitReader<DPMEN_A>;
 #[doc = "Enter/exit deep power-down mode (DPM) for external flash memory.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPMEN_A {
@@ -75,14 +54,8 @@ impl From<DPMEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DPMEN` reader - Enter/exit deep power-down mode (DPM) for external flash memory."]
-pub struct DPMEN_R(crate::FieldReader<bool, DPMEN_A>);
 impl DPMEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DPMEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DPMEN_A {
         match self.bits {
@@ -93,31 +66,17 @@ impl DPMEN_R {
     #[doc = "Checks if the value of the field is `EXIT`"]
     #[inline(always)]
     pub fn is_exit(&self) -> bool {
-        **self == DPMEN_A::EXIT
+        *self == DPMEN_A::EXIT
     }
     #[doc = "Checks if the value of the field is `ENTER`"]
     #[inline(always)]
     pub fn is_enter(&self) -> bool {
-        **self == DPMEN_A::ENTER
-    }
-}
-impl core::ops::Deref for DPMEN_R {
-    type Target = crate::FieldReader<bool, DPMEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DPMEN_A::ENTER
     }
 }
 #[doc = "Field `DPMEN` writer - Enter/exit deep power-down mode (DPM) for external flash memory."]
-pub struct DPMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DPMEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DPMEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DPMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFCONFIG1_SPEC, DPMEN_A, O>;
+impl<'a, const O: u8> DPMEN_W<'a, O> {
     #[doc = "Exit DPM."]
     #[inline(always)]
     pub fn exit(self) -> &'a mut W {
@@ -128,23 +87,9 @@ impl<'a> DPMEN_W<'a> {
     pub fn enter(self) -> &'a mut W {
         self.variant(DPMEN_A::ENTER)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
 }
+#[doc = "Field `SPIMODE` reader - Select SPI mode."]
+pub type SPIMODE_R = crate::BitReader<SPIMODE_A>;
 #[doc = "Select SPI mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPIMODE_A {
@@ -159,14 +104,8 @@ impl From<SPIMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SPIMODE` reader - Select SPI mode."]
-pub struct SPIMODE_R(crate::FieldReader<bool, SPIMODE_A>);
 impl SPIMODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SPIMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SPIMODE_A {
         match self.bits {
@@ -177,31 +116,17 @@ impl SPIMODE_R {
     #[doc = "Checks if the value of the field is `MODE0`"]
     #[inline(always)]
     pub fn is_mode0(&self) -> bool {
-        **self == SPIMODE_A::MODE0
+        *self == SPIMODE_A::MODE0
     }
     #[doc = "Checks if the value of the field is `MODE3`"]
     #[inline(always)]
     pub fn is_mode3(&self) -> bool {
-        **self == SPIMODE_A::MODE3
-    }
-}
-impl core::ops::Deref for SPIMODE_R {
-    type Target = crate::FieldReader<bool, SPIMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SPIMODE_A::MODE3
     }
 }
 #[doc = "Field `SPIMODE` writer - Select SPI mode."]
-pub struct SPIMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPIMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SPIMODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SPIMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFCONFIG1_SPEC, SPIMODE_A, O>;
+impl<'a, const O: u8> SPIMODE_W<'a, O> {
     #[doc = "Mode 0: Data are captured on the clock rising edge and data is output on a falling edge. Base level of clock is 0 (CPOL=0, CPHA=0)."]
     #[inline(always)]
     pub fn mode0(self) -> &'a mut W {
@@ -212,50 +137,11 @@ impl<'a> SPIMODE_W<'a> {
     pub fn mode3(self) -> &'a mut W {
         self.variant(SPIMODE_A::MODE3)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
 }
 #[doc = "Field `SCKFREQ` reader - SCK frequency is given as 32 MHz / (SCKFREQ + 1)."]
-pub struct SCKFREQ_R(crate::FieldReader<u8, u8>);
-impl SCKFREQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SCKFREQ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCKFREQ_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCKFREQ_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SCKFREQ` writer - SCK frequency is given as 32 MHz / (SCKFREQ + 1)."]
-pub struct SCKFREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCKFREQ_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 28)) | ((value as u32 & 0x0f) << 28);
-        self.w
-    }
-}
+pub type SCKFREQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IFCONFIG1_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:7 - Minimum amount of time that the CSN pin must stay high before it can go low again. Value is specified in number of 16 MHz periods (62.5 ns)."]
     #[inline(always)]
@@ -265,12 +151,12 @@ impl R {
     #[doc = "Bit 24 - Enter/exit deep power-down mode (DPM) for external flash memory."]
     #[inline(always)]
     pub fn dpmen(&self) -> DPMEN_R {
-        DPMEN_R::new(((self.bits >> 24) & 0x01) != 0)
+        DPMEN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Select SPI mode."]
     #[inline(always)]
     pub fn spimode(&self) -> SPIMODE_R {
-        SPIMODE_R::new(((self.bits >> 25) & 0x01) != 0)
+        SPIMODE_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bits 28:31 - SCK frequency is given as 32 MHz / (SCKFREQ + 1)."]
     #[inline(always)]
@@ -281,23 +167,23 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Minimum amount of time that the CSN pin must stay high before it can go low again. Value is specified in number of 16 MHz periods (62.5 ns)."]
     #[inline(always)]
-    pub fn sckdelay(&mut self) -> SCKDELAY_W {
-        SCKDELAY_W { w: self }
+    pub fn sckdelay(&mut self) -> SCKDELAY_W<0> {
+        SCKDELAY_W::new(self)
     }
     #[doc = "Bit 24 - Enter/exit deep power-down mode (DPM) for external flash memory."]
     #[inline(always)]
-    pub fn dpmen(&mut self) -> DPMEN_W {
-        DPMEN_W { w: self }
+    pub fn dpmen(&mut self) -> DPMEN_W<24> {
+        DPMEN_W::new(self)
     }
     #[doc = "Bit 25 - Select SPI mode."]
     #[inline(always)]
-    pub fn spimode(&mut self) -> SPIMODE_W {
-        SPIMODE_W { w: self }
+    pub fn spimode(&mut self) -> SPIMODE_W<25> {
+        SPIMODE_W::new(self)
     }
     #[doc = "Bits 28:31 - SCK frequency is given as 32 MHz / (SCKFREQ + 1)."]
     #[inline(always)]
-    pub fn sckfreq(&mut self) -> SCKFREQ_W {
-        SCKFREQ_W { w: self }
+    pub fn sckfreq(&mut self) -> SCKFREQ_W<28> {
+        SCKFREQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

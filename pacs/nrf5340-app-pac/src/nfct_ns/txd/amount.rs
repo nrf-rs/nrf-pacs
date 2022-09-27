@@ -35,64 +35,18 @@ impl From<crate::W<AMOUNT_SPEC>> for W {
     }
 }
 #[doc = "Field `TXDATABITS` reader - Number of bits in the last or first byte read from RAM that shall be included in the frame (excluding parity bit)."]
-pub struct TXDATABITS_R(crate::FieldReader<u8, u8>);
-impl TXDATABITS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TXDATABITS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXDATABITS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXDATABITS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TXDATABITS` writer - Number of bits in the last or first byte read from RAM that shall be included in the frame (excluding parity bit)."]
-pub struct TXDATABITS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXDATABITS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type TXDATABITS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AMOUNT_SPEC, u8, u8, 3, O>;
 #[doc = "Field `TXDATABYTES` reader - Number of complete bytes that shall be included in the frame, excluding CRC, parity, and framing."]
-pub struct TXDATABYTES_R(crate::FieldReader<u16, u16>);
-impl TXDATABYTES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TXDATABYTES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXDATABYTES_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXDATABYTES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TXDATABYTES` writer - Number of complete bytes that shall be included in the frame, excluding CRC, parity, and framing."]
-pub struct TXDATABYTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXDATABYTES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01ff << 3)) | ((value as u32 & 0x01ff) << 3);
-        self.w
-    }
-}
+pub type TXDATABYTES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AMOUNT_SPEC, u16, u16, 9, O>;
 impl R {
     #[doc = "Bits 0:2 - Number of bits in the last or first byte read from RAM that shall be included in the frame (excluding parity bit)."]
     #[inline(always)]
     pub fn txdatabits(&self) -> TXDATABITS_R {
-        TXDATABITS_R::new((self.bits & 0x07) as u8)
+        TXDATABITS_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 3:11 - Number of complete bytes that shall be included in the frame, excluding CRC, parity, and framing."]
     #[inline(always)]
@@ -103,13 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Number of bits in the last or first byte read from RAM that shall be included in the frame (excluding parity bit)."]
     #[inline(always)]
-    pub fn txdatabits(&mut self) -> TXDATABITS_W {
-        TXDATABITS_W { w: self }
+    pub fn txdatabits(&mut self) -> TXDATABITS_W<0> {
+        TXDATABITS_W::new(self)
     }
     #[doc = "Bits 3:11 - Number of complete bytes that shall be included in the frame, excluding CRC, parity, and framing."]
     #[inline(always)]
-    pub fn txdatabytes(&mut self) -> TXDATABYTES_W {
-        TXDATABYTES_W { w: self }
+    pub fn txdatabytes(&mut self) -> TXDATABYTES_W<3> {
+        TXDATABYTES_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

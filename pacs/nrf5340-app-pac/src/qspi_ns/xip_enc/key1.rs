@@ -20,22 +20,12 @@ impl From<crate::W<KEY1_SPEC>> for W {
     }
 }
 #[doc = "Field `KEY1` writer - Bits 63:32 of XIP AES KEY"]
-pub struct KEY1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type KEY1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, KEY1_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Bits 63:32 of XIP AES KEY"]
     #[inline(always)]
-    pub fn key1(&mut self) -> KEY1_W {
-        KEY1_W { w: self }
+    pub fn key1(&mut self) -> KEY1_W<0> {
+        KEY1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

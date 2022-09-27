@@ -35,32 +35,9 @@ impl From<crate::W<ORC_SPEC>> for W {
     }
 }
 #[doc = "Field `ORC` reader - Over-read character. Character clocked out in case an over-read of the TXD buffer."]
-pub struct ORC_R(crate::FieldReader<u8, u8>);
-impl ORC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ORC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ORC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ORC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ORC` writer - Over-read character. Character clocked out in case an over-read of the TXD buffer."]
-pub struct ORC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ORC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type ORC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ORC_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Over-read character. Character clocked out in case an over-read of the TXD buffer."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Over-read character. Character clocked out in case an over-read of the TXD buffer."]
     #[inline(always)]
-    pub fn orc(&mut self) -> ORC_W {
-        ORC_W { w: self }
+    pub fn orc(&mut self) -> ORC_W<0> {
+        ORC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

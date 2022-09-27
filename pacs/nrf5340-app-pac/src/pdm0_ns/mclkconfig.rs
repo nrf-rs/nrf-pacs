@@ -34,6 +34,8 @@ impl From<crate::W<MCLKCONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SRC` reader - Master clock source selection"]
+pub type SRC_R = crate::BitReader<SRC_A>;
 #[doc = "Master clock source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRC_A {
@@ -48,14 +50,8 @@ impl From<SRC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SRC` reader - Master clock source selection"]
-pub struct SRC_R(crate::FieldReader<bool, SRC_A>);
 impl SRC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SRC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SRC_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl SRC_R {
     #[doc = "Checks if the value of the field is `PCLK32M`"]
     #[inline(always)]
     pub fn is_pclk32m(&self) -> bool {
-        **self == SRC_A::PCLK32M
+        *self == SRC_A::PCLK32M
     }
     #[doc = "Checks if the value of the field is `ACLK`"]
     #[inline(always)]
     pub fn is_aclk(&self) -> bool {
-        **self == SRC_A::ACLK
-    }
-}
-impl core::ops::Deref for SRC_R {
-    type Target = crate::FieldReader<bool, SRC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SRC_A::ACLK
     }
 }
 #[doc = "Field `SRC` writer - Master clock source selection"]
-pub struct SRC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SRC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCLKCONFIG_SPEC, SRC_A, O>;
+impl<'a, const O: u8> SRC_W<'a, O> {
     #[doc = "32 MHz peripheral clock"]
     #[inline(always)]
     pub fn pclk32m(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> SRC_W<'a> {
     pub fn aclk(self) -> &'a mut W {
         self.variant(SRC_A::ACLK)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Master clock source selection"]
     #[inline(always)]
     pub fn src(&self) -> SRC_R {
-        SRC_R::new((self.bits & 0x01) != 0)
+        SRC_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Master clock source selection"]
     #[inline(always)]
-    pub fn src(&mut self) -> SRC_W {
-        SRC_W { w: self }
+    pub fn src(&mut self) -> SRC_W<0> {
+        SRC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

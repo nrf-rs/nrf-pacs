@@ -34,11 +34,13 @@ impl From<crate::W<ERRORSRC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `OVERRUN` reader - A start bit is received while the previous data still lies in RXD. (Data loss)."]
+pub type OVERRUN_R = crate::BitReader<OVERRUN_A>;
 #[doc = "A start bit is received while the previous data still lies in RXD. (Data loss).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERRUN_A {
     #[doc = "0: Error not present."]
-    NOTPRESENT = 0,
+    NOT_PRESENT = 0,
     #[doc = "1: Error present."]
     PRESENT = 1,
 }
@@ -48,37 +50,24 @@ impl From<OVERRUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OVERRUN` reader - A start bit is received while the previous data still lies in RXD. (Data loss)."]
-pub struct OVERRUN_R(crate::FieldReader<bool, OVERRUN_A>);
 impl OVERRUN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OVERRUN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OVERRUN_A {
         match self.bits {
-            false => OVERRUN_A::NOTPRESENT,
+            false => OVERRUN_A::NOT_PRESENT,
             true => OVERRUN_A::PRESENT,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
+    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        **self == OVERRUN_A::NOTPRESENT
+        *self == OVERRUN_A::NOT_PRESENT
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == OVERRUN_A::PRESENT
-    }
-}
-impl core::ops::Deref for OVERRUN_R {
-    type Target = crate::FieldReader<bool, OVERRUN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OVERRUN_A::PRESENT
     }
 }
 #[doc = "A start bit is received while the previous data still lies in RXD. (Data loss).\n\nValue on reset: 0"]
@@ -94,42 +83,21 @@ impl From<OVERRUN_AW> for bool {
     }
 }
 #[doc = "Field `OVERRUN` writer - A start bit is received while the previous data still lies in RXD. (Data loss)."]
-pub struct OVERRUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVERRUN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OVERRUN_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OVERRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ERRORSRC_SPEC, OVERRUN_AW, O>;
+impl<'a, const O: u8> OVERRUN_W<'a, O> {
     #[doc = "Clear error on write."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(OVERRUN_AW::CLEAR)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `PARITY` reader - A character with bad parity is received. Only checked if HW parity control is enabled."]
+pub type PARITY_R = crate::BitReader<PARITY_A>;
 #[doc = "A character with bad parity is received. Only checked if HW parity control is enabled.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PARITY_A {
     #[doc = "0: Error not present."]
-    NOTPRESENT = 0,
+    NOT_PRESENT = 0,
     #[doc = "1: Error present."]
     PRESENT = 1,
 }
@@ -139,37 +107,24 @@ impl From<PARITY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PARITY` reader - A character with bad parity is received. Only checked if HW parity control is enabled."]
-pub struct PARITY_R(crate::FieldReader<bool, PARITY_A>);
 impl PARITY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PARITY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PARITY_A {
         match self.bits {
-            false => PARITY_A::NOTPRESENT,
+            false => PARITY_A::NOT_PRESENT,
             true => PARITY_A::PRESENT,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
+    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        **self == PARITY_A::NOTPRESENT
+        *self == PARITY_A::NOT_PRESENT
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == PARITY_A::PRESENT
-    }
-}
-impl core::ops::Deref for PARITY_R {
-    type Target = crate::FieldReader<bool, PARITY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PARITY_A::PRESENT
     }
 }
 #[doc = "A character with bad parity is received. Only checked if HW parity control is enabled.\n\nValue on reset: 0"]
@@ -185,42 +140,21 @@ impl From<PARITY_AW> for bool {
     }
 }
 #[doc = "Field `PARITY` writer - A character with bad parity is received. Only checked if HW parity control is enabled."]
-pub struct PARITY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PARITY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PARITY_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PARITY_W<'a, const O: u8> = crate::BitWriter<'a, u32, ERRORSRC_SPEC, PARITY_AW, O>;
+impl<'a, const O: u8> PARITY_W<'a, O> {
     #[doc = "Clear error on write."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(PARITY_AW::CLEAR)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `FRAMING` reader - A valid stop bit is not detected on the serial data input after all bits in a character have been received."]
+pub type FRAMING_R = crate::BitReader<FRAMING_A>;
 #[doc = "A valid stop bit is not detected on the serial data input after all bits in a character have been received.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRAMING_A {
     #[doc = "0: Error not present."]
-    NOTPRESENT = 0,
+    NOT_PRESENT = 0,
     #[doc = "1: Error present."]
     PRESENT = 1,
 }
@@ -230,37 +164,24 @@ impl From<FRAMING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FRAMING` reader - A valid stop bit is not detected on the serial data input after all bits in a character have been received."]
-pub struct FRAMING_R(crate::FieldReader<bool, FRAMING_A>);
 impl FRAMING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FRAMING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FRAMING_A {
         match self.bits {
-            false => FRAMING_A::NOTPRESENT,
+            false => FRAMING_A::NOT_PRESENT,
             true => FRAMING_A::PRESENT,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
+    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        **self == FRAMING_A::NOTPRESENT
+        *self == FRAMING_A::NOT_PRESENT
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == FRAMING_A::PRESENT
-    }
-}
-impl core::ops::Deref for FRAMING_R {
-    type Target = crate::FieldReader<bool, FRAMING_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FRAMING_A::PRESENT
     }
 }
 #[doc = "A valid stop bit is not detected on the serial data input after all bits in a character have been received.\n\nValue on reset: 0"]
@@ -276,42 +197,21 @@ impl From<FRAMING_AW> for bool {
     }
 }
 #[doc = "Field `FRAMING` writer - A valid stop bit is not detected on the serial data input after all bits in a character have been received."]
-pub struct FRAMING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRAMING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FRAMING_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FRAMING_W<'a, const O: u8> = crate::BitWriter<'a, u32, ERRORSRC_SPEC, FRAMING_AW, O>;
+impl<'a, const O: u8> FRAMING_W<'a, O> {
     #[doc = "Clear error on write."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(FRAMING_AW::CLEAR)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `BREAK` reader - The serial data input is '0' for longer than the length of a data frame."]
+pub type BREAK_R = crate::BitReader<BREAK_A>;
 #[doc = "The serial data input is '0' for longer than the length of a data frame.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BREAK_A {
     #[doc = "0: Error not present."]
-    NOTPRESENT = 0,
+    NOT_PRESENT = 0,
     #[doc = "1: Error present."]
     PRESENT = 1,
 }
@@ -321,37 +221,24 @@ impl From<BREAK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BREAK` reader - The serial data input is '0' for longer than the length of a data frame."]
-pub struct BREAK_R(crate::FieldReader<bool, BREAK_A>);
 impl BREAK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BREAK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BREAK_A {
         match self.bits {
-            false => BREAK_A::NOTPRESENT,
+            false => BREAK_A::NOT_PRESENT,
             true => BREAK_A::PRESENT,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
+    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        **self == BREAK_A::NOTPRESENT
+        *self == BREAK_A::NOT_PRESENT
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == BREAK_A::PRESENT
-    }
-}
-impl core::ops::Deref for BREAK_R {
-    type Target = crate::FieldReader<bool, BREAK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BREAK_A::PRESENT
     }
 }
 #[doc = "The serial data input is '0' for longer than the length of a data frame.\n\nValue on reset: 0"]
@@ -367,79 +254,56 @@ impl From<BREAK_AW> for bool {
     }
 }
 #[doc = "Field `BREAK` writer - The serial data input is '0' for longer than the length of a data frame."]
-pub struct BREAK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BREAK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BREAK_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type BREAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, ERRORSRC_SPEC, BREAK_AW, O>;
+impl<'a, const O: u8> BREAK_W<'a, O> {
     #[doc = "Clear error on write."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(BREAK_AW::CLEAR)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
     }
 }
 impl R {
     #[doc = "Bit 0 - A start bit is received while the previous data still lies in RXD. (Data loss)."]
     #[inline(always)]
     pub fn overrun(&self) -> OVERRUN_R {
-        OVERRUN_R::new((self.bits & 0x01) != 0)
+        OVERRUN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - A character with bad parity is received. Only checked if HW parity control is enabled."]
     #[inline(always)]
     pub fn parity(&self) -> PARITY_R {
-        PARITY_R::new(((self.bits >> 1) & 0x01) != 0)
+        PARITY_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - A valid stop bit is not detected on the serial data input after all bits in a character have been received."]
     #[inline(always)]
     pub fn framing(&self) -> FRAMING_R {
-        FRAMING_R::new(((self.bits >> 2) & 0x01) != 0)
+        FRAMING_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - The serial data input is '0' for longer than the length of a data frame."]
     #[inline(always)]
     pub fn break_(&self) -> BREAK_R {
-        BREAK_R::new(((self.bits >> 3) & 0x01) != 0)
+        BREAK_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - A start bit is received while the previous data still lies in RXD. (Data loss)."]
     #[inline(always)]
-    pub fn overrun(&mut self) -> OVERRUN_W {
-        OVERRUN_W { w: self }
+    pub fn overrun(&mut self) -> OVERRUN_W<0> {
+        OVERRUN_W::new(self)
     }
     #[doc = "Bit 1 - A character with bad parity is received. Only checked if HW parity control is enabled."]
     #[inline(always)]
-    pub fn parity(&mut self) -> PARITY_W {
-        PARITY_W { w: self }
+    pub fn parity(&mut self) -> PARITY_W<1> {
+        PARITY_W::new(self)
     }
     #[doc = "Bit 2 - A valid stop bit is not detected on the serial data input after all bits in a character have been received."]
     #[inline(always)]
-    pub fn framing(&mut self) -> FRAMING_W {
-        FRAMING_W { w: self }
+    pub fn framing(&mut self) -> FRAMING_W<2> {
+        FRAMING_W::new(self)
     }
     #[doc = "Bit 3 - The serial data input is '0' for longer than the length of a data frame."]
     #[inline(always)]
-    pub fn break_(&mut self) -> BREAK_W {
-        BREAK_W { w: self }
+    pub fn break_(&mut self) -> BREAK_W<3> {
+        BREAK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

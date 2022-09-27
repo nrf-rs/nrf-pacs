@@ -13,6 +13,8 @@ impl From<crate::R<CODESIZE_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `CODESIZE` reader - Code memory size in number of pages"]
+pub type CODESIZE_R = crate::FieldReader<u32, CODESIZE_A>;
 #[doc = "Code memory size in number of pages\n\nValue on reset: 256"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -26,14 +28,8 @@ impl From<CODESIZE_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `CODESIZE` reader - Code memory size in number of pages"]
-pub struct CODESIZE_R(crate::FieldReader<u32, CODESIZE_A>);
 impl CODESIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CODESIZE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CODESIZE_A> {
         match self.bits {
@@ -44,14 +40,7 @@ impl CODESIZE_R {
     #[doc = "Checks if the value of the field is `P256`"]
     #[inline(always)]
     pub fn is_p256(&self) -> bool {
-        **self == CODESIZE_A::P256
-    }
-}
-impl core::ops::Deref for CODESIZE_R {
-    type Target = crate::FieldReader<u32, CODESIZE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CODESIZE_A::P256
     }
 }
 impl R {

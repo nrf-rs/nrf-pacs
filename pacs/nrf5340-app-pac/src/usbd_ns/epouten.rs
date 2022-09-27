@@ -34,6 +34,8 @@ impl From<crate::W<EPOUTEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `OUT0` reader - Enable OUT endpoint 0"]
+pub type OUT0_R = crate::BitReader<OUT0_A>;
 #[doc = "Enable OUT endpoint 0\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUT0_A {
@@ -48,14 +50,8 @@ impl From<OUT0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OUT0` reader - Enable OUT endpoint 0"]
-pub struct OUT0_R(crate::FieldReader<bool, OUT0_A>);
 impl OUT0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OUT0_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl OUT0_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == OUT0_A::DISABLE
+        *self == OUT0_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == OUT0_A::ENABLE
-    }
-}
-impl core::ops::Deref for OUT0_R {
-    type Target = crate::FieldReader<bool, OUT0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OUT0_A::ENABLE
     }
 }
 #[doc = "Field `OUT0` writer - Enable OUT endpoint 0"]
-pub struct OUT0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUT0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUT0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OUT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPOUTEN_SPEC, OUT0_A, O>;
+impl<'a, const O: u8> OUT0_W<'a, O> {
     #[doc = "Disable endpoint OUT 0 (no response to OUT tokens)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> OUT0_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(OUT0_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `OUT1` reader - Enable OUT endpoint 1"]
+pub type OUT1_R = crate::BitReader<OUT1_A>;
 #[doc = "Enable OUT endpoint 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUT1_A {
@@ -132,14 +100,8 @@ impl From<OUT1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OUT1` reader - Enable OUT endpoint 1"]
-pub struct OUT1_R(crate::FieldReader<bool, OUT1_A>);
 impl OUT1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OUT1_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl OUT1_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == OUT1_A::DISABLE
+        *self == OUT1_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == OUT1_A::ENABLE
-    }
-}
-impl core::ops::Deref for OUT1_R {
-    type Target = crate::FieldReader<bool, OUT1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OUT1_A::ENABLE
     }
 }
 #[doc = "Field `OUT1` writer - Enable OUT endpoint 1"]
-pub struct OUT1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUT1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUT1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OUT1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPOUTEN_SPEC, OUT1_A, O>;
+impl<'a, const O: u8> OUT1_W<'a, O> {
     #[doc = "Disable endpoint OUT 1 (no response to OUT tokens)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -185,23 +133,9 @@ impl<'a> OUT1_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(OUT1_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `OUT2` reader - Enable OUT endpoint 2"]
+pub type OUT2_R = crate::BitReader<OUT2_A>;
 #[doc = "Enable OUT endpoint 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUT2_A {
@@ -216,14 +150,8 @@ impl From<OUT2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OUT2` reader - Enable OUT endpoint 2"]
-pub struct OUT2_R(crate::FieldReader<bool, OUT2_A>);
 impl OUT2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OUT2_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl OUT2_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == OUT2_A::DISABLE
+        *self == OUT2_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == OUT2_A::ENABLE
-    }
-}
-impl core::ops::Deref for OUT2_R {
-    type Target = crate::FieldReader<bool, OUT2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OUT2_A::ENABLE
     }
 }
 #[doc = "Field `OUT2` writer - Enable OUT endpoint 2"]
-pub struct OUT2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUT2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUT2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OUT2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPOUTEN_SPEC, OUT2_A, O>;
+impl<'a, const O: u8> OUT2_W<'a, O> {
     #[doc = "Disable endpoint OUT 2 (no response to OUT tokens)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -269,23 +183,9 @@ impl<'a> OUT2_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(OUT2_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `OUT3` reader - Enable OUT endpoint 3"]
+pub type OUT3_R = crate::BitReader<OUT3_A>;
 #[doc = "Enable OUT endpoint 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUT3_A {
@@ -300,14 +200,8 @@ impl From<OUT3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OUT3` reader - Enable OUT endpoint 3"]
-pub struct OUT3_R(crate::FieldReader<bool, OUT3_A>);
 impl OUT3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OUT3_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl OUT3_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == OUT3_A::DISABLE
+        *self == OUT3_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == OUT3_A::ENABLE
-    }
-}
-impl core::ops::Deref for OUT3_R {
-    type Target = crate::FieldReader<bool, OUT3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OUT3_A::ENABLE
     }
 }
 #[doc = "Field `OUT3` writer - Enable OUT endpoint 3"]
-pub struct OUT3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUT3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUT3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OUT3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPOUTEN_SPEC, OUT3_A, O>;
+impl<'a, const O: u8> OUT3_W<'a, O> {
     #[doc = "Disable endpoint OUT 3 (no response to OUT tokens)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -353,23 +233,9 @@ impl<'a> OUT3_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(OUT3_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `OUT4` reader - Enable OUT endpoint 4"]
+pub type OUT4_R = crate::BitReader<OUT4_A>;
 #[doc = "Enable OUT endpoint 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUT4_A {
@@ -384,14 +250,8 @@ impl From<OUT4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OUT4` reader - Enable OUT endpoint 4"]
-pub struct OUT4_R(crate::FieldReader<bool, OUT4_A>);
 impl OUT4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT4_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OUT4_A {
         match self.bits {
@@ -402,31 +262,17 @@ impl OUT4_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == OUT4_A::DISABLE
+        *self == OUT4_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == OUT4_A::ENABLE
-    }
-}
-impl core::ops::Deref for OUT4_R {
-    type Target = crate::FieldReader<bool, OUT4_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OUT4_A::ENABLE
     }
 }
 #[doc = "Field `OUT4` writer - Enable OUT endpoint 4"]
-pub struct OUT4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUT4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUT4_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OUT4_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPOUTEN_SPEC, OUT4_A, O>;
+impl<'a, const O: u8> OUT4_W<'a, O> {
     #[doc = "Disable endpoint OUT 4 (no response to OUT tokens)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -437,23 +283,9 @@ impl<'a> OUT4_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(OUT4_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `OUT5` reader - Enable OUT endpoint 5"]
+pub type OUT5_R = crate::BitReader<OUT5_A>;
 #[doc = "Enable OUT endpoint 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUT5_A {
@@ -468,14 +300,8 @@ impl From<OUT5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OUT5` reader - Enable OUT endpoint 5"]
-pub struct OUT5_R(crate::FieldReader<bool, OUT5_A>);
 impl OUT5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT5_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OUT5_A {
         match self.bits {
@@ -486,31 +312,17 @@ impl OUT5_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == OUT5_A::DISABLE
+        *self == OUT5_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == OUT5_A::ENABLE
-    }
-}
-impl core::ops::Deref for OUT5_R {
-    type Target = crate::FieldReader<bool, OUT5_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OUT5_A::ENABLE
     }
 }
 #[doc = "Field `OUT5` writer - Enable OUT endpoint 5"]
-pub struct OUT5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUT5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUT5_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OUT5_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPOUTEN_SPEC, OUT5_A, O>;
+impl<'a, const O: u8> OUT5_W<'a, O> {
     #[doc = "Disable endpoint OUT 5 (no response to OUT tokens)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -521,23 +333,9 @@ impl<'a> OUT5_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(OUT5_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `OUT6` reader - Enable OUT endpoint 6"]
+pub type OUT6_R = crate::BitReader<OUT6_A>;
 #[doc = "Enable OUT endpoint 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUT6_A {
@@ -552,14 +350,8 @@ impl From<OUT6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OUT6` reader - Enable OUT endpoint 6"]
-pub struct OUT6_R(crate::FieldReader<bool, OUT6_A>);
 impl OUT6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT6_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OUT6_A {
         match self.bits {
@@ -570,31 +362,17 @@ impl OUT6_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == OUT6_A::DISABLE
+        *self == OUT6_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == OUT6_A::ENABLE
-    }
-}
-impl core::ops::Deref for OUT6_R {
-    type Target = crate::FieldReader<bool, OUT6_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OUT6_A::ENABLE
     }
 }
 #[doc = "Field `OUT6` writer - Enable OUT endpoint 6"]
-pub struct OUT6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUT6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUT6_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OUT6_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPOUTEN_SPEC, OUT6_A, O>;
+impl<'a, const O: u8> OUT6_W<'a, O> {
     #[doc = "Disable endpoint OUT 6 (no response to OUT tokens)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -605,23 +383,9 @@ impl<'a> OUT6_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(OUT6_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `OUT7` reader - Enable OUT endpoint 7"]
+pub type OUT7_R = crate::BitReader<OUT7_A>;
 #[doc = "Enable OUT endpoint 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUT7_A {
@@ -636,14 +400,8 @@ impl From<OUT7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OUT7` reader - Enable OUT endpoint 7"]
-pub struct OUT7_R(crate::FieldReader<bool, OUT7_A>);
 impl OUT7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT7_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OUT7_A {
         match self.bits {
@@ -654,31 +412,17 @@ impl OUT7_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == OUT7_A::DISABLE
+        *self == OUT7_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == OUT7_A::ENABLE
-    }
-}
-impl core::ops::Deref for OUT7_R {
-    type Target = crate::FieldReader<bool, OUT7_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OUT7_A::ENABLE
     }
 }
 #[doc = "Field `OUT7` writer - Enable OUT endpoint 7"]
-pub struct OUT7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUT7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUT7_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OUT7_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPOUTEN_SPEC, OUT7_A, O>;
+impl<'a, const O: u8> OUT7_W<'a, O> {
     #[doc = "Disable endpoint OUT 7 (no response to OUT tokens)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -689,23 +433,9 @@ impl<'a> OUT7_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(OUT7_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `ISOOUT` reader - Enable ISO OUT endpoint 8"]
+pub type ISOOUT_R = crate::BitReader<ISOOUT_A>;
 #[doc = "Enable ISO OUT endpoint 8\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ISOOUT_A {
@@ -720,14 +450,8 @@ impl From<ISOOUT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ISOOUT` reader - Enable ISO OUT endpoint 8"]
-pub struct ISOOUT_R(crate::FieldReader<bool, ISOOUT_A>);
 impl ISOOUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ISOOUT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ISOOUT_A {
         match self.bits {
@@ -738,31 +462,17 @@ impl ISOOUT_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == ISOOUT_A::DISABLE
+        *self == ISOOUT_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == ISOOUT_A::ENABLE
-    }
-}
-impl core::ops::Deref for ISOOUT_R {
-    type Target = crate::FieldReader<bool, ISOOUT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ISOOUT_A::ENABLE
     }
 }
 #[doc = "Field `ISOOUT` writer - Enable ISO OUT endpoint 8"]
-pub struct ISOOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ISOOUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ISOOUT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ISOOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPOUTEN_SPEC, ISOOUT_A, O>;
+impl<'a, const O: u8> ISOOUT_W<'a, O> {
     #[doc = "Disable ISO OUT endpoint 8"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -773,115 +483,99 @@ impl<'a> ISOOUT_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(ISOOUT_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable OUT endpoint 0"]
     #[inline(always)]
     pub fn out0(&self) -> OUT0_R {
-        OUT0_R::new((self.bits & 0x01) != 0)
+        OUT0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable OUT endpoint 1"]
     #[inline(always)]
     pub fn out1(&self) -> OUT1_R {
-        OUT1_R::new(((self.bits >> 1) & 0x01) != 0)
+        OUT1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable OUT endpoint 2"]
     #[inline(always)]
     pub fn out2(&self) -> OUT2_R {
-        OUT2_R::new(((self.bits >> 2) & 0x01) != 0)
+        OUT2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable OUT endpoint 3"]
     #[inline(always)]
     pub fn out3(&self) -> OUT3_R {
-        OUT3_R::new(((self.bits >> 3) & 0x01) != 0)
+        OUT3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable OUT endpoint 4"]
     #[inline(always)]
     pub fn out4(&self) -> OUT4_R {
-        OUT4_R::new(((self.bits >> 4) & 0x01) != 0)
+        OUT4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable OUT endpoint 5"]
     #[inline(always)]
     pub fn out5(&self) -> OUT5_R {
-        OUT5_R::new(((self.bits >> 5) & 0x01) != 0)
+        OUT5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable OUT endpoint 6"]
     #[inline(always)]
     pub fn out6(&self) -> OUT6_R {
-        OUT6_R::new(((self.bits >> 6) & 0x01) != 0)
+        OUT6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable OUT endpoint 7"]
     #[inline(always)]
     pub fn out7(&self) -> OUT7_R {
-        OUT7_R::new(((self.bits >> 7) & 0x01) != 0)
+        OUT7_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Enable ISO OUT endpoint 8"]
     #[inline(always)]
     pub fn isoout(&self) -> ISOOUT_R {
-        ISOOUT_R::new(((self.bits >> 8) & 0x01) != 0)
+        ISOOUT_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable OUT endpoint 0"]
     #[inline(always)]
-    pub fn out0(&mut self) -> OUT0_W {
-        OUT0_W { w: self }
+    pub fn out0(&mut self) -> OUT0_W<0> {
+        OUT0_W::new(self)
     }
     #[doc = "Bit 1 - Enable OUT endpoint 1"]
     #[inline(always)]
-    pub fn out1(&mut self) -> OUT1_W {
-        OUT1_W { w: self }
+    pub fn out1(&mut self) -> OUT1_W<1> {
+        OUT1_W::new(self)
     }
     #[doc = "Bit 2 - Enable OUT endpoint 2"]
     #[inline(always)]
-    pub fn out2(&mut self) -> OUT2_W {
-        OUT2_W { w: self }
+    pub fn out2(&mut self) -> OUT2_W<2> {
+        OUT2_W::new(self)
     }
     #[doc = "Bit 3 - Enable OUT endpoint 3"]
     #[inline(always)]
-    pub fn out3(&mut self) -> OUT3_W {
-        OUT3_W { w: self }
+    pub fn out3(&mut self) -> OUT3_W<3> {
+        OUT3_W::new(self)
     }
     #[doc = "Bit 4 - Enable OUT endpoint 4"]
     #[inline(always)]
-    pub fn out4(&mut self) -> OUT4_W {
-        OUT4_W { w: self }
+    pub fn out4(&mut self) -> OUT4_W<4> {
+        OUT4_W::new(self)
     }
     #[doc = "Bit 5 - Enable OUT endpoint 5"]
     #[inline(always)]
-    pub fn out5(&mut self) -> OUT5_W {
-        OUT5_W { w: self }
+    pub fn out5(&mut self) -> OUT5_W<5> {
+        OUT5_W::new(self)
     }
     #[doc = "Bit 6 - Enable OUT endpoint 6"]
     #[inline(always)]
-    pub fn out6(&mut self) -> OUT6_W {
-        OUT6_W { w: self }
+    pub fn out6(&mut self) -> OUT6_W<6> {
+        OUT6_W::new(self)
     }
     #[doc = "Bit 7 - Enable OUT endpoint 7"]
     #[inline(always)]
-    pub fn out7(&mut self) -> OUT7_W {
-        OUT7_W { w: self }
+    pub fn out7(&mut self) -> OUT7_W<7> {
+        OUT7_W::new(self)
     }
     #[doc = "Bit 8 - Enable ISO OUT endpoint 8"]
     #[inline(always)]
-    pub fn isoout(&mut self) -> ISOOUT_W {
-        ISOOUT_W { w: self }
+    pub fn isoout(&mut self) -> ISOOUT_W<8> {
+        ISOOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

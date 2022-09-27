@@ -34,6 +34,8 @@ impl From<crate::W<INTENSET_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `READY` reader - Write '1' to enable interrupt for READY event"]
+pub type READY_R = crate::BitReader<READY_A>;
 #[doc = "Write '1' to enable interrupt for READY event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READY_A {
@@ -48,14 +50,8 @@ impl From<READY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `READY` reader - Write '1' to enable interrupt for READY event"]
-pub struct READY_R(crate::FieldReader<bool, READY_A>);
 impl READY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        READY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> READY_A {
         match self.bits {
@@ -66,19 +62,12 @@ impl READY_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == READY_A::DISABLED
+        *self == READY_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == READY_A::ENABLED
-    }
-}
-impl core::ops::Deref for READY_R {
-    type Target = crate::FieldReader<bool, READY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == READY_A::ENABLED
     }
 }
 #[doc = "Write '1' to enable interrupt for READY event\n\nValue on reset: 0"]
@@ -94,49 +83,26 @@ impl From<READY_AW> for bool {
     }
 }
 #[doc = "Field `READY` writer - Write '1' to enable interrupt for READY event"]
-pub struct READY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> READY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: READY_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type READY_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENSET_SPEC, READY_AW, O>;
+impl<'a, const O: u8> READY_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
         self.variant(READY_AW::SET)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 impl R {
     #[doc = "Bit 0 - Write '1' to enable interrupt for READY event"]
     #[inline(always)]
     pub fn ready(&self) -> READY_R {
-        READY_R::new((self.bits & 0x01) != 0)
+        READY_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write '1' to enable interrupt for READY event"]
     #[inline(always)]
-    pub fn ready(&mut self) -> READY_W {
-        READY_W { w: self }
+    pub fn ready(&mut self) -> READY_W<0> {
+        READY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<MODE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SP` reader - Speed and power modes"]
+pub type SP_R = crate::FieldReader<u8, SP_A>;
 #[doc = "Speed and power modes\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,14 +53,8 @@ impl From<SP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SP` reader - Speed and power modes"]
-pub struct SP_R(crate::FieldReader<u8, SP_A>);
 impl SP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SP_A> {
         match self.bits {
@@ -71,36 +67,22 @@ impl SP_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == SP_A::LOW
+        *self == SP_A::LOW
     }
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == SP_A::NORMAL
+        *self == SP_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == SP_A::HIGH
-    }
-}
-impl core::ops::Deref for SP_R {
-    type Target = crate::FieldReader<u8, SP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SP_A::HIGH
     }
 }
 #[doc = "Field `SP` writer - Speed and power modes"]
-pub struct SP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SP_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODE_SPEC, u8, SP_A, 2, O>;
+impl<'a, const O: u8> SP_W<'a, O> {
     #[doc = "Low-power mode"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -116,13 +98,9 @@ impl<'a> SP_W<'a> {
     pub fn high(self) -> &'a mut W {
         self.variant(SP_A::HIGH)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
+#[doc = "Field `MAIN` reader - Main operation modes"]
+pub type MAIN_R = crate::BitReader<MAIN_A>;
 #[doc = "Main operation modes\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAIN_A {
@@ -137,14 +115,8 @@ impl From<MAIN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MAIN` reader - Main operation modes"]
-pub struct MAIN_R(crate::FieldReader<bool, MAIN_A>);
 impl MAIN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MAIN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MAIN_A {
         match self.bits {
@@ -155,31 +127,17 @@ impl MAIN_R {
     #[doc = "Checks if the value of the field is `SE`"]
     #[inline(always)]
     pub fn is_se(&self) -> bool {
-        **self == MAIN_A::SE
+        *self == MAIN_A::SE
     }
     #[doc = "Checks if the value of the field is `DIFF`"]
     #[inline(always)]
     pub fn is_diff(&self) -> bool {
-        **self == MAIN_A::DIFF
-    }
-}
-impl core::ops::Deref for MAIN_R {
-    type Target = crate::FieldReader<bool, MAIN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MAIN_A::DIFF
     }
 }
 #[doc = "Field `MAIN` writer - Main operation modes"]
-pub struct MAIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MAIN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MAIN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MAIN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE_SPEC, MAIN_A, O>;
+impl<'a, const O: u8> MAIN_W<'a, O> {
     #[doc = "Single-ended mode"]
     #[inline(always)]
     pub fn se(self) -> &'a mut W {
@@ -190,45 +148,29 @@ impl<'a> MAIN_W<'a> {
     pub fn diff(self) -> &'a mut W {
         self.variant(MAIN_A::DIFF)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Speed and power modes"]
     #[inline(always)]
     pub fn sp(&self) -> SP_R {
-        SP_R::new((self.bits & 0x03) as u8)
+        SP_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 8 - Main operation modes"]
     #[inline(always)]
     pub fn main(&self) -> MAIN_R {
-        MAIN_R::new(((self.bits >> 8) & 0x01) != 0)
+        MAIN_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Speed and power modes"]
     #[inline(always)]
-    pub fn sp(&mut self) -> SP_W {
-        SP_W { w: self }
+    pub fn sp(&mut self) -> SP_W<0> {
+        SP_W::new(self)
     }
     #[doc = "Bit 8 - Main operation modes"]
     #[inline(always)]
-    pub fn main(&mut self) -> MAIN_W {
-        MAIN_W { w: self }
+    pub fn main(&mut self) -> MAIN_W<8> {
+        MAIN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

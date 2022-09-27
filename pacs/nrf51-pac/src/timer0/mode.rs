@@ -34,6 +34,8 @@ impl From<crate::W<MODE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - Select Normal or Counter mode."]
+pub type MODE_R = crate::BitReader<MODE_A>;
 #[doc = "Select Normal or Counter mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
@@ -48,14 +50,8 @@ impl From<MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MODE` reader - Select Normal or Counter mode."]
-pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl MODE_R {
     #[doc = "Checks if the value of the field is `COUNTER`"]
     #[inline(always)]
     pub fn is_counter(&self) -> bool {
-        **self == MODE_A::COUNTER
+        *self == MODE_A::COUNTER
     }
     #[doc = "Checks if the value of the field is `TIMER`"]
     #[inline(always)]
     pub fn is_timer(&self) -> bool {
-        **self == MODE_A::TIMER
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<bool, MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE_A::TIMER
     }
 }
 #[doc = "Field `MODE` writer - Select Normal or Counter mode."]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE_SPEC, MODE_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Timer in Counter mode."]
     #[inline(always)]
     pub fn counter(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> MODE_W<'a> {
     pub fn timer(self) -> &'a mut W {
         self.variant(MODE_A::TIMER)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Select Normal or Counter mode."]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new((self.bits & 0x01) != 0)
+        MODE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Select Normal or Counter mode."]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    pub fn mode(&mut self) -> MODE_W<0> {
+        MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,11 +34,13 @@ impl From<crate::W<EVENTS_SELECTED_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EVENTS_SELECTED` reader - NFC auto collision resolution successfully completed"]
+pub type EVENTS_SELECTED_R = crate::BitReader<EVENTS_SELECTED_A>;
 #[doc = "NFC auto collision resolution successfully completed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EVENTS_SELECTED_A {
     #[doc = "0: Event not generated"]
-    NOTGENERATED = 0,
+    NOT_GENERATED = 0,
     #[doc = "1: Event generated"]
     GENERATED = 1,
 }
@@ -48,88 +50,53 @@ impl From<EVENTS_SELECTED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EVENTS_SELECTED` reader - NFC auto collision resolution successfully completed"]
-pub struct EVENTS_SELECTED_R(crate::FieldReader<bool, EVENTS_SELECTED_A>);
 impl EVENTS_SELECTED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EVENTS_SELECTED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EVENTS_SELECTED_A {
         match self.bits {
-            false => EVENTS_SELECTED_A::NOTGENERATED,
+            false => EVENTS_SELECTED_A::NOT_GENERATED,
             true => EVENTS_SELECTED_A::GENERATED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTGENERATED`"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        **self == EVENTS_SELECTED_A::NOTGENERATED
+        *self == EVENTS_SELECTED_A::NOT_GENERATED
     }
     #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        **self == EVENTS_SELECTED_A::GENERATED
-    }
-}
-impl core::ops::Deref for EVENTS_SELECTED_R {
-    type Target = crate::FieldReader<bool, EVENTS_SELECTED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EVENTS_SELECTED_A::GENERATED
     }
 }
 #[doc = "Field `EVENTS_SELECTED` writer - NFC auto collision resolution successfully completed"]
-pub struct EVENTS_SELECTED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVENTS_SELECTED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EVENTS_SELECTED_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EVENTS_SELECTED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_SELECTED_SPEC, EVENTS_SELECTED_A, O>;
+impl<'a, const O: u8> EVENTS_SELECTED_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
     pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_SELECTED_A::NOTGENERATED)
+        self.variant(EVENTS_SELECTED_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
     pub fn generated(self) -> &'a mut W {
         self.variant(EVENTS_SELECTED_A::GENERATED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - NFC auto collision resolution successfully completed"]
     #[inline(always)]
     pub fn events_selected(&self) -> EVENTS_SELECTED_R {
-        EVENTS_SELECTED_R::new((self.bits & 0x01) != 0)
+        EVENTS_SELECTED_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - NFC auto collision resolution successfully completed"]
     #[inline(always)]
-    pub fn events_selected(&mut self) -> EVENTS_SELECTED_W {
-        EVENTS_SELECTED_W { w: self }
+    pub fn events_selected(&mut self) -> EVENTS_SELECTED_W<0> {
+        EVENTS_SELECTED_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,11 +34,13 @@ impl From<crate::W<ERASEUICR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ERASEUICR` reader - Register starting erase of all User Information Configuration Registers. Note that code erase has to be enabled by CONFIG.EEN before the UICR can be erased."]
+pub type ERASEUICR_R = crate::BitReader<ERASEUICR_A>;
 #[doc = "Register starting erase of all User Information Configuration Registers. Note that code erase has to be enabled by CONFIG.EEN before the UICR can be erased.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERASEUICR_A {
     #[doc = "0: No operation"]
-    NOOPERATION = 0,
+    NO_OPERATION = 0,
     #[doc = "1: Start erase of UICR"]
     ERASE = 1,
 }
@@ -48,88 +50,52 @@ impl From<ERASEUICR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ERASEUICR` reader - Register starting erase of all User Information Configuration Registers. Note that code erase has to be enabled by CONFIG.EEN before the UICR can be erased."]
-pub struct ERASEUICR_R(crate::FieldReader<bool, ERASEUICR_A>);
 impl ERASEUICR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ERASEUICR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ERASEUICR_A {
         match self.bits {
-            false => ERASEUICR_A::NOOPERATION,
+            false => ERASEUICR_A::NO_OPERATION,
             true => ERASEUICR_A::ERASE,
         }
     }
-    #[doc = "Checks if the value of the field is `NOOPERATION`"]
+    #[doc = "Checks if the value of the field is `NO_OPERATION`"]
     #[inline(always)]
     pub fn is_no_operation(&self) -> bool {
-        **self == ERASEUICR_A::NOOPERATION
+        *self == ERASEUICR_A::NO_OPERATION
     }
     #[doc = "Checks if the value of the field is `ERASE`"]
     #[inline(always)]
     pub fn is_erase(&self) -> bool {
-        **self == ERASEUICR_A::ERASE
-    }
-}
-impl core::ops::Deref for ERASEUICR_R {
-    type Target = crate::FieldReader<bool, ERASEUICR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ERASEUICR_A::ERASE
     }
 }
 #[doc = "Field `ERASEUICR` writer - Register starting erase of all User Information Configuration Registers. Note that code erase has to be enabled by CONFIG.EEN before the UICR can be erased."]
-pub struct ERASEUICR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASEUICR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ERASEUICR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ERASEUICR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ERASEUICR_SPEC, ERASEUICR_A, O>;
+impl<'a, const O: u8> ERASEUICR_W<'a, O> {
     #[doc = "No operation"]
     #[inline(always)]
     pub fn no_operation(self) -> &'a mut W {
-        self.variant(ERASEUICR_A::NOOPERATION)
+        self.variant(ERASEUICR_A::NO_OPERATION)
     }
     #[doc = "Start erase of UICR"]
     #[inline(always)]
     pub fn erase(self) -> &'a mut W {
         self.variant(ERASEUICR_A::ERASE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Register starting erase of all User Information Configuration Registers. Note that code erase has to be enabled by CONFIG.EEN before the UICR can be erased."]
     #[inline(always)]
     pub fn eraseuicr(&self) -> ERASEUICR_R {
-        ERASEUICR_R::new((self.bits & 0x01) != 0)
+        ERASEUICR_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Register starting erase of all User Information Configuration Registers. Note that code erase has to be enabled by CONFIG.EEN before the UICR can be erased."]
     #[inline(always)]
-    pub fn eraseuicr(&mut self) -> ERASEUICR_W {
-        ERASEUICR_W { w: self }
+    pub fn eraseuicr(&mut self) -> ERASEUICR_W<0> {
+        ERASEUICR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

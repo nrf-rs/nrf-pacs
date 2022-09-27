@@ -34,6 +34,8 @@ impl From<crate::W<INTCAP_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `INTCAP` reader - Control usage of internal load capacitors"]
+pub type INTCAP_R = crate::FieldReader<u8, INTCAP_A>;
 #[doc = "Control usage of internal load capacitors\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,14 +55,8 @@ impl From<INTCAP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INTCAP` reader - Control usage of internal load capacitors"]
-pub struct INTCAP_R(crate::FieldReader<u8, INTCAP_A>);
 impl INTCAP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        INTCAP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INTCAP_A {
         match self.bits {
@@ -74,41 +70,28 @@ impl INTCAP_R {
     #[doc = "Checks if the value of the field is `EXTERNAL`"]
     #[inline(always)]
     pub fn is_external(&self) -> bool {
-        **self == INTCAP_A::EXTERNAL
+        *self == INTCAP_A::EXTERNAL
     }
     #[doc = "Checks if the value of the field is `C6PF`"]
     #[inline(always)]
     pub fn is_c6pf(&self) -> bool {
-        **self == INTCAP_A::C6PF
+        *self == INTCAP_A::C6PF
     }
     #[doc = "Checks if the value of the field is `C7PF`"]
     #[inline(always)]
     pub fn is_c7pf(&self) -> bool {
-        **self == INTCAP_A::C7PF
+        *self == INTCAP_A::C7PF
     }
     #[doc = "Checks if the value of the field is `C9PF`"]
     #[inline(always)]
     pub fn is_c9pf(&self) -> bool {
-        **self == INTCAP_A::C9PF
-    }
-}
-impl core::ops::Deref for INTCAP_R {
-    type Target = crate::FieldReader<u8, INTCAP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == INTCAP_A::C9PF
     }
 }
 #[doc = "Field `INTCAP` writer - Control usage of internal load capacitors"]
-pub struct INTCAP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INTCAP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: INTCAP_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type INTCAP_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, INTCAP_SPEC, u8, INTCAP_A, 2, O>;
+impl<'a, const O: u8> INTCAP_W<'a, O> {
     #[doc = "Use external load capacitors"]
     #[inline(always)]
     pub fn external(self) -> &'a mut W {
@@ -129,25 +112,19 @@ impl<'a> INTCAP_W<'a> {
     pub fn c9pf(self) -> &'a mut W {
         self.variant(INTCAP_A::C9PF)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Control usage of internal load capacitors"]
     #[inline(always)]
     pub fn intcap(&self) -> INTCAP_R {
-        INTCAP_R::new((self.bits & 0x03) as u8)
+        INTCAP_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Control usage of internal load capacitors"]
     #[inline(always)]
-    pub fn intcap(&mut self) -> INTCAP_W {
-        INTCAP_W { w: self }
+    pub fn intcap(&mut self) -> INTCAP_W<0> {
+        INTCAP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

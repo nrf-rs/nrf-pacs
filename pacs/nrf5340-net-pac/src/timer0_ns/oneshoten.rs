@@ -34,6 +34,8 @@ impl From<crate::W<ONESHOTEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ONESHOTEN` reader - Enable one-shot operation"]
+pub type ONESHOTEN_R = crate::BitReader<ONESHOTEN_A>;
 #[doc = "Enable one-shot operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ONESHOTEN_A {
@@ -48,14 +50,8 @@ impl From<ONESHOTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ONESHOTEN` reader - Enable one-shot operation"]
-pub struct ONESHOTEN_R(crate::FieldReader<bool, ONESHOTEN_A>);
 impl ONESHOTEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ONESHOTEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ONESHOTEN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl ONESHOTEN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == ONESHOTEN_A::DISABLE
+        *self == ONESHOTEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == ONESHOTEN_A::ENABLE
-    }
-}
-impl core::ops::Deref for ONESHOTEN_R {
-    type Target = crate::FieldReader<bool, ONESHOTEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ONESHOTEN_A::ENABLE
     }
 }
 #[doc = "Field `ONESHOTEN` writer - Enable one-shot operation"]
-pub struct ONESHOTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ONESHOTEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ONESHOTEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ONESHOTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ONESHOTEN_SPEC, ONESHOTEN_A, O>;
+impl<'a, const O: u8> ONESHOTEN_W<'a, O> {
     #[doc = "Disable one-shot operation"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> ONESHOTEN_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(ONESHOTEN_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable one-shot operation"]
     #[inline(always)]
     pub fn oneshoten(&self) -> ONESHOTEN_R {
-        ONESHOTEN_R::new((self.bits & 0x01) != 0)
+        ONESHOTEN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable one-shot operation"]
     #[inline(always)]
-    pub fn oneshoten(&mut self) -> ONESHOTEN_W {
-        ONESHOTEN_W { w: self }
+    pub fn oneshoten(&mut self) -> ONESHOTEN_W<0> {
+        ONESHOTEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

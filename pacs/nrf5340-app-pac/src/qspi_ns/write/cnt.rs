@@ -35,32 +35,9 @@ impl From<crate::W<CNT_SPEC>> for W {
     }
 }
 #[doc = "Field `CNT` reader - Write transfer length in number of bytes. The length must be a multiple of 4 bytes."]
-pub struct CNT_R(crate::FieldReader<u32, u32>);
-impl CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CNT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CNT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CNT` writer - Write transfer length in number of bytes. The length must be a multiple of 4 bytes."]
-pub struct CNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x001f_ffff) | (value as u32 & 0x001f_ffff);
-        self.w
-    }
-}
+pub type CNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CNT_SPEC, u32, u32, 21, O>;
 impl R {
     #[doc = "Bits 0:20 - Write transfer length in number of bytes. The length must be a multiple of 4 bytes."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:20 - Write transfer length in number of bytes. The length must be a multiple of 4 bytes."]
     #[inline(always)]
-    pub fn cnt(&mut self) -> CNT_W {
-        CNT_W { w: self }
+    pub fn cnt(&mut self) -> CNT_W<0> {
+        CNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

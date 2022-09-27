@@ -34,6 +34,8 @@ impl From<crate::W<INTENCLR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TIMEOUT` reader - Disable interrupt on TIMEOUT event."]
+pub type TIMEOUT_R = crate::BitReader<TIMEOUT_A>;
 #[doc = "Disable interrupt on TIMEOUT event.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMEOUT_A {
@@ -48,14 +50,8 @@ impl From<TIMEOUT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TIMEOUT` reader - Disable interrupt on TIMEOUT event."]
-pub struct TIMEOUT_R(crate::FieldReader<bool, TIMEOUT_A>);
 impl TIMEOUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMEOUT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TIMEOUT_A {
         match self.bits {
@@ -66,19 +62,12 @@ impl TIMEOUT_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TIMEOUT_A::DISABLED
+        *self == TIMEOUT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TIMEOUT_A::ENABLED
-    }
-}
-impl core::ops::Deref for TIMEOUT_R {
-    type Target = crate::FieldReader<bool, TIMEOUT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TIMEOUT_A::ENABLED
     }
 }
 #[doc = "Disable interrupt on TIMEOUT event.\n\nValue on reset: 0"]
@@ -94,49 +83,26 @@ impl From<TIMEOUT_AW> for bool {
     }
 }
 #[doc = "Field `TIMEOUT` writer - Disable interrupt on TIMEOUT event."]
-pub struct TIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMEOUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TIMEOUT_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TIMEOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, TIMEOUT_AW, O>;
+impl<'a, const O: u8> TIMEOUT_W<'a, O> {
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(TIMEOUT_AW::CLEAR)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 impl R {
     #[doc = "Bit 0 - Disable interrupt on TIMEOUT event."]
     #[inline(always)]
     pub fn timeout(&self) -> TIMEOUT_R {
-        TIMEOUT_R::new((self.bits & 0x01) != 0)
+        TIMEOUT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Disable interrupt on TIMEOUT event."]
     #[inline(always)]
-    pub fn timeout(&mut self) -> TIMEOUT_W {
-        TIMEOUT_W { w: self }
+    pub fn timeout(&mut self) -> TIMEOUT_W<0> {
+        TIMEOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -14,20 +14,7 @@ impl From<crate::R<ACCDBL_SPEC>> for R {
     }
 }
 #[doc = "Field `ACCDBL` reader - Accumulated double (error) transitions."]
-pub struct ACCDBL_R(crate::FieldReader<u8, u8>);
-impl ACCDBL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ACCDBL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACCDBL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACCDBL_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:3 - Accumulated double (error) transitions."]
     #[inline(always)]

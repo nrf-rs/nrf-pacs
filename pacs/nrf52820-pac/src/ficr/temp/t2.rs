@@ -14,20 +14,7 @@ impl From<crate::R<T2_SPEC>> for R {
     }
 }
 #[doc = "Field `T` reader - T (segment end) register"]
-pub struct T_R(crate::FieldReader<u8, u8>);
-impl T_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        T_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - T (segment end) register"]
     #[inline(always)]

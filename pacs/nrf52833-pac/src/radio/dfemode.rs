@@ -34,6 +34,8 @@ impl From<crate::W<DFEMODE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DFEOPMODE` reader - Direction finding operation mode"]
+pub type DFEOPMODE_R = crate::FieldReader<u8, DFEOPMODE_A>;
 #[doc = "Direction finding operation mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -41,9 +43,9 @@ pub enum DFEOPMODE_A {
     #[doc = "0: Direction finding mode disabled"]
     DISABLED = 0,
     #[doc = "2: Direction finding mode set to AoD"]
-    AOD = 2,
+    AO_D = 2,
     #[doc = "3: Direction finding mode set to AoA"]
-    AOA = 3,
+    AO_A = 3,
 }
 impl From<DFEOPMODE_A> for u8 {
     #[inline(always)]
@@ -51,56 +53,37 @@ impl From<DFEOPMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DFEOPMODE` reader - Direction finding operation mode"]
-pub struct DFEOPMODE_R(crate::FieldReader<u8, DFEOPMODE_A>);
 impl DFEOPMODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DFEOPMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DFEOPMODE_A> {
         match self.bits {
             0 => Some(DFEOPMODE_A::DISABLED),
-            2 => Some(DFEOPMODE_A::AOD),
-            3 => Some(DFEOPMODE_A::AOA),
+            2 => Some(DFEOPMODE_A::AO_D),
+            3 => Some(DFEOPMODE_A::AO_A),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DFEOPMODE_A::DISABLED
+        *self == DFEOPMODE_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `AOD`"]
+    #[doc = "Checks if the value of the field is `AO_D`"]
     #[inline(always)]
     pub fn is_ao_d(&self) -> bool {
-        **self == DFEOPMODE_A::AOD
+        *self == DFEOPMODE_A::AO_D
     }
-    #[doc = "Checks if the value of the field is `AOA`"]
+    #[doc = "Checks if the value of the field is `AO_A`"]
     #[inline(always)]
     pub fn is_ao_a(&self) -> bool {
-        **self == DFEOPMODE_A::AOA
-    }
-}
-impl core::ops::Deref for DFEOPMODE_R {
-    type Target = crate::FieldReader<u8, DFEOPMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DFEOPMODE_A::AO_A
     }
 }
 #[doc = "Field `DFEOPMODE` writer - Direction finding operation mode"]
-pub struct DFEOPMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DFEOPMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DFEOPMODE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DFEOPMODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DFEMODE_SPEC, u8, DFEOPMODE_A, 2, O>;
+impl<'a, const O: u8> DFEOPMODE_W<'a, O> {
     #[doc = "Direction finding mode disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -109,32 +92,26 @@ impl<'a> DFEOPMODE_W<'a> {
     #[doc = "Direction finding mode set to AoD"]
     #[inline(always)]
     pub fn ao_d(self) -> &'a mut W {
-        self.variant(DFEOPMODE_A::AOD)
+        self.variant(DFEOPMODE_A::AO_D)
     }
     #[doc = "Direction finding mode set to AoA"]
     #[inline(always)]
     pub fn ao_a(self) -> &'a mut W {
-        self.variant(DFEOPMODE_A::AOA)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(DFEOPMODE_A::AO_A)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Direction finding operation mode"]
     #[inline(always)]
     pub fn dfeopmode(&self) -> DFEOPMODE_R {
-        DFEOPMODE_R::new((self.bits & 0x03) as u8)
+        DFEOPMODE_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Direction finding operation mode"]
     #[inline(always)]
-    pub fn dfeopmode(&mut self) -> DFEOPMODE_W {
-        DFEOPMODE_W { w: self }
+    pub fn dfeopmode(&mut self) -> DFEOPMODE_W<0> {
+        DFEOPMODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

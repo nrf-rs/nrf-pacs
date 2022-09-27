@@ -34,6 +34,8 @@ impl From<crate::W<DPDMVALUE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `STATE` reader - State D+ and D- lines will be forced into by the DPDMDRIVE task"]
+pub type STATE_R = crate::FieldReader<u8, STATE_A>;
 #[doc = "State D+ and D- lines will be forced into by the DPDMDRIVE task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,14 +53,8 @@ impl From<STATE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `STATE` reader - State D+ and D- lines will be forced into by the DPDMDRIVE task"]
-pub struct STATE_R(crate::FieldReader<u8, STATE_A>);
 impl STATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        STATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<STATE_A> {
         match self.bits {
@@ -71,36 +67,22 @@ impl STATE_R {
     #[doc = "Checks if the value of the field is `RESUME`"]
     #[inline(always)]
     pub fn is_resume(&self) -> bool {
-        **self == STATE_A::RESUME
+        *self == STATE_A::RESUME
     }
     #[doc = "Checks if the value of the field is `J`"]
     #[inline(always)]
     pub fn is_j(&self) -> bool {
-        **self == STATE_A::J
+        *self == STATE_A::J
     }
     #[doc = "Checks if the value of the field is `K`"]
     #[inline(always)]
     pub fn is_k(&self) -> bool {
-        **self == STATE_A::K
-    }
-}
-impl core::ops::Deref for STATE_R {
-    type Target = crate::FieldReader<u8, STATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STATE_A::K
     }
 }
 #[doc = "Field `STATE` writer - State D+ and D- lines will be forced into by the DPDMDRIVE task"]
-pub struct STATE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STATE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STATE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type STATE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DPDMVALUE_SPEC, u8, STATE_A, 5, O>;
+impl<'a, const O: u8> STATE_W<'a, O> {
     #[doc = "D+ forced low, D- forced high (K state) for a timing preset in hardware (50 us or 5 ms, depending on bus state)"]
     #[inline(always)]
     pub fn resume(self) -> &'a mut W {
@@ -116,12 +98,6 @@ impl<'a> STATE_W<'a> {
     pub fn k(self) -> &'a mut W {
         self.variant(STATE_A::K)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:4 - State D+ and D- lines will be forced into by the DPDMDRIVE task"]
@@ -133,8 +109,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - State D+ and D- lines will be forced into by the DPDMDRIVE task"]
     #[inline(always)]
-    pub fn state(&mut self) -> STATE_W {
-        STATE_W { w: self }
+    pub fn state(&mut self) -> STATE_W<0> {
+        STATE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,44 +35,21 @@ impl From<crate::W<IFTIMING_SPEC>> for W {
     }
 }
 #[doc = "Field `RXDELAY` reader - Timing related to sampling of the input serial data. The value of RXDELAY specifies the number of prescaled 192 MHz cycles delay from the the rising edge of the SPI Clock (SCK) until the input serial data is sampled. For example, if RXDELAY is set to 0, the input serial data is sampled on the rising edge of SCK."]
-pub struct RXDELAY_R(crate::FieldReader<u8, u8>);
-impl RXDELAY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RXDELAY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDELAY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDELAY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RXDELAY` writer - Timing related to sampling of the input serial data. The value of RXDELAY specifies the number of prescaled 192 MHz cycles delay from the the rising edge of the SPI Clock (SCK) until the input serial data is sampled. For example, if RXDELAY is set to 0, the input serial data is sampled on the rising edge of SCK."]
-pub struct RXDELAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXDELAY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
-}
+pub type RXDELAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IFTIMING_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 8:10 - Timing related to sampling of the input serial data. The value of RXDELAY specifies the number of prescaled 192 MHz cycles delay from the the rising edge of the SPI Clock (SCK) until the input serial data is sampled. For example, if RXDELAY is set to 0, the input serial data is sampled on the rising edge of SCK."]
     #[inline(always)]
     pub fn rxdelay(&self) -> RXDELAY_R {
-        RXDELAY_R::new(((self.bits >> 8) & 0x07) as u8)
+        RXDELAY_R::new(((self.bits >> 8) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 8:10 - Timing related to sampling of the input serial data. The value of RXDELAY specifies the number of prescaled 192 MHz cycles delay from the the rising edge of the SPI Clock (SCK) until the input serial data is sampled. For example, if RXDELAY is set to 0, the input serial data is sampled on the rising edge of SCK."]
     #[inline(always)]
-    pub fn rxdelay(&mut self) -> RXDELAY_W {
-        RXDELAY_W { w: self }
+    pub fn rxdelay(&mut self) -> RXDELAY_W<8> {
+        RXDELAY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

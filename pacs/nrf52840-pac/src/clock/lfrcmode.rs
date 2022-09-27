@@ -34,6 +34,8 @@ impl From<crate::W<LFRCMODE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - Set LFRC mode"]
+pub type MODE_R = crate::BitReader<MODE_A>;
 #[doc = "Set LFRC mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
@@ -48,14 +50,8 @@ impl From<MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MODE` reader - Set LFRC mode"]
-pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl MODE_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == MODE_A::NORMAL
+        *self == MODE_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `ULP`"]
     #[inline(always)]
     pub fn is_ulp(&self) -> bool {
-        **self == MODE_A::ULP
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<bool, MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE_A::ULP
     }
 }
 #[doc = "Field `MODE` writer - Set LFRC mode"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFRCMODE_SPEC, MODE_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Normal mode"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> MODE_W<'a> {
     pub fn ulp(self) -> &'a mut W {
         self.variant(MODE_A::ULP)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `STATUS` reader - Active LFRC mode. This field is read only."]
+pub type STATUS_R = crate::BitReader<STATUS_A>;
 #[doc = "Active LFRC mode. This field is read only.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STATUS_A {
@@ -132,14 +100,8 @@ impl From<STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STATUS` reader - Active LFRC mode. This field is read only."]
-pub struct STATUS_R(crate::FieldReader<bool, STATUS_A>);
 impl STATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STATUS_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl STATUS_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == STATUS_A::NORMAL
+        *self == STATUS_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `ULP`"]
     #[inline(always)]
     pub fn is_ulp(&self) -> bool {
-        **self == STATUS_A::ULP
-    }
-}
-impl core::ops::Deref for STATUS_R {
-    type Target = crate::FieldReader<bool, STATUS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STATUS_A::ULP
     }
 }
 #[doc = "Field `STATUS` writer - Active LFRC mode. This field is read only."]
-pub struct STATUS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STATUS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STATUS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type STATUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFRCMODE_SPEC, STATUS_A, O>;
+impl<'a, const O: u8> STATUS_W<'a, O> {
     #[doc = "Normal mode"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -185,45 +133,29 @@ impl<'a> STATUS_W<'a> {
     pub fn ulp(self) -> &'a mut W {
         self.variant(STATUS_A::ULP)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Set LFRC mode"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new((self.bits & 0x01) != 0)
+        MODE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 16 - Active LFRC mode. This field is read only."]
     #[inline(always)]
     pub fn status(&self) -> STATUS_R {
-        STATUS_R::new(((self.bits >> 16) & 0x01) != 0)
+        STATUS_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Set LFRC mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    pub fn mode(&mut self) -> MODE_W<0> {
+        MODE_W::new(self)
     }
     #[doc = "Bit 16 - Active LFRC mode. This field is read only."]
     #[inline(always)]
-    pub fn status(&mut self) -> STATUS_W {
-        STATUS_W { w: self }
+    pub fn status(&mut self) -> STATUS_W<16> {
+        STATUS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

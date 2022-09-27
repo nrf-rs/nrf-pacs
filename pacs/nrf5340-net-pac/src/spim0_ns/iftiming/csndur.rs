@@ -35,32 +35,9 @@ impl From<crate::W<CSNDUR_SPEC>> for W {
     }
 }
 #[doc = "Field `CSNDUR` reader - Minimum duration between edge of CSN and edge of SCK and minimum duration CSN must stay high between transactions. The value is specified in number of 64 MHz clock cycles (15.625 ns)."]
-pub struct CSNDUR_R(crate::FieldReader<u8, u8>);
-impl CSNDUR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CSNDUR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSNDUR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSNDUR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CSNDUR` writer - Minimum duration between edge of CSN and edge of SCK and minimum duration CSN must stay high between transactions. The value is specified in number of 64 MHz clock cycles (15.625 ns)."]
-pub struct CSNDUR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSNDUR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CSNDUR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSNDUR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Minimum duration between edge of CSN and edge of SCK and minimum duration CSN must stay high between transactions. The value is specified in number of 64 MHz clock cycles (15.625 ns)."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Minimum duration between edge of CSN and edge of SCK and minimum duration CSN must stay high between transactions. The value is specified in number of 64 MHz clock cycles (15.625 ns)."]
     #[inline(always)]
-    pub fn csndur(&mut self) -> CSNDUR_W {
-        CSNDUR_W { w: self }
+    pub fn csndur(&mut self) -> CSNDUR_W<0> {
+        CSNDUR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

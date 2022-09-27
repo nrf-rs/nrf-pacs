@@ -34,6 +34,9 @@ impl From<crate::W<INTENCLR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `IN0` reader - Disable interrupt on IN\\[0\\]
+event."]
+pub type IN0_R = crate::BitReader<IN0_A>;
 #[doc = "Disable interrupt on IN\\[0\\]
 event.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -49,15 +52,8 @@ impl From<IN0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IN0` reader - Disable interrupt on IN\\[0\\]
-event."]
-pub struct IN0_R(crate::FieldReader<bool, IN0_A>);
 impl IN0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        IN0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IN0_A {
         match self.bits {
@@ -68,19 +64,12 @@ impl IN0_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == IN0_A::DISABLED
+        *self == IN0_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == IN0_A::ENABLED
-    }
-}
-impl core::ops::Deref for IN0_R {
-    type Target = crate::FieldReader<bool, IN0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IN0_A::ENABLED
     }
 }
 #[doc = "Disable interrupt on IN\\[0\\]
@@ -98,37 +87,17 @@ impl From<IN0_AW> for bool {
 }
 #[doc = "Field `IN0` writer - Disable interrupt on IN\\[0\\]
 event."]
-pub struct IN0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IN0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IN0_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, IN0_AW, O>;
+impl<'a, const O: u8> IN0_W<'a, O> {
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(IN0_AW::CLEAR)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `IN1` reader - Disable interrupt on IN\\[1\\]
+event."]
+pub type IN1_R = crate::BitReader<IN1_A>;
 #[doc = "Disable interrupt on IN\\[1\\]
 event.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -144,15 +113,8 @@ impl From<IN1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IN1` reader - Disable interrupt on IN\\[1\\]
-event."]
-pub struct IN1_R(crate::FieldReader<bool, IN1_A>);
 impl IN1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        IN1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IN1_A {
         match self.bits {
@@ -163,19 +125,12 @@ impl IN1_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == IN1_A::DISABLED
+        *self == IN1_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == IN1_A::ENABLED
-    }
-}
-impl core::ops::Deref for IN1_R {
-    type Target = crate::FieldReader<bool, IN1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IN1_A::ENABLED
     }
 }
 #[doc = "Disable interrupt on IN\\[1\\]
@@ -193,37 +148,17 @@ impl From<IN1_AW> for bool {
 }
 #[doc = "Field `IN1` writer - Disable interrupt on IN\\[1\\]
 event."]
-pub struct IN1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IN1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IN1_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, IN1_AW, O>;
+impl<'a, const O: u8> IN1_W<'a, O> {
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(IN1_AW::CLEAR)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `IN2` reader - Disable interrupt on IN\\[2\\]
+event."]
+pub type IN2_R = crate::BitReader<IN2_A>;
 #[doc = "Disable interrupt on IN\\[2\\]
 event.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -239,15 +174,8 @@ impl From<IN2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IN2` reader - Disable interrupt on IN\\[2\\]
-event."]
-pub struct IN2_R(crate::FieldReader<bool, IN2_A>);
 impl IN2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        IN2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IN2_A {
         match self.bits {
@@ -258,19 +186,12 @@ impl IN2_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == IN2_A::DISABLED
+        *self == IN2_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == IN2_A::ENABLED
-    }
-}
-impl core::ops::Deref for IN2_R {
-    type Target = crate::FieldReader<bool, IN2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IN2_A::ENABLED
     }
 }
 #[doc = "Disable interrupt on IN\\[2\\]
@@ -288,37 +209,17 @@ impl From<IN2_AW> for bool {
 }
 #[doc = "Field `IN2` writer - Disable interrupt on IN\\[2\\]
 event."]
-pub struct IN2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IN2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IN2_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, IN2_AW, O>;
+impl<'a, const O: u8> IN2_W<'a, O> {
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(IN2_AW::CLEAR)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `IN3` reader - Disable interrupt on IN\\[3\\]
+event."]
+pub type IN3_R = crate::BitReader<IN3_A>;
 #[doc = "Disable interrupt on IN\\[3\\]
 event.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -334,15 +235,8 @@ impl From<IN3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IN3` reader - Disable interrupt on IN\\[3\\]
-event."]
-pub struct IN3_R(crate::FieldReader<bool, IN3_A>);
 impl IN3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        IN3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IN3_A {
         match self.bits {
@@ -353,19 +247,12 @@ impl IN3_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == IN3_A::DISABLED
+        *self == IN3_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == IN3_A::ENABLED
-    }
-}
-impl core::ops::Deref for IN3_R {
-    type Target = crate::FieldReader<bool, IN3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IN3_A::ENABLED
     }
 }
 #[doc = "Disable interrupt on IN\\[3\\]
@@ -383,37 +270,16 @@ impl From<IN3_AW> for bool {
 }
 #[doc = "Field `IN3` writer - Disable interrupt on IN\\[3\\]
 event."]
-pub struct IN3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IN3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IN3_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, IN3_AW, O>;
+impl<'a, const O: u8> IN3_W<'a, O> {
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(IN3_AW::CLEAR)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `PORT` reader - Disable interrupt on PORT event."]
+pub type PORT_R = crate::BitReader<PORT_A>;
 #[doc = "Disable interrupt on PORT event.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PORT_A {
@@ -428,14 +294,8 @@ impl From<PORT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PORT` reader - Disable interrupt on PORT event."]
-pub struct PORT_R(crate::FieldReader<bool, PORT_A>);
 impl PORT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PORT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PORT_A {
         match self.bits {
@@ -446,19 +306,12 @@ impl PORT_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PORT_A::DISABLED
+        *self == PORT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PORT_A::ENABLED
-    }
-}
-impl core::ops::Deref for PORT_R {
-    type Target = crate::FieldReader<bool, PORT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PORT_A::ENABLED
     }
 }
 #[doc = "Disable interrupt on PORT event.\n\nValue on reset: 0"]
@@ -474,35 +327,12 @@ impl From<PORT_AW> for bool {
     }
 }
 #[doc = "Field `PORT` writer - Disable interrupt on PORT event."]
-pub struct PORT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PORT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PORT_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PORT_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, PORT_AW, O>;
+impl<'a, const O: u8> PORT_W<'a, O> {
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(PORT_AW::CLEAR)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
     }
 }
 impl R {
@@ -510,61 +340,61 @@ impl R {
 event."]
     #[inline(always)]
     pub fn in0(&self) -> IN0_R {
-        IN0_R::new((self.bits & 0x01) != 0)
+        IN0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Disable interrupt on IN\\[1\\]
 event."]
     #[inline(always)]
     pub fn in1(&self) -> IN1_R {
-        IN1_R::new(((self.bits >> 1) & 0x01) != 0)
+        IN1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Disable interrupt on IN\\[2\\]
 event."]
     #[inline(always)]
     pub fn in2(&self) -> IN2_R {
-        IN2_R::new(((self.bits >> 2) & 0x01) != 0)
+        IN2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Disable interrupt on IN\\[3\\]
 event."]
     #[inline(always)]
     pub fn in3(&self) -> IN3_R {
-        IN3_R::new(((self.bits >> 3) & 0x01) != 0)
+        IN3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 31 - Disable interrupt on PORT event."]
     #[inline(always)]
     pub fn port(&self) -> PORT_R {
-        PORT_R::new(((self.bits >> 31) & 0x01) != 0)
+        PORT_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Disable interrupt on IN\\[0\\]
 event."]
     #[inline(always)]
-    pub fn in0(&mut self) -> IN0_W {
-        IN0_W { w: self }
+    pub fn in0(&mut self) -> IN0_W<0> {
+        IN0_W::new(self)
     }
     #[doc = "Bit 1 - Disable interrupt on IN\\[1\\]
 event."]
     #[inline(always)]
-    pub fn in1(&mut self) -> IN1_W {
-        IN1_W { w: self }
+    pub fn in1(&mut self) -> IN1_W<1> {
+        IN1_W::new(self)
     }
     #[doc = "Bit 2 - Disable interrupt on IN\\[2\\]
 event."]
     #[inline(always)]
-    pub fn in2(&mut self) -> IN2_W {
-        IN2_W { w: self }
+    pub fn in2(&mut self) -> IN2_W<2> {
+        IN2_W::new(self)
     }
     #[doc = "Bit 3 - Disable interrupt on IN\\[3\\]
 event."]
     #[inline(always)]
-    pub fn in3(&mut self) -> IN3_W {
-        IN3_W { w: self }
+    pub fn in3(&mut self) -> IN3_W<3> {
+        IN3_W::new(self)
     }
     #[doc = "Bit 31 - Disable interrupt on PORT event."]
     #[inline(always)]
-    pub fn port(&mut self) -> PORT_W {
-        PORT_W { w: self }
+    pub fn port(&mut self) -> PORT_W<31> {
+        PORT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<MCKFREQ_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MCKFREQ` reader - Master clock generator frequency."]
+pub type MCKFREQ_R = crate::FieldReader<u32, MCKFREQ_A>;
 #[doc = "Master clock generator frequency.\n\nValue on reset: 536870912"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -81,14 +83,8 @@ impl From<MCKFREQ_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `MCKFREQ` reader - Master clock generator frequency."]
-pub struct MCKFREQ_R(crate::FieldReader<u32, MCKFREQ_A>);
 impl MCKFREQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        MCKFREQ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MCKFREQ_A> {
         match self.bits {
@@ -116,111 +112,98 @@ impl MCKFREQ_R {
     #[doc = "Checks if the value of the field is `_32MDIV2`"]
     #[inline(always)]
     pub fn is_32mdiv2(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV2
+        *self == MCKFREQ_A::_32MDIV2
     }
     #[doc = "Checks if the value of the field is `_32MDIV3`"]
     #[inline(always)]
     pub fn is_32mdiv3(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV3
+        *self == MCKFREQ_A::_32MDIV3
     }
     #[doc = "Checks if the value of the field is `_32MDIV4`"]
     #[inline(always)]
     pub fn is_32mdiv4(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV4
+        *self == MCKFREQ_A::_32MDIV4
     }
     #[doc = "Checks if the value of the field is `_32MDIV5`"]
     #[inline(always)]
     pub fn is_32mdiv5(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV5
+        *self == MCKFREQ_A::_32MDIV5
     }
     #[doc = "Checks if the value of the field is `_32MDIV6`"]
     #[inline(always)]
     pub fn is_32mdiv6(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV6
+        *self == MCKFREQ_A::_32MDIV6
     }
     #[doc = "Checks if the value of the field is `_32MDIV8`"]
     #[inline(always)]
     pub fn is_32mdiv8(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV8
+        *self == MCKFREQ_A::_32MDIV8
     }
     #[doc = "Checks if the value of the field is `_32MDIV10`"]
     #[inline(always)]
     pub fn is_32mdiv10(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV10
+        *self == MCKFREQ_A::_32MDIV10
     }
     #[doc = "Checks if the value of the field is `_32MDIV11`"]
     #[inline(always)]
     pub fn is_32mdiv11(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV11
+        *self == MCKFREQ_A::_32MDIV11
     }
     #[doc = "Checks if the value of the field is `_32MDIV15`"]
     #[inline(always)]
     pub fn is_32mdiv15(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV15
+        *self == MCKFREQ_A::_32MDIV15
     }
     #[doc = "Checks if the value of the field is `_32MDIV16`"]
     #[inline(always)]
     pub fn is_32mdiv16(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV16
+        *self == MCKFREQ_A::_32MDIV16
     }
     #[doc = "Checks if the value of the field is `_32MDIV21`"]
     #[inline(always)]
     pub fn is_32mdiv21(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV21
+        *self == MCKFREQ_A::_32MDIV21
     }
     #[doc = "Checks if the value of the field is `_32MDIV23`"]
     #[inline(always)]
     pub fn is_32mdiv23(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV23
+        *self == MCKFREQ_A::_32MDIV23
     }
     #[doc = "Checks if the value of the field is `_32MDIV30`"]
     #[inline(always)]
     pub fn is_32mdiv30(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV30
+        *self == MCKFREQ_A::_32MDIV30
     }
     #[doc = "Checks if the value of the field is `_32MDIV31`"]
     #[inline(always)]
     pub fn is_32mdiv31(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV31
+        *self == MCKFREQ_A::_32MDIV31
     }
     #[doc = "Checks if the value of the field is `_32MDIV32`"]
     #[inline(always)]
     pub fn is_32mdiv32(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV32
+        *self == MCKFREQ_A::_32MDIV32
     }
     #[doc = "Checks if the value of the field is `_32MDIV42`"]
     #[inline(always)]
     pub fn is_32mdiv42(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV42
+        *self == MCKFREQ_A::_32MDIV42
     }
     #[doc = "Checks if the value of the field is `_32MDIV63`"]
     #[inline(always)]
     pub fn is_32mdiv63(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV63
+        *self == MCKFREQ_A::_32MDIV63
     }
     #[doc = "Checks if the value of the field is `_32MDIV125`"]
     #[inline(always)]
     pub fn is_32mdiv125(&self) -> bool {
-        **self == MCKFREQ_A::_32MDIV125
-    }
-}
-impl core::ops::Deref for MCKFREQ_R {
-    type Target = crate::FieldReader<u32, MCKFREQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MCKFREQ_A::_32MDIV125
     }
 }
 #[doc = "Field `MCKFREQ` writer - Master clock generator frequency."]
-pub struct MCKFREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MCKFREQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MCKFREQ_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type MCKFREQ_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, MCKFREQ_SPEC, u32, MCKFREQ_A, 32, O>;
+impl<'a, const O: u8> MCKFREQ_W<'a, O> {
     #[doc = "32 MHz / 2 = 16.0 MHz"]
     #[inline(always)]
     pub fn _32mdiv2(self) -> &'a mut W {
@@ -311,12 +294,6 @@ impl<'a> MCKFREQ_W<'a> {
     pub fn _32mdiv125(self) -> &'a mut W {
         self.variant(MCKFREQ_A::_32MDIV125)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:31 - Master clock generator frequency."]
@@ -328,8 +305,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Master clock generator frequency."]
     #[inline(always)]
-    pub fn mckfreq(&mut self) -> MCKFREQ_W {
-        MCKFREQ_W { w: self }
+    pub fn mckfreq(&mut self) -> MCKFREQ_W<0> {
+        MCKFREQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

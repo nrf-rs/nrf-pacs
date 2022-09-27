@@ -32,42 +32,19 @@ impl From<START_AW> for bool {
     }
 }
 #[doc = "Field `START` writer - "]
-pub struct START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: START_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLOCKSTART_SPEC, START_AW, O>;
+impl<'a, const O: u8> START_W<'a, O> {
     #[doc = "Start all trace and debug clocks."]
     #[inline(always)]
     pub fn start(self) -> &'a mut W {
         self.variant(START_AW::START)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
-        START_W { w: self }
+    pub fn start(&mut self) -> START_W<0> {
+        START_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

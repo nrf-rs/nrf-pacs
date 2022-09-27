@@ -35,32 +35,9 @@ impl From<crate::W<IHIT_SPEC>> for W {
     }
 }
 #[doc = "Field `HITS` reader - Number of cache hits Write zero to clear"]
-pub struct HITS_R(crate::FieldReader<u32, u32>);
-impl HITS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        HITS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HITS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HITS_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `HITS` writer - Number of cache hits Write zero to clear"]
-pub struct HITS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HITS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type HITS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IHIT_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Number of cache hits Write zero to clear"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Number of cache hits Write zero to clear"]
     #[inline(always)]
-    pub fn hits(&mut self) -> HITS_W {
-        HITS_W { w: self }
+    pub fn hits(&mut self) -> HITS_W<0> {
+        HITS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

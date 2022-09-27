@@ -34,6 +34,8 @@ impl From<crate::W<POWER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `POWER` reader - Peripheral power control."]
+pub type POWER_R = crate::BitReader<POWER_A>;
 #[doc = "Peripheral power control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POWER_A {
@@ -48,14 +50,8 @@ impl From<POWER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `POWER` reader - Peripheral power control."]
-pub struct POWER_R(crate::FieldReader<bool, POWER_A>);
 impl POWER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        POWER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> POWER_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl POWER_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == POWER_A::DISABLED
+        *self == POWER_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == POWER_A::ENABLED
-    }
-}
-impl core::ops::Deref for POWER_R {
-    type Target = crate::FieldReader<bool, POWER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == POWER_A::ENABLED
     }
 }
 #[doc = "Field `POWER` writer - Peripheral power control."]
-pub struct POWER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POWER_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: POWER_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type POWER_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWER_SPEC, POWER_A, O>;
+impl<'a, const O: u8> POWER_W<'a, O> {
     #[doc = "Module power disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> POWER_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(POWER_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Peripheral power control."]
     #[inline(always)]
     pub fn power(&self) -> POWER_R {
-        POWER_R::new((self.bits & 0x01) != 0)
+        POWER_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Peripheral power control."]
     #[inline(always)]
-    pub fn power(&mut self) -> POWER_W {
-        POWER_W { w: self }
+    pub fn power(&mut self) -> POWER_W<0> {
+        POWER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

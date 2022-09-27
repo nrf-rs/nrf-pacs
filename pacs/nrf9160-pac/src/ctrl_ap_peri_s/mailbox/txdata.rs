@@ -35,32 +35,9 @@ impl From<crate::W<TXDATA_SPEC>> for W {
     }
 }
 #[doc = "Field `TXDATA` reader - Data sent to debugger"]
-pub struct TXDATA_R(crate::FieldReader<u32, u32>);
-impl TXDATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        TXDATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXDATA_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXDATA_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TXDATA` writer - Data sent to debugger"]
-pub struct TXDATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXDATA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type TXDATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TXDATA_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Data sent to debugger"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Data sent to debugger"]
     #[inline(always)]
-    pub fn txdata(&mut self) -> TXDATA_W {
-        TXDATA_W { w: self }
+    pub fn txdata(&mut self) -> TXDATA_W<0> {
+        TXDATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -13,11 +13,13 @@ impl From<crate::R<RUNSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `RUNSTATUSWDT` reader - Indicates whether or not the watchdog is running"]
+pub type RUNSTATUSWDT_R = crate::BitReader<RUNSTATUSWDT_A>;
 #[doc = "Indicates whether or not the watchdog is running\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RUNSTATUSWDT_A {
     #[doc = "0: Watchdog not running"]
-    NOTRUNNING = 0,
+    NOT_RUNNING = 0,
     #[doc = "1: Watchdog is running"]
     RUNNING = 1,
 }
@@ -27,44 +29,31 @@ impl From<RUNSTATUSWDT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RUNSTATUSWDT` reader - Indicates whether or not the watchdog is running"]
-pub struct RUNSTATUSWDT_R(crate::FieldReader<bool, RUNSTATUSWDT_A>);
 impl RUNSTATUSWDT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RUNSTATUSWDT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RUNSTATUSWDT_A {
         match self.bits {
-            false => RUNSTATUSWDT_A::NOTRUNNING,
+            false => RUNSTATUSWDT_A::NOT_RUNNING,
             true => RUNSTATUSWDT_A::RUNNING,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTRUNNING`"]
+    #[doc = "Checks if the value of the field is `NOT_RUNNING`"]
     #[inline(always)]
     pub fn is_not_running(&self) -> bool {
-        **self == RUNSTATUSWDT_A::NOTRUNNING
+        *self == RUNSTATUSWDT_A::NOT_RUNNING
     }
     #[doc = "Checks if the value of the field is `RUNNING`"]
     #[inline(always)]
     pub fn is_running(&self) -> bool {
-        **self == RUNSTATUSWDT_A::RUNNING
-    }
-}
-impl core::ops::Deref for RUNSTATUSWDT_R {
-    type Target = crate::FieldReader<bool, RUNSTATUSWDT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RUNSTATUSWDT_A::RUNNING
     }
 }
 impl R {
     #[doc = "Bit 0 - Indicates whether or not the watchdog is running"]
     #[inline(always)]
     pub fn runstatuswdt(&self) -> RUNSTATUSWDT_R {
-        RUNSTATUSWDT_R::new((self.bits & 0x01) != 0)
+        RUNSTATUSWDT_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Run status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [runstatus](index.html) module"]

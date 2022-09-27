@@ -34,26 +34,28 @@ impl From<crate::W<PSEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PSEL` reader - Analog pin select"]
+pub type PSEL_R = crate::FieldReader<u8, PSEL_A>;
 #[doc = "Analog pin select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PSEL_A {
     #[doc = "0: AIN0 selected as analog input"]
-    ANALOGINPUT0 = 0,
+    ANALOG_INPUT0 = 0,
     #[doc = "1: AIN1 selected as analog input"]
-    ANALOGINPUT1 = 1,
+    ANALOG_INPUT1 = 1,
     #[doc = "2: AIN2 selected as analog input"]
-    ANALOGINPUT2 = 2,
+    ANALOG_INPUT2 = 2,
     #[doc = "3: AIN3 selected as analog input"]
-    ANALOGINPUT3 = 3,
+    ANALOG_INPUT3 = 3,
     #[doc = "4: AIN4 selected as analog input"]
-    ANALOGINPUT4 = 4,
+    ANALOG_INPUT4 = 4,
     #[doc = "5: AIN5 selected as analog input"]
-    ANALOGINPUT5 = 5,
+    ANALOG_INPUT5 = 5,
     #[doc = "6: AIN6 selected as analog input"]
-    ANALOGINPUT6 = 6,
+    ANALOG_INPUT6 = 6,
     #[doc = "7: VDD/2 selected as analog input"]
-    VDDDIV2 = 7,
+    VDD_DIV2 = 7,
 }
 impl From<PSEL_A> for u8 {
     #[inline(always)]
@@ -61,145 +63,119 @@ impl From<PSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PSEL` reader - Analog pin select"]
-pub struct PSEL_R(crate::FieldReader<u8, PSEL_A>);
 impl PSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PSEL_A {
         match self.bits {
-            0 => PSEL_A::ANALOGINPUT0,
-            1 => PSEL_A::ANALOGINPUT1,
-            2 => PSEL_A::ANALOGINPUT2,
-            3 => PSEL_A::ANALOGINPUT3,
-            4 => PSEL_A::ANALOGINPUT4,
-            5 => PSEL_A::ANALOGINPUT5,
-            6 => PSEL_A::ANALOGINPUT6,
-            7 => PSEL_A::VDDDIV2,
+            0 => PSEL_A::ANALOG_INPUT0,
+            1 => PSEL_A::ANALOG_INPUT1,
+            2 => PSEL_A::ANALOG_INPUT2,
+            3 => PSEL_A::ANALOG_INPUT3,
+            4 => PSEL_A::ANALOG_INPUT4,
+            5 => PSEL_A::ANALOG_INPUT5,
+            6 => PSEL_A::ANALOG_INPUT6,
+            7 => PSEL_A::VDD_DIV2,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `ANALOGINPUT0`"]
+    #[doc = "Checks if the value of the field is `ANALOG_INPUT0`"]
     #[inline(always)]
     pub fn is_analog_input0(&self) -> bool {
-        **self == PSEL_A::ANALOGINPUT0
+        *self == PSEL_A::ANALOG_INPUT0
     }
-    #[doc = "Checks if the value of the field is `ANALOGINPUT1`"]
+    #[doc = "Checks if the value of the field is `ANALOG_INPUT1`"]
     #[inline(always)]
     pub fn is_analog_input1(&self) -> bool {
-        **self == PSEL_A::ANALOGINPUT1
+        *self == PSEL_A::ANALOG_INPUT1
     }
-    #[doc = "Checks if the value of the field is `ANALOGINPUT2`"]
+    #[doc = "Checks if the value of the field is `ANALOG_INPUT2`"]
     #[inline(always)]
     pub fn is_analog_input2(&self) -> bool {
-        **self == PSEL_A::ANALOGINPUT2
+        *self == PSEL_A::ANALOG_INPUT2
     }
-    #[doc = "Checks if the value of the field is `ANALOGINPUT3`"]
+    #[doc = "Checks if the value of the field is `ANALOG_INPUT3`"]
     #[inline(always)]
     pub fn is_analog_input3(&self) -> bool {
-        **self == PSEL_A::ANALOGINPUT3
+        *self == PSEL_A::ANALOG_INPUT3
     }
-    #[doc = "Checks if the value of the field is `ANALOGINPUT4`"]
+    #[doc = "Checks if the value of the field is `ANALOG_INPUT4`"]
     #[inline(always)]
     pub fn is_analog_input4(&self) -> bool {
-        **self == PSEL_A::ANALOGINPUT4
+        *self == PSEL_A::ANALOG_INPUT4
     }
-    #[doc = "Checks if the value of the field is `ANALOGINPUT5`"]
+    #[doc = "Checks if the value of the field is `ANALOG_INPUT5`"]
     #[inline(always)]
     pub fn is_analog_input5(&self) -> bool {
-        **self == PSEL_A::ANALOGINPUT5
+        *self == PSEL_A::ANALOG_INPUT5
     }
-    #[doc = "Checks if the value of the field is `ANALOGINPUT6`"]
+    #[doc = "Checks if the value of the field is `ANALOG_INPUT6`"]
     #[inline(always)]
     pub fn is_analog_input6(&self) -> bool {
-        **self == PSEL_A::ANALOGINPUT6
+        *self == PSEL_A::ANALOG_INPUT6
     }
-    #[doc = "Checks if the value of the field is `VDDDIV2`"]
+    #[doc = "Checks if the value of the field is `VDD_DIV2`"]
     #[inline(always)]
     pub fn is_vdd_div2(&self) -> bool {
-        **self == PSEL_A::VDDDIV2
-    }
-}
-impl core::ops::Deref for PSEL_R {
-    type Target = crate::FieldReader<u8, PSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PSEL_A::VDD_DIV2
     }
 }
 #[doc = "Field `PSEL` writer - Analog pin select"]
-pub struct PSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type PSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PSEL_SPEC, u8, PSEL_A, 3, O>;
+impl<'a, const O: u8> PSEL_W<'a, O> {
     #[doc = "AIN0 selected as analog input"]
     #[inline(always)]
     pub fn analog_input0(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOGINPUT0)
+        self.variant(PSEL_A::ANALOG_INPUT0)
     }
     #[doc = "AIN1 selected as analog input"]
     #[inline(always)]
     pub fn analog_input1(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOGINPUT1)
+        self.variant(PSEL_A::ANALOG_INPUT1)
     }
     #[doc = "AIN2 selected as analog input"]
     #[inline(always)]
     pub fn analog_input2(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOGINPUT2)
+        self.variant(PSEL_A::ANALOG_INPUT2)
     }
     #[doc = "AIN3 selected as analog input"]
     #[inline(always)]
     pub fn analog_input3(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOGINPUT3)
+        self.variant(PSEL_A::ANALOG_INPUT3)
     }
     #[doc = "AIN4 selected as analog input"]
     #[inline(always)]
     pub fn analog_input4(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOGINPUT4)
+        self.variant(PSEL_A::ANALOG_INPUT4)
     }
     #[doc = "AIN5 selected as analog input"]
     #[inline(always)]
     pub fn analog_input5(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOGINPUT5)
+        self.variant(PSEL_A::ANALOG_INPUT5)
     }
     #[doc = "AIN6 selected as analog input"]
     #[inline(always)]
     pub fn analog_input6(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOGINPUT6)
+        self.variant(PSEL_A::ANALOG_INPUT6)
     }
     #[doc = "VDD/2 selected as analog input"]
     #[inline(always)]
     pub fn vdd_div2(self) -> &'a mut W {
-        self.variant(PSEL_A::VDDDIV2)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
+        self.variant(PSEL_A::VDD_DIV2)
     }
 }
 impl R {
     #[doc = "Bits 0:2 - Analog pin select"]
     #[inline(always)]
     pub fn psel(&self) -> PSEL_R {
-        PSEL_R::new((self.bits & 0x07) as u8)
+        PSEL_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Analog pin select"]
     #[inline(always)]
-    pub fn psel(&mut self) -> PSEL_W {
-        PSEL_W { w: self }
+    pub fn psel(&mut self) -> PSEL_W<0> {
+        PSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

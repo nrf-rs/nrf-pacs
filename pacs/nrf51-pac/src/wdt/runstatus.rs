@@ -13,11 +13,13 @@ impl From<crate::R<RUNSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `RUNSTATUS` reader - Watchdog running status."]
+pub type RUNSTATUS_R = crate::BitReader<RUNSTATUS_A>;
 #[doc = "Watchdog running status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RUNSTATUS_A {
     #[doc = "0: Watchdog timer is not running."]
-    NOTRUNNING = 0,
+    NOT_RUNNING = 0,
     #[doc = "1: Watchdog timer is running."]
     RUNNING = 1,
 }
@@ -27,44 +29,31 @@ impl From<RUNSTATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RUNSTATUS` reader - Watchdog running status."]
-pub struct RUNSTATUS_R(crate::FieldReader<bool, RUNSTATUS_A>);
 impl RUNSTATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RUNSTATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RUNSTATUS_A {
         match self.bits {
-            false => RUNSTATUS_A::NOTRUNNING,
+            false => RUNSTATUS_A::NOT_RUNNING,
             true => RUNSTATUS_A::RUNNING,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTRUNNING`"]
+    #[doc = "Checks if the value of the field is `NOT_RUNNING`"]
     #[inline(always)]
     pub fn is_not_running(&self) -> bool {
-        **self == RUNSTATUS_A::NOTRUNNING
+        *self == RUNSTATUS_A::NOT_RUNNING
     }
     #[doc = "Checks if the value of the field is `RUNNING`"]
     #[inline(always)]
     pub fn is_running(&self) -> bool {
-        **self == RUNSTATUS_A::RUNNING
-    }
-}
-impl core::ops::Deref for RUNSTATUS_R {
-    type Target = crate::FieldReader<bool, RUNSTATUS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RUNSTATUS_A::RUNNING
     }
 }
 impl R {
     #[doc = "Bit 0 - Watchdog running status."]
     #[inline(always)]
     pub fn runstatus(&self) -> RUNSTATUS_R {
-        RUNSTATUS_R::new((self.bits & 0x01) != 0)
+        RUNSTATUS_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Watchdog running status.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [runstatus](index.html) module"]

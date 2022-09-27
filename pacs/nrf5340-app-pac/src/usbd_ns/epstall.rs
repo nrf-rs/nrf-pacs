@@ -20,17 +20,7 @@ impl From<crate::W<EPSTALL_SPEC>> for W {
     }
 }
 #[doc = "Field `EP` writer - Select endpoint number"]
-pub struct EP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type EP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EPSTALL_SPEC, u8, u8, 3, O>;
 #[doc = "Selects IN or OUT endpoint\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IO_AW {
@@ -46,15 +36,8 @@ impl From<IO_AW> for bool {
     }
 }
 #[doc = "Field `IO` writer - Selects IN or OUT endpoint"]
-pub struct IO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IO_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IO_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPSTALL_SPEC, IO_AW, O>;
+impl<'a, const O: u8> IO_W<'a, O> {
     #[doc = "Selects OUT endpoint"]
     #[inline(always)]
     pub fn out(self) -> &'a mut W {
@@ -65,28 +48,12 @@ impl<'a> IO_W<'a> {
     pub fn in_(self) -> &'a mut W {
         self.variant(IO_AW::IN)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 #[doc = "Stall selected endpoint\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STALL_AW {
     #[doc = "0: Don't stall selected endpoint"]
-    UNSTALL = 0,
+    UN_STALL = 0,
     #[doc = "1: Stall selected endpoint"]
     STALL = 1,
 }
@@ -97,57 +64,34 @@ impl From<STALL_AW> for bool {
     }
 }
 #[doc = "Field `STALL` writer - Stall selected endpoint"]
-pub struct STALL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STALL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STALL_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type STALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPSTALL_SPEC, STALL_AW, O>;
+impl<'a, const O: u8> STALL_W<'a, O> {
     #[doc = "Don't stall selected endpoint"]
     #[inline(always)]
     pub fn un_stall(self) -> &'a mut W {
-        self.variant(STALL_AW::UNSTALL)
+        self.variant(STALL_AW::UN_STALL)
     }
     #[doc = "Stall selected endpoint"]
     #[inline(always)]
     pub fn stall(self) -> &'a mut W {
         self.variant(STALL_AW::STALL)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bits 0:2 - Select endpoint number"]
     #[inline(always)]
-    pub fn ep(&mut self) -> EP_W {
-        EP_W { w: self }
+    pub fn ep(&mut self) -> EP_W<0> {
+        EP_W::new(self)
     }
     #[doc = "Bit 7 - Selects IN or OUT endpoint"]
     #[inline(always)]
-    pub fn io(&mut self) -> IO_W {
-        IO_W { w: self }
+    pub fn io(&mut self) -> IO_W<7> {
+        IO_W::new(self)
     }
     #[doc = "Bit 8 - Stall selected endpoint"]
     #[inline(always)]
-    pub fn stall(&mut self) -> STALL_W {
-        STALL_W { w: self }
+    pub fn stall(&mut self) -> STALL_W<8> {
+        STALL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

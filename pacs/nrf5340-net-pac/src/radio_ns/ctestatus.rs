@@ -14,50 +14,11 @@ impl From<crate::R<CTESTATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `CTETIME` reader - CTETime parsed from packet"]
-pub struct CTETIME_R(crate::FieldReader<u8, u8>);
-impl CTETIME_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CTETIME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CTETIME_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CTETIME_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RFU` reader - RFU parsed from packet"]
-pub struct RFU_R(crate::FieldReader<bool, bool>);
-impl RFU_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RFU_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RFU_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RFU_R = crate::BitReader<bool>;
 #[doc = "Field `CTETYPE` reader - CTEType parsed from packet"]
-pub struct CTETYPE_R(crate::FieldReader<u8, u8>);
-impl CTETYPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CTETYPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CTETYPE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CTETYPE_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:4 - CTETime parsed from packet"]
     #[inline(always)]
@@ -67,12 +28,12 @@ impl R {
     #[doc = "Bit 5 - RFU parsed from packet"]
     #[inline(always)]
     pub fn rfu(&self) -> RFU_R {
-        RFU_R::new(((self.bits >> 5) & 0x01) != 0)
+        RFU_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:7 - CTEType parsed from packet"]
     #[inline(always)]
     pub fn ctetype(&self) -> CTETYPE_R {
-        CTETYPE_R::new(((self.bits >> 6) & 0x03) as u8)
+        CTETYPE_R::new(((self.bits >> 6) & 3) as u8)
     }
 }
 #[doc = "CTEInfo parsed from received packet\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctestatus](index.html) module"]

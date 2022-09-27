@@ -34,6 +34,8 @@ impl From<crate::W<SHORTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FIELDDETECTED_ACTIVATE` reader - Shortcut between FIELDDETECTED event and ACTIVATE task"]
+pub type FIELDDETECTED_ACTIVATE_R = crate::BitReader<FIELDDETECTED_ACTIVATE_A>;
 #[doc = "Shortcut between FIELDDETECTED event and ACTIVATE task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIELDDETECTED_ACTIVATE_A {
@@ -48,14 +50,8 @@ impl From<FIELDDETECTED_ACTIVATE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIELDDETECTED_ACTIVATE` reader - Shortcut between FIELDDETECTED event and ACTIVATE task"]
-pub struct FIELDDETECTED_ACTIVATE_R(crate::FieldReader<bool, FIELDDETECTED_ACTIVATE_A>);
 impl FIELDDETECTED_ACTIVATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIELDDETECTED_ACTIVATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FIELDDETECTED_ACTIVATE_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl FIELDDETECTED_ACTIVATE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == FIELDDETECTED_ACTIVATE_A::DISABLED
+        *self == FIELDDETECTED_ACTIVATE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == FIELDDETECTED_ACTIVATE_A::ENABLED
-    }
-}
-impl core::ops::Deref for FIELDDETECTED_ACTIVATE_R {
-    type Target = crate::FieldReader<bool, FIELDDETECTED_ACTIVATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIELDDETECTED_ACTIVATE_A::ENABLED
     }
 }
 #[doc = "Field `FIELDDETECTED_ACTIVATE` writer - Shortcut between FIELDDETECTED event and ACTIVATE task"]
-pub struct FIELDDETECTED_ACTIVATE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIELDDETECTED_ACTIVATE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FIELDDETECTED_ACTIVATE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FIELDDETECTED_ACTIVATE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, FIELDDETECTED_ACTIVATE_A, O>;
+impl<'a, const O: u8> FIELDDETECTED_ACTIVATE_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +84,9 @@ impl<'a> FIELDDETECTED_ACTIVATE_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(FIELDDETECTED_ACTIVATE_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `FIELDLOST_SENSE` reader - Shortcut between FIELDLOST event and SENSE task"]
+pub type FIELDLOST_SENSE_R = crate::BitReader<FIELDLOST_SENSE_A>;
 #[doc = "Shortcut between FIELDLOST event and SENSE task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIELDLOST_SENSE_A {
@@ -132,14 +101,8 @@ impl From<FIELDLOST_SENSE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIELDLOST_SENSE` reader - Shortcut between FIELDLOST event and SENSE task"]
-pub struct FIELDLOST_SENSE_R(crate::FieldReader<bool, FIELDLOST_SENSE_A>);
 impl FIELDLOST_SENSE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIELDLOST_SENSE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FIELDLOST_SENSE_A {
         match self.bits {
@@ -150,31 +113,18 @@ impl FIELDLOST_SENSE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == FIELDLOST_SENSE_A::DISABLED
+        *self == FIELDLOST_SENSE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == FIELDLOST_SENSE_A::ENABLED
-    }
-}
-impl core::ops::Deref for FIELDLOST_SENSE_R {
-    type Target = crate::FieldReader<bool, FIELDLOST_SENSE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIELDLOST_SENSE_A::ENABLED
     }
 }
 #[doc = "Field `FIELDLOST_SENSE` writer - Shortcut between FIELDLOST event and SENSE task"]
-pub struct FIELDLOST_SENSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIELDLOST_SENSE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FIELDLOST_SENSE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FIELDLOST_SENSE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, FIELDLOST_SENSE_A, O>;
+impl<'a, const O: u8> FIELDLOST_SENSE_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,45 +135,29 @@ impl<'a> FIELDLOST_SENSE_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(FIELDLOST_SENSE_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Shortcut between FIELDDETECTED event and ACTIVATE task"]
     #[inline(always)]
     pub fn fielddetected_activate(&self) -> FIELDDETECTED_ACTIVATE_R {
-        FIELDDETECTED_ACTIVATE_R::new((self.bits & 0x01) != 0)
+        FIELDDETECTED_ACTIVATE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Shortcut between FIELDLOST event and SENSE task"]
     #[inline(always)]
     pub fn fieldlost_sense(&self) -> FIELDLOST_SENSE_R {
-        FIELDLOST_SENSE_R::new(((self.bits >> 1) & 0x01) != 0)
+        FIELDLOST_SENSE_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Shortcut between FIELDDETECTED event and ACTIVATE task"]
     #[inline(always)]
-    pub fn fielddetected_activate(&mut self) -> FIELDDETECTED_ACTIVATE_W {
-        FIELDDETECTED_ACTIVATE_W { w: self }
+    pub fn fielddetected_activate(&mut self) -> FIELDDETECTED_ACTIVATE_W<0> {
+        FIELDDETECTED_ACTIVATE_W::new(self)
     }
     #[doc = "Bit 1 - Shortcut between FIELDLOST event and SENSE task"]
     #[inline(always)]
-    pub fn fieldlost_sense(&mut self) -> FIELDLOST_SENSE_W {
-        FIELDLOST_SENSE_W { w: self }
+    pub fn fieldlost_sense(&mut self) -> FIELDLOST_SENSE_W<1> {
+        FIELDLOST_SENSE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -33,32 +33,19 @@ impl From<TSEN_AW> for u32 {
     }
 }
 #[doc = "Field `TSEN` writer - Allow stopping WDT"]
-pub struct TSEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TSEN_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TSEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TSEN_SPEC, u32, TSEN_AW, 32, O>;
+impl<'a, const O: u8> TSEN_W<'a, O> {
     #[doc = "Value to allow stopping WDT"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TSEN_AW::ENABLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
 }
 impl W {
     #[doc = "Bits 0:31 - Allow stopping WDT"]
     #[inline(always)]
-    pub fn tsen(&mut self) -> TSEN_W {
-        TSEN_W { w: self }
+    pub fn tsen(&mut self) -> TSEN_W<0> {
+        TSEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

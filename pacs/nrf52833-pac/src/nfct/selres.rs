@@ -35,212 +35,77 @@ impl From<crate::W<SELRES_SPEC>> for W {
     }
 }
 #[doc = "Field `RFU10` reader - Reserved for future use. Shall be 0."]
-pub struct RFU10_R(crate::FieldReader<u8, u8>);
-impl RFU10_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RFU10_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RFU10_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RFU10_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RFU10` writer - Reserved for future use. Shall be 0."]
-pub struct RFU10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RFU10_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type RFU10_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SELRES_SPEC, u8, u8, 2, O>;
 #[doc = "Field `CASCADE` reader - Cascade as defined by the b3 of SEL_RES response in the NFC Forum, NFC Digital Protocol Technical Specification (controlled by hardware, shall be 0)"]
-pub struct CASCADE_R(crate::FieldReader<bool, bool>);
-impl CASCADE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CASCADE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CASCADE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CASCADE_R = crate::BitReader<bool>;
 #[doc = "Field `CASCADE` writer - Cascade as defined by the b3 of SEL_RES response in the NFC Forum, NFC Digital Protocol Technical Specification (controlled by hardware, shall be 0)"]
-pub struct CASCADE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CASCADE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CASCADE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SELRES_SPEC, bool, O>;
 #[doc = "Field `RFU43` reader - Reserved for future use. Shall be 0."]
-pub struct RFU43_R(crate::FieldReader<u8, u8>);
-impl RFU43_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RFU43_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RFU43_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RFU43_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RFU43` writer - Reserved for future use. Shall be 0."]
-pub struct RFU43_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RFU43_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 3)) | ((value as u32 & 0x03) << 3);
-        self.w
-    }
-}
+pub type RFU43_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SELRES_SPEC, u8, u8, 2, O>;
 #[doc = "Field `PROTOCOL` reader - Protocol as defined by the b7:b6 of SEL_RES response in the NFC Forum, NFC Digital Protocol Technical Specification"]
-pub struct PROTOCOL_R(crate::FieldReader<u8, u8>);
-impl PROTOCOL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PROTOCOL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PROTOCOL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PROTOCOL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PROTOCOL` writer - Protocol as defined by the b7:b6 of SEL_RES response in the NFC Forum, NFC Digital Protocol Technical Specification"]
-pub struct PROTOCOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PROTOCOL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 5)) | ((value as u32 & 0x03) << 5);
-        self.w
-    }
-}
+pub type PROTOCOL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SELRES_SPEC, u8, u8, 2, O>;
 #[doc = "Field `RFU7` reader - Reserved for future use. Shall be 0."]
-pub struct RFU7_R(crate::FieldReader<bool, bool>);
-impl RFU7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RFU7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RFU7_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RFU7_R = crate::BitReader<bool>;
 #[doc = "Field `RFU7` writer - Reserved for future use. Shall be 0."]
-pub struct RFU7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RFU7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type RFU7_W<'a, const O: u8> = crate::BitWriter<'a, u32, SELRES_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Reserved for future use. Shall be 0."]
     #[inline(always)]
     pub fn rfu10(&self) -> RFU10_R {
-        RFU10_R::new((self.bits & 0x03) as u8)
+        RFU10_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Cascade as defined by the b3 of SEL_RES response in the NFC Forum, NFC Digital Protocol Technical Specification (controlled by hardware, shall be 0)"]
     #[inline(always)]
     pub fn cascade(&self) -> CASCADE_R {
-        CASCADE_R::new(((self.bits >> 2) & 0x01) != 0)
+        CASCADE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 3:4 - Reserved for future use. Shall be 0."]
     #[inline(always)]
     pub fn rfu43(&self) -> RFU43_R {
-        RFU43_R::new(((self.bits >> 3) & 0x03) as u8)
+        RFU43_R::new(((self.bits >> 3) & 3) as u8)
     }
     #[doc = "Bits 5:6 - Protocol as defined by the b7:b6 of SEL_RES response in the NFC Forum, NFC Digital Protocol Technical Specification"]
     #[inline(always)]
     pub fn protocol(&self) -> PROTOCOL_R {
-        PROTOCOL_R::new(((self.bits >> 5) & 0x03) as u8)
+        PROTOCOL_R::new(((self.bits >> 5) & 3) as u8)
     }
     #[doc = "Bit 7 - Reserved for future use. Shall be 0."]
     #[inline(always)]
     pub fn rfu7(&self) -> RFU7_R {
-        RFU7_R::new(((self.bits >> 7) & 0x01) != 0)
+        RFU7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Reserved for future use. Shall be 0."]
     #[inline(always)]
-    pub fn rfu10(&mut self) -> RFU10_W {
-        RFU10_W { w: self }
+    pub fn rfu10(&mut self) -> RFU10_W<0> {
+        RFU10_W::new(self)
     }
     #[doc = "Bit 2 - Cascade as defined by the b3 of SEL_RES response in the NFC Forum, NFC Digital Protocol Technical Specification (controlled by hardware, shall be 0)"]
     #[inline(always)]
-    pub fn cascade(&mut self) -> CASCADE_W {
-        CASCADE_W { w: self }
+    pub fn cascade(&mut self) -> CASCADE_W<2> {
+        CASCADE_W::new(self)
     }
     #[doc = "Bits 3:4 - Reserved for future use. Shall be 0."]
     #[inline(always)]
-    pub fn rfu43(&mut self) -> RFU43_W {
-        RFU43_W { w: self }
+    pub fn rfu43(&mut self) -> RFU43_W<3> {
+        RFU43_W::new(self)
     }
     #[doc = "Bits 5:6 - Protocol as defined by the b7:b6 of SEL_RES response in the NFC Forum, NFC Digital Protocol Technical Specification"]
     #[inline(always)]
-    pub fn protocol(&mut self) -> PROTOCOL_W {
-        PROTOCOL_W { w: self }
+    pub fn protocol(&mut self) -> PROTOCOL_W<5> {
+        PROTOCOL_W::new(self)
     }
     #[doc = "Bit 7 - Reserved for future use. Shall be 0."]
     #[inline(always)]
-    pub fn rfu7(&mut self) -> RFU7_W {
-        RFU7_W { w: self }
+    pub fn rfu7(&mut self) -> RFU7_W<7> {
+        RFU7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

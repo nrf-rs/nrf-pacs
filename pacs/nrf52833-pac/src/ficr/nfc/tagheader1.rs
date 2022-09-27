@@ -14,65 +14,13 @@ impl From<crate::R<TAGHEADER1_SPEC>> for R {
     }
 }
 #[doc = "Field `UD4` reader - Unique identifier byte 4"]
-pub struct UD4_R(crate::FieldReader<u8, u8>);
-impl UD4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UD4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UD4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UD4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UD5` reader - Unique identifier byte 5"]
-pub struct UD5_R(crate::FieldReader<u8, u8>);
-impl UD5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UD5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UD5_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UD5_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UD6` reader - Unique identifier byte 6"]
-pub struct UD6_R(crate::FieldReader<u8, u8>);
-impl UD6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UD6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UD6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UD6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UD7` reader - Unique identifier byte 7"]
-pub struct UD7_R(crate::FieldReader<u8, u8>);
-impl UD7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UD7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UD7_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UD7_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Unique identifier byte 4"]
     #[inline(always)]

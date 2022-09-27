@@ -23,7 +23,7 @@ impl From<crate::W<ERASEUICR_SPEC>> for W {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERASEUICR_AW {
     #[doc = "0: No operation"]
-    NOOPERATION = 0,
+    NO_OPERATION = 0,
     #[doc = "1: Start erase of UICR"]
     ERASE = 1,
 }
@@ -34,47 +34,24 @@ impl From<ERASEUICR_AW> for bool {
     }
 }
 #[doc = "Field `ERASEUICR` writer - Register starting erase of all user information configuration registers. The erase must be enabled using CONFIG.WEN before the UICR can be erased."]
-pub struct ERASEUICR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASEUICR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ERASEUICR_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ERASEUICR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ERASEUICR_SPEC, ERASEUICR_AW, O>;
+impl<'a, const O: u8> ERASEUICR_W<'a, O> {
     #[doc = "No operation"]
     #[inline(always)]
     pub fn no_operation(self) -> &'a mut W {
-        self.variant(ERASEUICR_AW::NOOPERATION)
+        self.variant(ERASEUICR_AW::NO_OPERATION)
     }
     #[doc = "Start erase of UICR"]
     #[inline(always)]
     pub fn erase(self) -> &'a mut W {
         self.variant(ERASEUICR_AW::ERASE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Register starting erase of all user information configuration registers. The erase must be enabled using CONFIG.WEN before the UICR can be erased."]
     #[inline(always)]
-    pub fn eraseuicr(&mut self) -> ERASEUICR_W {
-        ERASEUICR_W { w: self }
+    pub fn eraseuicr(&mut self) -> ERASEUICR_W<0> {
+        ERASEUICR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<FREQUENCY_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FREQUENCY` reader - SPI master data rate"]
+pub type FREQUENCY_R = crate::FieldReader<u32, FREQUENCY_A>;
 #[doc = "SPI master data rate\n\nValue on reset: 67108864"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -63,14 +65,8 @@ impl From<FREQUENCY_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `FREQUENCY` reader - SPI master data rate"]
-pub struct FREQUENCY_R(crate::FieldReader<u32, FREQUENCY_A>);
 impl FREQUENCY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        FREQUENCY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<FREQUENCY_A> {
         match self.bits {
@@ -89,66 +85,53 @@ impl FREQUENCY_R {
     #[doc = "Checks if the value of the field is `K125`"]
     #[inline(always)]
     pub fn is_k125(&self) -> bool {
-        **self == FREQUENCY_A::K125
+        *self == FREQUENCY_A::K125
     }
     #[doc = "Checks if the value of the field is `K250`"]
     #[inline(always)]
     pub fn is_k250(&self) -> bool {
-        **self == FREQUENCY_A::K250
+        *self == FREQUENCY_A::K250
     }
     #[doc = "Checks if the value of the field is `K500`"]
     #[inline(always)]
     pub fn is_k500(&self) -> bool {
-        **self == FREQUENCY_A::K500
+        *self == FREQUENCY_A::K500
     }
     #[doc = "Checks if the value of the field is `M1`"]
     #[inline(always)]
     pub fn is_m1(&self) -> bool {
-        **self == FREQUENCY_A::M1
+        *self == FREQUENCY_A::M1
     }
     #[doc = "Checks if the value of the field is `M2`"]
     #[inline(always)]
     pub fn is_m2(&self) -> bool {
-        **self == FREQUENCY_A::M2
+        *self == FREQUENCY_A::M2
     }
     #[doc = "Checks if the value of the field is `M4`"]
     #[inline(always)]
     pub fn is_m4(&self) -> bool {
-        **self == FREQUENCY_A::M4
+        *self == FREQUENCY_A::M4
     }
     #[doc = "Checks if the value of the field is `M8`"]
     #[inline(always)]
     pub fn is_m8(&self) -> bool {
-        **self == FREQUENCY_A::M8
+        *self == FREQUENCY_A::M8
     }
     #[doc = "Checks if the value of the field is `M16`"]
     #[inline(always)]
     pub fn is_m16(&self) -> bool {
-        **self == FREQUENCY_A::M16
+        *self == FREQUENCY_A::M16
     }
     #[doc = "Checks if the value of the field is `M32`"]
     #[inline(always)]
     pub fn is_m32(&self) -> bool {
-        **self == FREQUENCY_A::M32
-    }
-}
-impl core::ops::Deref for FREQUENCY_R {
-    type Target = crate::FieldReader<u32, FREQUENCY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FREQUENCY_A::M32
     }
 }
 #[doc = "Field `FREQUENCY` writer - SPI master data rate"]
-pub struct FREQUENCY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FREQUENCY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FREQUENCY_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type FREQUENCY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FREQUENCY_SPEC, u32, FREQUENCY_A, 32, O>;
+impl<'a, const O: u8> FREQUENCY_W<'a, O> {
     #[doc = "125 kbps"]
     #[inline(always)]
     pub fn k125(self) -> &'a mut W {
@@ -194,12 +177,6 @@ impl<'a> FREQUENCY_W<'a> {
     pub fn m32(self) -> &'a mut W {
         self.variant(FREQUENCY_A::M32)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:31 - SPI master data rate"]
@@ -211,8 +188,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - SPI master data rate"]
     #[inline(always)]
-    pub fn frequency(&mut self) -> FREQUENCY_W {
-        FREQUENCY_W { w: self }
+    pub fn frequency(&mut self) -> FREQUENCY_W<0> {
+        FREQUENCY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

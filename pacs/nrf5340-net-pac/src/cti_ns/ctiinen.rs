@@ -34,6 +34,8 @@ impl From<crate::W<CTIINEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TRIGINEN_0` reader - Enables a cross trigger event to channel 0 when a ctitrigin input is activated."]
+pub type TRIGINEN_0_R = crate::BitReader<TRIGINEN_0_A>;
 #[doc = "Enables a cross trigger event to channel 0 when a ctitrigin input is activated.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGINEN_0_A {
@@ -48,14 +50,8 @@ impl From<TRIGINEN_0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TRIGINEN_0` reader - Enables a cross trigger event to channel 0 when a ctitrigin input is activated."]
-pub struct TRIGINEN_0_R(crate::FieldReader<bool, TRIGINEN_0_A>);
 impl TRIGINEN_0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TRIGINEN_0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIGINEN_0_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl TRIGINEN_0_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TRIGINEN_0_A::DISABLED
+        *self == TRIGINEN_0_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TRIGINEN_0_A::ENABLED
-    }
-}
-impl core::ops::Deref for TRIGINEN_0_R {
-    type Target = crate::FieldReader<bool, TRIGINEN_0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRIGINEN_0_A::ENABLED
     }
 }
 #[doc = "Field `TRIGINEN_0` writer - Enables a cross trigger event to channel 0 when a ctitrigin input is activated."]
-pub struct TRIGINEN_0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRIGINEN_0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRIGINEN_0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TRIGINEN_0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINEN_SPEC, TRIGINEN_0_A, O>;
+impl<'a, const O: u8> TRIGINEN_0_W<'a, O> {
     #[doc = "Input trigger n events are ignored by channel 0."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> TRIGINEN_0_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(TRIGINEN_0_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `TRIGINEN_1` reader - Enables a cross trigger event to channel 1 when a ctitrigin input is activated."]
+pub type TRIGINEN_1_R = crate::BitReader<TRIGINEN_1_A>;
 #[doc = "Enables a cross trigger event to channel 1 when a ctitrigin input is activated.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGINEN_1_A {
@@ -132,14 +100,8 @@ impl From<TRIGINEN_1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TRIGINEN_1` reader - Enables a cross trigger event to channel 1 when a ctitrigin input is activated."]
-pub struct TRIGINEN_1_R(crate::FieldReader<bool, TRIGINEN_1_A>);
 impl TRIGINEN_1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TRIGINEN_1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIGINEN_1_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl TRIGINEN_1_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TRIGINEN_1_A::DISABLED
+        *self == TRIGINEN_1_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TRIGINEN_1_A::ENABLED
-    }
-}
-impl core::ops::Deref for TRIGINEN_1_R {
-    type Target = crate::FieldReader<bool, TRIGINEN_1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRIGINEN_1_A::ENABLED
     }
 }
 #[doc = "Field `TRIGINEN_1` writer - Enables a cross trigger event to channel 1 when a ctitrigin input is activated."]
-pub struct TRIGINEN_1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRIGINEN_1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRIGINEN_1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TRIGINEN_1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINEN_SPEC, TRIGINEN_1_A, O>;
+impl<'a, const O: u8> TRIGINEN_1_W<'a, O> {
     #[doc = "Input trigger n events are ignored by channel 1."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,23 +133,9 @@ impl<'a> TRIGINEN_1_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(TRIGINEN_1_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `TRIGINEN_2` reader - Enables a cross trigger event to channel 2 when a ctitrigin input is activated."]
+pub type TRIGINEN_2_R = crate::BitReader<TRIGINEN_2_A>;
 #[doc = "Enables a cross trigger event to channel 2 when a ctitrigin input is activated.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGINEN_2_A {
@@ -216,14 +150,8 @@ impl From<TRIGINEN_2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TRIGINEN_2` reader - Enables a cross trigger event to channel 2 when a ctitrigin input is activated."]
-pub struct TRIGINEN_2_R(crate::FieldReader<bool, TRIGINEN_2_A>);
 impl TRIGINEN_2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TRIGINEN_2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIGINEN_2_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl TRIGINEN_2_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TRIGINEN_2_A::DISABLED
+        *self == TRIGINEN_2_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TRIGINEN_2_A::ENABLED
-    }
-}
-impl core::ops::Deref for TRIGINEN_2_R {
-    type Target = crate::FieldReader<bool, TRIGINEN_2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRIGINEN_2_A::ENABLED
     }
 }
 #[doc = "Field `TRIGINEN_2` writer - Enables a cross trigger event to channel 2 when a ctitrigin input is activated."]
-pub struct TRIGINEN_2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRIGINEN_2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRIGINEN_2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TRIGINEN_2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINEN_SPEC, TRIGINEN_2_A, O>;
+impl<'a, const O: u8> TRIGINEN_2_W<'a, O> {
     #[doc = "Input trigger n events are ignored by channel 2."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -269,23 +183,9 @@ impl<'a> TRIGINEN_2_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(TRIGINEN_2_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `TRIGINEN_3` reader - Enables a cross trigger event to channel 3 when a ctitrigin input is activated."]
+pub type TRIGINEN_3_R = crate::BitReader<TRIGINEN_3_A>;
 #[doc = "Enables a cross trigger event to channel 3 when a ctitrigin input is activated.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGINEN_3_A {
@@ -300,14 +200,8 @@ impl From<TRIGINEN_3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TRIGINEN_3` reader - Enables a cross trigger event to channel 3 when a ctitrigin input is activated."]
-pub struct TRIGINEN_3_R(crate::FieldReader<bool, TRIGINEN_3_A>);
 impl TRIGINEN_3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TRIGINEN_3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIGINEN_3_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl TRIGINEN_3_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TRIGINEN_3_A::DISABLED
+        *self == TRIGINEN_3_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TRIGINEN_3_A::ENABLED
-    }
-}
-impl core::ops::Deref for TRIGINEN_3_R {
-    type Target = crate::FieldReader<bool, TRIGINEN_3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRIGINEN_3_A::ENABLED
     }
 }
 #[doc = "Field `TRIGINEN_3` writer - Enables a cross trigger event to channel 3 when a ctitrigin input is activated."]
-pub struct TRIGINEN_3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRIGINEN_3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRIGINEN_3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TRIGINEN_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINEN_SPEC, TRIGINEN_3_A, O>;
+impl<'a, const O: u8> TRIGINEN_3_W<'a, O> {
     #[doc = "Input trigger n events are ignored by channel 3."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -353,65 +233,49 @@ impl<'a> TRIGINEN_3_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(TRIGINEN_3_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enables a cross trigger event to channel 0 when a ctitrigin input is activated."]
     #[inline(always)]
     pub fn triginen_0(&self) -> TRIGINEN_0_R {
-        TRIGINEN_0_R::new((self.bits & 0x01) != 0)
+        TRIGINEN_0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enables a cross trigger event to channel 1 when a ctitrigin input is activated."]
     #[inline(always)]
     pub fn triginen_1(&self) -> TRIGINEN_1_R {
-        TRIGINEN_1_R::new(((self.bits >> 1) & 0x01) != 0)
+        TRIGINEN_1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enables a cross trigger event to channel 2 when a ctitrigin input is activated."]
     #[inline(always)]
     pub fn triginen_2(&self) -> TRIGINEN_2_R {
-        TRIGINEN_2_R::new(((self.bits >> 2) & 0x01) != 0)
+        TRIGINEN_2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enables a cross trigger event to channel 3 when a ctitrigin input is activated."]
     #[inline(always)]
     pub fn triginen_3(&self) -> TRIGINEN_3_R {
-        TRIGINEN_3_R::new(((self.bits >> 3) & 0x01) != 0)
+        TRIGINEN_3_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enables a cross trigger event to channel 0 when a ctitrigin input is activated."]
     #[inline(always)]
-    pub fn triginen_0(&mut self) -> TRIGINEN_0_W {
-        TRIGINEN_0_W { w: self }
+    pub fn triginen_0(&mut self) -> TRIGINEN_0_W<0> {
+        TRIGINEN_0_W::new(self)
     }
     #[doc = "Bit 1 - Enables a cross trigger event to channel 1 when a ctitrigin input is activated."]
     #[inline(always)]
-    pub fn triginen_1(&mut self) -> TRIGINEN_1_W {
-        TRIGINEN_1_W { w: self }
+    pub fn triginen_1(&mut self) -> TRIGINEN_1_W<1> {
+        TRIGINEN_1_W::new(self)
     }
     #[doc = "Bit 2 - Enables a cross trigger event to channel 2 when a ctitrigin input is activated."]
     #[inline(always)]
-    pub fn triginen_2(&mut self) -> TRIGINEN_2_W {
-        TRIGINEN_2_W { w: self }
+    pub fn triginen_2(&mut self) -> TRIGINEN_2_W<2> {
+        TRIGINEN_2_W::new(self)
     }
     #[doc = "Bit 3 - Enables a cross trigger event to channel 3 when a ctitrigin input is activated."]
     #[inline(always)]
-    pub fn triginen_3(&mut self) -> TRIGINEN_3_W {
-        TRIGINEN_3_W { w: self }
+    pub fn triginen_3(&mut self) -> TRIGINEN_3_W<3> {
+        TRIGINEN_3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

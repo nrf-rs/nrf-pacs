@@ -35,86 +35,19 @@ impl From<crate::W<PCNF1_SPEC>> for W {
     }
 }
 #[doc = "Field `MAXLEN` reader - Maximum length of packet payload. If the packet payload is larger than MAXLEN, the radio will truncate the payload to MAXLEN."]
-pub struct MAXLEN_R(crate::FieldReader<u8, u8>);
-impl MAXLEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MAXLEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MAXLEN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MAXLEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MAXLEN` writer - Maximum length of packet payload. If the packet payload is larger than MAXLEN, the radio will truncate the payload to MAXLEN."]
-pub struct MAXLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MAXLEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type MAXLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCNF1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `STATLEN` reader - Static length in number of bytes"]
-pub struct STATLEN_R(crate::FieldReader<u8, u8>);
-impl STATLEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        STATLEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STATLEN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STATLEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `STATLEN` writer - Static length in number of bytes"]
-pub struct STATLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STATLEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type STATLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCNF1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `BALEN` reader - Base address length in number of bytes"]
-pub struct BALEN_R(crate::FieldReader<u8, u8>);
-impl BALEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BALEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BALEN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BALEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BALEN` writer - Base address length in number of bytes"]
-pub struct BALEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BALEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
-    }
-}
+pub type BALEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCNF1_SPEC, u8, u8, 3, O>;
+#[doc = "Field `ENDIAN` reader - On air endianness of packet, this applies to the S0, LENGTH, S1 and the PAYLOAD fields."]
+pub type ENDIAN_R = crate::BitReader<ENDIAN_A>;
 #[doc = "On air endianness of packet, this applies to the S0, LENGTH, S1 and the PAYLOAD fields.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDIAN_A {
@@ -129,14 +62,8 @@ impl From<ENDIAN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ENDIAN` reader - On air endianness of packet, this applies to the S0, LENGTH, S1 and the PAYLOAD fields."]
-pub struct ENDIAN_R(crate::FieldReader<bool, ENDIAN_A>);
 impl ENDIAN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ENDIAN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENDIAN_A {
         match self.bits {
@@ -147,31 +74,17 @@ impl ENDIAN_R {
     #[doc = "Checks if the value of the field is `LITTLE`"]
     #[inline(always)]
     pub fn is_little(&self) -> bool {
-        **self == ENDIAN_A::LITTLE
+        *self == ENDIAN_A::LITTLE
     }
     #[doc = "Checks if the value of the field is `BIG`"]
     #[inline(always)]
     pub fn is_big(&self) -> bool {
-        **self == ENDIAN_A::BIG
-    }
-}
-impl core::ops::Deref for ENDIAN_R {
-    type Target = crate::FieldReader<bool, ENDIAN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENDIAN_A::BIG
     }
 }
 #[doc = "Field `ENDIAN` writer - On air endianness of packet, this applies to the S0, LENGTH, S1 and the PAYLOAD fields."]
-pub struct ENDIAN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENDIAN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENDIAN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ENDIAN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCNF1_SPEC, ENDIAN_A, O>;
+impl<'a, const O: u8> ENDIAN_W<'a, O> {
     #[doc = "Least Significant bit on air first"]
     #[inline(always)]
     pub fn little(self) -> &'a mut W {
@@ -182,23 +95,9 @@ impl<'a> ENDIAN_W<'a> {
     pub fn big(self) -> &'a mut W {
         self.variant(ENDIAN_A::BIG)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
 }
+#[doc = "Field `WHITEEN` reader - Enable or disable packet whitening"]
+pub type WHITEEN_R = crate::BitReader<WHITEEN_A>;
 #[doc = "Enable or disable packet whitening\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WHITEEN_A {
@@ -213,14 +112,8 @@ impl From<WHITEEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WHITEEN` reader - Enable or disable packet whitening"]
-pub struct WHITEEN_R(crate::FieldReader<bool, WHITEEN_A>);
 impl WHITEEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WHITEEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WHITEEN_A {
         match self.bits {
@@ -231,31 +124,17 @@ impl WHITEEN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == WHITEEN_A::DISABLED
+        *self == WHITEEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == WHITEEN_A::ENABLED
-    }
-}
-impl core::ops::Deref for WHITEEN_R {
-    type Target = crate::FieldReader<bool, WHITEEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WHITEEN_A::ENABLED
     }
 }
 #[doc = "Field `WHITEEN` writer - Enable or disable packet whitening"]
-pub struct WHITEEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WHITEEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WHITEEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WHITEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCNF1_SPEC, WHITEEN_A, O>;
+impl<'a, const O: u8> WHITEEN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -265,22 +144,6 @@ impl<'a> WHITEEN_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(WHITEEN_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
     }
 }
 impl R {
@@ -297,44 +160,44 @@ impl R {
     #[doc = "Bits 16:18 - Base address length in number of bytes"]
     #[inline(always)]
     pub fn balen(&self) -> BALEN_R {
-        BALEN_R::new(((self.bits >> 16) & 0x07) as u8)
+        BALEN_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bit 24 - On air endianness of packet, this applies to the S0, LENGTH, S1 and the PAYLOAD fields."]
     #[inline(always)]
     pub fn endian(&self) -> ENDIAN_R {
-        ENDIAN_R::new(((self.bits >> 24) & 0x01) != 0)
+        ENDIAN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Enable or disable packet whitening"]
     #[inline(always)]
     pub fn whiteen(&self) -> WHITEEN_R {
-        WHITEEN_R::new(((self.bits >> 25) & 0x01) != 0)
+        WHITEEN_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Maximum length of packet payload. If the packet payload is larger than MAXLEN, the radio will truncate the payload to MAXLEN."]
     #[inline(always)]
-    pub fn maxlen(&mut self) -> MAXLEN_W {
-        MAXLEN_W { w: self }
+    pub fn maxlen(&mut self) -> MAXLEN_W<0> {
+        MAXLEN_W::new(self)
     }
     #[doc = "Bits 8:15 - Static length in number of bytes"]
     #[inline(always)]
-    pub fn statlen(&mut self) -> STATLEN_W {
-        STATLEN_W { w: self }
+    pub fn statlen(&mut self) -> STATLEN_W<8> {
+        STATLEN_W::new(self)
     }
     #[doc = "Bits 16:18 - Base address length in number of bytes"]
     #[inline(always)]
-    pub fn balen(&mut self) -> BALEN_W {
-        BALEN_W { w: self }
+    pub fn balen(&mut self) -> BALEN_W<16> {
+        BALEN_W::new(self)
     }
     #[doc = "Bit 24 - On air endianness of packet, this applies to the S0, LENGTH, S1 and the PAYLOAD fields."]
     #[inline(always)]
-    pub fn endian(&mut self) -> ENDIAN_W {
-        ENDIAN_W { w: self }
+    pub fn endian(&mut self) -> ENDIAN_W<24> {
+        ENDIAN_W::new(self)
     }
     #[doc = "Bit 25 - Enable or disable packet whitening"]
     #[inline(always)]
-    pub fn whiteen(&mut self) -> WHITEEN_W {
-        WHITEEN_W { w: self }
+    pub fn whiteen(&mut self) -> WHITEEN_W<25> {
+        WHITEEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

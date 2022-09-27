@@ -33,32 +33,19 @@ impl From<RR_AW> for u32 {
     }
 }
 #[doc = "Field `RR` writer - Reload request register"]
-pub struct RR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RR_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type RR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RR_SPEC, u32, RR_AW, 32, O>;
+impl<'a, const O: u8> RR_W<'a, O> {
     #[doc = "Value to request a reload of the watchdog timer"]
     #[inline(always)]
     pub fn reload(self) -> &'a mut W {
         self.variant(RR_AW::RELOAD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
 }
 impl W {
     #[doc = "Bits 0:31 - Reload request register"]
     #[inline(always)]
-    pub fn rr(&mut self) -> RR_W {
-        RR_W { w: self }
+    pub fn rr(&mut self) -> RR_W<0> {
+        RR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

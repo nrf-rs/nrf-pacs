@@ -23,7 +23,7 @@ impl From<crate::W<ERASEALL_SPEC>> for W {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERASEALL_AW {
     #[doc = "0: No operation"]
-    NOOPERATION = 0,
+    NO_OPERATION = 0,
     #[doc = "1: Start chip erase"]
     ERASE = 1,
 }
@@ -34,47 +34,24 @@ impl From<ERASEALL_AW> for bool {
     }
 }
 #[doc = "Field `ERASEALL` writer - Erase all non-volatile memory including UICR registers. The erase must be enabled using CONFIG.WEN before the non-volatile memory can be erased."]
-pub struct ERASEALL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASEALL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ERASEALL_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ERASEALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, ERASEALL_SPEC, ERASEALL_AW, O>;
+impl<'a, const O: u8> ERASEALL_W<'a, O> {
     #[doc = "No operation"]
     #[inline(always)]
     pub fn no_operation(self) -> &'a mut W {
-        self.variant(ERASEALL_AW::NOOPERATION)
+        self.variant(ERASEALL_AW::NO_OPERATION)
     }
     #[doc = "Start chip erase"]
     #[inline(always)]
     pub fn erase(self) -> &'a mut W {
         self.variant(ERASEALL_AW::ERASE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Erase all non-volatile memory including UICR registers. The erase must be enabled using CONFIG.WEN before the non-volatile memory can be erased."]
     #[inline(always)]
-    pub fn eraseall(&mut self) -> ERASEALL_W {
-        ERASEALL_W { w: self }
+    pub fn eraseall(&mut self) -> ERASEALL_W<0> {
+        ERASEALL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

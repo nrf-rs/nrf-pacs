@@ -32,42 +32,20 @@ impl From<TASKS_COUNT_AW> for bool {
     }
 }
 #[doc = "Field `TASKS_COUNT` writer - Increment Timer (Counter mode only)"]
-pub struct TASKS_COUNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASKS_COUNT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TASKS_COUNT_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TASKS_COUNT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_COUNT_SPEC, TASKS_COUNT_AW, O>;
+impl<'a, const O: u8> TASKS_COUNT_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
     pub fn trigger(self) -> &'a mut W {
         self.variant(TASKS_COUNT_AW::TRIGGER)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Increment Timer (Counter mode only)"]
     #[inline(always)]
-    pub fn tasks_count(&mut self) -> TASKS_COUNT_W {
-        TASKS_COUNT_W { w: self }
+    pub fn tasks_count(&mut self) -> TASKS_COUNT_W<0> {
+        TASKS_COUNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

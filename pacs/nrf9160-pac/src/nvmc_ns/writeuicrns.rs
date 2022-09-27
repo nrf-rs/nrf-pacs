@@ -32,35 +32,12 @@ impl From<SET_AW> for bool {
     }
 }
 #[doc = "Field `SET` writer - Allow non-secure code to set APPROTECT"]
-pub struct SET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SET_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SET_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SET_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITEUICRNS_SPEC, SET_AW, O>;
+impl<'a, const O: u8> SET_W<'a, O> {
     #[doc = "Set value"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
         self.variant(SET_AW::SET)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 #[doc = "Key to write in order to validate the write operation\n\nValue on reset: 0"]
@@ -77,37 +54,24 @@ impl From<KEY_AW> for u32 {
     }
 }
 #[doc = "Field `KEY` writer - Key to write in order to validate the write operation"]
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: KEY_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WRITEUICRNS_SPEC, u32, KEY_AW, 28, O>;
+impl<'a, const O: u8> KEY_W<'a, O> {
     #[doc = "Key value"]
     #[inline(always)]
     pub fn keyvalid(self) -> &'a mut W {
         self.variant(KEY_AW::KEYVALID)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff_ffff << 4)) | ((value as u32 & 0x0fff_ffff) << 4);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Allow non-secure code to set APPROTECT"]
     #[inline(always)]
-    pub fn set(&mut self) -> SET_W {
-        SET_W { w: self }
+    pub fn set(&mut self) -> SET_W<0> {
+        SET_W::new(self)
     }
     #[doc = "Bits 4:31 - Key to write in order to validate the write operation"]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    pub fn key(&mut self) -> KEY_W<4> {
+        KEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

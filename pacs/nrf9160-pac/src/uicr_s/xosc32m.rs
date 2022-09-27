@@ -35,32 +35,9 @@ impl From<crate::W<XOSC32M_SPEC>> for W {
     }
 }
 #[doc = "Field `CTRL` reader - Pierce current DAC control signals"]
-pub struct CTRL_R(crate::FieldReader<u8, u8>);
-impl CTRL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CTRL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CTRL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CTRL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CTRL` writer - Pierce current DAC control signals"]
-pub struct CTRL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTRL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type CTRL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, XOSC32M_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - Pierce current DAC control signals"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Pierce current DAC control signals"]
     #[inline(always)]
-    pub fn ctrl(&mut self) -> CTRL_W {
-        CTRL_W { w: self }
+    pub fn ctrl(&mut self) -> CTRL_W<0> {
+        CTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

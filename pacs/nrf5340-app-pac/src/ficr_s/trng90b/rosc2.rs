@@ -14,20 +14,7 @@ impl From<crate::R<ROSC2_SPEC>> for R {
     }
 }
 #[doc = "Field `ROSC2` reader - Sample count for ring oscillator 2"]
-pub struct ROSC2_R(crate::FieldReader<u32, u32>);
-impl ROSC2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        ROSC2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ROSC2_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ROSC2_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Sample count for ring oscillator 2"]
     #[inline(always)]

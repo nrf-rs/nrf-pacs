@@ -34,6 +34,8 @@ impl From<crate::W<MCKEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MCKEN` reader - Master clock generator enable"]
+pub type MCKEN_R = crate::BitReader<MCKEN_A>;
 #[doc = "Master clock generator enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCKEN_A {
@@ -48,14 +50,8 @@ impl From<MCKEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MCKEN` reader - Master clock generator enable"]
-pub struct MCKEN_R(crate::FieldReader<bool, MCKEN_A>);
 impl MCKEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MCKEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MCKEN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl MCKEN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MCKEN_A::DISABLED
+        *self == MCKEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == MCKEN_A::ENABLED
-    }
-}
-impl core::ops::Deref for MCKEN_R {
-    type Target = crate::FieldReader<bool, MCKEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MCKEN_A::ENABLED
     }
 }
 #[doc = "Field `MCKEN` writer - Master clock generator enable"]
-pub struct MCKEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MCKEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MCKEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MCKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCKEN_SPEC, MCKEN_A, O>;
+impl<'a, const O: u8> MCKEN_W<'a, O> {
     #[doc = "Master clock generator disabled and PSEL.MCK not connected(available as GPIO)."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> MCKEN_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(MCKEN_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Master clock generator enable"]
     #[inline(always)]
     pub fn mcken(&self) -> MCKEN_R {
-        MCKEN_R::new((self.bits & 0x01) != 0)
+        MCKEN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Master clock generator enable"]
     #[inline(always)]
-    pub fn mcken(&mut self) -> MCKEN_W {
-        MCKEN_W { w: self }
+    pub fn mcken(&mut self) -> MCKEN_W<0> {
+        MCKEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

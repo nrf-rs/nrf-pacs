@@ -35,32 +35,9 @@ impl From<crate::W<CRCINIT_SPEC>> for W {
     }
 }
 #[doc = "Field `CRCINIT` reader - Initial value for CRC calculation. Decision point: START task."]
-pub struct CRCINIT_R(crate::FieldReader<u32, u32>);
-impl CRCINIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CRCINIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CRCINIT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CRCINIT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CRCINIT` writer - Initial value for CRC calculation. Decision point: START task."]
-pub struct CRCINIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRCINIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type CRCINIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CRCINIT_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - Initial value for CRC calculation. Decision point: START task."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Initial value for CRC calculation. Decision point: START task."]
     #[inline(always)]
-    pub fn crcinit(&mut self) -> CRCINIT_W {
-        CRCINIT_W { w: self }
+    pub fn crcinit(&mut self) -> CRCINIT_W<0> {
+        CRCINIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

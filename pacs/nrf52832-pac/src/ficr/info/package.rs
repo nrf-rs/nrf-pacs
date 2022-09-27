@@ -13,6 +13,8 @@ impl From<crate::R<PACKAGE_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `PACKAGE` reader - Package option"]
+pub type PACKAGE_R = crate::FieldReader<u32, PACKAGE_A>;
 #[doc = "Package option\n\nValue on reset: 8192"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -34,14 +36,8 @@ impl From<PACKAGE_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `PACKAGE` reader - Package option"]
-pub struct PACKAGE_R(crate::FieldReader<u32, PACKAGE_A>);
 impl PACKAGE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PACKAGE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PACKAGE_A> {
         match self.bits {
@@ -56,34 +52,27 @@ impl PACKAGE_R {
     #[doc = "Checks if the value of the field is `QF`"]
     #[inline(always)]
     pub fn is_qf(&self) -> bool {
-        **self == PACKAGE_A::QF
+        *self == PACKAGE_A::QF
     }
     #[doc = "Checks if the value of the field is `CH`"]
     #[inline(always)]
     pub fn is_ch(&self) -> bool {
-        **self == PACKAGE_A::CH
+        *self == PACKAGE_A::CH
     }
     #[doc = "Checks if the value of the field is `CI`"]
     #[inline(always)]
     pub fn is_ci(&self) -> bool {
-        **self == PACKAGE_A::CI
+        *self == PACKAGE_A::CI
     }
     #[doc = "Checks if the value of the field is `CK`"]
     #[inline(always)]
     pub fn is_ck(&self) -> bool {
-        **self == PACKAGE_A::CK
+        *self == PACKAGE_A::CK
     }
     #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
     #[inline(always)]
     pub fn is_unspecified(&self) -> bool {
-        **self == PACKAGE_A::UNSPECIFIED
-    }
-}
-impl core::ops::Deref for PACKAGE_R {
-    type Target = crate::FieldReader<u32, PACKAGE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PACKAGE_A::UNSPECIFIED
     }
 }
 impl R {

@@ -13,6 +13,8 @@ impl From<crate::R<DEVICETYPE_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `DEVICETYPE` reader - Device type"]
+pub type DEVICETYPE_R = crate::FieldReader<u32, DEVICETYPE_A>;
 #[doc = "Device type\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -28,14 +30,8 @@ impl From<DEVICETYPE_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `DEVICETYPE` reader - Device type"]
-pub struct DEVICETYPE_R(crate::FieldReader<u32, DEVICETYPE_A>);
 impl DEVICETYPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DEVICETYPE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DEVICETYPE_A> {
         match self.bits {
@@ -47,19 +43,12 @@ impl DEVICETYPE_R {
     #[doc = "Checks if the value of the field is `DIE`"]
     #[inline(always)]
     pub fn is_die(&self) -> bool {
-        **self == DEVICETYPE_A::DIE
+        *self == DEVICETYPE_A::DIE
     }
     #[doc = "Checks if the value of the field is `FPGA`"]
     #[inline(always)]
     pub fn is_fpga(&self) -> bool {
-        **self == DEVICETYPE_A::FPGA
-    }
-}
-impl core::ops::Deref for DEVICETYPE_R {
-    type Target = crate::FieldReader<u32, DEVICETYPE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DEVICETYPE_A::FPGA
     }
 }
 impl R {

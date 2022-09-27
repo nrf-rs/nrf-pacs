@@ -14,20 +14,7 @@ impl From<crate::R<EDSAMPLE_SPEC>> for R {
     }
 }
 #[doc = "Field `EDLVL` reader - IEEE 802.15.4 energy detect level"]
-pub struct EDLVL_R(crate::FieldReader<u8, u8>);
-impl EDLVL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EDLVL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EDLVL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EDLVL_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - IEEE 802.15.4 energy detect level"]
     #[inline(always)]

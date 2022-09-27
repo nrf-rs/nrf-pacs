@@ -13,6 +13,8 @@ impl From<crate::R<CTICHINSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `CTICHINSTATUS_0` reader - Shows the status of the ctitrigin 0 input."]
+pub type CTICHINSTATUS_0_R = crate::BitReader<CTICHINSTATUS_0_A>;
 #[doc = "Shows the status of the ctitrigin 0 input.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTICHINSTATUS_0_A {
@@ -27,14 +29,8 @@ impl From<CTICHINSTATUS_0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTICHINSTATUS_0` reader - Shows the status of the ctitrigin 0 input."]
-pub struct CTICHINSTATUS_0_R(crate::FieldReader<bool, CTICHINSTATUS_0_A>);
 impl CTICHINSTATUS_0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CTICHINSTATUS_0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTICHINSTATUS_0_A {
         match self.bits {
@@ -45,21 +41,16 @@ impl CTICHINSTATUS_0_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == CTICHINSTATUS_0_A::ACTIVE
+        *self == CTICHINSTATUS_0_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == CTICHINSTATUS_0_A::INACTIVE
+        *self == CTICHINSTATUS_0_A::INACTIVE
     }
 }
-impl core::ops::Deref for CTICHINSTATUS_0_R {
-    type Target = crate::FieldReader<bool, CTICHINSTATUS_0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `CTICHINSTATUS_1` reader - Shows the status of the ctitrigin 1 input."]
+pub type CTICHINSTATUS_1_R = crate::BitReader<CTICHINSTATUS_1_A>;
 #[doc = "Shows the status of the ctitrigin 1 input.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTICHINSTATUS_1_A {
@@ -74,14 +65,8 @@ impl From<CTICHINSTATUS_1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTICHINSTATUS_1` reader - Shows the status of the ctitrigin 1 input."]
-pub struct CTICHINSTATUS_1_R(crate::FieldReader<bool, CTICHINSTATUS_1_A>);
 impl CTICHINSTATUS_1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CTICHINSTATUS_1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTICHINSTATUS_1_A {
         match self.bits {
@@ -92,21 +77,16 @@ impl CTICHINSTATUS_1_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == CTICHINSTATUS_1_A::ACTIVE
+        *self == CTICHINSTATUS_1_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == CTICHINSTATUS_1_A::INACTIVE
+        *self == CTICHINSTATUS_1_A::INACTIVE
     }
 }
-impl core::ops::Deref for CTICHINSTATUS_1_R {
-    type Target = crate::FieldReader<bool, CTICHINSTATUS_1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `CTICHINSTATUS_2` reader - Shows the status of the ctitrigin 2 input."]
+pub type CTICHINSTATUS_2_R = crate::BitReader<CTICHINSTATUS_2_A>;
 #[doc = "Shows the status of the ctitrigin 2 input.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTICHINSTATUS_2_A {
@@ -121,14 +101,8 @@ impl From<CTICHINSTATUS_2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTICHINSTATUS_2` reader - Shows the status of the ctitrigin 2 input."]
-pub struct CTICHINSTATUS_2_R(crate::FieldReader<bool, CTICHINSTATUS_2_A>);
 impl CTICHINSTATUS_2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CTICHINSTATUS_2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTICHINSTATUS_2_A {
         match self.bits {
@@ -139,21 +113,16 @@ impl CTICHINSTATUS_2_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == CTICHINSTATUS_2_A::ACTIVE
+        *self == CTICHINSTATUS_2_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == CTICHINSTATUS_2_A::INACTIVE
+        *self == CTICHINSTATUS_2_A::INACTIVE
     }
 }
-impl core::ops::Deref for CTICHINSTATUS_2_R {
-    type Target = crate::FieldReader<bool, CTICHINSTATUS_2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `CTICHINSTATUS_3` reader - Shows the status of the ctitrigin 3 input."]
+pub type CTICHINSTATUS_3_R = crate::BitReader<CTICHINSTATUS_3_A>;
 #[doc = "Shows the status of the ctitrigin 3 input.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTICHINSTATUS_3_A {
@@ -168,14 +137,8 @@ impl From<CTICHINSTATUS_3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTICHINSTATUS_3` reader - Shows the status of the ctitrigin 3 input."]
-pub struct CTICHINSTATUS_3_R(crate::FieldReader<bool, CTICHINSTATUS_3_A>);
 impl CTICHINSTATUS_3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CTICHINSTATUS_3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTICHINSTATUS_3_A {
         match self.bits {
@@ -186,41 +149,34 @@ impl CTICHINSTATUS_3_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == CTICHINSTATUS_3_A::ACTIVE
+        *self == CTICHINSTATUS_3_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == CTICHINSTATUS_3_A::INACTIVE
-    }
-}
-impl core::ops::Deref for CTICHINSTATUS_3_R {
-    type Target = crate::FieldReader<bool, CTICHINSTATUS_3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTICHINSTATUS_3_A::INACTIVE
     }
 }
 impl R {
     #[doc = "Bit 0 - Shows the status of the ctitrigin 0 input."]
     #[inline(always)]
     pub fn ctichinstatus_0(&self) -> CTICHINSTATUS_0_R {
-        CTICHINSTATUS_0_R::new((self.bits & 0x01) != 0)
+        CTICHINSTATUS_0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Shows the status of the ctitrigin 1 input."]
     #[inline(always)]
     pub fn ctichinstatus_1(&self) -> CTICHINSTATUS_1_R {
-        CTICHINSTATUS_1_R::new(((self.bits >> 1) & 0x01) != 0)
+        CTICHINSTATUS_1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Shows the status of the ctitrigin 2 input."]
     #[inline(always)]
     pub fn ctichinstatus_2(&self) -> CTICHINSTATUS_2_R {
-        CTICHINSTATUS_2_R::new(((self.bits >> 2) & 0x01) != 0)
+        CTICHINSTATUS_2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Shows the status of the ctitrigin 3 input."]
     #[inline(always)]
     pub fn ctichinstatus_3(&self) -> CTICHINSTATUS_3_R {
-        CTICHINSTATUS_3_R::new(((self.bits >> 3) & 0x01) != 0)
+        CTICHINSTATUS_3_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 #[doc = "CTI Channel In Status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctichinstatus](index.html) module"]

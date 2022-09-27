@@ -32,42 +32,19 @@ impl From<ERASE_AW> for bool {
     }
 }
 #[doc = "Field `ERASE` writer - Erase the cache"]
-pub struct ERASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ERASE_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ERASE_SPEC, ERASE_AW, O>;
+impl<'a, const O: u8> ERASE_W<'a, O> {
     #[doc = "Erase cache"]
     #[inline(always)]
     pub fn erase(self) -> &'a mut W {
         self.variant(ERASE_AW::ERASE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Erase the cache"]
     #[inline(always)]
-    pub fn erase(&mut self) -> ERASE_W {
-        ERASE_W { w: self }
+    pub fn erase(&mut self) -> ERASE_W<0> {
+        ERASE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

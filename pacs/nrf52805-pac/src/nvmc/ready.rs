@@ -13,6 +13,8 @@ impl From<crate::R<READY_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `READY` reader - NVMC is ready or busy"]
+pub type READY_R = crate::BitReader<READY_A>;
 #[doc = "NVMC is ready or busy\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READY_A {
@@ -27,14 +29,8 @@ impl From<READY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `READY` reader - NVMC is ready or busy"]
-pub struct READY_R(crate::FieldReader<bool, READY_A>);
 impl READY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        READY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> READY_A {
         match self.bits {
@@ -45,26 +41,19 @@ impl READY_R {
     #[doc = "Checks if the value of the field is `BUSY`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        **self == READY_A::BUSY
+        *self == READY_A::BUSY
     }
     #[doc = "Checks if the value of the field is `READY`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        **self == READY_A::READY
-    }
-}
-impl core::ops::Deref for READY_R {
-    type Target = crate::FieldReader<bool, READY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == READY_A::READY
     }
 }
 impl R {
     #[doc = "Bit 0 - NVMC is ready or busy"]
     #[inline(always)]
     pub fn ready(&self) -> READY_R {
-        READY_R::new((self.bits & 0x01) != 0)
+        READY_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Ready flag\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ready](index.html) module"]

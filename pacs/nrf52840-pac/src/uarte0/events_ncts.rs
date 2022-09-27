@@ -35,54 +35,21 @@ impl From<crate::W<EVENTS_NCTS_SPEC>> for W {
     }
 }
 #[doc = "Field `EVENTS_NCTS` reader - "]
-pub struct EVENTS_NCTS_R(crate::FieldReader<bool, bool>);
-impl EVENTS_NCTS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EVENTS_NCTS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EVENTS_NCTS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EVENTS_NCTS_R = crate::BitReader<bool>;
 #[doc = "Field `EVENTS_NCTS` writer - "]
-pub struct EVENTS_NCTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVENTS_NCTS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EVENTS_NCTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVENTS_NCTS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn events_ncts(&self) -> EVENTS_NCTS_R {
-        EVENTS_NCTS_R::new((self.bits & 0x01) != 0)
+        EVENTS_NCTS_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn events_ncts(&mut self) -> EVENTS_NCTS_W {
-        EVENTS_NCTS_W { w: self }
+    pub fn events_ncts(&mut self) -> EVENTS_NCTS_W<0> {
+        EVENTS_NCTS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

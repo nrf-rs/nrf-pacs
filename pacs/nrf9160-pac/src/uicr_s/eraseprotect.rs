@@ -34,6 +34,8 @@ impl From<crate::W<ERASEPROTECT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PALL` reader - Blocks NVMC ERASEALL and CTRLAP ERASEALL functionality"]
+pub type PALL_R = crate::FieldReader<u32, PALL_A>;
 #[doc = "Blocks NVMC ERASEALL and CTRLAP ERASEALL functionality\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -49,14 +51,8 @@ impl From<PALL_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `PALL` reader - Blocks NVMC ERASEALL and CTRLAP ERASEALL functionality"]
-pub struct PALL_R(crate::FieldReader<u32, PALL_A>);
 impl PALL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PALL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PALL_A> {
         match self.bits {
@@ -68,31 +64,18 @@ impl PALL_R {
     #[doc = "Checks if the value of the field is `UNPROTECTED`"]
     #[inline(always)]
     pub fn is_unprotected(&self) -> bool {
-        **self == PALL_A::UNPROTECTED
+        *self == PALL_A::UNPROTECTED
     }
     #[doc = "Checks if the value of the field is `PROTECTED`"]
     #[inline(always)]
     pub fn is_protected(&self) -> bool {
-        **self == PALL_A::PROTECTED
-    }
-}
-impl core::ops::Deref for PALL_R {
-    type Target = crate::FieldReader<u32, PALL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PALL_A::PROTECTED
     }
 }
 #[doc = "Field `PALL` writer - Blocks NVMC ERASEALL and CTRLAP ERASEALL functionality"]
-pub struct PALL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PALL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PALL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PALL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ERASEPROTECT_SPEC, u32, PALL_A, 32, O>;
+impl<'a, const O: u8> PALL_W<'a, O> {
     #[doc = "Unprotected"]
     #[inline(always)]
     pub fn unprotected(self) -> &'a mut W {
@@ -102,12 +85,6 @@ impl<'a> PALL_W<'a> {
     #[inline(always)]
     pub fn protected(self) -> &'a mut W {
         self.variant(PALL_A::PROTECTED)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
     }
 }
 impl R {
@@ -120,8 +97,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Blocks NVMC ERASEALL and CTRLAP ERASEALL functionality"]
     #[inline(always)]
-    pub fn pall(&mut self) -> PALL_W {
-        PALL_W { w: self }
+    pub fn pall(&mut self) -> PALL_W<0> {
+        PALL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

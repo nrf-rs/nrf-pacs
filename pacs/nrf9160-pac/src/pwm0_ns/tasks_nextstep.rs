@@ -32,42 +32,20 @@ impl From<TASKS_NEXTSTEP_AW> for bool {
     }
 }
 #[doc = "Field `TASKS_NEXTSTEP` writer - Steps by one value in the current sequence on all enabled channels if DECODER.MODE=NextStep. Does not cause PWM generation to start if not running."]
-pub struct TASKS_NEXTSTEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASKS_NEXTSTEP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TASKS_NEXTSTEP_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TASKS_NEXTSTEP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_NEXTSTEP_SPEC, TASKS_NEXTSTEP_AW, O>;
+impl<'a, const O: u8> TASKS_NEXTSTEP_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
     pub fn trigger(self) -> &'a mut W {
         self.variant(TASKS_NEXTSTEP_AW::TRIGGER)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Steps by one value in the current sequence on all enabled channels if DECODER.MODE=NextStep. Does not cause PWM generation to start if not running."]
     #[inline(always)]
-    pub fn tasks_nextstep(&mut self) -> TASKS_NEXTSTEP_W {
-        TASKS_NEXTSTEP_W { w: self }
+    pub fn tasks_nextstep(&mut self) -> TASKS_NEXTSTEP_W<0> {
+        TASKS_NEXTSTEP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

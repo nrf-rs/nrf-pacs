@@ -14,20 +14,7 @@ impl From<crate::R<WLENGTHH_SPEC>> for R {
     }
 }
 #[doc = "Field `WLENGTHH` reader - SETUP data, byte 7, MSB of wLength"]
-pub struct WLENGTHH_R(crate::FieldReader<u8, u8>);
-impl WLENGTHH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WLENGTHH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WLENGTHH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WLENGTHH_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - SETUP data, byte 7, MSB of wLength"]
     #[inline(always)]

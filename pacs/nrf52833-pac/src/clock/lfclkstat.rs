@@ -13,6 +13,8 @@ impl From<crate::R<LFCLKSTAT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `SRC` reader - Source of LFCLK"]
+pub type SRC_R = crate::FieldReader<u8, SRC_A>;
 #[doc = "Source of LFCLK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -30,14 +32,8 @@ impl From<SRC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SRC` reader - Source of LFCLK"]
-pub struct SRC_R(crate::FieldReader<u8, SRC_A>);
 impl SRC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SRC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SRC_A> {
         match self.bits {
@@ -50,31 +46,26 @@ impl SRC_R {
     #[doc = "Checks if the value of the field is `RC`"]
     #[inline(always)]
     pub fn is_rc(&self) -> bool {
-        **self == SRC_A::RC
+        *self == SRC_A::RC
     }
     #[doc = "Checks if the value of the field is `XTAL`"]
     #[inline(always)]
     pub fn is_xtal(&self) -> bool {
-        **self == SRC_A::XTAL
+        *self == SRC_A::XTAL
     }
     #[doc = "Checks if the value of the field is `SYNTH`"]
     #[inline(always)]
     pub fn is_synth(&self) -> bool {
-        **self == SRC_A::SYNTH
+        *self == SRC_A::SYNTH
     }
 }
-impl core::ops::Deref for SRC_R {
-    type Target = crate::FieldReader<u8, SRC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `STATE` reader - LFCLK state"]
+pub type STATE_R = crate::BitReader<STATE_A>;
 #[doc = "LFCLK state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STATE_A {
     #[doc = "0: LFCLK not running"]
-    NOTRUNNING = 0,
+    NOT_RUNNING = 0,
     #[doc = "1: LFCLK running"]
     RUNNING = 1,
 }
@@ -84,49 +75,36 @@ impl From<STATE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STATE` reader - LFCLK state"]
-pub struct STATE_R(crate::FieldReader<bool, STATE_A>);
 impl STATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STATE_A {
         match self.bits {
-            false => STATE_A::NOTRUNNING,
+            false => STATE_A::NOT_RUNNING,
             true => STATE_A::RUNNING,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTRUNNING`"]
+    #[doc = "Checks if the value of the field is `NOT_RUNNING`"]
     #[inline(always)]
     pub fn is_not_running(&self) -> bool {
-        **self == STATE_A::NOTRUNNING
+        *self == STATE_A::NOT_RUNNING
     }
     #[doc = "Checks if the value of the field is `RUNNING`"]
     #[inline(always)]
     pub fn is_running(&self) -> bool {
-        **self == STATE_A::RUNNING
-    }
-}
-impl core::ops::Deref for STATE_R {
-    type Target = crate::FieldReader<bool, STATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STATE_A::RUNNING
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Source of LFCLK"]
     #[inline(always)]
     pub fn src(&self) -> SRC_R {
-        SRC_R::new((self.bits & 0x03) as u8)
+        SRC_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 16 - LFCLK state"]
     #[inline(always)]
     pub fn state(&self) -> STATE_R {
-        STATE_R::new(((self.bits >> 16) & 0x01) != 0)
+        STATE_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 #[doc = "LFCLK status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lfclkstat](index.html) module"]

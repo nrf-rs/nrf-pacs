@@ -13,6 +13,8 @@ impl From<crate::R<RAM_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `RAM` reader - RAM variant"]
+pub type RAM_R = crate::FieldReader<u32, RAM_A>;
 #[doc = "RAM variant\n\nValue on reset: 256"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -28,14 +30,8 @@ impl From<RAM_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `RAM` reader - RAM variant"]
-pub struct RAM_R(crate::FieldReader<u32, RAM_A>);
 impl RAM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        RAM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RAM_A> {
         match self.bits {
@@ -47,19 +43,12 @@ impl RAM_R {
     #[doc = "Checks if the value of the field is `K256`"]
     #[inline(always)]
     pub fn is_k256(&self) -> bool {
-        **self == RAM_A::K256
+        *self == RAM_A::K256
     }
     #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
     #[inline(always)]
     pub fn is_unspecified(&self) -> bool {
-        **self == RAM_A::UNSPECIFIED
-    }
-}
-impl core::ops::Deref for RAM_R {
-    type Target = crate::FieldReader<u32, RAM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RAM_A::UNSPECIFIED
     }
 }
 impl R {

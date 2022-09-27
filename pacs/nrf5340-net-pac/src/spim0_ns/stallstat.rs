@@ -34,6 +34,8 @@ impl From<crate::W<STALLSTAT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TX` reader - Stall status for EasyDMA RAM reads"]
+pub type TX_R = crate::BitReader<TX_A>;
 #[doc = "Stall status for EasyDMA RAM reads\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TX_A {
@@ -48,14 +50,8 @@ impl From<TX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX` reader - Stall status for EasyDMA RAM reads"]
-pub struct TX_R(crate::FieldReader<bool, TX_A>);
 impl TX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TX_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl TX_R {
     #[doc = "Checks if the value of the field is `NOSTALL`"]
     #[inline(always)]
     pub fn is_nostall(&self) -> bool {
-        **self == TX_A::NOSTALL
+        *self == TX_A::NOSTALL
     }
     #[doc = "Checks if the value of the field is `STALL`"]
     #[inline(always)]
     pub fn is_stall(&self) -> bool {
-        **self == TX_A::STALL
-    }
-}
-impl core::ops::Deref for TX_R {
-    type Target = crate::FieldReader<bool, TX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_A::STALL
     }
 }
 #[doc = "Field `TX` writer - Stall status for EasyDMA RAM reads"]
-pub struct TX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TX_W<'a, const O: u8> = crate::BitWriter<'a, u32, STALLSTAT_SPEC, TX_A, O>;
+impl<'a, const O: u8> TX_W<'a, O> {
     #[doc = "No stall"]
     #[inline(always)]
     pub fn nostall(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> TX_W<'a> {
     pub fn stall(self) -> &'a mut W {
         self.variant(TX_A::STALL)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `RX` reader - Stall status for EasyDMA RAM writes"]
+pub type RX_R = crate::BitReader<RX_A>;
 #[doc = "Stall status for EasyDMA RAM writes\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RX_A {
@@ -132,14 +100,8 @@ impl From<RX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX` reader - Stall status for EasyDMA RAM writes"]
-pub struct RX_R(crate::FieldReader<bool, RX_A>);
 impl RX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl RX_R {
     #[doc = "Checks if the value of the field is `NOSTALL`"]
     #[inline(always)]
     pub fn is_nostall(&self) -> bool {
-        **self == RX_A::NOSTALL
+        *self == RX_A::NOSTALL
     }
     #[doc = "Checks if the value of the field is `STALL`"]
     #[inline(always)]
     pub fn is_stall(&self) -> bool {
-        **self == RX_A::STALL
-    }
-}
-impl core::ops::Deref for RX_R {
-    type Target = crate::FieldReader<bool, RX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_A::STALL
     }
 }
 #[doc = "Field `RX` writer - Stall status for EasyDMA RAM writes"]
-pub struct RX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RX_W<'a, const O: u8> = crate::BitWriter<'a, u32, STALLSTAT_SPEC, RX_A, O>;
+impl<'a, const O: u8> RX_W<'a, O> {
     #[doc = "No stall"]
     #[inline(always)]
     pub fn nostall(self) -> &'a mut W {
@@ -185,45 +133,29 @@ impl<'a> RX_W<'a> {
     pub fn stall(self) -> &'a mut W {
         self.variant(RX_A::STALL)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Stall status for EasyDMA RAM reads"]
     #[inline(always)]
     pub fn tx(&self) -> TX_R {
-        TX_R::new((self.bits & 0x01) != 0)
+        TX_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Stall status for EasyDMA RAM writes"]
     #[inline(always)]
     pub fn rx(&self) -> RX_R {
-        RX_R::new(((self.bits >> 1) & 0x01) != 0)
+        RX_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Stall status for EasyDMA RAM reads"]
     #[inline(always)]
-    pub fn tx(&mut self) -> TX_W {
-        TX_W { w: self }
+    pub fn tx(&mut self) -> TX_W<0> {
+        TX_W::new(self)
     }
     #[doc = "Bit 1 - Stall status for EasyDMA RAM writes"]
     #[inline(always)]
-    pub fn rx(&mut self) -> RX_W {
-        RX_W { w: self }
+    pub fn rx(&mut self) -> RX_W<1> {
+        RX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

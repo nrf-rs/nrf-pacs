@@ -34,6 +34,8 @@ impl From<crate::W<HOST_CRYPTOKEY_SEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `HOST_CRYPTOKEY_SEL` reader - Select the source of the HW key that is used by the AES engine"]
+pub type HOST_CRYPTOKEY_SEL_R = crate::FieldReader<u8, HOST_CRYPTOKEY_SEL_A>;
 #[doc = "Select the source of the HW key that is used by the AES engine\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,14 +53,8 @@ impl From<HOST_CRYPTOKEY_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HOST_CRYPTOKEY_SEL` reader - Select the source of the HW key that is used by the AES engine"]
-pub struct HOST_CRYPTOKEY_SEL_R(crate::FieldReader<u8, HOST_CRYPTOKEY_SEL_A>);
 impl HOST_CRYPTOKEY_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HOST_CRYPTOKEY_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HOST_CRYPTOKEY_SEL_A> {
         match self.bits {
@@ -71,36 +67,23 @@ impl HOST_CRYPTOKEY_SEL_R {
     #[doc = "Checks if the value of the field is `K_DR`"]
     #[inline(always)]
     pub fn is_k_dr(&self) -> bool {
-        **self == HOST_CRYPTOKEY_SEL_A::K_DR
+        *self == HOST_CRYPTOKEY_SEL_A::K_DR
     }
     #[doc = "Checks if the value of the field is `K_PRTL`"]
     #[inline(always)]
     pub fn is_k_prtl(&self) -> bool {
-        **self == HOST_CRYPTOKEY_SEL_A::K_PRTL
+        *self == HOST_CRYPTOKEY_SEL_A::K_PRTL
     }
     #[doc = "Checks if the value of the field is `SESSION`"]
     #[inline(always)]
     pub fn is_session(&self) -> bool {
-        **self == HOST_CRYPTOKEY_SEL_A::SESSION
-    }
-}
-impl core::ops::Deref for HOST_CRYPTOKEY_SEL_R {
-    type Target = crate::FieldReader<u8, HOST_CRYPTOKEY_SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HOST_CRYPTOKEY_SEL_A::SESSION
     }
 }
 #[doc = "Field `HOST_CRYPTOKEY_SEL` writer - Select the source of the HW key that is used by the AES engine"]
-pub struct HOST_CRYPTOKEY_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HOST_CRYPTOKEY_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HOST_CRYPTOKEY_SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HOST_CRYPTOKEY_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HOST_CRYPTOKEY_SEL_SPEC, u8, HOST_CRYPTOKEY_SEL_A, 2, O>;
+impl<'a, const O: u8> HOST_CRYPTOKEY_SEL_W<'a, O> {
     #[doc = "Use device root key K_DR from CRYPTOCELL AO power domain"]
     #[inline(always)]
     pub fn k_dr(self) -> &'a mut W {
@@ -116,25 +99,19 @@ impl<'a> HOST_CRYPTOKEY_SEL_W<'a> {
     pub fn session(self) -> &'a mut W {
         self.variant(HOST_CRYPTOKEY_SEL_A::SESSION)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Select the source of the HW key that is used by the AES engine"]
     #[inline(always)]
     pub fn host_cryptokey_sel(&self) -> HOST_CRYPTOKEY_SEL_R {
-        HOST_CRYPTOKEY_SEL_R::new((self.bits & 0x03) as u8)
+        HOST_CRYPTOKEY_SEL_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Select the source of the HW key that is used by the AES engine"]
     #[inline(always)]
-    pub fn host_cryptokey_sel(&mut self) -> HOST_CRYPTOKEY_SEL_W {
-        HOST_CRYPTOKEY_SEL_W { w: self }
+    pub fn host_cryptokey_sel(&mut self) -> HOST_CRYPTOKEY_SEL_W<0> {
+        HOST_CRYPTOKEY_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

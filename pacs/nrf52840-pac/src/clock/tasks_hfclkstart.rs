@@ -20,32 +20,13 @@ impl From<crate::W<TASKS_HFCLKSTART_SPEC>> for W {
     }
 }
 #[doc = "Field `TASKS_HFCLKSTART` writer - "]
-pub struct TASKS_HFCLKSTART_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASKS_HFCLKSTART_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TASKS_HFCLKSTART_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_HFCLKSTART_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn tasks_hfclkstart(&mut self) -> TASKS_HFCLKSTART_W {
-        TASKS_HFCLKSTART_W { w: self }
+    pub fn tasks_hfclkstart(&mut self) -> TASKS_HFCLKSTART_W<0> {
+        TASKS_HFCLKSTART_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<DCDCEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DCDCEN` reader - Enable DCDC converter."]
+pub type DCDCEN_R = crate::BitReader<DCDCEN_A>;
 #[doc = "Enable DCDC converter.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCDCEN_A {
@@ -48,14 +50,8 @@ impl From<DCDCEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DCDCEN` reader - Enable DCDC converter."]
-pub struct DCDCEN_R(crate::FieldReader<bool, DCDCEN_A>);
 impl DCDCEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DCDCEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCDCEN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl DCDCEN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DCDCEN_A::DISABLED
+        *self == DCDCEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DCDCEN_A::ENABLED
-    }
-}
-impl core::ops::Deref for DCDCEN_R {
-    type Target = crate::FieldReader<bool, DCDCEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DCDCEN_A::ENABLED
     }
 }
 #[doc = "Field `DCDCEN` writer - Enable DCDC converter."]
-pub struct DCDCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCDCEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DCDCEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DCDCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCEN_SPEC, DCDCEN_A, O>;
+impl<'a, const O: u8> DCDCEN_W<'a, O> {
     #[doc = "DCDC converter disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> DCDCEN_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(DCDCEN_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable DCDC converter."]
     #[inline(always)]
     pub fn dcdcen(&self) -> DCDCEN_R {
-        DCDCEN_R::new((self.bits & 0x01) != 0)
+        DCDCEN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable DCDC converter."]
     #[inline(always)]
-    pub fn dcdcen(&mut self) -> DCDCEN_W {
-        DCDCEN_W { w: self }
+    pub fn dcdcen(&mut self) -> DCDCEN_W<0> {
+        DCDCEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

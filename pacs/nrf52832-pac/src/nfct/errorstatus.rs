@@ -35,148 +35,52 @@ impl From<crate::W<ERRORSTATUS_SPEC>> for W {
     }
 }
 #[doc = "Field `FRAMEDELAYTIMEOUT` reader - No STARTTX task triggered before expiration of the time set in FRAMEDELAYMAX"]
-pub struct FRAMEDELAYTIMEOUT_R(crate::FieldReader<bool, bool>);
-impl FRAMEDELAYTIMEOUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FRAMEDELAYTIMEOUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRAMEDELAYTIMEOUT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRAMEDELAYTIMEOUT_R = crate::BitReader<bool>;
 #[doc = "Field `FRAMEDELAYTIMEOUT` writer - No STARTTX task triggered before expiration of the time set in FRAMEDELAYMAX"]
-pub struct FRAMEDELAYTIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRAMEDELAYTIMEOUT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type FRAMEDELAYTIMEOUT_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, ERRORSTATUS_SPEC, bool, O>;
 #[doc = "Field `NFCFIELDTOOSTRONG` reader - Field level is too high at max load resistance"]
-pub struct NFCFIELDTOOSTRONG_R(crate::FieldReader<bool, bool>);
-impl NFCFIELDTOOSTRONG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NFCFIELDTOOSTRONG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NFCFIELDTOOSTRONG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NFCFIELDTOOSTRONG_R = crate::BitReader<bool>;
 #[doc = "Field `NFCFIELDTOOSTRONG` writer - Field level is too high at max load resistance"]
-pub struct NFCFIELDTOOSTRONG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NFCFIELDTOOSTRONG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type NFCFIELDTOOSTRONG_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, ERRORSTATUS_SPEC, bool, O>;
 #[doc = "Field `NFCFIELDTOOWEAK` reader - Field level is too low at min load resistance"]
-pub struct NFCFIELDTOOWEAK_R(crate::FieldReader<bool, bool>);
-impl NFCFIELDTOOWEAK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NFCFIELDTOOWEAK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NFCFIELDTOOWEAK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NFCFIELDTOOWEAK_R = crate::BitReader<bool>;
 #[doc = "Field `NFCFIELDTOOWEAK` writer - Field level is too low at min load resistance"]
-pub struct NFCFIELDTOOWEAK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NFCFIELDTOOWEAK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type NFCFIELDTOOWEAK_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, ERRORSTATUS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - No STARTTX task triggered before expiration of the time set in FRAMEDELAYMAX"]
     #[inline(always)]
     pub fn framedelaytimeout(&self) -> FRAMEDELAYTIMEOUT_R {
-        FRAMEDELAYTIMEOUT_R::new((self.bits & 0x01) != 0)
+        FRAMEDELAYTIMEOUT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - Field level is too high at max load resistance"]
     #[inline(always)]
     pub fn nfcfieldtoostrong(&self) -> NFCFIELDTOOSTRONG_R {
-        NFCFIELDTOOSTRONG_R::new(((self.bits >> 2) & 0x01) != 0)
+        NFCFIELDTOOSTRONG_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Field level is too low at min load resistance"]
     #[inline(always)]
     pub fn nfcfieldtooweak(&self) -> NFCFIELDTOOWEAK_R {
-        NFCFIELDTOOWEAK_R::new(((self.bits >> 3) & 0x01) != 0)
+        NFCFIELDTOOWEAK_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - No STARTTX task triggered before expiration of the time set in FRAMEDELAYMAX"]
     #[inline(always)]
-    pub fn framedelaytimeout(&mut self) -> FRAMEDELAYTIMEOUT_W {
-        FRAMEDELAYTIMEOUT_W { w: self }
+    pub fn framedelaytimeout(&mut self) -> FRAMEDELAYTIMEOUT_W<0> {
+        FRAMEDELAYTIMEOUT_W::new(self)
     }
     #[doc = "Bit 2 - Field level is too high at max load resistance"]
     #[inline(always)]
-    pub fn nfcfieldtoostrong(&mut self) -> NFCFIELDTOOSTRONG_W {
-        NFCFIELDTOOSTRONG_W { w: self }
+    pub fn nfcfieldtoostrong(&mut self) -> NFCFIELDTOOSTRONG_W<2> {
+        NFCFIELDTOOSTRONG_W::new(self)
     }
     #[doc = "Bit 3 - Field level is too low at min load resistance"]
     #[inline(always)]
-    pub fn nfcfieldtooweak(&mut self) -> NFCFIELDTOOWEAK_W {
-        NFCFIELDTOOWEAK_W { w: self }
+    pub fn nfcfieldtooweak(&mut self) -> NFCFIELDTOOWEAK_W<3> {
+        NFCFIELDTOOWEAK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

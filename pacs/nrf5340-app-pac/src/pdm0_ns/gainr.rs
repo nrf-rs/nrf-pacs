@@ -34,16 +34,18 @@ impl From<crate::W<GAINR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `GAINR` reader - Right output gain adjustment, in 0.5 dB steps, around the default module gain (see electrical parameters)"]
+pub type GAINR_R = crate::FieldReader<u8, GAINR_A>;
 #[doc = "Right output gain adjustment, in 0.5 dB steps, around the default module gain (see electrical parameters)\n\nValue on reset: 40"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum GAINR_A {
     #[doc = "0: -20 dB gain adjustment (minimum)"]
-    MINGAIN = 0,
+    MIN_GAIN = 0,
     #[doc = "40: 0 dB gain adjustment"]
-    DEFAULTGAIN = 40,
+    DEFAULT_GAIN = 40,
     #[doc = "80: +20 dB gain adjustment (maximum)"]
-    MAXGAIN = 80,
+    MAX_GAIN = 80,
 }
 impl From<GAINR_A> for u8 {
     #[inline(always)]
@@ -51,76 +53,50 @@ impl From<GAINR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `GAINR` reader - Right output gain adjustment, in 0.5 dB steps, around the default module gain (see electrical parameters)"]
-pub struct GAINR_R(crate::FieldReader<u8, GAINR_A>);
 impl GAINR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        GAINR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<GAINR_A> {
         match self.bits {
-            0 => Some(GAINR_A::MINGAIN),
-            40 => Some(GAINR_A::DEFAULTGAIN),
-            80 => Some(GAINR_A::MAXGAIN),
+            0 => Some(GAINR_A::MIN_GAIN),
+            40 => Some(GAINR_A::DEFAULT_GAIN),
+            80 => Some(GAINR_A::MAX_GAIN),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `MINGAIN`"]
+    #[doc = "Checks if the value of the field is `MIN_GAIN`"]
     #[inline(always)]
     pub fn is_min_gain(&self) -> bool {
-        **self == GAINR_A::MINGAIN
+        *self == GAINR_A::MIN_GAIN
     }
-    #[doc = "Checks if the value of the field is `DEFAULTGAIN`"]
+    #[doc = "Checks if the value of the field is `DEFAULT_GAIN`"]
     #[inline(always)]
     pub fn is_default_gain(&self) -> bool {
-        **self == GAINR_A::DEFAULTGAIN
+        *self == GAINR_A::DEFAULT_GAIN
     }
-    #[doc = "Checks if the value of the field is `MAXGAIN`"]
+    #[doc = "Checks if the value of the field is `MAX_GAIN`"]
     #[inline(always)]
     pub fn is_max_gain(&self) -> bool {
-        **self == GAINR_A::MAXGAIN
-    }
-}
-impl core::ops::Deref for GAINR_R {
-    type Target = crate::FieldReader<u8, GAINR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GAINR_A::MAX_GAIN
     }
 }
 #[doc = "Field `GAINR` writer - Right output gain adjustment, in 0.5 dB steps, around the default module gain (see electrical parameters)"]
-pub struct GAINR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GAINR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GAINR_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type GAINR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GAINR_SPEC, u8, GAINR_A, 7, O>;
+impl<'a, const O: u8> GAINR_W<'a, O> {
     #[doc = "-20 dB gain adjustment (minimum)"]
     #[inline(always)]
     pub fn min_gain(self) -> &'a mut W {
-        self.variant(GAINR_A::MINGAIN)
+        self.variant(GAINR_A::MIN_GAIN)
     }
     #[doc = "0 dB gain adjustment"]
     #[inline(always)]
     pub fn default_gain(self) -> &'a mut W {
-        self.variant(GAINR_A::DEFAULTGAIN)
+        self.variant(GAINR_A::DEFAULT_GAIN)
     }
     #[doc = "+20 dB gain adjustment (maximum)"]
     #[inline(always)]
     pub fn max_gain(self) -> &'a mut W {
-        self.variant(GAINR_A::MAXGAIN)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
+        self.variant(GAINR_A::MAX_GAIN)
     }
 }
 impl R {
@@ -133,8 +109,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Right output gain adjustment, in 0.5 dB steps, around the default module gain (see electrical parameters)"]
     #[inline(always)]
-    pub fn gainr(&mut self) -> GAINR_W {
-        GAINR_W { w: self }
+    pub fn gainr(&mut self) -> GAINR_W<0> {
+        GAINR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

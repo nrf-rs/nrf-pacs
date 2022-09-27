@@ -34,16 +34,18 @@ impl From<crate::W<HFXOCNT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `HFXOCNT` reader - HFXO startup counter. Total debounce time = HFXOCNT*64 us + 0.5 us"]
+pub type HFXOCNT_R = crate::FieldReader<u8, HFXOCNT_A>;
 #[doc = "HFXO startup counter. Total debounce time = HFXOCNT*64 us + 0.5 us\n\nValue on reset: 255"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum HFXOCNT_A {
     #[doc = "0: Min debounce time = (0*64 us + 0.5 us)"]
-    MINDEBOUNCETIME = 0,
+    MIN_DEBOUNCE_TIME = 0,
     #[doc = "254: Max debounce time = (254*64 us + 0.5 us)"]
-    MAXDEBOUNCETIME = 254,
+    MAX_DEBOUNCE_TIME = 254,
     #[doc = "255: Default debounce time for erased UICR = 4*64 us + 0.5 us"]
-    DEFAULTDEBOUNCETIME = 255,
+    DEFAULT_DEBOUNCE_TIME = 255,
 }
 impl From<HFXOCNT_A> for u8 {
     #[inline(always)]
@@ -51,76 +53,51 @@ impl From<HFXOCNT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HFXOCNT` reader - HFXO startup counter. Total debounce time = HFXOCNT*64 us + 0.5 us"]
-pub struct HFXOCNT_R(crate::FieldReader<u8, HFXOCNT_A>);
 impl HFXOCNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HFXOCNT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HFXOCNT_A> {
         match self.bits {
-            0 => Some(HFXOCNT_A::MINDEBOUNCETIME),
-            254 => Some(HFXOCNT_A::MAXDEBOUNCETIME),
-            255 => Some(HFXOCNT_A::DEFAULTDEBOUNCETIME),
+            0 => Some(HFXOCNT_A::MIN_DEBOUNCE_TIME),
+            254 => Some(HFXOCNT_A::MAX_DEBOUNCE_TIME),
+            255 => Some(HFXOCNT_A::DEFAULT_DEBOUNCE_TIME),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `MINDEBOUNCETIME`"]
+    #[doc = "Checks if the value of the field is `MIN_DEBOUNCE_TIME`"]
     #[inline(always)]
     pub fn is_min_debounce_time(&self) -> bool {
-        **self == HFXOCNT_A::MINDEBOUNCETIME
+        *self == HFXOCNT_A::MIN_DEBOUNCE_TIME
     }
-    #[doc = "Checks if the value of the field is `MAXDEBOUNCETIME`"]
+    #[doc = "Checks if the value of the field is `MAX_DEBOUNCE_TIME`"]
     #[inline(always)]
     pub fn is_max_debounce_time(&self) -> bool {
-        **self == HFXOCNT_A::MAXDEBOUNCETIME
+        *self == HFXOCNT_A::MAX_DEBOUNCE_TIME
     }
-    #[doc = "Checks if the value of the field is `DEFAULTDEBOUNCETIME`"]
+    #[doc = "Checks if the value of the field is `DEFAULT_DEBOUNCE_TIME`"]
     #[inline(always)]
     pub fn is_default_debounce_time(&self) -> bool {
-        **self == HFXOCNT_A::DEFAULTDEBOUNCETIME
-    }
-}
-impl core::ops::Deref for HFXOCNT_R {
-    type Target = crate::FieldReader<u8, HFXOCNT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HFXOCNT_A::DEFAULT_DEBOUNCE_TIME
     }
 }
 #[doc = "Field `HFXOCNT` writer - HFXO startup counter. Total debounce time = HFXOCNT*64 us + 0.5 us"]
-pub struct HFXOCNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFXOCNT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HFXOCNT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HFXOCNT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXOCNT_SPEC, u8, HFXOCNT_A, 8, O>;
+impl<'a, const O: u8> HFXOCNT_W<'a, O> {
     #[doc = "Min debounce time = (0*64 us + 0.5 us)"]
     #[inline(always)]
     pub fn min_debounce_time(self) -> &'a mut W {
-        self.variant(HFXOCNT_A::MINDEBOUNCETIME)
+        self.variant(HFXOCNT_A::MIN_DEBOUNCE_TIME)
     }
     #[doc = "Max debounce time = (254*64 us + 0.5 us)"]
     #[inline(always)]
     pub fn max_debounce_time(self) -> &'a mut W {
-        self.variant(HFXOCNT_A::MAXDEBOUNCETIME)
+        self.variant(HFXOCNT_A::MAX_DEBOUNCE_TIME)
     }
     #[doc = "Default debounce time for erased UICR = 4*64 us + 0.5 us"]
     #[inline(always)]
     pub fn default_debounce_time(self) -> &'a mut W {
-        self.variant(HFXOCNT_A::DEFAULTDEBOUNCETIME)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
+        self.variant(HFXOCNT_A::DEFAULT_DEBOUNCE_TIME)
     }
 }
 impl R {
@@ -133,8 +110,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - HFXO startup counter. Total debounce time = HFXOCNT*64 us + 0.5 us"]
     #[inline(always)]
-    pub fn hfxocnt(&mut self) -> HFXOCNT_W {
-        HFXOCNT_W { w: self }
+    pub fn hfxocnt(&mut self) -> HFXOCNT_W<0> {
+        HFXOCNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

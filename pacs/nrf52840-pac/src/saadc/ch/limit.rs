@@ -35,59 +35,13 @@ impl From<crate::W<LIMIT_SPEC>> for W {
     }
 }
 #[doc = "Field `LOW` reader - Low level limit"]
-pub struct LOW_R(crate::FieldReader<u16, u16>);
-impl LOW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        LOW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOW_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOW_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LOW` writer - Low level limit"]
-pub struct LOW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOW_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type LOW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LIMIT_SPEC, u16, u16, 16, O>;
 #[doc = "Field `HIGH` reader - High level limit"]
-pub struct HIGH_R(crate::FieldReader<u16, u16>);
-impl HIGH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        HIGH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HIGH_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HIGH_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `HIGH` writer - High level limit"]
-pub struct HIGH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIGH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type HIGH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LIMIT_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Low level limit"]
     #[inline(always)]
@@ -103,13 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Low level limit"]
     #[inline(always)]
-    pub fn low(&mut self) -> LOW_W {
-        LOW_W { w: self }
+    pub fn low(&mut self) -> LOW_W<0> {
+        LOW_W::new(self)
     }
     #[doc = "Bits 16:31 - High level limit"]
     #[inline(always)]
-    pub fn high(&mut self) -> HIGH_W {
-        HIGH_W { w: self }
+    pub fn high(&mut self) -> HIGH_W<16> {
+        HIGH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

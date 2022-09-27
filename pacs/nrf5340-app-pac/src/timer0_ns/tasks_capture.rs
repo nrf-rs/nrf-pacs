@@ -34,43 +34,21 @@ impl From<TASKS_CAPTURE_AW> for bool {
 }
 #[doc = "Field `TASKS_CAPTURE` writer - Capture Timer value to CC\\[n\\]
 register"]
-pub struct TASKS_CAPTURE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASKS_CAPTURE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TASKS_CAPTURE_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TASKS_CAPTURE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_CAPTURE_SPEC, TASKS_CAPTURE_AW, O>;
+impl<'a, const O: u8> TASKS_CAPTURE_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
     pub fn trigger(self) -> &'a mut W {
         self.variant(TASKS_CAPTURE_AW::TRIGGER)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 impl W {
     #[doc = "Bit 0 - Capture Timer value to CC\\[n\\]
 register"]
     #[inline(always)]
-    pub fn tasks_capture(&mut self) -> TASKS_CAPTURE_W {
-        TASKS_CAPTURE_W { w: self }
+    pub fn tasks_capture(&mut self) -> TASKS_CAPTURE_W<0> {
+        TASKS_CAPTURE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

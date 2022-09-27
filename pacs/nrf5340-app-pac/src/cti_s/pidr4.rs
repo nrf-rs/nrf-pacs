@@ -13,6 +13,8 @@ impl From<crate::R<PIDR4_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `DES_2` reader - Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component."]
+pub type DES_2_R = crate::FieldReader<u8, DES_2_A>;
 #[doc = "Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component.\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -26,14 +28,8 @@ impl From<DES_2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DES_2` reader - Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component."]
-pub struct DES_2_R(crate::FieldReader<u8, DES_2_A>);
 impl DES_2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DES_2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DES_2_A> {
         match self.bits {
@@ -44,31 +40,11 @@ impl DES_2_R {
     #[doc = "Checks if the value of the field is `CODE`"]
     #[inline(always)]
     pub fn is_code(&self) -> bool {
-        **self == DES_2_A::CODE
-    }
-}
-impl core::ops::Deref for DES_2_R {
-    type Target = crate::FieldReader<u8, DES_2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DES_2_A::CODE
     }
 }
 #[doc = "Field `SIZE` reader - Always 0b0000. Indicates that the device only occupies 4KB of memory."]
-pub struct SIZE_R(crate::FieldReader<u8, u8>);
-impl SIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SIZE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SIZE_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:3 - Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component."]
     #[inline(always)]

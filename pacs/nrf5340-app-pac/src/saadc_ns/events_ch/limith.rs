@@ -34,11 +34,13 @@ impl From<crate::W<LIMITH_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LIMITH` reader - Last results is equal or above CH\\[n\\].LIMIT.HIGH"]
+pub type LIMITH_R = crate::BitReader<LIMITH_A>;
 #[doc = "Last results is equal or above CH\\[n\\].LIMIT.HIGH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LIMITH_A {
     #[doc = "0: Event not generated"]
-    NOTGENERATED = 0,
+    NOT_GENERATED = 0,
     #[doc = "1: Event generated"]
     GENERATED = 1,
 }
@@ -48,88 +50,52 @@ impl From<LIMITH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LIMITH` reader - Last results is equal or above CH\\[n\\].LIMIT.HIGH"]
-pub struct LIMITH_R(crate::FieldReader<bool, LIMITH_A>);
 impl LIMITH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LIMITH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LIMITH_A {
         match self.bits {
-            false => LIMITH_A::NOTGENERATED,
+            false => LIMITH_A::NOT_GENERATED,
             true => LIMITH_A::GENERATED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTGENERATED`"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        **self == LIMITH_A::NOTGENERATED
+        *self == LIMITH_A::NOT_GENERATED
     }
     #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        **self == LIMITH_A::GENERATED
-    }
-}
-impl core::ops::Deref for LIMITH_R {
-    type Target = crate::FieldReader<bool, LIMITH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LIMITH_A::GENERATED
     }
 }
 #[doc = "Field `LIMITH` writer - Last results is equal or above CH\\[n\\].LIMIT.HIGH"]
-pub struct LIMITH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LIMITH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LIMITH_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LIMITH_W<'a, const O: u8> = crate::BitWriter<'a, u32, LIMITH_SPEC, LIMITH_A, O>;
+impl<'a, const O: u8> LIMITH_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
     pub fn not_generated(self) -> &'a mut W {
-        self.variant(LIMITH_A::NOTGENERATED)
+        self.variant(LIMITH_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
     pub fn generated(self) -> &'a mut W {
         self.variant(LIMITH_A::GENERATED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Last results is equal or above CH\\[n\\].LIMIT.HIGH"]
     #[inline(always)]
     pub fn limith(&self) -> LIMITH_R {
-        LIMITH_R::new((self.bits & 0x01) != 0)
+        LIMITH_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Last results is equal or above CH\\[n\\].LIMIT.HIGH"]
     #[inline(always)]
-    pub fn limith(&mut self) -> LIMITH_W {
-        LIMITH_W { w: self }
+    pub fn limith(&mut self) -> LIMITH_W<0> {
+        LIMITH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

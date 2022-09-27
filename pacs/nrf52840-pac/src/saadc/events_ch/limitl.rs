@@ -35,54 +35,21 @@ impl From<crate::W<LIMITL_SPEC>> for W {
     }
 }
 #[doc = "Field `LIMITL` reader - "]
-pub struct LIMITL_R(crate::FieldReader<bool, bool>);
-impl LIMITL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LIMITL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LIMITL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LIMITL_R = crate::BitReader<bool>;
 #[doc = "Field `LIMITL` writer - "]
-pub struct LIMITL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LIMITL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type LIMITL_W<'a, const O: u8> = crate::BitWriter<'a, u32, LIMITL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn limitl(&self) -> LIMITL_R {
-        LIMITL_R::new((self.bits & 0x01) != 0)
+        LIMITL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn limitl(&mut self) -> LIMITL_W {
-        LIMITL_W { w: self }
+    pub fn limitl(&mut self) -> LIMITL_W<0> {
+        LIMITL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

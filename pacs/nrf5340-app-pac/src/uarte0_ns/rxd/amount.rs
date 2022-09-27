@@ -14,20 +14,7 @@ impl From<crate::R<AMOUNT_SPEC>> for R {
     }
 }
 #[doc = "Field `AMOUNT` reader - Number of bytes transferred in the last transaction"]
-pub struct AMOUNT_R(crate::FieldReader<u16, u16>);
-impl AMOUNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        AMOUNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AMOUNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AMOUNT_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Number of bytes transferred in the last transaction"]
     #[inline(always)]

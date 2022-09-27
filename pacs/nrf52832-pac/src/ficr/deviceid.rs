@@ -14,20 +14,7 @@ impl From<crate::R<DEVICEID_SPEC>> for R {
     }
 }
 #[doc = "Field `DEVICEID` reader - 64 bit unique device identifier"]
-pub struct DEVICEID_R(crate::FieldReader<u32, u32>);
-impl DEVICEID_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DEVICEID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEVICEID_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEVICEID_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - 64 bit unique device identifier"]
     #[inline(always)]

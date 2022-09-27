@@ -35,59 +35,13 @@ impl From<crate::W<OTP_SPEC>> for W {
     }
 }
 #[doc = "Field `LOWER` reader - Lower half word"]
-pub struct LOWER_R(crate::FieldReader<u16, u16>);
-impl LOWER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        LOWER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOWER_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOWER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LOWER` writer - Lower half word"]
-pub struct LOWER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOWER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type LOWER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OTP_SPEC, u16, u16, 16, O>;
 #[doc = "Field `UPPER` reader - Upper half word"]
-pub struct UPPER_R(crate::FieldReader<u16, u16>);
-impl UPPER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        UPPER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UPPER_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UPPER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `UPPER` writer - Upper half word"]
-pub struct UPPER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UPPER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type UPPER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OTP_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Lower half word"]
     #[inline(always)]
@@ -103,13 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Lower half word"]
     #[inline(always)]
-    pub fn lower(&mut self) -> LOWER_W {
-        LOWER_W { w: self }
+    pub fn lower(&mut self) -> LOWER_W<0> {
+        LOWER_W::new(self)
     }
     #[doc = "Bits 16:31 - Upper half word"]
     #[inline(always)]
-    pub fn upper(&mut self) -> UPPER_W {
-        UPPER_W { w: self }
+    pub fn upper(&mut self) -> UPPER_W<16> {
+        UPPER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

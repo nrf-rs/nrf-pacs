@@ -34,6 +34,8 @@ impl From<crate::W<DETECTMODE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DETECTMODE` reader - Select between default DETECT signal behavior and LDETECT mode"]
+pub type DETECTMODE_R = crate::BitReader<DETECTMODE_A>;
 #[doc = "Select between default DETECT signal behavior and LDETECT mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DETECTMODE_A {
@@ -48,14 +50,8 @@ impl From<DETECTMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DETECTMODE` reader - Select between default DETECT signal behavior and LDETECT mode"]
-pub struct DETECTMODE_R(crate::FieldReader<bool, DETECTMODE_A>);
 impl DETECTMODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DETECTMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DETECTMODE_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl DETECTMODE_R {
     #[doc = "Checks if the value of the field is `DEFAULT`"]
     #[inline(always)]
     pub fn is_default(&self) -> bool {
-        **self == DETECTMODE_A::DEFAULT
+        *self == DETECTMODE_A::DEFAULT
     }
     #[doc = "Checks if the value of the field is `LDETECT`"]
     #[inline(always)]
     pub fn is_ldetect(&self) -> bool {
-        **self == DETECTMODE_A::LDETECT
-    }
-}
-impl core::ops::Deref for DETECTMODE_R {
-    type Target = crate::FieldReader<bool, DETECTMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DETECTMODE_A::LDETECT
     }
 }
 #[doc = "Field `DETECTMODE` writer - Select between default DETECT signal behavior and LDETECT mode"]
-pub struct DETECTMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DETECTMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DETECTMODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DETECTMODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DETECTMODE_SPEC, DETECTMODE_A, O>;
+impl<'a, const O: u8> DETECTMODE_W<'a, O> {
     #[doc = "DETECT directly connected to PIN DETECT signals"]
     #[inline(always)]
     pub fn default(self) -> &'a mut W {
@@ -101,35 +84,19 @@ impl<'a> DETECTMODE_W<'a> {
     pub fn ldetect(self) -> &'a mut W {
         self.variant(DETECTMODE_A::LDETECT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Select between default DETECT signal behavior and LDETECT mode"]
     #[inline(always)]
     pub fn detectmode(&self) -> DETECTMODE_R {
-        DETECTMODE_R::new((self.bits & 0x01) != 0)
+        DETECTMODE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Select between default DETECT signal behavior and LDETECT mode"]
     #[inline(always)]
-    pub fn detectmode(&mut self) -> DETECTMODE_W {
-        DETECTMODE_W { w: self }
+    pub fn detectmode(&mut self) -> DETECTMODE_W<0> {
+        DETECTMODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

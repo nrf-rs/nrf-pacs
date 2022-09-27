@@ -34,6 +34,8 @@ impl From<crate::W<MOSI_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PSELMOSI` reader - Pin number configuration for SPI MOSI signal"]
+pub type PSELMOSI_R = crate::FieldReader<u32, PSELMOSI_A>;
 #[doc = "Pin number configuration for SPI MOSI signal\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -47,14 +49,8 @@ impl From<PSELMOSI_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `PSELMOSI` reader - Pin number configuration for SPI MOSI signal"]
-pub struct PSELMOSI_R(crate::FieldReader<u32, PSELMOSI_A>);
 impl PSELMOSI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PSELMOSI_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PSELMOSI_A> {
         match self.bits {
@@ -65,36 +61,17 @@ impl PSELMOSI_R {
     #[doc = "Checks if the value of the field is `DISCONNECTED`"]
     #[inline(always)]
     pub fn is_disconnected(&self) -> bool {
-        **self == PSELMOSI_A::DISCONNECTED
-    }
-}
-impl core::ops::Deref for PSELMOSI_R {
-    type Target = crate::FieldReader<u32, PSELMOSI_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PSELMOSI_A::DISCONNECTED
     }
 }
 #[doc = "Field `PSELMOSI` writer - Pin number configuration for SPI MOSI signal"]
-pub struct PSELMOSI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSELMOSI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PSELMOSI_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PSELMOSI_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, MOSI_SPEC, u32, PSELMOSI_A, 32, O>;
+impl<'a, const O: u8> PSELMOSI_W<'a, O> {
     #[doc = "Disconnect"]
     #[inline(always)]
     pub fn disconnected(self) -> &'a mut W {
         self.variant(PSELMOSI_A::DISCONNECTED)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
     }
 }
 impl R {
@@ -107,8 +84,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Pin number configuration for SPI MOSI signal"]
     #[inline(always)]
-    pub fn pselmosi(&mut self) -> PSELMOSI_W {
-        PSELMOSI_W { w: self }
+    pub fn pselmosi(&mut self) -> PSELMOSI_W<0> {
+        PSELMOSI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

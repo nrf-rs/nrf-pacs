@@ -34,6 +34,8 @@ impl From<crate::W<SHORTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `REPORTRDY_READCLRACC` reader - Shortcut between REPORTRDY event and READCLRACC task."]
+pub type REPORTRDY_READCLRACC_R = crate::BitReader<REPORTRDY_READCLRACC_A>;
 #[doc = "Shortcut between REPORTRDY event and READCLRACC task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REPORTRDY_READCLRACC_A {
@@ -48,14 +50,8 @@ impl From<REPORTRDY_READCLRACC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REPORTRDY_READCLRACC` reader - Shortcut between REPORTRDY event and READCLRACC task."]
-pub struct REPORTRDY_READCLRACC_R(crate::FieldReader<bool, REPORTRDY_READCLRACC_A>);
 impl REPORTRDY_READCLRACC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REPORTRDY_READCLRACC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REPORTRDY_READCLRACC_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl REPORTRDY_READCLRACC_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REPORTRDY_READCLRACC_A::DISABLED
+        *self == REPORTRDY_READCLRACC_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REPORTRDY_READCLRACC_A::ENABLED
-    }
-}
-impl core::ops::Deref for REPORTRDY_READCLRACC_R {
-    type Target = crate::FieldReader<bool, REPORTRDY_READCLRACC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REPORTRDY_READCLRACC_A::ENABLED
     }
 }
 #[doc = "Field `REPORTRDY_READCLRACC` writer - Shortcut between REPORTRDY event and READCLRACC task."]
-pub struct REPORTRDY_READCLRACC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REPORTRDY_READCLRACC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REPORTRDY_READCLRACC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REPORTRDY_READCLRACC_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, REPORTRDY_READCLRACC_A, O>;
+impl<'a, const O: u8> REPORTRDY_READCLRACC_W<'a, O> {
     #[doc = "Shortcut disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +84,9 @@ impl<'a> REPORTRDY_READCLRACC_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REPORTRDY_READCLRACC_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `SAMPLERDY_STOP` reader - Shortcut between SAMPLERDY event and STOP task."]
+pub type SAMPLERDY_STOP_R = crate::BitReader<SAMPLERDY_STOP_A>;
 #[doc = "Shortcut between SAMPLERDY event and STOP task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SAMPLERDY_STOP_A {
@@ -132,14 +101,8 @@ impl From<SAMPLERDY_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SAMPLERDY_STOP` reader - Shortcut between SAMPLERDY event and STOP task."]
-pub struct SAMPLERDY_STOP_R(crate::FieldReader<bool, SAMPLERDY_STOP_A>);
 impl SAMPLERDY_STOP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SAMPLERDY_STOP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SAMPLERDY_STOP_A {
         match self.bits {
@@ -150,31 +113,18 @@ impl SAMPLERDY_STOP_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == SAMPLERDY_STOP_A::DISABLED
+        *self == SAMPLERDY_STOP_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == SAMPLERDY_STOP_A::ENABLED
-    }
-}
-impl core::ops::Deref for SAMPLERDY_STOP_R {
-    type Target = crate::FieldReader<bool, SAMPLERDY_STOP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SAMPLERDY_STOP_A::ENABLED
     }
 }
 #[doc = "Field `SAMPLERDY_STOP` writer - Shortcut between SAMPLERDY event and STOP task."]
-pub struct SAMPLERDY_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SAMPLERDY_STOP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SAMPLERDY_STOP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SAMPLERDY_STOP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, SAMPLERDY_STOP_A, O>;
+impl<'a, const O: u8> SAMPLERDY_STOP_W<'a, O> {
     #[doc = "Shortcut disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,45 +135,29 @@ impl<'a> SAMPLERDY_STOP_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(SAMPLERDY_STOP_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Shortcut between REPORTRDY event and READCLRACC task."]
     #[inline(always)]
     pub fn reportrdy_readclracc(&self) -> REPORTRDY_READCLRACC_R {
-        REPORTRDY_READCLRACC_R::new((self.bits & 0x01) != 0)
+        REPORTRDY_READCLRACC_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Shortcut between SAMPLERDY event and STOP task."]
     #[inline(always)]
     pub fn samplerdy_stop(&self) -> SAMPLERDY_STOP_R {
-        SAMPLERDY_STOP_R::new(((self.bits >> 1) & 0x01) != 0)
+        SAMPLERDY_STOP_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Shortcut between REPORTRDY event and READCLRACC task."]
     #[inline(always)]
-    pub fn reportrdy_readclracc(&mut self) -> REPORTRDY_READCLRACC_W {
-        REPORTRDY_READCLRACC_W { w: self }
+    pub fn reportrdy_readclracc(&mut self) -> REPORTRDY_READCLRACC_W<0> {
+        REPORTRDY_READCLRACC_W::new(self)
     }
     #[doc = "Bit 1 - Shortcut between SAMPLERDY event and STOP task."]
     #[inline(always)]
-    pub fn samplerdy_stop(&mut self) -> SAMPLERDY_STOP_W {
-        SAMPLERDY_STOP_W { w: self }
+    pub fn samplerdy_stop(&mut self) -> SAMPLERDY_STOP_W<1> {
+        SAMPLERDY_STOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

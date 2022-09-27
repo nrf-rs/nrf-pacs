@@ -34,6 +34,8 @@ impl From<crate::W<SHORTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ENDKSGEN_CRYPT` reader - Shortcut between event ENDKSGEN and task CRYPT"]
+pub type ENDKSGEN_CRYPT_R = crate::BitReader<ENDKSGEN_CRYPT_A>;
 #[doc = "Shortcut between event ENDKSGEN and task CRYPT\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDKSGEN_CRYPT_A {
@@ -48,14 +50,8 @@ impl From<ENDKSGEN_CRYPT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ENDKSGEN_CRYPT` reader - Shortcut between event ENDKSGEN and task CRYPT"]
-pub struct ENDKSGEN_CRYPT_R(crate::FieldReader<bool, ENDKSGEN_CRYPT_A>);
 impl ENDKSGEN_CRYPT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ENDKSGEN_CRYPT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENDKSGEN_CRYPT_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl ENDKSGEN_CRYPT_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ENDKSGEN_CRYPT_A::DISABLED
+        *self == ENDKSGEN_CRYPT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ENDKSGEN_CRYPT_A::ENABLED
-    }
-}
-impl core::ops::Deref for ENDKSGEN_CRYPT_R {
-    type Target = crate::FieldReader<bool, ENDKSGEN_CRYPT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENDKSGEN_CRYPT_A::ENABLED
     }
 }
 #[doc = "Field `ENDKSGEN_CRYPT` writer - Shortcut between event ENDKSGEN and task CRYPT"]
-pub struct ENDKSGEN_CRYPT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENDKSGEN_CRYPT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENDKSGEN_CRYPT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ENDKSGEN_CRYPT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, ENDKSGEN_CRYPT_A, O>;
+impl<'a, const O: u8> ENDKSGEN_CRYPT_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +84,19 @@ impl<'a> ENDKSGEN_CRYPT_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ENDKSGEN_CRYPT_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Shortcut between event ENDKSGEN and task CRYPT"]
     #[inline(always)]
     pub fn endksgen_crypt(&self) -> ENDKSGEN_CRYPT_R {
-        ENDKSGEN_CRYPT_R::new((self.bits & 0x01) != 0)
+        ENDKSGEN_CRYPT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Shortcut between event ENDKSGEN and task CRYPT"]
     #[inline(always)]
-    pub fn endksgen_crypt(&mut self) -> ENDKSGEN_CRYPT_W {
-        ENDKSGEN_CRYPT_W { w: self }
+    pub fn endksgen_crypt(&mut self) -> ENDKSGEN_CRYPT_W<0> {
+        ENDKSGEN_CRYPT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

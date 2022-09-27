@@ -34,6 +34,9 @@ impl From<crate::W<POWERCLR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `S0POWER` reader - Keep RAM section S0 of RAM\\[n\\]
+on or off in System ON mode"]
+pub type S0POWER_R = crate::BitReader<S0POWER_A>;
 #[doc = "Keep RAM section S0 of RAM\\[n\\]
 on or off in System ON mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -47,15 +50,8 @@ impl From<S0POWER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `S0POWER` reader - Keep RAM section S0 of RAM\\[n\\]
-on or off in System ON mode"]
-pub struct S0POWER_R(crate::FieldReader<bool, S0POWER_A>);
 impl S0POWER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        S0POWER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<S0POWER_A> {
         match self.bits {
@@ -66,49 +62,22 @@ impl S0POWER_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == S0POWER_A::OFF
-    }
-}
-impl core::ops::Deref for S0POWER_R {
-    type Target = crate::FieldReader<bool, S0POWER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == S0POWER_A::OFF
     }
 }
 #[doc = "Field `S0POWER` writer - Keep RAM section S0 of RAM\\[n\\]
 on or off in System ON mode"]
-pub struct S0POWER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S0POWER_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: S0POWER_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type S0POWER_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWERCLR_SPEC, S0POWER_A, O>;
+impl<'a, const O: u8> S0POWER_W<'a, O> {
     #[doc = "Off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
         self.variant(S0POWER_A::OFF)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `S1POWER` reader - Keep RAM section S1 of RAM\\[n\\]
+on or off in System ON mode"]
+pub type S1POWER_R = crate::BitReader<S1POWER_A>;
 #[doc = "Keep RAM section S1 of RAM\\[n\\]
 on or off in System ON mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -122,15 +91,8 @@ impl From<S1POWER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `S1POWER` reader - Keep RAM section S1 of RAM\\[n\\]
-on or off in System ON mode"]
-pub struct S1POWER_R(crate::FieldReader<bool, S1POWER_A>);
 impl S1POWER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        S1POWER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<S1POWER_A> {
         match self.bits {
@@ -141,49 +103,22 @@ impl S1POWER_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == S1POWER_A::OFF
-    }
-}
-impl core::ops::Deref for S1POWER_R {
-    type Target = crate::FieldReader<bool, S1POWER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == S1POWER_A::OFF
     }
 }
 #[doc = "Field `S1POWER` writer - Keep RAM section S1 of RAM\\[n\\]
 on or off in System ON mode"]
-pub struct S1POWER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S1POWER_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: S1POWER_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type S1POWER_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWERCLR_SPEC, S1POWER_A, O>;
+impl<'a, const O: u8> S1POWER_W<'a, O> {
     #[doc = "Off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
         self.variant(S1POWER_A::OFF)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `S2POWER` reader - Keep RAM section S2 of RAM\\[n\\]
+on or off in System ON mode"]
+pub type S2POWER_R = crate::BitReader<S2POWER_A>;
 #[doc = "Keep RAM section S2 of RAM\\[n\\]
 on or off in System ON mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -197,15 +132,8 @@ impl From<S2POWER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `S2POWER` reader - Keep RAM section S2 of RAM\\[n\\]
-on or off in System ON mode"]
-pub struct S2POWER_R(crate::FieldReader<bool, S2POWER_A>);
 impl S2POWER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        S2POWER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<S2POWER_A> {
         match self.bits {
@@ -216,49 +144,22 @@ impl S2POWER_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == S2POWER_A::OFF
-    }
-}
-impl core::ops::Deref for S2POWER_R {
-    type Target = crate::FieldReader<bool, S2POWER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == S2POWER_A::OFF
     }
 }
 #[doc = "Field `S2POWER` writer - Keep RAM section S2 of RAM\\[n\\]
 on or off in System ON mode"]
-pub struct S2POWER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S2POWER_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: S2POWER_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type S2POWER_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWERCLR_SPEC, S2POWER_A, O>;
+impl<'a, const O: u8> S2POWER_W<'a, O> {
     #[doc = "Off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
         self.variant(S2POWER_A::OFF)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `S3POWER` reader - Keep RAM section S3 of RAM\\[n\\]
+on or off in System ON mode"]
+pub type S3POWER_R = crate::BitReader<S3POWER_A>;
 #[doc = "Keep RAM section S3 of RAM\\[n\\]
 on or off in System ON mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -272,15 +173,8 @@ impl From<S3POWER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `S3POWER` reader - Keep RAM section S3 of RAM\\[n\\]
-on or off in System ON mode"]
-pub struct S3POWER_R(crate::FieldReader<bool, S3POWER_A>);
 impl S3POWER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        S3POWER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<S3POWER_A> {
         match self.bits {
@@ -291,49 +185,22 @@ impl S3POWER_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == S3POWER_A::OFF
-    }
-}
-impl core::ops::Deref for S3POWER_R {
-    type Target = crate::FieldReader<bool, S3POWER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == S3POWER_A::OFF
     }
 }
 #[doc = "Field `S3POWER` writer - Keep RAM section S3 of RAM\\[n\\]
 on or off in System ON mode"]
-pub struct S3POWER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S3POWER_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: S3POWER_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type S3POWER_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWERCLR_SPEC, S3POWER_A, O>;
+impl<'a, const O: u8> S3POWER_W<'a, O> {
     #[doc = "Off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
         self.variant(S3POWER_A::OFF)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `S0RETENTION` reader - Keep retention on RAM section S0 of RAM\\[n\\]
+when RAM section is switched off"]
+pub type S0RETENTION_R = crate::BitReader<S0RETENTION_A>;
 #[doc = "Keep retention on RAM section S0 of RAM\\[n\\]
 when RAM section is switched off\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -347,15 +214,8 @@ impl From<S0RETENTION_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `S0RETENTION` reader - Keep retention on RAM section S0 of RAM\\[n\\]
-when RAM section is switched off"]
-pub struct S0RETENTION_R(crate::FieldReader<bool, S0RETENTION_A>);
 impl S0RETENTION_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        S0RETENTION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<S0RETENTION_A> {
         match self.bits {
@@ -366,49 +226,23 @@ impl S0RETENTION_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == S0RETENTION_A::OFF
-    }
-}
-impl core::ops::Deref for S0RETENTION_R {
-    type Target = crate::FieldReader<bool, S0RETENTION_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == S0RETENTION_A::OFF
     }
 }
 #[doc = "Field `S0RETENTION` writer - Keep retention on RAM section S0 of RAM\\[n\\]
 when RAM section is switched off"]
-pub struct S0RETENTION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S0RETENTION_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: S0RETENTION_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type S0RETENTION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, POWERCLR_SPEC, S0RETENTION_A, O>;
+impl<'a, const O: u8> S0RETENTION_W<'a, O> {
     #[doc = "Off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
         self.variant(S0RETENTION_A::OFF)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
+#[doc = "Field `S1RETENTION` reader - Keep retention on RAM section S1 of RAM\\[n\\]
+when RAM section is switched off"]
+pub type S1RETENTION_R = crate::BitReader<S1RETENTION_A>;
 #[doc = "Keep retention on RAM section S1 of RAM\\[n\\]
 when RAM section is switched off\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -422,15 +256,8 @@ impl From<S1RETENTION_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `S1RETENTION` reader - Keep retention on RAM section S1 of RAM\\[n\\]
-when RAM section is switched off"]
-pub struct S1RETENTION_R(crate::FieldReader<bool, S1RETENTION_A>);
 impl S1RETENTION_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        S1RETENTION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<S1RETENTION_A> {
         match self.bits {
@@ -441,49 +268,23 @@ impl S1RETENTION_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == S1RETENTION_A::OFF
-    }
-}
-impl core::ops::Deref for S1RETENTION_R {
-    type Target = crate::FieldReader<bool, S1RETENTION_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == S1RETENTION_A::OFF
     }
 }
 #[doc = "Field `S1RETENTION` writer - Keep retention on RAM section S1 of RAM\\[n\\]
 when RAM section is switched off"]
-pub struct S1RETENTION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S1RETENTION_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: S1RETENTION_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type S1RETENTION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, POWERCLR_SPEC, S1RETENTION_A, O>;
+impl<'a, const O: u8> S1RETENTION_W<'a, O> {
     #[doc = "Off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
         self.variant(S1RETENTION_A::OFF)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
 }
+#[doc = "Field `S2RETENTION` reader - Keep retention on RAM section S2 of RAM\\[n\\]
+when RAM section is switched off"]
+pub type S2RETENTION_R = crate::BitReader<S2RETENTION_A>;
 #[doc = "Keep retention on RAM section S2 of RAM\\[n\\]
 when RAM section is switched off\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -497,15 +298,8 @@ impl From<S2RETENTION_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `S2RETENTION` reader - Keep retention on RAM section S2 of RAM\\[n\\]
-when RAM section is switched off"]
-pub struct S2RETENTION_R(crate::FieldReader<bool, S2RETENTION_A>);
 impl S2RETENTION_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        S2RETENTION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<S2RETENTION_A> {
         match self.bits {
@@ -516,49 +310,23 @@ impl S2RETENTION_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == S2RETENTION_A::OFF
-    }
-}
-impl core::ops::Deref for S2RETENTION_R {
-    type Target = crate::FieldReader<bool, S2RETENTION_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == S2RETENTION_A::OFF
     }
 }
 #[doc = "Field `S2RETENTION` writer - Keep retention on RAM section S2 of RAM\\[n\\]
 when RAM section is switched off"]
-pub struct S2RETENTION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S2RETENTION_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: S2RETENTION_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type S2RETENTION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, POWERCLR_SPEC, S2RETENTION_A, O>;
+impl<'a, const O: u8> S2RETENTION_W<'a, O> {
     #[doc = "Off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
         self.variant(S2RETENTION_A::OFF)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
 }
+#[doc = "Field `S3RETENTION` reader - Keep retention on RAM section S3 of RAM\\[n\\]
+when RAM section is switched off"]
+pub type S3RETENTION_R = crate::BitReader<S3RETENTION_A>;
 #[doc = "Keep retention on RAM section S3 of RAM\\[n\\]
 when RAM section is switched off\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -572,15 +340,8 @@ impl From<S3RETENTION_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `S3RETENTION` reader - Keep retention on RAM section S3 of RAM\\[n\\]
-when RAM section is switched off"]
-pub struct S3RETENTION_R(crate::FieldReader<bool, S3RETENTION_A>);
 impl S3RETENTION_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        S3RETENTION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<S3RETENTION_A> {
         match self.bits {
@@ -591,47 +352,18 @@ impl S3RETENTION_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == S3RETENTION_A::OFF
-    }
-}
-impl core::ops::Deref for S3RETENTION_R {
-    type Target = crate::FieldReader<bool, S3RETENTION_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == S3RETENTION_A::OFF
     }
 }
 #[doc = "Field `S3RETENTION` writer - Keep retention on RAM section S3 of RAM\\[n\\]
 when RAM section is switched off"]
-pub struct S3RETENTION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S3RETENTION_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: S3RETENTION_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type S3RETENTION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, POWERCLR_SPEC, S3RETENTION_A, O>;
+impl<'a, const O: u8> S3RETENTION_W<'a, O> {
     #[doc = "Off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
         self.variant(S3RETENTION_A::OFF)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
     }
 }
 impl R {
@@ -639,99 +371,99 @@ impl R {
 on or off in System ON mode"]
     #[inline(always)]
     pub fn s0power(&self) -> S0POWER_R {
-        S0POWER_R::new((self.bits & 0x01) != 0)
+        S0POWER_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Keep RAM section S1 of RAM\\[n\\]
 on or off in System ON mode"]
     #[inline(always)]
     pub fn s1power(&self) -> S1POWER_R {
-        S1POWER_R::new(((self.bits >> 1) & 0x01) != 0)
+        S1POWER_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Keep RAM section S2 of RAM\\[n\\]
 on or off in System ON mode"]
     #[inline(always)]
     pub fn s2power(&self) -> S2POWER_R {
-        S2POWER_R::new(((self.bits >> 2) & 0x01) != 0)
+        S2POWER_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Keep RAM section S3 of RAM\\[n\\]
 on or off in System ON mode"]
     #[inline(always)]
     pub fn s3power(&self) -> S3POWER_R {
-        S3POWER_R::new(((self.bits >> 3) & 0x01) != 0)
+        S3POWER_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 16 - Keep retention on RAM section S0 of RAM\\[n\\]
 when RAM section is switched off"]
     #[inline(always)]
     pub fn s0retention(&self) -> S0RETENTION_R {
-        S0RETENTION_R::new(((self.bits >> 16) & 0x01) != 0)
+        S0RETENTION_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Keep retention on RAM section S1 of RAM\\[n\\]
 when RAM section is switched off"]
     #[inline(always)]
     pub fn s1retention(&self) -> S1RETENTION_R {
-        S1RETENTION_R::new(((self.bits >> 17) & 0x01) != 0)
+        S1RETENTION_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Keep retention on RAM section S2 of RAM\\[n\\]
 when RAM section is switched off"]
     #[inline(always)]
     pub fn s2retention(&self) -> S2RETENTION_R {
-        S2RETENTION_R::new(((self.bits >> 18) & 0x01) != 0)
+        S2RETENTION_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Keep retention on RAM section S3 of RAM\\[n\\]
 when RAM section is switched off"]
     #[inline(always)]
     pub fn s3retention(&self) -> S3RETENTION_R {
-        S3RETENTION_R::new(((self.bits >> 19) & 0x01) != 0)
+        S3RETENTION_R::new(((self.bits >> 19) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Keep RAM section S0 of RAM\\[n\\]
 on or off in System ON mode"]
     #[inline(always)]
-    pub fn s0power(&mut self) -> S0POWER_W {
-        S0POWER_W { w: self }
+    pub fn s0power(&mut self) -> S0POWER_W<0> {
+        S0POWER_W::new(self)
     }
     #[doc = "Bit 1 - Keep RAM section S1 of RAM\\[n\\]
 on or off in System ON mode"]
     #[inline(always)]
-    pub fn s1power(&mut self) -> S1POWER_W {
-        S1POWER_W { w: self }
+    pub fn s1power(&mut self) -> S1POWER_W<1> {
+        S1POWER_W::new(self)
     }
     #[doc = "Bit 2 - Keep RAM section S2 of RAM\\[n\\]
 on or off in System ON mode"]
     #[inline(always)]
-    pub fn s2power(&mut self) -> S2POWER_W {
-        S2POWER_W { w: self }
+    pub fn s2power(&mut self) -> S2POWER_W<2> {
+        S2POWER_W::new(self)
     }
     #[doc = "Bit 3 - Keep RAM section S3 of RAM\\[n\\]
 on or off in System ON mode"]
     #[inline(always)]
-    pub fn s3power(&mut self) -> S3POWER_W {
-        S3POWER_W { w: self }
+    pub fn s3power(&mut self) -> S3POWER_W<3> {
+        S3POWER_W::new(self)
     }
     #[doc = "Bit 16 - Keep retention on RAM section S0 of RAM\\[n\\]
 when RAM section is switched off"]
     #[inline(always)]
-    pub fn s0retention(&mut self) -> S0RETENTION_W {
-        S0RETENTION_W { w: self }
+    pub fn s0retention(&mut self) -> S0RETENTION_W<16> {
+        S0RETENTION_W::new(self)
     }
     #[doc = "Bit 17 - Keep retention on RAM section S1 of RAM\\[n\\]
 when RAM section is switched off"]
     #[inline(always)]
-    pub fn s1retention(&mut self) -> S1RETENTION_W {
-        S1RETENTION_W { w: self }
+    pub fn s1retention(&mut self) -> S1RETENTION_W<17> {
+        S1RETENTION_W::new(self)
     }
     #[doc = "Bit 18 - Keep retention on RAM section S2 of RAM\\[n\\]
 when RAM section is switched off"]
     #[inline(always)]
-    pub fn s2retention(&mut self) -> S2RETENTION_W {
-        S2RETENTION_W { w: self }
+    pub fn s2retention(&mut self) -> S2RETENTION_W<18> {
+        S2RETENTION_W::new(self)
     }
     #[doc = "Bit 19 - Keep retention on RAM section S3 of RAM\\[n\\]
 when RAM section is switched off"]
     #[inline(always)]
-    pub fn s3retention(&mut self) -> S3RETENTION_W {
-        S3RETENTION_W { w: self }
+    pub fn s3retention(&mut self) -> S3RETENTION_W<19> {
+        S3RETENTION_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

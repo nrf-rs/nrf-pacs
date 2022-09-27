@@ -34,6 +34,8 @@ impl From<crate::W<CHANNELS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CHANNELS` reader - Enable channels."]
+pub type CHANNELS_R = crate::FieldReader<u8, CHANNELS_A>;
 #[doc = "Enable channels.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,14 +53,8 @@ impl From<CHANNELS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHANNELS` reader - Enable channels."]
-pub struct CHANNELS_R(crate::FieldReader<u8, CHANNELS_A>);
 impl CHANNELS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CHANNELS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CHANNELS_A> {
         match self.bits {
@@ -71,36 +67,23 @@ impl CHANNELS_R {
     #[doc = "Checks if the value of the field is `STEREO`"]
     #[inline(always)]
     pub fn is_stereo(&self) -> bool {
-        **self == CHANNELS_A::STEREO
+        *self == CHANNELS_A::STEREO
     }
     #[doc = "Checks if the value of the field is `LEFT`"]
     #[inline(always)]
     pub fn is_left(&self) -> bool {
-        **self == CHANNELS_A::LEFT
+        *self == CHANNELS_A::LEFT
     }
     #[doc = "Checks if the value of the field is `RIGHT`"]
     #[inline(always)]
     pub fn is_right(&self) -> bool {
-        **self == CHANNELS_A::RIGHT
-    }
-}
-impl core::ops::Deref for CHANNELS_R {
-    type Target = crate::FieldReader<u8, CHANNELS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHANNELS_A::RIGHT
     }
 }
 #[doc = "Field `CHANNELS` writer - Enable channels."]
-pub struct CHANNELS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHANNELS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHANNELS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CHANNELS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CHANNELS_SPEC, u8, CHANNELS_A, 2, O>;
+impl<'a, const O: u8> CHANNELS_W<'a, O> {
     #[doc = "Stereo."]
     #[inline(always)]
     pub fn stereo(self) -> &'a mut W {
@@ -116,25 +99,19 @@ impl<'a> CHANNELS_W<'a> {
     pub fn right(self) -> &'a mut W {
         self.variant(CHANNELS_A::RIGHT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Enable channels."]
     #[inline(always)]
     pub fn channels(&self) -> CHANNELS_R {
-        CHANNELS_R::new((self.bits & 0x03) as u8)
+        CHANNELS_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Enable channels."]
     #[inline(always)]
-    pub fn channels(&mut self) -> CHANNELS_W {
-        CHANNELS_W { w: self }
+    pub fn channels(&mut self) -> CHANNELS_W<0> {
+        CHANNELS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

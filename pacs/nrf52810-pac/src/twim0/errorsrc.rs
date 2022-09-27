@@ -34,11 +34,13 @@ impl From<crate::W<ERRORSRC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `OVERRUN` reader - Overrun error"]
+pub type OVERRUN_R = crate::BitReader<OVERRUN_A>;
 #[doc = "Overrun error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERRUN_A {
     #[doc = "0: Error did not occur"]
-    NOTRECEIVED = 0,
+    NOT_RECEIVED = 0,
     #[doc = "1: Error occurred"]
     RECEIVED = 1,
 }
@@ -48,81 +50,47 @@ impl From<OVERRUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OVERRUN` reader - Overrun error"]
-pub struct OVERRUN_R(crate::FieldReader<bool, OVERRUN_A>);
 impl OVERRUN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OVERRUN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OVERRUN_A {
         match self.bits {
-            false => OVERRUN_A::NOTRECEIVED,
+            false => OVERRUN_A::NOT_RECEIVED,
             true => OVERRUN_A::RECEIVED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTRECEIVED`"]
+    #[doc = "Checks if the value of the field is `NOT_RECEIVED`"]
     #[inline(always)]
     pub fn is_not_received(&self) -> bool {
-        **self == OVERRUN_A::NOTRECEIVED
+        *self == OVERRUN_A::NOT_RECEIVED
     }
     #[doc = "Checks if the value of the field is `RECEIVED`"]
     #[inline(always)]
     pub fn is_received(&self) -> bool {
-        **self == OVERRUN_A::RECEIVED
-    }
-}
-impl core::ops::Deref for OVERRUN_R {
-    type Target = crate::FieldReader<bool, OVERRUN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OVERRUN_A::RECEIVED
     }
 }
 #[doc = "Field `OVERRUN` writer - Overrun error"]
-pub struct OVERRUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVERRUN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OVERRUN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OVERRUN_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, ERRORSRC_SPEC, OVERRUN_A, O>;
+impl<'a, const O: u8> OVERRUN_W<'a, O> {
     #[doc = "Error did not occur"]
     #[inline(always)]
     pub fn not_received(self) -> &'a mut W {
-        self.variant(OVERRUN_A::NOTRECEIVED)
+        self.variant(OVERRUN_A::NOT_RECEIVED)
     }
     #[doc = "Error occurred"]
     #[inline(always)]
     pub fn received(self) -> &'a mut W {
         self.variant(OVERRUN_A::RECEIVED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `ANACK` reader - NACK received after sending the address (write '1' to clear)"]
+pub type ANACK_R = crate::BitReader<ANACK_A>;
 #[doc = "NACK received after sending the address (write '1' to clear)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ANACK_A {
     #[doc = "0: Error did not occur"]
-    NOTRECEIVED = 0,
+    NOT_RECEIVED = 0,
     #[doc = "1: Error occurred"]
     RECEIVED = 1,
 }
@@ -132,81 +100,47 @@ impl From<ANACK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ANACK` reader - NACK received after sending the address (write '1' to clear)"]
-pub struct ANACK_R(crate::FieldReader<bool, ANACK_A>);
 impl ANACK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ANACK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ANACK_A {
         match self.bits {
-            false => ANACK_A::NOTRECEIVED,
+            false => ANACK_A::NOT_RECEIVED,
             true => ANACK_A::RECEIVED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTRECEIVED`"]
+    #[doc = "Checks if the value of the field is `NOT_RECEIVED`"]
     #[inline(always)]
     pub fn is_not_received(&self) -> bool {
-        **self == ANACK_A::NOTRECEIVED
+        *self == ANACK_A::NOT_RECEIVED
     }
     #[doc = "Checks if the value of the field is `RECEIVED`"]
     #[inline(always)]
     pub fn is_received(&self) -> bool {
-        **self == ANACK_A::RECEIVED
-    }
-}
-impl core::ops::Deref for ANACK_R {
-    type Target = crate::FieldReader<bool, ANACK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ANACK_A::RECEIVED
     }
 }
 #[doc = "Field `ANACK` writer - NACK received after sending the address (write '1' to clear)"]
-pub struct ANACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ANACK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ANACK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ANACK_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, ERRORSRC_SPEC, ANACK_A, O>;
+impl<'a, const O: u8> ANACK_W<'a, O> {
     #[doc = "Error did not occur"]
     #[inline(always)]
     pub fn not_received(self) -> &'a mut W {
-        self.variant(ANACK_A::NOTRECEIVED)
+        self.variant(ANACK_A::NOT_RECEIVED)
     }
     #[doc = "Error occurred"]
     #[inline(always)]
     pub fn received(self) -> &'a mut W {
         self.variant(ANACK_A::RECEIVED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `DNACK` reader - NACK received after sending a data byte (write '1' to clear)"]
+pub type DNACK_R = crate::BitReader<DNACK_A>;
 #[doc = "NACK received after sending a data byte (write '1' to clear)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DNACK_A {
     #[doc = "0: Error did not occur"]
-    NOTRECEIVED = 0,
+    NOT_RECEIVED = 0,
     #[doc = "1: Error occurred"]
     RECEIVED = 1,
 }
@@ -216,108 +150,72 @@ impl From<DNACK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DNACK` reader - NACK received after sending a data byte (write '1' to clear)"]
-pub struct DNACK_R(crate::FieldReader<bool, DNACK_A>);
 impl DNACK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DNACK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DNACK_A {
         match self.bits {
-            false => DNACK_A::NOTRECEIVED,
+            false => DNACK_A::NOT_RECEIVED,
             true => DNACK_A::RECEIVED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTRECEIVED`"]
+    #[doc = "Checks if the value of the field is `NOT_RECEIVED`"]
     #[inline(always)]
     pub fn is_not_received(&self) -> bool {
-        **self == DNACK_A::NOTRECEIVED
+        *self == DNACK_A::NOT_RECEIVED
     }
     #[doc = "Checks if the value of the field is `RECEIVED`"]
     #[inline(always)]
     pub fn is_received(&self) -> bool {
-        **self == DNACK_A::RECEIVED
-    }
-}
-impl core::ops::Deref for DNACK_R {
-    type Target = crate::FieldReader<bool, DNACK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DNACK_A::RECEIVED
     }
 }
 #[doc = "Field `DNACK` writer - NACK received after sending a data byte (write '1' to clear)"]
-pub struct DNACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DNACK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DNACK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DNACK_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, ERRORSRC_SPEC, DNACK_A, O>;
+impl<'a, const O: u8> DNACK_W<'a, O> {
     #[doc = "Error did not occur"]
     #[inline(always)]
     pub fn not_received(self) -> &'a mut W {
-        self.variant(DNACK_A::NOTRECEIVED)
+        self.variant(DNACK_A::NOT_RECEIVED)
     }
     #[doc = "Error occurred"]
     #[inline(always)]
     pub fn received(self) -> &'a mut W {
         self.variant(DNACK_A::RECEIVED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Overrun error"]
     #[inline(always)]
     pub fn overrun(&self) -> OVERRUN_R {
-        OVERRUN_R::new((self.bits & 0x01) != 0)
+        OVERRUN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - NACK received after sending the address (write '1' to clear)"]
     #[inline(always)]
     pub fn anack(&self) -> ANACK_R {
-        ANACK_R::new(((self.bits >> 1) & 0x01) != 0)
+        ANACK_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - NACK received after sending a data byte (write '1' to clear)"]
     #[inline(always)]
     pub fn dnack(&self) -> DNACK_R {
-        DNACK_R::new(((self.bits >> 2) & 0x01) != 0)
+        DNACK_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Overrun error"]
     #[inline(always)]
-    pub fn overrun(&mut self) -> OVERRUN_W {
-        OVERRUN_W { w: self }
+    pub fn overrun(&mut self) -> OVERRUN_W<0> {
+        OVERRUN_W::new(self)
     }
     #[doc = "Bit 1 - NACK received after sending the address (write '1' to clear)"]
     #[inline(always)]
-    pub fn anack(&mut self) -> ANACK_W {
-        ANACK_W { w: self }
+    pub fn anack(&mut self) -> ANACK_W<1> {
+        ANACK_W::new(self)
     }
     #[doc = "Bit 2 - NACK received after sending a data byte (write '1' to clear)"]
     #[inline(always)]
-    pub fn dnack(&mut self) -> DNACK_W {
-        DNACK_W { w: self }
+    pub fn dnack(&mut self) -> DNACK_W<2> {
+        DNACK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

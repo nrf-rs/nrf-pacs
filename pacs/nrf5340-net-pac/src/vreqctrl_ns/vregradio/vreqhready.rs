@@ -13,11 +13,13 @@ impl From<crate::R<VREQHREADY_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `READY` reader - RADIO is ready to operate on high voltage"]
+pub type READY_R = crate::BitReader<READY_A>;
 #[doc = "RADIO is ready to operate on high voltage\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READY_A {
     #[doc = "0: Not ready"]
-    NOTREADY = 0,
+    NOT_READY = 0,
     #[doc = "1: Ready"]
     READY = 1,
 }
@@ -27,44 +29,31 @@ impl From<READY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `READY` reader - RADIO is ready to operate on high voltage"]
-pub struct READY_R(crate::FieldReader<bool, READY_A>);
 impl READY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        READY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> READY_A {
         match self.bits {
-            false => READY_A::NOTREADY,
+            false => READY_A::NOT_READY,
             true => READY_A::READY,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTREADY`"]
+    #[doc = "Checks if the value of the field is `NOT_READY`"]
     #[inline(always)]
     pub fn is_not_ready(&self) -> bool {
-        **self == READY_A::NOTREADY
+        *self == READY_A::NOT_READY
     }
     #[doc = "Checks if the value of the field is `READY`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        **self == READY_A::READY
-    }
-}
-impl core::ops::Deref for READY_R {
-    type Target = crate::FieldReader<bool, READY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == READY_A::READY
     }
 }
 impl R {
     #[doc = "Bit 0 - RADIO is ready to operate on high voltage"]
     #[inline(always)]
     pub fn ready(&self) -> READY_R {
-        READY_R::new((self.bits & 0x01) != 0)
+        READY_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "High voltage on RADIO is ready\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vreqhready](index.html) module"]

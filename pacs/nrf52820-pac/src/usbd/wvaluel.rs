@@ -14,20 +14,7 @@ impl From<crate::R<WVALUEL_SPEC>> for R {
     }
 }
 #[doc = "Field `WVALUEL` reader - SETUP data, byte 2, LSB of wValue"]
-pub struct WVALUEL_R(crate::FieldReader<u8, u8>);
-impl WVALUEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WVALUEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WVALUEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WVALUEL_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - SETUP data, byte 2, LSB of wValue"]
     #[inline(always)]

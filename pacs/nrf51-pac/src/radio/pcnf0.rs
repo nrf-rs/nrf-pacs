@@ -35,96 +35,17 @@ impl From<crate::W<PCNF0_SPEC>> for W {
     }
 }
 #[doc = "Field `LFLEN` reader - Length of length field in number of bits. Decision point: START task."]
-pub struct LFLEN_R(crate::FieldReader<u8, u8>);
-impl LFLEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LFLEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LFLEN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LFLEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LFLEN` writer - Length of length field in number of bits. Decision point: START task."]
-pub struct LFLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LFLEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type LFLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCNF0_SPEC, u8, u8, 4, O>;
 #[doc = "Field `S0LEN` reader - Length of S0 field in number of bytes. Decision point: START task."]
-pub struct S0LEN_R(crate::FieldReader<bool, bool>);
-impl S0LEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        S0LEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for S0LEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type S0LEN_R = crate::BitReader<bool>;
 #[doc = "Field `S0LEN` writer - Length of S0 field in number of bytes. Decision point: START task."]
-pub struct S0LEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S0LEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type S0LEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCNF0_SPEC, bool, O>;
 #[doc = "Field `S1LEN` reader - Length of S1 field in number of bits. Decision point: START task."]
-pub struct S1LEN_R(crate::FieldReader<u8, u8>);
-impl S1LEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        S1LEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for S1LEN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type S1LEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `S1LEN` writer - Length of S1 field in number of bits. Decision point: START task."]
-pub struct S1LEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S1LEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
-}
+pub type S1LEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCNF0_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Length of length field in number of bits. Decision point: START task."]
     #[inline(always)]
@@ -134,7 +55,7 @@ impl R {
     #[doc = "Bit 8 - Length of S0 field in number of bytes. Decision point: START task."]
     #[inline(always)]
     pub fn s0len(&self) -> S0LEN_R {
-        S0LEN_R::new(((self.bits >> 8) & 0x01) != 0)
+        S0LEN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 16:19 - Length of S1 field in number of bits. Decision point: START task."]
     #[inline(always)]
@@ -145,18 +66,18 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Length of length field in number of bits. Decision point: START task."]
     #[inline(always)]
-    pub fn lflen(&mut self) -> LFLEN_W {
-        LFLEN_W { w: self }
+    pub fn lflen(&mut self) -> LFLEN_W<0> {
+        LFLEN_W::new(self)
     }
     #[doc = "Bit 8 - Length of S0 field in number of bytes. Decision point: START task."]
     #[inline(always)]
-    pub fn s0len(&mut self) -> S0LEN_W {
-        S0LEN_W { w: self }
+    pub fn s0len(&mut self) -> S0LEN_W<8> {
+        S0LEN_W::new(self)
     }
     #[doc = "Bits 16:19 - Length of S1 field in number of bits. Decision point: START task."]
     #[inline(always)]
-    pub fn s1len(&mut self) -> S1LEN_W {
-        S1LEN_W { w: self }
+    pub fn s1len(&mut self) -> S1LEN_W<16> {
+        S1LEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

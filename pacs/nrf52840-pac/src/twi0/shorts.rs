@@ -34,6 +34,8 @@ impl From<crate::W<SHORTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `BB_SUSPEND` reader - Shortcut between BB event and SUSPEND task"]
+pub type BB_SUSPEND_R = crate::BitReader<BB_SUSPEND_A>;
 #[doc = "Shortcut between BB event and SUSPEND task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BB_SUSPEND_A {
@@ -48,14 +50,8 @@ impl From<BB_SUSPEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BB_SUSPEND` reader - Shortcut between BB event and SUSPEND task"]
-pub struct BB_SUSPEND_R(crate::FieldReader<bool, BB_SUSPEND_A>);
 impl BB_SUSPEND_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BB_SUSPEND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BB_SUSPEND_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl BB_SUSPEND_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == BB_SUSPEND_A::DISABLED
+        *self == BB_SUSPEND_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == BB_SUSPEND_A::ENABLED
-    }
-}
-impl core::ops::Deref for BB_SUSPEND_R {
-    type Target = crate::FieldReader<bool, BB_SUSPEND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BB_SUSPEND_A::ENABLED
     }
 }
 #[doc = "Field `BB_SUSPEND` writer - Shortcut between BB event and SUSPEND task"]
-pub struct BB_SUSPEND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BB_SUSPEND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BB_SUSPEND_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type BB_SUSPEND_W<'a, const O: u8> = crate::BitWriter<'a, u32, SHORTS_SPEC, BB_SUSPEND_A, O>;
+impl<'a, const O: u8> BB_SUSPEND_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> BB_SUSPEND_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(BB_SUSPEND_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `BB_STOP` reader - Shortcut between BB event and STOP task"]
+pub type BB_STOP_R = crate::BitReader<BB_STOP_A>;
 #[doc = "Shortcut between BB event and STOP task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BB_STOP_A {
@@ -132,14 +100,8 @@ impl From<BB_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BB_STOP` reader - Shortcut between BB event and STOP task"]
-pub struct BB_STOP_R(crate::FieldReader<bool, BB_STOP_A>);
 impl BB_STOP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BB_STOP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BB_STOP_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl BB_STOP_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == BB_STOP_A::DISABLED
+        *self == BB_STOP_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == BB_STOP_A::ENABLED
-    }
-}
-impl core::ops::Deref for BB_STOP_R {
-    type Target = crate::FieldReader<bool, BB_STOP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BB_STOP_A::ENABLED
     }
 }
 #[doc = "Field `BB_STOP` writer - Shortcut between BB event and STOP task"]
-pub struct BB_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BB_STOP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BB_STOP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type BB_STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SHORTS_SPEC, BB_STOP_A, O>;
+impl<'a, const O: u8> BB_STOP_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,45 +133,29 @@ impl<'a> BB_STOP_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(BB_STOP_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Shortcut between BB event and SUSPEND task"]
     #[inline(always)]
     pub fn bb_suspend(&self) -> BB_SUSPEND_R {
-        BB_SUSPEND_R::new((self.bits & 0x01) != 0)
+        BB_SUSPEND_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Shortcut between BB event and STOP task"]
     #[inline(always)]
     pub fn bb_stop(&self) -> BB_STOP_R {
-        BB_STOP_R::new(((self.bits >> 1) & 0x01) != 0)
+        BB_STOP_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Shortcut between BB event and SUSPEND task"]
     #[inline(always)]
-    pub fn bb_suspend(&mut self) -> BB_SUSPEND_W {
-        BB_SUSPEND_W { w: self }
+    pub fn bb_suspend(&mut self) -> BB_SUSPEND_W<0> {
+        BB_SUSPEND_W::new(self)
     }
     #[doc = "Bit 1 - Shortcut between BB event and STOP task"]
     #[inline(always)]
-    pub fn bb_stop(&mut self) -> BB_STOP_W {
-        BB_STOP_W { w: self }
+    pub fn bb_stop(&mut self) -> BB_STOP_W<1> {
+        BB_STOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

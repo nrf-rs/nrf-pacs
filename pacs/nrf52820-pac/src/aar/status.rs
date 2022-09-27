@@ -14,20 +14,7 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `STATUS` reader - The IRK that was used last time an address was resolved"]
-pub struct STATUS_R(crate::FieldReader<u8, u8>);
-impl STATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        STATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STATUS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STATUS_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:3 - The IRK that was used last time an address was resolved"]
     #[inline(always)]

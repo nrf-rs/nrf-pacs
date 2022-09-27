@@ -14,65 +14,13 @@ impl From<crate::R<TAGHEADER0_SPEC>> for R {
     }
 }
 #[doc = "Field `MFGID` reader - Default Manufacturer ID: Nordic Semiconductor ASA has ICM 0x5F"]
-pub struct MFGID_R(crate::FieldReader<u8, u8>);
-impl MFGID_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MFGID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MFGID_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MFGID_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UD1` reader - Unique identifier byte 1"]
-pub struct UD1_R(crate::FieldReader<u8, u8>);
-impl UD1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UD1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UD1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UD1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UD2` reader - Unique identifier byte 2"]
-pub struct UD2_R(crate::FieldReader<u8, u8>);
-impl UD2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UD2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UD2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UD2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UD3` reader - Unique identifier byte 3"]
-pub struct UD3_R(crate::FieldReader<u8, u8>);
-impl UD3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UD3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UD3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UD3_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Default Manufacturer ID: Nordic Semiconductor ASA has ICM 0x5F"]
     #[inline(always)]

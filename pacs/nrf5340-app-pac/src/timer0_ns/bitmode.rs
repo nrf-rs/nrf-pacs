@@ -34,6 +34,8 @@ impl From<crate::W<BITMODE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `BITMODE` reader - Timer bit width"]
+pub type BITMODE_R = crate::FieldReader<u8, BITMODE_A>;
 #[doc = "Timer bit width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,14 +55,8 @@ impl From<BITMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BITMODE` reader - Timer bit width"]
-pub struct BITMODE_R(crate::FieldReader<u8, BITMODE_A>);
 impl BITMODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BITMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BITMODE_A {
         match self.bits {
@@ -74,41 +70,28 @@ impl BITMODE_R {
     #[doc = "Checks if the value of the field is `_16BIT`"]
     #[inline(always)]
     pub fn is_16bit(&self) -> bool {
-        **self == BITMODE_A::_16BIT
+        *self == BITMODE_A::_16BIT
     }
     #[doc = "Checks if the value of the field is `_08BIT`"]
     #[inline(always)]
     pub fn is_08bit(&self) -> bool {
-        **self == BITMODE_A::_08BIT
+        *self == BITMODE_A::_08BIT
     }
     #[doc = "Checks if the value of the field is `_24BIT`"]
     #[inline(always)]
     pub fn is_24bit(&self) -> bool {
-        **self == BITMODE_A::_24BIT
+        *self == BITMODE_A::_24BIT
     }
     #[doc = "Checks if the value of the field is `_32BIT`"]
     #[inline(always)]
     pub fn is_32bit(&self) -> bool {
-        **self == BITMODE_A::_32BIT
-    }
-}
-impl core::ops::Deref for BITMODE_R {
-    type Target = crate::FieldReader<u8, BITMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BITMODE_A::_32BIT
     }
 }
 #[doc = "Field `BITMODE` writer - Timer bit width"]
-pub struct BITMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BITMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BITMODE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type BITMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, BITMODE_SPEC, u8, BITMODE_A, 2, O>;
+impl<'a, const O: u8> BITMODE_W<'a, O> {
     #[doc = "16 bit timer bit width"]
     #[inline(always)]
     pub fn _16bit(self) -> &'a mut W {
@@ -129,25 +112,19 @@ impl<'a> BITMODE_W<'a> {
     pub fn _32bit(self) -> &'a mut W {
         self.variant(BITMODE_A::_32BIT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Timer bit width"]
     #[inline(always)]
     pub fn bitmode(&self) -> BITMODE_R {
-        BITMODE_R::new((self.bits & 0x03) as u8)
+        BITMODE_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Timer bit width"]
     #[inline(always)]
-    pub fn bitmode(&mut self) -> BITMODE_W {
-        BITMODE_W { w: self }
+    pub fn bitmode(&mut self) -> BITMODE_W<0> {
+        BITMODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

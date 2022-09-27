@@ -35,59 +35,13 @@ impl From<crate::W<TH_SPEC>> for W {
     }
 }
 #[doc = "Field `THDOWN` reader - VDOWN = (THDOWN+1)/64*VREF"]
-pub struct THDOWN_R(crate::FieldReader<u8, u8>);
-impl THDOWN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        THDOWN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for THDOWN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type THDOWN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `THDOWN` writer - VDOWN = (THDOWN+1)/64*VREF"]
-pub struct THDOWN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> THDOWN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type THDOWN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TH_SPEC, u8, u8, 6, O>;
 #[doc = "Field `THUP` reader - VUP = (THUP+1)/64*VREF"]
-pub struct THUP_R(crate::FieldReader<u8, u8>);
-impl THUP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        THUP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for THUP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type THUP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `THUP` writer - VUP = (THUP+1)/64*VREF"]
-pub struct THUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> THUP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | ((value as u32 & 0x3f) << 8);
-        self.w
-    }
-}
+pub type THUP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TH_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - VDOWN = (THDOWN+1)/64*VREF"]
     #[inline(always)]
@@ -103,13 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - VDOWN = (THDOWN+1)/64*VREF"]
     #[inline(always)]
-    pub fn thdown(&mut self) -> THDOWN_W {
-        THDOWN_W { w: self }
+    pub fn thdown(&mut self) -> THDOWN_W<0> {
+        THDOWN_W::new(self)
     }
     #[doc = "Bits 8:13 - VUP = (THUP+1)/64*VREF"]
     #[inline(always)]
-    pub fn thup(&mut self) -> THUP_W {
-        THUP_W { w: self }
+    pub fn thup(&mut self) -> THUP_W<8> {
+        THUP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

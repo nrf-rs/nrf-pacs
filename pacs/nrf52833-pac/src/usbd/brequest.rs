@@ -13,6 +13,8 @@ impl From<crate::R<BREQUEST_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `BREQUEST` reader - SETUP data, byte 1, bRequest. Values provided for standard requests only, user must implement class and vendor values."]
+pub type BREQUEST_R = crate::FieldReader<u8, BREQUEST_A>;
 #[doc = "SETUP data, byte 1, bRequest. Values provided for standard requests only, user must implement class and vendor values.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -46,14 +48,8 @@ impl From<BREQUEST_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BREQUEST` reader - SETUP data, byte 1, bRequest. Values provided for standard requests only, user must implement class and vendor values."]
-pub struct BREQUEST_R(crate::FieldReader<u8, BREQUEST_A>);
 impl BREQUEST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BREQUEST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<BREQUEST_A> {
         match self.bits {
@@ -74,64 +70,57 @@ impl BREQUEST_R {
     #[doc = "Checks if the value of the field is `STD_GET_STATUS`"]
     #[inline(always)]
     pub fn is_std_get_status(&self) -> bool {
-        **self == BREQUEST_A::STD_GET_STATUS
+        *self == BREQUEST_A::STD_GET_STATUS
     }
     #[doc = "Checks if the value of the field is `STD_CLEAR_FEATURE`"]
     #[inline(always)]
     pub fn is_std_clear_feature(&self) -> bool {
-        **self == BREQUEST_A::STD_CLEAR_FEATURE
+        *self == BREQUEST_A::STD_CLEAR_FEATURE
     }
     #[doc = "Checks if the value of the field is `STD_SET_FEATURE`"]
     #[inline(always)]
     pub fn is_std_set_feature(&self) -> bool {
-        **self == BREQUEST_A::STD_SET_FEATURE
+        *self == BREQUEST_A::STD_SET_FEATURE
     }
     #[doc = "Checks if the value of the field is `STD_SET_ADDRESS`"]
     #[inline(always)]
     pub fn is_std_set_address(&self) -> bool {
-        **self == BREQUEST_A::STD_SET_ADDRESS
+        *self == BREQUEST_A::STD_SET_ADDRESS
     }
     #[doc = "Checks if the value of the field is `STD_GET_DESCRIPTOR`"]
     #[inline(always)]
     pub fn is_std_get_descriptor(&self) -> bool {
-        **self == BREQUEST_A::STD_GET_DESCRIPTOR
+        *self == BREQUEST_A::STD_GET_DESCRIPTOR
     }
     #[doc = "Checks if the value of the field is `STD_SET_DESCRIPTOR`"]
     #[inline(always)]
     pub fn is_std_set_descriptor(&self) -> bool {
-        **self == BREQUEST_A::STD_SET_DESCRIPTOR
+        *self == BREQUEST_A::STD_SET_DESCRIPTOR
     }
     #[doc = "Checks if the value of the field is `STD_GET_CONFIGURATION`"]
     #[inline(always)]
     pub fn is_std_get_configuration(&self) -> bool {
-        **self == BREQUEST_A::STD_GET_CONFIGURATION
+        *self == BREQUEST_A::STD_GET_CONFIGURATION
     }
     #[doc = "Checks if the value of the field is `STD_SET_CONFIGURATION`"]
     #[inline(always)]
     pub fn is_std_set_configuration(&self) -> bool {
-        **self == BREQUEST_A::STD_SET_CONFIGURATION
+        *self == BREQUEST_A::STD_SET_CONFIGURATION
     }
     #[doc = "Checks if the value of the field is `STD_GET_INTERFACE`"]
     #[inline(always)]
     pub fn is_std_get_interface(&self) -> bool {
-        **self == BREQUEST_A::STD_GET_INTERFACE
+        *self == BREQUEST_A::STD_GET_INTERFACE
     }
     #[doc = "Checks if the value of the field is `STD_SET_INTERFACE`"]
     #[inline(always)]
     pub fn is_std_set_interface(&self) -> bool {
-        **self == BREQUEST_A::STD_SET_INTERFACE
+        *self == BREQUEST_A::STD_SET_INTERFACE
     }
     #[doc = "Checks if the value of the field is `STD_SYNCH_FRAME`"]
     #[inline(always)]
     pub fn is_std_synch_frame(&self) -> bool {
-        **self == BREQUEST_A::STD_SYNCH_FRAME
-    }
-}
-impl core::ops::Deref for BREQUEST_R {
-    type Target = crate::FieldReader<u8, BREQUEST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BREQUEST_A::STD_SYNCH_FRAME
     }
 }
 impl R {

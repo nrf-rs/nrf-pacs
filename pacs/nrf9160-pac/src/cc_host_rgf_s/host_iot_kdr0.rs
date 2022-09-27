@@ -35,32 +35,10 @@ impl From<crate::W<HOST_IOT_KDR0_SPEC>> for W {
     }
 }
 #[doc = "Field `HOST_IOT_KDR0` reader - Write: K_DR bits 31:0. Read: 0x00000000 when 128-bit K_DR key value is not yet retained in the CRYPTOCELL AO power domain. Read: 0x00000001 when 128-bit K_DR key value is successfully retained in the CRYPTOCELL AO power domain."]
-pub struct HOST_IOT_KDR0_R(crate::FieldReader<u32, u32>);
-impl HOST_IOT_KDR0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        HOST_IOT_KDR0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HOST_IOT_KDR0_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HOST_IOT_KDR0_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `HOST_IOT_KDR0` writer - Write: K_DR bits 31:0. Read: 0x00000000 when 128-bit K_DR key value is not yet retained in the CRYPTOCELL AO power domain. Read: 0x00000001 when 128-bit K_DR key value is successfully retained in the CRYPTOCELL AO power domain."]
-pub struct HOST_IOT_KDR0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HOST_IOT_KDR0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type HOST_IOT_KDR0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HOST_IOT_KDR0_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Write: K_DR bits 31:0. Read: 0x00000000 when 128-bit K_DR key value is not yet retained in the CRYPTOCELL AO power domain. Read: 0x00000001 when 128-bit K_DR key value is successfully retained in the CRYPTOCELL AO power domain."]
     #[inline(always)]
@@ -71,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Write: K_DR bits 31:0. Read: 0x00000000 when 128-bit K_DR key value is not yet retained in the CRYPTOCELL AO power domain. Read: 0x00000001 when 128-bit K_DR key value is successfully retained in the CRYPTOCELL AO power domain."]
     #[inline(always)]
-    pub fn host_iot_kdr0(&mut self) -> HOST_IOT_KDR0_W {
-        HOST_IOT_KDR0_W { w: self }
+    pub fn host_iot_kdr0(&mut self) -> HOST_IOT_KDR0_W<0> {
+        HOST_IOT_KDR0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
