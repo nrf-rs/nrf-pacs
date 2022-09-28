@@ -21,8 +21,7 @@ In order to release a new version of the PACs, the following steps need to be pe
     "N commits to master since this release".
 * **Version Bump**: Determine whether the next release contains breaking changes. This informs what
   kind of version bump is needed (minor vs. major). Then, bump the crate version in
-  `Cargo.template.toml` accordingly and run `cargo xtask generate`. Do not commit the result, that
-  will be done in the next step.
+  `Cargo.toml` accordingly. Do not commit the result, that will be done in the next step.
 * **Publish**: Run `cargo xtask publish`. This will:
   * Bump the changelog, replacing the "Unreleased" section with one for the current version.
   * Create a commit and tag for the release.
