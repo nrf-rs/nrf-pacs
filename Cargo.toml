@@ -3,7 +3,7 @@ members = ["xtask", "pacs/*"]
 default-members = ["xtask"]
 
 [workspace.package]
-version = "0.12.1"
+version = "0.12.2"
 keywords = ["no-std", "arm", "cortex-m", "nrf", "peripherals"]
 license = "0BSD"
 repository = "https://github.com/nrf-rs/nrf-pacs"
