@@ -35,54 +35,22 @@ impl From<crate::W<EVENTS_NOTRESOLVED_SPEC>> for W {
     }
 }
 #[doc = "Field `EVENTS_NOTRESOLVED` reader - "]
-pub struct EVENTS_NOTRESOLVED_R(crate::FieldReader<bool, bool>);
-impl EVENTS_NOTRESOLVED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EVENTS_NOTRESOLVED_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EVENTS_NOTRESOLVED_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EVENTS_NOTRESOLVED_R = crate::BitReader<bool>;
 #[doc = "Field `EVENTS_NOTRESOLVED` writer - "]
-pub struct EVENTS_NOTRESOLVED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVENTS_NOTRESOLVED_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EVENTS_NOTRESOLVED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_NOTRESOLVED_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn events_notresolved(&self) -> EVENTS_NOTRESOLVED_R {
-        EVENTS_NOTRESOLVED_R::new((self.bits & 0x01) != 0)
+        EVENTS_NOTRESOLVED_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn events_notresolved(&mut self) -> EVENTS_NOTRESOLVED_W {
-        EVENTS_NOTRESOLVED_W { w: self }
+    pub fn events_notresolved(&mut self) -> EVENTS_NOTRESOLVED_W<0> {
+        EVENTS_NOTRESOLVED_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

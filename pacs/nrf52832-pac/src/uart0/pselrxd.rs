@@ -34,6 +34,8 @@ impl From<crate::W<PSELRXD_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PSELRXD` reader - Pin number configuration for UART RXD signal"]
+pub type PSELRXD_R = crate::FieldReader<u32, PSELRXD_A>;
 #[doc = "Pin number configuration for UART RXD signal\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -47,14 +49,8 @@ impl From<PSELRXD_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `PSELRXD` reader - Pin number configuration for UART RXD signal"]
-pub struct PSELRXD_R(crate::FieldReader<u32, PSELRXD_A>);
 impl PSELRXD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PSELRXD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PSELRXD_A> {
         match self.bits {
@@ -65,36 +61,17 @@ impl PSELRXD_R {
     #[doc = "Checks if the value of the field is `DISCONNECTED`"]
     #[inline(always)]
     pub fn is_disconnected(&self) -> bool {
-        **self == PSELRXD_A::DISCONNECTED
-    }
-}
-impl core::ops::Deref for PSELRXD_R {
-    type Target = crate::FieldReader<u32, PSELRXD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PSELRXD_A::DISCONNECTED
     }
 }
 #[doc = "Field `PSELRXD` writer - Pin number configuration for UART RXD signal"]
-pub struct PSELRXD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSELRXD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PSELRXD_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PSELRXD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PSELRXD_SPEC, u32, PSELRXD_A, 32, O>;
+impl<'a, const O: u8> PSELRXD_W<'a, O> {
     #[doc = "Disconnect"]
     #[inline(always)]
     pub fn disconnected(self) -> &'a mut W {
         self.variant(PSELRXD_A::DISCONNECTED)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
     }
 }
 impl R {
@@ -107,8 +84,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Pin number configuration for UART RXD signal"]
     #[inline(always)]
-    pub fn pselrxd(&mut self) -> PSELRXD_W {
-        PSELRXD_W { w: self }
+    pub fn pselrxd(&mut self) -> PSELRXD_W<0> {
+        PSELRXD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

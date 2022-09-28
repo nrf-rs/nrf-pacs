@@ -35,32 +35,9 @@ impl From<crate::W<ADDRPTR_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDRPTR` reader - Pointer to the resolvable address (6-bytes)"]
-pub struct ADDRPTR_R(crate::FieldReader<u32, u32>);
-impl ADDRPTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        ADDRPTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDRPTR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDRPTR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `ADDRPTR` writer - Pointer to the resolvable address (6-bytes)"]
-pub struct ADDRPTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDRPTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type ADDRPTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ADDRPTR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Pointer to the resolvable address (6-bytes)"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Pointer to the resolvable address (6-bytes)"]
     #[inline(always)]
-    pub fn addrptr(&mut self) -> ADDRPTR_W {
-        ADDRPTR_W { w: self }
+    pub fn addrptr(&mut self) -> ADDRPTR_W<0> {
+        ADDRPTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

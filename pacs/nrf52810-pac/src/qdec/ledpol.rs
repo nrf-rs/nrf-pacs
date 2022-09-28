@@ -34,13 +34,15 @@ impl From<crate::W<LEDPOL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LEDPOL` reader - LED output pin polarity"]
+pub type LEDPOL_R = crate::BitReader<LEDPOL_A>;
 #[doc = "LED output pin polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEDPOL_A {
     #[doc = "0: Led active on output pin low"]
-    ACTIVELOW = 0,
+    ACTIVE_LOW = 0,
     #[doc = "1: Led active on output pin high"]
-    ACTIVEHIGH = 1,
+    ACTIVE_HIGH = 1,
 }
 impl From<LEDPOL_A> for bool {
     #[inline(always)]
@@ -48,88 +50,52 @@ impl From<LEDPOL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LEDPOL` reader - LED output pin polarity"]
-pub struct LEDPOL_R(crate::FieldReader<bool, LEDPOL_A>);
 impl LEDPOL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LEDPOL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LEDPOL_A {
         match self.bits {
-            false => LEDPOL_A::ACTIVELOW,
-            true => LEDPOL_A::ACTIVEHIGH,
+            false => LEDPOL_A::ACTIVE_LOW,
+            true => LEDPOL_A::ACTIVE_HIGH,
         }
     }
-    #[doc = "Checks if the value of the field is `ACTIVELOW`"]
+    #[doc = "Checks if the value of the field is `ACTIVE_LOW`"]
     #[inline(always)]
     pub fn is_active_low(&self) -> bool {
-        **self == LEDPOL_A::ACTIVELOW
+        *self == LEDPOL_A::ACTIVE_LOW
     }
-    #[doc = "Checks if the value of the field is `ACTIVEHIGH`"]
+    #[doc = "Checks if the value of the field is `ACTIVE_HIGH`"]
     #[inline(always)]
     pub fn is_active_high(&self) -> bool {
-        **self == LEDPOL_A::ACTIVEHIGH
-    }
-}
-impl core::ops::Deref for LEDPOL_R {
-    type Target = crate::FieldReader<bool, LEDPOL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LEDPOL_A::ACTIVE_HIGH
     }
 }
 #[doc = "Field `LEDPOL` writer - LED output pin polarity"]
-pub struct LEDPOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEDPOL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LEDPOL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LEDPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDPOL_SPEC, LEDPOL_A, O>;
+impl<'a, const O: u8> LEDPOL_W<'a, O> {
     #[doc = "Led active on output pin low"]
     #[inline(always)]
     pub fn active_low(self) -> &'a mut W {
-        self.variant(LEDPOL_A::ACTIVELOW)
+        self.variant(LEDPOL_A::ACTIVE_LOW)
     }
     #[doc = "Led active on output pin high"]
     #[inline(always)]
     pub fn active_high(self) -> &'a mut W {
-        self.variant(LEDPOL_A::ACTIVEHIGH)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(LEDPOL_A::ACTIVE_HIGH)
     }
 }
 impl R {
     #[doc = "Bit 0 - LED output pin polarity"]
     #[inline(always)]
     pub fn ledpol(&self) -> LEDPOL_R {
-        LEDPOL_R::new((self.bits & 0x01) != 0)
+        LEDPOL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - LED output pin polarity"]
     #[inline(always)]
-    pub fn ledpol(&mut self) -> LEDPOL_W {
-        LEDPOL_W { w: self }
+    pub fn ledpol(&mut self) -> LEDPOL_W<0> {
+        LEDPOL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

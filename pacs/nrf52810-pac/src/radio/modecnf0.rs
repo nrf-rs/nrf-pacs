@@ -34,6 +34,8 @@ impl From<crate::W<MODECNF0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RU` reader - Radio ramp-up time"]
+pub type RU_R = crate::BitReader<RU_A>;
 #[doc = "Radio ramp-up time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RU_A {
@@ -48,14 +50,8 @@ impl From<RU_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RU` reader - Radio ramp-up time"]
-pub struct RU_R(crate::FieldReader<bool, RU_A>);
 impl RU_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RU_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RU_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl RU_R {
     #[doc = "Checks if the value of the field is `DEFAULT`"]
     #[inline(always)]
     pub fn is_default(&self) -> bool {
-        **self == RU_A::DEFAULT
+        *self == RU_A::DEFAULT
     }
     #[doc = "Checks if the value of the field is `FAST`"]
     #[inline(always)]
     pub fn is_fast(&self) -> bool {
-        **self == RU_A::FAST
-    }
-}
-impl core::ops::Deref for RU_R {
-    type Target = crate::FieldReader<bool, RU_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RU_A::FAST
     }
 }
 #[doc = "Field `RU` writer - Radio ramp-up time"]
-pub struct RU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RU_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RU_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RU_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODECNF0_SPEC, RU_A, O>;
+impl<'a, const O: u8> RU_W<'a, O> {
     #[doc = "Default ramp-up time (tRXEN), compatible with firmware written for nRF51"]
     #[inline(always)]
     pub fn default(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> RU_W<'a> {
     pub fn fast(self) -> &'a mut W {
         self.variant(RU_A::FAST)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `DTX` reader - Default TX value"]
+pub type DTX_R = crate::FieldReader<u8, DTX_A>;
 #[doc = "Default TX value\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -135,14 +103,8 @@ impl From<DTX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DTX` reader - Default TX value"]
-pub struct DTX_R(crate::FieldReader<u8, DTX_A>);
 impl DTX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DTX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DTX_A> {
         match self.bits {
@@ -155,36 +117,22 @@ impl DTX_R {
     #[doc = "Checks if the value of the field is `B1`"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
-        **self == DTX_A::B1
+        *self == DTX_A::B1
     }
     #[doc = "Checks if the value of the field is `B0`"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
-        **self == DTX_A::B0
+        *self == DTX_A::B0
     }
     #[doc = "Checks if the value of the field is `CENTER`"]
     #[inline(always)]
     pub fn is_center(&self) -> bool {
-        **self == DTX_A::CENTER
-    }
-}
-impl core::ops::Deref for DTX_R {
-    type Target = crate::FieldReader<u8, DTX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DTX_A::CENTER
     }
 }
 #[doc = "Field `DTX` writer - Default TX value"]
-pub struct DTX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DTX_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DTX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODECNF0_SPEC, u8, DTX_A, 2, O>;
+impl<'a, const O: u8> DTX_W<'a, O> {
     #[doc = "Transmit '1'"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut W {
@@ -200,35 +148,29 @@ impl<'a> DTX_W<'a> {
     pub fn center(self) -> &'a mut W {
         self.variant(DTX_A::CENTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Radio ramp-up time"]
     #[inline(always)]
     pub fn ru(&self) -> RU_R {
-        RU_R::new((self.bits & 0x01) != 0)
+        RU_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 8:9 - Default TX value"]
     #[inline(always)]
     pub fn dtx(&self) -> DTX_R {
-        DTX_R::new(((self.bits >> 8) & 0x03) as u8)
+        DTX_R::new(((self.bits >> 8) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Radio ramp-up time"]
     #[inline(always)]
-    pub fn ru(&mut self) -> RU_W {
-        RU_W { w: self }
+    pub fn ru(&mut self) -> RU_W<0> {
+        RU_W::new(self)
     }
     #[doc = "Bits 8:9 - Default TX value"]
     #[inline(always)]
-    pub fn dtx(&mut self) -> DTX_W {
-        DTX_W { w: self }
+    pub fn dtx(&mut self) -> DTX_W<8> {
+        DTX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

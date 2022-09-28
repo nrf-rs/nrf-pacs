@@ -34,6 +34,8 @@ impl From<crate::W<INTEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `STARTED` reader - Enable or disable interrupt for event STARTED"]
+pub type STARTED_R = crate::BitReader<STARTED_A>;
 #[doc = "Enable or disable interrupt for event STARTED\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STARTED_A {
@@ -48,14 +50,8 @@ impl From<STARTED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STARTED` reader - Enable or disable interrupt for event STARTED"]
-pub struct STARTED_R(crate::FieldReader<bool, STARTED_A>);
 impl STARTED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STARTED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STARTED_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl STARTED_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == STARTED_A::DISABLED
+        *self == STARTED_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == STARTED_A::ENABLED
-    }
-}
-impl core::ops::Deref for STARTED_R {
-    type Target = crate::FieldReader<bool, STARTED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STARTED_A::ENABLED
     }
 }
 #[doc = "Field `STARTED` writer - Enable or disable interrupt for event STARTED"]
-pub struct STARTED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STARTED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STARTED_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type STARTED_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, STARTED_A, O>;
+impl<'a, const O: u8> STARTED_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> STARTED_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(STARTED_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `END` reader - Enable or disable interrupt for event END"]
+pub type END_R = crate::BitReader<END_A>;
 #[doc = "Enable or disable interrupt for event END\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum END_A {
@@ -132,14 +100,8 @@ impl From<END_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `END` reader - Enable or disable interrupt for event END"]
-pub struct END_R(crate::FieldReader<bool, END_A>);
 impl END_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        END_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> END_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl END_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == END_A::DISABLED
+        *self == END_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == END_A::ENABLED
-    }
-}
-impl core::ops::Deref for END_R {
-    type Target = crate::FieldReader<bool, END_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == END_A::ENABLED
     }
 }
 #[doc = "Field `END` writer - Enable or disable interrupt for event END"]
-pub struct END_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> END_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: END_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type END_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, END_A, O>;
+impl<'a, const O: u8> END_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,23 +133,9 @@ impl<'a> END_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(END_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `DONE` reader - Enable or disable interrupt for event DONE"]
+pub type DONE_R = crate::BitReader<DONE_A>;
 #[doc = "Enable or disable interrupt for event DONE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DONE_A {
@@ -216,14 +150,8 @@ impl From<DONE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DONE` reader - Enable or disable interrupt for event DONE"]
-pub struct DONE_R(crate::FieldReader<bool, DONE_A>);
 impl DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DONE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DONE_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl DONE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DONE_A::DISABLED
+        *self == DONE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DONE_A::ENABLED
-    }
-}
-impl core::ops::Deref for DONE_R {
-    type Target = crate::FieldReader<bool, DONE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DONE_A::ENABLED
     }
 }
 #[doc = "Field `DONE` writer - Enable or disable interrupt for event DONE"]
-pub struct DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DONE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DONE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, DONE_A, O>;
+impl<'a, const O: u8> DONE_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -269,23 +183,9 @@ impl<'a> DONE_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(DONE_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `RESULTDONE` reader - Enable or disable interrupt for event RESULTDONE"]
+pub type RESULTDONE_R = crate::BitReader<RESULTDONE_A>;
 #[doc = "Enable or disable interrupt for event RESULTDONE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESULTDONE_A {
@@ -300,14 +200,8 @@ impl From<RESULTDONE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESULTDONE` reader - Enable or disable interrupt for event RESULTDONE"]
-pub struct RESULTDONE_R(crate::FieldReader<bool, RESULTDONE_A>);
 impl RESULTDONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RESULTDONE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESULTDONE_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl RESULTDONE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == RESULTDONE_A::DISABLED
+        *self == RESULTDONE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == RESULTDONE_A::ENABLED
-    }
-}
-impl core::ops::Deref for RESULTDONE_R {
-    type Target = crate::FieldReader<bool, RESULTDONE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RESULTDONE_A::ENABLED
     }
 }
 #[doc = "Field `RESULTDONE` writer - Enable or disable interrupt for event RESULTDONE"]
-pub struct RESULTDONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESULTDONE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RESULTDONE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RESULTDONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RESULTDONE_A, O>;
+impl<'a, const O: u8> RESULTDONE_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -353,23 +233,9 @@ impl<'a> RESULTDONE_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(RESULTDONE_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `CALIBRATEDONE` reader - Enable or disable interrupt for event CALIBRATEDONE"]
+pub type CALIBRATEDONE_R = crate::BitReader<CALIBRATEDONE_A>;
 #[doc = "Enable or disable interrupt for event CALIBRATEDONE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CALIBRATEDONE_A {
@@ -384,14 +250,8 @@ impl From<CALIBRATEDONE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CALIBRATEDONE` reader - Enable or disable interrupt for event CALIBRATEDONE"]
-pub struct CALIBRATEDONE_R(crate::FieldReader<bool, CALIBRATEDONE_A>);
 impl CALIBRATEDONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CALIBRATEDONE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CALIBRATEDONE_A {
         match self.bits {
@@ -402,31 +262,18 @@ impl CALIBRATEDONE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CALIBRATEDONE_A::DISABLED
+        *self == CALIBRATEDONE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CALIBRATEDONE_A::ENABLED
-    }
-}
-impl core::ops::Deref for CALIBRATEDONE_R {
-    type Target = crate::FieldReader<bool, CALIBRATEDONE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CALIBRATEDONE_A::ENABLED
     }
 }
 #[doc = "Field `CALIBRATEDONE` writer - Enable or disable interrupt for event CALIBRATEDONE"]
-pub struct CALIBRATEDONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALIBRATEDONE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CALIBRATEDONE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CALIBRATEDONE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTEN_SPEC, CALIBRATEDONE_A, O>;
+impl<'a, const O: u8> CALIBRATEDONE_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -437,23 +284,9 @@ impl<'a> CALIBRATEDONE_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CALIBRATEDONE_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `STOPPED` reader - Enable or disable interrupt for event STOPPED"]
+pub type STOPPED_R = crate::BitReader<STOPPED_A>;
 #[doc = "Enable or disable interrupt for event STOPPED\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPPED_A {
@@ -468,14 +301,8 @@ impl From<STOPPED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STOPPED` reader - Enable or disable interrupt for event STOPPED"]
-pub struct STOPPED_R(crate::FieldReader<bool, STOPPED_A>);
 impl STOPPED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STOPPED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STOPPED_A {
         match self.bits {
@@ -486,31 +313,17 @@ impl STOPPED_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == STOPPED_A::DISABLED
+        *self == STOPPED_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == STOPPED_A::ENABLED
-    }
-}
-impl core::ops::Deref for STOPPED_R {
-    type Target = crate::FieldReader<bool, STOPPED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STOPPED_A::ENABLED
     }
 }
 #[doc = "Field `STOPPED` writer - Enable or disable interrupt for event STOPPED"]
-pub struct STOPPED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOPPED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STOPPED_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type STOPPED_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, STOPPED_A, O>;
+impl<'a, const O: u8> STOPPED_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -521,23 +334,9 @@ impl<'a> STOPPED_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(STOPPED_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `CH0LIMITH` reader - Enable or disable interrupt for event CH0LIMITH"]
+pub type CH0LIMITH_R = crate::BitReader<CH0LIMITH_A>;
 #[doc = "Enable or disable interrupt for event CH0LIMITH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0LIMITH_A {
@@ -552,14 +351,8 @@ impl From<CH0LIMITH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH0LIMITH` reader - Enable or disable interrupt for event CH0LIMITH"]
-pub struct CH0LIMITH_R(crate::FieldReader<bool, CH0LIMITH_A>);
 impl CH0LIMITH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH0LIMITH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH0LIMITH_A {
         match self.bits {
@@ -570,31 +363,17 @@ impl CH0LIMITH_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH0LIMITH_A::DISABLED
+        *self == CH0LIMITH_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH0LIMITH_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH0LIMITH_R {
-    type Target = crate::FieldReader<bool, CH0LIMITH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH0LIMITH_A::ENABLED
     }
 }
 #[doc = "Field `CH0LIMITH` writer - Enable or disable interrupt for event CH0LIMITH"]
-pub struct CH0LIMITH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0LIMITH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH0LIMITH_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH0LIMITH_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH0LIMITH_A, O>;
+impl<'a, const O: u8> CH0LIMITH_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -605,23 +384,9 @@ impl<'a> CH0LIMITH_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH0LIMITH_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `CH0LIMITL` reader - Enable or disable interrupt for event CH0LIMITL"]
+pub type CH0LIMITL_R = crate::BitReader<CH0LIMITL_A>;
 #[doc = "Enable or disable interrupt for event CH0LIMITL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0LIMITL_A {
@@ -636,14 +401,8 @@ impl From<CH0LIMITL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH0LIMITL` reader - Enable or disable interrupt for event CH0LIMITL"]
-pub struct CH0LIMITL_R(crate::FieldReader<bool, CH0LIMITL_A>);
 impl CH0LIMITL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH0LIMITL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH0LIMITL_A {
         match self.bits {
@@ -654,31 +413,17 @@ impl CH0LIMITL_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH0LIMITL_A::DISABLED
+        *self == CH0LIMITL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH0LIMITL_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH0LIMITL_R {
-    type Target = crate::FieldReader<bool, CH0LIMITL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH0LIMITL_A::ENABLED
     }
 }
 #[doc = "Field `CH0LIMITL` writer - Enable or disable interrupt for event CH0LIMITL"]
-pub struct CH0LIMITL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0LIMITL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH0LIMITL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH0LIMITL_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH0LIMITL_A, O>;
+impl<'a, const O: u8> CH0LIMITL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -689,23 +434,9 @@ impl<'a> CH0LIMITL_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH0LIMITL_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `CH1LIMITH` reader - Enable or disable interrupt for event CH1LIMITH"]
+pub type CH1LIMITH_R = crate::BitReader<CH1LIMITH_A>;
 #[doc = "Enable or disable interrupt for event CH1LIMITH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1LIMITH_A {
@@ -720,14 +451,8 @@ impl From<CH1LIMITH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH1LIMITH` reader - Enable or disable interrupt for event CH1LIMITH"]
-pub struct CH1LIMITH_R(crate::FieldReader<bool, CH1LIMITH_A>);
 impl CH1LIMITH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH1LIMITH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH1LIMITH_A {
         match self.bits {
@@ -738,31 +463,17 @@ impl CH1LIMITH_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH1LIMITH_A::DISABLED
+        *self == CH1LIMITH_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH1LIMITH_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH1LIMITH_R {
-    type Target = crate::FieldReader<bool, CH1LIMITH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH1LIMITH_A::ENABLED
     }
 }
 #[doc = "Field `CH1LIMITH` writer - Enable or disable interrupt for event CH1LIMITH"]
-pub struct CH1LIMITH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1LIMITH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH1LIMITH_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH1LIMITH_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH1LIMITH_A, O>;
+impl<'a, const O: u8> CH1LIMITH_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -773,23 +484,9 @@ impl<'a> CH1LIMITH_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH1LIMITH_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `CH1LIMITL` reader - Enable or disable interrupt for event CH1LIMITL"]
+pub type CH1LIMITL_R = crate::BitReader<CH1LIMITL_A>;
 #[doc = "Enable or disable interrupt for event CH1LIMITL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1LIMITL_A {
@@ -804,14 +501,8 @@ impl From<CH1LIMITL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH1LIMITL` reader - Enable or disable interrupt for event CH1LIMITL"]
-pub struct CH1LIMITL_R(crate::FieldReader<bool, CH1LIMITL_A>);
 impl CH1LIMITL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH1LIMITL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH1LIMITL_A {
         match self.bits {
@@ -822,31 +513,17 @@ impl CH1LIMITL_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH1LIMITL_A::DISABLED
+        *self == CH1LIMITL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH1LIMITL_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH1LIMITL_R {
-    type Target = crate::FieldReader<bool, CH1LIMITL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH1LIMITL_A::ENABLED
     }
 }
 #[doc = "Field `CH1LIMITL` writer - Enable or disable interrupt for event CH1LIMITL"]
-pub struct CH1LIMITL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1LIMITL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH1LIMITL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH1LIMITL_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH1LIMITL_A, O>;
+impl<'a, const O: u8> CH1LIMITL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -857,23 +534,9 @@ impl<'a> CH1LIMITL_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH1LIMITL_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
+#[doc = "Field `CH2LIMITH` reader - Enable or disable interrupt for event CH2LIMITH"]
+pub type CH2LIMITH_R = crate::BitReader<CH2LIMITH_A>;
 #[doc = "Enable or disable interrupt for event CH2LIMITH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2LIMITH_A {
@@ -888,14 +551,8 @@ impl From<CH2LIMITH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH2LIMITH` reader - Enable or disable interrupt for event CH2LIMITH"]
-pub struct CH2LIMITH_R(crate::FieldReader<bool, CH2LIMITH_A>);
 impl CH2LIMITH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH2LIMITH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH2LIMITH_A {
         match self.bits {
@@ -906,31 +563,17 @@ impl CH2LIMITH_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH2LIMITH_A::DISABLED
+        *self == CH2LIMITH_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH2LIMITH_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH2LIMITH_R {
-    type Target = crate::FieldReader<bool, CH2LIMITH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH2LIMITH_A::ENABLED
     }
 }
 #[doc = "Field `CH2LIMITH` writer - Enable or disable interrupt for event CH2LIMITH"]
-pub struct CH2LIMITH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2LIMITH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH2LIMITH_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH2LIMITH_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH2LIMITH_A, O>;
+impl<'a, const O: u8> CH2LIMITH_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -941,23 +584,9 @@ impl<'a> CH2LIMITH_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH2LIMITH_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
+#[doc = "Field `CH2LIMITL` reader - Enable or disable interrupt for event CH2LIMITL"]
+pub type CH2LIMITL_R = crate::BitReader<CH2LIMITL_A>;
 #[doc = "Enable or disable interrupt for event CH2LIMITL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2LIMITL_A {
@@ -972,14 +601,8 @@ impl From<CH2LIMITL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH2LIMITL` reader - Enable or disable interrupt for event CH2LIMITL"]
-pub struct CH2LIMITL_R(crate::FieldReader<bool, CH2LIMITL_A>);
 impl CH2LIMITL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH2LIMITL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH2LIMITL_A {
         match self.bits {
@@ -990,31 +613,17 @@ impl CH2LIMITL_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH2LIMITL_A::DISABLED
+        *self == CH2LIMITL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH2LIMITL_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH2LIMITL_R {
-    type Target = crate::FieldReader<bool, CH2LIMITL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH2LIMITL_A::ENABLED
     }
 }
 #[doc = "Field `CH2LIMITL` writer - Enable or disable interrupt for event CH2LIMITL"]
-pub struct CH2LIMITL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2LIMITL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH2LIMITL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH2LIMITL_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH2LIMITL_A, O>;
+impl<'a, const O: u8> CH2LIMITL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1025,23 +634,9 @@ impl<'a> CH2LIMITL_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH2LIMITL_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
 }
+#[doc = "Field `CH3LIMITH` reader - Enable or disable interrupt for event CH3LIMITH"]
+pub type CH3LIMITH_R = crate::BitReader<CH3LIMITH_A>;
 #[doc = "Enable or disable interrupt for event CH3LIMITH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3LIMITH_A {
@@ -1056,14 +651,8 @@ impl From<CH3LIMITH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH3LIMITH` reader - Enable or disable interrupt for event CH3LIMITH"]
-pub struct CH3LIMITH_R(crate::FieldReader<bool, CH3LIMITH_A>);
 impl CH3LIMITH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH3LIMITH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH3LIMITH_A {
         match self.bits {
@@ -1074,31 +663,17 @@ impl CH3LIMITH_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH3LIMITH_A::DISABLED
+        *self == CH3LIMITH_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH3LIMITH_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH3LIMITH_R {
-    type Target = crate::FieldReader<bool, CH3LIMITH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH3LIMITH_A::ENABLED
     }
 }
 #[doc = "Field `CH3LIMITH` writer - Enable or disable interrupt for event CH3LIMITH"]
-pub struct CH3LIMITH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3LIMITH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH3LIMITH_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH3LIMITH_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH3LIMITH_A, O>;
+impl<'a, const O: u8> CH3LIMITH_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1109,23 +684,9 @@ impl<'a> CH3LIMITH_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH3LIMITH_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
+#[doc = "Field `CH3LIMITL` reader - Enable or disable interrupt for event CH3LIMITL"]
+pub type CH3LIMITL_R = crate::BitReader<CH3LIMITL_A>;
 #[doc = "Enable or disable interrupt for event CH3LIMITL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3LIMITL_A {
@@ -1140,14 +701,8 @@ impl From<CH3LIMITL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH3LIMITL` reader - Enable or disable interrupt for event CH3LIMITL"]
-pub struct CH3LIMITL_R(crate::FieldReader<bool, CH3LIMITL_A>);
 impl CH3LIMITL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH3LIMITL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH3LIMITL_A {
         match self.bits {
@@ -1158,31 +713,17 @@ impl CH3LIMITL_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH3LIMITL_A::DISABLED
+        *self == CH3LIMITL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH3LIMITL_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH3LIMITL_R {
-    type Target = crate::FieldReader<bool, CH3LIMITL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH3LIMITL_A::ENABLED
     }
 }
 #[doc = "Field `CH3LIMITL` writer - Enable or disable interrupt for event CH3LIMITL"]
-pub struct CH3LIMITL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3LIMITL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH3LIMITL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH3LIMITL_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH3LIMITL_A, O>;
+impl<'a, const O: u8> CH3LIMITL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1193,23 +734,9 @@ impl<'a> CH3LIMITL_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH3LIMITL_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
 }
+#[doc = "Field `CH4LIMITH` reader - Enable or disable interrupt for event CH4LIMITH"]
+pub type CH4LIMITH_R = crate::BitReader<CH4LIMITH_A>;
 #[doc = "Enable or disable interrupt for event CH4LIMITH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4LIMITH_A {
@@ -1224,14 +751,8 @@ impl From<CH4LIMITH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH4LIMITH` reader - Enable or disable interrupt for event CH4LIMITH"]
-pub struct CH4LIMITH_R(crate::FieldReader<bool, CH4LIMITH_A>);
 impl CH4LIMITH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH4LIMITH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH4LIMITH_A {
         match self.bits {
@@ -1242,31 +763,17 @@ impl CH4LIMITH_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH4LIMITH_A::DISABLED
+        *self == CH4LIMITH_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH4LIMITH_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH4LIMITH_R {
-    type Target = crate::FieldReader<bool, CH4LIMITH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH4LIMITH_A::ENABLED
     }
 }
 #[doc = "Field `CH4LIMITH` writer - Enable or disable interrupt for event CH4LIMITH"]
-pub struct CH4LIMITH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4LIMITH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH4LIMITH_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH4LIMITH_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH4LIMITH_A, O>;
+impl<'a, const O: u8> CH4LIMITH_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1277,23 +784,9 @@ impl<'a> CH4LIMITH_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH4LIMITH_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
 }
+#[doc = "Field `CH4LIMITL` reader - Enable or disable interrupt for event CH4LIMITL"]
+pub type CH4LIMITL_R = crate::BitReader<CH4LIMITL_A>;
 #[doc = "Enable or disable interrupt for event CH4LIMITL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4LIMITL_A {
@@ -1308,14 +801,8 @@ impl From<CH4LIMITL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH4LIMITL` reader - Enable or disable interrupt for event CH4LIMITL"]
-pub struct CH4LIMITL_R(crate::FieldReader<bool, CH4LIMITL_A>);
 impl CH4LIMITL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH4LIMITL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH4LIMITL_A {
         match self.bits {
@@ -1326,31 +813,17 @@ impl CH4LIMITL_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH4LIMITL_A::DISABLED
+        *self == CH4LIMITL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH4LIMITL_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH4LIMITL_R {
-    type Target = crate::FieldReader<bool, CH4LIMITL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH4LIMITL_A::ENABLED
     }
 }
 #[doc = "Field `CH4LIMITL` writer - Enable or disable interrupt for event CH4LIMITL"]
-pub struct CH4LIMITL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4LIMITL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH4LIMITL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH4LIMITL_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH4LIMITL_A, O>;
+impl<'a, const O: u8> CH4LIMITL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1361,23 +834,9 @@ impl<'a> CH4LIMITL_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH4LIMITL_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
 }
+#[doc = "Field `CH5LIMITH` reader - Enable or disable interrupt for event CH5LIMITH"]
+pub type CH5LIMITH_R = crate::BitReader<CH5LIMITH_A>;
 #[doc = "Enable or disable interrupt for event CH5LIMITH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5LIMITH_A {
@@ -1392,14 +851,8 @@ impl From<CH5LIMITH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH5LIMITH` reader - Enable or disable interrupt for event CH5LIMITH"]
-pub struct CH5LIMITH_R(crate::FieldReader<bool, CH5LIMITH_A>);
 impl CH5LIMITH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH5LIMITH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH5LIMITH_A {
         match self.bits {
@@ -1410,31 +863,17 @@ impl CH5LIMITH_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH5LIMITH_A::DISABLED
+        *self == CH5LIMITH_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH5LIMITH_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH5LIMITH_R {
-    type Target = crate::FieldReader<bool, CH5LIMITH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH5LIMITH_A::ENABLED
     }
 }
 #[doc = "Field `CH5LIMITH` writer - Enable or disable interrupt for event CH5LIMITH"]
-pub struct CH5LIMITH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5LIMITH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH5LIMITH_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH5LIMITH_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH5LIMITH_A, O>;
+impl<'a, const O: u8> CH5LIMITH_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1445,23 +884,9 @@ impl<'a> CH5LIMITH_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH5LIMITH_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
+#[doc = "Field `CH5LIMITL` reader - Enable or disable interrupt for event CH5LIMITL"]
+pub type CH5LIMITL_R = crate::BitReader<CH5LIMITL_A>;
 #[doc = "Enable or disable interrupt for event CH5LIMITL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5LIMITL_A {
@@ -1476,14 +901,8 @@ impl From<CH5LIMITL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH5LIMITL` reader - Enable or disable interrupt for event CH5LIMITL"]
-pub struct CH5LIMITL_R(crate::FieldReader<bool, CH5LIMITL_A>);
 impl CH5LIMITL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH5LIMITL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH5LIMITL_A {
         match self.bits {
@@ -1494,31 +913,17 @@ impl CH5LIMITL_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH5LIMITL_A::DISABLED
+        *self == CH5LIMITL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH5LIMITL_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH5LIMITL_R {
-    type Target = crate::FieldReader<bool, CH5LIMITL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH5LIMITL_A::ENABLED
     }
 }
 #[doc = "Field `CH5LIMITL` writer - Enable or disable interrupt for event CH5LIMITL"]
-pub struct CH5LIMITL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5LIMITL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH5LIMITL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH5LIMITL_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH5LIMITL_A, O>;
+impl<'a, const O: u8> CH5LIMITL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1529,23 +934,9 @@ impl<'a> CH5LIMITL_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH5LIMITL_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
 }
+#[doc = "Field `CH6LIMITH` reader - Enable or disable interrupt for event CH6LIMITH"]
+pub type CH6LIMITH_R = crate::BitReader<CH6LIMITH_A>;
 #[doc = "Enable or disable interrupt for event CH6LIMITH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6LIMITH_A {
@@ -1560,14 +951,8 @@ impl From<CH6LIMITH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH6LIMITH` reader - Enable or disable interrupt for event CH6LIMITH"]
-pub struct CH6LIMITH_R(crate::FieldReader<bool, CH6LIMITH_A>);
 impl CH6LIMITH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH6LIMITH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH6LIMITH_A {
         match self.bits {
@@ -1578,31 +963,17 @@ impl CH6LIMITH_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH6LIMITH_A::DISABLED
+        *self == CH6LIMITH_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH6LIMITH_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH6LIMITH_R {
-    type Target = crate::FieldReader<bool, CH6LIMITH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH6LIMITH_A::ENABLED
     }
 }
 #[doc = "Field `CH6LIMITH` writer - Enable or disable interrupt for event CH6LIMITH"]
-pub struct CH6LIMITH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH6LIMITH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH6LIMITH_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH6LIMITH_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH6LIMITH_A, O>;
+impl<'a, const O: u8> CH6LIMITH_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1613,23 +984,9 @@ impl<'a> CH6LIMITH_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH6LIMITH_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
 }
+#[doc = "Field `CH6LIMITL` reader - Enable or disable interrupt for event CH6LIMITL"]
+pub type CH6LIMITL_R = crate::BitReader<CH6LIMITL_A>;
 #[doc = "Enable or disable interrupt for event CH6LIMITL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6LIMITL_A {
@@ -1644,14 +1001,8 @@ impl From<CH6LIMITL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH6LIMITL` reader - Enable or disable interrupt for event CH6LIMITL"]
-pub struct CH6LIMITL_R(crate::FieldReader<bool, CH6LIMITL_A>);
 impl CH6LIMITL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH6LIMITL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH6LIMITL_A {
         match self.bits {
@@ -1662,31 +1013,17 @@ impl CH6LIMITL_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH6LIMITL_A::DISABLED
+        *self == CH6LIMITL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH6LIMITL_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH6LIMITL_R {
-    type Target = crate::FieldReader<bool, CH6LIMITL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH6LIMITL_A::ENABLED
     }
 }
 #[doc = "Field `CH6LIMITL` writer - Enable or disable interrupt for event CH6LIMITL"]
-pub struct CH6LIMITL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH6LIMITL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH6LIMITL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH6LIMITL_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH6LIMITL_A, O>;
+impl<'a, const O: u8> CH6LIMITL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1697,23 +1034,9 @@ impl<'a> CH6LIMITL_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH6LIMITL_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
 }
+#[doc = "Field `CH7LIMITH` reader - Enable or disable interrupt for event CH7LIMITH"]
+pub type CH7LIMITH_R = crate::BitReader<CH7LIMITH_A>;
 #[doc = "Enable or disable interrupt for event CH7LIMITH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7LIMITH_A {
@@ -1728,14 +1051,8 @@ impl From<CH7LIMITH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH7LIMITH` reader - Enable or disable interrupt for event CH7LIMITH"]
-pub struct CH7LIMITH_R(crate::FieldReader<bool, CH7LIMITH_A>);
 impl CH7LIMITH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH7LIMITH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH7LIMITH_A {
         match self.bits {
@@ -1746,31 +1063,17 @@ impl CH7LIMITH_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH7LIMITH_A::DISABLED
+        *self == CH7LIMITH_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH7LIMITH_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH7LIMITH_R {
-    type Target = crate::FieldReader<bool, CH7LIMITH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH7LIMITH_A::ENABLED
     }
 }
 #[doc = "Field `CH7LIMITH` writer - Enable or disable interrupt for event CH7LIMITH"]
-pub struct CH7LIMITH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH7LIMITH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH7LIMITH_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH7LIMITH_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH7LIMITH_A, O>;
+impl<'a, const O: u8> CH7LIMITH_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1781,23 +1084,9 @@ impl<'a> CH7LIMITH_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH7LIMITH_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
 }
+#[doc = "Field `CH7LIMITL` reader - Enable or disable interrupt for event CH7LIMITL"]
+pub type CH7LIMITL_R = crate::BitReader<CH7LIMITL_A>;
 #[doc = "Enable or disable interrupt for event CH7LIMITL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7LIMITL_A {
@@ -1812,14 +1101,8 @@ impl From<CH7LIMITL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH7LIMITL` reader - Enable or disable interrupt for event CH7LIMITL"]
-pub struct CH7LIMITL_R(crate::FieldReader<bool, CH7LIMITL_A>);
 impl CH7LIMITL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH7LIMITL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH7LIMITL_A {
         match self.bits {
@@ -1830,31 +1113,17 @@ impl CH7LIMITL_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CH7LIMITL_A::DISABLED
+        *self == CH7LIMITL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CH7LIMITL_A::ENABLED
-    }
-}
-impl core::ops::Deref for CH7LIMITL_R {
-    type Target = crate::FieldReader<bool, CH7LIMITL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH7LIMITL_A::ENABLED
     }
 }
 #[doc = "Field `CH7LIMITL` writer - Enable or disable interrupt for event CH7LIMITL"]
-pub struct CH7LIMITL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH7LIMITL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH7LIMITL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH7LIMITL_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, CH7LIMITL_A, O>;
+impl<'a, const O: u8> CH7LIMITL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1865,245 +1134,229 @@ impl<'a> CH7LIMITL_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CH7LIMITL_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable or disable interrupt for event STARTED"]
     #[inline(always)]
     pub fn started(&self) -> STARTED_R {
-        STARTED_R::new((self.bits & 0x01) != 0)
+        STARTED_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable or disable interrupt for event END"]
     #[inline(always)]
     pub fn end(&self) -> END_R {
-        END_R::new(((self.bits >> 1) & 0x01) != 0)
+        END_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable or disable interrupt for event DONE"]
     #[inline(always)]
     pub fn done(&self) -> DONE_R {
-        DONE_R::new(((self.bits >> 2) & 0x01) != 0)
+        DONE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable or disable interrupt for event RESULTDONE"]
     #[inline(always)]
     pub fn resultdone(&self) -> RESULTDONE_R {
-        RESULTDONE_R::new(((self.bits >> 3) & 0x01) != 0)
+        RESULTDONE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable or disable interrupt for event CALIBRATEDONE"]
     #[inline(always)]
     pub fn calibratedone(&self) -> CALIBRATEDONE_R {
-        CALIBRATEDONE_R::new(((self.bits >> 4) & 0x01) != 0)
+        CALIBRATEDONE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable or disable interrupt for event STOPPED"]
     #[inline(always)]
     pub fn stopped(&self) -> STOPPED_R {
-        STOPPED_R::new(((self.bits >> 5) & 0x01) != 0)
+        STOPPED_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable or disable interrupt for event CH0LIMITH"]
     #[inline(always)]
     pub fn ch0limith(&self) -> CH0LIMITH_R {
-        CH0LIMITH_R::new(((self.bits >> 6) & 0x01) != 0)
+        CH0LIMITH_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable or disable interrupt for event CH0LIMITL"]
     #[inline(always)]
     pub fn ch0limitl(&self) -> CH0LIMITL_R {
-        CH0LIMITL_R::new(((self.bits >> 7) & 0x01) != 0)
+        CH0LIMITL_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Enable or disable interrupt for event CH1LIMITH"]
     #[inline(always)]
     pub fn ch1limith(&self) -> CH1LIMITH_R {
-        CH1LIMITH_R::new(((self.bits >> 8) & 0x01) != 0)
+        CH1LIMITH_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Enable or disable interrupt for event CH1LIMITL"]
     #[inline(always)]
     pub fn ch1limitl(&self) -> CH1LIMITL_R {
-        CH1LIMITL_R::new(((self.bits >> 9) & 0x01) != 0)
+        CH1LIMITL_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Enable or disable interrupt for event CH2LIMITH"]
     #[inline(always)]
     pub fn ch2limith(&self) -> CH2LIMITH_R {
-        CH2LIMITH_R::new(((self.bits >> 10) & 0x01) != 0)
+        CH2LIMITH_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Enable or disable interrupt for event CH2LIMITL"]
     #[inline(always)]
     pub fn ch2limitl(&self) -> CH2LIMITL_R {
-        CH2LIMITL_R::new(((self.bits >> 11) & 0x01) != 0)
+        CH2LIMITL_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Enable or disable interrupt for event CH3LIMITH"]
     #[inline(always)]
     pub fn ch3limith(&self) -> CH3LIMITH_R {
-        CH3LIMITH_R::new(((self.bits >> 12) & 0x01) != 0)
+        CH3LIMITH_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Enable or disable interrupt for event CH3LIMITL"]
     #[inline(always)]
     pub fn ch3limitl(&self) -> CH3LIMITL_R {
-        CH3LIMITL_R::new(((self.bits >> 13) & 0x01) != 0)
+        CH3LIMITL_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Enable or disable interrupt for event CH4LIMITH"]
     #[inline(always)]
     pub fn ch4limith(&self) -> CH4LIMITH_R {
-        CH4LIMITH_R::new(((self.bits >> 14) & 0x01) != 0)
+        CH4LIMITH_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Enable or disable interrupt for event CH4LIMITL"]
     #[inline(always)]
     pub fn ch4limitl(&self) -> CH4LIMITL_R {
-        CH4LIMITL_R::new(((self.bits >> 15) & 0x01) != 0)
+        CH4LIMITL_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Enable or disable interrupt for event CH5LIMITH"]
     #[inline(always)]
     pub fn ch5limith(&self) -> CH5LIMITH_R {
-        CH5LIMITH_R::new(((self.bits >> 16) & 0x01) != 0)
+        CH5LIMITH_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Enable or disable interrupt for event CH5LIMITL"]
     #[inline(always)]
     pub fn ch5limitl(&self) -> CH5LIMITL_R {
-        CH5LIMITL_R::new(((self.bits >> 17) & 0x01) != 0)
+        CH5LIMITL_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Enable or disable interrupt for event CH6LIMITH"]
     #[inline(always)]
     pub fn ch6limith(&self) -> CH6LIMITH_R {
-        CH6LIMITH_R::new(((self.bits >> 18) & 0x01) != 0)
+        CH6LIMITH_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Enable or disable interrupt for event CH6LIMITL"]
     #[inline(always)]
     pub fn ch6limitl(&self) -> CH6LIMITL_R {
-        CH6LIMITL_R::new(((self.bits >> 19) & 0x01) != 0)
+        CH6LIMITL_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Enable or disable interrupt for event CH7LIMITH"]
     #[inline(always)]
     pub fn ch7limith(&self) -> CH7LIMITH_R {
-        CH7LIMITH_R::new(((self.bits >> 20) & 0x01) != 0)
+        CH7LIMITH_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Enable or disable interrupt for event CH7LIMITL"]
     #[inline(always)]
     pub fn ch7limitl(&self) -> CH7LIMITL_R {
-        CH7LIMITL_R::new(((self.bits >> 21) & 0x01) != 0)
+        CH7LIMITL_R::new(((self.bits >> 21) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable or disable interrupt for event STARTED"]
     #[inline(always)]
-    pub fn started(&mut self) -> STARTED_W {
-        STARTED_W { w: self }
+    pub fn started(&mut self) -> STARTED_W<0> {
+        STARTED_W::new(self)
     }
     #[doc = "Bit 1 - Enable or disable interrupt for event END"]
     #[inline(always)]
-    pub fn end(&mut self) -> END_W {
-        END_W { w: self }
+    pub fn end(&mut self) -> END_W<1> {
+        END_W::new(self)
     }
     #[doc = "Bit 2 - Enable or disable interrupt for event DONE"]
     #[inline(always)]
-    pub fn done(&mut self) -> DONE_W {
-        DONE_W { w: self }
+    pub fn done(&mut self) -> DONE_W<2> {
+        DONE_W::new(self)
     }
     #[doc = "Bit 3 - Enable or disable interrupt for event RESULTDONE"]
     #[inline(always)]
-    pub fn resultdone(&mut self) -> RESULTDONE_W {
-        RESULTDONE_W { w: self }
+    pub fn resultdone(&mut self) -> RESULTDONE_W<3> {
+        RESULTDONE_W::new(self)
     }
     #[doc = "Bit 4 - Enable or disable interrupt for event CALIBRATEDONE"]
     #[inline(always)]
-    pub fn calibratedone(&mut self) -> CALIBRATEDONE_W {
-        CALIBRATEDONE_W { w: self }
+    pub fn calibratedone(&mut self) -> CALIBRATEDONE_W<4> {
+        CALIBRATEDONE_W::new(self)
     }
     #[doc = "Bit 5 - Enable or disable interrupt for event STOPPED"]
     #[inline(always)]
-    pub fn stopped(&mut self) -> STOPPED_W {
-        STOPPED_W { w: self }
+    pub fn stopped(&mut self) -> STOPPED_W<5> {
+        STOPPED_W::new(self)
     }
     #[doc = "Bit 6 - Enable or disable interrupt for event CH0LIMITH"]
     #[inline(always)]
-    pub fn ch0limith(&mut self) -> CH0LIMITH_W {
-        CH0LIMITH_W { w: self }
+    pub fn ch0limith(&mut self) -> CH0LIMITH_W<6> {
+        CH0LIMITH_W::new(self)
     }
     #[doc = "Bit 7 - Enable or disable interrupt for event CH0LIMITL"]
     #[inline(always)]
-    pub fn ch0limitl(&mut self) -> CH0LIMITL_W {
-        CH0LIMITL_W { w: self }
+    pub fn ch0limitl(&mut self) -> CH0LIMITL_W<7> {
+        CH0LIMITL_W::new(self)
     }
     #[doc = "Bit 8 - Enable or disable interrupt for event CH1LIMITH"]
     #[inline(always)]
-    pub fn ch1limith(&mut self) -> CH1LIMITH_W {
-        CH1LIMITH_W { w: self }
+    pub fn ch1limith(&mut self) -> CH1LIMITH_W<8> {
+        CH1LIMITH_W::new(self)
     }
     #[doc = "Bit 9 - Enable or disable interrupt for event CH1LIMITL"]
     #[inline(always)]
-    pub fn ch1limitl(&mut self) -> CH1LIMITL_W {
-        CH1LIMITL_W { w: self }
+    pub fn ch1limitl(&mut self) -> CH1LIMITL_W<9> {
+        CH1LIMITL_W::new(self)
     }
     #[doc = "Bit 10 - Enable or disable interrupt for event CH2LIMITH"]
     #[inline(always)]
-    pub fn ch2limith(&mut self) -> CH2LIMITH_W {
-        CH2LIMITH_W { w: self }
+    pub fn ch2limith(&mut self) -> CH2LIMITH_W<10> {
+        CH2LIMITH_W::new(self)
     }
     #[doc = "Bit 11 - Enable or disable interrupt for event CH2LIMITL"]
     #[inline(always)]
-    pub fn ch2limitl(&mut self) -> CH2LIMITL_W {
-        CH2LIMITL_W { w: self }
+    pub fn ch2limitl(&mut self) -> CH2LIMITL_W<11> {
+        CH2LIMITL_W::new(self)
     }
     #[doc = "Bit 12 - Enable or disable interrupt for event CH3LIMITH"]
     #[inline(always)]
-    pub fn ch3limith(&mut self) -> CH3LIMITH_W {
-        CH3LIMITH_W { w: self }
+    pub fn ch3limith(&mut self) -> CH3LIMITH_W<12> {
+        CH3LIMITH_W::new(self)
     }
     #[doc = "Bit 13 - Enable or disable interrupt for event CH3LIMITL"]
     #[inline(always)]
-    pub fn ch3limitl(&mut self) -> CH3LIMITL_W {
-        CH3LIMITL_W { w: self }
+    pub fn ch3limitl(&mut self) -> CH3LIMITL_W<13> {
+        CH3LIMITL_W::new(self)
     }
     #[doc = "Bit 14 - Enable or disable interrupt for event CH4LIMITH"]
     #[inline(always)]
-    pub fn ch4limith(&mut self) -> CH4LIMITH_W {
-        CH4LIMITH_W { w: self }
+    pub fn ch4limith(&mut self) -> CH4LIMITH_W<14> {
+        CH4LIMITH_W::new(self)
     }
     #[doc = "Bit 15 - Enable or disable interrupt for event CH4LIMITL"]
     #[inline(always)]
-    pub fn ch4limitl(&mut self) -> CH4LIMITL_W {
-        CH4LIMITL_W { w: self }
+    pub fn ch4limitl(&mut self) -> CH4LIMITL_W<15> {
+        CH4LIMITL_W::new(self)
     }
     #[doc = "Bit 16 - Enable or disable interrupt for event CH5LIMITH"]
     #[inline(always)]
-    pub fn ch5limith(&mut self) -> CH5LIMITH_W {
-        CH5LIMITH_W { w: self }
+    pub fn ch5limith(&mut self) -> CH5LIMITH_W<16> {
+        CH5LIMITH_W::new(self)
     }
     #[doc = "Bit 17 - Enable or disable interrupt for event CH5LIMITL"]
     #[inline(always)]
-    pub fn ch5limitl(&mut self) -> CH5LIMITL_W {
-        CH5LIMITL_W { w: self }
+    pub fn ch5limitl(&mut self) -> CH5LIMITL_W<17> {
+        CH5LIMITL_W::new(self)
     }
     #[doc = "Bit 18 - Enable or disable interrupt for event CH6LIMITH"]
     #[inline(always)]
-    pub fn ch6limith(&mut self) -> CH6LIMITH_W {
-        CH6LIMITH_W { w: self }
+    pub fn ch6limith(&mut self) -> CH6LIMITH_W<18> {
+        CH6LIMITH_W::new(self)
     }
     #[doc = "Bit 19 - Enable or disable interrupt for event CH6LIMITL"]
     #[inline(always)]
-    pub fn ch6limitl(&mut self) -> CH6LIMITL_W {
-        CH6LIMITL_W { w: self }
+    pub fn ch6limitl(&mut self) -> CH6LIMITL_W<19> {
+        CH6LIMITL_W::new(self)
     }
     #[doc = "Bit 20 - Enable or disable interrupt for event CH7LIMITH"]
     #[inline(always)]
-    pub fn ch7limith(&mut self) -> CH7LIMITH_W {
-        CH7LIMITH_W { w: self }
+    pub fn ch7limith(&mut self) -> CH7LIMITH_W<20> {
+        CH7LIMITH_W::new(self)
     }
     #[doc = "Bit 21 - Enable or disable interrupt for event CH7LIMITL"]
     #[inline(always)]
-    pub fn ch7limitl(&mut self) -> CH7LIMITL_W {
-        CH7LIMITL_W { w: self }
+    pub fn ch7limitl(&mut self) -> CH7LIMITL_W<21> {
+        CH7LIMITL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

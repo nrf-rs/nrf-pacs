@@ -34,6 +34,8 @@ impl From<crate::W<ISOURCE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ISOURCE` reader - Comparator hysteresis"]
+pub type ISOURCE_R = crate::FieldReader<u8, ISOURCE_A>;
 #[doc = "Comparator hysteresis\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -41,11 +43,11 @@ pub enum ISOURCE_A {
     #[doc = "0: Current source disabled"]
     OFF = 0,
     #[doc = "1: Current source enabled (+/- 2.5 uA)"]
-    IEN2MA5 = 1,
+    IEN2M_A5 = 1,
     #[doc = "2: Current source enabled (+/- 5 uA)"]
-    IEN5MA = 2,
+    IEN5M_A = 2,
     #[doc = "3: Current source enabled (+/- 10 uA)"]
-    IEN10MA = 3,
+    IEN10M_A = 3,
 }
 impl From<ISOURCE_A> for u8 {
     #[inline(always)]
@@ -53,62 +55,43 @@ impl From<ISOURCE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ISOURCE` reader - Comparator hysteresis"]
-pub struct ISOURCE_R(crate::FieldReader<u8, ISOURCE_A>);
 impl ISOURCE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ISOURCE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ISOURCE_A {
         match self.bits {
             0 => ISOURCE_A::OFF,
-            1 => ISOURCE_A::IEN2MA5,
-            2 => ISOURCE_A::IEN5MA,
-            3 => ISOURCE_A::IEN10MA,
+            1 => ISOURCE_A::IEN2M_A5,
+            2 => ISOURCE_A::IEN5M_A,
+            3 => ISOURCE_A::IEN10M_A,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == ISOURCE_A::OFF
+        *self == ISOURCE_A::OFF
     }
-    #[doc = "Checks if the value of the field is `IEN2MA5`"]
+    #[doc = "Checks if the value of the field is `IEN2M_A5`"]
     #[inline(always)]
     pub fn is_ien2m_a5(&self) -> bool {
-        **self == ISOURCE_A::IEN2MA5
+        *self == ISOURCE_A::IEN2M_A5
     }
-    #[doc = "Checks if the value of the field is `IEN5MA`"]
+    #[doc = "Checks if the value of the field is `IEN5M_A`"]
     #[inline(always)]
     pub fn is_ien5m_a(&self) -> bool {
-        **self == ISOURCE_A::IEN5MA
+        *self == ISOURCE_A::IEN5M_A
     }
-    #[doc = "Checks if the value of the field is `IEN10MA`"]
+    #[doc = "Checks if the value of the field is `IEN10M_A`"]
     #[inline(always)]
     pub fn is_ien10m_a(&self) -> bool {
-        **self == ISOURCE_A::IEN10MA
-    }
-}
-impl core::ops::Deref for ISOURCE_R {
-    type Target = crate::FieldReader<u8, ISOURCE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ISOURCE_A::IEN10M_A
     }
 }
 #[doc = "Field `ISOURCE` writer - Comparator hysteresis"]
-pub struct ISOURCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ISOURCE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ISOURCE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type ISOURCE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, ISOURCE_SPEC, u8, ISOURCE_A, 2, O>;
+impl<'a, const O: u8> ISOURCE_W<'a, O> {
     #[doc = "Current source disabled"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -117,37 +100,31 @@ impl<'a> ISOURCE_W<'a> {
     #[doc = "Current source enabled (+/- 2.5 uA)"]
     #[inline(always)]
     pub fn ien2m_a5(self) -> &'a mut W {
-        self.variant(ISOURCE_A::IEN2MA5)
+        self.variant(ISOURCE_A::IEN2M_A5)
     }
     #[doc = "Current source enabled (+/- 5 uA)"]
     #[inline(always)]
     pub fn ien5m_a(self) -> &'a mut W {
-        self.variant(ISOURCE_A::IEN5MA)
+        self.variant(ISOURCE_A::IEN5M_A)
     }
     #[doc = "Current source enabled (+/- 10 uA)"]
     #[inline(always)]
     pub fn ien10m_a(self) -> &'a mut W {
-        self.variant(ISOURCE_A::IEN10MA)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(ISOURCE_A::IEN10M_A)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Comparator hysteresis"]
     #[inline(always)]
     pub fn isource(&self) -> ISOURCE_R {
-        ISOURCE_R::new((self.bits & 0x03) as u8)
+        ISOURCE_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Comparator hysteresis"]
     #[inline(always)]
-    pub fn isource(&mut self) -> ISOURCE_W {
-        ISOURCE_W { w: self }
+    pub fn isource(&mut self) -> ISOURCE_W<0> {
+        ISOURCE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

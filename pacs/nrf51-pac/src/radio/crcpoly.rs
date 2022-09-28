@@ -35,32 +35,9 @@ impl From<crate::W<CRCPOLY_SPEC>> for W {
     }
 }
 #[doc = "Field `CRCPOLY` reader - CRC polynomial. Decision point: START task."]
-pub struct CRCPOLY_R(crate::FieldReader<u32, u32>);
-impl CRCPOLY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CRCPOLY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CRCPOLY_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CRCPOLY_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CRCPOLY` writer - CRC polynomial. Decision point: START task."]
-pub struct CRCPOLY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRCPOLY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type CRCPOLY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CRCPOLY_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - CRC polynomial. Decision point: START task."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - CRC polynomial. Decision point: START task."]
     #[inline(always)]
-    pub fn crcpoly(&mut self) -> CRCPOLY_W {
-        CRCPOLY_W { w: self }
+    pub fn crcpoly(&mut self) -> CRCPOLY_W<0> {
+        CRCPOLY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

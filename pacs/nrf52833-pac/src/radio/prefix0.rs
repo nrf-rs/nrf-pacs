@@ -35,113 +35,21 @@ impl From<crate::W<PREFIX0_SPEC>> for W {
     }
 }
 #[doc = "Field `AP0` reader - Address prefix 0."]
-pub struct AP0_R(crate::FieldReader<u8, u8>);
-impl AP0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        AP0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AP0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AP0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AP0` writer - Address prefix 0."]
-pub struct AP0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AP0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type AP0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX0_SPEC, u8, u8, 8, O>;
 #[doc = "Field `AP1` reader - Address prefix 1."]
-pub struct AP1_R(crate::FieldReader<u8, u8>);
-impl AP1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        AP1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AP1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AP1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AP1` writer - Address prefix 1."]
-pub struct AP1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AP1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type AP1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX0_SPEC, u8, u8, 8, O>;
 #[doc = "Field `AP2` reader - Address prefix 2."]
-pub struct AP2_R(crate::FieldReader<u8, u8>);
-impl AP2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        AP2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AP2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AP2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AP2` writer - Address prefix 2."]
-pub struct AP2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AP2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type AP2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX0_SPEC, u8, u8, 8, O>;
 #[doc = "Field `AP3` reader - Address prefix 3."]
-pub struct AP3_R(crate::FieldReader<u8, u8>);
-impl AP3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        AP3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AP3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AP3_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AP3` writer - Address prefix 3."]
-pub struct AP3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AP3_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type AP3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX0_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Address prefix 0."]
     #[inline(always)]
@@ -167,23 +75,23 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Address prefix 0."]
     #[inline(always)]
-    pub fn ap0(&mut self) -> AP0_W {
-        AP0_W { w: self }
+    pub fn ap0(&mut self) -> AP0_W<0> {
+        AP0_W::new(self)
     }
     #[doc = "Bits 8:15 - Address prefix 1."]
     #[inline(always)]
-    pub fn ap1(&mut self) -> AP1_W {
-        AP1_W { w: self }
+    pub fn ap1(&mut self) -> AP1_W<8> {
+        AP1_W::new(self)
     }
     #[doc = "Bits 16:23 - Address prefix 2."]
     #[inline(always)]
-    pub fn ap2(&mut self) -> AP2_W {
-        AP2_W { w: self }
+    pub fn ap2(&mut self) -> AP2_W<16> {
+        AP2_W::new(self)
     }
     #[doc = "Bits 24:31 - Address prefix 3."]
     #[inline(always)]
-    pub fn ap3(&mut self) -> AP3_W {
-        AP3_W { w: self }
+    pub fn ap3(&mut self) -> AP3_W<24> {
+        AP3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

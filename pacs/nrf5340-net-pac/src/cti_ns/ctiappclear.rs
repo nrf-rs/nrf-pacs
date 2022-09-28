@@ -32,35 +32,13 @@ impl From<APPCLEAR_0_AW> for bool {
     }
 }
 #[doc = "Field `APPCLEAR_0` writer - Sets the corresponding bits in the CTIAPPSET to 0. There is one bit of the register for each channel."]
-pub struct APPCLEAR_0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APPCLEAR_0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: APPCLEAR_0_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type APPCLEAR_0_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTIAPPCLEAR_SPEC, APPCLEAR_0_AW, O>;
+impl<'a, const O: u8> APPCLEAR_0_W<'a, O> {
     #[doc = "Clears the event for channel 0."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(APPCLEAR_0_AW::CLEAR)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 #[doc = "Sets the corresponding bits in the CTIAPPSET to 0. There is one bit of the register for each channel.\n\nValue on reset: 0"]
@@ -76,35 +54,13 @@ impl From<APPCLEAR_1_AW> for bool {
     }
 }
 #[doc = "Field `APPCLEAR_1` writer - Sets the corresponding bits in the CTIAPPSET to 0. There is one bit of the register for each channel."]
-pub struct APPCLEAR_1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APPCLEAR_1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: APPCLEAR_1_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type APPCLEAR_1_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTIAPPCLEAR_SPEC, APPCLEAR_1_AW, O>;
+impl<'a, const O: u8> APPCLEAR_1_W<'a, O> {
     #[doc = "Clears the event for channel 1."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(APPCLEAR_1_AW::CLEAR)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
     }
 }
 #[doc = "Sets the corresponding bits in the CTIAPPSET to 0. There is one bit of the register for each channel.\n\nValue on reset: 0"]
@@ -120,35 +76,13 @@ impl From<APPCLEAR_2_AW> for bool {
     }
 }
 #[doc = "Field `APPCLEAR_2` writer - Sets the corresponding bits in the CTIAPPSET to 0. There is one bit of the register for each channel."]
-pub struct APPCLEAR_2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APPCLEAR_2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: APPCLEAR_2_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type APPCLEAR_2_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTIAPPCLEAR_SPEC, APPCLEAR_2_AW, O>;
+impl<'a, const O: u8> APPCLEAR_2_W<'a, O> {
     #[doc = "Clears the event for channel 2."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(APPCLEAR_2_AW::CLEAR)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
     }
 }
 #[doc = "Sets the corresponding bits in the CTIAPPSET to 0. There is one bit of the register for each channel.\n\nValue on reset: 0"]
@@ -164,57 +98,35 @@ impl From<APPCLEAR_3_AW> for bool {
     }
 }
 #[doc = "Field `APPCLEAR_3` writer - Sets the corresponding bits in the CTIAPPSET to 0. There is one bit of the register for each channel."]
-pub struct APPCLEAR_3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APPCLEAR_3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: APPCLEAR_3_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type APPCLEAR_3_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTIAPPCLEAR_SPEC, APPCLEAR_3_AW, O>;
+impl<'a, const O: u8> APPCLEAR_3_W<'a, O> {
     #[doc = "Clears the event for channel 3."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(APPCLEAR_3_AW::CLEAR)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Sets the corresponding bits in the CTIAPPSET to 0. There is one bit of the register for each channel."]
     #[inline(always)]
-    pub fn appclear_0(&mut self) -> APPCLEAR_0_W {
-        APPCLEAR_0_W { w: self }
+    pub fn appclear_0(&mut self) -> APPCLEAR_0_W<0> {
+        APPCLEAR_0_W::new(self)
     }
     #[doc = "Bit 1 - Sets the corresponding bits in the CTIAPPSET to 0. There is one bit of the register for each channel."]
     #[inline(always)]
-    pub fn appclear_1(&mut self) -> APPCLEAR_1_W {
-        APPCLEAR_1_W { w: self }
+    pub fn appclear_1(&mut self) -> APPCLEAR_1_W<1> {
+        APPCLEAR_1_W::new(self)
     }
     #[doc = "Bit 2 - Sets the corresponding bits in the CTIAPPSET to 0. There is one bit of the register for each channel."]
     #[inline(always)]
-    pub fn appclear_2(&mut self) -> APPCLEAR_2_W {
-        APPCLEAR_2_W { w: self }
+    pub fn appclear_2(&mut self) -> APPCLEAR_2_W<2> {
+        APPCLEAR_2_W::new(self)
     }
     #[doc = "Bit 3 - Sets the corresponding bits in the CTIAPPSET to 0. There is one bit of the register for each channel."]
     #[inline(always)]
-    pub fn appclear_3(&mut self) -> APPCLEAR_3_W {
-        APPCLEAR_3_W { w: self }
+    pub fn appclear_3(&mut self) -> APPCLEAR_3_W<3> {
+        APPCLEAR_3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

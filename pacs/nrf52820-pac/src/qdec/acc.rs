@@ -14,20 +14,7 @@ impl From<crate::R<ACC_SPEC>> for R {
     }
 }
 #[doc = "Field `ACC` reader - Register accumulating all valid samples (not double transition) read from the SAMPLE register."]
-pub struct ACC_R(crate::FieldReader<u32, u32>);
-impl ACC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        ACC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACC_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACC_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Register accumulating all valid samples (not double transition) read from the SAMPLE register."]
     #[inline(always)]

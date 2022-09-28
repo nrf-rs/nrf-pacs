@@ -34,6 +34,8 @@ impl From<crate::W<CONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `WEN` reader - Program memory access mode. It is strongly recommended to activate erase and write modes only when they are actively used."]
+pub type WEN_R = crate::FieldReader<u8, WEN_A>;
 #[doc = "Program memory access mode. It is strongly recommended to activate erase and write modes only when they are actively used.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,14 +53,8 @@ impl From<WEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WEN` reader - Program memory access mode. It is strongly recommended to activate erase and write modes only when they are actively used."]
-pub struct WEN_R(crate::FieldReader<u8, WEN_A>);
 impl WEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<WEN_A> {
         match self.bits {
@@ -71,36 +67,22 @@ impl WEN_R {
     #[doc = "Checks if the value of the field is `REN`"]
     #[inline(always)]
     pub fn is_ren(&self) -> bool {
-        **self == WEN_A::REN
+        *self == WEN_A::REN
     }
     #[doc = "Checks if the value of the field is `WEN`"]
     #[inline(always)]
     pub fn is_wen(&self) -> bool {
-        **self == WEN_A::WEN
+        *self == WEN_A::WEN
     }
     #[doc = "Checks if the value of the field is `EEN`"]
     #[inline(always)]
     pub fn is_een(&self) -> bool {
-        **self == WEN_A::EEN
-    }
-}
-impl core::ops::Deref for WEN_R {
-    type Target = crate::FieldReader<u8, WEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WEN_A::EEN
     }
 }
 #[doc = "Field `WEN` writer - Program memory access mode. It is strongly recommended to activate erase and write modes only when they are actively used."]
-pub struct WEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WEN_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type WEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONFIG_SPEC, u8, WEN_A, 2, O>;
+impl<'a, const O: u8> WEN_W<'a, O> {
     #[doc = "Read only access"]
     #[inline(always)]
     pub fn ren(self) -> &'a mut W {
@@ -116,25 +98,19 @@ impl<'a> WEN_W<'a> {
     pub fn een(self) -> &'a mut W {
         self.variant(WEN_A::EEN)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Program memory access mode. It is strongly recommended to activate erase and write modes only when they are actively used."]
     #[inline(always)]
     pub fn wen(&self) -> WEN_R {
-        WEN_R::new((self.bits & 0x03) as u8)
+        WEN_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Program memory access mode. It is strongly recommended to activate erase and write modes only when they are actively used."]
     #[inline(always)]
-    pub fn wen(&mut self) -> WEN_W {
-        WEN_W { w: self }
+    pub fn wen(&mut self) -> WEN_W<0> {
+        WEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

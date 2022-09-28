@@ -26087,12 +26087,17 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
         <value>25</value>
       </interrupt>
     </peripheral>
-    <peripheral derivedFrom="TIMER0">
+    <peripheral>
       <name>TIMER3</name>
       <description>Timer/Counter 3</description>
       <groupName>TIMER</groupName>
       <baseAddress>0x4001A000</baseAddress>
       <size>32</size>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
       <interrupt>
         <name>TIMER3</name>
         <value>26</value>

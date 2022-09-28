@@ -34,6 +34,8 @@ impl From<crate::W<CTIAPPSET_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `APPSET_0` reader - Application trigger event for channel 0."]
+pub type APPSET_0_R = crate::BitReader<APPSET_0_A>;
 #[doc = "Application trigger event for channel 0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum APPSET_0_A {
@@ -48,14 +50,8 @@ impl From<APPSET_0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `APPSET_0` reader - Application trigger event for channel 0."]
-pub struct APPSET_0_R(crate::FieldReader<bool, APPSET_0_A>);
 impl APPSET_0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        APPSET_0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> APPSET_0_A {
         match self.bits {
@@ -66,19 +62,12 @@ impl APPSET_0_R {
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == APPSET_0_A::INACTIVE
+        *self == APPSET_0_A::INACTIVE
     }
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == APPSET_0_A::ACTIVE
-    }
-}
-impl core::ops::Deref for APPSET_0_R {
-    type Target = crate::FieldReader<bool, APPSET_0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == APPSET_0_A::ACTIVE
     }
 }
 #[doc = "Application trigger event for channel 0.\n\nValue on reset: 0"]
@@ -94,37 +83,16 @@ impl From<APPSET_0_AW> for bool {
     }
 }
 #[doc = "Field `APPSET_0` writer - Application trigger event for channel 0."]
-pub struct APPSET_0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APPSET_0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: APPSET_0_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type APPSET_0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIAPPSET_SPEC, APPSET_0_AW, O>;
+impl<'a, const O: u8> APPSET_0_W<'a, O> {
     #[doc = "Generate channel event for channel 0."]
     #[inline(always)]
     pub fn activate(self) -> &'a mut W {
         self.variant(APPSET_0_AW::ACTIVATE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `APPSET_1` reader - Application trigger event for channel 1."]
+pub type APPSET_1_R = crate::BitReader<APPSET_1_A>;
 #[doc = "Application trigger event for channel 1.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum APPSET_1_A {
@@ -139,14 +107,8 @@ impl From<APPSET_1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `APPSET_1` reader - Application trigger event for channel 1."]
-pub struct APPSET_1_R(crate::FieldReader<bool, APPSET_1_A>);
 impl APPSET_1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        APPSET_1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> APPSET_1_A {
         match self.bits {
@@ -157,19 +119,12 @@ impl APPSET_1_R {
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == APPSET_1_A::INACTIVE
+        *self == APPSET_1_A::INACTIVE
     }
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == APPSET_1_A::ACTIVE
-    }
-}
-impl core::ops::Deref for APPSET_1_R {
-    type Target = crate::FieldReader<bool, APPSET_1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == APPSET_1_A::ACTIVE
     }
 }
 #[doc = "Application trigger event for channel 1.\n\nValue on reset: 0"]
@@ -185,37 +140,16 @@ impl From<APPSET_1_AW> for bool {
     }
 }
 #[doc = "Field `APPSET_1` writer - Application trigger event for channel 1."]
-pub struct APPSET_1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APPSET_1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: APPSET_1_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type APPSET_1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIAPPSET_SPEC, APPSET_1_AW, O>;
+impl<'a, const O: u8> APPSET_1_W<'a, O> {
     #[doc = "Generate channel event for channel 1."]
     #[inline(always)]
     pub fn activate(self) -> &'a mut W {
         self.variant(APPSET_1_AW::ACTIVATE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `APPSET_2` reader - Application trigger event for channel 2."]
+pub type APPSET_2_R = crate::BitReader<APPSET_2_A>;
 #[doc = "Application trigger event for channel 2.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum APPSET_2_A {
@@ -230,14 +164,8 @@ impl From<APPSET_2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `APPSET_2` reader - Application trigger event for channel 2."]
-pub struct APPSET_2_R(crate::FieldReader<bool, APPSET_2_A>);
 impl APPSET_2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        APPSET_2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> APPSET_2_A {
         match self.bits {
@@ -248,19 +176,12 @@ impl APPSET_2_R {
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == APPSET_2_A::INACTIVE
+        *self == APPSET_2_A::INACTIVE
     }
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == APPSET_2_A::ACTIVE
-    }
-}
-impl core::ops::Deref for APPSET_2_R {
-    type Target = crate::FieldReader<bool, APPSET_2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == APPSET_2_A::ACTIVE
     }
 }
 #[doc = "Application trigger event for channel 2.\n\nValue on reset: 0"]
@@ -276,37 +197,16 @@ impl From<APPSET_2_AW> for bool {
     }
 }
 #[doc = "Field `APPSET_2` writer - Application trigger event for channel 2."]
-pub struct APPSET_2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APPSET_2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: APPSET_2_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type APPSET_2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIAPPSET_SPEC, APPSET_2_AW, O>;
+impl<'a, const O: u8> APPSET_2_W<'a, O> {
     #[doc = "Generate channel event for channel 2."]
     #[inline(always)]
     pub fn activate(self) -> &'a mut W {
         self.variant(APPSET_2_AW::ACTIVATE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `APPSET_3` reader - Application trigger event for channel 3."]
+pub type APPSET_3_R = crate::BitReader<APPSET_3_A>;
 #[doc = "Application trigger event for channel 3.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum APPSET_3_A {
@@ -321,14 +221,8 @@ impl From<APPSET_3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `APPSET_3` reader - Application trigger event for channel 3."]
-pub struct APPSET_3_R(crate::FieldReader<bool, APPSET_3_A>);
 impl APPSET_3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        APPSET_3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> APPSET_3_A {
         match self.bits {
@@ -339,19 +233,12 @@ impl APPSET_3_R {
     #[doc = "Checks if the value of the field is `INACTIVE`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == APPSET_3_A::INACTIVE
+        *self == APPSET_3_A::INACTIVE
     }
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == APPSET_3_A::ACTIVE
-    }
-}
-impl core::ops::Deref for APPSET_3_R {
-    type Target = crate::FieldReader<bool, APPSET_3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == APPSET_3_A::ACTIVE
     }
 }
 #[doc = "Application trigger event for channel 3.\n\nValue on reset: 0"]
@@ -367,79 +254,56 @@ impl From<APPSET_3_AW> for bool {
     }
 }
 #[doc = "Field `APPSET_3` writer - Application trigger event for channel 3."]
-pub struct APPSET_3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APPSET_3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: APPSET_3_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type APPSET_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIAPPSET_SPEC, APPSET_3_AW, O>;
+impl<'a, const O: u8> APPSET_3_W<'a, O> {
     #[doc = "Generate channel event for channel 3."]
     #[inline(always)]
     pub fn activate(self) -> &'a mut W {
         self.variant(APPSET_3_AW::ACTIVATE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
     }
 }
 impl R {
     #[doc = "Bit 0 - Application trigger event for channel 0."]
     #[inline(always)]
     pub fn appset_0(&self) -> APPSET_0_R {
-        APPSET_0_R::new((self.bits & 0x01) != 0)
+        APPSET_0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Application trigger event for channel 1."]
     #[inline(always)]
     pub fn appset_1(&self) -> APPSET_1_R {
-        APPSET_1_R::new(((self.bits >> 1) & 0x01) != 0)
+        APPSET_1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Application trigger event for channel 2."]
     #[inline(always)]
     pub fn appset_2(&self) -> APPSET_2_R {
-        APPSET_2_R::new(((self.bits >> 2) & 0x01) != 0)
+        APPSET_2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Application trigger event for channel 3."]
     #[inline(always)]
     pub fn appset_3(&self) -> APPSET_3_R {
-        APPSET_3_R::new(((self.bits >> 3) & 0x01) != 0)
+        APPSET_3_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Application trigger event for channel 0."]
     #[inline(always)]
-    pub fn appset_0(&mut self) -> APPSET_0_W {
-        APPSET_0_W { w: self }
+    pub fn appset_0(&mut self) -> APPSET_0_W<0> {
+        APPSET_0_W::new(self)
     }
     #[doc = "Bit 1 - Application trigger event for channel 1."]
     #[inline(always)]
-    pub fn appset_1(&mut self) -> APPSET_1_W {
-        APPSET_1_W { w: self }
+    pub fn appset_1(&mut self) -> APPSET_1_W<1> {
+        APPSET_1_W::new(self)
     }
     #[doc = "Bit 2 - Application trigger event for channel 2."]
     #[inline(always)]
-    pub fn appset_2(&mut self) -> APPSET_2_W {
-        APPSET_2_W { w: self }
+    pub fn appset_2(&mut self) -> APPSET_2_W<2> {
+        APPSET_2_W::new(self)
     }
     #[doc = "Bit 3 - Application trigger event for channel 3."]
     #[inline(always)]
-    pub fn appset_3(&mut self) -> APPSET_3_W {
-        APPSET_3_W { w: self }
+    pub fn appset_3(&mut self) -> APPSET_3_W<3> {
+        APPSET_3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

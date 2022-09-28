@@ -34,6 +34,8 @@ impl From<crate::W<TEST_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CONSTCARRIER` reader - Constant carrier. Decision point: TXEN task."]
+pub type CONSTCARRIER_R = crate::BitReader<CONSTCARRIER_A>;
 #[doc = "Constant carrier. Decision point: TXEN task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONSTCARRIER_A {
@@ -48,14 +50,8 @@ impl From<CONSTCARRIER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CONSTCARRIER` reader - Constant carrier. Decision point: TXEN task."]
-pub struct CONSTCARRIER_R(crate::FieldReader<bool, CONSTCARRIER_A>);
 impl CONSTCARRIER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CONSTCARRIER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CONSTCARRIER_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl CONSTCARRIER_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CONSTCARRIER_A::DISABLED
+        *self == CONSTCARRIER_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CONSTCARRIER_A::ENABLED
-    }
-}
-impl core::ops::Deref for CONSTCARRIER_R {
-    type Target = crate::FieldReader<bool, CONSTCARRIER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CONSTCARRIER_A::ENABLED
     }
 }
 #[doc = "Field `CONSTCARRIER` writer - Constant carrier. Decision point: TXEN task."]
-pub struct CONSTCARRIER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CONSTCARRIER_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CONSTCARRIER_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CONSTCARRIER_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, CONSTCARRIER_A, O>;
+impl<'a, const O: u8> CONSTCARRIER_W<'a, O> {
     #[doc = "Constant carrier disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> CONSTCARRIER_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CONSTCARRIER_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `PLLLOCK` reader - PLL lock. Decision point: TXEN or RXEN task."]
+pub type PLLLOCK_R = crate::BitReader<PLLLOCK_A>;
 #[doc = "PLL lock. Decision point: TXEN or RXEN task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLLOCK_A {
@@ -132,14 +100,8 @@ impl From<PLLLOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PLLLOCK` reader - PLL lock. Decision point: TXEN or RXEN task."]
-pub struct PLLLOCK_R(crate::FieldReader<bool, PLLLOCK_A>);
 impl PLLLOCK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PLLLOCK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLLOCK_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl PLLLOCK_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PLLLOCK_A::DISABLED
+        *self == PLLLOCK_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PLLLOCK_A::ENABLED
-    }
-}
-impl core::ops::Deref for PLLLOCK_R {
-    type Target = crate::FieldReader<bool, PLLLOCK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PLLLOCK_A::ENABLED
     }
 }
 #[doc = "Field `PLLLOCK` writer - PLL lock. Decision point: TXEN or RXEN task."]
-pub struct PLLLOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLLOCK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PLLLOCK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PLLLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, PLLLOCK_A, O>;
+impl<'a, const O: u8> PLLLOCK_W<'a, O> {
     #[doc = "PLL lock disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,45 +133,29 @@ impl<'a> PLLLOCK_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(PLLLOCK_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Constant carrier. Decision point: TXEN task."]
     #[inline(always)]
     pub fn constcarrier(&self) -> CONSTCARRIER_R {
-        CONSTCARRIER_R::new((self.bits & 0x01) != 0)
+        CONSTCARRIER_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - PLL lock. Decision point: TXEN or RXEN task."]
     #[inline(always)]
     pub fn plllock(&self) -> PLLLOCK_R {
-        PLLLOCK_R::new(((self.bits >> 1) & 0x01) != 0)
+        PLLLOCK_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Constant carrier. Decision point: TXEN task."]
     #[inline(always)]
-    pub fn constcarrier(&mut self) -> CONSTCARRIER_W {
-        CONSTCARRIER_W { w: self }
+    pub fn constcarrier(&mut self) -> CONSTCARRIER_W<0> {
+        CONSTCARRIER_W::new(self)
     }
     #[doc = "Bit 1 - PLL lock. Decision point: TXEN or RXEN task."]
     #[inline(always)]
-    pub fn plllock(&mut self) -> PLLLOCK_W {
-        PLLLOCK_W { w: self }
+    pub fn plllock(&mut self) -> PLLLOCK_W<1> {
+        PLLLOCK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

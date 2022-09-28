@@ -35,32 +35,9 @@ impl From<crate::W<PTR_SPEC>> for W {
     }
 }
 #[doc = "Field `SAMPLEPTR` reader - Address to write PDM samples to over DMA"]
-pub struct SAMPLEPTR_R(crate::FieldReader<u32, u32>);
-impl SAMPLEPTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SAMPLEPTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SAMPLEPTR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SAMPLEPTR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SAMPLEPTR` writer - Address to write PDM samples to over DMA"]
-pub struct SAMPLEPTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SAMPLEPTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type SAMPLEPTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PTR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Address to write PDM samples to over DMA"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Address to write PDM samples to over DMA"]
     #[inline(always)]
-    pub fn sampleptr(&mut self) -> SAMPLEPTR_W {
-        SAMPLEPTR_W { w: self }
+    pub fn sampleptr(&mut self) -> SAMPLEPTR_W<0> {
+        SAMPLEPTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<ALIGN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ALIGN` reader - Alignment of sample within a frame."]
+pub type ALIGN_R = crate::BitReader<ALIGN_A>;
 #[doc = "Alignment of sample within a frame.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALIGN_A {
@@ -48,14 +50,8 @@ impl From<ALIGN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALIGN` reader - Alignment of sample within a frame."]
-pub struct ALIGN_R(crate::FieldReader<bool, ALIGN_A>);
 impl ALIGN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ALIGN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ALIGN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl ALIGN_R {
     #[doc = "Checks if the value of the field is `LEFT`"]
     #[inline(always)]
     pub fn is_left(&self) -> bool {
-        **self == ALIGN_A::LEFT
+        *self == ALIGN_A::LEFT
     }
     #[doc = "Checks if the value of the field is `RIGHT`"]
     #[inline(always)]
     pub fn is_right(&self) -> bool {
-        **self == ALIGN_A::RIGHT
-    }
-}
-impl core::ops::Deref for ALIGN_R {
-    type Target = crate::FieldReader<bool, ALIGN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ALIGN_A::RIGHT
     }
 }
 #[doc = "Field `ALIGN` writer - Alignment of sample within a frame."]
-pub struct ALIGN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALIGN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ALIGN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ALIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ALIGN_SPEC, ALIGN_A, O>;
+impl<'a, const O: u8> ALIGN_W<'a, O> {
     #[doc = "Left-aligned."]
     #[inline(always)]
     pub fn left(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> ALIGN_W<'a> {
     pub fn right(self) -> &'a mut W {
         self.variant(ALIGN_A::RIGHT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Alignment of sample within a frame."]
     #[inline(always)]
     pub fn align(&self) -> ALIGN_R {
-        ALIGN_R::new((self.bits & 0x01) != 0)
+        ALIGN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Alignment of sample within a frame."]
     #[inline(always)]
-    pub fn align(&mut self) -> ALIGN_W {
-        ALIGN_W { w: self }
+    pub fn align(&mut self) -> ALIGN_W<0> {
+        ALIGN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

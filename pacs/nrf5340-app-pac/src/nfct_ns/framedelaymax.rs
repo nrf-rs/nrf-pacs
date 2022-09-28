@@ -35,32 +35,10 @@ impl From<crate::W<FRAMEDELAYMAX_SPEC>> for W {
     }
 }
 #[doc = "Field `FRAMEDELAYMAX` reader - Maximum frame delay in number of 13.56 MHz clock cycles"]
-pub struct FRAMEDELAYMAX_R(crate::FieldReader<u32, u32>);
-impl FRAMEDELAYMAX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        FRAMEDELAYMAX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRAMEDELAYMAX_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRAMEDELAYMAX_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `FRAMEDELAYMAX` writer - Maximum frame delay in number of 13.56 MHz clock cycles"]
-pub struct FRAMEDELAYMAX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRAMEDELAYMAX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x000f_ffff) | (value as u32 & 0x000f_ffff);
-        self.w
-    }
-}
+pub type FRAMEDELAYMAX_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FRAMEDELAYMAX_SPEC, u32, u32, 20, O>;
 impl R {
     #[doc = "Bits 0:19 - Maximum frame delay in number of 13.56 MHz clock cycles"]
     #[inline(always)]
@@ -71,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:19 - Maximum frame delay in number of 13.56 MHz clock cycles"]
     #[inline(always)]
-    pub fn framedelaymax(&mut self) -> FRAMEDELAYMAX_W {
-        FRAMEDELAYMAX_W { w: self }
+    pub fn framedelaymax(&mut self) -> FRAMEDELAYMAX_W<0> {
+        FRAMEDELAYMAX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

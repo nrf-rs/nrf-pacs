@@ -13,6 +13,8 @@ impl From<crate::R<CODEPAGESIZE_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `CODEPAGESIZE` reader - Code memory page size in bytes"]
+pub type CODEPAGESIZE_R = crate::FieldReader<u32, CODEPAGESIZE_A>;
 #[doc = "Code memory page size in bytes\n\nValue on reset: 4096"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -26,14 +28,8 @@ impl From<CODEPAGESIZE_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `CODEPAGESIZE` reader - Code memory page size in bytes"]
-pub struct CODEPAGESIZE_R(crate::FieldReader<u32, CODEPAGESIZE_A>);
 impl CODEPAGESIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CODEPAGESIZE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CODEPAGESIZE_A> {
         match self.bits {
@@ -44,14 +40,7 @@ impl CODEPAGESIZE_R {
     #[doc = "Checks if the value of the field is `K4096`"]
     #[inline(always)]
     pub fn is_k4096(&self) -> bool {
-        **self == CODEPAGESIZE_A::K4096
-    }
-}
-impl core::ops::Deref for CODEPAGESIZE_R {
-    type Target = crate::FieldReader<u32, CODEPAGESIZE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CODEPAGESIZE_A::K4096
     }
 }
 impl R {

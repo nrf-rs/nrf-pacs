@@ -35,32 +35,9 @@ impl From<crate::W<MAXRX_SPEC>> for W {
     }
 }
 #[doc = "Field `MAXRX` reader - Maximum number of bytes in the receive buffer."]
-pub struct MAXRX_R(crate::FieldReader<u8, u8>);
-impl MAXRX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MAXRX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MAXRX_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MAXRX_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MAXRX` writer - Maximum number of bytes in the receive buffer."]
-pub struct MAXRX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MAXRX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type MAXRX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAXRX_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Maximum number of bytes in the receive buffer."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Maximum number of bytes in the receive buffer."]
     #[inline(always)]
-    pub fn maxrx(&mut self) -> MAXRX_W {
-        MAXRX_W { w: self }
+    pub fn maxrx(&mut self) -> MAXRX_W<0> {
+        MAXRX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

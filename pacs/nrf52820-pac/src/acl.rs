@@ -26,16 +26,8 @@ pub struct RegisterBlock {
     #[doc = "0x870..0x87c - Unspecified"]
     pub acl7: ACL,
 }
-#[doc = r"Register block"]
-#[repr(C)]
-pub struct ACL {
-    #[doc = "0x00 - Description cluster: Start address of region to protect. The start address must be word-aligned."]
-    pub addr: crate::Reg<self::acl::addr::ADDR_SPEC>,
-    #[doc = "0x04 - Description cluster: Size of region to protect counting from address ACL\\[n\\].ADDR. Write '0' as no effect."]
-    pub size: crate::Reg<self::acl::size::SIZE_SPEC>,
-    #[doc = "0x08 - Description cluster: Access permissions for region n as defined by start address ACL\\[n\\].ADDR and size ACL\\[n\\].SIZE"]
-    pub perm: crate::Reg<self::acl::perm::PERM_SPEC>,
-}
-#[doc = r"Register block"]
+#[doc = "Unspecified"]
+pub use acl::ACL;
+#[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod acl;

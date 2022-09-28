@@ -14,25 +14,12 @@ impl From<crate::R<RXMATCH_SPEC>> for R {
     }
 }
 #[doc = "Field `RXMATCH` reader - Logical address in which previous packet was received."]
-pub struct RXMATCH_R(crate::FieldReader<u8, u8>);
-impl RXMATCH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RXMATCH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXMATCH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXMATCH_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:2 - Logical address in which previous packet was received."]
     #[inline(always)]
     pub fn rxmatch(&self) -> RXMATCH_R {
-        RXMATCH_R::new((self.bits & 0x07) as u8)
+        RXMATCH_R::new((self.bits & 7) as u8)
     }
 }
 #[doc = "Received address.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxmatch](index.html) module"]

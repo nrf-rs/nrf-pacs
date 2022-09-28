@@ -35,32 +35,9 @@ impl From<crate::W<TXD_SPEC>> for W {
     }
 }
 #[doc = "Field `TXD` reader - TX data to send. Double buffered"]
-pub struct TXD_R(crate::FieldReader<u8, u8>);
-impl TXD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TXD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TXD` writer - TX data to send. Double buffered"]
-pub struct TXD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type TXD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TXD_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - TX data to send. Double buffered"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - TX data to send. Double buffered"]
     #[inline(always)]
-    pub fn txd(&mut self) -> TXD_W {
-        TXD_W { w: self }
+    pub fn txd(&mut self) -> TXD_W<0> {
+        TXD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

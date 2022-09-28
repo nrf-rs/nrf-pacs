@@ -32,35 +32,12 @@ impl From<DEBUGREQ_AW> for bool {
     }
 }
 #[doc = "Field `DEBUGREQ` writer - Processor debug request"]
-pub struct DEBUGREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUGREQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DEBUGREQ_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DEBUGREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, DEBUGREQ_AW, O>;
+impl<'a, const O: u8> DEBUGREQ_W<'a, O> {
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
     pub fn acknowledge(self) -> &'a mut W {
         self.variant(DEBUGREQ_AW::ACKNOWLEDGE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 #[doc = "Processor Restart\n\nValue on reset: 0"]
@@ -76,35 +53,13 @@ impl From<CPURESTART_AW> for bool {
     }
 }
 #[doc = "Field `CPURESTART` writer - Processor Restart"]
-pub struct CPURESTART_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPURESTART_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPURESTART_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CPURESTART_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTIINTACK_SPEC, CPURESTART_AW, O>;
+impl<'a, const O: u8> CPURESTART_W<'a, O> {
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
     pub fn acknowledge(self) -> &'a mut W {
         self.variant(CPURESTART_AW::ACKNOWLEDGE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
     }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
@@ -120,35 +75,12 @@ impl From<UNUSED0_AW> for bool {
     }
 }
 #[doc = "Field `UNUSED0` writer - N/A"]
-pub struct UNUSED0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UNUSED0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UNUSED0_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UNUSED0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, UNUSED0_AW, O>;
+impl<'a, const O: u8> UNUSED0_W<'a, O> {
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
     pub fn acknowledge(self) -> &'a mut W {
         self.variant(UNUSED0_AW::ACKNOWLEDGE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
     }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
@@ -164,35 +96,12 @@ impl From<UNUSED1_AW> for bool {
     }
 }
 #[doc = "Field `UNUSED1` writer - N/A"]
-pub struct UNUSED1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UNUSED1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UNUSED1_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UNUSED1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, UNUSED1_AW, O>;
+impl<'a, const O: u8> UNUSED1_W<'a, O> {
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
     pub fn acknowledge(self) -> &'a mut W {
         self.variant(UNUSED1_AW::ACKNOWLEDGE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
     }
 }
 #[doc = "ETM Event Input 0\n\nValue on reset: 0"]
@@ -208,35 +117,12 @@ impl From<ETMEVTIN0_AW> for bool {
     }
 }
 #[doc = "Field `ETMEVTIN0` writer - ETM Event Input 0"]
-pub struct ETMEVTIN0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETMEVTIN0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ETMEVTIN0_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ETMEVTIN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, ETMEVTIN0_AW, O>;
+impl<'a, const O: u8> ETMEVTIN0_W<'a, O> {
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
     pub fn acknowledge(self) -> &'a mut W {
         self.variant(ETMEVTIN0_AW::ACKNOWLEDGE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
     }
 }
 #[doc = "ETM Event Input 1\n\nValue on reset: 0"]
@@ -252,35 +138,12 @@ impl From<ETMEVTIN1_AW> for bool {
     }
 }
 #[doc = "Field `ETMEVTIN1` writer - ETM Event Input 1"]
-pub struct ETMEVTIN1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETMEVTIN1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ETMEVTIN1_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ETMEVTIN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, ETMEVTIN1_AW, O>;
+impl<'a, const O: u8> ETMEVTIN1_W<'a, O> {
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
     pub fn acknowledge(self) -> &'a mut W {
         self.variant(ETMEVTIN1_AW::ACKNOWLEDGE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
     }
 }
 #[doc = "ETM Event Input 2\n\nValue on reset: 0"]
@@ -296,35 +159,12 @@ impl From<ETMEVTIN2_AW> for bool {
     }
 }
 #[doc = "Field `ETMEVTIN2` writer - ETM Event Input 2"]
-pub struct ETMEVTIN2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETMEVTIN2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ETMEVTIN2_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ETMEVTIN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, ETMEVTIN2_AW, O>;
+impl<'a, const O: u8> ETMEVTIN2_W<'a, O> {
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
     pub fn acknowledge(self) -> &'a mut W {
         self.variant(ETMEVTIN2_AW::ACKNOWLEDGE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
     }
 }
 #[doc = "ETM Event Input 3\n\nValue on reset: 0"]
@@ -340,77 +180,54 @@ impl From<ETMEVTIN3_AW> for bool {
     }
 }
 #[doc = "Field `ETMEVTIN3` writer - ETM Event Input 3"]
-pub struct ETMEVTIN3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETMEVTIN3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ETMEVTIN3_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ETMEVTIN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, ETMEVTIN3_AW, O>;
+impl<'a, const O: u8> ETMEVTIN3_W<'a, O> {
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
     pub fn acknowledge(self) -> &'a mut W {
         self.variant(ETMEVTIN3_AW::ACKNOWLEDGE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Processor debug request"]
     #[inline(always)]
-    pub fn debugreq(&mut self) -> DEBUGREQ_W {
-        DEBUGREQ_W { w: self }
+    pub fn debugreq(&mut self) -> DEBUGREQ_W<0> {
+        DEBUGREQ_W::new(self)
     }
     #[doc = "Bit 1 - Processor Restart"]
     #[inline(always)]
-    pub fn cpurestart(&mut self) -> CPURESTART_W {
-        CPURESTART_W { w: self }
+    pub fn cpurestart(&mut self) -> CPURESTART_W<1> {
+        CPURESTART_W::new(self)
     }
     #[doc = "Bit 2 - N/A"]
     #[inline(always)]
-    pub fn unused0(&mut self) -> UNUSED0_W {
-        UNUSED0_W { w: self }
+    pub fn unused0(&mut self) -> UNUSED0_W<2> {
+        UNUSED0_W::new(self)
     }
     #[doc = "Bit 3 - N/A"]
     #[inline(always)]
-    pub fn unused1(&mut self) -> UNUSED1_W {
-        UNUSED1_W { w: self }
+    pub fn unused1(&mut self) -> UNUSED1_W<3> {
+        UNUSED1_W::new(self)
     }
     #[doc = "Bit 4 - ETM Event Input 0"]
     #[inline(always)]
-    pub fn etmevtin0(&mut self) -> ETMEVTIN0_W {
-        ETMEVTIN0_W { w: self }
+    pub fn etmevtin0(&mut self) -> ETMEVTIN0_W<4> {
+        ETMEVTIN0_W::new(self)
     }
     #[doc = "Bit 5 - ETM Event Input 1"]
     #[inline(always)]
-    pub fn etmevtin1(&mut self) -> ETMEVTIN1_W {
-        ETMEVTIN1_W { w: self }
+    pub fn etmevtin1(&mut self) -> ETMEVTIN1_W<5> {
+        ETMEVTIN1_W::new(self)
     }
     #[doc = "Bit 6 - ETM Event Input 2"]
     #[inline(always)]
-    pub fn etmevtin2(&mut self) -> ETMEVTIN2_W {
-        ETMEVTIN2_W { w: self }
+    pub fn etmevtin2(&mut self) -> ETMEVTIN2_W<6> {
+        ETMEVTIN2_W::new(self)
     }
     #[doc = "Bit 7 - ETM Event Input 3"]
     #[inline(always)]
-    pub fn etmevtin3(&mut self) -> ETMEVTIN3_W {
-        ETMEVTIN3_W { w: self }
+    pub fn etmevtin3(&mut self) -> ETMEVTIN3_W<7> {
+        ETMEVTIN3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

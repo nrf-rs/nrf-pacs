@@ -34,6 +34,8 @@ impl From<crate::W<PROTECT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SLAVE0` reader - Control access to slave 0 of master EXTRAM\\[n\\]"]
+pub type SLAVE0_R = crate::BitReader<SLAVE0_A>;
 #[doc = "Control access to slave 0 of master EXTRAM\\[n\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLAVE0_A {
@@ -48,14 +50,8 @@ impl From<SLAVE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLAVE0` reader - Control access to slave 0 of master EXTRAM\\[n\\]"]
-pub struct SLAVE0_R(crate::FieldReader<bool, SLAVE0_A>);
 impl SLAVE0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLAVE0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLAVE0_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl SLAVE0_R {
     #[doc = "Checks if the value of the field is `ALLOWED`"]
     #[inline(always)]
     pub fn is_allowed(&self) -> bool {
-        **self == SLAVE0_A::ALLOWED
+        *self == SLAVE0_A::ALLOWED
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        **self == SLAVE0_A::BLOCKED
-    }
-}
-impl core::ops::Deref for SLAVE0_R {
-    type Target = crate::FieldReader<bool, SLAVE0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLAVE0_A::BLOCKED
     }
 }
 #[doc = "Field `SLAVE0` writer - Control access to slave 0 of master EXTRAM\\[n\\]"]
-pub struct SLAVE0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAVE0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SLAVE0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SLAVE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PROTECT_SPEC, SLAVE0_A, O>;
+impl<'a, const O: u8> SLAVE0_W<'a, O> {
     #[doc = "Access to slave is allowed"]
     #[inline(always)]
     pub fn allowed(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> SLAVE0_W<'a> {
     pub fn blocked(self) -> &'a mut W {
         self.variant(SLAVE0_A::BLOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `SLAVE1` reader - Control access to slave 1 of master EXTRAM\\[n\\]"]
+pub type SLAVE1_R = crate::BitReader<SLAVE1_A>;
 #[doc = "Control access to slave 1 of master EXTRAM\\[n\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLAVE1_A {
@@ -132,14 +100,8 @@ impl From<SLAVE1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLAVE1` reader - Control access to slave 1 of master EXTRAM\\[n\\]"]
-pub struct SLAVE1_R(crate::FieldReader<bool, SLAVE1_A>);
 impl SLAVE1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLAVE1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLAVE1_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl SLAVE1_R {
     #[doc = "Checks if the value of the field is `ALLOWED`"]
     #[inline(always)]
     pub fn is_allowed(&self) -> bool {
-        **self == SLAVE1_A::ALLOWED
+        *self == SLAVE1_A::ALLOWED
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        **self == SLAVE1_A::BLOCKED
-    }
-}
-impl core::ops::Deref for SLAVE1_R {
-    type Target = crate::FieldReader<bool, SLAVE1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLAVE1_A::BLOCKED
     }
 }
 #[doc = "Field `SLAVE1` writer - Control access to slave 1 of master EXTRAM\\[n\\]"]
-pub struct SLAVE1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAVE1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SLAVE1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SLAVE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PROTECT_SPEC, SLAVE1_A, O>;
+impl<'a, const O: u8> SLAVE1_W<'a, O> {
     #[doc = "Access to slave is allowed"]
     #[inline(always)]
     pub fn allowed(self) -> &'a mut W {
@@ -185,23 +133,9 @@ impl<'a> SLAVE1_W<'a> {
     pub fn blocked(self) -> &'a mut W {
         self.variant(SLAVE1_A::BLOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `SLAVE2` reader - Control access to slave 2 of master EXTRAM\\[n\\]"]
+pub type SLAVE2_R = crate::BitReader<SLAVE2_A>;
 #[doc = "Control access to slave 2 of master EXTRAM\\[n\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLAVE2_A {
@@ -216,14 +150,8 @@ impl From<SLAVE2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLAVE2` reader - Control access to slave 2 of master EXTRAM\\[n\\]"]
-pub struct SLAVE2_R(crate::FieldReader<bool, SLAVE2_A>);
 impl SLAVE2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLAVE2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLAVE2_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl SLAVE2_R {
     #[doc = "Checks if the value of the field is `ALLOWED`"]
     #[inline(always)]
     pub fn is_allowed(&self) -> bool {
-        **self == SLAVE2_A::ALLOWED
+        *self == SLAVE2_A::ALLOWED
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        **self == SLAVE2_A::BLOCKED
-    }
-}
-impl core::ops::Deref for SLAVE2_R {
-    type Target = crate::FieldReader<bool, SLAVE2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLAVE2_A::BLOCKED
     }
 }
 #[doc = "Field `SLAVE2` writer - Control access to slave 2 of master EXTRAM\\[n\\]"]
-pub struct SLAVE2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAVE2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SLAVE2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SLAVE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PROTECT_SPEC, SLAVE2_A, O>;
+impl<'a, const O: u8> SLAVE2_W<'a, O> {
     #[doc = "Access to slave is allowed"]
     #[inline(always)]
     pub fn allowed(self) -> &'a mut W {
@@ -269,23 +183,9 @@ impl<'a> SLAVE2_W<'a> {
     pub fn blocked(self) -> &'a mut W {
         self.variant(SLAVE2_A::BLOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `SLAVE3` reader - Control access to slave 3 of master EXTRAM\\[n\\]"]
+pub type SLAVE3_R = crate::BitReader<SLAVE3_A>;
 #[doc = "Control access to slave 3 of master EXTRAM\\[n\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLAVE3_A {
@@ -300,14 +200,8 @@ impl From<SLAVE3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLAVE3` reader - Control access to slave 3 of master EXTRAM\\[n\\]"]
-pub struct SLAVE3_R(crate::FieldReader<bool, SLAVE3_A>);
 impl SLAVE3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLAVE3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLAVE3_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl SLAVE3_R {
     #[doc = "Checks if the value of the field is `ALLOWED`"]
     #[inline(always)]
     pub fn is_allowed(&self) -> bool {
-        **self == SLAVE3_A::ALLOWED
+        *self == SLAVE3_A::ALLOWED
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        **self == SLAVE3_A::BLOCKED
-    }
-}
-impl core::ops::Deref for SLAVE3_R {
-    type Target = crate::FieldReader<bool, SLAVE3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLAVE3_A::BLOCKED
     }
 }
 #[doc = "Field `SLAVE3` writer - Control access to slave 3 of master EXTRAM\\[n\\]"]
-pub struct SLAVE3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAVE3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SLAVE3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SLAVE3_W<'a, const O: u8> = crate::BitWriter<'a, u32, PROTECT_SPEC, SLAVE3_A, O>;
+impl<'a, const O: u8> SLAVE3_W<'a, O> {
     #[doc = "Access to slave is allowed"]
     #[inline(always)]
     pub fn allowed(self) -> &'a mut W {
@@ -353,23 +233,9 @@ impl<'a> SLAVE3_W<'a> {
     pub fn blocked(self) -> &'a mut W {
         self.variant(SLAVE3_A::BLOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `SLAVE4` reader - Control access to slave 4 of master EXTRAM\\[n\\]"]
+pub type SLAVE4_R = crate::BitReader<SLAVE4_A>;
 #[doc = "Control access to slave 4 of master EXTRAM\\[n\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLAVE4_A {
@@ -384,14 +250,8 @@ impl From<SLAVE4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLAVE4` reader - Control access to slave 4 of master EXTRAM\\[n\\]"]
-pub struct SLAVE4_R(crate::FieldReader<bool, SLAVE4_A>);
 impl SLAVE4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLAVE4_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLAVE4_A {
         match self.bits {
@@ -402,31 +262,17 @@ impl SLAVE4_R {
     #[doc = "Checks if the value of the field is `ALLOWED`"]
     #[inline(always)]
     pub fn is_allowed(&self) -> bool {
-        **self == SLAVE4_A::ALLOWED
+        *self == SLAVE4_A::ALLOWED
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        **self == SLAVE4_A::BLOCKED
-    }
-}
-impl core::ops::Deref for SLAVE4_R {
-    type Target = crate::FieldReader<bool, SLAVE4_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLAVE4_A::BLOCKED
     }
 }
 #[doc = "Field `SLAVE4` writer - Control access to slave 4 of master EXTRAM\\[n\\]"]
-pub struct SLAVE4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAVE4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SLAVE4_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SLAVE4_W<'a, const O: u8> = crate::BitWriter<'a, u32, PROTECT_SPEC, SLAVE4_A, O>;
+impl<'a, const O: u8> SLAVE4_W<'a, O> {
     #[doc = "Access to slave is allowed"]
     #[inline(always)]
     pub fn allowed(self) -> &'a mut W {
@@ -437,23 +283,9 @@ impl<'a> SLAVE4_W<'a> {
     pub fn blocked(self) -> &'a mut W {
         self.variant(SLAVE4_A::BLOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `SLAVE5` reader - Control access to slave 5 of master EXTRAM\\[n\\]"]
+pub type SLAVE5_R = crate::BitReader<SLAVE5_A>;
 #[doc = "Control access to slave 5 of master EXTRAM\\[n\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLAVE5_A {
@@ -468,14 +300,8 @@ impl From<SLAVE5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLAVE5` reader - Control access to slave 5 of master EXTRAM\\[n\\]"]
-pub struct SLAVE5_R(crate::FieldReader<bool, SLAVE5_A>);
 impl SLAVE5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLAVE5_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLAVE5_A {
         match self.bits {
@@ -486,31 +312,17 @@ impl SLAVE5_R {
     #[doc = "Checks if the value of the field is `ALLOWED`"]
     #[inline(always)]
     pub fn is_allowed(&self) -> bool {
-        **self == SLAVE5_A::ALLOWED
+        *self == SLAVE5_A::ALLOWED
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        **self == SLAVE5_A::BLOCKED
-    }
-}
-impl core::ops::Deref for SLAVE5_R {
-    type Target = crate::FieldReader<bool, SLAVE5_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLAVE5_A::BLOCKED
     }
 }
 #[doc = "Field `SLAVE5` writer - Control access to slave 5 of master EXTRAM\\[n\\]"]
-pub struct SLAVE5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAVE5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SLAVE5_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SLAVE5_W<'a, const O: u8> = crate::BitWriter<'a, u32, PROTECT_SPEC, SLAVE5_A, O>;
+impl<'a, const O: u8> SLAVE5_W<'a, O> {
     #[doc = "Access to slave is allowed"]
     #[inline(always)]
     pub fn allowed(self) -> &'a mut W {
@@ -521,23 +333,9 @@ impl<'a> SLAVE5_W<'a> {
     pub fn blocked(self) -> &'a mut W {
         self.variant(SLAVE5_A::BLOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `SLAVE6` reader - Control access to slave 6 of master EXTRAM\\[n\\]"]
+pub type SLAVE6_R = crate::BitReader<SLAVE6_A>;
 #[doc = "Control access to slave 6 of master EXTRAM\\[n\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLAVE6_A {
@@ -552,14 +350,8 @@ impl From<SLAVE6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLAVE6` reader - Control access to slave 6 of master EXTRAM\\[n\\]"]
-pub struct SLAVE6_R(crate::FieldReader<bool, SLAVE6_A>);
 impl SLAVE6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLAVE6_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLAVE6_A {
         match self.bits {
@@ -570,31 +362,17 @@ impl SLAVE6_R {
     #[doc = "Checks if the value of the field is `ALLOWED`"]
     #[inline(always)]
     pub fn is_allowed(&self) -> bool {
-        **self == SLAVE6_A::ALLOWED
+        *self == SLAVE6_A::ALLOWED
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        **self == SLAVE6_A::BLOCKED
-    }
-}
-impl core::ops::Deref for SLAVE6_R {
-    type Target = crate::FieldReader<bool, SLAVE6_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLAVE6_A::BLOCKED
     }
 }
 #[doc = "Field `SLAVE6` writer - Control access to slave 6 of master EXTRAM\\[n\\]"]
-pub struct SLAVE6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAVE6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SLAVE6_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SLAVE6_W<'a, const O: u8> = crate::BitWriter<'a, u32, PROTECT_SPEC, SLAVE6_A, O>;
+impl<'a, const O: u8> SLAVE6_W<'a, O> {
     #[doc = "Access to slave is allowed"]
     #[inline(always)]
     pub fn allowed(self) -> &'a mut W {
@@ -605,23 +383,9 @@ impl<'a> SLAVE6_W<'a> {
     pub fn blocked(self) -> &'a mut W {
         self.variant(SLAVE6_A::BLOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `SLAVE7` reader - Control access to slave 7 of master EXTRAM\\[n\\]"]
+pub type SLAVE7_R = crate::BitReader<SLAVE7_A>;
 #[doc = "Control access to slave 7 of master EXTRAM\\[n\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLAVE7_A {
@@ -636,14 +400,8 @@ impl From<SLAVE7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLAVE7` reader - Control access to slave 7 of master EXTRAM\\[n\\]"]
-pub struct SLAVE7_R(crate::FieldReader<bool, SLAVE7_A>);
 impl SLAVE7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLAVE7_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLAVE7_A {
         match self.bits {
@@ -654,31 +412,17 @@ impl SLAVE7_R {
     #[doc = "Checks if the value of the field is `ALLOWED`"]
     #[inline(always)]
     pub fn is_allowed(&self) -> bool {
-        **self == SLAVE7_A::ALLOWED
+        *self == SLAVE7_A::ALLOWED
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        **self == SLAVE7_A::BLOCKED
-    }
-}
-impl core::ops::Deref for SLAVE7_R {
-    type Target = crate::FieldReader<bool, SLAVE7_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLAVE7_A::BLOCKED
     }
 }
 #[doc = "Field `SLAVE7` writer - Control access to slave 7 of master EXTRAM\\[n\\]"]
-pub struct SLAVE7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAVE7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SLAVE7_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SLAVE7_W<'a, const O: u8> = crate::BitWriter<'a, u32, PROTECT_SPEC, SLAVE7_A, O>;
+impl<'a, const O: u8> SLAVE7_W<'a, O> {
     #[doc = "Access to slave is allowed"]
     #[inline(always)]
     pub fn allowed(self) -> &'a mut W {
@@ -689,105 +433,89 @@ impl<'a> SLAVE7_W<'a> {
     pub fn blocked(self) -> &'a mut W {
         self.variant(SLAVE7_A::BLOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Control access to slave 0 of master EXTRAM\\[n\\]"]
     #[inline(always)]
     pub fn slave0(&self) -> SLAVE0_R {
-        SLAVE0_R::new((self.bits & 0x01) != 0)
+        SLAVE0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Control access to slave 1 of master EXTRAM\\[n\\]"]
     #[inline(always)]
     pub fn slave1(&self) -> SLAVE1_R {
-        SLAVE1_R::new(((self.bits >> 1) & 0x01) != 0)
+        SLAVE1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Control access to slave 2 of master EXTRAM\\[n\\]"]
     #[inline(always)]
     pub fn slave2(&self) -> SLAVE2_R {
-        SLAVE2_R::new(((self.bits >> 2) & 0x01) != 0)
+        SLAVE2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Control access to slave 3 of master EXTRAM\\[n\\]"]
     #[inline(always)]
     pub fn slave3(&self) -> SLAVE3_R {
-        SLAVE3_R::new(((self.bits >> 3) & 0x01) != 0)
+        SLAVE3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Control access to slave 4 of master EXTRAM\\[n\\]"]
     #[inline(always)]
     pub fn slave4(&self) -> SLAVE4_R {
-        SLAVE4_R::new(((self.bits >> 4) & 0x01) != 0)
+        SLAVE4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Control access to slave 5 of master EXTRAM\\[n\\]"]
     #[inline(always)]
     pub fn slave5(&self) -> SLAVE5_R {
-        SLAVE5_R::new(((self.bits >> 5) & 0x01) != 0)
+        SLAVE5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Control access to slave 6 of master EXTRAM\\[n\\]"]
     #[inline(always)]
     pub fn slave6(&self) -> SLAVE6_R {
-        SLAVE6_R::new(((self.bits >> 6) & 0x01) != 0)
+        SLAVE6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Control access to slave 7 of master EXTRAM\\[n\\]"]
     #[inline(always)]
     pub fn slave7(&self) -> SLAVE7_R {
-        SLAVE7_R::new(((self.bits >> 7) & 0x01) != 0)
+        SLAVE7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Control access to slave 0 of master EXTRAM\\[n\\]"]
     #[inline(always)]
-    pub fn slave0(&mut self) -> SLAVE0_W {
-        SLAVE0_W { w: self }
+    pub fn slave0(&mut self) -> SLAVE0_W<0> {
+        SLAVE0_W::new(self)
     }
     #[doc = "Bit 1 - Control access to slave 1 of master EXTRAM\\[n\\]"]
     #[inline(always)]
-    pub fn slave1(&mut self) -> SLAVE1_W {
-        SLAVE1_W { w: self }
+    pub fn slave1(&mut self) -> SLAVE1_W<1> {
+        SLAVE1_W::new(self)
     }
     #[doc = "Bit 2 - Control access to slave 2 of master EXTRAM\\[n\\]"]
     #[inline(always)]
-    pub fn slave2(&mut self) -> SLAVE2_W {
-        SLAVE2_W { w: self }
+    pub fn slave2(&mut self) -> SLAVE2_W<2> {
+        SLAVE2_W::new(self)
     }
     #[doc = "Bit 3 - Control access to slave 3 of master EXTRAM\\[n\\]"]
     #[inline(always)]
-    pub fn slave3(&mut self) -> SLAVE3_W {
-        SLAVE3_W { w: self }
+    pub fn slave3(&mut self) -> SLAVE3_W<3> {
+        SLAVE3_W::new(self)
     }
     #[doc = "Bit 4 - Control access to slave 4 of master EXTRAM\\[n\\]"]
     #[inline(always)]
-    pub fn slave4(&mut self) -> SLAVE4_W {
-        SLAVE4_W { w: self }
+    pub fn slave4(&mut self) -> SLAVE4_W<4> {
+        SLAVE4_W::new(self)
     }
     #[doc = "Bit 5 - Control access to slave 5 of master EXTRAM\\[n\\]"]
     #[inline(always)]
-    pub fn slave5(&mut self) -> SLAVE5_W {
-        SLAVE5_W { w: self }
+    pub fn slave5(&mut self) -> SLAVE5_W<5> {
+        SLAVE5_W::new(self)
     }
     #[doc = "Bit 6 - Control access to slave 6 of master EXTRAM\\[n\\]"]
     #[inline(always)]
-    pub fn slave6(&mut self) -> SLAVE6_W {
-        SLAVE6_W { w: self }
+    pub fn slave6(&mut self) -> SLAVE6_W<6> {
+        SLAVE6_W::new(self)
     }
     #[doc = "Bit 7 - Control access to slave 7 of master EXTRAM\\[n\\]"]
     #[inline(always)]
-    pub fn slave7(&mut self) -> SLAVE7_W {
-        SLAVE7_W { w: self }
+    pub fn slave7(&mut self) -> SLAVE7_W<7> {
+        SLAVE7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

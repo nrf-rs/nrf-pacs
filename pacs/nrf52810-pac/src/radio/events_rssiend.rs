@@ -34,11 +34,13 @@ impl From<crate::W<EVENTS_RSSIEND_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EVENTS_RSSIEND` reader - Sampling of receive signal strength complete."]
+pub type EVENTS_RSSIEND_R = crate::BitReader<EVENTS_RSSIEND_A>;
 #[doc = "Sampling of receive signal strength complete.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EVENTS_RSSIEND_A {
     #[doc = "0: Event not generated"]
-    NOTGENERATED = 0,
+    NOT_GENERATED = 0,
     #[doc = "1: Event generated"]
     GENERATED = 1,
 }
@@ -48,88 +50,53 @@ impl From<EVENTS_RSSIEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EVENTS_RSSIEND` reader - Sampling of receive signal strength complete."]
-pub struct EVENTS_RSSIEND_R(crate::FieldReader<bool, EVENTS_RSSIEND_A>);
 impl EVENTS_RSSIEND_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EVENTS_RSSIEND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EVENTS_RSSIEND_A {
         match self.bits {
-            false => EVENTS_RSSIEND_A::NOTGENERATED,
+            false => EVENTS_RSSIEND_A::NOT_GENERATED,
             true => EVENTS_RSSIEND_A::GENERATED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTGENERATED`"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        **self == EVENTS_RSSIEND_A::NOTGENERATED
+        *self == EVENTS_RSSIEND_A::NOT_GENERATED
     }
     #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        **self == EVENTS_RSSIEND_A::GENERATED
-    }
-}
-impl core::ops::Deref for EVENTS_RSSIEND_R {
-    type Target = crate::FieldReader<bool, EVENTS_RSSIEND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EVENTS_RSSIEND_A::GENERATED
     }
 }
 #[doc = "Field `EVENTS_RSSIEND` writer - Sampling of receive signal strength complete."]
-pub struct EVENTS_RSSIEND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVENTS_RSSIEND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EVENTS_RSSIEND_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EVENTS_RSSIEND_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_RSSIEND_SPEC, EVENTS_RSSIEND_A, O>;
+impl<'a, const O: u8> EVENTS_RSSIEND_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
     pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_RSSIEND_A::NOTGENERATED)
+        self.variant(EVENTS_RSSIEND_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
     pub fn generated(self) -> &'a mut W {
         self.variant(EVENTS_RSSIEND_A::GENERATED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Sampling of receive signal strength complete."]
     #[inline(always)]
     pub fn events_rssiend(&self) -> EVENTS_RSSIEND_R {
-        EVENTS_RSSIEND_R::new((self.bits & 0x01) != 0)
+        EVENTS_RSSIEND_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Sampling of receive signal strength complete."]
     #[inline(always)]
-    pub fn events_rssiend(&mut self) -> EVENTS_RSSIEND_W {
-        EVENTS_RSSIEND_W { w: self }
+    pub fn events_rssiend(&mut self) -> EVENTS_RSSIEND_W<0> {
+        EVENTS_RSSIEND_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

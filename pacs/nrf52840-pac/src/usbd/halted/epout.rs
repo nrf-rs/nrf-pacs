@@ -13,12 +13,14 @@ impl From<crate::R<EPOUT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `GETSTATUS` reader - OUT endpoint halted status. Can be used as is as response to a GetStatus() request to endpoint."]
+pub type GETSTATUS_R = crate::FieldReader<u16, GETSTATUS_A>;
 #[doc = "OUT endpoint halted status. Can be used as is as response to a GetStatus() request to endpoint.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u16)]
 pub enum GETSTATUS_A {
     #[doc = "0: Endpoint is not halted"]
-    NOTHALTED = 0,
+    NOT_HALTED = 0,
     #[doc = "1: Endpoint is halted"]
     HALTED = 1,
 }
@@ -28,38 +30,25 @@ impl From<GETSTATUS_A> for u16 {
         variant as _
     }
 }
-#[doc = "Field `GETSTATUS` reader - OUT endpoint halted status. Can be used as is as response to a GetStatus() request to endpoint."]
-pub struct GETSTATUS_R(crate::FieldReader<u16, GETSTATUS_A>);
 impl GETSTATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        GETSTATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<GETSTATUS_A> {
         match self.bits {
-            0 => Some(GETSTATUS_A::NOTHALTED),
+            0 => Some(GETSTATUS_A::NOT_HALTED),
             1 => Some(GETSTATUS_A::HALTED),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTHALTED`"]
+    #[doc = "Checks if the value of the field is `NOT_HALTED`"]
     #[inline(always)]
     pub fn is_not_halted(&self) -> bool {
-        **self == GETSTATUS_A::NOTHALTED
+        *self == GETSTATUS_A::NOT_HALTED
     }
     #[doc = "Checks if the value of the field is `HALTED`"]
     #[inline(always)]
     pub fn is_halted(&self) -> bool {
-        **self == GETSTATUS_A::HALTED
-    }
-}
-impl core::ops::Deref for GETSTATUS_R {
-    type Target = crate::FieldReader<u16, GETSTATUS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GETSTATUS_A::HALTED
     }
 }
 impl R {

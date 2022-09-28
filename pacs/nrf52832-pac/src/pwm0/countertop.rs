@@ -35,32 +35,10 @@ impl From<crate::W<COUNTERTOP_SPEC>> for W {
     }
 }
 #[doc = "Field `COUNTERTOP` reader - Value up to which the pulse generator counter counts. This register is ignored when DECODER.MODE=WaveForm and only values from RAM will be used."]
-pub struct COUNTERTOP_R(crate::FieldReader<u16, u16>);
-impl COUNTERTOP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        COUNTERTOP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COUNTERTOP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COUNTERTOP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `COUNTERTOP` writer - Value up to which the pulse generator counter counts. This register is ignored when DECODER.MODE=WaveForm and only values from RAM will be used."]
-pub struct COUNTERTOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COUNTERTOP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7fff) | (value as u32 & 0x7fff);
-        self.w
-    }
-}
+pub type COUNTERTOP_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, COUNTERTOP_SPEC, u16, u16, 15, O>;
 impl R {
     #[doc = "Bits 0:14 - Value up to which the pulse generator counter counts. This register is ignored when DECODER.MODE=WaveForm and only values from RAM will be used."]
     #[inline(always)]
@@ -71,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:14 - Value up to which the pulse generator counter counts. This register is ignored when DECODER.MODE=WaveForm and only values from RAM will be used."]
     #[inline(always)]
-    pub fn countertop(&mut self) -> COUNTERTOP_W {
-        COUNTERTOP_W { w: self }
+    pub fn countertop(&mut self) -> COUNTERTOP_W<0> {
+        COUNTERTOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

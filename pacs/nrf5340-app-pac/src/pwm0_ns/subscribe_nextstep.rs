@@ -35,32 +35,12 @@ impl From<crate::W<SUBSCRIBE_NEXTSTEP_SPEC>> for W {
     }
 }
 #[doc = "Field `CHIDX` reader - DPPI channel that task NEXTSTEP will subscribe to"]
-pub struct CHIDX_R(crate::FieldReader<u8, u8>);
-impl CHIDX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CHIDX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHIDX_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHIDX_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CHIDX` writer - DPPI channel that task NEXTSTEP will subscribe to"]
-pub struct CHIDX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHIDX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CHIDX_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SUBSCRIBE_NEXTSTEP_SPEC, u8, u8, 8, O>;
+#[doc = "Field `EN` reader - "]
+pub type EN_R = crate::BitReader<EN_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EN_A {
@@ -75,14 +55,8 @@ impl From<EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EN` reader - "]
-pub struct EN_R(crate::FieldReader<bool, EN_A>);
 impl EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EN_A {
         match self.bits {
@@ -93,31 +67,17 @@ impl EN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == EN_A::DISABLED
+        *self == EN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == EN_A::ENABLED
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EN_A::ENABLED
     }
 }
 #[doc = "Field `EN` writer - "]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBSCRIBE_NEXTSTEP_SPEC, EN_A, O>;
+impl<'a, const O: u8> EN_W<'a, O> {
     #[doc = "Disable subscription"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -127,22 +87,6 @@ impl<'a> EN_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(EN_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
     }
 }
 impl R {
@@ -154,19 +98,19 @@ impl R {
     #[doc = "Bit 31"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - DPPI channel that task NEXTSTEP will subscribe to"]
     #[inline(always)]
-    pub fn chidx(&mut self) -> CHIDX_W {
-        CHIDX_W { w: self }
+    pub fn chidx(&mut self) -> CHIDX_W<0> {
+        CHIDX_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    pub fn en(&mut self) -> EN_W<31> {
+        EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,32 +35,10 @@ impl From<crate::W<ERASEPCR0_SPEC>> for W {
     }
 }
 #[doc = "Field `ERASEPCR0` reader - Register for starting erase of a page in Code area. Equivalent to ERASEPAGE."]
-pub struct ERASEPCR0_R(crate::FieldReader<u32, u32>);
-impl ERASEPCR0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        ERASEPCR0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERASEPCR0_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERASEPCR0_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `ERASEPCR0` writer - Register for starting erase of a page in Code area. Equivalent to ERASEPAGE."]
-pub struct ERASEPCR0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASEPCR0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type ERASEPCR0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ERASEPCR0_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Register for starting erase of a page in Code area. Equivalent to ERASEPAGE."]
     #[inline(always)]
@@ -71,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Register for starting erase of a page in Code area. Equivalent to ERASEPAGE."]
     #[inline(always)]
-    pub fn erasepcr0(&mut self) -> ERASEPCR0_W {
-        ERASEPCR0_W { w: self }
+    pub fn erasepcr0(&mut self) -> ERASEPCR0_W<0> {
+        ERASEPCR0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

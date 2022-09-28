@@ -34,6 +34,8 @@ impl From<crate::W<REGOUT0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `VOUT` reader - Output voltage from of REG0 regulator stage. The maximum output voltage from this stage is given as VDDH - VEXDIF."]
+pub type VOUT_R = crate::FieldReader<u8, VOUT_A>;
 #[doc = "Output voltage from of REG0 regulator stage. The maximum output voltage from this stage is given as VDDH - VEXDIF.\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -59,14 +61,8 @@ impl From<VOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VOUT` reader - Output voltage from of REG0 regulator stage. The maximum output voltage from this stage is given as VDDH - VEXDIF."]
-pub struct VOUT_R(crate::FieldReader<u8, VOUT_A>);
 impl VOUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        VOUT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<VOUT_A> {
         match self.bits {
@@ -83,56 +79,42 @@ impl VOUT_R {
     #[doc = "Checks if the value of the field is `_1V8`"]
     #[inline(always)]
     pub fn is_1v8(&self) -> bool {
-        **self == VOUT_A::_1V8
+        *self == VOUT_A::_1V8
     }
     #[doc = "Checks if the value of the field is `_2V1`"]
     #[inline(always)]
     pub fn is_2v1(&self) -> bool {
-        **self == VOUT_A::_2V1
+        *self == VOUT_A::_2V1
     }
     #[doc = "Checks if the value of the field is `_2V4`"]
     #[inline(always)]
     pub fn is_2v4(&self) -> bool {
-        **self == VOUT_A::_2V4
+        *self == VOUT_A::_2V4
     }
     #[doc = "Checks if the value of the field is `_2V7`"]
     #[inline(always)]
     pub fn is_2v7(&self) -> bool {
-        **self == VOUT_A::_2V7
+        *self == VOUT_A::_2V7
     }
     #[doc = "Checks if the value of the field is `_3V0`"]
     #[inline(always)]
     pub fn is_3v0(&self) -> bool {
-        **self == VOUT_A::_3V0
+        *self == VOUT_A::_3V0
     }
     #[doc = "Checks if the value of the field is `_3V3`"]
     #[inline(always)]
     pub fn is_3v3(&self) -> bool {
-        **self == VOUT_A::_3V3
+        *self == VOUT_A::_3V3
     }
     #[doc = "Checks if the value of the field is `DEFAULT`"]
     #[inline(always)]
     pub fn is_default(&self) -> bool {
-        **self == VOUT_A::DEFAULT
-    }
-}
-impl core::ops::Deref for VOUT_R {
-    type Target = crate::FieldReader<u8, VOUT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VOUT_A::DEFAULT
     }
 }
 #[doc = "Field `VOUT` writer - Output voltage from of REG0 regulator stage. The maximum output voltage from this stage is given as VDDH - VEXDIF."]
-pub struct VOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VOUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VOUT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type VOUT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REGOUT0_SPEC, u8, VOUT_A, 3, O>;
+impl<'a, const O: u8> VOUT_W<'a, O> {
     #[doc = "1.8 V"]
     #[inline(always)]
     pub fn _1v8(self) -> &'a mut W {
@@ -168,25 +150,19 @@ impl<'a> VOUT_W<'a> {
     pub fn default(self) -> &'a mut W {
         self.variant(VOUT_A::DEFAULT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Output voltage from of REG0 regulator stage. The maximum output voltage from this stage is given as VDDH - VEXDIF."]
     #[inline(always)]
     pub fn vout(&self) -> VOUT_R {
-        VOUT_R::new((self.bits & 0x07) as u8)
+        VOUT_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Output voltage from of REG0 regulator stage. The maximum output voltage from this stage is given as VDDH - VEXDIF."]
     #[inline(always)]
-    pub fn vout(&mut self) -> VOUT_W {
-        VOUT_W { w: self }
+    pub fn vout(&mut self) -> VOUT_W<0> {
+        VOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

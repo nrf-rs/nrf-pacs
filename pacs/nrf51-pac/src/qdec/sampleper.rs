@@ -34,6 +34,8 @@ impl From<crate::W<SAMPLEPER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SAMPLEPER` reader - Sample period."]
+pub type SAMPLEPER_R = crate::FieldReader<u8, SAMPLEPER_A>;
 #[doc = "Sample period.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -61,14 +63,8 @@ impl From<SAMPLEPER_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SAMPLEPER` reader - Sample period."]
-pub struct SAMPLEPER_R(crate::FieldReader<u8, SAMPLEPER_A>);
 impl SAMPLEPER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SAMPLEPER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SAMPLEPER_A {
         match self.bits {
@@ -86,61 +82,48 @@ impl SAMPLEPER_R {
     #[doc = "Checks if the value of the field is `_128US`"]
     #[inline(always)]
     pub fn is_128us(&self) -> bool {
-        **self == SAMPLEPER_A::_128US
+        *self == SAMPLEPER_A::_128US
     }
     #[doc = "Checks if the value of the field is `_256US`"]
     #[inline(always)]
     pub fn is_256us(&self) -> bool {
-        **self == SAMPLEPER_A::_256US
+        *self == SAMPLEPER_A::_256US
     }
     #[doc = "Checks if the value of the field is `_512US`"]
     #[inline(always)]
     pub fn is_512us(&self) -> bool {
-        **self == SAMPLEPER_A::_512US
+        *self == SAMPLEPER_A::_512US
     }
     #[doc = "Checks if the value of the field is `_1024US`"]
     #[inline(always)]
     pub fn is_1024us(&self) -> bool {
-        **self == SAMPLEPER_A::_1024US
+        *self == SAMPLEPER_A::_1024US
     }
     #[doc = "Checks if the value of the field is `_2048US`"]
     #[inline(always)]
     pub fn is_2048us(&self) -> bool {
-        **self == SAMPLEPER_A::_2048US
+        *self == SAMPLEPER_A::_2048US
     }
     #[doc = "Checks if the value of the field is `_4096US`"]
     #[inline(always)]
     pub fn is_4096us(&self) -> bool {
-        **self == SAMPLEPER_A::_4096US
+        *self == SAMPLEPER_A::_4096US
     }
     #[doc = "Checks if the value of the field is `_8192US`"]
     #[inline(always)]
     pub fn is_8192us(&self) -> bool {
-        **self == SAMPLEPER_A::_8192US
+        *self == SAMPLEPER_A::_8192US
     }
     #[doc = "Checks if the value of the field is `_16384US`"]
     #[inline(always)]
     pub fn is_16384us(&self) -> bool {
-        **self == SAMPLEPER_A::_16384US
-    }
-}
-impl core::ops::Deref for SAMPLEPER_R {
-    type Target = crate::FieldReader<u8, SAMPLEPER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SAMPLEPER_A::_16384US
     }
 }
 #[doc = "Field `SAMPLEPER` writer - Sample period."]
-pub struct SAMPLEPER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SAMPLEPER_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SAMPLEPER_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type SAMPLEPER_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, SAMPLEPER_SPEC, u8, SAMPLEPER_A, 3, O>;
+impl<'a, const O: u8> SAMPLEPER_W<'a, O> {
     #[doc = "128us sample period."]
     #[inline(always)]
     pub fn _128us(self) -> &'a mut W {
@@ -181,25 +164,19 @@ impl<'a> SAMPLEPER_W<'a> {
     pub fn _16384us(self) -> &'a mut W {
         self.variant(SAMPLEPER_A::_16384US)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Sample period."]
     #[inline(always)]
     pub fn sampleper(&self) -> SAMPLEPER_R {
-        SAMPLEPER_R::new((self.bits & 0x07) as u8)
+        SAMPLEPER_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Sample period."]
     #[inline(always)]
-    pub fn sampleper(&mut self) -> SAMPLEPER_W {
-        SAMPLEPER_W { w: self }
+    pub fn sampleper(&mut self) -> SAMPLEPER_W<0> {
+        SAMPLEPER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

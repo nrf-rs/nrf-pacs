@@ -34,6 +34,8 @@ impl From<crate::W<CLKCONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CLKSRC` reader - Clock source selection"]
+pub type CLKSRC_R = crate::BitReader<CLKSRC_A>;
 #[doc = "Clock source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKSRC_A {
@@ -48,14 +50,8 @@ impl From<CLKSRC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLKSRC` reader - Clock source selection"]
-pub struct CLKSRC_R(crate::FieldReader<bool, CLKSRC_A>);
 impl CLKSRC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLKSRC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLKSRC_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl CLKSRC_R {
     #[doc = "Checks if the value of the field is `PCLK32M`"]
     #[inline(always)]
     pub fn is_pclk32m(&self) -> bool {
-        **self == CLKSRC_A::PCLK32M
+        *self == CLKSRC_A::PCLK32M
     }
     #[doc = "Checks if the value of the field is `ACLK`"]
     #[inline(always)]
     pub fn is_aclk(&self) -> bool {
-        **self == CLKSRC_A::ACLK
-    }
-}
-impl core::ops::Deref for CLKSRC_R {
-    type Target = crate::FieldReader<bool, CLKSRC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLKSRC_A::ACLK
     }
 }
 #[doc = "Field `CLKSRC` writer - Clock source selection"]
-pub struct CLKSRC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKSRC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLKSRC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLKSRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKCONFIG_SPEC, CLKSRC_A, O>;
+impl<'a, const O: u8> CLKSRC_W<'a, O> {
     #[doc = "32MHz peripheral clock"]
     #[inline(always)]
     pub fn pclk32m(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> CLKSRC_W<'a> {
     pub fn aclk(self) -> &'a mut W {
         self.variant(CLKSRC_A::ACLK)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `BYPASS` reader - Bypass clock generator. MCK will be equal to source input. If bypass is enabled the MCKFREQ setting has no effect."]
+pub type BYPASS_R = crate::BitReader<BYPASS_A>;
 #[doc = "Bypass clock generator. MCK will be equal to source input. If bypass is enabled the MCKFREQ setting has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BYPASS_A {
@@ -132,14 +100,8 @@ impl From<BYPASS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BYPASS` reader - Bypass clock generator. MCK will be equal to source input. If bypass is enabled the MCKFREQ setting has no effect."]
-pub struct BYPASS_R(crate::FieldReader<bool, BYPASS_A>);
 impl BYPASS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BYPASS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BYPASS_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl BYPASS_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == BYPASS_A::DISABLE
+        *self == BYPASS_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == BYPASS_A::ENABLE
-    }
-}
-impl core::ops::Deref for BYPASS_R {
-    type Target = crate::FieldReader<bool, BYPASS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BYPASS_A::ENABLE
     }
 }
 #[doc = "Field `BYPASS` writer - Bypass clock generator. MCK will be equal to source input. If bypass is enabled the MCKFREQ setting has no effect."]
-pub struct BYPASS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BYPASS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BYPASS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type BYPASS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKCONFIG_SPEC, BYPASS_A, O>;
+impl<'a, const O: u8> BYPASS_W<'a, O> {
     #[doc = "Disable bypass"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -185,45 +133,29 @@ impl<'a> BYPASS_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(BYPASS_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Clock source selection"]
     #[inline(always)]
     pub fn clksrc(&self) -> CLKSRC_R {
-        CLKSRC_R::new((self.bits & 0x01) != 0)
+        CLKSRC_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 8 - Bypass clock generator. MCK will be equal to source input. If bypass is enabled the MCKFREQ setting has no effect."]
     #[inline(always)]
     pub fn bypass(&self) -> BYPASS_R {
-        BYPASS_R::new(((self.bits >> 8) & 0x01) != 0)
+        BYPASS_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Clock source selection"]
     #[inline(always)]
-    pub fn clksrc(&mut self) -> CLKSRC_W {
-        CLKSRC_W { w: self }
+    pub fn clksrc(&mut self) -> CLKSRC_W<0> {
+        CLKSRC_W::new(self)
     }
     #[doc = "Bit 8 - Bypass clock generator. MCK will be equal to source input. If bypass is enabled the MCKFREQ setting has no effect."]
     #[inline(always)]
-    pub fn bypass(&mut self) -> BYPASS_W {
-        BYPASS_W { w: self }
+    pub fn bypass(&mut self) -> BYPASS_W<8> {
+        BYPASS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

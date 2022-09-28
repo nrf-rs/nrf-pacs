@@ -34,6 +34,8 @@ impl From<crate::W<CTEINLINECONF_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CTEINLINECTRLEN` reader - Enable parsing of CTEInfo from received packet in BLE modes"]
+pub type CTEINLINECTRLEN_R = crate::BitReader<CTEINLINECTRLEN_A>;
 #[doc = "Enable parsing of CTEInfo from received packet in BLE modes\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTEINLINECTRLEN_A {
@@ -48,14 +50,8 @@ impl From<CTEINLINECTRLEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTEINLINECTRLEN` reader - Enable parsing of CTEInfo from received packet in BLE modes"]
-pub struct CTEINLINECTRLEN_R(crate::FieldReader<bool, CTEINLINECTRLEN_A>);
 impl CTEINLINECTRLEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CTEINLINECTRLEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTEINLINECTRLEN_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl CTEINLINECTRLEN_R {
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CTEINLINECTRLEN_A::ENABLED
+        *self == CTEINLINECTRLEN_A::ENABLED
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CTEINLINECTRLEN_A::DISABLED
-    }
-}
-impl core::ops::Deref for CTEINLINECTRLEN_R {
-    type Target = crate::FieldReader<bool, CTEINLINECTRLEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTEINLINECTRLEN_A::DISABLED
     }
 }
 #[doc = "Field `CTEINLINECTRLEN` writer - Enable parsing of CTEInfo from received packet in BLE modes"]
-pub struct CTEINLINECTRLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTEINLINECTRLEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTEINLINECTRLEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CTEINLINECTRLEN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTEINLINECONF_SPEC, CTEINLINECTRLEN_A, O>;
+impl<'a, const O: u8> CTEINLINECTRLEN_W<'a, O> {
     #[doc = "Parsing of CTEInfo is enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
@@ -101,30 +84,16 @@ impl<'a> CTEINLINECTRLEN_W<'a> {
     pub fn disabled(self) -> &'a mut W {
         self.variant(CTEINLINECTRLEN_A::DISABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `CTEINFOINS1` reader - CTEInfo is S1 byte or not"]
+pub type CTEINFOINS1_R = crate::BitReader<CTEINFOINS1_A>;
 #[doc = "CTEInfo is S1 byte or not\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTEINFOINS1_A {
     #[doc = "1: CTEInfo is in S1 byte (data PDU)"]
-    INS1 = 1,
+    IN_S1 = 1,
     #[doc = "0: CTEInfo is NOT in S1 byte (advertising PDU)"]
-    NOTINS1 = 0,
+    NOT_IN_S1 = 0,
 }
 impl From<CTEINFOINS1_A> for bool {
     #[inline(always)]
@@ -132,76 +101,43 @@ impl From<CTEINFOINS1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTEINFOINS1` reader - CTEInfo is S1 byte or not"]
-pub struct CTEINFOINS1_R(crate::FieldReader<bool, CTEINFOINS1_A>);
 impl CTEINFOINS1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CTEINFOINS1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTEINFOINS1_A {
         match self.bits {
-            true => CTEINFOINS1_A::INS1,
-            false => CTEINFOINS1_A::NOTINS1,
+            true => CTEINFOINS1_A::IN_S1,
+            false => CTEINFOINS1_A::NOT_IN_S1,
         }
     }
-    #[doc = "Checks if the value of the field is `INS1`"]
+    #[doc = "Checks if the value of the field is `IN_S1`"]
     #[inline(always)]
     pub fn is_in_s1(&self) -> bool {
-        **self == CTEINFOINS1_A::INS1
+        *self == CTEINFOINS1_A::IN_S1
     }
-    #[doc = "Checks if the value of the field is `NOTINS1`"]
+    #[doc = "Checks if the value of the field is `NOT_IN_S1`"]
     #[inline(always)]
     pub fn is_not_in_s1(&self) -> bool {
-        **self == CTEINFOINS1_A::NOTINS1
-    }
-}
-impl core::ops::Deref for CTEINFOINS1_R {
-    type Target = crate::FieldReader<bool, CTEINFOINS1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTEINFOINS1_A::NOT_IN_S1
     }
 }
 #[doc = "Field `CTEINFOINS1` writer - CTEInfo is S1 byte or not"]
-pub struct CTEINFOINS1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTEINFOINS1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTEINFOINS1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CTEINFOINS1_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTEINLINECONF_SPEC, CTEINFOINS1_A, O>;
+impl<'a, const O: u8> CTEINFOINS1_W<'a, O> {
     #[doc = "CTEInfo is in S1 byte (data PDU)"]
     #[inline(always)]
     pub fn in_s1(self) -> &'a mut W {
-        self.variant(CTEINFOINS1_A::INS1)
+        self.variant(CTEINFOINS1_A::IN_S1)
     }
     #[doc = "CTEInfo is NOT in S1 byte (advertising PDU)"]
     #[inline(always)]
     pub fn not_in_s1(self) -> &'a mut W {
-        self.variant(CTEINFOINS1_A::NOTINS1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+        self.variant(CTEINFOINS1_A::NOT_IN_S1)
     }
 }
+#[doc = "Field `CTEERRORHANDLING` reader - Sampling/switching if CRC is not OK"]
+pub type CTEERRORHANDLING_R = crate::BitReader<CTEERRORHANDLING_A>;
 #[doc = "Sampling/switching if CRC is not OK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTEERRORHANDLING_A {
@@ -216,14 +152,8 @@ impl From<CTEERRORHANDLING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTEERRORHANDLING` reader - Sampling/switching if CRC is not OK"]
-pub struct CTEERRORHANDLING_R(crate::FieldReader<bool, CTEERRORHANDLING_A>);
 impl CTEERRORHANDLING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CTEERRORHANDLING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTEERRORHANDLING_A {
         match self.bits {
@@ -234,31 +164,18 @@ impl CTEERRORHANDLING_R {
     #[doc = "Checks if the value of the field is `YES`"]
     #[inline(always)]
     pub fn is_yes(&self) -> bool {
-        **self == CTEERRORHANDLING_A::YES
+        *self == CTEERRORHANDLING_A::YES
     }
     #[doc = "Checks if the value of the field is `NO`"]
     #[inline(always)]
     pub fn is_no(&self) -> bool {
-        **self == CTEERRORHANDLING_A::NO
-    }
-}
-impl core::ops::Deref for CTEERRORHANDLING_R {
-    type Target = crate::FieldReader<bool, CTEERRORHANDLING_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTEERRORHANDLING_A::NO
     }
 }
 #[doc = "Field `CTEERRORHANDLING` writer - Sampling/switching if CRC is not OK"]
-pub struct CTEERRORHANDLING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTEERRORHANDLING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTEERRORHANDLING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CTEERRORHANDLING_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTEINLINECONF_SPEC, CTEERRORHANDLING_A, O>;
+impl<'a, const O: u8> CTEERRORHANDLING_W<'a, O> {
     #[doc = "Sampling and antenna switching also when CRC is not OK"]
     #[inline(always)]
     pub fn yes(self) -> &'a mut W {
@@ -269,23 +186,9 @@ impl<'a> CTEERRORHANDLING_W<'a> {
     pub fn no(self) -> &'a mut W {
         self.variant(CTEERRORHANDLING_A::NO)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `CTETIMEVALIDRANGE` reader - Max range of CTETime"]
+pub type CTETIMEVALIDRANGE_R = crate::FieldReader<u8, CTETIMEVALIDRANGE_A>;
 #[doc = "Max range of CTETime\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -303,14 +206,8 @@ impl From<CTETIMEVALIDRANGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CTETIMEVALIDRANGE` reader - Max range of CTETime"]
-pub struct CTETIMEVALIDRANGE_R(crate::FieldReader<u8, CTETIMEVALIDRANGE_A>);
 impl CTETIMEVALIDRANGE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CTETIMEVALIDRANGE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CTETIMEVALIDRANGE_A> {
         match self.bits {
@@ -323,36 +220,23 @@ impl CTETIMEVALIDRANGE_R {
     #[doc = "Checks if the value of the field is `_20`"]
     #[inline(always)]
     pub fn is_20(&self) -> bool {
-        **self == CTETIMEVALIDRANGE_A::_20
+        *self == CTETIMEVALIDRANGE_A::_20
     }
     #[doc = "Checks if the value of the field is `_31`"]
     #[inline(always)]
     pub fn is_31(&self) -> bool {
-        **self == CTETIMEVALIDRANGE_A::_31
+        *self == CTETIMEVALIDRANGE_A::_31
     }
     #[doc = "Checks if the value of the field is `_63`"]
     #[inline(always)]
     pub fn is_63(&self) -> bool {
-        **self == CTETIMEVALIDRANGE_A::_63
-    }
-}
-impl core::ops::Deref for CTETIMEVALIDRANGE_R {
-    type Target = crate::FieldReader<u8, CTETIMEVALIDRANGE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTETIMEVALIDRANGE_A::_63
     }
 }
 #[doc = "Field `CTETIMEVALIDRANGE` writer - Max range of CTETime"]
-pub struct CTETIMEVALIDRANGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTETIMEVALIDRANGE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTETIMEVALIDRANGE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CTETIMEVALIDRANGE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTEINLINECONF_SPEC, u8, CTETIMEVALIDRANGE_A, 2, O>;
+impl<'a, const O: u8> CTETIMEVALIDRANGE_W<'a, O> {
     #[doc = "20 in 8 us unit (default) Set to 20 if parsed CTETime is larger than 20"]
     #[inline(always)]
     pub fn _20(self) -> &'a mut W {
@@ -368,13 +252,9 @@ impl<'a> CTETIMEVALIDRANGE_W<'a> {
     pub fn _63(self) -> &'a mut W {
         self.variant(CTETIMEVALIDRANGE_A::_63)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
-        self.w
-    }
 }
+#[doc = "Field `CTEINLINERXMODE1US` reader - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set."]
+pub type CTEINLINERXMODE1US_R = crate::FieldReader<u8, CTEINLINERXMODE1US_A>;
 #[doc = "Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -398,14 +278,8 @@ impl From<CTEINLINERXMODE1US_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CTEINLINERXMODE1US` reader - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set."]
-pub struct CTEINLINERXMODE1US_R(crate::FieldReader<u8, CTEINLINERXMODE1US_A>);
 impl CTEINLINERXMODE1US_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CTEINLINERXMODE1US_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CTEINLINERXMODE1US_A> {
         match self.bits {
@@ -421,51 +295,38 @@ impl CTEINLINERXMODE1US_R {
     #[doc = "Checks if the value of the field is `_4US`"]
     #[inline(always)]
     pub fn is_4us(&self) -> bool {
-        **self == CTEINLINERXMODE1US_A::_4US
+        *self == CTEINLINERXMODE1US_A::_4US
     }
     #[doc = "Checks if the value of the field is `_2US`"]
     #[inline(always)]
     pub fn is_2us(&self) -> bool {
-        **self == CTEINLINERXMODE1US_A::_2US
+        *self == CTEINLINERXMODE1US_A::_2US
     }
     #[doc = "Checks if the value of the field is `_1US`"]
     #[inline(always)]
     pub fn is_1us(&self) -> bool {
-        **self == CTEINLINERXMODE1US_A::_1US
+        *self == CTEINLINERXMODE1US_A::_1US
     }
     #[doc = "Checks if the value of the field is `_500NS`"]
     #[inline(always)]
     pub fn is_500ns(&self) -> bool {
-        **self == CTEINLINERXMODE1US_A::_500NS
+        *self == CTEINLINERXMODE1US_A::_500NS
     }
     #[doc = "Checks if the value of the field is `_250NS`"]
     #[inline(always)]
     pub fn is_250ns(&self) -> bool {
-        **self == CTEINLINERXMODE1US_A::_250NS
+        *self == CTEINLINERXMODE1US_A::_250NS
     }
     #[doc = "Checks if the value of the field is `_125NS`"]
     #[inline(always)]
     pub fn is_125ns(&self) -> bool {
-        **self == CTEINLINERXMODE1US_A::_125NS
-    }
-}
-impl core::ops::Deref for CTEINLINERXMODE1US_R {
-    type Target = crate::FieldReader<u8, CTEINLINERXMODE1US_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTEINLINERXMODE1US_A::_125NS
     }
 }
 #[doc = "Field `CTEINLINERXMODE1US` writer - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set."]
-pub struct CTEINLINERXMODE1US_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTEINLINERXMODE1US_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTEINLINERXMODE1US_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CTEINLINERXMODE1US_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTEINLINECONF_SPEC, u8, CTEINLINERXMODE1US_A, 3, O>;
+impl<'a, const O: u8> CTEINLINERXMODE1US_W<'a, O> {
     #[doc = "4 us"]
     #[inline(always)]
     pub fn _4us(self) -> &'a mut W {
@@ -496,13 +357,9 @@ impl<'a> CTEINLINERXMODE1US_W<'a> {
     pub fn _125ns(self) -> &'a mut W {
         self.variant(CTEINLINERXMODE1US_A::_125NS)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 10)) | ((value as u32 & 0x07) << 10);
-        self.w
-    }
 }
+#[doc = "Field `CTEINLINERXMODE2US` reader - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set."]
+pub type CTEINLINERXMODE2US_R = crate::FieldReader<u8, CTEINLINERXMODE2US_A>;
 #[doc = "Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -526,14 +383,8 @@ impl From<CTEINLINERXMODE2US_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CTEINLINERXMODE2US` reader - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set."]
-pub struct CTEINLINERXMODE2US_R(crate::FieldReader<u8, CTEINLINERXMODE2US_A>);
 impl CTEINLINERXMODE2US_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CTEINLINERXMODE2US_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CTEINLINERXMODE2US_A> {
         match self.bits {
@@ -549,51 +400,38 @@ impl CTEINLINERXMODE2US_R {
     #[doc = "Checks if the value of the field is `_4US`"]
     #[inline(always)]
     pub fn is_4us(&self) -> bool {
-        **self == CTEINLINERXMODE2US_A::_4US
+        *self == CTEINLINERXMODE2US_A::_4US
     }
     #[doc = "Checks if the value of the field is `_2US`"]
     #[inline(always)]
     pub fn is_2us(&self) -> bool {
-        **self == CTEINLINERXMODE2US_A::_2US
+        *self == CTEINLINERXMODE2US_A::_2US
     }
     #[doc = "Checks if the value of the field is `_1US`"]
     #[inline(always)]
     pub fn is_1us(&self) -> bool {
-        **self == CTEINLINERXMODE2US_A::_1US
+        *self == CTEINLINERXMODE2US_A::_1US
     }
     #[doc = "Checks if the value of the field is `_500NS`"]
     #[inline(always)]
     pub fn is_500ns(&self) -> bool {
-        **self == CTEINLINERXMODE2US_A::_500NS
+        *self == CTEINLINERXMODE2US_A::_500NS
     }
     #[doc = "Checks if the value of the field is `_250NS`"]
     #[inline(always)]
     pub fn is_250ns(&self) -> bool {
-        **self == CTEINLINERXMODE2US_A::_250NS
+        *self == CTEINLINERXMODE2US_A::_250NS
     }
     #[doc = "Checks if the value of the field is `_125NS`"]
     #[inline(always)]
     pub fn is_125ns(&self) -> bool {
-        **self == CTEINLINERXMODE2US_A::_125NS
-    }
-}
-impl core::ops::Deref for CTEINLINERXMODE2US_R {
-    type Target = crate::FieldReader<u8, CTEINLINERXMODE2US_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTEINLINERXMODE2US_A::_125NS
     }
 }
 #[doc = "Field `CTEINLINERXMODE2US` writer - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set."]
-pub struct CTEINLINERXMODE2US_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTEINLINERXMODE2US_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTEINLINERXMODE2US_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CTEINLINERXMODE2US_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTEINLINECONF_SPEC, u8, CTEINLINERXMODE2US_A, 3, O>;
+impl<'a, const O: u8> CTEINLINERXMODE2US_W<'a, O> {
     #[doc = "4 us"]
     #[inline(always)]
     pub fn _4us(self) -> &'a mut W {
@@ -624,97 +462,45 @@ impl<'a> CTEINLINERXMODE2US_W<'a> {
     pub fn _125ns(self) -> &'a mut W {
         self.variant(CTEINLINERXMODE2US_A::_125NS)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 13)) | ((value as u32 & 0x07) << 13);
-        self.w
-    }
 }
 #[doc = "Field `S0CONF` reader - S0 bit pattern to match"]
-pub struct S0CONF_R(crate::FieldReader<u8, u8>);
-impl S0CONF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        S0CONF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for S0CONF_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type S0CONF_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `S0CONF` writer - S0 bit pattern to match"]
-pub struct S0CONF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S0CONF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type S0CONF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTEINLINECONF_SPEC, u8, u8, 8, O>;
 #[doc = "Field `S0MASK` reader - S0 bit mask to set which bit to match"]
-pub struct S0MASK_R(crate::FieldReader<u8, u8>);
-impl S0MASK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        S0MASK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for S0MASK_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type S0MASK_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `S0MASK` writer - S0 bit mask to set which bit to match"]
-pub struct S0MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S0MASK_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type S0MASK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTEINLINECONF_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - Enable parsing of CTEInfo from received packet in BLE modes"]
     #[inline(always)]
     pub fn cteinlinectrlen(&self) -> CTEINLINECTRLEN_R {
-        CTEINLINECTRLEN_R::new((self.bits & 0x01) != 0)
+        CTEINLINECTRLEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 3 - CTEInfo is S1 byte or not"]
     #[inline(always)]
     pub fn cteinfoins1(&self) -> CTEINFOINS1_R {
-        CTEINFOINS1_R::new(((self.bits >> 3) & 0x01) != 0)
+        CTEINFOINS1_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Sampling/switching if CRC is not OK"]
     #[inline(always)]
     pub fn cteerrorhandling(&self) -> CTEERRORHANDLING_R {
-        CTEERRORHANDLING_R::new(((self.bits >> 4) & 0x01) != 0)
+        CTEERRORHANDLING_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 6:7 - Max range of CTETime"]
     #[inline(always)]
     pub fn ctetimevalidrange(&self) -> CTETIMEVALIDRANGE_R {
-        CTETIMEVALIDRANGE_R::new(((self.bits >> 6) & 0x03) as u8)
+        CTETIMEVALIDRANGE_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 10:12 - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set."]
     #[inline(always)]
     pub fn cteinlinerxmode1us(&self) -> CTEINLINERXMODE1US_R {
-        CTEINLINERXMODE1US_R::new(((self.bits >> 10) & 0x07) as u8)
+        CTEINLINERXMODE1US_R::new(((self.bits >> 10) & 7) as u8)
     }
     #[doc = "Bits 13:15 - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set."]
     #[inline(always)]
     pub fn cteinlinerxmode2us(&self) -> CTEINLINERXMODE2US_R {
-        CTEINLINERXMODE2US_R::new(((self.bits >> 13) & 0x07) as u8)
+        CTEINLINERXMODE2US_R::new(((self.bits >> 13) & 7) as u8)
     }
     #[doc = "Bits 16:23 - S0 bit pattern to match"]
     #[inline(always)]
@@ -730,43 +516,43 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable parsing of CTEInfo from received packet in BLE modes"]
     #[inline(always)]
-    pub fn cteinlinectrlen(&mut self) -> CTEINLINECTRLEN_W {
-        CTEINLINECTRLEN_W { w: self }
+    pub fn cteinlinectrlen(&mut self) -> CTEINLINECTRLEN_W<0> {
+        CTEINLINECTRLEN_W::new(self)
     }
     #[doc = "Bit 3 - CTEInfo is S1 byte or not"]
     #[inline(always)]
-    pub fn cteinfoins1(&mut self) -> CTEINFOINS1_W {
-        CTEINFOINS1_W { w: self }
+    pub fn cteinfoins1(&mut self) -> CTEINFOINS1_W<3> {
+        CTEINFOINS1_W::new(self)
     }
     #[doc = "Bit 4 - Sampling/switching if CRC is not OK"]
     #[inline(always)]
-    pub fn cteerrorhandling(&mut self) -> CTEERRORHANDLING_W {
-        CTEERRORHANDLING_W { w: self }
+    pub fn cteerrorhandling(&mut self) -> CTEERRORHANDLING_W<4> {
+        CTEERRORHANDLING_W::new(self)
     }
     #[doc = "Bits 6:7 - Max range of CTETime"]
     #[inline(always)]
-    pub fn ctetimevalidrange(&mut self) -> CTETIMEVALIDRANGE_W {
-        CTETIMEVALIDRANGE_W { w: self }
+    pub fn ctetimevalidrange(&mut self) -> CTETIMEVALIDRANGE_W<6> {
+        CTETIMEVALIDRANGE_W::new(self)
     }
     #[doc = "Bits 10:12 - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set."]
     #[inline(always)]
-    pub fn cteinlinerxmode1us(&mut self) -> CTEINLINERXMODE1US_W {
-        CTEINLINERXMODE1US_W { w: self }
+    pub fn cteinlinerxmode1us(&mut self) -> CTEINLINERXMODE1US_W<10> {
+        CTEINLINERXMODE1US_W::new(self)
     }
     #[doc = "Bits 13:15 - Spacing between samples for the samples in the SWITCHING period when CTEINLINEMODE is set."]
     #[inline(always)]
-    pub fn cteinlinerxmode2us(&mut self) -> CTEINLINERXMODE2US_W {
-        CTEINLINERXMODE2US_W { w: self }
+    pub fn cteinlinerxmode2us(&mut self) -> CTEINLINERXMODE2US_W<13> {
+        CTEINLINERXMODE2US_W::new(self)
     }
     #[doc = "Bits 16:23 - S0 bit pattern to match"]
     #[inline(always)]
-    pub fn s0conf(&mut self) -> S0CONF_W {
-        S0CONF_W { w: self }
+    pub fn s0conf(&mut self) -> S0CONF_W<16> {
+        S0CONF_W::new(self)
     }
     #[doc = "Bits 24:31 - S0 bit mask to set which bit to match"]
     #[inline(always)]
-    pub fn s0mask(&mut self) -> S0MASK_W {
-        S0MASK_W { w: self }
+    pub fn s0mask(&mut self) -> S0MASK_W<24> {
+        S0MASK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,11 +34,13 @@ impl From<crate::W<ERASEALL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ERASEALL` reader - Starts the erasing of all user NVM (code region 0/1 and UICR registers)."]
+pub type ERASEALL_R = crate::BitReader<ERASEALL_A>;
 #[doc = "Starts the erasing of all user NVM (code region 0/1 and UICR registers).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERASEALL_A {
     #[doc = "0: No operation."]
-    NOOPERATION = 0,
+    NO_OPERATION = 0,
     #[doc = "1: Start chip erase."]
     ERASE = 1,
 }
@@ -48,88 +50,52 @@ impl From<ERASEALL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ERASEALL` reader - Starts the erasing of all user NVM (code region 0/1 and UICR registers)."]
-pub struct ERASEALL_R(crate::FieldReader<bool, ERASEALL_A>);
 impl ERASEALL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ERASEALL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ERASEALL_A {
         match self.bits {
-            false => ERASEALL_A::NOOPERATION,
+            false => ERASEALL_A::NO_OPERATION,
             true => ERASEALL_A::ERASE,
         }
     }
-    #[doc = "Checks if the value of the field is `NOOPERATION`"]
+    #[doc = "Checks if the value of the field is `NO_OPERATION`"]
     #[inline(always)]
     pub fn is_no_operation(&self) -> bool {
-        **self == ERASEALL_A::NOOPERATION
+        *self == ERASEALL_A::NO_OPERATION
     }
     #[doc = "Checks if the value of the field is `ERASE`"]
     #[inline(always)]
     pub fn is_erase(&self) -> bool {
-        **self == ERASEALL_A::ERASE
-    }
-}
-impl core::ops::Deref for ERASEALL_R {
-    type Target = crate::FieldReader<bool, ERASEALL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ERASEALL_A::ERASE
     }
 }
 #[doc = "Field `ERASEALL` writer - Starts the erasing of all user NVM (code region 0/1 and UICR registers)."]
-pub struct ERASEALL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASEALL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ERASEALL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ERASEALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, ERASEALL_SPEC, ERASEALL_A, O>;
+impl<'a, const O: u8> ERASEALL_W<'a, O> {
     #[doc = "No operation."]
     #[inline(always)]
     pub fn no_operation(self) -> &'a mut W {
-        self.variant(ERASEALL_A::NOOPERATION)
+        self.variant(ERASEALL_A::NO_OPERATION)
     }
     #[doc = "Start chip erase."]
     #[inline(always)]
     pub fn erase(self) -> &'a mut W {
         self.variant(ERASEALL_A::ERASE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Starts the erasing of all user NVM (code region 0/1 and UICR registers)."]
     #[inline(always)]
     pub fn eraseall(&self) -> ERASEALL_R {
-        ERASEALL_R::new((self.bits & 0x01) != 0)
+        ERASEALL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Starts the erasing of all user NVM (code region 0/1 and UICR registers)."]
     #[inline(always)]
-    pub fn eraseall(&mut self) -> ERASEALL_W {
-        ERASEALL_W { w: self }
+    pub fn eraseall(&mut self) -> ERASEALL_W<0> {
+        ERASEALL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

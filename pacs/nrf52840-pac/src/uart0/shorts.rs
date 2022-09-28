@@ -34,6 +34,8 @@ impl From<crate::W<SHORTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CTS_STARTRX` reader - Shortcut between CTS event and STARTRX task"]
+pub type CTS_STARTRX_R = crate::BitReader<CTS_STARTRX_A>;
 #[doc = "Shortcut between CTS event and STARTRX task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTS_STARTRX_A {
@@ -48,14 +50,8 @@ impl From<CTS_STARTRX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTS_STARTRX` reader - Shortcut between CTS event and STARTRX task"]
-pub struct CTS_STARTRX_R(crate::FieldReader<bool, CTS_STARTRX_A>);
 impl CTS_STARTRX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CTS_STARTRX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTS_STARTRX_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl CTS_STARTRX_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CTS_STARTRX_A::DISABLED
+        *self == CTS_STARTRX_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CTS_STARTRX_A::ENABLED
-    }
-}
-impl core::ops::Deref for CTS_STARTRX_R {
-    type Target = crate::FieldReader<bool, CTS_STARTRX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTS_STARTRX_A::ENABLED
     }
 }
 #[doc = "Field `CTS_STARTRX` writer - Shortcut between CTS event and STARTRX task"]
-pub struct CTS_STARTRX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTS_STARTRX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTS_STARTRX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CTS_STARTRX_W<'a, const O: u8> = crate::BitWriter<'a, u32, SHORTS_SPEC, CTS_STARTRX_A, O>;
+impl<'a, const O: u8> CTS_STARTRX_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> CTS_STARTRX_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CTS_STARTRX_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `NCTS_STOPRX` reader - Shortcut between NCTS event and STOPRX task"]
+pub type NCTS_STOPRX_R = crate::BitReader<NCTS_STOPRX_A>;
 #[doc = "Shortcut between NCTS event and STOPRX task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NCTS_STOPRX_A {
@@ -132,14 +100,8 @@ impl From<NCTS_STOPRX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NCTS_STOPRX` reader - Shortcut between NCTS event and STOPRX task"]
-pub struct NCTS_STOPRX_R(crate::FieldReader<bool, NCTS_STOPRX_A>);
 impl NCTS_STOPRX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NCTS_STOPRX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NCTS_STOPRX_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl NCTS_STOPRX_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == NCTS_STOPRX_A::DISABLED
+        *self == NCTS_STOPRX_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == NCTS_STOPRX_A::ENABLED
-    }
-}
-impl core::ops::Deref for NCTS_STOPRX_R {
-    type Target = crate::FieldReader<bool, NCTS_STOPRX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NCTS_STOPRX_A::ENABLED
     }
 }
 #[doc = "Field `NCTS_STOPRX` writer - Shortcut between NCTS event and STOPRX task"]
-pub struct NCTS_STOPRX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NCTS_STOPRX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NCTS_STOPRX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type NCTS_STOPRX_W<'a, const O: u8> = crate::BitWriter<'a, u32, SHORTS_SPEC, NCTS_STOPRX_A, O>;
+impl<'a, const O: u8> NCTS_STOPRX_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,45 +133,29 @@ impl<'a> NCTS_STOPRX_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(NCTS_STOPRX_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 3 - Shortcut between CTS event and STARTRX task"]
     #[inline(always)]
     pub fn cts_startrx(&self) -> CTS_STARTRX_R {
-        CTS_STARTRX_R::new(((self.bits >> 3) & 0x01) != 0)
+        CTS_STARTRX_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Shortcut between NCTS event and STOPRX task"]
     #[inline(always)]
     pub fn ncts_stoprx(&self) -> NCTS_STOPRX_R {
-        NCTS_STOPRX_R::new(((self.bits >> 4) & 0x01) != 0)
+        NCTS_STOPRX_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 3 - Shortcut between CTS event and STARTRX task"]
     #[inline(always)]
-    pub fn cts_startrx(&mut self) -> CTS_STARTRX_W {
-        CTS_STARTRX_W { w: self }
+    pub fn cts_startrx(&mut self) -> CTS_STARTRX_W<3> {
+        CTS_STARTRX_W::new(self)
     }
     #[doc = "Bit 4 - Shortcut between NCTS event and STOPRX task"]
     #[inline(always)]
-    pub fn ncts_stoprx(&mut self) -> NCTS_STOPRX_W {
-        NCTS_STOPRX_W { w: self }
+    pub fn ncts_stoprx(&mut self) -> NCTS_STOPRX_W<4> {
+        NCTS_STOPRX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

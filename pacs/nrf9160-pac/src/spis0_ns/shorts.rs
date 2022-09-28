@@ -34,6 +34,8 @@ impl From<crate::W<SHORTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `END_ACQUIRE` reader - Shortcut between event END and task ACQUIRE"]
+pub type END_ACQUIRE_R = crate::BitReader<END_ACQUIRE_A>;
 #[doc = "Shortcut between event END and task ACQUIRE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum END_ACQUIRE_A {
@@ -48,14 +50,8 @@ impl From<END_ACQUIRE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `END_ACQUIRE` reader - Shortcut between event END and task ACQUIRE"]
-pub struct END_ACQUIRE_R(crate::FieldReader<bool, END_ACQUIRE_A>);
 impl END_ACQUIRE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        END_ACQUIRE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> END_ACQUIRE_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl END_ACQUIRE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == END_ACQUIRE_A::DISABLED
+        *self == END_ACQUIRE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == END_ACQUIRE_A::ENABLED
-    }
-}
-impl core::ops::Deref for END_ACQUIRE_R {
-    type Target = crate::FieldReader<bool, END_ACQUIRE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == END_ACQUIRE_A::ENABLED
     }
 }
 #[doc = "Field `END_ACQUIRE` writer - Shortcut between event END and task ACQUIRE"]
-pub struct END_ACQUIRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> END_ACQUIRE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: END_ACQUIRE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type END_ACQUIRE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SHORTS_SPEC, END_ACQUIRE_A, O>;
+impl<'a, const O: u8> END_ACQUIRE_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> END_ACQUIRE_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(END_ACQUIRE_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 2 - Shortcut between event END and task ACQUIRE"]
     #[inline(always)]
     pub fn end_acquire(&self) -> END_ACQUIRE_R {
-        END_ACQUIRE_R::new(((self.bits >> 2) & 0x01) != 0)
+        END_ACQUIRE_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 2 - Shortcut between event END and task ACQUIRE"]
     #[inline(always)]
-    pub fn end_acquire(&mut self) -> END_ACQUIRE_W {
-        END_ACQUIRE_W { w: self }
+    pub fn end_acquire(&mut self) -> END_ACQUIRE_W<2> {
+        END_ACQUIRE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

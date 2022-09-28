@@ -14,50 +14,11 @@ impl From<crate::R<DEVID_SPEC>> for R {
     }
 }
 #[doc = "Field `EXTMUXNUM` reader - Indicates the number of multiplexers available on Trigger Inputs and Trigger Outputs that are using asicctl. The default value of 0b00000 indicates that no multiplexing is present."]
-pub struct EXTMUXNUM_R(crate::FieldReader<u8, u8>);
-impl EXTMUXNUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EXTMUXNUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTMUXNUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXTMUXNUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NUMTRIG` reader - Number of ECT triggers available."]
-pub struct NUMTRIG_R(crate::FieldReader<u8, u8>);
-impl NUMTRIG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        NUMTRIG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NUMTRIG_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NUMTRIG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NUMCH` reader - Number of ECT channels available."]
-pub struct NUMCH_R(crate::FieldReader<u8, u8>);
-impl NUMCH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        NUMCH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NUMCH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NUMCH_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:4 - Indicates the number of multiplexers available on Trigger Inputs and Trigger Outputs that are using asicctl. The default value of 0b00000 indicates that no multiplexing is present."]
     #[inline(always)]

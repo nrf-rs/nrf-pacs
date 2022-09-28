@@ -34,11 +34,13 @@ impl From<crate::W<ERRORSRC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `OVERFLOW` reader - RX buffer overflow detected, and prevented"]
+pub type OVERFLOW_R = crate::BitReader<OVERFLOW_A>;
 #[doc = "RX buffer overflow detected, and prevented\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERFLOW_A {
     #[doc = "0: Error did not occur"]
-    NOTDETECTED = 0,
+    NOT_DETECTED = 0,
     #[doc = "1: Error occurred"]
     DETECTED = 1,
 }
@@ -48,81 +50,47 @@ impl From<OVERFLOW_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OVERFLOW` reader - RX buffer overflow detected, and prevented"]
-pub struct OVERFLOW_R(crate::FieldReader<bool, OVERFLOW_A>);
 impl OVERFLOW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OVERFLOW_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OVERFLOW_A {
         match self.bits {
-            false => OVERFLOW_A::NOTDETECTED,
+            false => OVERFLOW_A::NOT_DETECTED,
             true => OVERFLOW_A::DETECTED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTDETECTED`"]
+    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        **self == OVERFLOW_A::NOTDETECTED
+        *self == OVERFLOW_A::NOT_DETECTED
     }
     #[doc = "Checks if the value of the field is `DETECTED`"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        **self == OVERFLOW_A::DETECTED
-    }
-}
-impl core::ops::Deref for OVERFLOW_R {
-    type Target = crate::FieldReader<bool, OVERFLOW_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OVERFLOW_A::DETECTED
     }
 }
 #[doc = "Field `OVERFLOW` writer - RX buffer overflow detected, and prevented"]
-pub struct OVERFLOW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVERFLOW_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OVERFLOW_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OVERFLOW_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, ERRORSRC_SPEC, OVERFLOW_A, O>;
+impl<'a, const O: u8> OVERFLOW_W<'a, O> {
     #[doc = "Error did not occur"]
     #[inline(always)]
     pub fn not_detected(self) -> &'a mut W {
-        self.variant(OVERFLOW_A::NOTDETECTED)
+        self.variant(OVERFLOW_A::NOT_DETECTED)
     }
     #[doc = "Error occurred"]
     #[inline(always)]
     pub fn detected(self) -> &'a mut W {
         self.variant(OVERFLOW_A::DETECTED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `DNACK` reader - NACK sent after receiving a data byte"]
+pub type DNACK_R = crate::BitReader<DNACK_A>;
 #[doc = "NACK sent after receiving a data byte\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DNACK_A {
     #[doc = "0: Error did not occur"]
-    NOTRECEIVED = 0,
+    NOT_RECEIVED = 0,
     #[doc = "1: Error occurred"]
     RECEIVED = 1,
 }
@@ -132,81 +100,47 @@ impl From<DNACK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DNACK` reader - NACK sent after receiving a data byte"]
-pub struct DNACK_R(crate::FieldReader<bool, DNACK_A>);
 impl DNACK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DNACK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DNACK_A {
         match self.bits {
-            false => DNACK_A::NOTRECEIVED,
+            false => DNACK_A::NOT_RECEIVED,
             true => DNACK_A::RECEIVED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTRECEIVED`"]
+    #[doc = "Checks if the value of the field is `NOT_RECEIVED`"]
     #[inline(always)]
     pub fn is_not_received(&self) -> bool {
-        **self == DNACK_A::NOTRECEIVED
+        *self == DNACK_A::NOT_RECEIVED
     }
     #[doc = "Checks if the value of the field is `RECEIVED`"]
     #[inline(always)]
     pub fn is_received(&self) -> bool {
-        **self == DNACK_A::RECEIVED
-    }
-}
-impl core::ops::Deref for DNACK_R {
-    type Target = crate::FieldReader<bool, DNACK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DNACK_A::RECEIVED
     }
 }
 #[doc = "Field `DNACK` writer - NACK sent after receiving a data byte"]
-pub struct DNACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DNACK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DNACK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DNACK_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, ERRORSRC_SPEC, DNACK_A, O>;
+impl<'a, const O: u8> DNACK_W<'a, O> {
     #[doc = "Error did not occur"]
     #[inline(always)]
     pub fn not_received(self) -> &'a mut W {
-        self.variant(DNACK_A::NOTRECEIVED)
+        self.variant(DNACK_A::NOT_RECEIVED)
     }
     #[doc = "Error occurred"]
     #[inline(always)]
     pub fn received(self) -> &'a mut W {
         self.variant(DNACK_A::RECEIVED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `OVERREAD` reader - TX buffer over-read detected, and prevented"]
+pub type OVERREAD_R = crate::BitReader<OVERREAD_A>;
 #[doc = "TX buffer over-read detected, and prevented\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERREAD_A {
     #[doc = "0: Error did not occur"]
-    NOTDETECTED = 0,
+    NOT_DETECTED = 0,
     #[doc = "1: Error occurred"]
     DETECTED = 1,
 }
@@ -216,108 +150,72 @@ impl From<OVERREAD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OVERREAD` reader - TX buffer over-read detected, and prevented"]
-pub struct OVERREAD_R(crate::FieldReader<bool, OVERREAD_A>);
 impl OVERREAD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OVERREAD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OVERREAD_A {
         match self.bits {
-            false => OVERREAD_A::NOTDETECTED,
+            false => OVERREAD_A::NOT_DETECTED,
             true => OVERREAD_A::DETECTED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTDETECTED`"]
+    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        **self == OVERREAD_A::NOTDETECTED
+        *self == OVERREAD_A::NOT_DETECTED
     }
     #[doc = "Checks if the value of the field is `DETECTED`"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        **self == OVERREAD_A::DETECTED
-    }
-}
-impl core::ops::Deref for OVERREAD_R {
-    type Target = crate::FieldReader<bool, OVERREAD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OVERREAD_A::DETECTED
     }
 }
 #[doc = "Field `OVERREAD` writer - TX buffer over-read detected, and prevented"]
-pub struct OVERREAD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVERREAD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OVERREAD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OVERREAD_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, ERRORSRC_SPEC, OVERREAD_A, O>;
+impl<'a, const O: u8> OVERREAD_W<'a, O> {
     #[doc = "Error did not occur"]
     #[inline(always)]
     pub fn not_detected(self) -> &'a mut W {
-        self.variant(OVERREAD_A::NOTDETECTED)
+        self.variant(OVERREAD_A::NOT_DETECTED)
     }
     #[doc = "Error occurred"]
     #[inline(always)]
     pub fn detected(self) -> &'a mut W {
         self.variant(OVERREAD_A::DETECTED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - RX buffer overflow detected, and prevented"]
     #[inline(always)]
     pub fn overflow(&self) -> OVERFLOW_R {
-        OVERFLOW_R::new((self.bits & 0x01) != 0)
+        OVERFLOW_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - NACK sent after receiving a data byte"]
     #[inline(always)]
     pub fn dnack(&self) -> DNACK_R {
-        DNACK_R::new(((self.bits >> 2) & 0x01) != 0)
+        DNACK_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - TX buffer over-read detected, and prevented"]
     #[inline(always)]
     pub fn overread(&self) -> OVERREAD_R {
-        OVERREAD_R::new(((self.bits >> 3) & 0x01) != 0)
+        OVERREAD_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - RX buffer overflow detected, and prevented"]
     #[inline(always)]
-    pub fn overflow(&mut self) -> OVERFLOW_W {
-        OVERFLOW_W { w: self }
+    pub fn overflow(&mut self) -> OVERFLOW_W<0> {
+        OVERFLOW_W::new(self)
     }
     #[doc = "Bit 2 - NACK sent after receiving a data byte"]
     #[inline(always)]
-    pub fn dnack(&mut self) -> DNACK_W {
-        DNACK_W { w: self }
+    pub fn dnack(&mut self) -> DNACK_W<2> {
+        DNACK_W::new(self)
     }
     #[doc = "Bit 3 - TX buffer over-read detected, and prevented"]
     #[inline(always)]
-    pub fn overread(&mut self) -> OVERREAD_W {
-        OVERREAD_W { w: self }
+    pub fn overread(&mut self) -> OVERREAD_W<3> {
+        OVERREAD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

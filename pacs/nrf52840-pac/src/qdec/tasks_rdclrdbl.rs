@@ -20,32 +20,13 @@ impl From<crate::W<TASKS_RDCLRDBL_SPEC>> for W {
     }
 }
 #[doc = "Field `TASKS_RDCLRDBL` writer - "]
-pub struct TASKS_RDCLRDBL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASKS_RDCLRDBL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TASKS_RDCLRDBL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_RDCLRDBL_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn tasks_rdclrdbl(&mut self) -> TASKS_RDCLRDBL_W {
-        TASKS_RDCLRDBL_W { w: self }
+    pub fn tasks_rdclrdbl(&mut self) -> TASKS_RDCLRDBL_W<0> {
+        TASKS_RDCLRDBL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

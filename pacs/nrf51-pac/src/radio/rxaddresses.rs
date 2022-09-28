@@ -34,6 +34,8 @@ impl From<crate::W<RXADDRESSES_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ADDR0` reader - Enable reception on logical address 0. Decision point: START task."]
+pub type ADDR0_R = crate::BitReader<ADDR0_A>;
 #[doc = "Enable reception on logical address 0. Decision point: START task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR0_A {
@@ -48,14 +50,8 @@ impl From<ADDR0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDR0` reader - Enable reception on logical address 0. Decision point: START task."]
-pub struct ADDR0_R(crate::FieldReader<bool, ADDR0_A>);
 impl ADDR0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDR0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADDR0_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl ADDR0_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ADDR0_A::DISABLED
+        *self == ADDR0_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ADDR0_A::ENABLED
-    }
-}
-impl core::ops::Deref for ADDR0_R {
-    type Target = crate::FieldReader<bool, ADDR0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADDR0_A::ENABLED
     }
 }
 #[doc = "Field `ADDR0` writer - Enable reception on logical address 0. Decision point: START task."]
-pub struct ADDR0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADDR0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADDR0_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR0_A, O>;
+impl<'a, const O: u8> ADDR0_W<'a, O> {
     #[doc = "Reception disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> ADDR0_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ADDR0_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `ADDR1` reader - Enable reception on logical address 1. Decision point: START task."]
+pub type ADDR1_R = crate::BitReader<ADDR1_A>;
 #[doc = "Enable reception on logical address 1. Decision point: START task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR1_A {
@@ -132,14 +100,8 @@ impl From<ADDR1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDR1` reader - Enable reception on logical address 1. Decision point: START task."]
-pub struct ADDR1_R(crate::FieldReader<bool, ADDR1_A>);
 impl ADDR1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDR1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADDR1_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl ADDR1_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ADDR1_A::DISABLED
+        *self == ADDR1_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ADDR1_A::ENABLED
-    }
-}
-impl core::ops::Deref for ADDR1_R {
-    type Target = crate::FieldReader<bool, ADDR1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADDR1_A::ENABLED
     }
 }
 #[doc = "Field `ADDR1` writer - Enable reception on logical address 1. Decision point: START task."]
-pub struct ADDR1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADDR1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADDR1_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR1_A, O>;
+impl<'a, const O: u8> ADDR1_W<'a, O> {
     #[doc = "Reception disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,23 +133,9 @@ impl<'a> ADDR1_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ADDR1_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `ADDR2` reader - Enable reception on logical address 2. Decision point: START task."]
+pub type ADDR2_R = crate::BitReader<ADDR2_A>;
 #[doc = "Enable reception on logical address 2. Decision point: START task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR2_A {
@@ -216,14 +150,8 @@ impl From<ADDR2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDR2` reader - Enable reception on logical address 2. Decision point: START task."]
-pub struct ADDR2_R(crate::FieldReader<bool, ADDR2_A>);
 impl ADDR2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDR2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADDR2_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl ADDR2_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ADDR2_A::DISABLED
+        *self == ADDR2_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ADDR2_A::ENABLED
-    }
-}
-impl core::ops::Deref for ADDR2_R {
-    type Target = crate::FieldReader<bool, ADDR2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADDR2_A::ENABLED
     }
 }
 #[doc = "Field `ADDR2` writer - Enable reception on logical address 2. Decision point: START task."]
-pub struct ADDR2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADDR2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADDR2_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR2_A, O>;
+impl<'a, const O: u8> ADDR2_W<'a, O> {
     #[doc = "Reception disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -269,23 +183,9 @@ impl<'a> ADDR2_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ADDR2_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `ADDR3` reader - Enable reception on logical address 3. Decision point: START task."]
+pub type ADDR3_R = crate::BitReader<ADDR3_A>;
 #[doc = "Enable reception on logical address 3. Decision point: START task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR3_A {
@@ -300,14 +200,8 @@ impl From<ADDR3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDR3` reader - Enable reception on logical address 3. Decision point: START task."]
-pub struct ADDR3_R(crate::FieldReader<bool, ADDR3_A>);
 impl ADDR3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDR3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADDR3_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl ADDR3_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ADDR3_A::DISABLED
+        *self == ADDR3_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ADDR3_A::ENABLED
-    }
-}
-impl core::ops::Deref for ADDR3_R {
-    type Target = crate::FieldReader<bool, ADDR3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADDR3_A::ENABLED
     }
 }
 #[doc = "Field `ADDR3` writer - Enable reception on logical address 3. Decision point: START task."]
-pub struct ADDR3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADDR3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADDR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR3_A, O>;
+impl<'a, const O: u8> ADDR3_W<'a, O> {
     #[doc = "Reception disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -353,23 +233,9 @@ impl<'a> ADDR3_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ADDR3_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `ADDR4` reader - Enable reception on logical address 4. Decision point: START task."]
+pub type ADDR4_R = crate::BitReader<ADDR4_A>;
 #[doc = "Enable reception on logical address 4. Decision point: START task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR4_A {
@@ -384,14 +250,8 @@ impl From<ADDR4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDR4` reader - Enable reception on logical address 4. Decision point: START task."]
-pub struct ADDR4_R(crate::FieldReader<bool, ADDR4_A>);
 impl ADDR4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDR4_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADDR4_A {
         match self.bits {
@@ -402,31 +262,17 @@ impl ADDR4_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ADDR4_A::DISABLED
+        *self == ADDR4_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ADDR4_A::ENABLED
-    }
-}
-impl core::ops::Deref for ADDR4_R {
-    type Target = crate::FieldReader<bool, ADDR4_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADDR4_A::ENABLED
     }
 }
 #[doc = "Field `ADDR4` writer - Enable reception on logical address 4. Decision point: START task."]
-pub struct ADDR4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADDR4_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADDR4_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR4_A, O>;
+impl<'a, const O: u8> ADDR4_W<'a, O> {
     #[doc = "Reception disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -437,23 +283,9 @@ impl<'a> ADDR4_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ADDR4_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `ADDR5` reader - Enable reception on logical address 5. Decision point: START task."]
+pub type ADDR5_R = crate::BitReader<ADDR5_A>;
 #[doc = "Enable reception on logical address 5. Decision point: START task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR5_A {
@@ -468,14 +300,8 @@ impl From<ADDR5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDR5` reader - Enable reception on logical address 5. Decision point: START task."]
-pub struct ADDR5_R(crate::FieldReader<bool, ADDR5_A>);
 impl ADDR5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDR5_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADDR5_A {
         match self.bits {
@@ -486,31 +312,17 @@ impl ADDR5_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ADDR5_A::DISABLED
+        *self == ADDR5_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ADDR5_A::ENABLED
-    }
-}
-impl core::ops::Deref for ADDR5_R {
-    type Target = crate::FieldReader<bool, ADDR5_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADDR5_A::ENABLED
     }
 }
 #[doc = "Field `ADDR5` writer - Enable reception on logical address 5. Decision point: START task."]
-pub struct ADDR5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADDR5_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADDR5_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR5_A, O>;
+impl<'a, const O: u8> ADDR5_W<'a, O> {
     #[doc = "Reception disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -521,23 +333,9 @@ impl<'a> ADDR5_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ADDR5_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `ADDR6` reader - Enable reception on logical address 6. Decision point: START task."]
+pub type ADDR6_R = crate::BitReader<ADDR6_A>;
 #[doc = "Enable reception on logical address 6. Decision point: START task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR6_A {
@@ -552,14 +350,8 @@ impl From<ADDR6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDR6` reader - Enable reception on logical address 6. Decision point: START task."]
-pub struct ADDR6_R(crate::FieldReader<bool, ADDR6_A>);
 impl ADDR6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDR6_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADDR6_A {
         match self.bits {
@@ -570,31 +362,17 @@ impl ADDR6_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ADDR6_A::DISABLED
+        *self == ADDR6_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ADDR6_A::ENABLED
-    }
-}
-impl core::ops::Deref for ADDR6_R {
-    type Target = crate::FieldReader<bool, ADDR6_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADDR6_A::ENABLED
     }
 }
 #[doc = "Field `ADDR6` writer - Enable reception on logical address 6. Decision point: START task."]
-pub struct ADDR6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADDR6_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADDR6_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR6_A, O>;
+impl<'a, const O: u8> ADDR6_W<'a, O> {
     #[doc = "Reception disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -605,23 +383,9 @@ impl<'a> ADDR6_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ADDR6_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `ADDR7` reader - Enable reception on logical address 7. Decision point: START task."]
+pub type ADDR7_R = crate::BitReader<ADDR7_A>;
 #[doc = "Enable reception on logical address 7. Decision point: START task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR7_A {
@@ -636,14 +400,8 @@ impl From<ADDR7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDR7` reader - Enable reception on logical address 7. Decision point: START task."]
-pub struct ADDR7_R(crate::FieldReader<bool, ADDR7_A>);
 impl ADDR7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDR7_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADDR7_A {
         match self.bits {
@@ -654,31 +412,17 @@ impl ADDR7_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ADDR7_A::DISABLED
+        *self == ADDR7_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ADDR7_A::ENABLED
-    }
-}
-impl core::ops::Deref for ADDR7_R {
-    type Target = crate::FieldReader<bool, ADDR7_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADDR7_A::ENABLED
     }
 }
 #[doc = "Field `ADDR7` writer - Enable reception on logical address 7. Decision point: START task."]
-pub struct ADDR7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADDR7_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADDR7_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR7_A, O>;
+impl<'a, const O: u8> ADDR7_W<'a, O> {
     #[doc = "Reception disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -689,105 +433,89 @@ impl<'a> ADDR7_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ADDR7_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable reception on logical address 0. Decision point: START task."]
     #[inline(always)]
     pub fn addr0(&self) -> ADDR0_R {
-        ADDR0_R::new((self.bits & 0x01) != 0)
+        ADDR0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable reception on logical address 1. Decision point: START task."]
     #[inline(always)]
     pub fn addr1(&self) -> ADDR1_R {
-        ADDR1_R::new(((self.bits >> 1) & 0x01) != 0)
+        ADDR1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable reception on logical address 2. Decision point: START task."]
     #[inline(always)]
     pub fn addr2(&self) -> ADDR2_R {
-        ADDR2_R::new(((self.bits >> 2) & 0x01) != 0)
+        ADDR2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable reception on logical address 3. Decision point: START task."]
     #[inline(always)]
     pub fn addr3(&self) -> ADDR3_R {
-        ADDR3_R::new(((self.bits >> 3) & 0x01) != 0)
+        ADDR3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable reception on logical address 4. Decision point: START task."]
     #[inline(always)]
     pub fn addr4(&self) -> ADDR4_R {
-        ADDR4_R::new(((self.bits >> 4) & 0x01) != 0)
+        ADDR4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable reception on logical address 5. Decision point: START task."]
     #[inline(always)]
     pub fn addr5(&self) -> ADDR5_R {
-        ADDR5_R::new(((self.bits >> 5) & 0x01) != 0)
+        ADDR5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable reception on logical address 6. Decision point: START task."]
     #[inline(always)]
     pub fn addr6(&self) -> ADDR6_R {
-        ADDR6_R::new(((self.bits >> 6) & 0x01) != 0)
+        ADDR6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable reception on logical address 7. Decision point: START task."]
     #[inline(always)]
     pub fn addr7(&self) -> ADDR7_R {
-        ADDR7_R::new(((self.bits >> 7) & 0x01) != 0)
+        ADDR7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable reception on logical address 0. Decision point: START task."]
     #[inline(always)]
-    pub fn addr0(&mut self) -> ADDR0_W {
-        ADDR0_W { w: self }
+    pub fn addr0(&mut self) -> ADDR0_W<0> {
+        ADDR0_W::new(self)
     }
     #[doc = "Bit 1 - Enable reception on logical address 1. Decision point: START task."]
     #[inline(always)]
-    pub fn addr1(&mut self) -> ADDR1_W {
-        ADDR1_W { w: self }
+    pub fn addr1(&mut self) -> ADDR1_W<1> {
+        ADDR1_W::new(self)
     }
     #[doc = "Bit 2 - Enable reception on logical address 2. Decision point: START task."]
     #[inline(always)]
-    pub fn addr2(&mut self) -> ADDR2_W {
-        ADDR2_W { w: self }
+    pub fn addr2(&mut self) -> ADDR2_W<2> {
+        ADDR2_W::new(self)
     }
     #[doc = "Bit 3 - Enable reception on logical address 3. Decision point: START task."]
     #[inline(always)]
-    pub fn addr3(&mut self) -> ADDR3_W {
-        ADDR3_W { w: self }
+    pub fn addr3(&mut self) -> ADDR3_W<3> {
+        ADDR3_W::new(self)
     }
     #[doc = "Bit 4 - Enable reception on logical address 4. Decision point: START task."]
     #[inline(always)]
-    pub fn addr4(&mut self) -> ADDR4_W {
-        ADDR4_W { w: self }
+    pub fn addr4(&mut self) -> ADDR4_W<4> {
+        ADDR4_W::new(self)
     }
     #[doc = "Bit 5 - Enable reception on logical address 5. Decision point: START task."]
     #[inline(always)]
-    pub fn addr5(&mut self) -> ADDR5_W {
-        ADDR5_W { w: self }
+    pub fn addr5(&mut self) -> ADDR5_W<5> {
+        ADDR5_W::new(self)
     }
     #[doc = "Bit 6 - Enable reception on logical address 6. Decision point: START task."]
     #[inline(always)]
-    pub fn addr6(&mut self) -> ADDR6_W {
-        ADDR6_W { w: self }
+    pub fn addr6(&mut self) -> ADDR6_W<6> {
+        ADDR6_W::new(self)
     }
     #[doc = "Bit 7 - Enable reception on logical address 7. Decision point: START task."]
     #[inline(always)]
-    pub fn addr7(&mut self) -> ADDR7_W {
-        ADDR7_W { w: self }
+    pub fn addr7(&mut self) -> ADDR7_W<7> {
+        ADDR7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,32 +35,9 @@ impl From<crate::W<MAXCNT_SPEC>> for W {
     }
 }
 #[doc = "Field `BUFFSIZE` reader - Length of DMA RAM allocation in number of samples"]
-pub struct BUFFSIZE_R(crate::FieldReader<u16, u16>);
-impl BUFFSIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        BUFFSIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUFFSIZE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUFFSIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BUFFSIZE` writer - Length of DMA RAM allocation in number of samples"]
-pub struct BUFFSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUFFSIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7fff) | (value as u32 & 0x7fff);
-        self.w
-    }
-}
+pub type BUFFSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAXCNT_SPEC, u16, u16, 15, O>;
 impl R {
     #[doc = "Bits 0:14 - Length of DMA RAM allocation in number of samples"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:14 - Length of DMA RAM allocation in number of samples"]
     #[inline(always)]
-    pub fn buffsize(&mut self) -> BUFFSIZE_W {
-        BUFFSIZE_W { w: self }
+    pub fn buffsize(&mut self) -> BUFFSIZE_W<0> {
+        BUFFSIZE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

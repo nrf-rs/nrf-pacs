@@ -13,13 +13,15 @@ impl From<crate::R<PDUSTAT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `PDUSTAT` reader - Status on payload length vs. PCNF1.MAXLEN"]
+pub type PDUSTAT_R = crate::BitReader<PDUSTAT_A>;
 #[doc = "Status on payload length vs. PCNF1.MAXLEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDUSTAT_A {
     #[doc = "0: Payload less than PCNF1.MAXLEN"]
-    LESSTHAN = 0,
+    LESS_THAN = 0,
     #[doc = "1: Payload greater than PCNF1.MAXLEN"]
-    GREATERTHAN = 1,
+    GREATER_THAN = 1,
 }
 impl From<PDUSTAT_A> for bool {
     #[inline(always)]
@@ -27,39 +29,28 @@ impl From<PDUSTAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PDUSTAT` reader - Status on payload length vs. PCNF1.MAXLEN"]
-pub struct PDUSTAT_R(crate::FieldReader<bool, PDUSTAT_A>);
 impl PDUSTAT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PDUSTAT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDUSTAT_A {
         match self.bits {
-            false => PDUSTAT_A::LESSTHAN,
-            true => PDUSTAT_A::GREATERTHAN,
+            false => PDUSTAT_A::LESS_THAN,
+            true => PDUSTAT_A::GREATER_THAN,
         }
     }
-    #[doc = "Checks if the value of the field is `LESSTHAN`"]
+    #[doc = "Checks if the value of the field is `LESS_THAN`"]
     #[inline(always)]
     pub fn is_less_than(&self) -> bool {
-        **self == PDUSTAT_A::LESSTHAN
+        *self == PDUSTAT_A::LESS_THAN
     }
-    #[doc = "Checks if the value of the field is `GREATERTHAN`"]
+    #[doc = "Checks if the value of the field is `GREATER_THAN`"]
     #[inline(always)]
     pub fn is_greater_than(&self) -> bool {
-        **self == PDUSTAT_A::GREATERTHAN
+        *self == PDUSTAT_A::GREATER_THAN
     }
 }
-impl core::ops::Deref for PDUSTAT_R {
-    type Target = crate::FieldReader<bool, PDUSTAT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `CISTAT` reader - Status on what rate packet is received with in Long Range"]
+pub type CISTAT_R = crate::FieldReader<u8, CISTAT_A>;
 #[doc = "Status on what rate packet is received with in Long Range\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -75,14 +66,8 @@ impl From<CISTAT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CISTAT` reader - Status on what rate packet is received with in Long Range"]
-pub struct CISTAT_R(crate::FieldReader<u8, CISTAT_A>);
 impl CISTAT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CISTAT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CISTAT_A> {
         match self.bits {
@@ -94,31 +79,24 @@ impl CISTAT_R {
     #[doc = "Checks if the value of the field is `LR125KBIT`"]
     #[inline(always)]
     pub fn is_lr125kbit(&self) -> bool {
-        **self == CISTAT_A::LR125KBIT
+        *self == CISTAT_A::LR125KBIT
     }
     #[doc = "Checks if the value of the field is `LR500KBIT`"]
     #[inline(always)]
     pub fn is_lr500kbit(&self) -> bool {
-        **self == CISTAT_A::LR500KBIT
-    }
-}
-impl core::ops::Deref for CISTAT_R {
-    type Target = crate::FieldReader<u8, CISTAT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CISTAT_A::LR500KBIT
     }
 }
 impl R {
     #[doc = "Bit 0 - Status on payload length vs. PCNF1.MAXLEN"]
     #[inline(always)]
     pub fn pdustat(&self) -> PDUSTAT_R {
-        PDUSTAT_R::new((self.bits & 0x01) != 0)
+        PDUSTAT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - Status on what rate packet is received with in Long Range"]
     #[inline(always)]
     pub fn cistat(&self) -> CISTAT_R {
-        CISTAT_R::new(((self.bits >> 1) & 0x03) as u8)
+        CISTAT_R::new(((self.bits >> 1) & 3) as u8)
     }
 }
 #[doc = "Payload status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdustat](index.html) module"]

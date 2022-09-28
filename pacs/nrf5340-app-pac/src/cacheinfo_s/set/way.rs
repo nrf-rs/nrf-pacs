@@ -35,32 +35,11 @@ impl From<crate::W<WAY_SPEC>> for W {
     }
 }
 #[doc = "Field `TAG` reader - Cache tag."]
-pub struct TAG_R(crate::FieldReader<u32, u32>);
-impl TAG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        TAG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TAG_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TAG_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TAG` writer - Cache tag."]
-pub struct TAG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0001_ffff) | (value as u32 & 0x0001_ffff);
-        self.w
-    }
-}
+pub type TAG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WAY_SPEC, u32, u32, 17, O>;
+#[doc = "Field `V` reader - Valid bit"]
+pub type V_R = crate::BitReader<V_A>;
 #[doc = "Valid bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum V_A {
@@ -75,14 +54,8 @@ impl From<V_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `V` reader - Valid bit"]
-pub struct V_R(crate::FieldReader<bool, V_A>);
 impl V_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        V_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> V_A {
         match self.bits {
@@ -93,21 +66,16 @@ impl V_R {
     #[doc = "Checks if the value of the field is `INVALID`"]
     #[inline(always)]
     pub fn is_invalid(&self) -> bool {
-        **self == V_A::INVALID
+        *self == V_A::INVALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        **self == V_A::VALID
+        *self == V_A::VALID
     }
 }
-impl core::ops::Deref for V_R {
-    type Target = crate::FieldReader<bool, V_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `MRU` reader - Most recently used way."]
+pub type MRU_R = crate::BitReader<MRU_A>;
 #[doc = "Most recently used way.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MRU_A {
@@ -122,14 +90,8 @@ impl From<MRU_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MRU` reader - Most recently used way."]
-pub struct MRU_R(crate::FieldReader<bool, MRU_A>);
 impl MRU_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MRU_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MRU_A {
         match self.bits {
@@ -140,19 +102,12 @@ impl MRU_R {
     #[doc = "Checks if the value of the field is `WAY0`"]
     #[inline(always)]
     pub fn is_way0(&self) -> bool {
-        **self == MRU_A::WAY0
+        *self == MRU_A::WAY0
     }
     #[doc = "Checks if the value of the field is `WAY1`"]
     #[inline(always)]
     pub fn is_way1(&self) -> bool {
-        **self == MRU_A::WAY1
-    }
-}
-impl core::ops::Deref for MRU_R {
-    type Target = crate::FieldReader<bool, MRU_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MRU_A::WAY1
     }
 }
 impl R {
@@ -164,19 +119,19 @@ impl R {
     #[doc = "Bit 30 - Valid bit"]
     #[inline(always)]
     pub fn v(&self) -> V_R {
-        V_R::new(((self.bits >> 30) & 0x01) != 0)
+        V_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Most recently used way."]
     #[inline(always)]
     pub fn mru(&self) -> MRU_R {
-        MRU_R::new(((self.bits >> 31) & 0x01) != 0)
+        MRU_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:16 - Cache tag."]
     #[inline(always)]
-    pub fn tag(&mut self) -> TAG_W {
-        TAG_W { w: self }
+    pub fn tag(&mut self) -> TAG_W<0> {
+        TAG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

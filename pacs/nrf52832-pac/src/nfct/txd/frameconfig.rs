@@ -34,11 +34,13 @@ impl From<crate::W<FRAMECONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PARITY` reader - Adding parity or not in the frame"]
+pub type PARITY_R = crate::BitReader<PARITY_A>;
 #[doc = "Adding parity or not in the frame\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PARITY_A {
     #[doc = "0: Parity is not added in TX frames"]
-    NOPARITY = 0,
+    NO_PARITY = 0,
     #[doc = "1: Parity is added TX frames"]
     PARITY = 1,
 }
@@ -48,83 +50,49 @@ impl From<PARITY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PARITY` reader - Adding parity or not in the frame"]
-pub struct PARITY_R(crate::FieldReader<bool, PARITY_A>);
 impl PARITY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PARITY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PARITY_A {
         match self.bits {
-            false => PARITY_A::NOPARITY,
+            false => PARITY_A::NO_PARITY,
             true => PARITY_A::PARITY,
         }
     }
-    #[doc = "Checks if the value of the field is `NOPARITY`"]
+    #[doc = "Checks if the value of the field is `NO_PARITY`"]
     #[inline(always)]
     pub fn is_no_parity(&self) -> bool {
-        **self == PARITY_A::NOPARITY
+        *self == PARITY_A::NO_PARITY
     }
     #[doc = "Checks if the value of the field is `PARITY`"]
     #[inline(always)]
     pub fn is_parity(&self) -> bool {
-        **self == PARITY_A::PARITY
-    }
-}
-impl core::ops::Deref for PARITY_R {
-    type Target = crate::FieldReader<bool, PARITY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PARITY_A::PARITY
     }
 }
 #[doc = "Field `PARITY` writer - Adding parity or not in the frame"]
-pub struct PARITY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PARITY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PARITY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PARITY_W<'a, const O: u8> = crate::BitWriter<'a, u32, FRAMECONFIG_SPEC, PARITY_A, O>;
+impl<'a, const O: u8> PARITY_W<'a, O> {
     #[doc = "Parity is not added in TX frames"]
     #[inline(always)]
     pub fn no_parity(self) -> &'a mut W {
-        self.variant(PARITY_A::NOPARITY)
+        self.variant(PARITY_A::NO_PARITY)
     }
     #[doc = "Parity is added TX frames"]
     #[inline(always)]
     pub fn parity(self) -> &'a mut W {
         self.variant(PARITY_A::PARITY)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `DISCARDMODE` reader - Discarding unused bits in start or at end of a Frame"]
+pub type DISCARDMODE_R = crate::BitReader<DISCARDMODE_A>;
 #[doc = "Discarding unused bits in start or at end of a Frame\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISCARDMODE_A {
     #[doc = "0: Unused bits is discarded at end of frame"]
-    DISCARDEND = 0,
+    DISCARD_END = 0,
     #[doc = "1: Unused bits is discarded at start of frame"]
-    DISCARDSTART = 1,
+    DISCARD_START = 1,
 }
 impl From<DISCARDMODE_A> for bool {
     #[inline(always)]
@@ -132,83 +100,50 @@ impl From<DISCARDMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DISCARDMODE` reader - Discarding unused bits in start or at end of a Frame"]
-pub struct DISCARDMODE_R(crate::FieldReader<bool, DISCARDMODE_A>);
 impl DISCARDMODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DISCARDMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DISCARDMODE_A {
         match self.bits {
-            false => DISCARDMODE_A::DISCARDEND,
-            true => DISCARDMODE_A::DISCARDSTART,
+            false => DISCARDMODE_A::DISCARD_END,
+            true => DISCARDMODE_A::DISCARD_START,
         }
     }
-    #[doc = "Checks if the value of the field is `DISCARDEND`"]
+    #[doc = "Checks if the value of the field is `DISCARD_END`"]
     #[inline(always)]
     pub fn is_discard_end(&self) -> bool {
-        **self == DISCARDMODE_A::DISCARDEND
+        *self == DISCARDMODE_A::DISCARD_END
     }
-    #[doc = "Checks if the value of the field is `DISCARDSTART`"]
+    #[doc = "Checks if the value of the field is `DISCARD_START`"]
     #[inline(always)]
     pub fn is_discard_start(&self) -> bool {
-        **self == DISCARDMODE_A::DISCARDSTART
-    }
-}
-impl core::ops::Deref for DISCARDMODE_R {
-    type Target = crate::FieldReader<bool, DISCARDMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DISCARDMODE_A::DISCARD_START
     }
 }
 #[doc = "Field `DISCARDMODE` writer - Discarding unused bits in start or at end of a Frame"]
-pub struct DISCARDMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DISCARDMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DISCARDMODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DISCARDMODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, FRAMECONFIG_SPEC, DISCARDMODE_A, O>;
+impl<'a, const O: u8> DISCARDMODE_W<'a, O> {
     #[doc = "Unused bits is discarded at end of frame"]
     #[inline(always)]
     pub fn discard_end(self) -> &'a mut W {
-        self.variant(DISCARDMODE_A::DISCARDEND)
+        self.variant(DISCARDMODE_A::DISCARD_END)
     }
     #[doc = "Unused bits is discarded at start of frame"]
     #[inline(always)]
     pub fn discard_start(self) -> &'a mut W {
-        self.variant(DISCARDMODE_A::DISCARDSTART)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(DISCARDMODE_A::DISCARD_START)
     }
 }
+#[doc = "Field `SOF` reader - Adding SoF or not in TX frames"]
+pub type SOF_R = crate::BitReader<SOF_A>;
 #[doc = "Adding SoF or not in TX frames\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOF_A {
     #[doc = "0: Start of Frame symbol not added"]
-    NOSOF = 0,
+    NO_SO_F = 0,
     #[doc = "1: Start of Frame symbol added"]
-    SOF = 1,
+    SO_F = 1,
 }
 impl From<SOF_A> for bool {
     #[inline(always)]
@@ -216,81 +151,47 @@ impl From<SOF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SOF` reader - Adding SoF or not in TX frames"]
-pub struct SOF_R(crate::FieldReader<bool, SOF_A>);
 impl SOF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SOF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SOF_A {
         match self.bits {
-            false => SOF_A::NOSOF,
-            true => SOF_A::SOF,
+            false => SOF_A::NO_SO_F,
+            true => SOF_A::SO_F,
         }
     }
-    #[doc = "Checks if the value of the field is `NOSOF`"]
+    #[doc = "Checks if the value of the field is `NO_SO_F`"]
     #[inline(always)]
     pub fn is_no_so_f(&self) -> bool {
-        **self == SOF_A::NOSOF
+        *self == SOF_A::NO_SO_F
     }
-    #[doc = "Checks if the value of the field is `SOF`"]
+    #[doc = "Checks if the value of the field is `SO_F`"]
     #[inline(always)]
     pub fn is_so_f(&self) -> bool {
-        **self == SOF_A::SOF
-    }
-}
-impl core::ops::Deref for SOF_R {
-    type Target = crate::FieldReader<bool, SOF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SOF_A::SO_F
     }
 }
 #[doc = "Field `SOF` writer - Adding SoF or not in TX frames"]
-pub struct SOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SOF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, FRAMECONFIG_SPEC, SOF_A, O>;
+impl<'a, const O: u8> SOF_W<'a, O> {
     #[doc = "Start of Frame symbol not added"]
     #[inline(always)]
     pub fn no_so_f(self) -> &'a mut W {
-        self.variant(SOF_A::NOSOF)
+        self.variant(SOF_A::NO_SO_F)
     }
     #[doc = "Start of Frame symbol added"]
     #[inline(always)]
     pub fn so_f(self) -> &'a mut W {
-        self.variant(SOF_A::SOF)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(SOF_A::SO_F)
     }
 }
+#[doc = "Field `CRCMODETX` reader - CRC mode for outgoing frames"]
+pub type CRCMODETX_R = crate::BitReader<CRCMODETX_A>;
 #[doc = "CRC mode for outgoing frames\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCMODETX_A {
     #[doc = "0: CRC is not added to the frame"]
-    NOCRCTX = 0,
+    NO_CRCTX = 0,
     #[doc = "1: 16 bit CRC added to the frame based on all the data read from RAM that is used in the frame"]
     CRC16TX = 1,
 }
@@ -300,118 +201,82 @@ impl From<CRCMODETX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CRCMODETX` reader - CRC mode for outgoing frames"]
-pub struct CRCMODETX_R(crate::FieldReader<bool, CRCMODETX_A>);
 impl CRCMODETX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CRCMODETX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CRCMODETX_A {
         match self.bits {
-            false => CRCMODETX_A::NOCRCTX,
+            false => CRCMODETX_A::NO_CRCTX,
             true => CRCMODETX_A::CRC16TX,
         }
     }
-    #[doc = "Checks if the value of the field is `NOCRCTX`"]
+    #[doc = "Checks if the value of the field is `NO_CRCTX`"]
     #[inline(always)]
     pub fn is_no_crctx(&self) -> bool {
-        **self == CRCMODETX_A::NOCRCTX
+        *self == CRCMODETX_A::NO_CRCTX
     }
     #[doc = "Checks if the value of the field is `CRC16TX`"]
     #[inline(always)]
     pub fn is_crc16tx(&self) -> bool {
-        **self == CRCMODETX_A::CRC16TX
-    }
-}
-impl core::ops::Deref for CRCMODETX_R {
-    type Target = crate::FieldReader<bool, CRCMODETX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CRCMODETX_A::CRC16TX
     }
 }
 #[doc = "Field `CRCMODETX` writer - CRC mode for outgoing frames"]
-pub struct CRCMODETX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRCMODETX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CRCMODETX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CRCMODETX_W<'a, const O: u8> = crate::BitWriter<'a, u32, FRAMECONFIG_SPEC, CRCMODETX_A, O>;
+impl<'a, const O: u8> CRCMODETX_W<'a, O> {
     #[doc = "CRC is not added to the frame"]
     #[inline(always)]
     pub fn no_crctx(self) -> &'a mut W {
-        self.variant(CRCMODETX_A::NOCRCTX)
+        self.variant(CRCMODETX_A::NO_CRCTX)
     }
     #[doc = "16 bit CRC added to the frame based on all the data read from RAM that is used in the frame"]
     #[inline(always)]
     pub fn crc16tx(self) -> &'a mut W {
         self.variant(CRCMODETX_A::CRC16TX)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Adding parity or not in the frame"]
     #[inline(always)]
     pub fn parity(&self) -> PARITY_R {
-        PARITY_R::new((self.bits & 0x01) != 0)
+        PARITY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Discarding unused bits in start or at end of a Frame"]
     #[inline(always)]
     pub fn discardmode(&self) -> DISCARDMODE_R {
-        DISCARDMODE_R::new(((self.bits >> 1) & 0x01) != 0)
+        DISCARDMODE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Adding SoF or not in TX frames"]
     #[inline(always)]
     pub fn sof(&self) -> SOF_R {
-        SOF_R::new(((self.bits >> 2) & 0x01) != 0)
+        SOF_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 4 - CRC mode for outgoing frames"]
     #[inline(always)]
     pub fn crcmodetx(&self) -> CRCMODETX_R {
-        CRCMODETX_R::new(((self.bits >> 4) & 0x01) != 0)
+        CRCMODETX_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Adding parity or not in the frame"]
     #[inline(always)]
-    pub fn parity(&mut self) -> PARITY_W {
-        PARITY_W { w: self }
+    pub fn parity(&mut self) -> PARITY_W<0> {
+        PARITY_W::new(self)
     }
     #[doc = "Bit 1 - Discarding unused bits in start or at end of a Frame"]
     #[inline(always)]
-    pub fn discardmode(&mut self) -> DISCARDMODE_W {
-        DISCARDMODE_W { w: self }
+    pub fn discardmode(&mut self) -> DISCARDMODE_W<1> {
+        DISCARDMODE_W::new(self)
     }
     #[doc = "Bit 2 - Adding SoF or not in TX frames"]
     #[inline(always)]
-    pub fn sof(&mut self) -> SOF_W {
-        SOF_W { w: self }
+    pub fn sof(&mut self) -> SOF_W<2> {
+        SOF_W::new(self)
     }
     #[doc = "Bit 4 - CRC mode for outgoing frames"]
     #[inline(always)]
-    pub fn crcmodetx(&mut self) -> CRCMODETX_W {
-        CRCMODETX_W { w: self }
+    pub fn crcmodetx(&mut self) -> CRCMODETX_W<4> {
+        CRCMODETX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<HOST_IOT_LCS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LCS` reader - Lifecycle state value. This field is write-once per reset."]
+pub type LCS_R = crate::FieldReader<u8, LCS_A>;
 #[doc = "Lifecycle state value. This field is write-once per reset.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,14 +51,8 @@ impl From<LCS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LCS` reader - Lifecycle state value. This field is write-once per reset."]
-pub struct LCS_R(crate::FieldReader<u8, LCS_A>);
 impl LCS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LCS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LCS_A> {
         match self.bits {
@@ -68,31 +64,17 @@ impl LCS_R {
     #[doc = "Checks if the value of the field is `DEBUG`"]
     #[inline(always)]
     pub fn is_debug(&self) -> bool {
-        **self == LCS_A::DEBUG
+        *self == LCS_A::DEBUG
     }
     #[doc = "Checks if the value of the field is `SECURE`"]
     #[inline(always)]
     pub fn is_secure(&self) -> bool {
-        **self == LCS_A::SECURE
-    }
-}
-impl core::ops::Deref for LCS_R {
-    type Target = crate::FieldReader<u8, LCS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LCS_A::SECURE
     }
 }
 #[doc = "Field `LCS` writer - Lifecycle state value. This field is write-once per reset."]
-pub struct LCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LCS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type LCS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HOST_IOT_LCS_SPEC, u8, LCS_A, 3, O>;
+impl<'a, const O: u8> LCS_W<'a, O> {
     #[doc = "CC310 operates in debug mode"]
     #[inline(always)]
     pub fn debug(self) -> &'a mut W {
@@ -103,13 +85,9 @@ impl<'a> LCS_W<'a> {
     pub fn secure(self) -> &'a mut W {
         self.variant(LCS_A::SECURE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
+#[doc = "Field `LCS_IS_VALID` reader - This field is read-only and indicates if CRYPTOCELL LCS has been successfully configured since last reset"]
+pub type LCS_IS_VALID_R = crate::BitReader<LCS_IS_VALID_A>;
 #[doc = "This field is read-only and indicates if CRYPTOCELL LCS has been successfully configured since last reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCS_IS_VALID_A {
@@ -124,14 +102,8 @@ impl From<LCS_IS_VALID_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LCS_IS_VALID` reader - This field is read-only and indicates if CRYPTOCELL LCS has been successfully configured since last reset"]
-pub struct LCS_IS_VALID_R(crate::FieldReader<bool, LCS_IS_VALID_A>);
 impl LCS_IS_VALID_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LCS_IS_VALID_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LCS_IS_VALID_A {
         match self.bits {
@@ -142,31 +114,18 @@ impl LCS_IS_VALID_R {
     #[doc = "Checks if the value of the field is `INVALID`"]
     #[inline(always)]
     pub fn is_invalid(&self) -> bool {
-        **self == LCS_IS_VALID_A::INVALID
+        *self == LCS_IS_VALID_A::INVALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        **self == LCS_IS_VALID_A::VALID
-    }
-}
-impl core::ops::Deref for LCS_IS_VALID_R {
-    type Target = crate::FieldReader<bool, LCS_IS_VALID_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LCS_IS_VALID_A::VALID
     }
 }
 #[doc = "Field `LCS_IS_VALID` writer - This field is read-only and indicates if CRYPTOCELL LCS has been successfully configured since last reset"]
-pub struct LCS_IS_VALID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCS_IS_VALID_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LCS_IS_VALID_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LCS_IS_VALID_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HOST_IOT_LCS_SPEC, LCS_IS_VALID_A, O>;
+impl<'a, const O: u8> LCS_IS_VALID_W<'a, O> {
     #[doc = "A valid LCS is not yet retained in the CRYPTOCELL AO power domain"]
     #[inline(always)]
     pub fn invalid(self) -> &'a mut W {
@@ -177,45 +136,29 @@ impl<'a> LCS_IS_VALID_W<'a> {
     pub fn valid(self) -> &'a mut W {
         self.variant(LCS_IS_VALID_A::VALID)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Lifecycle state value. This field is write-once per reset."]
     #[inline(always)]
     pub fn lcs(&self) -> LCS_R {
-        LCS_R::new((self.bits & 0x07) as u8)
+        LCS_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 8 - This field is read-only and indicates if CRYPTOCELL LCS has been successfully configured since last reset"]
     #[inline(always)]
     pub fn lcs_is_valid(&self) -> LCS_IS_VALID_R {
-        LCS_IS_VALID_R::new(((self.bits >> 8) & 0x01) != 0)
+        LCS_IS_VALID_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Lifecycle state value. This field is write-once per reset."]
     #[inline(always)]
-    pub fn lcs(&mut self) -> LCS_W {
-        LCS_W { w: self }
+    pub fn lcs(&mut self) -> LCS_W<0> {
+        LCS_W::new(self)
     }
     #[doc = "Bit 8 - This field is read-only and indicates if CRYPTOCELL LCS has been successfully configured since last reset"]
     #[inline(always)]
-    pub fn lcs_is_valid(&mut self) -> LCS_IS_VALID_W {
-        LCS_IS_VALID_W { w: self }
+    pub fn lcs_is_valid(&mut self) -> LCS_IS_VALID_W<8> {
+        LCS_IS_VALID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

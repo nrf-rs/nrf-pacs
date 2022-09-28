@@ -34,6 +34,8 @@ impl From<crate::W<HFCLKCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `HCLK` reader - High frequency clock HCLK"]
+pub type HCLK_R = crate::FieldReader<u8, HCLK_A>;
 #[doc = "High frequency clock HCLK\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,14 +51,8 @@ impl From<HCLK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HCLK` reader - High frequency clock HCLK"]
-pub struct HCLK_R(crate::FieldReader<u8, HCLK_A>);
 impl HCLK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HCLK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HCLK_A> {
         match self.bits {
@@ -68,31 +64,17 @@ impl HCLK_R {
     #[doc = "Checks if the value of the field is `DIV1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        **self == HCLK_A::DIV1
+        *self == HCLK_A::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == HCLK_A::DIV2
-    }
-}
-impl core::ops::Deref for HCLK_R {
-    type Target = crate::FieldReader<u8, HCLK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HCLK_A::DIV2
     }
 }
 #[doc = "Field `HCLK` writer - High frequency clock HCLK"]
-pub struct HCLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HCLK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HCLK_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HCLK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFCLKCTRL_SPEC, u8, HCLK_A, 2, O>;
+impl<'a, const O: u8> HCLK_W<'a, O> {
     #[doc = "Divide HFCLK by 1"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -103,25 +85,19 @@ impl<'a> HCLK_W<'a> {
     pub fn div2(self) -> &'a mut W {
         self.variant(HCLK_A::DIV2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - High frequency clock HCLK"]
     #[inline(always)]
     pub fn hclk(&self) -> HCLK_R {
-        HCLK_R::new((self.bits & 0x03) as u8)
+        HCLK_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - High frequency clock HCLK"]
     #[inline(always)]
-    pub fn hclk(&mut self) -> HCLK_W {
-        HCLK_W { w: self }
+    pub fn hclk(&mut self) -> HCLK_W<0> {
+        HCLK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

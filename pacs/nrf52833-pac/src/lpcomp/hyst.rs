@@ -34,6 +34,8 @@ impl From<crate::W<HYST_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `HYST` reader - Comparator hysteresis enable"]
+pub type HYST_R = crate::BitReader<HYST_A>;
 #[doc = "Comparator hysteresis enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HYST_A {
@@ -48,14 +50,8 @@ impl From<HYST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HYST` reader - Comparator hysteresis enable"]
-pub struct HYST_R(crate::FieldReader<bool, HYST_A>);
 impl HYST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HYST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HYST_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl HYST_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == HYST_A::DISABLED
+        *self == HYST_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == HYST_A::ENABLED
-    }
-}
-impl core::ops::Deref for HYST_R {
-    type Target = crate::FieldReader<bool, HYST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HYST_A::ENABLED
     }
 }
 #[doc = "Field `HYST` writer - Comparator hysteresis enable"]
-pub struct HYST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HYST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HYST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HYST_W<'a, const O: u8> = crate::BitWriter<'a, u32, HYST_SPEC, HYST_A, O>;
+impl<'a, const O: u8> HYST_W<'a, O> {
     #[doc = "Comparator hysteresis disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> HYST_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(HYST_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Comparator hysteresis enable"]
     #[inline(always)]
     pub fn hyst(&self) -> HYST_R {
-        HYST_R::new((self.bits & 0x01) != 0)
+        HYST_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Comparator hysteresis enable"]
     #[inline(always)]
-    pub fn hyst(&mut self) -> HYST_W {
-        HYST_W { w: self }
+    pub fn hyst(&mut self) -> HYST_W<0> {
+        HYST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

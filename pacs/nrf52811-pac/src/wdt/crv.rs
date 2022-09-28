@@ -35,32 +35,9 @@ impl From<crate::W<CRV_SPEC>> for W {
     }
 }
 #[doc = "Field `CRV` reader - Counter reload value in number of cycles of the 32.768 kHz clock"]
-pub struct CRV_R(crate::FieldReader<u32, u32>);
-impl CRV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CRV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CRV_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CRV_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CRV` writer - Counter reload value in number of cycles of the 32.768 kHz clock"]
-pub struct CRV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type CRV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CRV_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Counter reload value in number of cycles of the 32.768 kHz clock"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Counter reload value in number of cycles of the 32.768 kHz clock"]
     #[inline(always)]
-    pub fn crv(&mut self) -> CRV_W {
-        CRV_W { w: self }
+    pub fn crv(&mut self) -> CRV_W<0> {
+        CRV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

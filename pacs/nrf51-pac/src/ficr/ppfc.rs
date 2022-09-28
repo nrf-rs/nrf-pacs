@@ -13,12 +13,14 @@ impl From<crate::R<PPFC_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `PPFC` reader - Pre-programmed factory code present."]
+pub type PPFC_R = crate::FieldReader<u8, PPFC_A>;
 #[doc = "Pre-programmed factory code present.\n\nValue on reset: 255"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PPFC_A {
     #[doc = "255: Not present."]
-    NOTPRESENT = 255,
+    NOT_PRESENT = 255,
     #[doc = "0: Present."]
     PRESENT = 0,
 }
@@ -28,38 +30,25 @@ impl From<PPFC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PPFC` reader - Pre-programmed factory code present."]
-pub struct PPFC_R(crate::FieldReader<u8, PPFC_A>);
 impl PPFC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PPFC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PPFC_A> {
         match self.bits {
-            255 => Some(PPFC_A::NOTPRESENT),
+            255 => Some(PPFC_A::NOT_PRESENT),
             0 => Some(PPFC_A::PRESENT),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
+    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        **self == PPFC_A::NOTPRESENT
+        *self == PPFC_A::NOT_PRESENT
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == PPFC_A::PRESENT
-    }
-}
-impl core::ops::Deref for PPFC_R {
-    type Target = crate::FieldReader<u8, PPFC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PPFC_A::PRESENT
     }
 }
 impl R {

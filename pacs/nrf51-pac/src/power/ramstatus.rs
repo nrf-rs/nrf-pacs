@@ -13,6 +13,8 @@ impl From<crate::R<RAMSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `RAMBLOCK0` reader - RAM block 0 status."]
+pub type RAMBLOCK0_R = crate::BitReader<RAMBLOCK0_A>;
 #[doc = "RAM block 0 status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAMBLOCK0_A {
@@ -27,14 +29,8 @@ impl From<RAMBLOCK0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RAMBLOCK0` reader - RAM block 0 status."]
-pub struct RAMBLOCK0_R(crate::FieldReader<bool, RAMBLOCK0_A>);
 impl RAMBLOCK0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RAMBLOCK0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RAMBLOCK0_A {
         match self.bits {
@@ -45,21 +41,16 @@ impl RAMBLOCK0_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == RAMBLOCK0_A::OFF
+        *self == RAMBLOCK0_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == RAMBLOCK0_A::ON
+        *self == RAMBLOCK0_A::ON
     }
 }
-impl core::ops::Deref for RAMBLOCK0_R {
-    type Target = crate::FieldReader<bool, RAMBLOCK0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RAMBLOCK1` reader - RAM block 1 status."]
+pub type RAMBLOCK1_R = crate::BitReader<RAMBLOCK1_A>;
 #[doc = "RAM block 1 status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAMBLOCK1_A {
@@ -74,14 +65,8 @@ impl From<RAMBLOCK1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RAMBLOCK1` reader - RAM block 1 status."]
-pub struct RAMBLOCK1_R(crate::FieldReader<bool, RAMBLOCK1_A>);
 impl RAMBLOCK1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RAMBLOCK1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RAMBLOCK1_A {
         match self.bits {
@@ -92,21 +77,16 @@ impl RAMBLOCK1_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == RAMBLOCK1_A::OFF
+        *self == RAMBLOCK1_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == RAMBLOCK1_A::ON
+        *self == RAMBLOCK1_A::ON
     }
 }
-impl core::ops::Deref for RAMBLOCK1_R {
-    type Target = crate::FieldReader<bool, RAMBLOCK1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RAMBLOCK2` reader - RAM block 2 status."]
+pub type RAMBLOCK2_R = crate::BitReader<RAMBLOCK2_A>;
 #[doc = "RAM block 2 status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAMBLOCK2_A {
@@ -121,14 +101,8 @@ impl From<RAMBLOCK2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RAMBLOCK2` reader - RAM block 2 status."]
-pub struct RAMBLOCK2_R(crate::FieldReader<bool, RAMBLOCK2_A>);
 impl RAMBLOCK2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RAMBLOCK2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RAMBLOCK2_A {
         match self.bits {
@@ -139,21 +113,16 @@ impl RAMBLOCK2_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == RAMBLOCK2_A::OFF
+        *self == RAMBLOCK2_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == RAMBLOCK2_A::ON
+        *self == RAMBLOCK2_A::ON
     }
 }
-impl core::ops::Deref for RAMBLOCK2_R {
-    type Target = crate::FieldReader<bool, RAMBLOCK2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RAMBLOCK3` reader - RAM block 3 status."]
+pub type RAMBLOCK3_R = crate::BitReader<RAMBLOCK3_A>;
 #[doc = "RAM block 3 status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAMBLOCK3_A {
@@ -168,14 +137,8 @@ impl From<RAMBLOCK3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RAMBLOCK3` reader - RAM block 3 status."]
-pub struct RAMBLOCK3_R(crate::FieldReader<bool, RAMBLOCK3_A>);
 impl RAMBLOCK3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RAMBLOCK3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RAMBLOCK3_A {
         match self.bits {
@@ -186,41 +149,34 @@ impl RAMBLOCK3_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == RAMBLOCK3_A::OFF
+        *self == RAMBLOCK3_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == RAMBLOCK3_A::ON
-    }
-}
-impl core::ops::Deref for RAMBLOCK3_R {
-    type Target = crate::FieldReader<bool, RAMBLOCK3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RAMBLOCK3_A::ON
     }
 }
 impl R {
     #[doc = "Bit 0 - RAM block 0 status."]
     #[inline(always)]
     pub fn ramblock0(&self) -> RAMBLOCK0_R {
-        RAMBLOCK0_R::new((self.bits & 0x01) != 0)
+        RAMBLOCK0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - RAM block 1 status."]
     #[inline(always)]
     pub fn ramblock1(&self) -> RAMBLOCK1_R {
-        RAMBLOCK1_R::new(((self.bits >> 1) & 0x01) != 0)
+        RAMBLOCK1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - RAM block 2 status."]
     #[inline(always)]
     pub fn ramblock2(&self) -> RAMBLOCK2_R {
-        RAMBLOCK2_R::new(((self.bits >> 2) & 0x01) != 0)
+        RAMBLOCK2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - RAM block 3 status."]
     #[inline(always)]
     pub fn ramblock3(&self) -> RAMBLOCK3_R {
-        RAMBLOCK3_R::new(((self.bits >> 3) & 0x01) != 0)
+        RAMBLOCK3_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 #[doc = "Ram status register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ramstatus](index.html) module"]

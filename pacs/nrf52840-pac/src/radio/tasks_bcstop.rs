@@ -20,32 +20,12 @@ impl From<crate::W<TASKS_BCSTOP_SPEC>> for W {
     }
 }
 #[doc = "Field `TASKS_BCSTOP` writer - "]
-pub struct TASKS_BCSTOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASKS_BCSTOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TASKS_BCSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, TASKS_BCSTOP_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn tasks_bcstop(&mut self) -> TASKS_BCSTOP_W {
-        TASKS_BCSTOP_W { w: self }
+    pub fn tasks_bcstop(&mut self) -> TASKS_BCSTOP_W<0> {
+        TASKS_BCSTOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

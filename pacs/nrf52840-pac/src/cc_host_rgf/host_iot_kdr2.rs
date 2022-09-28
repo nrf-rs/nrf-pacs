@@ -20,22 +20,13 @@ impl From<crate::W<HOST_IOT_KDR2_SPEC>> for W {
     }
 }
 #[doc = "Field `HOST_IOT_KDR2` writer - K_DR bits 95:64"]
-pub struct HOST_IOT_KDR2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HOST_IOT_KDR2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type HOST_IOT_KDR2_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HOST_IOT_KDR2_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - K_DR bits 95:64"]
     #[inline(always)]
-    pub fn host_iot_kdr2(&mut self) -> HOST_IOT_KDR2_W {
-        HOST_IOT_KDR2_W { w: self }
+    pub fn host_iot_kdr2(&mut self) -> HOST_IOT_KDR2_W<0> {
+        HOST_IOT_KDR2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

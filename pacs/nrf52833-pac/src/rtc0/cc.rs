@@ -35,32 +35,9 @@ impl From<crate::W<CC_SPEC>> for W {
     }
 }
 #[doc = "Field `COMPARE` reader - Compare value"]
-pub struct COMPARE_R(crate::FieldReader<u32, u32>);
-impl COMPARE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        COMPARE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COMPARE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COMPARE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `COMPARE` writer - Compare value"]
-pub struct COMPARE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMPARE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type COMPARE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - Compare value"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Compare value"]
     #[inline(always)]
-    pub fn compare(&mut self) -> COMPARE_W {
-        COMPARE_W { w: self }
+    pub fn compare(&mut self) -> COMPARE_W<0> {
+        COMPARE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

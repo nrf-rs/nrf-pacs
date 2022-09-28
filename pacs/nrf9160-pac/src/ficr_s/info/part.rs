@@ -13,6 +13,8 @@ impl From<crate::R<PART_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `PART` reader - Part code"]
+pub type PART_R = crate::FieldReader<u32, PART_A>;
 #[doc = "Part code\n\nValue on reset: 37216"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -26,14 +28,8 @@ impl From<PART_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `PART` reader - Part code"]
-pub struct PART_R(crate::FieldReader<u32, PART_A>);
 impl PART_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PART_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PART_A> {
         match self.bits {
@@ -44,14 +40,7 @@ impl PART_R {
     #[doc = "Checks if the value of the field is `N9160`"]
     #[inline(always)]
     pub fn is_n9160(&self) -> bool {
-        **self == PART_A::N9160
-    }
-}
-impl core::ops::Deref for PART_R {
-    type Target = crate::FieldReader<u32, PART_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PART_A::N9160
     }
 }
 impl R {

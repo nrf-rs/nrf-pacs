@@ -34,6 +34,8 @@ impl From<crate::W<HFXODEBOUNCE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `HFXODEBOUNCE` reader - HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us."]
+pub type HFXODEBOUNCE_R = crate::FieldReader<u8, HFXODEBOUNCE_A>;
 #[doc = "HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us.\n\nValue on reset: 16"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,14 +51,8 @@ impl From<HFXODEBOUNCE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HFXODEBOUNCE` reader - HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us."]
-pub struct HFXODEBOUNCE_R(crate::FieldReader<u8, HFXODEBOUNCE_A>);
 impl HFXODEBOUNCE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HFXODEBOUNCE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HFXODEBOUNCE_A> {
         match self.bits {
@@ -68,31 +64,18 @@ impl HFXODEBOUNCE_R {
     #[doc = "Checks if the value of the field is `DB256US`"]
     #[inline(always)]
     pub fn is_db256us(&self) -> bool {
-        **self == HFXODEBOUNCE_A::DB256US
+        *self == HFXODEBOUNCE_A::DB256US
     }
     #[doc = "Checks if the value of the field is `DB1024US`"]
     #[inline(always)]
     pub fn is_db1024us(&self) -> bool {
-        **self == HFXODEBOUNCE_A::DB1024US
-    }
-}
-impl core::ops::Deref for HFXODEBOUNCE_R {
-    type Target = crate::FieldReader<u8, HFXODEBOUNCE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HFXODEBOUNCE_A::DB1024US
     }
 }
 #[doc = "Field `HFXODEBOUNCE` writer - HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us."]
-pub struct HFXODEBOUNCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFXODEBOUNCE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HFXODEBOUNCE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HFXODEBOUNCE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXODEBOUNCE_SPEC, u8, HFXODEBOUNCE_A, 8, O>;
+impl<'a, const O: u8> HFXODEBOUNCE_W<'a, O> {
     #[doc = "256 us debounce time. Recommended for TSX-3225, FA-20H and FA-128 crystals."]
     #[inline(always)]
     pub fn db256us(self) -> &'a mut W {
@@ -102,12 +85,6 @@ impl<'a> HFXODEBOUNCE_W<'a> {
     #[inline(always)]
     pub fn db1024us(self) -> &'a mut W {
         self.variant(HFXODEBOUNCE_A::DB1024US)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
     }
 }
 impl R {
@@ -120,8 +97,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us."]
     #[inline(always)]
-    pub fn hfxodebounce(&mut self) -> HFXODEBOUNCE_W {
-        HFXODEBOUNCE_W { w: self }
+    pub fn hfxodebounce(&mut self) -> HFXODEBOUNCE_W<0> {
+        HFXODEBOUNCE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -13,6 +13,8 @@ impl From<crate::R<BUSY_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `BUSY` reader - ADC busy register."]
+pub type BUSY_R = crate::BitReader<BUSY_A>;
 #[doc = "ADC busy register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUSY_A {
@@ -27,14 +29,8 @@ impl From<BUSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BUSY` reader - ADC busy register."]
-pub struct BUSY_R(crate::FieldReader<bool, BUSY_A>);
 impl BUSY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BUSY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BUSY_A {
         match self.bits {
@@ -45,26 +41,19 @@ impl BUSY_R {
     #[doc = "Checks if the value of the field is `READY`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        **self == BUSY_A::READY
+        *self == BUSY_A::READY
     }
     #[doc = "Checks if the value of the field is `BUSY`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        **self == BUSY_A::BUSY
-    }
-}
-impl core::ops::Deref for BUSY_R {
-    type Target = crate::FieldReader<bool, BUSY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BUSY_A::BUSY
     }
 }
 impl R {
     #[doc = "Bit 0 - ADC busy register."]
     #[inline(always)]
     pub fn busy(&self) -> BUSY_R {
-        BUSY_R::new((self.bits & 0x01) != 0)
+        BUSY_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "ADC busy register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [busy](index.html) module"]

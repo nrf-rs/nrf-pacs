@@ -35,54 +35,22 @@ impl From<crate::W<EVENTS_DATARDY_SPEC>> for W {
     }
 }
 #[doc = "Field `EVENTS_DATARDY` reader - "]
-pub struct EVENTS_DATARDY_R(crate::FieldReader<bool, bool>);
-impl EVENTS_DATARDY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EVENTS_DATARDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EVENTS_DATARDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EVENTS_DATARDY_R = crate::BitReader<bool>;
 #[doc = "Field `EVENTS_DATARDY` writer - "]
-pub struct EVENTS_DATARDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVENTS_DATARDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EVENTS_DATARDY_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_DATARDY_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn events_datardy(&self) -> EVENTS_DATARDY_R {
-        EVENTS_DATARDY_R::new((self.bits & 0x01) != 0)
+        EVENTS_DATARDY_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn events_datardy(&mut self) -> EVENTS_DATARDY_W {
-        EVENTS_DATARDY_W { w: self }
+    pub fn events_datardy(&mut self) -> EVENTS_DATARDY_W<0> {
+        EVENTS_DATARDY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

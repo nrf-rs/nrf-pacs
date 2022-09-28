@@ -14,35 +14,9 @@ impl From<crate::R<CONFIGID_SPEC>> for R {
     }
 }
 #[doc = "Field `HWID` reader - Hardware Identification Number."]
-pub struct HWID_R(crate::FieldReader<u16, u16>);
-impl HWID_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        HWID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HWID_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HWID_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FWID` reader - Firmware Identification Number pre-loaded into the flash."]
-pub struct FWID_R(crate::FieldReader<u16, u16>);
-impl FWID_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        FWID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FWID_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FWID_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Hardware Identification Number."]
     #[inline(always)]

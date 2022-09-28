@@ -35,32 +35,9 @@ impl From<crate::W<IMISS_SPEC>> for W {
     }
 }
 #[doc = "Field `MISSES` reader - Number of cache misses. Register is writable, but only to '0'."]
-pub struct MISSES_R(crate::FieldReader<u32, u32>);
-impl MISSES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        MISSES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MISSES_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MISSES_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `MISSES` writer - Number of cache misses. Register is writable, but only to '0'."]
-pub struct MISSES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MISSES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type MISSES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IMISS_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Number of cache misses. Register is writable, but only to '0'."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Number of cache misses. Register is writable, but only to '0'."]
     #[inline(always)]
-    pub fn misses(&mut self) -> MISSES_W {
-        MISSES_W { w: self }
+    pub fn misses(&mut self) -> MISSES_W<0> {
+        MISSES_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

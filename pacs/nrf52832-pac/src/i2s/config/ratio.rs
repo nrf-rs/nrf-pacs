@@ -34,6 +34,8 @@ impl From<crate::W<RATIO_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RATIO` reader - MCK / LRCK ratio."]
+pub type RATIO_R = crate::FieldReader<u8, RATIO_A>;
 #[doc = "MCK / LRCK ratio.\n\nValue on reset: 6"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -63,14 +65,8 @@ impl From<RATIO_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RATIO` reader - MCK / LRCK ratio."]
-pub struct RATIO_R(crate::FieldReader<u8, RATIO_A>);
 impl RATIO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RATIO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RATIO_A> {
         match self.bits {
@@ -89,66 +85,52 @@ impl RATIO_R {
     #[doc = "Checks if the value of the field is `_32X`"]
     #[inline(always)]
     pub fn is_32x(&self) -> bool {
-        **self == RATIO_A::_32X
+        *self == RATIO_A::_32X
     }
     #[doc = "Checks if the value of the field is `_48X`"]
     #[inline(always)]
     pub fn is_48x(&self) -> bool {
-        **self == RATIO_A::_48X
+        *self == RATIO_A::_48X
     }
     #[doc = "Checks if the value of the field is `_64X`"]
     #[inline(always)]
     pub fn is_64x(&self) -> bool {
-        **self == RATIO_A::_64X
+        *self == RATIO_A::_64X
     }
     #[doc = "Checks if the value of the field is `_96X`"]
     #[inline(always)]
     pub fn is_96x(&self) -> bool {
-        **self == RATIO_A::_96X
+        *self == RATIO_A::_96X
     }
     #[doc = "Checks if the value of the field is `_128X`"]
     #[inline(always)]
     pub fn is_128x(&self) -> bool {
-        **self == RATIO_A::_128X
+        *self == RATIO_A::_128X
     }
     #[doc = "Checks if the value of the field is `_192X`"]
     #[inline(always)]
     pub fn is_192x(&self) -> bool {
-        **self == RATIO_A::_192X
+        *self == RATIO_A::_192X
     }
     #[doc = "Checks if the value of the field is `_256X`"]
     #[inline(always)]
     pub fn is_256x(&self) -> bool {
-        **self == RATIO_A::_256X
+        *self == RATIO_A::_256X
     }
     #[doc = "Checks if the value of the field is `_384X`"]
     #[inline(always)]
     pub fn is_384x(&self) -> bool {
-        **self == RATIO_A::_384X
+        *self == RATIO_A::_384X
     }
     #[doc = "Checks if the value of the field is `_512X`"]
     #[inline(always)]
     pub fn is_512x(&self) -> bool {
-        **self == RATIO_A::_512X
-    }
-}
-impl core::ops::Deref for RATIO_R {
-    type Target = crate::FieldReader<u8, RATIO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RATIO_A::_512X
     }
 }
 #[doc = "Field `RATIO` writer - MCK / LRCK ratio."]
-pub struct RATIO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RATIO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RATIO_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type RATIO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RATIO_SPEC, u8, RATIO_A, 4, O>;
+impl<'a, const O: u8> RATIO_W<'a, O> {
     #[doc = "LRCK = MCK / 32"]
     #[inline(always)]
     pub fn _32x(self) -> &'a mut W {
@@ -194,12 +176,6 @@ impl<'a> RATIO_W<'a> {
     pub fn _512x(self) -> &'a mut W {
         self.variant(RATIO_A::_512X)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:3 - MCK / LRCK ratio."]
@@ -211,8 +187,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - MCK / LRCK ratio."]
     #[inline(always)]
-    pub fn ratio(&mut self) -> RATIO_W {
-        RATIO_W { w: self }
+    pub fn ratio(&mut self) -> RATIO_W<0> {
+        RATIO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

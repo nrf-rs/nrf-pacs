@@ -35,32 +35,9 @@ impl From<crate::W<CTIV_SPEC>> for W {
     }
 }
 #[doc = "Field `CTIV` reader - Calibration timer interval in 0.25s resolution."]
-pub struct CTIV_R(crate::FieldReader<u8, u8>);
-impl CTIV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CTIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CTIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CTIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CTIV` writer - Calibration timer interval in 0.25s resolution."]
-pub struct CTIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type CTIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTIV_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bits 0:6 - Calibration timer interval in 0.25s resolution."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Calibration timer interval in 0.25s resolution."]
     #[inline(always)]
-    pub fn ctiv(&mut self) -> CTIV_W {
-        CTIV_W { w: self }
+    pub fn ctiv(&mut self) -> CTIV_W<0> {
+        CTIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

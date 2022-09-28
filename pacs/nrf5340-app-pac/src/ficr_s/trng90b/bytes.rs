@@ -14,20 +14,7 @@ impl From<crate::R<BYTES_SPEC>> for R {
     }
 }
 #[doc = "Field `BYTES` reader - Amount of bytes for the required entropy bits"]
-pub struct BYTES_R(crate::FieldReader<u32, u32>);
-impl BYTES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        BYTES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BYTES_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BYTES_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Amount of bytes for the required entropy bits"]
     #[inline(always)]

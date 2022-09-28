@@ -34,6 +34,8 @@ impl From<crate::W<PROTECT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SLAVE0` reader - Control access to slave 0 of master EXTCODE\\[n\\]"]
+pub type SLAVE0_R = crate::BitReader<SLAVE0_A>;
 #[doc = "Control access to slave 0 of master EXTCODE\\[n\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLAVE0_A {
@@ -48,14 +50,8 @@ impl From<SLAVE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLAVE0` reader - Control access to slave 0 of master EXTCODE\\[n\\]"]
-pub struct SLAVE0_R(crate::FieldReader<bool, SLAVE0_A>);
 impl SLAVE0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLAVE0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLAVE0_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl SLAVE0_R {
     #[doc = "Checks if the value of the field is `ALLOWED`"]
     #[inline(always)]
     pub fn is_allowed(&self) -> bool {
-        **self == SLAVE0_A::ALLOWED
+        *self == SLAVE0_A::ALLOWED
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        **self == SLAVE0_A::BLOCKED
-    }
-}
-impl core::ops::Deref for SLAVE0_R {
-    type Target = crate::FieldReader<bool, SLAVE0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLAVE0_A::BLOCKED
     }
 }
 #[doc = "Field `SLAVE0` writer - Control access to slave 0 of master EXTCODE\\[n\\]"]
-pub struct SLAVE0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAVE0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SLAVE0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SLAVE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PROTECT_SPEC, SLAVE0_A, O>;
+impl<'a, const O: u8> SLAVE0_W<'a, O> {
     #[doc = "Access to slave is allowed"]
     #[inline(always)]
     pub fn allowed(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> SLAVE0_W<'a> {
     pub fn blocked(self) -> &'a mut W {
         self.variant(SLAVE0_A::BLOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Control access to slave 0 of master EXTCODE\\[n\\]"]
     #[inline(always)]
     pub fn slave0(&self) -> SLAVE0_R {
-        SLAVE0_R::new((self.bits & 0x01) != 0)
+        SLAVE0_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Control access to slave 0 of master EXTCODE\\[n\\]"]
     #[inline(always)]
-    pub fn slave0(&mut self) -> SLAVE0_W {
-        SLAVE0_W { w: self }
+    pub fn slave0(&mut self) -> SLAVE0_W<0> {
+        SLAVE0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<LEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LEN` reader - LEN"]
+pub type LEN_R = crate::FieldReader<u8, LEN_A>;
 #[doc = "LEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,14 +53,8 @@ impl From<LEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LEN` reader - LEN"]
-pub struct LEN_R(crate::FieldReader<u8, LEN_A>);
 impl LEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LEN_A> {
         match self.bits {
@@ -71,36 +67,22 @@ impl LEN_R {
     #[doc = "Checks if the value of the field is `_4KB`"]
     #[inline(always)]
     pub fn is_4kb(&self) -> bool {
-        **self == LEN_A::_4KB
+        *self == LEN_A::_4KB
     }
     #[doc = "Checks if the value of the field is `_64KB`"]
     #[inline(always)]
     pub fn is_64kb(&self) -> bool {
-        **self == LEN_A::_64KB
+        *self == LEN_A::_64KB
     }
     #[doc = "Checks if the value of the field is `ALL`"]
     #[inline(always)]
     pub fn is_all(&self) -> bool {
-        **self == LEN_A::ALL
-    }
-}
-impl core::ops::Deref for LEN_R {
-    type Target = crate::FieldReader<u8, LEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LEN_A::ALL
     }
 }
 #[doc = "Field `LEN` writer - LEN"]
-pub struct LEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LEN_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type LEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LEN_SPEC, u8, LEN_A, 2, O>;
+impl<'a, const O: u8> LEN_W<'a, O> {
     #[doc = "Erase 4 kB block (flash command 0x20)"]
     #[inline(always)]
     pub fn _4kb(self) -> &'a mut W {
@@ -116,25 +98,19 @@ impl<'a> LEN_W<'a> {
     pub fn all(self) -> &'a mut W {
         self.variant(LEN_A::ALL)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - LEN"]
     #[inline(always)]
     pub fn len(&self) -> LEN_R {
-        LEN_R::new((self.bits & 0x03) as u8)
+        LEN_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - LEN"]
     #[inline(always)]
-    pub fn len(&mut self) -> LEN_W {
-        LEN_W { w: self }
+    pub fn len(&mut self) -> LEN_W<0> {
+        LEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

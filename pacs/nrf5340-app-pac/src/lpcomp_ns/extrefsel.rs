@@ -34,13 +34,15 @@ impl From<crate::W<EXTREFSEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EXTREFSEL` reader - External analog reference select"]
+pub type EXTREFSEL_R = crate::BitReader<EXTREFSEL_A>;
 #[doc = "External analog reference select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTREFSEL_A {
     #[doc = "0: Use AIN0 as external analog reference"]
-    ANALOGREFERENCE0 = 0,
+    ANALOG_REFERENCE0 = 0,
     #[doc = "1: Use AIN1 as external analog reference"]
-    ANALOGREFERENCE1 = 1,
+    ANALOG_REFERENCE1 = 1,
 }
 impl From<EXTREFSEL_A> for bool {
     #[inline(always)]
@@ -48,88 +50,52 @@ impl From<EXTREFSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EXTREFSEL` reader - External analog reference select"]
-pub struct EXTREFSEL_R(crate::FieldReader<bool, EXTREFSEL_A>);
 impl EXTREFSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTREFSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXTREFSEL_A {
         match self.bits {
-            false => EXTREFSEL_A::ANALOGREFERENCE0,
-            true => EXTREFSEL_A::ANALOGREFERENCE1,
+            false => EXTREFSEL_A::ANALOG_REFERENCE0,
+            true => EXTREFSEL_A::ANALOG_REFERENCE1,
         }
     }
-    #[doc = "Checks if the value of the field is `ANALOGREFERENCE0`"]
+    #[doc = "Checks if the value of the field is `ANALOG_REFERENCE0`"]
     #[inline(always)]
     pub fn is_analog_reference0(&self) -> bool {
-        **self == EXTREFSEL_A::ANALOGREFERENCE0
+        *self == EXTREFSEL_A::ANALOG_REFERENCE0
     }
-    #[doc = "Checks if the value of the field is `ANALOGREFERENCE1`"]
+    #[doc = "Checks if the value of the field is `ANALOG_REFERENCE1`"]
     #[inline(always)]
     pub fn is_analog_reference1(&self) -> bool {
-        **self == EXTREFSEL_A::ANALOGREFERENCE1
-    }
-}
-impl core::ops::Deref for EXTREFSEL_R {
-    type Target = crate::FieldReader<bool, EXTREFSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EXTREFSEL_A::ANALOG_REFERENCE1
     }
 }
 #[doc = "Field `EXTREFSEL` writer - External analog reference select"]
-pub struct EXTREFSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTREFSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EXTREFSEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EXTREFSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTREFSEL_SPEC, EXTREFSEL_A, O>;
+impl<'a, const O: u8> EXTREFSEL_W<'a, O> {
     #[doc = "Use AIN0 as external analog reference"]
     #[inline(always)]
     pub fn analog_reference0(self) -> &'a mut W {
-        self.variant(EXTREFSEL_A::ANALOGREFERENCE0)
+        self.variant(EXTREFSEL_A::ANALOG_REFERENCE0)
     }
     #[doc = "Use AIN1 as external analog reference"]
     #[inline(always)]
     pub fn analog_reference1(self) -> &'a mut W {
-        self.variant(EXTREFSEL_A::ANALOGREFERENCE1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(EXTREFSEL_A::ANALOG_REFERENCE1)
     }
 }
 impl R {
     #[doc = "Bit 0 - External analog reference select"]
     #[inline(always)]
     pub fn extrefsel(&self) -> EXTREFSEL_R {
-        EXTREFSEL_R::new((self.bits & 0x01) != 0)
+        EXTREFSEL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - External analog reference select"]
     #[inline(always)]
-    pub fn extrefsel(&mut self) -> EXTREFSEL_W {
-        EXTREFSEL_W { w: self }
+    pub fn extrefsel(&mut self) -> EXTREFSEL_W<0> {
+        EXTREFSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

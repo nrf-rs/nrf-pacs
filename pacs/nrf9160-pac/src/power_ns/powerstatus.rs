@@ -13,6 +13,8 @@ impl From<crate::R<POWERSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `LTEMODEM` reader - LTE modem domain status"]
+pub type LTEMODEM_R = crate::BitReader<LTEMODEM_A>;
 #[doc = "LTE modem domain status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LTEMODEM_A {
@@ -27,14 +29,8 @@ impl From<LTEMODEM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LTEMODEM` reader - LTE modem domain status"]
-pub struct LTEMODEM_R(crate::FieldReader<bool, LTEMODEM_A>);
 impl LTEMODEM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LTEMODEM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LTEMODEM_A {
         match self.bits {
@@ -45,26 +41,19 @@ impl LTEMODEM_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == LTEMODEM_A::OFF
+        *self == LTEMODEM_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == LTEMODEM_A::ON
-    }
-}
-impl core::ops::Deref for LTEMODEM_R {
-    type Target = crate::FieldReader<bool, LTEMODEM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LTEMODEM_A::ON
     }
 }
 impl R {
     #[doc = "Bit 0 - LTE modem domain status"]
     #[inline(always)]
     pub fn ltemodem(&self) -> LTEMODEM_R {
-        LTEMODEM_R::new((self.bits & 0x01) != 0)
+        LTEMODEM_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Modem domain power status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [powerstatus](index.html) module"]

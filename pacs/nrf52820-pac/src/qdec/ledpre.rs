@@ -35,32 +35,9 @@ impl From<crate::W<LEDPRE_SPEC>> for W {
     }
 }
 #[doc = "Field `LEDPRE` reader - Period in us the LED is switched on prior to sampling"]
-pub struct LEDPRE_R(crate::FieldReader<u16, u16>);
-impl LEDPRE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        LEDPRE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LEDPRE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LEDPRE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LEDPRE` writer - Period in us the LED is switched on prior to sampling"]
-pub struct LEDPRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEDPRE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type LEDPRE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LEDPRE_SPEC, u16, u16, 9, O>;
 impl R {
     #[doc = "Bits 0:8 - Period in us the LED is switched on prior to sampling"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:8 - Period in us the LED is switched on prior to sampling"]
     #[inline(always)]
-    pub fn ledpre(&mut self) -> LEDPRE_W {
-        LEDPRE_W { w: self }
+    pub fn ledpre(&mut self) -> LEDPRE_W<0> {
+        LEDPRE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

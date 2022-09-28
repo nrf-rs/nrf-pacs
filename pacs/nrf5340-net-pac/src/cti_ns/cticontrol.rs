@@ -34,6 +34,8 @@ impl From<crate::W<CTICONTROL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `GLBEN` reader - Enables or disables the CTI."]
+pub type GLBEN_R = crate::BitReader<GLBEN_A>;
 #[doc = "Enables or disables the CTI.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GLBEN_A {
@@ -48,14 +50,8 @@ impl From<GLBEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GLBEN` reader - Enables or disables the CTI."]
-pub struct GLBEN_R(crate::FieldReader<bool, GLBEN_A>);
 impl GLBEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        GLBEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GLBEN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl GLBEN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == GLBEN_A::DISABLED
+        *self == GLBEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == GLBEN_A::ENABLED
-    }
-}
-impl core::ops::Deref for GLBEN_R {
-    type Target = crate::FieldReader<bool, GLBEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GLBEN_A::ENABLED
     }
 }
 #[doc = "Field `GLBEN` writer - Enables or disables the CTI."]
-pub struct GLBEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GLBEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GLBEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type GLBEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTICONTROL_SPEC, GLBEN_A, O>;
+impl<'a, const O: u8> GLBEN_W<'a, O> {
     #[doc = "All cross-triggering mapping logic functionality is disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> GLBEN_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(GLBEN_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enables or disables the CTI."]
     #[inline(always)]
     pub fn glben(&self) -> GLBEN_R {
-        GLBEN_R::new((self.bits & 0x01) != 0)
+        GLBEN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enables or disables the CTI."]
     #[inline(always)]
-    pub fn glben(&mut self) -> GLBEN_W {
-        GLBEN_W { w: self }
+    pub fn glben(&mut self) -> GLBEN_W<0> {
+        GLBEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -13,6 +13,8 @@ impl From<crate::R<VARIANT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `VARIANT` reader - Part Variant, Hardware version and Production configuration, encoded as ASCII"]
+pub type VARIANT_R = crate::FieldReader<u32, VARIANT_A>;
 #[doc = "Part Variant, Hardware version and Production configuration, encoded as ASCII\n\nValue on reset: 268435455"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -28,14 +30,8 @@ impl From<VARIANT_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `VARIANT` reader - Part Variant, Hardware version and Production configuration, encoded as ASCII"]
-pub struct VARIANT_R(crate::FieldReader<u32, VARIANT_A>);
 impl VARIANT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        VARIANT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<VARIANT_A> {
         match self.bits {
@@ -47,19 +43,12 @@ impl VARIANT_R {
     #[doc = "Checks if the value of the field is `AAAA`"]
     #[inline(always)]
     pub fn is_aaaa(&self) -> bool {
-        **self == VARIANT_A::AAAA
+        *self == VARIANT_A::AAAA
     }
     #[doc = "Checks if the value of the field is `AAA0`"]
     #[inline(always)]
     pub fn is_aaa0(&self) -> bool {
-        **self == VARIANT_A::AAA0
-    }
-}
-impl core::ops::Deref for VARIANT_R {
-    type Target = crate::FieldReader<u32, VARIANT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VARIANT_A::AAA0
     }
 }
 impl R {

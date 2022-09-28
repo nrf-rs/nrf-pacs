@@ -34,6 +34,8 @@ impl From<crate::W<PSELRTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PSELRTS` reader - Pin number configuration for UART RTS signal"]
+pub type PSELRTS_R = crate::FieldReader<u32, PSELRTS_A>;
 #[doc = "Pin number configuration for UART RTS signal\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -47,14 +49,8 @@ impl From<PSELRTS_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `PSELRTS` reader - Pin number configuration for UART RTS signal"]
-pub struct PSELRTS_R(crate::FieldReader<u32, PSELRTS_A>);
 impl PSELRTS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PSELRTS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PSELRTS_A> {
         match self.bits {
@@ -65,36 +61,17 @@ impl PSELRTS_R {
     #[doc = "Checks if the value of the field is `DISCONNECTED`"]
     #[inline(always)]
     pub fn is_disconnected(&self) -> bool {
-        **self == PSELRTS_A::DISCONNECTED
-    }
-}
-impl core::ops::Deref for PSELRTS_R {
-    type Target = crate::FieldReader<u32, PSELRTS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PSELRTS_A::DISCONNECTED
     }
 }
 #[doc = "Field `PSELRTS` writer - Pin number configuration for UART RTS signal"]
-pub struct PSELRTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSELRTS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PSELRTS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PSELRTS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PSELRTS_SPEC, u32, PSELRTS_A, 32, O>;
+impl<'a, const O: u8> PSELRTS_W<'a, O> {
     #[doc = "Disconnect"]
     #[inline(always)]
     pub fn disconnected(self) -> &'a mut W {
         self.variant(PSELRTS_A::DISCONNECTED)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
     }
 }
 impl R {
@@ -107,8 +84,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Pin number configuration for UART RTS signal"]
     #[inline(always)]
-    pub fn pselrts(&mut self) -> PSELRTS_W {
-        PSELRTS_W { w: self }
+    pub fn pselrts(&mut self) -> PSELRTS_W<0> {
+        PSELRTS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

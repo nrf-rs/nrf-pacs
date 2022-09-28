@@ -14,20 +14,7 @@ impl From<crate::R<ACCREAD_SPEC>> for R {
     }
 }
 #[doc = "Field `ACCREAD` reader - Snapshot of the ACC register."]
-pub struct ACCREAD_R(crate::FieldReader<u32, u32>);
-impl ACCREAD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        ACCREAD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACCREAD_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACCREAD_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Snapshot of the ACC register."]
     #[inline(always)]

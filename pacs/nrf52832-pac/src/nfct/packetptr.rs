@@ -35,32 +35,9 @@ impl From<crate::W<PACKETPTR_SPEC>> for W {
     }
 }
 #[doc = "Field `PTR` reader - Packet pointer for TXD and RXD data storage in Data RAM. This address is a byte aligned RAM address."]
-pub struct PTR_R(crate::FieldReader<u32, u32>);
-impl PTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PTR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PTR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `PTR` writer - Packet pointer for TXD and RXD data storage in Data RAM. This address is a byte aligned RAM address."]
-pub struct PTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type PTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PACKETPTR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Packet pointer for TXD and RXD data storage in Data RAM. This address is a byte aligned RAM address."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Packet pointer for TXD and RXD data storage in Data RAM. This address is a byte aligned RAM address."]
     #[inline(always)]
-    pub fn ptr(&mut self) -> PTR_W {
-        PTR_W { w: self }
+    pub fn ptr(&mut self) -> PTR_W<0> {
+        PTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

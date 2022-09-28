@@ -35,113 +35,21 @@ impl From<crate::W<PREFIX1_SPEC>> for W {
     }
 }
 #[doc = "Field `AP4` reader - Address prefix 4. Decision point: START task."]
-pub struct AP4_R(crate::FieldReader<u8, u8>);
-impl AP4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        AP4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AP4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AP4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AP4` writer - Address prefix 4. Decision point: START task."]
-pub struct AP4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AP4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type AP4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `AP5` reader - Address prefix 5. Decision point: START task."]
-pub struct AP5_R(crate::FieldReader<u8, u8>);
-impl AP5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        AP5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AP5_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AP5_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AP5` writer - Address prefix 5. Decision point: START task."]
-pub struct AP5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AP5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type AP5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `AP6` reader - Address prefix 6. Decision point: START task."]
-pub struct AP6_R(crate::FieldReader<u8, u8>);
-impl AP6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        AP6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AP6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AP6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AP6` writer - Address prefix 6. Decision point: START task."]
-pub struct AP6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AP6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type AP6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `AP7` reader - Address prefix 7. Decision point: START task."]
-pub struct AP7_R(crate::FieldReader<u8, u8>);
-impl AP7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        AP7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AP7_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AP7_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AP7` writer - Address prefix 7. Decision point: START task."]
-pub struct AP7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AP7_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type AP7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX1_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Address prefix 4. Decision point: START task."]
     #[inline(always)]
@@ -167,23 +75,23 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Address prefix 4. Decision point: START task."]
     #[inline(always)]
-    pub fn ap4(&mut self) -> AP4_W {
-        AP4_W { w: self }
+    pub fn ap4(&mut self) -> AP4_W<0> {
+        AP4_W::new(self)
     }
     #[doc = "Bits 8:15 - Address prefix 5. Decision point: START task."]
     #[inline(always)]
-    pub fn ap5(&mut self) -> AP5_W {
-        AP5_W { w: self }
+    pub fn ap5(&mut self) -> AP5_W<8> {
+        AP5_W::new(self)
     }
     #[doc = "Bits 16:23 - Address prefix 6. Decision point: START task."]
     #[inline(always)]
-    pub fn ap6(&mut self) -> AP6_W {
-        AP6_W { w: self }
+    pub fn ap6(&mut self) -> AP6_W<16> {
+        AP6_W::new(self)
     }
     #[doc = "Bits 24:31 - Address prefix 7. Decision point: START task."]
     #[inline(always)]
-    pub fn ap7(&mut self) -> AP7_W {
-        AP7_W { w: self }
+    pub fn ap7(&mut self) -> AP7_W<24> {
+        AP7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

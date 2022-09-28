@@ -34,11 +34,13 @@ impl From<crate::W<DCDCFORCE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FORCEOFF` reader - DCDC power-up force off."]
+pub type FORCEOFF_R = crate::BitReader<FORCEOFF_A>;
 #[doc = "DCDC power-up force off.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORCEOFF_A {
     #[doc = "0: No force."]
-    NOFORCE = 0,
+    NO_FORCE = 0,
     #[doc = "1: Force."]
     FORCE = 1,
 }
@@ -48,81 +50,47 @@ impl From<FORCEOFF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORCEOFF` reader - DCDC power-up force off."]
-pub struct FORCEOFF_R(crate::FieldReader<bool, FORCEOFF_A>);
 impl FORCEOFF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FORCEOFF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FORCEOFF_A {
         match self.bits {
-            false => FORCEOFF_A::NOFORCE,
+            false => FORCEOFF_A::NO_FORCE,
             true => FORCEOFF_A::FORCE,
         }
     }
-    #[doc = "Checks if the value of the field is `NOFORCE`"]
+    #[doc = "Checks if the value of the field is `NO_FORCE`"]
     #[inline(always)]
     pub fn is_no_force(&self) -> bool {
-        **self == FORCEOFF_A::NOFORCE
+        *self == FORCEOFF_A::NO_FORCE
     }
     #[doc = "Checks if the value of the field is `FORCE`"]
     #[inline(always)]
     pub fn is_force(&self) -> bool {
-        **self == FORCEOFF_A::FORCE
-    }
-}
-impl core::ops::Deref for FORCEOFF_R {
-    type Target = crate::FieldReader<bool, FORCEOFF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FORCEOFF_A::FORCE
     }
 }
 #[doc = "Field `FORCEOFF` writer - DCDC power-up force off."]
-pub struct FORCEOFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FORCEOFF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FORCEOFF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FORCEOFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCFORCE_SPEC, FORCEOFF_A, O>;
+impl<'a, const O: u8> FORCEOFF_W<'a, O> {
     #[doc = "No force."]
     #[inline(always)]
     pub fn no_force(self) -> &'a mut W {
-        self.variant(FORCEOFF_A::NOFORCE)
+        self.variant(FORCEOFF_A::NO_FORCE)
     }
     #[doc = "Force."]
     #[inline(always)]
     pub fn force(self) -> &'a mut W {
         self.variant(FORCEOFF_A::FORCE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `FORCEON` reader - DCDC power-up force on."]
+pub type FORCEON_R = crate::BitReader<FORCEON_A>;
 #[doc = "DCDC power-up force on.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORCEON_A {
     #[doc = "0: No force."]
-    NOFORCE = 0,
+    NO_FORCE = 0,
     #[doc = "1: Force."]
     FORCE = 1,
 }
@@ -132,98 +100,62 @@ impl From<FORCEON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORCEON` reader - DCDC power-up force on."]
-pub struct FORCEON_R(crate::FieldReader<bool, FORCEON_A>);
 impl FORCEON_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FORCEON_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FORCEON_A {
         match self.bits {
-            false => FORCEON_A::NOFORCE,
+            false => FORCEON_A::NO_FORCE,
             true => FORCEON_A::FORCE,
         }
     }
-    #[doc = "Checks if the value of the field is `NOFORCE`"]
+    #[doc = "Checks if the value of the field is `NO_FORCE`"]
     #[inline(always)]
     pub fn is_no_force(&self) -> bool {
-        **self == FORCEON_A::NOFORCE
+        *self == FORCEON_A::NO_FORCE
     }
     #[doc = "Checks if the value of the field is `FORCE`"]
     #[inline(always)]
     pub fn is_force(&self) -> bool {
-        **self == FORCEON_A::FORCE
-    }
-}
-impl core::ops::Deref for FORCEON_R {
-    type Target = crate::FieldReader<bool, FORCEON_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FORCEON_A::FORCE
     }
 }
 #[doc = "Field `FORCEON` writer - DCDC power-up force on."]
-pub struct FORCEON_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FORCEON_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FORCEON_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FORCEON_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCFORCE_SPEC, FORCEON_A, O>;
+impl<'a, const O: u8> FORCEON_W<'a, O> {
     #[doc = "No force."]
     #[inline(always)]
     pub fn no_force(self) -> &'a mut W {
-        self.variant(FORCEON_A::NOFORCE)
+        self.variant(FORCEON_A::NO_FORCE)
     }
     #[doc = "Force."]
     #[inline(always)]
     pub fn force(self) -> &'a mut W {
         self.variant(FORCEON_A::FORCE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - DCDC power-up force off."]
     #[inline(always)]
     pub fn forceoff(&self) -> FORCEOFF_R {
-        FORCEOFF_R::new((self.bits & 0x01) != 0)
+        FORCEOFF_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - DCDC power-up force on."]
     #[inline(always)]
     pub fn forceon(&self) -> FORCEON_R {
-        FORCEON_R::new(((self.bits >> 1) & 0x01) != 0)
+        FORCEON_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - DCDC power-up force off."]
     #[inline(always)]
-    pub fn forceoff(&mut self) -> FORCEOFF_W {
-        FORCEOFF_W { w: self }
+    pub fn forceoff(&mut self) -> FORCEOFF_W<0> {
+        FORCEOFF_W::new(self)
     }
     #[doc = "Bit 1 - DCDC power-up force on."]
     #[inline(always)]
-    pub fn forceon(&mut self) -> FORCEON_W {
-        FORCEON_W { w: self }
+    pub fn forceon(&mut self) -> FORCEON_W<1> {
+        FORCEON_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

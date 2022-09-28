@@ -14,20 +14,7 @@ impl From<crate::R<TEMP_SPEC>> for R {
     }
 }
 #[doc = "Field `TEMP` reader - Temperature in degC (0.25deg steps)"]
-pub struct TEMP_R(crate::FieldReader<u32, u32>);
-impl TEMP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        TEMP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TEMP_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TEMP_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Temperature in degC (0.25deg steps)"]
     #[inline(always)]

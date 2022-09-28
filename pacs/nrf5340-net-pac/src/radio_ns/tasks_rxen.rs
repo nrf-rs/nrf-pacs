@@ -32,42 +32,20 @@ impl From<TASKS_RXEN_AW> for bool {
     }
 }
 #[doc = "Field `TASKS_RXEN` writer - Enable RADIO in RX mode"]
-pub struct TASKS_RXEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASKS_RXEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TASKS_RXEN_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TASKS_RXEN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_RXEN_SPEC, TASKS_RXEN_AW, O>;
+impl<'a, const O: u8> TASKS_RXEN_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
     pub fn trigger(self) -> &'a mut W {
         self.variant(TASKS_RXEN_AW::TRIGGER)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Enable RADIO in RX mode"]
     #[inline(always)]
-    pub fn tasks_rxen(&mut self) -> TASKS_RXEN_W {
-        TASKS_RXEN_W { w: self }
+    pub fn tasks_rxen(&mut self) -> TASKS_RXEN_W<0> {
+        TASKS_RXEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

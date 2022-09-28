@@ -13,6 +13,8 @@ impl From<crate::R<PIDR2_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `DES_1` reader - Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component."]
+pub type DES_1_R = crate::FieldReader<u8, DES_1_A>;
 #[doc = "Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -27,14 +29,8 @@ impl From<DES_1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DES_1` reader - Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component."]
-pub struct DES_1_R(crate::FieldReader<u8, DES_1_A>);
 impl DES_1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DES_1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DES_1_A> {
         match self.bits {
@@ -45,31 +41,13 @@ impl DES_1_R {
     #[doc = "Checks if the value of the field is `ARM`"]
     #[inline(always)]
     pub fn is_arm(&self) -> bool {
-        **self == DES_1_A::ARM
-    }
-}
-impl core::ops::Deref for DES_1_R {
-    type Target = crate::FieldReader<u8, DES_1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DES_1_A::ARM
     }
 }
 #[doc = "Field `JEDEC` reader - Always 1. Indicates that the JEDEC-assigned designer ID is used."]
-pub struct JEDEC_R(crate::FieldReader<bool, bool>);
-impl JEDEC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        JEDEC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for JEDEC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type JEDEC_R = crate::BitReader<bool>;
+#[doc = "Field `REVISION` reader - Peripheral revision"]
+pub type REVISION_R = crate::FieldReader<u8, REVISION_A>;
 #[doc = "Peripheral revision\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -83,14 +61,8 @@ impl From<REVISION_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `REVISION` reader - Peripheral revision"]
-pub struct REVISION_R(crate::FieldReader<u8, REVISION_A>);
 impl REVISION_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        REVISION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<REVISION_A> {
         match self.bits {
@@ -101,26 +73,19 @@ impl REVISION_R {
     #[doc = "Checks if the value of the field is `REV0P0`"]
     #[inline(always)]
     pub fn is_rev0p0(&self) -> bool {
-        **self == REVISION_A::REV0P0
-    }
-}
-impl core::ops::Deref for REVISION_R {
-    type Target = crate::FieldReader<u8, REVISION_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REVISION_A::REV0P0
     }
 }
 impl R {
     #[doc = "Bits 0:2 - Together, PIDR1.DES_0, PIDR2.DES_1, and PIDR4.DES_2 identify the designer of the component."]
     #[inline(always)]
     pub fn des_1(&self) -> DES_1_R {
-        DES_1_R::new((self.bits & 0x07) as u8)
+        DES_1_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 3 - Always 1. Indicates that the JEDEC-assigned designer ID is used."]
     #[inline(always)]
     pub fn jedec(&self) -> JEDEC_R {
-        JEDEC_R::new(((self.bits >> 3) & 0x01) != 0)
+        JEDEC_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:7 - Peripheral revision"]
     #[inline(always)]

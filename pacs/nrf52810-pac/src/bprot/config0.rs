@@ -34,6 +34,8 @@ impl From<crate::W<CONFIG0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `REGION0` reader - Enable protection for region 0. Write '0' has no effect."]
+pub type REGION0_R = crate::BitReader<REGION0_A>;
 #[doc = "Enable protection for region 0. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION0_A {
@@ -48,14 +50,8 @@ impl From<REGION0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION0` reader - Enable protection for region 0. Write '0' has no effect."]
-pub struct REGION0_R(crate::FieldReader<bool, REGION0_A>);
 impl REGION0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION0_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl REGION0_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION0_A::DISABLED
+        *self == REGION0_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION0_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION0_R {
-    type Target = crate::FieldReader<bool, REGION0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION0_A::ENABLED
     }
 }
 #[doc = "Field `REGION0` writer - Enable protection for region 0. Write '0' has no effect."]
-pub struct REGION0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION0_A, O>;
+impl<'a, const O: u8> REGION0_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> REGION0_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION0_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `REGION1` reader - Enable protection for region 1. Write '0' has no effect."]
+pub type REGION1_R = crate::BitReader<REGION1_A>;
 #[doc = "Enable protection for region 1. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION1_A {
@@ -132,14 +100,8 @@ impl From<REGION1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION1` reader - Enable protection for region 1. Write '0' has no effect."]
-pub struct REGION1_R(crate::FieldReader<bool, REGION1_A>);
 impl REGION1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION1_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl REGION1_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION1_A::DISABLED
+        *self == REGION1_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION1_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION1_R {
-    type Target = crate::FieldReader<bool, REGION1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION1_A::ENABLED
     }
 }
 #[doc = "Field `REGION1` writer - Enable protection for region 1. Write '0' has no effect."]
-pub struct REGION1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION1_A, O>;
+impl<'a, const O: u8> REGION1_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,23 +133,9 @@ impl<'a> REGION1_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION1_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `REGION2` reader - Enable protection for region 2. Write '0' has no effect."]
+pub type REGION2_R = crate::BitReader<REGION2_A>;
 #[doc = "Enable protection for region 2. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION2_A {
@@ -216,14 +150,8 @@ impl From<REGION2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION2` reader - Enable protection for region 2. Write '0' has no effect."]
-pub struct REGION2_R(crate::FieldReader<bool, REGION2_A>);
 impl REGION2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION2_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl REGION2_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION2_A::DISABLED
+        *self == REGION2_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION2_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION2_R {
-    type Target = crate::FieldReader<bool, REGION2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION2_A::ENABLED
     }
 }
 #[doc = "Field `REGION2` writer - Enable protection for region 2. Write '0' has no effect."]
-pub struct REGION2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION2_A, O>;
+impl<'a, const O: u8> REGION2_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -269,23 +183,9 @@ impl<'a> REGION2_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION2_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `REGION3` reader - Enable protection for region 3. Write '0' has no effect."]
+pub type REGION3_R = crate::BitReader<REGION3_A>;
 #[doc = "Enable protection for region 3. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION3_A {
@@ -300,14 +200,8 @@ impl From<REGION3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION3` reader - Enable protection for region 3. Write '0' has no effect."]
-pub struct REGION3_R(crate::FieldReader<bool, REGION3_A>);
 impl REGION3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION3_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl REGION3_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION3_A::DISABLED
+        *self == REGION3_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION3_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION3_R {
-    type Target = crate::FieldReader<bool, REGION3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION3_A::ENABLED
     }
 }
 #[doc = "Field `REGION3` writer - Enable protection for region 3. Write '0' has no effect."]
-pub struct REGION3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION3_A, O>;
+impl<'a, const O: u8> REGION3_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -353,23 +233,9 @@ impl<'a> REGION3_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION3_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `REGION4` reader - Enable protection for region 4. Write '0' has no effect."]
+pub type REGION4_R = crate::BitReader<REGION4_A>;
 #[doc = "Enable protection for region 4. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION4_A {
@@ -384,14 +250,8 @@ impl From<REGION4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION4` reader - Enable protection for region 4. Write '0' has no effect."]
-pub struct REGION4_R(crate::FieldReader<bool, REGION4_A>);
 impl REGION4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION4_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION4_A {
         match self.bits {
@@ -402,31 +262,17 @@ impl REGION4_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION4_A::DISABLED
+        *self == REGION4_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION4_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION4_R {
-    type Target = crate::FieldReader<bool, REGION4_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION4_A::ENABLED
     }
 }
 #[doc = "Field `REGION4` writer - Enable protection for region 4. Write '0' has no effect."]
-pub struct REGION4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION4_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION4_A, O>;
+impl<'a, const O: u8> REGION4_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -437,23 +283,9 @@ impl<'a> REGION4_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION4_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `REGION5` reader - Enable protection for region 5. Write '0' has no effect."]
+pub type REGION5_R = crate::BitReader<REGION5_A>;
 #[doc = "Enable protection for region 5. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION5_A {
@@ -468,14 +300,8 @@ impl From<REGION5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION5` reader - Enable protection for region 5. Write '0' has no effect."]
-pub struct REGION5_R(crate::FieldReader<bool, REGION5_A>);
 impl REGION5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION5_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION5_A {
         match self.bits {
@@ -486,31 +312,17 @@ impl REGION5_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION5_A::DISABLED
+        *self == REGION5_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION5_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION5_R {
-    type Target = crate::FieldReader<bool, REGION5_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION5_A::ENABLED
     }
 }
 #[doc = "Field `REGION5` writer - Enable protection for region 5. Write '0' has no effect."]
-pub struct REGION5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION5_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION5_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION5_A, O>;
+impl<'a, const O: u8> REGION5_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -521,23 +333,9 @@ impl<'a> REGION5_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION5_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `REGION6` reader - Enable protection for region 6. Write '0' has no effect."]
+pub type REGION6_R = crate::BitReader<REGION6_A>;
 #[doc = "Enable protection for region 6. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION6_A {
@@ -552,14 +350,8 @@ impl From<REGION6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION6` reader - Enable protection for region 6. Write '0' has no effect."]
-pub struct REGION6_R(crate::FieldReader<bool, REGION6_A>);
 impl REGION6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION6_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION6_A {
         match self.bits {
@@ -570,31 +362,17 @@ impl REGION6_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION6_A::DISABLED
+        *self == REGION6_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION6_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION6_R {
-    type Target = crate::FieldReader<bool, REGION6_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION6_A::ENABLED
     }
 }
 #[doc = "Field `REGION6` writer - Enable protection for region 6. Write '0' has no effect."]
-pub struct REGION6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION6_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION6_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION6_A, O>;
+impl<'a, const O: u8> REGION6_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -605,23 +383,9 @@ impl<'a> REGION6_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION6_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `REGION7` reader - Enable protection for region 7. Write '0' has no effect."]
+pub type REGION7_R = crate::BitReader<REGION7_A>;
 #[doc = "Enable protection for region 7. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION7_A {
@@ -636,14 +400,8 @@ impl From<REGION7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION7` reader - Enable protection for region 7. Write '0' has no effect."]
-pub struct REGION7_R(crate::FieldReader<bool, REGION7_A>);
 impl REGION7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION7_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION7_A {
         match self.bits {
@@ -654,31 +412,17 @@ impl REGION7_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION7_A::DISABLED
+        *self == REGION7_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION7_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION7_R {
-    type Target = crate::FieldReader<bool, REGION7_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION7_A::ENABLED
     }
 }
 #[doc = "Field `REGION7` writer - Enable protection for region 7. Write '0' has no effect."]
-pub struct REGION7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION7_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION7_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION7_A, O>;
+impl<'a, const O: u8> REGION7_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -689,23 +433,9 @@ impl<'a> REGION7_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION7_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `REGION8` reader - Enable protection for region 8. Write '0' has no effect."]
+pub type REGION8_R = crate::BitReader<REGION8_A>;
 #[doc = "Enable protection for region 8. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION8_A {
@@ -720,14 +450,8 @@ impl From<REGION8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION8` reader - Enable protection for region 8. Write '0' has no effect."]
-pub struct REGION8_R(crate::FieldReader<bool, REGION8_A>);
 impl REGION8_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION8_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION8_A {
         match self.bits {
@@ -738,31 +462,17 @@ impl REGION8_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION8_A::DISABLED
+        *self == REGION8_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION8_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION8_R {
-    type Target = crate::FieldReader<bool, REGION8_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION8_A::ENABLED
     }
 }
 #[doc = "Field `REGION8` writer - Enable protection for region 8. Write '0' has no effect."]
-pub struct REGION8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION8_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION8_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION8_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION8_A, O>;
+impl<'a, const O: u8> REGION8_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -773,23 +483,9 @@ impl<'a> REGION8_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION8_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `REGION9` reader - Enable protection for region 9. Write '0' has no effect."]
+pub type REGION9_R = crate::BitReader<REGION9_A>;
 #[doc = "Enable protection for region 9. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION9_A {
@@ -804,14 +500,8 @@ impl From<REGION9_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION9` reader - Enable protection for region 9. Write '0' has no effect."]
-pub struct REGION9_R(crate::FieldReader<bool, REGION9_A>);
 impl REGION9_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION9_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION9_A {
         match self.bits {
@@ -822,31 +512,17 @@ impl REGION9_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION9_A::DISABLED
+        *self == REGION9_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION9_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION9_R {
-    type Target = crate::FieldReader<bool, REGION9_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION9_A::ENABLED
     }
 }
 #[doc = "Field `REGION9` writer - Enable protection for region 9. Write '0' has no effect."]
-pub struct REGION9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION9_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION9_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION9_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION9_A, O>;
+impl<'a, const O: u8> REGION9_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -857,23 +533,9 @@ impl<'a> REGION9_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION9_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
+#[doc = "Field `REGION10` reader - Enable protection for region 10. Write '0' has no effect."]
+pub type REGION10_R = crate::BitReader<REGION10_A>;
 #[doc = "Enable protection for region 10. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION10_A {
@@ -888,14 +550,8 @@ impl From<REGION10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION10` reader - Enable protection for region 10. Write '0' has no effect."]
-pub struct REGION10_R(crate::FieldReader<bool, REGION10_A>);
 impl REGION10_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION10_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION10_A {
         match self.bits {
@@ -906,31 +562,17 @@ impl REGION10_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION10_A::DISABLED
+        *self == REGION10_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION10_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION10_R {
-    type Target = crate::FieldReader<bool, REGION10_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION10_A::ENABLED
     }
 }
 #[doc = "Field `REGION10` writer - Enable protection for region 10. Write '0' has no effect."]
-pub struct REGION10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION10_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION10_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION10_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION10_A, O>;
+impl<'a, const O: u8> REGION10_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -941,23 +583,9 @@ impl<'a> REGION10_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION10_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
+#[doc = "Field `REGION11` reader - Enable protection for region 11. Write '0' has no effect."]
+pub type REGION11_R = crate::BitReader<REGION11_A>;
 #[doc = "Enable protection for region 11. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION11_A {
@@ -972,14 +600,8 @@ impl From<REGION11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION11` reader - Enable protection for region 11. Write '0' has no effect."]
-pub struct REGION11_R(crate::FieldReader<bool, REGION11_A>);
 impl REGION11_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION11_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION11_A {
         match self.bits {
@@ -990,31 +612,17 @@ impl REGION11_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION11_A::DISABLED
+        *self == REGION11_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION11_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION11_R {
-    type Target = crate::FieldReader<bool, REGION11_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION11_A::ENABLED
     }
 }
 #[doc = "Field `REGION11` writer - Enable protection for region 11. Write '0' has no effect."]
-pub struct REGION11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION11_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION11_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION11_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION11_A, O>;
+impl<'a, const O: u8> REGION11_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1025,23 +633,9 @@ impl<'a> REGION11_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION11_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
 }
+#[doc = "Field `REGION12` reader - Enable protection for region 12. Write '0' has no effect."]
+pub type REGION12_R = crate::BitReader<REGION12_A>;
 #[doc = "Enable protection for region 12. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION12_A {
@@ -1056,14 +650,8 @@ impl From<REGION12_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION12` reader - Enable protection for region 12. Write '0' has no effect."]
-pub struct REGION12_R(crate::FieldReader<bool, REGION12_A>);
 impl REGION12_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION12_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION12_A {
         match self.bits {
@@ -1074,31 +662,17 @@ impl REGION12_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION12_A::DISABLED
+        *self == REGION12_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION12_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION12_R {
-    type Target = crate::FieldReader<bool, REGION12_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION12_A::ENABLED
     }
 }
 #[doc = "Field `REGION12` writer - Enable protection for region 12. Write '0' has no effect."]
-pub struct REGION12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION12_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION12_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION12_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION12_A, O>;
+impl<'a, const O: u8> REGION12_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1109,23 +683,9 @@ impl<'a> REGION12_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION12_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
+#[doc = "Field `REGION13` reader - Enable protection for region 13. Write '0' has no effect."]
+pub type REGION13_R = crate::BitReader<REGION13_A>;
 #[doc = "Enable protection for region 13. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION13_A {
@@ -1140,14 +700,8 @@ impl From<REGION13_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION13` reader - Enable protection for region 13. Write '0' has no effect."]
-pub struct REGION13_R(crate::FieldReader<bool, REGION13_A>);
 impl REGION13_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION13_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION13_A {
         match self.bits {
@@ -1158,31 +712,17 @@ impl REGION13_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION13_A::DISABLED
+        *self == REGION13_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION13_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION13_R {
-    type Target = crate::FieldReader<bool, REGION13_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION13_A::ENABLED
     }
 }
 #[doc = "Field `REGION13` writer - Enable protection for region 13. Write '0' has no effect."]
-pub struct REGION13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION13_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION13_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION13_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION13_A, O>;
+impl<'a, const O: u8> REGION13_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1193,23 +733,9 @@ impl<'a> REGION13_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION13_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
 }
+#[doc = "Field `REGION14` reader - Enable protection for region 14. Write '0' has no effect."]
+pub type REGION14_R = crate::BitReader<REGION14_A>;
 #[doc = "Enable protection for region 14. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION14_A {
@@ -1224,14 +750,8 @@ impl From<REGION14_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION14` reader - Enable protection for region 14. Write '0' has no effect."]
-pub struct REGION14_R(crate::FieldReader<bool, REGION14_A>);
 impl REGION14_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION14_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION14_A {
         match self.bits {
@@ -1242,31 +762,17 @@ impl REGION14_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION14_A::DISABLED
+        *self == REGION14_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION14_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION14_R {
-    type Target = crate::FieldReader<bool, REGION14_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION14_A::ENABLED
     }
 }
 #[doc = "Field `REGION14` writer - Enable protection for region 14. Write '0' has no effect."]
-pub struct REGION14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION14_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION14_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION14_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION14_A, O>;
+impl<'a, const O: u8> REGION14_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1277,23 +783,9 @@ impl<'a> REGION14_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION14_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
 }
+#[doc = "Field `REGION15` reader - Enable protection for region 15. Write '0' has no effect."]
+pub type REGION15_R = crate::BitReader<REGION15_A>;
 #[doc = "Enable protection for region 15. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION15_A {
@@ -1308,14 +800,8 @@ impl From<REGION15_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION15` reader - Enable protection for region 15. Write '0' has no effect."]
-pub struct REGION15_R(crate::FieldReader<bool, REGION15_A>);
 impl REGION15_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION15_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION15_A {
         match self.bits {
@@ -1326,31 +812,17 @@ impl REGION15_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION15_A::DISABLED
+        *self == REGION15_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION15_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION15_R {
-    type Target = crate::FieldReader<bool, REGION15_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION15_A::ENABLED
     }
 }
 #[doc = "Field `REGION15` writer - Enable protection for region 15. Write '0' has no effect."]
-pub struct REGION15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION15_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION15_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION15_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION15_A, O>;
+impl<'a, const O: u8> REGION15_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1361,23 +833,9 @@ impl<'a> REGION15_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION15_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
 }
+#[doc = "Field `REGION16` reader - Enable protection for region 16. Write '0' has no effect."]
+pub type REGION16_R = crate::BitReader<REGION16_A>;
 #[doc = "Enable protection for region 16. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION16_A {
@@ -1392,14 +850,8 @@ impl From<REGION16_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION16` reader - Enable protection for region 16. Write '0' has no effect."]
-pub struct REGION16_R(crate::FieldReader<bool, REGION16_A>);
 impl REGION16_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION16_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION16_A {
         match self.bits {
@@ -1410,31 +862,17 @@ impl REGION16_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION16_A::DISABLED
+        *self == REGION16_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION16_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION16_R {
-    type Target = crate::FieldReader<bool, REGION16_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION16_A::ENABLED
     }
 }
 #[doc = "Field `REGION16` writer - Enable protection for region 16. Write '0' has no effect."]
-pub struct REGION16_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION16_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION16_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION16_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION16_A, O>;
+impl<'a, const O: u8> REGION16_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1445,23 +883,9 @@ impl<'a> REGION16_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION16_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
+#[doc = "Field `REGION17` reader - Enable protection for region 17. Write '0' has no effect."]
+pub type REGION17_R = crate::BitReader<REGION17_A>;
 #[doc = "Enable protection for region 17. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION17_A {
@@ -1476,14 +900,8 @@ impl From<REGION17_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION17` reader - Enable protection for region 17. Write '0' has no effect."]
-pub struct REGION17_R(crate::FieldReader<bool, REGION17_A>);
 impl REGION17_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION17_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION17_A {
         match self.bits {
@@ -1494,31 +912,17 @@ impl REGION17_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION17_A::DISABLED
+        *self == REGION17_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION17_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION17_R {
-    type Target = crate::FieldReader<bool, REGION17_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION17_A::ENABLED
     }
 }
 #[doc = "Field `REGION17` writer - Enable protection for region 17. Write '0' has no effect."]
-pub struct REGION17_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION17_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION17_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION17_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION17_A, O>;
+impl<'a, const O: u8> REGION17_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1529,23 +933,9 @@ impl<'a> REGION17_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION17_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
 }
+#[doc = "Field `REGION18` reader - Enable protection for region 18. Write '0' has no effect."]
+pub type REGION18_R = crate::BitReader<REGION18_A>;
 #[doc = "Enable protection for region 18. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION18_A {
@@ -1560,14 +950,8 @@ impl From<REGION18_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION18` reader - Enable protection for region 18. Write '0' has no effect."]
-pub struct REGION18_R(crate::FieldReader<bool, REGION18_A>);
 impl REGION18_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION18_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION18_A {
         match self.bits {
@@ -1578,31 +962,17 @@ impl REGION18_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION18_A::DISABLED
+        *self == REGION18_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION18_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION18_R {
-    type Target = crate::FieldReader<bool, REGION18_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION18_A::ENABLED
     }
 }
 #[doc = "Field `REGION18` writer - Enable protection for region 18. Write '0' has no effect."]
-pub struct REGION18_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION18_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION18_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION18_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION18_A, O>;
+impl<'a, const O: u8> REGION18_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1613,23 +983,9 @@ impl<'a> REGION18_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION18_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
 }
+#[doc = "Field `REGION19` reader - Enable protection for region 19. Write '0' has no effect."]
+pub type REGION19_R = crate::BitReader<REGION19_A>;
 #[doc = "Enable protection for region 19. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION19_A {
@@ -1644,14 +1000,8 @@ impl From<REGION19_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION19` reader - Enable protection for region 19. Write '0' has no effect."]
-pub struct REGION19_R(crate::FieldReader<bool, REGION19_A>);
 impl REGION19_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION19_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION19_A {
         match self.bits {
@@ -1662,31 +1012,17 @@ impl REGION19_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION19_A::DISABLED
+        *self == REGION19_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION19_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION19_R {
-    type Target = crate::FieldReader<bool, REGION19_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION19_A::ENABLED
     }
 }
 #[doc = "Field `REGION19` writer - Enable protection for region 19. Write '0' has no effect."]
-pub struct REGION19_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION19_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION19_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION19_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION19_A, O>;
+impl<'a, const O: u8> REGION19_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1697,23 +1033,9 @@ impl<'a> REGION19_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION19_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
 }
+#[doc = "Field `REGION20` reader - Enable protection for region 20. Write '0' has no effect."]
+pub type REGION20_R = crate::BitReader<REGION20_A>;
 #[doc = "Enable protection for region 20. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION20_A {
@@ -1728,14 +1050,8 @@ impl From<REGION20_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION20` reader - Enable protection for region 20. Write '0' has no effect."]
-pub struct REGION20_R(crate::FieldReader<bool, REGION20_A>);
 impl REGION20_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION20_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION20_A {
         match self.bits {
@@ -1746,31 +1062,17 @@ impl REGION20_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION20_A::DISABLED
+        *self == REGION20_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION20_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION20_R {
-    type Target = crate::FieldReader<bool, REGION20_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION20_A::ENABLED
     }
 }
 #[doc = "Field `REGION20` writer - Enable protection for region 20. Write '0' has no effect."]
-pub struct REGION20_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION20_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION20_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION20_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION20_A, O>;
+impl<'a, const O: u8> REGION20_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1781,23 +1083,9 @@ impl<'a> REGION20_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION20_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
 }
+#[doc = "Field `REGION21` reader - Enable protection for region 21. Write '0' has no effect."]
+pub type REGION21_R = crate::BitReader<REGION21_A>;
 #[doc = "Enable protection for region 21. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION21_A {
@@ -1812,14 +1100,8 @@ impl From<REGION21_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION21` reader - Enable protection for region 21. Write '0' has no effect."]
-pub struct REGION21_R(crate::FieldReader<bool, REGION21_A>);
 impl REGION21_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION21_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION21_A {
         match self.bits {
@@ -1830,31 +1112,17 @@ impl REGION21_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION21_A::DISABLED
+        *self == REGION21_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION21_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION21_R {
-    type Target = crate::FieldReader<bool, REGION21_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION21_A::ENABLED
     }
 }
 #[doc = "Field `REGION21` writer - Enable protection for region 21. Write '0' has no effect."]
-pub struct REGION21_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION21_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION21_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION21_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION21_A, O>;
+impl<'a, const O: u8> REGION21_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1865,23 +1133,9 @@ impl<'a> REGION21_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION21_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
-        self.w
-    }
 }
+#[doc = "Field `REGION22` reader - Enable protection for region 22. Write '0' has no effect."]
+pub type REGION22_R = crate::BitReader<REGION22_A>;
 #[doc = "Enable protection for region 22. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION22_A {
@@ -1896,14 +1150,8 @@ impl From<REGION22_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION22` reader - Enable protection for region 22. Write '0' has no effect."]
-pub struct REGION22_R(crate::FieldReader<bool, REGION22_A>);
 impl REGION22_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION22_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION22_A {
         match self.bits {
@@ -1914,31 +1162,17 @@ impl REGION22_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION22_A::DISABLED
+        *self == REGION22_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION22_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION22_R {
-    type Target = crate::FieldReader<bool, REGION22_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION22_A::ENABLED
     }
 }
 #[doc = "Field `REGION22` writer - Enable protection for region 22. Write '0' has no effect."]
-pub struct REGION22_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION22_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION22_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION22_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION22_A, O>;
+impl<'a, const O: u8> REGION22_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1949,23 +1183,9 @@ impl<'a> REGION22_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION22_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
 }
+#[doc = "Field `REGION23` reader - Enable protection for region 23. Write '0' has no effect."]
+pub type REGION23_R = crate::BitReader<REGION23_A>;
 #[doc = "Enable protection for region 23. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION23_A {
@@ -1980,14 +1200,8 @@ impl From<REGION23_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION23` reader - Enable protection for region 23. Write '0' has no effect."]
-pub struct REGION23_R(crate::FieldReader<bool, REGION23_A>);
 impl REGION23_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION23_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION23_A {
         match self.bits {
@@ -1998,31 +1212,17 @@ impl REGION23_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION23_A::DISABLED
+        *self == REGION23_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION23_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION23_R {
-    type Target = crate::FieldReader<bool, REGION23_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION23_A::ENABLED
     }
 }
 #[doc = "Field `REGION23` writer - Enable protection for region 23. Write '0' has no effect."]
-pub struct REGION23_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION23_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION23_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION23_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION23_A, O>;
+impl<'a, const O: u8> REGION23_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -2033,23 +1233,9 @@ impl<'a> REGION23_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION23_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
 }
+#[doc = "Field `REGION24` reader - Enable protection for region 24. Write '0' has no effect."]
+pub type REGION24_R = crate::BitReader<REGION24_A>;
 #[doc = "Enable protection for region 24. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION24_A {
@@ -2064,14 +1250,8 @@ impl From<REGION24_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION24` reader - Enable protection for region 24. Write '0' has no effect."]
-pub struct REGION24_R(crate::FieldReader<bool, REGION24_A>);
 impl REGION24_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION24_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION24_A {
         match self.bits {
@@ -2082,31 +1262,17 @@ impl REGION24_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION24_A::DISABLED
+        *self == REGION24_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION24_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION24_R {
-    type Target = crate::FieldReader<bool, REGION24_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION24_A::ENABLED
     }
 }
 #[doc = "Field `REGION24` writer - Enable protection for region 24. Write '0' has no effect."]
-pub struct REGION24_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION24_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION24_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION24_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION24_A, O>;
+impl<'a, const O: u8> REGION24_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -2117,23 +1283,9 @@ impl<'a> REGION24_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION24_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
 }
+#[doc = "Field `REGION25` reader - Enable protection for region 25. Write '0' has no effect."]
+pub type REGION25_R = crate::BitReader<REGION25_A>;
 #[doc = "Enable protection for region 25. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION25_A {
@@ -2148,14 +1300,8 @@ impl From<REGION25_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION25` reader - Enable protection for region 25. Write '0' has no effect."]
-pub struct REGION25_R(crate::FieldReader<bool, REGION25_A>);
 impl REGION25_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION25_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION25_A {
         match self.bits {
@@ -2166,31 +1312,17 @@ impl REGION25_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION25_A::DISABLED
+        *self == REGION25_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION25_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION25_R {
-    type Target = crate::FieldReader<bool, REGION25_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION25_A::ENABLED
     }
 }
 #[doc = "Field `REGION25` writer - Enable protection for region 25. Write '0' has no effect."]
-pub struct REGION25_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION25_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION25_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION25_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION25_A, O>;
+impl<'a, const O: u8> REGION25_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -2201,23 +1333,9 @@ impl<'a> REGION25_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION25_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
 }
+#[doc = "Field `REGION26` reader - Enable protection for region 26. Write '0' has no effect."]
+pub type REGION26_R = crate::BitReader<REGION26_A>;
 #[doc = "Enable protection for region 26. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION26_A {
@@ -2232,14 +1350,8 @@ impl From<REGION26_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION26` reader - Enable protection for region 26. Write '0' has no effect."]
-pub struct REGION26_R(crate::FieldReader<bool, REGION26_A>);
 impl REGION26_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION26_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION26_A {
         match self.bits {
@@ -2250,31 +1362,17 @@ impl REGION26_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION26_A::DISABLED
+        *self == REGION26_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION26_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION26_R {
-    type Target = crate::FieldReader<bool, REGION26_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION26_A::ENABLED
     }
 }
 #[doc = "Field `REGION26` writer - Enable protection for region 26. Write '0' has no effect."]
-pub struct REGION26_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION26_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION26_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION26_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION26_A, O>;
+impl<'a, const O: u8> REGION26_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -2285,23 +1383,9 @@ impl<'a> REGION26_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION26_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
 }
+#[doc = "Field `REGION27` reader - Enable protection for region 27. Write '0' has no effect."]
+pub type REGION27_R = crate::BitReader<REGION27_A>;
 #[doc = "Enable protection for region 27. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION27_A {
@@ -2316,14 +1400,8 @@ impl From<REGION27_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION27` reader - Enable protection for region 27. Write '0' has no effect."]
-pub struct REGION27_R(crate::FieldReader<bool, REGION27_A>);
 impl REGION27_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION27_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION27_A {
         match self.bits {
@@ -2334,31 +1412,17 @@ impl REGION27_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION27_A::DISABLED
+        *self == REGION27_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION27_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION27_R {
-    type Target = crate::FieldReader<bool, REGION27_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION27_A::ENABLED
     }
 }
 #[doc = "Field `REGION27` writer - Enable protection for region 27. Write '0' has no effect."]
-pub struct REGION27_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION27_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION27_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION27_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION27_A, O>;
+impl<'a, const O: u8> REGION27_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -2369,23 +1433,9 @@ impl<'a> REGION27_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION27_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
-        self.w
-    }
 }
+#[doc = "Field `REGION28` reader - Enable protection for region 28. Write '0' has no effect."]
+pub type REGION28_R = crate::BitReader<REGION28_A>;
 #[doc = "Enable protection for region 28. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION28_A {
@@ -2400,14 +1450,8 @@ impl From<REGION28_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION28` reader - Enable protection for region 28. Write '0' has no effect."]
-pub struct REGION28_R(crate::FieldReader<bool, REGION28_A>);
 impl REGION28_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION28_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION28_A {
         match self.bits {
@@ -2418,31 +1462,17 @@ impl REGION28_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION28_A::DISABLED
+        *self == REGION28_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION28_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION28_R {
-    type Target = crate::FieldReader<bool, REGION28_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION28_A::ENABLED
     }
 }
 #[doc = "Field `REGION28` writer - Enable protection for region 28. Write '0' has no effect."]
-pub struct REGION28_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION28_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION28_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION28_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION28_A, O>;
+impl<'a, const O: u8> REGION28_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -2453,23 +1483,9 @@ impl<'a> REGION28_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION28_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
 }
+#[doc = "Field `REGION29` reader - Enable protection for region 29. Write '0' has no effect."]
+pub type REGION29_R = crate::BitReader<REGION29_A>;
 #[doc = "Enable protection for region 29. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION29_A {
@@ -2484,14 +1500,8 @@ impl From<REGION29_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION29` reader - Enable protection for region 29. Write '0' has no effect."]
-pub struct REGION29_R(crate::FieldReader<bool, REGION29_A>);
 impl REGION29_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION29_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION29_A {
         match self.bits {
@@ -2502,31 +1512,17 @@ impl REGION29_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION29_A::DISABLED
+        *self == REGION29_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION29_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION29_R {
-    type Target = crate::FieldReader<bool, REGION29_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION29_A::ENABLED
     }
 }
 #[doc = "Field `REGION29` writer - Enable protection for region 29. Write '0' has no effect."]
-pub struct REGION29_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION29_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION29_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION29_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION29_A, O>;
+impl<'a, const O: u8> REGION29_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -2537,23 +1533,9 @@ impl<'a> REGION29_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION29_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
 }
+#[doc = "Field `REGION30` reader - Enable protection for region 30. Write '0' has no effect."]
+pub type REGION30_R = crate::BitReader<REGION30_A>;
 #[doc = "Enable protection for region 30. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION30_A {
@@ -2568,14 +1550,8 @@ impl From<REGION30_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION30` reader - Enable protection for region 30. Write '0' has no effect."]
-pub struct REGION30_R(crate::FieldReader<bool, REGION30_A>);
 impl REGION30_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION30_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION30_A {
         match self.bits {
@@ -2586,31 +1562,17 @@ impl REGION30_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION30_A::DISABLED
+        *self == REGION30_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION30_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION30_R {
-    type Target = crate::FieldReader<bool, REGION30_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION30_A::ENABLED
     }
 }
 #[doc = "Field `REGION30` writer - Enable protection for region 30. Write '0' has no effect."]
-pub struct REGION30_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION30_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION30_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION30_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION30_A, O>;
+impl<'a, const O: u8> REGION30_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -2621,23 +1583,9 @@ impl<'a> REGION30_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION30_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
 }
+#[doc = "Field `REGION31` reader - Enable protection for region 31. Write '0' has no effect."]
+pub type REGION31_R = crate::BitReader<REGION31_A>;
 #[doc = "Enable protection for region 31. Write '0' has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION31_A {
@@ -2652,14 +1600,8 @@ impl From<REGION31_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGION31` reader - Enable protection for region 31. Write '0' has no effect."]
-pub struct REGION31_R(crate::FieldReader<bool, REGION31_A>);
 impl REGION31_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        REGION31_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REGION31_A {
         match self.bits {
@@ -2670,31 +1612,17 @@ impl REGION31_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == REGION31_A::DISABLED
+        *self == REGION31_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == REGION31_A::ENABLED
-    }
-}
-impl core::ops::Deref for REGION31_R {
-    type Target = crate::FieldReader<bool, REGION31_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REGION31_A::ENABLED
     }
 }
 #[doc = "Field `REGION31` writer - Enable protection for region 31. Write '0' has no effect."]
-pub struct REGION31_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION31_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REGION31_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type REGION31_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG0_SPEC, REGION31_A, O>;
+impl<'a, const O: u8> REGION31_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -2705,345 +1633,329 @@ impl<'a> REGION31_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(REGION31_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable protection for region 0. Write '0' has no effect."]
     #[inline(always)]
     pub fn region0(&self) -> REGION0_R {
-        REGION0_R::new((self.bits & 0x01) != 0)
+        REGION0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable protection for region 1. Write '0' has no effect."]
     #[inline(always)]
     pub fn region1(&self) -> REGION1_R {
-        REGION1_R::new(((self.bits >> 1) & 0x01) != 0)
+        REGION1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable protection for region 2. Write '0' has no effect."]
     #[inline(always)]
     pub fn region2(&self) -> REGION2_R {
-        REGION2_R::new(((self.bits >> 2) & 0x01) != 0)
+        REGION2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable protection for region 3. Write '0' has no effect."]
     #[inline(always)]
     pub fn region3(&self) -> REGION3_R {
-        REGION3_R::new(((self.bits >> 3) & 0x01) != 0)
+        REGION3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable protection for region 4. Write '0' has no effect."]
     #[inline(always)]
     pub fn region4(&self) -> REGION4_R {
-        REGION4_R::new(((self.bits >> 4) & 0x01) != 0)
+        REGION4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable protection for region 5. Write '0' has no effect."]
     #[inline(always)]
     pub fn region5(&self) -> REGION5_R {
-        REGION5_R::new(((self.bits >> 5) & 0x01) != 0)
+        REGION5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable protection for region 6. Write '0' has no effect."]
     #[inline(always)]
     pub fn region6(&self) -> REGION6_R {
-        REGION6_R::new(((self.bits >> 6) & 0x01) != 0)
+        REGION6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable protection for region 7. Write '0' has no effect."]
     #[inline(always)]
     pub fn region7(&self) -> REGION7_R {
-        REGION7_R::new(((self.bits >> 7) & 0x01) != 0)
+        REGION7_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Enable protection for region 8. Write '0' has no effect."]
     #[inline(always)]
     pub fn region8(&self) -> REGION8_R {
-        REGION8_R::new(((self.bits >> 8) & 0x01) != 0)
+        REGION8_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Enable protection for region 9. Write '0' has no effect."]
     #[inline(always)]
     pub fn region9(&self) -> REGION9_R {
-        REGION9_R::new(((self.bits >> 9) & 0x01) != 0)
+        REGION9_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Enable protection for region 10. Write '0' has no effect."]
     #[inline(always)]
     pub fn region10(&self) -> REGION10_R {
-        REGION10_R::new(((self.bits >> 10) & 0x01) != 0)
+        REGION10_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Enable protection for region 11. Write '0' has no effect."]
     #[inline(always)]
     pub fn region11(&self) -> REGION11_R {
-        REGION11_R::new(((self.bits >> 11) & 0x01) != 0)
+        REGION11_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Enable protection for region 12. Write '0' has no effect."]
     #[inline(always)]
     pub fn region12(&self) -> REGION12_R {
-        REGION12_R::new(((self.bits >> 12) & 0x01) != 0)
+        REGION12_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Enable protection for region 13. Write '0' has no effect."]
     #[inline(always)]
     pub fn region13(&self) -> REGION13_R {
-        REGION13_R::new(((self.bits >> 13) & 0x01) != 0)
+        REGION13_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Enable protection for region 14. Write '0' has no effect."]
     #[inline(always)]
     pub fn region14(&self) -> REGION14_R {
-        REGION14_R::new(((self.bits >> 14) & 0x01) != 0)
+        REGION14_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Enable protection for region 15. Write '0' has no effect."]
     #[inline(always)]
     pub fn region15(&self) -> REGION15_R {
-        REGION15_R::new(((self.bits >> 15) & 0x01) != 0)
+        REGION15_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Enable protection for region 16. Write '0' has no effect."]
     #[inline(always)]
     pub fn region16(&self) -> REGION16_R {
-        REGION16_R::new(((self.bits >> 16) & 0x01) != 0)
+        REGION16_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Enable protection for region 17. Write '0' has no effect."]
     #[inline(always)]
     pub fn region17(&self) -> REGION17_R {
-        REGION17_R::new(((self.bits >> 17) & 0x01) != 0)
+        REGION17_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Enable protection for region 18. Write '0' has no effect."]
     #[inline(always)]
     pub fn region18(&self) -> REGION18_R {
-        REGION18_R::new(((self.bits >> 18) & 0x01) != 0)
+        REGION18_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Enable protection for region 19. Write '0' has no effect."]
     #[inline(always)]
     pub fn region19(&self) -> REGION19_R {
-        REGION19_R::new(((self.bits >> 19) & 0x01) != 0)
+        REGION19_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Enable protection for region 20. Write '0' has no effect."]
     #[inline(always)]
     pub fn region20(&self) -> REGION20_R {
-        REGION20_R::new(((self.bits >> 20) & 0x01) != 0)
+        REGION20_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Enable protection for region 21. Write '0' has no effect."]
     #[inline(always)]
     pub fn region21(&self) -> REGION21_R {
-        REGION21_R::new(((self.bits >> 21) & 0x01) != 0)
+        REGION21_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Enable protection for region 22. Write '0' has no effect."]
     #[inline(always)]
     pub fn region22(&self) -> REGION22_R {
-        REGION22_R::new(((self.bits >> 22) & 0x01) != 0)
+        REGION22_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - Enable protection for region 23. Write '0' has no effect."]
     #[inline(always)]
     pub fn region23(&self) -> REGION23_R {
-        REGION23_R::new(((self.bits >> 23) & 0x01) != 0)
+        REGION23_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - Enable protection for region 24. Write '0' has no effect."]
     #[inline(always)]
     pub fn region24(&self) -> REGION24_R {
-        REGION24_R::new(((self.bits >> 24) & 0x01) != 0)
+        REGION24_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Enable protection for region 25. Write '0' has no effect."]
     #[inline(always)]
     pub fn region25(&self) -> REGION25_R {
-        REGION25_R::new(((self.bits >> 25) & 0x01) != 0)
+        REGION25_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Enable protection for region 26. Write '0' has no effect."]
     #[inline(always)]
     pub fn region26(&self) -> REGION26_R {
-        REGION26_R::new(((self.bits >> 26) & 0x01) != 0)
+        REGION26_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - Enable protection for region 27. Write '0' has no effect."]
     #[inline(always)]
     pub fn region27(&self) -> REGION27_R {
-        REGION27_R::new(((self.bits >> 27) & 0x01) != 0)
+        REGION27_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 28 - Enable protection for region 28. Write '0' has no effect."]
     #[inline(always)]
     pub fn region28(&self) -> REGION28_R {
-        REGION28_R::new(((self.bits >> 28) & 0x01) != 0)
+        REGION28_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - Enable protection for region 29. Write '0' has no effect."]
     #[inline(always)]
     pub fn region29(&self) -> REGION29_R {
-        REGION29_R::new(((self.bits >> 29) & 0x01) != 0)
+        REGION29_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - Enable protection for region 30. Write '0' has no effect."]
     #[inline(always)]
     pub fn region30(&self) -> REGION30_R {
-        REGION30_R::new(((self.bits >> 30) & 0x01) != 0)
+        REGION30_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Enable protection for region 31. Write '0' has no effect."]
     #[inline(always)]
     pub fn region31(&self) -> REGION31_R {
-        REGION31_R::new(((self.bits >> 31) & 0x01) != 0)
+        REGION31_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable protection for region 0. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region0(&mut self) -> REGION0_W {
-        REGION0_W { w: self }
+    pub fn region0(&mut self) -> REGION0_W<0> {
+        REGION0_W::new(self)
     }
     #[doc = "Bit 1 - Enable protection for region 1. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region1(&mut self) -> REGION1_W {
-        REGION1_W { w: self }
+    pub fn region1(&mut self) -> REGION1_W<1> {
+        REGION1_W::new(self)
     }
     #[doc = "Bit 2 - Enable protection for region 2. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region2(&mut self) -> REGION2_W {
-        REGION2_W { w: self }
+    pub fn region2(&mut self) -> REGION2_W<2> {
+        REGION2_W::new(self)
     }
     #[doc = "Bit 3 - Enable protection for region 3. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region3(&mut self) -> REGION3_W {
-        REGION3_W { w: self }
+    pub fn region3(&mut self) -> REGION3_W<3> {
+        REGION3_W::new(self)
     }
     #[doc = "Bit 4 - Enable protection for region 4. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region4(&mut self) -> REGION4_W {
-        REGION4_W { w: self }
+    pub fn region4(&mut self) -> REGION4_W<4> {
+        REGION4_W::new(self)
     }
     #[doc = "Bit 5 - Enable protection for region 5. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region5(&mut self) -> REGION5_W {
-        REGION5_W { w: self }
+    pub fn region5(&mut self) -> REGION5_W<5> {
+        REGION5_W::new(self)
     }
     #[doc = "Bit 6 - Enable protection for region 6. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region6(&mut self) -> REGION6_W {
-        REGION6_W { w: self }
+    pub fn region6(&mut self) -> REGION6_W<6> {
+        REGION6_W::new(self)
     }
     #[doc = "Bit 7 - Enable protection for region 7. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region7(&mut self) -> REGION7_W {
-        REGION7_W { w: self }
+    pub fn region7(&mut self) -> REGION7_W<7> {
+        REGION7_W::new(self)
     }
     #[doc = "Bit 8 - Enable protection for region 8. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region8(&mut self) -> REGION8_W {
-        REGION8_W { w: self }
+    pub fn region8(&mut self) -> REGION8_W<8> {
+        REGION8_W::new(self)
     }
     #[doc = "Bit 9 - Enable protection for region 9. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region9(&mut self) -> REGION9_W {
-        REGION9_W { w: self }
+    pub fn region9(&mut self) -> REGION9_W<9> {
+        REGION9_W::new(self)
     }
     #[doc = "Bit 10 - Enable protection for region 10. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region10(&mut self) -> REGION10_W {
-        REGION10_W { w: self }
+    pub fn region10(&mut self) -> REGION10_W<10> {
+        REGION10_W::new(self)
     }
     #[doc = "Bit 11 - Enable protection for region 11. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region11(&mut self) -> REGION11_W {
-        REGION11_W { w: self }
+    pub fn region11(&mut self) -> REGION11_W<11> {
+        REGION11_W::new(self)
     }
     #[doc = "Bit 12 - Enable protection for region 12. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region12(&mut self) -> REGION12_W {
-        REGION12_W { w: self }
+    pub fn region12(&mut self) -> REGION12_W<12> {
+        REGION12_W::new(self)
     }
     #[doc = "Bit 13 - Enable protection for region 13. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region13(&mut self) -> REGION13_W {
-        REGION13_W { w: self }
+    pub fn region13(&mut self) -> REGION13_W<13> {
+        REGION13_W::new(self)
     }
     #[doc = "Bit 14 - Enable protection for region 14. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region14(&mut self) -> REGION14_W {
-        REGION14_W { w: self }
+    pub fn region14(&mut self) -> REGION14_W<14> {
+        REGION14_W::new(self)
     }
     #[doc = "Bit 15 - Enable protection for region 15. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region15(&mut self) -> REGION15_W {
-        REGION15_W { w: self }
+    pub fn region15(&mut self) -> REGION15_W<15> {
+        REGION15_W::new(self)
     }
     #[doc = "Bit 16 - Enable protection for region 16. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region16(&mut self) -> REGION16_W {
-        REGION16_W { w: self }
+    pub fn region16(&mut self) -> REGION16_W<16> {
+        REGION16_W::new(self)
     }
     #[doc = "Bit 17 - Enable protection for region 17. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region17(&mut self) -> REGION17_W {
-        REGION17_W { w: self }
+    pub fn region17(&mut self) -> REGION17_W<17> {
+        REGION17_W::new(self)
     }
     #[doc = "Bit 18 - Enable protection for region 18. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region18(&mut self) -> REGION18_W {
-        REGION18_W { w: self }
+    pub fn region18(&mut self) -> REGION18_W<18> {
+        REGION18_W::new(self)
     }
     #[doc = "Bit 19 - Enable protection for region 19. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region19(&mut self) -> REGION19_W {
-        REGION19_W { w: self }
+    pub fn region19(&mut self) -> REGION19_W<19> {
+        REGION19_W::new(self)
     }
     #[doc = "Bit 20 - Enable protection for region 20. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region20(&mut self) -> REGION20_W {
-        REGION20_W { w: self }
+    pub fn region20(&mut self) -> REGION20_W<20> {
+        REGION20_W::new(self)
     }
     #[doc = "Bit 21 - Enable protection for region 21. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region21(&mut self) -> REGION21_W {
-        REGION21_W { w: self }
+    pub fn region21(&mut self) -> REGION21_W<21> {
+        REGION21_W::new(self)
     }
     #[doc = "Bit 22 - Enable protection for region 22. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region22(&mut self) -> REGION22_W {
-        REGION22_W { w: self }
+    pub fn region22(&mut self) -> REGION22_W<22> {
+        REGION22_W::new(self)
     }
     #[doc = "Bit 23 - Enable protection for region 23. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region23(&mut self) -> REGION23_W {
-        REGION23_W { w: self }
+    pub fn region23(&mut self) -> REGION23_W<23> {
+        REGION23_W::new(self)
     }
     #[doc = "Bit 24 - Enable protection for region 24. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region24(&mut self) -> REGION24_W {
-        REGION24_W { w: self }
+    pub fn region24(&mut self) -> REGION24_W<24> {
+        REGION24_W::new(self)
     }
     #[doc = "Bit 25 - Enable protection for region 25. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region25(&mut self) -> REGION25_W {
-        REGION25_W { w: self }
+    pub fn region25(&mut self) -> REGION25_W<25> {
+        REGION25_W::new(self)
     }
     #[doc = "Bit 26 - Enable protection for region 26. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region26(&mut self) -> REGION26_W {
-        REGION26_W { w: self }
+    pub fn region26(&mut self) -> REGION26_W<26> {
+        REGION26_W::new(self)
     }
     #[doc = "Bit 27 - Enable protection for region 27. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region27(&mut self) -> REGION27_W {
-        REGION27_W { w: self }
+    pub fn region27(&mut self) -> REGION27_W<27> {
+        REGION27_W::new(self)
     }
     #[doc = "Bit 28 - Enable protection for region 28. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region28(&mut self) -> REGION28_W {
-        REGION28_W { w: self }
+    pub fn region28(&mut self) -> REGION28_W<28> {
+        REGION28_W::new(self)
     }
     #[doc = "Bit 29 - Enable protection for region 29. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region29(&mut self) -> REGION29_W {
-        REGION29_W { w: self }
+    pub fn region29(&mut self) -> REGION29_W<29> {
+        REGION29_W::new(self)
     }
     #[doc = "Bit 30 - Enable protection for region 30. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region30(&mut self) -> REGION30_W {
-        REGION30_W { w: self }
+    pub fn region30(&mut self) -> REGION30_W<30> {
+        REGION30_W::new(self)
     }
     #[doc = "Bit 31 - Enable protection for region 31. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region31(&mut self) -> REGION31_W {
-        REGION31_W { w: self }
+    pub fn region31(&mut self) -> REGION31_W<31> {
+        REGION31_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

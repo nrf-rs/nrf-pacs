@@ -35,86 +35,20 @@ impl From<crate::W<NFCID1_2ND_LAST_SPEC>> for W {
     }
 }
 #[doc = "Field `NFCID1_V` reader - NFCID1 byte V"]
-pub struct NFCID1_V_R(crate::FieldReader<u8, u8>);
-impl NFCID1_V_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        NFCID1_V_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NFCID1_V_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NFCID1_V_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NFCID1_V` writer - NFCID1 byte V"]
-pub struct NFCID1_V_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NFCID1_V_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type NFCID1_V_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, NFCID1_2ND_LAST_SPEC, u8, u8, 8, O>;
 #[doc = "Field `NFCID1_U` reader - NFCID1 byte U"]
-pub struct NFCID1_U_R(crate::FieldReader<u8, u8>);
-impl NFCID1_U_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        NFCID1_U_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NFCID1_U_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NFCID1_U_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NFCID1_U` writer - NFCID1 byte U"]
-pub struct NFCID1_U_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NFCID1_U_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type NFCID1_U_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, NFCID1_2ND_LAST_SPEC, u8, u8, 8, O>;
 #[doc = "Field `NFCID1_T` reader - NFCID1 byte T"]
-pub struct NFCID1_T_R(crate::FieldReader<u8, u8>);
-impl NFCID1_T_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        NFCID1_T_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NFCID1_T_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NFCID1_T_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NFCID1_T` writer - NFCID1 byte T"]
-pub struct NFCID1_T_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NFCID1_T_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type NFCID1_T_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, NFCID1_2ND_LAST_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - NFCID1 byte V"]
     #[inline(always)]
@@ -135,18 +69,18 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - NFCID1 byte V"]
     #[inline(always)]
-    pub fn nfcid1_v(&mut self) -> NFCID1_V_W {
-        NFCID1_V_W { w: self }
+    pub fn nfcid1_v(&mut self) -> NFCID1_V_W<0> {
+        NFCID1_V_W::new(self)
     }
     #[doc = "Bits 8:15 - NFCID1 byte U"]
     #[inline(always)]
-    pub fn nfcid1_u(&mut self) -> NFCID1_U_W {
-        NFCID1_U_W { w: self }
+    pub fn nfcid1_u(&mut self) -> NFCID1_U_W<8> {
+        NFCID1_U_W::new(self)
     }
     #[doc = "Bits 16:23 - NFCID1 byte T"]
     #[inline(always)]
-    pub fn nfcid1_t(&mut self) -> NFCID1_T_W {
-        NFCID1_T_W { w: self }
+    pub fn nfcid1_t(&mut self) -> NFCID1_T_W<16> {
+        NFCID1_T_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

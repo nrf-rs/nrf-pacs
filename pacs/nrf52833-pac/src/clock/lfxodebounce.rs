@@ -34,6 +34,8 @@ impl From<crate::W<LFXODEBOUNCE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LFXODEBOUNCE` reader - LFXO debounce time."]
+pub type LFXODEBOUNCE_R = crate::BitReader<LFXODEBOUNCE_A>;
 #[doc = "LFXO debounce time.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LFXODEBOUNCE_A {
@@ -48,14 +50,8 @@ impl From<LFXODEBOUNCE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LFXODEBOUNCE` reader - LFXO debounce time."]
-pub struct LFXODEBOUNCE_R(crate::FieldReader<bool, LFXODEBOUNCE_A>);
 impl LFXODEBOUNCE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LFXODEBOUNCE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFXODEBOUNCE_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl LFXODEBOUNCE_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == LFXODEBOUNCE_A::NORMAL
+        *self == LFXODEBOUNCE_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `EXTENDED`"]
     #[inline(always)]
     pub fn is_extended(&self) -> bool {
-        **self == LFXODEBOUNCE_A::EXTENDED
-    }
-}
-impl core::ops::Deref for LFXODEBOUNCE_R {
-    type Target = crate::FieldReader<bool, LFXODEBOUNCE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LFXODEBOUNCE_A::EXTENDED
     }
 }
 #[doc = "Field `LFXODEBOUNCE` writer - LFXO debounce time."]
-pub struct LFXODEBOUNCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LFXODEBOUNCE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LFXODEBOUNCE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LFXODEBOUNCE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LFXODEBOUNCE_SPEC, LFXODEBOUNCE_A, O>;
+impl<'a, const O: u8> LFXODEBOUNCE_W<'a, O> {
     #[doc = "8192 32.768 kHz periods, or 0.25 s. Recommended for normal Operating Temperature conditions."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -101,35 +84,19 @@ impl<'a> LFXODEBOUNCE_W<'a> {
     pub fn extended(self) -> &'a mut W {
         self.variant(LFXODEBOUNCE_A::EXTENDED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - LFXO debounce time."]
     #[inline(always)]
     pub fn lfxodebounce(&self) -> LFXODEBOUNCE_R {
-        LFXODEBOUNCE_R::new((self.bits & 0x01) != 0)
+        LFXODEBOUNCE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - LFXO debounce time."]
     #[inline(always)]
-    pub fn lfxodebounce(&mut self) -> LFXODEBOUNCE_W {
-        LFXODEBOUNCE_W { w: self }
+    pub fn lfxodebounce(&mut self) -> LFXODEBOUNCE_W<0> {
+        LFXODEBOUNCE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

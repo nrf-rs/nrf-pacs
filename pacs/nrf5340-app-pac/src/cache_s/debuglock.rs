@@ -34,6 +34,8 @@ impl From<crate::W<DEBUGLOCK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DEBUGLOCK` reader - Lock debug mode"]
+pub type DEBUGLOCK_R = crate::BitReader<DEBUGLOCK_A>;
 #[doc = "Lock debug mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEBUGLOCK_A {
@@ -48,14 +50,8 @@ impl From<DEBUGLOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DEBUGLOCK` reader - Lock debug mode"]
-pub struct DEBUGLOCK_R(crate::FieldReader<bool, DEBUGLOCK_A>);
 impl DEBUGLOCK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DEBUGLOCK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DEBUGLOCK_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl DEBUGLOCK_R {
     #[doc = "Checks if the value of the field is `UNLOCKED`"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        **self == DEBUGLOCK_A::UNLOCKED
+        *self == DEBUGLOCK_A::UNLOCKED
     }
     #[doc = "Checks if the value of the field is `LOCKED`"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        **self == DEBUGLOCK_A::LOCKED
-    }
-}
-impl core::ops::Deref for DEBUGLOCK_R {
-    type Target = crate::FieldReader<bool, DEBUGLOCK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DEBUGLOCK_A::LOCKED
     }
 }
 #[doc = "Field `DEBUGLOCK` writer - Lock debug mode"]
-pub struct DEBUGLOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUGLOCK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DEBUGLOCK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DEBUGLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEBUGLOCK_SPEC, DEBUGLOCK_A, O>;
+impl<'a, const O: u8> DEBUGLOCK_W<'a, O> {
     #[doc = "Debug mode unlocked"]
     #[inline(always)]
     pub fn unlocked(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> DEBUGLOCK_W<'a> {
     pub fn locked(self) -> &'a mut W {
         self.variant(DEBUGLOCK_A::LOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Lock debug mode"]
     #[inline(always)]
     pub fn debuglock(&self) -> DEBUGLOCK_R {
-        DEBUGLOCK_R::new((self.bits & 0x01) != 0)
+        DEBUGLOCK_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Lock debug mode"]
     #[inline(always)]
-    pub fn debuglock(&mut self) -> DEBUGLOCK_W {
-        DEBUGLOCK_W { w: self }
+    pub fn debuglock(&mut self) -> DEBUGLOCK_W<0> {
+        DEBUGLOCK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

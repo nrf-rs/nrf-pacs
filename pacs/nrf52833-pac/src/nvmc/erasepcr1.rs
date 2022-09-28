@@ -20,22 +20,13 @@ impl From<crate::W<ERASEPCR1_SPEC>> for W {
     }
 }
 #[doc = "Field `ERASEPCR1` writer - Register for erasing a page in code area, equivalent to ERASEPAGE"]
-pub struct ERASEPCR1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASEPCR1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type ERASEPCR1_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ERASEPCR1_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Register for erasing a page in code area, equivalent to ERASEPAGE"]
     #[inline(always)]
-    pub fn erasepcr1(&mut self) -> ERASEPCR1_W {
-        ERASEPCR1_W { w: self }
+    pub fn erasepcr1(&mut self) -> ERASEPCR1_W<0> {
+        ERASEPCR1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,32 +35,10 @@ impl From<crate::W<XIPOFFSET_SPEC>> for W {
     }
 }
 #[doc = "Field `XIPOFFSET` reader - Address offset into the external memory for Execute in Place operation. Value must be a multiple of 4."]
-pub struct XIPOFFSET_R(crate::FieldReader<u32, u32>);
-impl XIPOFFSET_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        XIPOFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for XIPOFFSET_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type XIPOFFSET_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `XIPOFFSET` writer - Address offset into the external memory for Execute in Place operation. Value must be a multiple of 4."]
-pub struct XIPOFFSET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XIPOFFSET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type XIPOFFSET_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, XIPOFFSET_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Address offset into the external memory for Execute in Place operation. Value must be a multiple of 4."]
     #[inline(always)]
@@ -71,8 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Address offset into the external memory for Execute in Place operation. Value must be a multiple of 4."]
     #[inline(always)]
-    pub fn xipoffset(&mut self) -> XIPOFFSET_W {
-        XIPOFFSET_W { w: self }
+    pub fn xipoffset(&mut self) -> XIPOFFSET_W<0> {
+        XIPOFFSET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

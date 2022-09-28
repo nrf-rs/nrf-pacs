@@ -35,113 +35,21 @@ impl From<crate::W<CINSTRDAT1_SPEC>> for W {
     }
 }
 #[doc = "Field `BYTE4` reader - Data byte 4"]
-pub struct BYTE4_R(crate::FieldReader<u8, u8>);
-impl BYTE4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BYTE4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BYTE4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BYTE4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BYTE4` writer - Data byte 4"]
-pub struct BYTE4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BYTE4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type BYTE4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CINSTRDAT1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `BYTE5` reader - Data byte 5"]
-pub struct BYTE5_R(crate::FieldReader<u8, u8>);
-impl BYTE5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BYTE5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BYTE5_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BYTE5_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BYTE5` writer - Data byte 5"]
-pub struct BYTE5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BYTE5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type BYTE5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CINSTRDAT1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `BYTE6` reader - Data byte 6"]
-pub struct BYTE6_R(crate::FieldReader<u8, u8>);
-impl BYTE6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BYTE6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BYTE6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BYTE6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BYTE6` writer - Data byte 6"]
-pub struct BYTE6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BYTE6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type BYTE6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CINSTRDAT1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `BYTE7` reader - Data byte 7"]
-pub struct BYTE7_R(crate::FieldReader<u8, u8>);
-impl BYTE7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BYTE7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BYTE7_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BYTE7_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BYTE7` writer - Data byte 7"]
-pub struct BYTE7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BYTE7_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type BYTE7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CINSTRDAT1_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Data byte 4"]
     #[inline(always)]
@@ -167,23 +75,23 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Data byte 4"]
     #[inline(always)]
-    pub fn byte4(&mut self) -> BYTE4_W {
-        BYTE4_W { w: self }
+    pub fn byte4(&mut self) -> BYTE4_W<0> {
+        BYTE4_W::new(self)
     }
     #[doc = "Bits 8:15 - Data byte 5"]
     #[inline(always)]
-    pub fn byte5(&mut self) -> BYTE5_W {
-        BYTE5_W { w: self }
+    pub fn byte5(&mut self) -> BYTE5_W<8> {
+        BYTE5_W::new(self)
     }
     #[doc = "Bits 16:23 - Data byte 6"]
     #[inline(always)]
-    pub fn byte6(&mut self) -> BYTE6_W {
-        BYTE6_W { w: self }
+    pub fn byte6(&mut self) -> BYTE6_W<16> {
+        BYTE6_W::new(self)
     }
     #[doc = "Bits 24:31 - Data byte 7"]
     #[inline(always)]
-    pub fn byte7(&mut self) -> BYTE7_W {
-        BYTE7_W { w: self }
+    pub fn byte7(&mut self) -> BYTE7_W<24> {
+        BYTE7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

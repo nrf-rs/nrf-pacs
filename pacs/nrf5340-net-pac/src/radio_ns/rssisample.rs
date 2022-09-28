@@ -14,20 +14,7 @@ impl From<crate::R<RSSISAMPLE_SPEC>> for R {
     }
 }
 #[doc = "Field `RSSISAMPLE` reader - RSSI sample."]
-pub struct RSSISAMPLE_R(crate::FieldReader<u8, u8>);
-impl RSSISAMPLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RSSISAMPLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RSSISAMPLE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RSSISAMPLE_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:6 - RSSI sample."]
     #[inline(always)]

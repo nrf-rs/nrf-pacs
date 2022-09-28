@@ -34,6 +34,8 @@ impl From<crate::W<CONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DERCEN` reader - Digital error correction enable."]
+pub type DERCEN_R = crate::BitReader<DERCEN_A>;
 #[doc = "Digital error correction enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DERCEN_A {
@@ -48,14 +50,8 @@ impl From<DERCEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DERCEN` reader - Digital error correction enable."]
-pub struct DERCEN_R(crate::FieldReader<bool, DERCEN_A>);
 impl DERCEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DERCEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DERCEN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl DERCEN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DERCEN_A::DISABLED
+        *self == DERCEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DERCEN_A::ENABLED
-    }
-}
-impl core::ops::Deref for DERCEN_R {
-    type Target = crate::FieldReader<bool, DERCEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DERCEN_A::ENABLED
     }
 }
 #[doc = "Field `DERCEN` writer - Digital error correction enable."]
-pub struct DERCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DERCEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DERCEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DERCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, DERCEN_A, O>;
+impl<'a, const O: u8> DERCEN_W<'a, O> {
     #[doc = "Digital error correction disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> DERCEN_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(DERCEN_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Digital error correction enable."]
     #[inline(always)]
     pub fn dercen(&self) -> DERCEN_R {
-        DERCEN_R::new((self.bits & 0x01) != 0)
+        DERCEN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Digital error correction enable."]
     #[inline(always)]
-    pub fn dercen(&mut self) -> DERCEN_W {
-        DERCEN_W { w: self }
+    pub fn dercen(&mut self) -> DERCEN_W<0> {
+        DERCEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

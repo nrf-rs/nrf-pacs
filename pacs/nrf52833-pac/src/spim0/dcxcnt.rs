@@ -35,32 +35,9 @@ impl From<crate::W<DCXCNT_SPEC>> for W {
     }
 }
 #[doc = "Field `DCXCNT` reader - This register specifies the number of command bytes preceding the data bytes. The PSEL.DCX line will be low during transmission of command bytes and high during transmission of data bytes. Value 0xF indicates that all bytes are command bytes."]
-pub struct DCXCNT_R(crate::FieldReader<u8, u8>);
-impl DCXCNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DCXCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DCXCNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DCXCNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DCXCNT` writer - This register specifies the number of command bytes preceding the data bytes. The PSEL.DCX line will be low during transmission of command bytes and high during transmission of data bytes. Value 0xF indicates that all bytes are command bytes."]
-pub struct DCXCNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCXCNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type DCXCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCXCNT_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - This register specifies the number of command bytes preceding the data bytes. The PSEL.DCX line will be low during transmission of command bytes and high during transmission of data bytes. Value 0xF indicates that all bytes are command bytes."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - This register specifies the number of command bytes preceding the data bytes. The PSEL.DCX line will be low during transmission of command bytes and high during transmission of data bytes. Value 0xF indicates that all bytes are command bytes."]
     #[inline(always)]
-    pub fn dcxcnt(&mut self) -> DCXCNT_W {
-        DCXCNT_W { w: self }
+    pub fn dcxcnt(&mut self) -> DCXCNT_W<0> {
+        DCXCNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

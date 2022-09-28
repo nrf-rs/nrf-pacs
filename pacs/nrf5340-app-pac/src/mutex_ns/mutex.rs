@@ -34,6 +34,8 @@ impl From<crate::W<MUTEX_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MUTEX` reader - Mutex register n"]
+pub type MUTEX_R = crate::BitReader<MUTEX_A>;
 #[doc = "Mutex register n\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MUTEX_A {
@@ -48,14 +50,8 @@ impl From<MUTEX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MUTEX` reader - Mutex register n"]
-pub struct MUTEX_R(crate::FieldReader<bool, MUTEX_A>);
 impl MUTEX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MUTEX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MUTEX_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl MUTEX_R {
     #[doc = "Checks if the value of the field is `UNLOCKED`"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        **self == MUTEX_A::UNLOCKED
+        *self == MUTEX_A::UNLOCKED
     }
     #[doc = "Checks if the value of the field is `LOCKED`"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        **self == MUTEX_A::LOCKED
-    }
-}
-impl core::ops::Deref for MUTEX_R {
-    type Target = crate::FieldReader<bool, MUTEX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MUTEX_A::LOCKED
     }
 }
 #[doc = "Field `MUTEX` writer - Mutex register n"]
-pub struct MUTEX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MUTEX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MUTEX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MUTEX_W<'a, const O: u8> = crate::BitWriter<'a, u32, MUTEX_SPEC, MUTEX_A, O>;
+impl<'a, const O: u8> MUTEX_W<'a, O> {
     #[doc = "Mutex n is in unlocked state"]
     #[inline(always)]
     pub fn unlocked(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> MUTEX_W<'a> {
     pub fn locked(self) -> &'a mut W {
         self.variant(MUTEX_A::LOCKED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Mutex register n"]
     #[inline(always)]
     pub fn mutex(&self) -> MUTEX_R {
-        MUTEX_R::new((self.bits & 0x01) != 0)
+        MUTEX_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Mutex register n"]
     #[inline(always)]
-    pub fn mutex(&mut self) -> MUTEX_W {
-        MUTEX_W { w: self }
+    pub fn mutex(&mut self) -> MUTEX_W<0> {
+        MUTEX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<TXEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TXEN` reader - Transmission (TX) enable."]
+pub type TXEN_R = crate::BitReader<TXEN_A>;
 #[doc = "Transmission (TX) enable.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXEN_A {
@@ -48,14 +50,8 @@ impl From<TXEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXEN` reader - Transmission (TX) enable."]
-pub struct TXEN_R(crate::FieldReader<bool, TXEN_A>);
 impl TXEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TXEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXEN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl TXEN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TXEN_A::DISABLED
+        *self == TXEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TXEN_A::ENABLED
-    }
-}
-impl core::ops::Deref for TXEN_R {
-    type Target = crate::FieldReader<bool, TXEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TXEN_A::ENABLED
     }
 }
 #[doc = "Field `TXEN` writer - Transmission (TX) enable."]
-pub struct TXEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TXEN_SPEC, TXEN_A, O>;
+impl<'a, const O: u8> TXEN_W<'a, O> {
     #[doc = "Transmission disabled and now data will be read from the RXD.TXD address."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> TXEN_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(TXEN_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Transmission (TX) enable."]
     #[inline(always)]
     pub fn txen(&self) -> TXEN_R {
-        TXEN_R::new((self.bits & 0x01) != 0)
+        TXEN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Transmission (TX) enable."]
     #[inline(always)]
-    pub fn txen(&mut self) -> TXEN_W {
-        TXEN_W { w: self }
+    pub fn txen(&mut self) -> TXEN_W<0> {
+        TXEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

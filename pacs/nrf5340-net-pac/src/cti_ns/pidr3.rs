@@ -13,6 +13,8 @@ impl From<crate::R<PIDR3_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `CMOD` reader - Customer Modified. Indicates whether the customer has modified the behavior of the component. In most cases, this field is 0b0000. Customers change this value when they make authorized modifications to this component."]
+pub type CMOD_R = crate::FieldReader<u8, CMOD_A>;
 #[doc = "Customer Modified. Indicates whether the customer has modified the behavior of the component. In most cases, this field is 0b0000. Customers change this value when they make authorized modifications to this component.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -26,14 +28,8 @@ impl From<CMOD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMOD` reader - Customer Modified. Indicates whether the customer has modified the behavior of the component. In most cases, this field is 0b0000. Customers change this value when they make authorized modifications to this component."]
-pub struct CMOD_R(crate::FieldReader<u8, CMOD_A>);
 impl CMOD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CMOD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CMOD_A> {
         match self.bits {
@@ -44,22 +40,17 @@ impl CMOD_R {
     #[doc = "Checks if the value of the field is `UNMODIFIED`"]
     #[inline(always)]
     pub fn is_unmodified(&self) -> bool {
-        **self == CMOD_A::UNMODIFIED
+        *self == CMOD_A::UNMODIFIED
     }
 }
-impl core::ops::Deref for CMOD_R {
-    type Target = crate::FieldReader<u8, CMOD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `REVAND` reader - Indicates minor errata fixes specific to the revision of the component being used, for example metal fixes after implementation. In most cases, this field is 0b0000. Arm recommends that the component designers ensure that a metal fix can change this field if required, for example, by driving it from registers that reset to 0b0000."]
+pub type REVAND_R = crate::FieldReader<u8, REVAND_A>;
 #[doc = "Indicates minor errata fixes specific to the revision of the component being used, for example metal fixes after implementation. In most cases, this field is 0b0000. Arm recommends that the component designers ensure that a metal fix can change this field if required, for example, by driving it from registers that reset to 0b0000.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum REVAND_A {
     #[doc = "0: Indicates that there are no errata fixes to this component."]
-    NOERRATA = 0,
+    NO_ERRATA = 0,
 }
 impl From<REVAND_A> for u8 {
     #[inline(always)]
@@ -67,32 +58,19 @@ impl From<REVAND_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `REVAND` reader - Indicates minor errata fixes specific to the revision of the component being used, for example metal fixes after implementation. In most cases, this field is 0b0000. Arm recommends that the component designers ensure that a metal fix can change this field if required, for example, by driving it from registers that reset to 0b0000."]
-pub struct REVAND_R(crate::FieldReader<u8, REVAND_A>);
 impl REVAND_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        REVAND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<REVAND_A> {
         match self.bits {
-            0 => Some(REVAND_A::NOERRATA),
+            0 => Some(REVAND_A::NO_ERRATA),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NOERRATA`"]
+    #[doc = "Checks if the value of the field is `NO_ERRATA`"]
     #[inline(always)]
     pub fn is_no_errata(&self) -> bool {
-        **self == REVAND_A::NOERRATA
-    }
-}
-impl core::ops::Deref for REVAND_R {
-    type Target = crate::FieldReader<u8, REVAND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REVAND_A::NO_ERRATA
     }
 }
 impl R {

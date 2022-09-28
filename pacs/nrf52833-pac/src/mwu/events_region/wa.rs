@@ -34,11 +34,13 @@ impl From<crate::W<WA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `WA` reader - Write access to region n detected"]
+pub type WA_R = crate::BitReader<WA_A>;
 #[doc = "Write access to region n detected\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WA_A {
     #[doc = "0: Event not generated"]
-    NOTGENERATED = 0,
+    NOT_GENERATED = 0,
     #[doc = "1: Event generated"]
     GENERATED = 1,
 }
@@ -48,88 +50,52 @@ impl From<WA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WA` reader - Write access to region n detected"]
-pub struct WA_R(crate::FieldReader<bool, WA_A>);
 impl WA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WA_A {
         match self.bits {
-            false => WA_A::NOTGENERATED,
+            false => WA_A::NOT_GENERATED,
             true => WA_A::GENERATED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTGENERATED`"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        **self == WA_A::NOTGENERATED
+        *self == WA_A::NOT_GENERATED
     }
     #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        **self == WA_A::GENERATED
-    }
-}
-impl core::ops::Deref for WA_R {
-    type Target = crate::FieldReader<bool, WA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WA_A::GENERATED
     }
 }
 #[doc = "Field `WA` writer - Write access to region n detected"]
-pub struct WA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WA_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WA_W<'a, const O: u8> = crate::BitWriter<'a, u32, WA_SPEC, WA_A, O>;
+impl<'a, const O: u8> WA_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
     pub fn not_generated(self) -> &'a mut W {
-        self.variant(WA_A::NOTGENERATED)
+        self.variant(WA_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
     pub fn generated(self) -> &'a mut W {
         self.variant(WA_A::GENERATED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Write access to region n detected"]
     #[inline(always)]
     pub fn wa(&self) -> WA_R {
-        WA_R::new((self.bits & 0x01) != 0)
+        WA_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write access to region n detected"]
     #[inline(always)]
-    pub fn wa(&mut self) -> WA_W {
-        WA_W { w: self }
+    pub fn wa(&mut self) -> WA_W<0> {
+        WA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

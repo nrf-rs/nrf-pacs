@@ -34,14 +34,16 @@ impl From<crate::W<ISOSPLIT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SPLIT` reader - Controls the split of ISO buffers"]
+pub type SPLIT_R = crate::FieldReader<u16, SPLIT_A>;
 #[doc = "Controls the split of ISO buffers\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u16)]
 pub enum SPLIT_A {
     #[doc = "0: Full buffer dedicated to either iso IN or OUT"]
-    ONEDIR = 0,
+    ONE_DIR = 0,
     #[doc = "128: Lower half for IN, upper half for OUT"]
-    HALFIN = 128,
+    HALF_IN = 128,
 }
 impl From<SPLIT_A> for u16 {
     #[inline(always)]
@@ -49,65 +51,39 @@ impl From<SPLIT_A> for u16 {
         variant as _
     }
 }
-#[doc = "Field `SPLIT` reader - Controls the split of ISO buffers"]
-pub struct SPLIT_R(crate::FieldReader<u16, SPLIT_A>);
 impl SPLIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        SPLIT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SPLIT_A> {
         match self.bits {
-            0 => Some(SPLIT_A::ONEDIR),
-            128 => Some(SPLIT_A::HALFIN),
+            0 => Some(SPLIT_A::ONE_DIR),
+            128 => Some(SPLIT_A::HALF_IN),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ONEDIR`"]
+    #[doc = "Checks if the value of the field is `ONE_DIR`"]
     #[inline(always)]
     pub fn is_one_dir(&self) -> bool {
-        **self == SPLIT_A::ONEDIR
+        *self == SPLIT_A::ONE_DIR
     }
-    #[doc = "Checks if the value of the field is `HALFIN`"]
+    #[doc = "Checks if the value of the field is `HALF_IN`"]
     #[inline(always)]
     pub fn is_half_in(&self) -> bool {
-        **self == SPLIT_A::HALFIN
-    }
-}
-impl core::ops::Deref for SPLIT_R {
-    type Target = crate::FieldReader<u16, SPLIT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SPLIT_A::HALF_IN
     }
 }
 #[doc = "Field `SPLIT` writer - Controls the split of ISO buffers"]
-pub struct SPLIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPLIT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SPLIT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SPLIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ISOSPLIT_SPEC, u16, SPLIT_A, 16, O>;
+impl<'a, const O: u8> SPLIT_W<'a, O> {
     #[doc = "Full buffer dedicated to either iso IN or OUT"]
     #[inline(always)]
     pub fn one_dir(self) -> &'a mut W {
-        self.variant(SPLIT_A::ONEDIR)
+        self.variant(SPLIT_A::ONE_DIR)
     }
     #[doc = "Lower half for IN, upper half for OUT"]
     #[inline(always)]
     pub fn half_in(self) -> &'a mut W {
-        self.variant(SPLIT_A::HALFIN)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
+        self.variant(SPLIT_A::HALF_IN)
     }
 }
 impl R {
@@ -120,8 +96,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Controls the split of ISO buffers"]
     #[inline(always)]
-    pub fn split(&mut self) -> SPLIT_W {
-        SPLIT_W { w: self }
+    pub fn split(&mut self) -> SPLIT_W<0> {
+        SPLIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

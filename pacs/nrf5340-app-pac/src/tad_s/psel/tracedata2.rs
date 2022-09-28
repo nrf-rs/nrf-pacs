@@ -34,6 +34,8 @@ impl From<crate::W<TRACEDATA2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PIN` reader - Pin number"]
+pub type PIN_R = crate::FieldReader<u8, PIN_A>;
 #[doc = "Pin number\n\nValue on reset: 31"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -47,14 +49,8 @@ impl From<PIN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PIN` reader - Pin number"]
-pub struct PIN_R(crate::FieldReader<u8, PIN_A>);
 impl PIN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PIN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PIN_A> {
         match self.bits {
@@ -65,38 +61,20 @@ impl PIN_R {
     #[doc = "Checks if the value of the field is `TRACEDATA2`"]
     #[inline(always)]
     pub fn is_tracedata2(&self) -> bool {
-        **self == PIN_A::TRACEDATA2
-    }
-}
-impl core::ops::Deref for PIN_R {
-    type Target = crate::FieldReader<u8, PIN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PIN_A::TRACEDATA2
     }
 }
 #[doc = "Field `PIN` writer - Pin number"]
-pub struct PIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PIN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PIN_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TRACEDATA2_SPEC, u8, PIN_A, 5, O>;
+impl<'a, const O: u8> PIN_W<'a, O> {
     #[doc = "TRACEDATA2 pin"]
     #[inline(always)]
     pub fn tracedata2(self) -> &'a mut W {
         self.variant(PIN_A::TRACEDATA2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
 }
+#[doc = "Field `CONNECT` reader - Connection"]
+pub type CONNECT_R = crate::BitReader<CONNECT_A>;
 #[doc = "Connection\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONNECT_A {
@@ -111,14 +89,8 @@ impl From<CONNECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CONNECT` reader - Connection"]
-pub struct CONNECT_R(crate::FieldReader<bool, CONNECT_A>);
 impl CONNECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CONNECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CONNECT_A {
         match self.bits {
@@ -129,31 +101,17 @@ impl CONNECT_R {
     #[doc = "Checks if the value of the field is `DISCONNECTED`"]
     #[inline(always)]
     pub fn is_disconnected(&self) -> bool {
-        **self == CONNECT_A::DISCONNECTED
+        *self == CONNECT_A::DISCONNECTED
     }
     #[doc = "Checks if the value of the field is `CONNECTED`"]
     #[inline(always)]
     pub fn is_connected(&self) -> bool {
-        **self == CONNECT_A::CONNECTED
-    }
-}
-impl core::ops::Deref for CONNECT_R {
-    type Target = crate::FieldReader<bool, CONNECT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CONNECT_A::CONNECTED
     }
 }
 #[doc = "Field `CONNECT` writer - Connection"]
-pub struct CONNECT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CONNECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CONNECT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CONNECT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRACEDATA2_SPEC, CONNECT_A, O>;
+impl<'a, const O: u8> CONNECT_W<'a, O> {
     #[doc = "Disconnect"]
     #[inline(always)]
     pub fn disconnected(self) -> &'a mut W {
@@ -163,22 +121,6 @@ impl<'a> CONNECT_W<'a> {
     #[inline(always)]
     pub fn connected(self) -> &'a mut W {
         self.variant(CONNECT_A::CONNECTED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
     }
 }
 impl R {
@@ -190,19 +132,19 @@ impl R {
     #[doc = "Bit 31 - Connection"]
     #[inline(always)]
     pub fn connect(&self) -> CONNECT_R {
-        CONNECT_R::new(((self.bits >> 31) & 0x01) != 0)
+        CONNECT_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Pin number"]
     #[inline(always)]
-    pub fn pin(&mut self) -> PIN_W {
-        PIN_W { w: self }
+    pub fn pin(&mut self) -> PIN_W<0> {
+        PIN_W::new(self)
     }
     #[doc = "Bit 31 - Connection"]
     #[inline(always)]
-    pub fn connect(&mut self) -> CONNECT_W {
-        CONNECT_W { w: self }
+    pub fn connect(&mut self) -> CONNECT_W<31> {
+        CONNECT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

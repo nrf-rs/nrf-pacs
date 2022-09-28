@@ -13,6 +13,9 @@ impl From<crate::R<CIDR3_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `PRMBL_3` reader - Preamble\\[3\\]. Contains bits\\[31:24\\]
+of the component identification code."]
+pub type PRMBL_3_R = crate::FieldReader<u8, PRMBL_3_A>;
 #[doc = "Preamble\\[3\\]. Contains bits\\[31:24\\]
 of the component identification code.\n\nValue on reset: 177"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -28,15 +31,8 @@ impl From<PRMBL_3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRMBL_3` reader - Preamble\\[3\\]. Contains bits\\[31:24\\]
-of the component identification code."]
-pub struct PRMBL_3_R(crate::FieldReader<u8, PRMBL_3_A>);
 impl PRMBL_3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PRMBL_3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PRMBL_3_A> {
         match self.bits {
@@ -47,14 +43,7 @@ impl PRMBL_3_R {
     #[doc = "Checks if the value of the field is `VALUE`"]
     #[inline(always)]
     pub fn is_value(&self) -> bool {
-        **self == PRMBL_3_A::VALUE
-    }
-}
-impl core::ops::Deref for PRMBL_3_R {
-    type Target = crate::FieldReader<u8, PRMBL_3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PRMBL_3_A::VALUE
     }
 }
 impl R {

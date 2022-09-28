@@ -34,6 +34,8 @@ impl From<crate::W<CONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `HWFC` reader - Hardware flow control."]
+pub type HWFC_R = crate::BitReader<HWFC_A>;
 #[doc = "Hardware flow control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HWFC_A {
@@ -48,14 +50,8 @@ impl From<HWFC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HWFC` reader - Hardware flow control."]
-pub struct HWFC_R(crate::FieldReader<bool, HWFC_A>);
 impl HWFC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HWFC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HWFC_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl HWFC_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == HWFC_A::DISABLED
+        *self == HWFC_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == HWFC_A::ENABLED
-    }
-}
-impl core::ops::Deref for HWFC_R {
-    type Target = crate::FieldReader<bool, HWFC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HWFC_A::ENABLED
     }
 }
 #[doc = "Field `HWFC` writer - Hardware flow control."]
-pub struct HWFC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HWFC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HWFC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HWFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, HWFC_A, O>;
+impl<'a, const O: u8> HWFC_W<'a, O> {
     #[doc = "Hardware flow control disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,23 +83,9 @@ impl<'a> HWFC_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(HWFC_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `PARITY` reader - Include parity bit."]
+pub type PARITY_R = crate::FieldReader<u8, PARITY_A>;
 #[doc = "Include parity bit.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -133,14 +101,8 @@ impl From<PARITY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PARITY` reader - Include parity bit."]
-pub struct PARITY_R(crate::FieldReader<u8, PARITY_A>);
 impl PARITY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PARITY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PARITY_A> {
         match self.bits {
@@ -152,31 +114,17 @@ impl PARITY_R {
     #[doc = "Checks if the value of the field is `EXCLUDED`"]
     #[inline(always)]
     pub fn is_excluded(&self) -> bool {
-        **self == PARITY_A::EXCLUDED
+        *self == PARITY_A::EXCLUDED
     }
     #[doc = "Checks if the value of the field is `INCLUDED`"]
     #[inline(always)]
     pub fn is_included(&self) -> bool {
-        **self == PARITY_A::INCLUDED
-    }
-}
-impl core::ops::Deref for PARITY_R {
-    type Target = crate::FieldReader<u8, PARITY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PARITY_A::INCLUDED
     }
 }
 #[doc = "Field `PARITY` writer - Include parity bit."]
-pub struct PARITY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PARITY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PARITY_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PARITY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONFIG_SPEC, u8, PARITY_A, 3, O>;
+impl<'a, const O: u8> PARITY_W<'a, O> {
     #[doc = "Parity bit excluded."]
     #[inline(always)]
     pub fn excluded(self) -> &'a mut W {
@@ -187,35 +135,29 @@ impl<'a> PARITY_W<'a> {
     pub fn included(self) -> &'a mut W {
         self.variant(PARITY_A::INCLUDED)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 1)) | ((value as u32 & 0x07) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Hardware flow control."]
     #[inline(always)]
     pub fn hwfc(&self) -> HWFC_R {
-        HWFC_R::new((self.bits & 0x01) != 0)
+        HWFC_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:3 - Include parity bit."]
     #[inline(always)]
     pub fn parity(&self) -> PARITY_R {
-        PARITY_R::new(((self.bits >> 1) & 0x07) as u8)
+        PARITY_R::new(((self.bits >> 1) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Hardware flow control."]
     #[inline(always)]
-    pub fn hwfc(&mut self) -> HWFC_W {
-        HWFC_W { w: self }
+    pub fn hwfc(&mut self) -> HWFC_W<0> {
+        HWFC_W::new(self)
     }
     #[doc = "Bits 1:3 - Include parity bit."]
     #[inline(always)]
-    pub fn parity(&mut self) -> PARITY_W {
-        PARITY_W { w: self }
+    pub fn parity(&mut self) -> PARITY_W<1> {
+        PARITY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<DISABLEINDEBUG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DISABLEINDEBUG` reader - Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode."]
+pub type DISABLEINDEBUG_R = crate::BitReader<DISABLEINDEBUG_A>;
 #[doc = "Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISABLEINDEBUG_A {
@@ -48,14 +50,8 @@ impl From<DISABLEINDEBUG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DISABLEINDEBUG` reader - Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode."]
-pub struct DISABLEINDEBUG_R(crate::FieldReader<bool, DISABLEINDEBUG_A>);
 impl DISABLEINDEBUG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DISABLEINDEBUG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DISABLEINDEBUG_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl DISABLEINDEBUG_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DISABLEINDEBUG_A::DISABLED
+        *self == DISABLEINDEBUG_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DISABLEINDEBUG_A::ENABLED
-    }
-}
-impl core::ops::Deref for DISABLEINDEBUG_R {
-    type Target = crate::FieldReader<bool, DISABLEINDEBUG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DISABLEINDEBUG_A::ENABLED
     }
 }
 #[doc = "Field `DISABLEINDEBUG` writer - Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode."]
-pub struct DISABLEINDEBUG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DISABLEINDEBUG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DISABLEINDEBUG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DISABLEINDEBUG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DISABLEINDEBUG_SPEC, DISABLEINDEBUG_A, O>;
+impl<'a, const O: u8> DISABLEINDEBUG_W<'a, O> {
     #[doc = "Disabled in debug"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +84,19 @@ impl<'a> DISABLEINDEBUG_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(DISABLEINDEBUG_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode."]
     #[inline(always)]
     pub fn disableindebug(&self) -> DISABLEINDEBUG_R {
-        DISABLEINDEBUG_R::new((self.bits & 0x01) != 0)
+        DISABLEINDEBUG_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode."]
     #[inline(always)]
-    pub fn disableindebug(&mut self) -> DISABLEINDEBUG_W {
-        DISABLEINDEBUG_W { w: self }
+    pub fn disableindebug(&mut self) -> DISABLEINDEBUG_W<0> {
+        DISABLEINDEBUG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

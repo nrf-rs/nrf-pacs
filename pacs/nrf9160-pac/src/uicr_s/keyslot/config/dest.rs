@@ -35,32 +35,9 @@ impl From<crate::W<DEST_SPEC>> for W {
     }
 }
 #[doc = "Field `DEST` reader - Secure APB destination address"]
-pub struct DEST_R(crate::FieldReader<u32, u32>);
-impl DEST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DEST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEST_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEST_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DEST` writer - Secure APB destination address"]
-pub struct DEST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEST_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type DEST_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DEST_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Secure APB destination address"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Secure APB destination address"]
     #[inline(always)]
-    pub fn dest(&mut self) -> DEST_W {
-        DEST_W { w: self }
+    pub fn dest(&mut self) -> DEST_W<0> {
+        DEST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

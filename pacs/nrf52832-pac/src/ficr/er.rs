@@ -14,20 +14,7 @@ impl From<crate::R<ER_SPEC>> for R {
     }
 }
 #[doc = "Field `ER` reader - Encryption Root, word n"]
-pub struct ER_R(crate::FieldReader<u32, u32>);
-impl ER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        ER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ER_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ER_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Encryption Root, word n"]
     #[inline(always)]

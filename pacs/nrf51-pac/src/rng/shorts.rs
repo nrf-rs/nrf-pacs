@@ -34,6 +34,8 @@ impl From<crate::W<SHORTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `VALRDY_STOP` reader - Shortcut between VALRDY event and STOP task."]
+pub type VALRDY_STOP_R = crate::BitReader<VALRDY_STOP_A>;
 #[doc = "Shortcut between VALRDY event and STOP task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VALRDY_STOP_A {
@@ -48,14 +50,8 @@ impl From<VALRDY_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VALRDY_STOP` reader - Shortcut between VALRDY event and STOP task."]
-pub struct VALRDY_STOP_R(crate::FieldReader<bool, VALRDY_STOP_A>);
 impl VALRDY_STOP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        VALRDY_STOP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VALRDY_STOP_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl VALRDY_STOP_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == VALRDY_STOP_A::DISABLED
+        *self == VALRDY_STOP_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == VALRDY_STOP_A::ENABLED
-    }
-}
-impl core::ops::Deref for VALRDY_STOP_R {
-    type Target = crate::FieldReader<bool, VALRDY_STOP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VALRDY_STOP_A::ENABLED
     }
 }
 #[doc = "Field `VALRDY_STOP` writer - Shortcut between VALRDY event and STOP task."]
-pub struct VALRDY_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VALRDY_STOP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VALRDY_STOP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type VALRDY_STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SHORTS_SPEC, VALRDY_STOP_A, O>;
+impl<'a, const O: u8> VALRDY_STOP_W<'a, O> {
     #[doc = "Shortcut disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> VALRDY_STOP_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(VALRDY_STOP_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Shortcut between VALRDY event and STOP task."]
     #[inline(always)]
     pub fn valrdy_stop(&self) -> VALRDY_STOP_R {
-        VALRDY_STOP_R::new((self.bits & 0x01) != 0)
+        VALRDY_STOP_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Shortcut between VALRDY event and STOP task."]
     #[inline(always)]
-    pub fn valrdy_stop(&mut self) -> VALRDY_STOP_W {
-        VALRDY_STOP_W { w: self }
+    pub fn valrdy_stop(&mut self) -> VALRDY_STOP_W<0> {
+        VALRDY_STOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

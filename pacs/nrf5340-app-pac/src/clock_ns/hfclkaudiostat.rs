@@ -13,11 +13,13 @@ impl From<crate::R<HFCLKAUDIOSTAT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `ALWAYSRUNNING` reader - ALWAYSRUN activated"]
+pub type ALWAYSRUNNING_R = crate::BitReader<ALWAYSRUNNING_A>;
 #[doc = "ALWAYSRUN activated\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALWAYSRUNNING_A {
     #[doc = "0: Automatic clock control enabled"]
-    NOTRUNNING = 0,
+    NOT_RUNNING = 0,
     #[doc = "1: Oscillator is always running"]
     RUNNING = 1,
 }
@@ -27,44 +29,33 @@ impl From<ALWAYSRUNNING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALWAYSRUNNING` reader - ALWAYSRUN activated"]
-pub struct ALWAYSRUNNING_R(crate::FieldReader<bool, ALWAYSRUNNING_A>);
 impl ALWAYSRUNNING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ALWAYSRUNNING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ALWAYSRUNNING_A {
         match self.bits {
-            false => ALWAYSRUNNING_A::NOTRUNNING,
+            false => ALWAYSRUNNING_A::NOT_RUNNING,
             true => ALWAYSRUNNING_A::RUNNING,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTRUNNING`"]
+    #[doc = "Checks if the value of the field is `NOT_RUNNING`"]
     #[inline(always)]
     pub fn is_not_running(&self) -> bool {
-        **self == ALWAYSRUNNING_A::NOTRUNNING
+        *self == ALWAYSRUNNING_A::NOT_RUNNING
     }
     #[doc = "Checks if the value of the field is `RUNNING`"]
     #[inline(always)]
     pub fn is_running(&self) -> bool {
-        **self == ALWAYSRUNNING_A::RUNNING
+        *self == ALWAYSRUNNING_A::RUNNING
     }
 }
-impl core::ops::Deref for ALWAYSRUNNING_R {
-    type Target = crate::FieldReader<bool, ALWAYSRUNNING_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `STATE` reader - HFCLKAUDIO state"]
+pub type STATE_R = crate::BitReader<STATE_A>;
 #[doc = "HFCLKAUDIO state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STATE_A {
     #[doc = "0: HFCLKAUDIO not running"]
-    NOTRUNNING = 0,
+    NOT_RUNNING = 0,
     #[doc = "1: HFCLKAUDIO running"]
     RUNNING = 1,
 }
@@ -74,49 +65,36 @@ impl From<STATE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STATE` reader - HFCLKAUDIO state"]
-pub struct STATE_R(crate::FieldReader<bool, STATE_A>);
 impl STATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STATE_A {
         match self.bits {
-            false => STATE_A::NOTRUNNING,
+            false => STATE_A::NOT_RUNNING,
             true => STATE_A::RUNNING,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTRUNNING`"]
+    #[doc = "Checks if the value of the field is `NOT_RUNNING`"]
     #[inline(always)]
     pub fn is_not_running(&self) -> bool {
-        **self == STATE_A::NOTRUNNING
+        *self == STATE_A::NOT_RUNNING
     }
     #[doc = "Checks if the value of the field is `RUNNING`"]
     #[inline(always)]
     pub fn is_running(&self) -> bool {
-        **self == STATE_A::RUNNING
-    }
-}
-impl core::ops::Deref for STATE_R {
-    type Target = crate::FieldReader<bool, STATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STATE_A::RUNNING
     }
 }
 impl R {
     #[doc = "Bit 4 - ALWAYSRUN activated"]
     #[inline(always)]
     pub fn alwaysrunning(&self) -> ALWAYSRUNNING_R {
-        ALWAYSRUNNING_R::new(((self.bits >> 4) & 0x01) != 0)
+        ALWAYSRUNNING_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 16 - HFCLKAUDIO state"]
     #[inline(always)]
     pub fn state(&self) -> STATE_R {
-        STATE_R::new(((self.bits >> 16) & 0x01) != 0)
+        STATE_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 #[doc = "Status indicating which HFCLKAUDIO source is running\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfclkaudiostat](index.html) module"]

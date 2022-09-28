@@ -2,9 +2,9 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Unused."]
-    pub unused: crate::Reg<unused::UNUSED_SPEC>,
+    pub unused: UNUSED,
 }
-#[doc = "UNUSED register accessor: an alias for `Reg<UNUSED_SPEC>`"]
+#[doc = "UNUSED (r) register accessor: an alias for `Reg<UNUSED_SPEC>`"]
 pub type UNUSED = crate::Reg<unused::UNUSED_SPEC>;
 #[doc = "Unused."]
 pub mod unused;

@@ -13,6 +13,8 @@ impl From<crate::R<VARIANT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `VARIANT` reader - Build code (hardware version and production configuration). Encoded as ASCII."]
+pub type VARIANT_R = crate::FieldReader<u32, VARIANT_A>;
 #[doc = "Build code (hardware version and production configuration). Encoded as ASCII.\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -40,14 +42,8 @@ impl From<VARIANT_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `VARIANT` reader - Build code (hardware version and production configuration). Encoded as ASCII."]
-pub struct VARIANT_R(crate::FieldReader<u32, VARIANT_A>);
 impl VARIANT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        VARIANT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<VARIANT_A> {
         match self.bits {
@@ -65,49 +61,42 @@ impl VARIANT_R {
     #[doc = "Checks if the value of the field is `AAAA`"]
     #[inline(always)]
     pub fn is_aaaa(&self) -> bool {
-        **self == VARIANT_A::AAAA
+        *self == VARIANT_A::AAAA
     }
     #[doc = "Checks if the value of the field is `BAAA`"]
     #[inline(always)]
     pub fn is_baaa(&self) -> bool {
-        **self == VARIANT_A::BAAA
+        *self == VARIANT_A::BAAA
     }
     #[doc = "Checks if the value of the field is `CAAA`"]
     #[inline(always)]
     pub fn is_caaa(&self) -> bool {
-        **self == VARIANT_A::CAAA
+        *self == VARIANT_A::CAAA
     }
     #[doc = "Checks if the value of the field is `AABA`"]
     #[inline(always)]
     pub fn is_aaba(&self) -> bool {
-        **self == VARIANT_A::AABA
+        *self == VARIANT_A::AABA
     }
     #[doc = "Checks if the value of the field is `AABB`"]
     #[inline(always)]
     pub fn is_aabb(&self) -> bool {
-        **self == VARIANT_A::AABB
+        *self == VARIANT_A::AABB
     }
     #[doc = "Checks if the value of the field is `AACA`"]
     #[inline(always)]
     pub fn is_aaca(&self) -> bool {
-        **self == VARIANT_A::AACA
+        *self == VARIANT_A::AACA
     }
     #[doc = "Checks if the value of the field is `AAAB`"]
     #[inline(always)]
     pub fn is_aaab(&self) -> bool {
-        **self == VARIANT_A::AAAB
+        *self == VARIANT_A::AAAB
     }
     #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
     #[inline(always)]
     pub fn is_unspecified(&self) -> bool {
-        **self == VARIANT_A::UNSPECIFIED
-    }
-}
-impl core::ops::Deref for VARIANT_R {
-    type Target = crate::FieldReader<u32, VARIANT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VARIANT_A::UNSPECIFIED
     }
 }
 impl R {

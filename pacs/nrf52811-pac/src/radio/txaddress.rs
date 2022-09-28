@@ -35,44 +35,21 @@ impl From<crate::W<TXADDRESS_SPEC>> for W {
     }
 }
 #[doc = "Field `TXADDRESS` reader - Transmit address select"]
-pub struct TXADDRESS_R(crate::FieldReader<u8, u8>);
-impl TXADDRESS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TXADDRESS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXADDRESS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXADDRESS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TXADDRESS` writer - Transmit address select"]
-pub struct TXADDRESS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXADDRESS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type TXADDRESS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TXADDRESS_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - Transmit address select"]
     #[inline(always)]
     pub fn txaddress(&self) -> TXADDRESS_R {
-        TXADDRESS_R::new((self.bits & 0x07) as u8)
+        TXADDRESS_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Transmit address select"]
     #[inline(always)]
-    pub fn txaddress(&mut self) -> TXADDRESS_W {
-        TXADDRESS_W { w: self }
+    pub fn txaddress(&mut self) -> TXADDRESS_W<0> {
+        TXADDRESS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

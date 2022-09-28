@@ -32,42 +32,20 @@ impl From<TASKS_RDCLRACC_AW> for bool {
     }
 }
 #[doc = "Field `TASKS_RDCLRACC` writer - Read and clear ACC"]
-pub struct TASKS_RDCLRACC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASKS_RDCLRACC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TASKS_RDCLRACC_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TASKS_RDCLRACC_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_RDCLRACC_SPEC, TASKS_RDCLRACC_AW, O>;
+impl<'a, const O: u8> TASKS_RDCLRACC_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
     pub fn trigger(self) -> &'a mut W {
         self.variant(TASKS_RDCLRACC_AW::TRIGGER)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Read and clear ACC"]
     #[inline(always)]
-    pub fn tasks_rdclracc(&mut self) -> TASKS_RDCLRACC_W {
-        TASKS_RDCLRACC_W { w: self }
+    pub fn tasks_rdclracc(&mut self) -> TASKS_RDCLRACC_W<0> {
+        TASKS_RDCLRACC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

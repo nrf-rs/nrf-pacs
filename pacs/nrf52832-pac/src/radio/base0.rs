@@ -35,32 +35,9 @@ impl From<crate::W<BASE0_SPEC>> for W {
     }
 }
 #[doc = "Field `BASE0` reader - Base address 0"]
-pub struct BASE0_R(crate::FieldReader<u32, u32>);
-impl BASE0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        BASE0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BASE0_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BASE0_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BASE0` writer - Base address 0"]
-pub struct BASE0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BASE0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type BASE0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BASE0_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Base address 0"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Base address 0"]
     #[inline(always)]
-    pub fn base0(&mut self) -> BASE0_W {
-        BASE0_W { w: self }
+    pub fn base0(&mut self) -> BASE0_W<0> {
+        BASE0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

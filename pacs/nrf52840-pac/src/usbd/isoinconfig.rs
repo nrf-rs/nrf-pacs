@@ -34,13 +34,15 @@ impl From<crate::W<ISOINCONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RESPONSE` reader - Controls the response of the ISO IN endpoint to an IN token when no data is ready to be sent"]
+pub type RESPONSE_R = crate::BitReader<RESPONSE_A>;
 #[doc = "Controls the response of the ISO IN endpoint to an IN token when no data is ready to be sent\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESPONSE_A {
     #[doc = "0: Endpoint does not respond in that case"]
-    NORESP = 0,
+    NO_RESP = 0,
     #[doc = "1: Endpoint responds with a zero-length data packet in that case"]
-    ZERODATA = 1,
+    ZERO_DATA = 1,
 }
 impl From<RESPONSE_A> for bool {
     #[inline(always)]
@@ -48,88 +50,52 @@ impl From<RESPONSE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESPONSE` reader - Controls the response of the ISO IN endpoint to an IN token when no data is ready to be sent"]
-pub struct RESPONSE_R(crate::FieldReader<bool, RESPONSE_A>);
 impl RESPONSE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RESPONSE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESPONSE_A {
         match self.bits {
-            false => RESPONSE_A::NORESP,
-            true => RESPONSE_A::ZERODATA,
+            false => RESPONSE_A::NO_RESP,
+            true => RESPONSE_A::ZERO_DATA,
         }
     }
-    #[doc = "Checks if the value of the field is `NORESP`"]
+    #[doc = "Checks if the value of the field is `NO_RESP`"]
     #[inline(always)]
     pub fn is_no_resp(&self) -> bool {
-        **self == RESPONSE_A::NORESP
+        *self == RESPONSE_A::NO_RESP
     }
-    #[doc = "Checks if the value of the field is `ZERODATA`"]
+    #[doc = "Checks if the value of the field is `ZERO_DATA`"]
     #[inline(always)]
     pub fn is_zero_data(&self) -> bool {
-        **self == RESPONSE_A::ZERODATA
-    }
-}
-impl core::ops::Deref for RESPONSE_R {
-    type Target = crate::FieldReader<bool, RESPONSE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RESPONSE_A::ZERO_DATA
     }
 }
 #[doc = "Field `RESPONSE` writer - Controls the response of the ISO IN endpoint to an IN token when no data is ready to be sent"]
-pub struct RESPONSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESPONSE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RESPONSE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RESPONSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISOINCONFIG_SPEC, RESPONSE_A, O>;
+impl<'a, const O: u8> RESPONSE_W<'a, O> {
     #[doc = "Endpoint does not respond in that case"]
     #[inline(always)]
     pub fn no_resp(self) -> &'a mut W {
-        self.variant(RESPONSE_A::NORESP)
+        self.variant(RESPONSE_A::NO_RESP)
     }
     #[doc = "Endpoint responds with a zero-length data packet in that case"]
     #[inline(always)]
     pub fn zero_data(self) -> &'a mut W {
-        self.variant(RESPONSE_A::ZERODATA)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(RESPONSE_A::ZERO_DATA)
     }
 }
 impl R {
     #[doc = "Bit 0 - Controls the response of the ISO IN endpoint to an IN token when no data is ready to be sent"]
     #[inline(always)]
     pub fn response(&self) -> RESPONSE_R {
-        RESPONSE_R::new((self.bits & 0x01) != 0)
+        RESPONSE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Controls the response of the ISO IN endpoint to an IN token when no data is ready to be sent"]
     #[inline(always)]
-    pub fn response(&mut self) -> RESPONSE_W {
-        RESPONSE_W { w: self }
+    pub fn response(&mut self) -> RESPONSE_W<0> {
+        RESPONSE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

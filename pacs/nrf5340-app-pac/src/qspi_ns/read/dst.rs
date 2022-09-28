@@ -35,32 +35,9 @@ impl From<crate::W<DST_SPEC>> for W {
     }
 }
 #[doc = "Field `DST` reader - Word-aligned RAM destination address."]
-pub struct DST_R(crate::FieldReader<u32, u32>);
-impl DST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DST_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DST_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DST` writer - Word-aligned RAM destination address."]
-pub struct DST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DST_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type DST_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DST_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Word-aligned RAM destination address."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Word-aligned RAM destination address."]
     #[inline(always)]
-    pub fn dst(&mut self) -> DST_W {
-        DST_W { w: self }
+    pub fn dst(&mut self) -> DST_W<0> {
+        DST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -13,6 +13,8 @@ impl From<crate::R<STATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `UICRAPPROTECT` reader - Status bit for UICR part of access port protection at last reset."]
+pub type UICRAPPROTECT_R = crate::BitReader<UICRAPPROTECT_A>;
 #[doc = "Status bit for UICR part of access port protection at last reset.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UICRAPPROTECT_A {
@@ -27,14 +29,8 @@ impl From<UICRAPPROTECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UICRAPPROTECT` reader - Status bit for UICR part of access port protection at last reset."]
-pub struct UICRAPPROTECT_R(crate::FieldReader<bool, UICRAPPROTECT_A>);
 impl UICRAPPROTECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UICRAPPROTECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UICRAPPROTECT_A {
         match self.bits {
@@ -45,21 +41,16 @@ impl UICRAPPROTECT_R {
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == UICRAPPROTECT_A::ENABLED
+        *self == UICRAPPROTECT_A::ENABLED
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == UICRAPPROTECT_A::DISABLED
+        *self == UICRAPPROTECT_A::DISABLED
     }
 }
-impl core::ops::Deref for UICRAPPROTECT_R {
-    type Target = crate::FieldReader<bool, UICRAPPROTECT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `UICRSECUREAPPROTECT` reader - Status bit for UICR part of secure access port protection at last reset."]
+pub type UICRSECUREAPPROTECT_R = crate::BitReader<UICRSECUREAPPROTECT_A>;
 #[doc = "Status bit for UICR part of secure access port protection at last reset.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UICRSECUREAPPROTECT_A {
@@ -74,14 +65,8 @@ impl From<UICRSECUREAPPROTECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UICRSECUREAPPROTECT` reader - Status bit for UICR part of secure access port protection at last reset."]
-pub struct UICRSECUREAPPROTECT_R(crate::FieldReader<bool, UICRSECUREAPPROTECT_A>);
 impl UICRSECUREAPPROTECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UICRSECUREAPPROTECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UICRSECUREAPPROTECT_A {
         match self.bits {
@@ -92,21 +77,16 @@ impl UICRSECUREAPPROTECT_R {
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == UICRSECUREAPPROTECT_A::ENABLED
+        *self == UICRSECUREAPPROTECT_A::ENABLED
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == UICRSECUREAPPROTECT_A::DISABLED
+        *self == UICRSECUREAPPROTECT_A::DISABLED
     }
 }
-impl core::ops::Deref for UICRSECUREAPPROTECT_R {
-    type Target = crate::FieldReader<bool, UICRSECUREAPPROTECT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `DBGIFACEMODE` reader - Status bit for device debug interface mode"]
+pub type DBGIFACEMODE_R = crate::BitReader<DBGIFACEMODE_A>;
 #[doc = "Status bit for device debug interface mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBGIFACEMODE_A {
@@ -121,14 +101,8 @@ impl From<DBGIFACEMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBGIFACEMODE` reader - Status bit for device debug interface mode"]
-pub struct DBGIFACEMODE_R(crate::FieldReader<bool, DBGIFACEMODE_A>);
 impl DBGIFACEMODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DBGIFACEMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DBGIFACEMODE_A {
         match self.bits {
@@ -139,36 +113,29 @@ impl DBGIFACEMODE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DBGIFACEMODE_A::DISABLED
+        *self == DBGIFACEMODE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DBGIFACEMODE_A::ENABLED
-    }
-}
-impl core::ops::Deref for DBGIFACEMODE_R {
-    type Target = crate::FieldReader<bool, DBGIFACEMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DBGIFACEMODE_A::ENABLED
     }
 }
 impl R {
     #[doc = "Bit 0 - Status bit for UICR part of access port protection at last reset."]
     #[inline(always)]
     pub fn uicrapprotect(&self) -> UICRAPPROTECT_R {
-        UICRAPPROTECT_R::new((self.bits & 0x01) != 0)
+        UICRAPPROTECT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Status bit for UICR part of secure access port protection at last reset."]
     #[inline(always)]
     pub fn uicrsecureapprotect(&self) -> UICRSECUREAPPROTECT_R {
-        UICRSECUREAPPROTECT_R::new(((self.bits >> 1) & 0x01) != 0)
+        UICRSECUREAPPROTECT_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Status bit for device debug interface mode"]
     #[inline(always)]
     pub fn dbgifacemode(&self) -> DBGIFACEMODE_R {
-        DBGIFACEMODE_R::new(((self.bits >> 2) & 0x01) != 0)
+        DBGIFACEMODE_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 #[doc = "Status bits for CTRL-AP peripheral.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]

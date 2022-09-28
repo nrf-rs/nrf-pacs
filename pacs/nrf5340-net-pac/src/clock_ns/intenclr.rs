@@ -34,6 +34,8 @@ impl From<crate::W<INTENCLR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `HFCLKSTARTED` reader - Write '1' to disable interrupt for event HFCLKSTARTED"]
+pub type HFCLKSTARTED_R = crate::BitReader<HFCLKSTARTED_A>;
 #[doc = "Write '1' to disable interrupt for event HFCLKSTARTED\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HFCLKSTARTED_A {
@@ -48,14 +50,8 @@ impl From<HFCLKSTARTED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HFCLKSTARTED` reader - Write '1' to disable interrupt for event HFCLKSTARTED"]
-pub struct HFCLKSTARTED_R(crate::FieldReader<bool, HFCLKSTARTED_A>);
 impl HFCLKSTARTED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HFCLKSTARTED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFCLKSTARTED_A {
         match self.bits {
@@ -66,19 +62,12 @@ impl HFCLKSTARTED_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == HFCLKSTARTED_A::DISABLED
+        *self == HFCLKSTARTED_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == HFCLKSTARTED_A::ENABLED
-    }
-}
-impl core::ops::Deref for HFCLKSTARTED_R {
-    type Target = crate::FieldReader<bool, HFCLKSTARTED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HFCLKSTARTED_A::ENABLED
     }
 }
 #[doc = "Write '1' to disable interrupt for event HFCLKSTARTED\n\nValue on reset: 0"]
@@ -94,37 +83,17 @@ impl From<HFCLKSTARTED_AW> for bool {
     }
 }
 #[doc = "Field `HFCLKSTARTED` writer - Write '1' to disable interrupt for event HFCLKSTARTED"]
-pub struct HFCLKSTARTED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFCLKSTARTED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HFCLKSTARTED_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HFCLKSTARTED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTENCLR_SPEC, HFCLKSTARTED_AW, O>;
+impl<'a, const O: u8> HFCLKSTARTED_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(HFCLKSTARTED_AW::CLEAR)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `LFCLKSTARTED` reader - Write '1' to disable interrupt for event LFCLKSTARTED"]
+pub type LFCLKSTARTED_R = crate::BitReader<LFCLKSTARTED_A>;
 #[doc = "Write '1' to disable interrupt for event LFCLKSTARTED\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LFCLKSTARTED_A {
@@ -139,14 +108,8 @@ impl From<LFCLKSTARTED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LFCLKSTARTED` reader - Write '1' to disable interrupt for event LFCLKSTARTED"]
-pub struct LFCLKSTARTED_R(crate::FieldReader<bool, LFCLKSTARTED_A>);
 impl LFCLKSTARTED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LFCLKSTARTED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFCLKSTARTED_A {
         match self.bits {
@@ -157,19 +120,12 @@ impl LFCLKSTARTED_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LFCLKSTARTED_A::DISABLED
+        *self == LFCLKSTARTED_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LFCLKSTARTED_A::ENABLED
-    }
-}
-impl core::ops::Deref for LFCLKSTARTED_R {
-    type Target = crate::FieldReader<bool, LFCLKSTARTED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LFCLKSTARTED_A::ENABLED
     }
 }
 #[doc = "Write '1' to disable interrupt for event LFCLKSTARTED\n\nValue on reset: 0"]
@@ -185,37 +141,17 @@ impl From<LFCLKSTARTED_AW> for bool {
     }
 }
 #[doc = "Field `LFCLKSTARTED` writer - Write '1' to disable interrupt for event LFCLKSTARTED"]
-pub struct LFCLKSTARTED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LFCLKSTARTED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LFCLKSTARTED_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LFCLKSTARTED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTENCLR_SPEC, LFCLKSTARTED_AW, O>;
+impl<'a, const O: u8> LFCLKSTARTED_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(LFCLKSTARTED_AW::CLEAR)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `DONE` reader - Write '1' to disable interrupt for event DONE"]
+pub type DONE_R = crate::BitReader<DONE_A>;
 #[doc = "Write '1' to disable interrupt for event DONE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DONE_A {
@@ -230,14 +166,8 @@ impl From<DONE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DONE` reader - Write '1' to disable interrupt for event DONE"]
-pub struct DONE_R(crate::FieldReader<bool, DONE_A>);
 impl DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DONE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DONE_A {
         match self.bits {
@@ -248,19 +178,12 @@ impl DONE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DONE_A::DISABLED
+        *self == DONE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DONE_A::ENABLED
-    }
-}
-impl core::ops::Deref for DONE_R {
-    type Target = crate::FieldReader<bool, DONE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DONE_A::ENABLED
     }
 }
 #[doc = "Write '1' to disable interrupt for event DONE\n\nValue on reset: 0"]
@@ -276,69 +199,46 @@ impl From<DONE_AW> for bool {
     }
 }
 #[doc = "Field `DONE` writer - Write '1' to disable interrupt for event DONE"]
-pub struct DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DONE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DONE_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, DONE_AW, O>;
+impl<'a, const O: u8> DONE_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(DONE_AW::CLEAR)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
     }
 }
 impl R {
     #[doc = "Bit 0 - Write '1' to disable interrupt for event HFCLKSTARTED"]
     #[inline(always)]
     pub fn hfclkstarted(&self) -> HFCLKSTARTED_R {
-        HFCLKSTARTED_R::new((self.bits & 0x01) != 0)
+        HFCLKSTARTED_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Write '1' to disable interrupt for event LFCLKSTARTED"]
     #[inline(always)]
     pub fn lfclkstarted(&self) -> LFCLKSTARTED_R {
-        LFCLKSTARTED_R::new(((self.bits >> 1) & 0x01) != 0)
+        LFCLKSTARTED_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 7 - Write '1' to disable interrupt for event DONE"]
     #[inline(always)]
     pub fn done(&self) -> DONE_R {
-        DONE_R::new(((self.bits >> 7) & 0x01) != 0)
+        DONE_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write '1' to disable interrupt for event HFCLKSTARTED"]
     #[inline(always)]
-    pub fn hfclkstarted(&mut self) -> HFCLKSTARTED_W {
-        HFCLKSTARTED_W { w: self }
+    pub fn hfclkstarted(&mut self) -> HFCLKSTARTED_W<0> {
+        HFCLKSTARTED_W::new(self)
     }
     #[doc = "Bit 1 - Write '1' to disable interrupt for event LFCLKSTARTED"]
     #[inline(always)]
-    pub fn lfclkstarted(&mut self) -> LFCLKSTARTED_W {
-        LFCLKSTARTED_W { w: self }
+    pub fn lfclkstarted(&mut self) -> LFCLKSTARTED_W<1> {
+        LFCLKSTARTED_W::new(self)
     }
     #[doc = "Bit 7 - Write '1' to disable interrupt for event DONE"]
     #[inline(always)]
-    pub fn done(&mut self) -> DONE_W {
-        DONE_W { w: self }
+    pub fn done(&mut self) -> DONE_W<7> {
+        DONE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

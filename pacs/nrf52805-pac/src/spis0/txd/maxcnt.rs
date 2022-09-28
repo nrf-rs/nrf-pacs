@@ -35,32 +35,9 @@ impl From<crate::W<MAXCNT_SPEC>> for W {
     }
 }
 #[doc = "Field `MAXCNT` reader - Maximum number of bytes in transmit buffer"]
-pub struct MAXCNT_R(crate::FieldReader<u16, u16>);
-impl MAXCNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        MAXCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MAXCNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MAXCNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MAXCNT` writer - Maximum number of bytes in transmit buffer"]
-pub struct MAXCNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MAXCNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3fff) | (value as u32 & 0x3fff);
-        self.w
-    }
-}
+pub type MAXCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAXCNT_SPEC, u16, u16, 14, O>;
 impl R {
     #[doc = "Bits 0:13 - Maximum number of bytes in transmit buffer"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - Maximum number of bytes in transmit buffer"]
     #[inline(always)]
-    pub fn maxcnt(&mut self) -> MAXCNT_W {
-        MAXCNT_W { w: self }
+    pub fn maxcnt(&mut self) -> MAXCNT_W<0> {
+        MAXCNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

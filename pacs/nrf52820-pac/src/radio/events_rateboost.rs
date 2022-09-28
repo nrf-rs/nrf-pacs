@@ -34,11 +34,13 @@ impl From<crate::W<EVENTS_RATEBOOST_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EVENTS_RATEBOOST` reader - Ble_LR CI field received, receive mode is changed from Ble_LR125Kbit to Ble_LR500Kbit."]
+pub type EVENTS_RATEBOOST_R = crate::BitReader<EVENTS_RATEBOOST_A>;
 #[doc = "Ble_LR CI field received, receive mode is changed from Ble_LR125Kbit to Ble_LR500Kbit.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EVENTS_RATEBOOST_A {
     #[doc = "0: Event not generated"]
-    NOTGENERATED = 0,
+    NOT_GENERATED = 0,
     #[doc = "1: Event generated"]
     GENERATED = 1,
 }
@@ -48,88 +50,53 @@ impl From<EVENTS_RATEBOOST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EVENTS_RATEBOOST` reader - Ble_LR CI field received, receive mode is changed from Ble_LR125Kbit to Ble_LR500Kbit."]
-pub struct EVENTS_RATEBOOST_R(crate::FieldReader<bool, EVENTS_RATEBOOST_A>);
 impl EVENTS_RATEBOOST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EVENTS_RATEBOOST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EVENTS_RATEBOOST_A {
         match self.bits {
-            false => EVENTS_RATEBOOST_A::NOTGENERATED,
+            false => EVENTS_RATEBOOST_A::NOT_GENERATED,
             true => EVENTS_RATEBOOST_A::GENERATED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTGENERATED`"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        **self == EVENTS_RATEBOOST_A::NOTGENERATED
+        *self == EVENTS_RATEBOOST_A::NOT_GENERATED
     }
     #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        **self == EVENTS_RATEBOOST_A::GENERATED
-    }
-}
-impl core::ops::Deref for EVENTS_RATEBOOST_R {
-    type Target = crate::FieldReader<bool, EVENTS_RATEBOOST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EVENTS_RATEBOOST_A::GENERATED
     }
 }
 #[doc = "Field `EVENTS_RATEBOOST` writer - Ble_LR CI field received, receive mode is changed from Ble_LR125Kbit to Ble_LR500Kbit."]
-pub struct EVENTS_RATEBOOST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVENTS_RATEBOOST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EVENTS_RATEBOOST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EVENTS_RATEBOOST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_RATEBOOST_SPEC, EVENTS_RATEBOOST_A, O>;
+impl<'a, const O: u8> EVENTS_RATEBOOST_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
     pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_RATEBOOST_A::NOTGENERATED)
+        self.variant(EVENTS_RATEBOOST_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
     pub fn generated(self) -> &'a mut W {
         self.variant(EVENTS_RATEBOOST_A::GENERATED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Ble_LR CI field received, receive mode is changed from Ble_LR125Kbit to Ble_LR500Kbit."]
     #[inline(always)]
     pub fn events_rateboost(&self) -> EVENTS_RATEBOOST_R {
-        EVENTS_RATEBOOST_R::new((self.bits & 0x01) != 0)
+        EVENTS_RATEBOOST_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Ble_LR CI field received, receive mode is changed from Ble_LR125Kbit to Ble_LR500Kbit."]
     #[inline(always)]
-    pub fn events_rateboost(&mut self) -> EVENTS_RATEBOOST_W {
-        EVENTS_RATEBOOST_W { w: self }
+    pub fn events_rateboost(&mut self) -> EVENTS_RATEBOOST_W<0> {
+        EVENTS_RATEBOOST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

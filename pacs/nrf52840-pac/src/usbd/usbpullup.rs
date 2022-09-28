@@ -34,6 +34,8 @@ impl From<crate::W<USBPULLUP_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CONNECT` reader - Control of the USB pull-up on the D+ line"]
+pub type CONNECT_R = crate::BitReader<CONNECT_A>;
 #[doc = "Control of the USB pull-up on the D+ line\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONNECT_A {
@@ -48,14 +50,8 @@ impl From<CONNECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CONNECT` reader - Control of the USB pull-up on the D+ line"]
-pub struct CONNECT_R(crate::FieldReader<bool, CONNECT_A>);
 impl CONNECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CONNECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CONNECT_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl CONNECT_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CONNECT_A::DISABLED
+        *self == CONNECT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CONNECT_A::ENABLED
-    }
-}
-impl core::ops::Deref for CONNECT_R {
-    type Target = crate::FieldReader<bool, CONNECT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CONNECT_A::ENABLED
     }
 }
 #[doc = "Field `CONNECT` writer - Control of the USB pull-up on the D+ line"]
-pub struct CONNECT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CONNECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CONNECT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CONNECT_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPULLUP_SPEC, CONNECT_A, O>;
+impl<'a, const O: u8> CONNECT_W<'a, O> {
     #[doc = "Pull-up is disconnected"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> CONNECT_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(CONNECT_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Control of the USB pull-up on the D+ line"]
     #[inline(always)]
     pub fn connect(&self) -> CONNECT_R {
-        CONNECT_R::new((self.bits & 0x01) != 0)
+        CONNECT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Control of the USB pull-up on the D+ line"]
     #[inline(always)]
-    pub fn connect(&mut self) -> CONNECT_W {
-        CONNECT_W { w: self }
+    pub fn connect(&mut self) -> CONNECT_W<0> {
+        CONNECT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

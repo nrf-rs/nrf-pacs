@@ -37,34 +37,11 @@ impl From<crate::W<SELECTKEYSLOT_SPEC>> for W {
 #[doc = "Field `ID` reader - Select key slot ID to be read over AHB, or pushed over secure APB, when TASKS_PUSH_KEYSLOT is started NOTE: ID=0 is not a valid key slot ID. The 0 ID should be used when the KMU is idle or not in use NOTE: Index N in UICR-&gt;KEYSLOT.KEY\\[N\\]
 and UICR-&gt;KEYSLOT.CONFIG\\[N\\]
 corresponds to KMU key slot ID=N+1"]
-pub struct ID_R(crate::FieldReader<u8, u8>);
-impl ID_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ID_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ID_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ID` writer - Select key slot ID to be read over AHB, or pushed over secure APB, when TASKS_PUSH_KEYSLOT is started NOTE: ID=0 is not a valid key slot ID. The 0 ID should be used when the KMU is idle or not in use NOTE: Index N in UICR-&gt;KEYSLOT.KEY\\[N\\]
 and UICR-&gt;KEYSLOT.CONFIG\\[N\\]
 corresponds to KMU key slot ID=N+1"]
-pub struct ID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ID_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type ID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SELECTKEYSLOT_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Select key slot ID to be read over AHB, or pushed over secure APB, when TASKS_PUSH_KEYSLOT is started NOTE: ID=0 is not a valid key slot ID. The 0 ID should be used when the KMU is idle or not in use NOTE: Index N in UICR-&gt;KEYSLOT.KEY\\[N\\]
 and UICR-&gt;KEYSLOT.CONFIG\\[N\\]
@@ -79,8 +56,8 @@ impl W {
 and UICR-&gt;KEYSLOT.CONFIG\\[N\\]
 corresponds to KMU key slot ID=N+1"]
     #[inline(always)]
-    pub fn id(&mut self) -> ID_W {
-        ID_W { w: self }
+    pub fn id(&mut self) -> ID_W<0> {
+        ID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

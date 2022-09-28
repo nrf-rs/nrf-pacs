@@ -32,42 +32,19 @@ impl From<CLEAR_AW> for bool {
     }
 }
 #[doc = "Field `CLEAR` writer - Clearing the profiling counters"]
-pub struct CLEAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLEAR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLEAR_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PROFILINGCLEAR_SPEC, CLEAR_AW, O>;
+impl<'a, const O: u8> CLEAR_W<'a, O> {
     #[doc = "Clear the profiling counters"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(CLEAR_AW::CLEAR)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Clearing the profiling counters"]
     #[inline(always)]
-    pub fn clear(&mut self) -> CLEAR_W {
-        CLEAR_W { w: self }
+    pub fn clear(&mut self) -> CLEAR_W<0> {
+        CLEAR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

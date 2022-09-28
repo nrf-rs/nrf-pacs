@@ -14,20 +14,7 @@ impl From<crate::R<FRAMECNTR_SPEC>> for R {
     }
 }
 #[doc = "Field `FRAMECNTR` reader - Returns the current value of the start of frame counter"]
-pub struct FRAMECNTR_R(crate::FieldReader<u16, u16>);
-impl FRAMECNTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        FRAMECNTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRAMECNTR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRAMECNTR_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:10 - Returns the current value of the start of frame counter"]
     #[inline(always)]

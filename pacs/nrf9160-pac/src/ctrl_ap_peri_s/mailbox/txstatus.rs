@@ -13,13 +13,15 @@ impl From<crate::R<TXSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `TXSTATUS` reader - Status of data in register TXDATA"]
+pub type TXSTATUS_R = crate::BitReader<TXSTATUS_A>;
 #[doc = "Status of data in register TXDATA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXSTATUS_A {
     #[doc = "0: No data pending in register TXDATA"]
-    NODATAPENDING = 0,
+    NO_DATA_PENDING = 0,
     #[doc = "1: Data pending in register TXDATA"]
-    DATAPENDING = 1,
+    DATA_PENDING = 1,
 }
 impl From<TXSTATUS_A> for bool {
     #[inline(always)]
@@ -27,44 +29,31 @@ impl From<TXSTATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXSTATUS` reader - Status of data in register TXDATA"]
-pub struct TXSTATUS_R(crate::FieldReader<bool, TXSTATUS_A>);
 impl TXSTATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TXSTATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXSTATUS_A {
         match self.bits {
-            false => TXSTATUS_A::NODATAPENDING,
-            true => TXSTATUS_A::DATAPENDING,
+            false => TXSTATUS_A::NO_DATA_PENDING,
+            true => TXSTATUS_A::DATA_PENDING,
         }
     }
-    #[doc = "Checks if the value of the field is `NODATAPENDING`"]
+    #[doc = "Checks if the value of the field is `NO_DATA_PENDING`"]
     #[inline(always)]
     pub fn is_no_data_pending(&self) -> bool {
-        **self == TXSTATUS_A::NODATAPENDING
+        *self == TXSTATUS_A::NO_DATA_PENDING
     }
-    #[doc = "Checks if the value of the field is `DATAPENDING`"]
+    #[doc = "Checks if the value of the field is `DATA_PENDING`"]
     #[inline(always)]
     pub fn is_data_pending(&self) -> bool {
-        **self == TXSTATUS_A::DATAPENDING
-    }
-}
-impl core::ops::Deref for TXSTATUS_R {
-    type Target = crate::FieldReader<bool, TXSTATUS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TXSTATUS_A::DATA_PENDING
     }
 }
 impl R {
     #[doc = "Bit 0 - Status of data in register TXDATA"]
     #[inline(always)]
     pub fn txstatus(&self) -> TXSTATUS_R {
-        TXSTATUS_R::new((self.bits & 0x01) != 0)
+        TXSTATUS_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Status to indicate if data sent from the CPU to the debugger has been read\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [txstatus](index.html) module"]

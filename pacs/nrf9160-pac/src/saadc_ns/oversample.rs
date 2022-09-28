@@ -34,6 +34,8 @@ impl From<crate::W<OVERSAMPLE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `OVERSAMPLE` reader - Oversample control"]
+pub type OVERSAMPLE_R = crate::FieldReader<u8, OVERSAMPLE_A>;
 #[doc = "Oversample control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -63,14 +65,8 @@ impl From<OVERSAMPLE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OVERSAMPLE` reader - Oversample control"]
-pub struct OVERSAMPLE_R(crate::FieldReader<u8, OVERSAMPLE_A>);
 impl OVERSAMPLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        OVERSAMPLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<OVERSAMPLE_A> {
         match self.bits {
@@ -89,66 +85,53 @@ impl OVERSAMPLE_R {
     #[doc = "Checks if the value of the field is `BYPASS`"]
     #[inline(always)]
     pub fn is_bypass(&self) -> bool {
-        **self == OVERSAMPLE_A::BYPASS
+        *self == OVERSAMPLE_A::BYPASS
     }
     #[doc = "Checks if the value of the field is `OVER2X`"]
     #[inline(always)]
     pub fn is_over2x(&self) -> bool {
-        **self == OVERSAMPLE_A::OVER2X
+        *self == OVERSAMPLE_A::OVER2X
     }
     #[doc = "Checks if the value of the field is `OVER4X`"]
     #[inline(always)]
     pub fn is_over4x(&self) -> bool {
-        **self == OVERSAMPLE_A::OVER4X
+        *self == OVERSAMPLE_A::OVER4X
     }
     #[doc = "Checks if the value of the field is `OVER8X`"]
     #[inline(always)]
     pub fn is_over8x(&self) -> bool {
-        **self == OVERSAMPLE_A::OVER8X
+        *self == OVERSAMPLE_A::OVER8X
     }
     #[doc = "Checks if the value of the field is `OVER16X`"]
     #[inline(always)]
     pub fn is_over16x(&self) -> bool {
-        **self == OVERSAMPLE_A::OVER16X
+        *self == OVERSAMPLE_A::OVER16X
     }
     #[doc = "Checks if the value of the field is `OVER32X`"]
     #[inline(always)]
     pub fn is_over32x(&self) -> bool {
-        **self == OVERSAMPLE_A::OVER32X
+        *self == OVERSAMPLE_A::OVER32X
     }
     #[doc = "Checks if the value of the field is `OVER64X`"]
     #[inline(always)]
     pub fn is_over64x(&self) -> bool {
-        **self == OVERSAMPLE_A::OVER64X
+        *self == OVERSAMPLE_A::OVER64X
     }
     #[doc = "Checks if the value of the field is `OVER128X`"]
     #[inline(always)]
     pub fn is_over128x(&self) -> bool {
-        **self == OVERSAMPLE_A::OVER128X
+        *self == OVERSAMPLE_A::OVER128X
     }
     #[doc = "Checks if the value of the field is `OVER256X`"]
     #[inline(always)]
     pub fn is_over256x(&self) -> bool {
-        **self == OVERSAMPLE_A::OVER256X
-    }
-}
-impl core::ops::Deref for OVERSAMPLE_R {
-    type Target = crate::FieldReader<u8, OVERSAMPLE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OVERSAMPLE_A::OVER256X
     }
 }
 #[doc = "Field `OVERSAMPLE` writer - Oversample control"]
-pub struct OVERSAMPLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVERSAMPLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OVERSAMPLE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type OVERSAMPLE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, OVERSAMPLE_SPEC, u8, OVERSAMPLE_A, 4, O>;
+impl<'a, const O: u8> OVERSAMPLE_W<'a, O> {
     #[doc = "Bypass oversampling"]
     #[inline(always)]
     pub fn bypass(self) -> &'a mut W {
@@ -194,12 +177,6 @@ impl<'a> OVERSAMPLE_W<'a> {
     pub fn over256x(self) -> &'a mut W {
         self.variant(OVERSAMPLE_A::OVER256X)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:3 - Oversample control"]
@@ -211,8 +188,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Oversample control"]
     #[inline(always)]
-    pub fn oversample(&mut self) -> OVERSAMPLE_W {
-        OVERSAMPLE_W { w: self }
+    pub fn oversample(&mut self) -> OVERSAMPLE_W<0> {
+        OVERSAMPLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,32 +35,11 @@ impl From<crate::W<XOSC32MCAPS_SPEC>> for W {
     }
 }
 #[doc = "Field `CAPVALUE` reader - Value representing capacitance, calculated using provided equation"]
-pub struct CAPVALUE_R(crate::FieldReader<u8, u8>);
-impl CAPVALUE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CAPVALUE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAPVALUE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAPVALUE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CAPVALUE` writer - Value representing capacitance, calculated using provided equation"]
-pub struct CAPVALUE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPVALUE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type CAPVALUE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, XOSC32MCAPS_SPEC, u8, u8, 5, O>;
+#[doc = "Field `ENABLE` reader - Enable on-chip capacitors on XC1 and XC2"]
+pub type ENABLE_R = crate::BitReader<ENABLE_A>;
 #[doc = "Enable on-chip capacitors on XC1 and XC2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLE_A {
@@ -75,14 +54,8 @@ impl From<ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ENABLE` reader - Enable on-chip capacitors on XC1 and XC2"]
-pub struct ENABLE_R(crate::FieldReader<bool, ENABLE_A>);
 impl ENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ENABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENABLE_A {
         match self.bits {
@@ -93,31 +66,17 @@ impl ENABLE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ENABLE_A::DISABLED
+        *self == ENABLE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ENABLE_A::ENABLED
-    }
-}
-impl core::ops::Deref for ENABLE_R {
-    type Target = crate::FieldReader<bool, ENABLE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENABLE_A::ENABLED
     }
 }
 #[doc = "Field `ENABLE` writer - Enable on-chip capacitors on XC1 and XC2"]
-pub struct ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENABLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, XOSC32MCAPS_SPEC, ENABLE_A, O>;
+impl<'a, const O: u8> ENABLE_W<'a, O> {
     #[doc = "Capacitor disabled (use external caps)"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -127,22 +86,6 @@ impl<'a> ENABLE_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(ENABLE_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
     }
 }
 impl R {
@@ -154,19 +97,19 @@ impl R {
     #[doc = "Bit 8 - Enable on-chip capacitors on XC1 and XC2"]
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new(((self.bits >> 8) & 0x01) != 0)
+        ENABLE_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Value representing capacitance, calculated using provided equation"]
     #[inline(always)]
-    pub fn capvalue(&mut self) -> CAPVALUE_W {
-        CAPVALUE_W { w: self }
+    pub fn capvalue(&mut self) -> CAPVALUE_W<0> {
+        CAPVALUE_W::new(self)
     }
     #[doc = "Bit 8 - Enable on-chip capacitors on XC1 and XC2"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W {
-        ENABLE_W { w: self }
+    pub fn enable(&mut self) -> ENABLE_W<8> {
+        ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<PRESCALER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PRESCALER` reader - Pre-scaler of PWM_CLK"]
+pub type PRESCALER_R = crate::FieldReader<u8, PRESCALER_A>;
 #[doc = "Pre-scaler of PWM_CLK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -61,14 +63,8 @@ impl From<PRESCALER_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRESCALER` reader - Pre-scaler of PWM_CLK"]
-pub struct PRESCALER_R(crate::FieldReader<u8, PRESCALER_A>);
 impl PRESCALER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PRESCALER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRESCALER_A {
         match self.bits {
@@ -86,61 +82,48 @@ impl PRESCALER_R {
     #[doc = "Checks if the value of the field is `DIV_1`"]
     #[inline(always)]
     pub fn is_div_1(&self) -> bool {
-        **self == PRESCALER_A::DIV_1
+        *self == PRESCALER_A::DIV_1
     }
     #[doc = "Checks if the value of the field is `DIV_2`"]
     #[inline(always)]
     pub fn is_div_2(&self) -> bool {
-        **self == PRESCALER_A::DIV_2
+        *self == PRESCALER_A::DIV_2
     }
     #[doc = "Checks if the value of the field is `DIV_4`"]
     #[inline(always)]
     pub fn is_div_4(&self) -> bool {
-        **self == PRESCALER_A::DIV_4
+        *self == PRESCALER_A::DIV_4
     }
     #[doc = "Checks if the value of the field is `DIV_8`"]
     #[inline(always)]
     pub fn is_div_8(&self) -> bool {
-        **self == PRESCALER_A::DIV_8
+        *self == PRESCALER_A::DIV_8
     }
     #[doc = "Checks if the value of the field is `DIV_16`"]
     #[inline(always)]
     pub fn is_div_16(&self) -> bool {
-        **self == PRESCALER_A::DIV_16
+        *self == PRESCALER_A::DIV_16
     }
     #[doc = "Checks if the value of the field is `DIV_32`"]
     #[inline(always)]
     pub fn is_div_32(&self) -> bool {
-        **self == PRESCALER_A::DIV_32
+        *self == PRESCALER_A::DIV_32
     }
     #[doc = "Checks if the value of the field is `DIV_64`"]
     #[inline(always)]
     pub fn is_div_64(&self) -> bool {
-        **self == PRESCALER_A::DIV_64
+        *self == PRESCALER_A::DIV_64
     }
     #[doc = "Checks if the value of the field is `DIV_128`"]
     #[inline(always)]
     pub fn is_div_128(&self) -> bool {
-        **self == PRESCALER_A::DIV_128
-    }
-}
-impl core::ops::Deref for PRESCALER_R {
-    type Target = crate::FieldReader<u8, PRESCALER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PRESCALER_A::DIV_128
     }
 }
 #[doc = "Field `PRESCALER` writer - Pre-scaler of PWM_CLK"]
-pub struct PRESCALER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRESCALER_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRESCALER_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type PRESCALER_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PRESCALER_SPEC, u8, PRESCALER_A, 3, O>;
+impl<'a, const O: u8> PRESCALER_W<'a, O> {
     #[doc = "Divide by 1 (16MHz)"]
     #[inline(always)]
     pub fn div_1(self) -> &'a mut W {
@@ -181,25 +164,19 @@ impl<'a> PRESCALER_W<'a> {
     pub fn div_128(self) -> &'a mut W {
         self.variant(PRESCALER_A::DIV_128)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Pre-scaler of PWM_CLK"]
     #[inline(always)]
     pub fn prescaler(&self) -> PRESCALER_R {
-        PRESCALER_R::new((self.bits & 0x07) as u8)
+        PRESCALER_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Pre-scaler of PWM_CLK"]
     #[inline(always)]
-    pub fn prescaler(&mut self) -> PRESCALER_W {
-        PRESCALER_W { w: self }
+    pub fn prescaler(&mut self) -> PRESCALER_W<0> {
+        PRESCALER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

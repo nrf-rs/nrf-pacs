@@ -14,20 +14,7 @@ impl From<crate::R<CURRENTLOADCTRL_SPEC>> for R {
     }
 }
 #[doc = "Field `CURRENTLOADCTRL` reader - Current value driven to the NFC Load Control"]
-pub struct CURRENTLOADCTRL_R(crate::FieldReader<u8, u8>);
-impl CURRENTLOADCTRL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CURRENTLOADCTRL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CURRENTLOADCTRL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CURRENTLOADCTRL_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:5 - Current value driven to the NFC Load Control"]
     #[inline(always)]

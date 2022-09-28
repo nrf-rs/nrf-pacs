@@ -3,16 +3,16 @@
 pub struct RegisterBlock {
     _reserved0: [u8; 0x0550],
     #[doc = "0x550 - Software force enable APPROTECT mechanism until next reset."]
-    pub forceprotect: crate::Reg<forceprotect::FORCEPROTECT_SPEC>,
+    pub forceprotect: FORCEPROTECT,
     _reserved1: [u8; 0x04],
     #[doc = "0x558 - Software disable APPROTECT mechanism"]
-    pub disable: crate::Reg<disable::DISABLE_SPEC>,
+    pub disable: DISABLE,
 }
-#[doc = "FORCEPROTECT register accessor: an alias for `Reg<FORCEPROTECT_SPEC>`"]
+#[doc = "FORCEPROTECT (rw) register accessor: an alias for `Reg<FORCEPROTECT_SPEC>`"]
 pub type FORCEPROTECT = crate::Reg<forceprotect::FORCEPROTECT_SPEC>;
 #[doc = "Software force enable APPROTECT mechanism until next reset."]
 pub mod forceprotect;
-#[doc = "DISABLE register accessor: an alias for `Reg<DISABLE_SPEC>`"]
+#[doc = "DISABLE (rw) register accessor: an alias for `Reg<DISABLE_SPEC>`"]
 pub type DISABLE = crate::Reg<disable::DISABLE_SPEC>;
 #[doc = "Software disable APPROTECT mechanism"]
 pub mod disable;

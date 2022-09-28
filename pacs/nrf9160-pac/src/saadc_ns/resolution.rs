@@ -34,6 +34,8 @@ impl From<crate::W<RESOLUTION_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `VAL` reader - Set the resolution"]
+pub type VAL_R = crate::FieldReader<u8, VAL_A>;
 #[doc = "Set the resolution\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,14 +55,8 @@ impl From<VAL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VAL` reader - Set the resolution"]
-pub struct VAL_R(crate::FieldReader<u8, VAL_A>);
 impl VAL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        VAL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<VAL_A> {
         match self.bits {
@@ -74,41 +70,27 @@ impl VAL_R {
     #[doc = "Checks if the value of the field is `_8BIT`"]
     #[inline(always)]
     pub fn is_8bit(&self) -> bool {
-        **self == VAL_A::_8BIT
+        *self == VAL_A::_8BIT
     }
     #[doc = "Checks if the value of the field is `_10BIT`"]
     #[inline(always)]
     pub fn is_10bit(&self) -> bool {
-        **self == VAL_A::_10BIT
+        *self == VAL_A::_10BIT
     }
     #[doc = "Checks if the value of the field is `_12BIT`"]
     #[inline(always)]
     pub fn is_12bit(&self) -> bool {
-        **self == VAL_A::_12BIT
+        *self == VAL_A::_12BIT
     }
     #[doc = "Checks if the value of the field is `_14BIT`"]
     #[inline(always)]
     pub fn is_14bit(&self) -> bool {
-        **self == VAL_A::_14BIT
-    }
-}
-impl core::ops::Deref for VAL_R {
-    type Target = crate::FieldReader<u8, VAL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VAL_A::_14BIT
     }
 }
 #[doc = "Field `VAL` writer - Set the resolution"]
-pub struct VAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VAL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VAL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type VAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RESOLUTION_SPEC, u8, VAL_A, 3, O>;
+impl<'a, const O: u8> VAL_W<'a, O> {
     #[doc = "8 bit"]
     #[inline(always)]
     pub fn _8bit(self) -> &'a mut W {
@@ -129,25 +111,19 @@ impl<'a> VAL_W<'a> {
     pub fn _14bit(self) -> &'a mut W {
         self.variant(VAL_A::_14BIT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Set the resolution"]
     #[inline(always)]
     pub fn val(&self) -> VAL_R {
-        VAL_R::new((self.bits & 0x07) as u8)
+        VAL_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Set the resolution"]
     #[inline(always)]
-    pub fn val(&mut self) -> VAL_W {
-        VAL_W { w: self }
+    pub fn val(&mut self) -> VAL_W<0> {
+        VAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

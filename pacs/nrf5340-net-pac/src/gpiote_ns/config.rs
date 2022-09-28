@@ -34,6 +34,8 @@ impl From<crate::W<CONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,14 +53,8 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - Mode"]
-pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MODE_A> {
         match self.bits {
@@ -71,36 +67,22 @@ impl MODE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MODE_A::DISABLED
+        *self == MODE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `EVENT`"]
     #[inline(always)]
     pub fn is_event(&self) -> bool {
-        **self == MODE_A::EVENT
+        *self == MODE_A::EVENT
     }
     #[doc = "Checks if the value of the field is `TASK`"]
     #[inline(always)]
     pub fn is_task(&self) -> bool {
-        **self == MODE_A::TASK
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<u8, MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE_A::TASK
     }
 }
 #[doc = "Field `MODE` writer - Mode"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONFIG_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Disabled. Pin specified by PSEL will not be acquired by the GPIOTE module."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -116,81 +98,23 @@ impl<'a> MODE_W<'a> {
     pub fn task(self) -> &'a mut W {
         self.variant(MODE_A::TASK)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 #[doc = "Field `PSEL` reader - GPIO number associated with SET\\[n\\], CLR\\[n\\], and OUT\\[n\\]
 tasks and IN\\[n\\]
 event"]
-pub struct PSEL_R(crate::FieldReader<u8, u8>);
-impl PSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PSEL` writer - GPIO number associated with SET\\[n\\], CLR\\[n\\], and OUT\\[n\\]
 tasks and IN\\[n\\]
 event"]
-pub struct PSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 8)) | ((value as u32 & 0x1f) << 8);
-        self.w
-    }
-}
+pub type PSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONFIG_SPEC, u8, u8, 5, O>;
 #[doc = "Field `PORT` reader - Port number"]
-pub struct PORT_R(crate::FieldReader<bool, bool>);
-impl PORT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PORT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PORT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PORT_R = crate::BitReader<bool>;
 #[doc = "Field `PORT` writer - Port number"]
-pub struct PORT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PORT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type PORT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, bool, O>;
+#[doc = "Field `POLARITY` reader - When In task mode: Operation to be performed on output when OUT\\[n\\]
+task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\]
+event."]
+pub type POLARITY_R = crate::FieldReader<u8, POLARITY_A>;
 #[doc = "When In task mode: Operation to be performed on output when OUT\\[n\\]
 task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\]
 event.\n\nValue on reset: 0"]
@@ -204,11 +128,11 @@ event generated on pin activity."]
     #[doc = "1: Task mode: Set pin from OUT\\[n\\]
 task. Event mode: Generate IN\\[n\\]
 event when rising edge on pin."]
-    LOTOHI = 1,
+    LO_TO_HI = 1,
     #[doc = "2: Task mode: Clear pin from OUT\\[n\\]
 task. Event mode: Generate IN\\[n\\]
 event when falling edge on pin."]
-    HITOLO = 2,
+    HI_TO_LO = 2,
     #[doc = "3: Task mode: Toggle pin from OUT\\[n\\]. Event mode: Generate IN\\[n\\]
 when any change on pin."]
     TOGGLE = 3,
@@ -219,22 +143,14 @@ impl From<POLARITY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `POLARITY` reader - When In task mode: Operation to be performed on output when OUT\\[n\\]
-task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\]
-event."]
-pub struct POLARITY_R(crate::FieldReader<u8, POLARITY_A>);
 impl POLARITY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        POLARITY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> POLARITY_A {
         match self.bits {
             0 => POLARITY_A::NONE,
-            1 => POLARITY_A::LOTOHI,
-            2 => POLARITY_A::HITOLO,
+            1 => POLARITY_A::LO_TO_HI,
+            2 => POLARITY_A::HI_TO_LO,
             3 => POLARITY_A::TOGGLE,
             _ => unreachable!(),
         }
@@ -242,43 +158,30 @@ impl POLARITY_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == POLARITY_A::NONE
+        *self == POLARITY_A::NONE
     }
-    #[doc = "Checks if the value of the field is `LOTOHI`"]
+    #[doc = "Checks if the value of the field is `LO_TO_HI`"]
     #[inline(always)]
     pub fn is_lo_to_hi(&self) -> bool {
-        **self == POLARITY_A::LOTOHI
+        *self == POLARITY_A::LO_TO_HI
     }
-    #[doc = "Checks if the value of the field is `HITOLO`"]
+    #[doc = "Checks if the value of the field is `HI_TO_LO`"]
     #[inline(always)]
     pub fn is_hi_to_lo(&self) -> bool {
-        **self == POLARITY_A::HITOLO
+        *self == POLARITY_A::HI_TO_LO
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        **self == POLARITY_A::TOGGLE
-    }
-}
-impl core::ops::Deref for POLARITY_R {
-    type Target = crate::FieldReader<u8, POLARITY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == POLARITY_A::TOGGLE
     }
 }
 #[doc = "Field `POLARITY` writer - When In task mode: Operation to be performed on output when OUT\\[n\\]
 task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\]
 event."]
-pub struct POLARITY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POLARITY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: POLARITY_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type POLARITY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CONFIG_SPEC, u8, POLARITY_A, 2, O>;
+impl<'a, const O: u8> POLARITY_W<'a, O> {
     #[doc = "Task mode: No effect on pin from OUT\\[n\\]
 task. Event mode: no IN\\[n\\]
 event generated on pin activity."]
@@ -291,14 +194,14 @@ task. Event mode: Generate IN\\[n\\]
 event when rising edge on pin."]
     #[inline(always)]
     pub fn lo_to_hi(self) -> &'a mut W {
-        self.variant(POLARITY_A::LOTOHI)
+        self.variant(POLARITY_A::LO_TO_HI)
     }
     #[doc = "Task mode: Clear pin from OUT\\[n\\]
 task. Event mode: Generate IN\\[n\\]
 event when falling edge on pin."]
     #[inline(always)]
     pub fn hi_to_lo(self) -> &'a mut W {
-        self.variant(POLARITY_A::HITOLO)
+        self.variant(POLARITY_A::HI_TO_LO)
     }
     #[doc = "Task mode: Toggle pin from OUT\\[n\\]. Event mode: Generate IN\\[n\\]
 when any change on pin."]
@@ -306,13 +209,9 @@ when any change on pin."]
     pub fn toggle(self) -> &'a mut W {
         self.variant(POLARITY_A::TOGGLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
 }
+#[doc = "Field `OUTINIT` reader - When in task mode: Initial value of the output when the GPIOTE channel is configured. When in event mode: No effect."]
+pub type OUTINIT_R = crate::BitReader<OUTINIT_A>;
 #[doc = "When in task mode: Initial value of the output when the GPIOTE channel is configured. When in event mode: No effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUTINIT_A {
@@ -327,14 +226,8 @@ impl From<OUTINIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OUTINIT` reader - When in task mode: Initial value of the output when the GPIOTE channel is configured. When in event mode: No effect."]
-pub struct OUTINIT_R(crate::FieldReader<bool, OUTINIT_A>);
 impl OUTINIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUTINIT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OUTINIT_A {
         match self.bits {
@@ -345,31 +238,17 @@ impl OUTINIT_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == OUTINIT_A::LOW
+        *self == OUTINIT_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == OUTINIT_A::HIGH
-    }
-}
-impl core::ops::Deref for OUTINIT_R {
-    type Target = crate::FieldReader<bool, OUTINIT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OUTINIT_A::HIGH
     }
 }
 #[doc = "Field `OUTINIT` writer - When in task mode: Initial value of the output when the GPIOTE channel is configured. When in event mode: No effect."]
-pub struct OUTINIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTINIT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUTINIT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OUTINIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, OUTINIT_A, O>;
+impl<'a, const O: u8> OUTINIT_W<'a, O> {
     #[doc = "Task mode: Initial value of pin before task triggering is low"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -380,28 +259,12 @@ impl<'a> OUTINIT_W<'a> {
     pub fn high(self) -> &'a mut W {
         self.variant(OUTINIT_A::HIGH)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Mode"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new((self.bits & 0x03) as u8)
+        MODE_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 8:12 - GPIO number associated with SET\\[n\\], CLR\\[n\\], and OUT\\[n\\]
 tasks and IN\\[n\\]
@@ -413,50 +276,50 @@ event"]
     #[doc = "Bit 13 - Port number"]
     #[inline(always)]
     pub fn port(&self) -> PORT_R {
-        PORT_R::new(((self.bits >> 13) & 0x01) != 0)
+        PORT_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bits 16:17 - When In task mode: Operation to be performed on output when OUT\\[n\\]
 task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\]
 event."]
     #[inline(always)]
     pub fn polarity(&self) -> POLARITY_R {
-        POLARITY_R::new(((self.bits >> 16) & 0x03) as u8)
+        POLARITY_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bit 20 - When in task mode: Initial value of the output when the GPIOTE channel is configured. When in event mode: No effect."]
     #[inline(always)]
     pub fn outinit(&self) -> OUTINIT_R {
-        OUTINIT_R::new(((self.bits >> 20) & 0x01) != 0)
+        OUTINIT_R::new(((self.bits >> 20) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    pub fn mode(&mut self) -> MODE_W<0> {
+        MODE_W::new(self)
     }
     #[doc = "Bits 8:12 - GPIO number associated with SET\\[n\\], CLR\\[n\\], and OUT\\[n\\]
 tasks and IN\\[n\\]
 event"]
     #[inline(always)]
-    pub fn psel(&mut self) -> PSEL_W {
-        PSEL_W { w: self }
+    pub fn psel(&mut self) -> PSEL_W<8> {
+        PSEL_W::new(self)
     }
     #[doc = "Bit 13 - Port number"]
     #[inline(always)]
-    pub fn port(&mut self) -> PORT_W {
-        PORT_W { w: self }
+    pub fn port(&mut self) -> PORT_W<13> {
+        PORT_W::new(self)
     }
     #[doc = "Bits 16:17 - When In task mode: Operation to be performed on output when OUT\\[n\\]
 task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\]
 event."]
     #[inline(always)]
-    pub fn polarity(&mut self) -> POLARITY_W {
-        POLARITY_W { w: self }
+    pub fn polarity(&mut self) -> POLARITY_W<16> {
+        POLARITY_W::new(self)
     }
     #[doc = "Bit 20 - When in task mode: Initial value of the output when the GPIOTE channel is configured. When in event mode: No effect."]
     #[inline(always)]
-    pub fn outinit(&mut self) -> OUTINIT_W {
-        OUTINIT_W { w: self }
+    pub fn outinit(&mut self) -> OUTINIT_W<20> {
+        OUTINIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -14,20 +14,7 @@ impl From<crate::R<SAMPLE_SPEC>> for R {
     }
 }
 #[doc = "Field `SAMPLE` reader - Last sample taken in compliment to 2."]
-pub struct SAMPLE_R(crate::FieldReader<u32, u32>);
-impl SAMPLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SAMPLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SAMPLE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SAMPLE_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Last sample taken in compliment to 2."]
     #[inline(always)]

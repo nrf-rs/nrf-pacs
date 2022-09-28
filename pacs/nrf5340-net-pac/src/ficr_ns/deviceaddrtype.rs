@@ -13,6 +13,8 @@ impl From<crate::R<DEVICEADDRTYPE_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `DEVICEADDRTYPE` reader - Device address type"]
+pub type DEVICEADDRTYPE_R = crate::BitReader<DEVICEADDRTYPE_A>;
 #[doc = "Device address type\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEVICEADDRTYPE_A {
@@ -27,14 +29,8 @@ impl From<DEVICEADDRTYPE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DEVICEADDRTYPE` reader - Device address type"]
-pub struct DEVICEADDRTYPE_R(crate::FieldReader<bool, DEVICEADDRTYPE_A>);
 impl DEVICEADDRTYPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DEVICEADDRTYPE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DEVICEADDRTYPE_A {
         match self.bits {
@@ -45,26 +41,19 @@ impl DEVICEADDRTYPE_R {
     #[doc = "Checks if the value of the field is `PUBLIC`"]
     #[inline(always)]
     pub fn is_public(&self) -> bool {
-        **self == DEVICEADDRTYPE_A::PUBLIC
+        *self == DEVICEADDRTYPE_A::PUBLIC
     }
     #[doc = "Checks if the value of the field is `RANDOM`"]
     #[inline(always)]
     pub fn is_random(&self) -> bool {
-        **self == DEVICEADDRTYPE_A::RANDOM
-    }
-}
-impl core::ops::Deref for DEVICEADDRTYPE_R {
-    type Target = crate::FieldReader<bool, DEVICEADDRTYPE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DEVICEADDRTYPE_A::RANDOM
     }
 }
 impl R {
     #[doc = "Bit 0 - Device address type"]
     #[inline(always)]
     pub fn deviceaddrtype(&self) -> DEVICEADDRTYPE_R {
-        DEVICEADDRTYPE_R::new((self.bits & 0x01) != 0)
+        DEVICEADDRTYPE_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Device address type\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [deviceaddrtype](index.html) module"]

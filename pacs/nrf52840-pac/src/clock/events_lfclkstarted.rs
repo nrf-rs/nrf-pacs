@@ -35,54 +35,22 @@ impl From<crate::W<EVENTS_LFCLKSTARTED_SPEC>> for W {
     }
 }
 #[doc = "Field `EVENTS_LFCLKSTARTED` reader - "]
-pub struct EVENTS_LFCLKSTARTED_R(crate::FieldReader<bool, bool>);
-impl EVENTS_LFCLKSTARTED_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EVENTS_LFCLKSTARTED_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EVENTS_LFCLKSTARTED_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EVENTS_LFCLKSTARTED_R = crate::BitReader<bool>;
 #[doc = "Field `EVENTS_LFCLKSTARTED` writer - "]
-pub struct EVENTS_LFCLKSTARTED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVENTS_LFCLKSTARTED_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EVENTS_LFCLKSTARTED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_LFCLKSTARTED_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn events_lfclkstarted(&self) -> EVENTS_LFCLKSTARTED_R {
-        EVENTS_LFCLKSTARTED_R::new((self.bits & 0x01) != 0)
+        EVENTS_LFCLKSTARTED_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn events_lfclkstarted(&mut self) -> EVENTS_LFCLKSTARTED_W {
-        EVENTS_LFCLKSTARTED_W { w: self }
+    pub fn events_lfclkstarted(&mut self) -> EVENTS_LFCLKSTARTED_W<0> {
+        EVENTS_LFCLKSTARTED_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

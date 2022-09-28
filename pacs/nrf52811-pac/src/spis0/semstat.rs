@@ -13,6 +13,8 @@ impl From<crate::R<SEMSTAT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `SEMSTAT` reader - Semaphore status"]
+pub type SEMSTAT_R = crate::FieldReader<u8, SEMSTAT_A>;
 #[doc = "Semaphore status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -32,14 +34,8 @@ impl From<SEMSTAT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SEMSTAT` reader - Semaphore status"]
-pub struct SEMSTAT_R(crate::FieldReader<u8, SEMSTAT_A>);
 impl SEMSTAT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SEMSTAT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEMSTAT_A {
         match self.bits {
@@ -53,36 +49,29 @@ impl SEMSTAT_R {
     #[doc = "Checks if the value of the field is `FREE`"]
     #[inline(always)]
     pub fn is_free(&self) -> bool {
-        **self == SEMSTAT_A::FREE
+        *self == SEMSTAT_A::FREE
     }
     #[doc = "Checks if the value of the field is `CPU`"]
     #[inline(always)]
     pub fn is_cpu(&self) -> bool {
-        **self == SEMSTAT_A::CPU
+        *self == SEMSTAT_A::CPU
     }
     #[doc = "Checks if the value of the field is `SPIS`"]
     #[inline(always)]
     pub fn is_spis(&self) -> bool {
-        **self == SEMSTAT_A::SPIS
+        *self == SEMSTAT_A::SPIS
     }
     #[doc = "Checks if the value of the field is `CPUPENDING`"]
     #[inline(always)]
     pub fn is_cpupending(&self) -> bool {
-        **self == SEMSTAT_A::CPUPENDING
-    }
-}
-impl core::ops::Deref for SEMSTAT_R {
-    type Target = crate::FieldReader<u8, SEMSTAT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SEMSTAT_A::CPUPENDING
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Semaphore status"]
     #[inline(always)]
     pub fn semstat(&self) -> SEMSTAT_R {
-        SEMSTAT_R::new((self.bits & 0x03) as u8)
+        SEMSTAT_R::new((self.bits & 3) as u8)
     }
 }
 #[doc = "Semaphore status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [semstat](index.html) module"]

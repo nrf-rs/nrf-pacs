@@ -13,6 +13,8 @@ impl From<crate::R<FLASH_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `FLASH` reader - Flash variant"]
+pub type FLASH_R = crate::FieldReader<u32, FLASH_A>;
 #[doc = "Flash variant\n\nValue on reset: 192"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -28,14 +30,8 @@ impl From<FLASH_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `FLASH` reader - Flash variant"]
-pub struct FLASH_R(crate::FieldReader<u32, FLASH_A>);
 impl FLASH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        FLASH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<FLASH_A> {
         match self.bits {
@@ -47,19 +43,12 @@ impl FLASH_R {
     #[doc = "Checks if the value of the field is `K192`"]
     #[inline(always)]
     pub fn is_k192(&self) -> bool {
-        **self == FLASH_A::K192
+        *self == FLASH_A::K192
     }
     #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
     #[inline(always)]
     pub fn is_unspecified(&self) -> bool {
-        **self == FLASH_A::UNSPECIFIED
-    }
-}
-impl core::ops::Deref for FLASH_R {
-    type Target = crate::FieldReader<u32, FLASH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FLASH_A::UNSPECIFIED
     }
 }
 impl R {

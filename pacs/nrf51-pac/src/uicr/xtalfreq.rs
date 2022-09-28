@@ -34,6 +34,8 @@ impl From<crate::W<XTALFREQ_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `XTALFREQ` reader - Reset value for CLOCK XTALFREQ register."]
+pub type XTALFREQ_R = crate::FieldReader<u8, XTALFREQ_A>;
 #[doc = "Reset value for CLOCK XTALFREQ register.\n\nValue on reset: 255"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,14 +51,8 @@ impl From<XTALFREQ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `XTALFREQ` reader - Reset value for CLOCK XTALFREQ register."]
-pub struct XTALFREQ_R(crate::FieldReader<u8, XTALFREQ_A>);
 impl XTALFREQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        XTALFREQ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<XTALFREQ_A> {
         match self.bits {
@@ -68,31 +64,18 @@ impl XTALFREQ_R {
     #[doc = "Checks if the value of the field is `_16MHZ`"]
     #[inline(always)]
     pub fn is_16mhz(&self) -> bool {
-        **self == XTALFREQ_A::_16MHZ
+        *self == XTALFREQ_A::_16MHZ
     }
     #[doc = "Checks if the value of the field is `_32MHZ`"]
     #[inline(always)]
     pub fn is_32mhz(&self) -> bool {
-        **self == XTALFREQ_A::_32MHZ
-    }
-}
-impl core::ops::Deref for XTALFREQ_R {
-    type Target = crate::FieldReader<u8, XTALFREQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == XTALFREQ_A::_32MHZ
     }
 }
 #[doc = "Field `XTALFREQ` writer - Reset value for CLOCK XTALFREQ register."]
-pub struct XTALFREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XTALFREQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XTALFREQ_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type XTALFREQ_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, XTALFREQ_SPEC, u8, XTALFREQ_A, 8, O>;
+impl<'a, const O: u8> XTALFREQ_W<'a, O> {
     #[doc = "16MHz Xtal is used."]
     #[inline(always)]
     pub fn _16mhz(self) -> &'a mut W {
@@ -102,12 +85,6 @@ impl<'a> XTALFREQ_W<'a> {
     #[inline(always)]
     pub fn _32mhz(self) -> &'a mut W {
         self.variant(XTALFREQ_A::_32MHZ)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
     }
 }
 impl R {
@@ -120,8 +97,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Reset value for CLOCK XTALFREQ register."]
     #[inline(always)]
-    pub fn xtalfreq(&mut self) -> XTALFREQ_W {
-        XTALFREQ_W { w: self }
+    pub fn xtalfreq(&mut self) -> XTALFREQ_W<0> {
+        XTALFREQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

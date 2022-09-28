@@ -14,20 +14,7 @@ impl From<crate::R<RCCUTOFF_SPEC>> for R {
     }
 }
 #[doc = "Field `RCCUTOFF` reader - Repetition counter cutoff"]
-pub struct RCCUTOFF_R(crate::FieldReader<u32, u32>);
-impl RCCUTOFF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        RCCUTOFF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RCCUTOFF_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RCCUTOFF_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Repetition counter cutoff"]
     #[inline(always)]

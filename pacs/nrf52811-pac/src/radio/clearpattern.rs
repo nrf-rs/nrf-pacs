@@ -34,6 +34,8 @@ impl From<crate::W<CLEARPATTERN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CLEARPATTERN` reader - Clears GPIO pattern array for antenna control"]
+pub type CLEARPATTERN_R = crate::BitReader<CLEARPATTERN_A>;
 #[doc = "Clears GPIO pattern array for antenna control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLEARPATTERN_A {
@@ -46,14 +48,8 @@ impl From<CLEARPATTERN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLEARPATTERN` reader - Clears GPIO pattern array for antenna control"]
-pub struct CLEARPATTERN_R(crate::FieldReader<bool, CLEARPATTERN_A>);
 impl CLEARPATTERN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLEARPATTERN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CLEARPATTERN_A> {
         match self.bits {
@@ -64,60 +60,31 @@ impl CLEARPATTERN_R {
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        **self == CLEARPATTERN_A::CLEAR
-    }
-}
-impl core::ops::Deref for CLEARPATTERN_R {
-    type Target = crate::FieldReader<bool, CLEARPATTERN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLEARPATTERN_A::CLEAR
     }
 }
 #[doc = "Field `CLEARPATTERN` writer - Clears GPIO pattern array for antenna control"]
-pub struct CLEARPATTERN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLEARPATTERN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLEARPATTERN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLEARPATTERN_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, CLEARPATTERN_SPEC, CLEARPATTERN_A, O>;
+impl<'a, const O: u8> CLEARPATTERN_W<'a, O> {
     #[doc = "Clear the GPIO pattern"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
         self.variant(CLEARPATTERN_A::CLEAR)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 impl R {
     #[doc = "Bit 0 - Clears GPIO pattern array for antenna control"]
     #[inline(always)]
     pub fn clearpattern(&self) -> CLEARPATTERN_R {
-        CLEARPATTERN_R::new((self.bits & 0x01) != 0)
+        CLEARPATTERN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Clears GPIO pattern array for antenna control"]
     #[inline(always)]
-    pub fn clearpattern(&mut self) -> CLEARPATTERN_W {
-        CLEARPATTERN_W { w: self }
+    pub fn clearpattern(&mut self) -> CLEARPATTERN_W<0> {
+        CLEARPATTERN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

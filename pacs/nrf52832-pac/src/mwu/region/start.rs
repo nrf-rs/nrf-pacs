@@ -35,32 +35,9 @@ impl From<crate::W<START_SPEC>> for W {
     }
 }
 #[doc = "Field `START` reader - Start address for region"]
-pub struct START_R(crate::FieldReader<u32, u32>);
-impl START_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        START_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for START_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type START_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `START` writer - Start address for region"]
-pub struct START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type START_W<'a, const O: u8> = crate::FieldWriter<'a, u32, START_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Start address for region"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Start address for region"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
-        START_W { w: self }
+    pub fn start(&mut self) -> START_W<0> {
+        START_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

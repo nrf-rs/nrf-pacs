@@ -35,32 +35,9 @@ impl From<crate::W<NRFHW_SPEC>> for W {
     }
 }
 #[doc = "Field `NRFHW` reader - Reserved for Nordic hardware design"]
-pub struct NRFHW_R(crate::FieldReader<u32, u32>);
-impl NRFHW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        NRFHW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NRFHW_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NRFHW_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `NRFHW` writer - Reserved for Nordic hardware design"]
-pub struct NRFHW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NRFHW_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type NRFHW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NRFHW_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Reserved for Nordic hardware design"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Reserved for Nordic hardware design"]
     #[inline(always)]
-    pub fn nrfhw(&mut self) -> NRFHW_W {
-        NRFHW_W { w: self }
+    pub fn nrfhw(&mut self) -> NRFHW_W<0> {
+        NRFHW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

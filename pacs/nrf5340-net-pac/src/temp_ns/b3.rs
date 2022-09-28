@@ -35,32 +35,9 @@ impl From<crate::W<B3_SPEC>> for W {
     }
 }
 #[doc = "Field `B3` reader - y-intercept of fourth piecewise linear function"]
-pub struct B3_R(crate::FieldReader<u16, u16>);
-impl B3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        B3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for B3_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type B3_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `B3` writer - y-intercept of fourth piecewise linear function"]
-pub struct B3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> B3_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type B3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, B3_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - y-intercept of fourth piecewise linear function"]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - y-intercept of fourth piecewise linear function"]
     #[inline(always)]
-    pub fn b3(&mut self) -> B3_W {
-        B3_W { w: self }
+    pub fn b3(&mut self) -> B3_W<0> {
+        B3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<CNT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CNT` reader - Amount of values (duty cycles) in this sequence"]
+pub type CNT_R = crate::FieldReader<u16, CNT_A>;
 #[doc = "Amount of values (duty cycles) in this sequence\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u16)]
@@ -47,14 +49,8 @@ impl From<CNT_A> for u16 {
         variant as _
     }
 }
-#[doc = "Field `CNT` reader - Amount of values (duty cycles) in this sequence"]
-pub struct CNT_R(crate::FieldReader<u16, CNT_A>);
 impl CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        CNT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CNT_A> {
         match self.bits {
@@ -65,36 +61,16 @@ impl CNT_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CNT_A::DISABLED
-    }
-}
-impl core::ops::Deref for CNT_R {
-    type Target = crate::FieldReader<u16, CNT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CNT_A::DISABLED
     }
 }
 #[doc = "Field `CNT` writer - Amount of values (duty cycles) in this sequence"]
-pub struct CNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CNT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CNT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CNT_SPEC, u16, CNT_A, 15, O>;
+impl<'a, const O: u8> CNT_W<'a, O> {
     #[doc = "Sequence is disabled, and shall not be started as it is empty"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(CNT_A::DISABLED)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7fff) | (value as u32 & 0x7fff);
-        self.w
     }
 }
 impl R {
@@ -107,8 +83,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:14 - Amount of values (duty cycles) in this sequence"]
     #[inline(always)]
-    pub fn cnt(&mut self) -> CNT_W {
-        CNT_W { w: self }
+    pub fn cnt(&mut self) -> CNT_W<0> {
+        CNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

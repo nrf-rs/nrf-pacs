@@ -34,6 +34,8 @@ impl From<crate::W<REPORTPER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `REPORTPER` reader - Number of samples to generate an EVENT_REPORTRDY."]
+pub type REPORTPER_R = crate::FieldReader<u8, REPORTPER_A>;
 #[doc = "Number of samples to generate an EVENT_REPORTRDY.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -61,14 +63,8 @@ impl From<REPORTPER_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `REPORTPER` reader - Number of samples to generate an EVENT_REPORTRDY."]
-pub struct REPORTPER_R(crate::FieldReader<u8, REPORTPER_A>);
 impl REPORTPER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        REPORTPER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REPORTPER_A {
         match self.bits {
@@ -86,61 +82,48 @@ impl REPORTPER_R {
     #[doc = "Checks if the value of the field is `_10SMPL`"]
     #[inline(always)]
     pub fn is_10smpl(&self) -> bool {
-        **self == REPORTPER_A::_10SMPL
+        *self == REPORTPER_A::_10SMPL
     }
     #[doc = "Checks if the value of the field is `_40SMPL`"]
     #[inline(always)]
     pub fn is_40smpl(&self) -> bool {
-        **self == REPORTPER_A::_40SMPL
+        *self == REPORTPER_A::_40SMPL
     }
     #[doc = "Checks if the value of the field is `_80SMPL`"]
     #[inline(always)]
     pub fn is_80smpl(&self) -> bool {
-        **self == REPORTPER_A::_80SMPL
+        *self == REPORTPER_A::_80SMPL
     }
     #[doc = "Checks if the value of the field is `_120SMPL`"]
     #[inline(always)]
     pub fn is_120smpl(&self) -> bool {
-        **self == REPORTPER_A::_120SMPL
+        *self == REPORTPER_A::_120SMPL
     }
     #[doc = "Checks if the value of the field is `_160SMPL`"]
     #[inline(always)]
     pub fn is_160smpl(&self) -> bool {
-        **self == REPORTPER_A::_160SMPL
+        *self == REPORTPER_A::_160SMPL
     }
     #[doc = "Checks if the value of the field is `_200SMPL`"]
     #[inline(always)]
     pub fn is_200smpl(&self) -> bool {
-        **self == REPORTPER_A::_200SMPL
+        *self == REPORTPER_A::_200SMPL
     }
     #[doc = "Checks if the value of the field is `_240SMPL`"]
     #[inline(always)]
     pub fn is_240smpl(&self) -> bool {
-        **self == REPORTPER_A::_240SMPL
+        *self == REPORTPER_A::_240SMPL
     }
     #[doc = "Checks if the value of the field is `_280SMPL`"]
     #[inline(always)]
     pub fn is_280smpl(&self) -> bool {
-        **self == REPORTPER_A::_280SMPL
-    }
-}
-impl core::ops::Deref for REPORTPER_R {
-    type Target = crate::FieldReader<u8, REPORTPER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == REPORTPER_A::_280SMPL
     }
 }
 #[doc = "Field `REPORTPER` writer - Number of samples to generate an EVENT_REPORTRDY."]
-pub struct REPORTPER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REPORTPER_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REPORTPER_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type REPORTPER_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, REPORTPER_SPEC, u8, REPORTPER_A, 3, O>;
+impl<'a, const O: u8> REPORTPER_W<'a, O> {
     #[doc = "10 samples per report."]
     #[inline(always)]
     pub fn _10smpl(self) -> &'a mut W {
@@ -181,25 +164,19 @@ impl<'a> REPORTPER_W<'a> {
     pub fn _280smpl(self) -> &'a mut W {
         self.variant(REPORTPER_A::_280SMPL)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Number of samples to generate an EVENT_REPORTRDY."]
     #[inline(always)]
     pub fn reportper(&self) -> REPORTPER_R {
-        REPORTPER_R::new((self.bits & 0x07) as u8)
+        REPORTPER_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Number of samples to generate an EVENT_REPORTRDY."]
     #[inline(always)]
-    pub fn reportper(&mut self) -> REPORTPER_W {
-        REPORTPER_W { w: self }
+    pub fn reportper(&mut self) -> REPORTPER_W<0> {
+        REPORTPER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

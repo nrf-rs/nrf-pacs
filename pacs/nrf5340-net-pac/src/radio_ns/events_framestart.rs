@@ -34,11 +34,13 @@ impl From<crate::W<EVENTS_FRAMESTART_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EVENTS_FRAMESTART` reader - IEEE 802.15.4 length field received"]
+pub type EVENTS_FRAMESTART_R = crate::BitReader<EVENTS_FRAMESTART_A>;
 #[doc = "IEEE 802.15.4 length field received\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EVENTS_FRAMESTART_A {
     #[doc = "0: Event not generated"]
-    NOTGENERATED = 0,
+    NOT_GENERATED = 0,
     #[doc = "1: Event generated"]
     GENERATED = 1,
 }
@@ -48,88 +50,53 @@ impl From<EVENTS_FRAMESTART_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EVENTS_FRAMESTART` reader - IEEE 802.15.4 length field received"]
-pub struct EVENTS_FRAMESTART_R(crate::FieldReader<bool, EVENTS_FRAMESTART_A>);
 impl EVENTS_FRAMESTART_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EVENTS_FRAMESTART_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EVENTS_FRAMESTART_A {
         match self.bits {
-            false => EVENTS_FRAMESTART_A::NOTGENERATED,
+            false => EVENTS_FRAMESTART_A::NOT_GENERATED,
             true => EVENTS_FRAMESTART_A::GENERATED,
         }
     }
-    #[doc = "Checks if the value of the field is `NOTGENERATED`"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        **self == EVENTS_FRAMESTART_A::NOTGENERATED
+        *self == EVENTS_FRAMESTART_A::NOT_GENERATED
     }
     #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        **self == EVENTS_FRAMESTART_A::GENERATED
-    }
-}
-impl core::ops::Deref for EVENTS_FRAMESTART_R {
-    type Target = crate::FieldReader<bool, EVENTS_FRAMESTART_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EVENTS_FRAMESTART_A::GENERATED
     }
 }
 #[doc = "Field `EVENTS_FRAMESTART` writer - IEEE 802.15.4 length field received"]
-pub struct EVENTS_FRAMESTART_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVENTS_FRAMESTART_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EVENTS_FRAMESTART_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EVENTS_FRAMESTART_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_FRAMESTART_SPEC, EVENTS_FRAMESTART_A, O>;
+impl<'a, const O: u8> EVENTS_FRAMESTART_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
     pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_FRAMESTART_A::NOTGENERATED)
+        self.variant(EVENTS_FRAMESTART_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
     pub fn generated(self) -> &'a mut W {
         self.variant(EVENTS_FRAMESTART_A::GENERATED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - IEEE 802.15.4 length field received"]
     #[inline(always)]
     pub fn events_framestart(&self) -> EVENTS_FRAMESTART_R {
-        EVENTS_FRAMESTART_R::new((self.bits & 0x01) != 0)
+        EVENTS_FRAMESTART_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - IEEE 802.15.4 length field received"]
     #[inline(always)]
-    pub fn events_framestart(&mut self) -> EVENTS_FRAMESTART_W {
-        EVENTS_FRAMESTART_W { w: self }
+    pub fn events_framestart(&mut self) -> EVENTS_FRAMESTART_W<0> {
+        EVENTS_FRAMESTART_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

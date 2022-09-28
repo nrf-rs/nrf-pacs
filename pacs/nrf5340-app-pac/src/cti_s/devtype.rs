@@ -13,6 +13,8 @@ impl From<crate::R<DEVTYPE_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `MAJOR` reader - Major classification of the type of the debug component as specified in the Arm Architecture Specification for this debug and trace component."]
+pub type MAJOR_R = crate::FieldReader<u8, MAJOR_A>;
 #[doc = "Major classification of the type of the debug component as specified in the Arm Architecture Specification for this debug and trace component.\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -26,14 +28,8 @@ impl From<MAJOR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MAJOR` reader - Major classification of the type of the debug component as specified in the Arm Architecture Specification for this debug and trace component."]
-pub struct MAJOR_R(crate::FieldReader<u8, MAJOR_A>);
 impl MAJOR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MAJOR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MAJOR_A> {
         match self.bits {
@@ -44,16 +40,11 @@ impl MAJOR_R {
     #[doc = "Checks if the value of the field is `CONTROLLER`"]
     #[inline(always)]
     pub fn is_controller(&self) -> bool {
-        **self == MAJOR_A::CONTROLLER
+        *self == MAJOR_A::CONTROLLER
     }
 }
-impl core::ops::Deref for MAJOR_R {
-    type Target = crate::FieldReader<u8, MAJOR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SUB` reader - Sub-classification of the type of the debug component as specified in the Arm Architecture Specification within the major classification as specified in the MAJOR field."]
+pub type SUB_R = crate::FieldReader<u8, SUB_A>;
 #[doc = "Sub-classification of the type of the debug component as specified in the Arm Architecture Specification within the major classification as specified in the MAJOR field.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -67,14 +58,8 @@ impl From<SUB_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SUB` reader - Sub-classification of the type of the debug component as specified in the Arm Architecture Specification within the major classification as specified in the MAJOR field."]
-pub struct SUB_R(crate::FieldReader<u8, SUB_A>);
 impl SUB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SUB_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SUB_A> {
         match self.bits {
@@ -85,14 +70,7 @@ impl SUB_R {
     #[doc = "Checks if the value of the field is `CROSSTRIGGER`"]
     #[inline(always)]
     pub fn is_crosstrigger(&self) -> bool {
-        **self == SUB_A::CROSSTRIGGER
-    }
-}
-impl core::ops::Deref for SUB_R {
-    type Target = crate::FieldReader<u8, SUB_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SUB_A::CROSSTRIGGER
     }
 }
 impl R {

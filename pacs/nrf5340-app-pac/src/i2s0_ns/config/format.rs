@@ -34,6 +34,8 @@ impl From<crate::W<FORMAT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FORMAT` reader - Frame format"]
+pub type FORMAT_R = crate::BitReader<FORMAT_A>;
 #[doc = "Frame format\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORMAT_A {
@@ -48,14 +50,8 @@ impl From<FORMAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORMAT` reader - Frame format"]
-pub struct FORMAT_R(crate::FieldReader<bool, FORMAT_A>);
 impl FORMAT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FORMAT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FORMAT_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl FORMAT_R {
     #[doc = "Checks if the value of the field is `I2S`"]
     #[inline(always)]
     pub fn is_i2s(&self) -> bool {
-        **self == FORMAT_A::I2S
+        *self == FORMAT_A::I2S
     }
     #[doc = "Checks if the value of the field is `ALIGNED`"]
     #[inline(always)]
     pub fn is_aligned(&self) -> bool {
-        **self == FORMAT_A::ALIGNED
-    }
-}
-impl core::ops::Deref for FORMAT_R {
-    type Target = crate::FieldReader<bool, FORMAT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FORMAT_A::ALIGNED
     }
 }
 #[doc = "Field `FORMAT` writer - Frame format"]
-pub struct FORMAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FORMAT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FORMAT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FORMAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, FORMAT_SPEC, FORMAT_A, O>;
+impl<'a, const O: u8> FORMAT_W<'a, O> {
     #[doc = "Original I2S format."]
     #[inline(always)]
     pub fn i2s(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> FORMAT_W<'a> {
     pub fn aligned(self) -> &'a mut W {
         self.variant(FORMAT_A::ALIGNED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Frame format"]
     #[inline(always)]
     pub fn format(&self) -> FORMAT_R {
-        FORMAT_R::new((self.bits & 0x01) != 0)
+        FORMAT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Frame format"]
     #[inline(always)]
-    pub fn format(&mut self) -> FORMAT_W {
-        FORMAT_W { w: self }
+    pub fn format(&mut self) -> FORMAT_W<0> {
+        FORMAT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

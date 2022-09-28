@@ -13,6 +13,8 @@ impl From<crate::R<LFCLKSRCCOPY_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `SRC` reader - Clock source for the LFCLK clock, set when task LKCLKSTART is triggered."]
+pub type SRC_R = crate::FieldReader<u8, SRC_A>;
 #[doc = "Clock source for the LFCLK clock, set when task LKCLKSTART is triggered.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -30,14 +32,8 @@ impl From<SRC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SRC` reader - Clock source for the LFCLK clock, set when task LKCLKSTART is triggered."]
-pub struct SRC_R(crate::FieldReader<u8, SRC_A>);
 impl SRC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SRC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SRC_A> {
         match self.bits {
@@ -50,31 +46,24 @@ impl SRC_R {
     #[doc = "Checks if the value of the field is `RC`"]
     #[inline(always)]
     pub fn is_rc(&self) -> bool {
-        **self == SRC_A::RC
+        *self == SRC_A::RC
     }
     #[doc = "Checks if the value of the field is `XTAL`"]
     #[inline(always)]
     pub fn is_xtal(&self) -> bool {
-        **self == SRC_A::XTAL
+        *self == SRC_A::XTAL
     }
     #[doc = "Checks if the value of the field is `SYNTH`"]
     #[inline(always)]
     pub fn is_synth(&self) -> bool {
-        **self == SRC_A::SYNTH
-    }
-}
-impl core::ops::Deref for SRC_R {
-    type Target = crate::FieldReader<u8, SRC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SRC_A::SYNTH
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Clock source for the LFCLK clock, set when task LKCLKSTART is triggered."]
     #[inline(always)]
     pub fn src(&self) -> SRC_R {
-        SRC_R::new((self.bits & 0x03) as u8)
+        SRC_R::new((self.bits & 3) as u8)
     }
 }
 #[doc = "Clock source for the LFCLK clock, set when task LKCLKSTART is triggered.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lfclksrccopy](index.html) module"]

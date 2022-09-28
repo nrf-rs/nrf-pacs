@@ -34,6 +34,8 @@ impl From<crate::W<ENABLE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ENABLE` reader - Enable or disable SPIS."]
+pub type ENABLE_R = crate::FieldReader<u8, ENABLE_A>;
 #[doc = "Enable or disable SPIS.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,14 +51,8 @@ impl From<ENABLE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ENABLE` reader - Enable or disable SPIS."]
-pub struct ENABLE_R(crate::FieldReader<u8, ENABLE_A>);
 impl ENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ENABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ENABLE_A> {
         match self.bits {
@@ -68,31 +64,17 @@ impl ENABLE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ENABLE_A::DISABLED
+        *self == ENABLE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ENABLE_A::ENABLED
-    }
-}
-impl core::ops::Deref for ENABLE_R {
-    type Target = crate::FieldReader<u8, ENABLE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENABLE_A::ENABLED
     }
 }
 #[doc = "Field `ENABLE` writer - Enable or disable SPIS."]
-pub struct ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENABLE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type ENABLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ENABLE_SPEC, u8, ENABLE_A, 3, O>;
+impl<'a, const O: u8> ENABLE_W<'a, O> {
     #[doc = "Disabled SPIS."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -103,25 +85,19 @@ impl<'a> ENABLE_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(ENABLE_A::ENABLED)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Enable or disable SPIS."]
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new((self.bits & 0x07) as u8)
+        ENABLE_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Enable or disable SPIS."]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W {
-        ENABLE_W { w: self }
+    pub fn enable(&mut self) -> ENABLE_W<0> {
+        ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

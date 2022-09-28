@@ -34,6 +34,8 @@ impl From<crate::W<CRCCNF_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LEN` reader - CRC length. Decision point: START task."]
+pub type LEN_R = crate::FieldReader<u8, LEN_A>;
 #[doc = "CRC length. Decision point: START task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,14 +55,8 @@ impl From<LEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LEN` reader - CRC length. Decision point: START task."]
-pub struct LEN_R(crate::FieldReader<u8, LEN_A>);
 impl LEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LEN_A {
         match self.bits {
@@ -74,41 +70,27 @@ impl LEN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LEN_A::DISABLED
+        *self == LEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ONE`"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
-        **self == LEN_A::ONE
+        *self == LEN_A::ONE
     }
     #[doc = "Checks if the value of the field is `TWO`"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
-        **self == LEN_A::TWO
+        *self == LEN_A::TWO
     }
     #[doc = "Checks if the value of the field is `THREE`"]
     #[inline(always)]
     pub fn is_three(&self) -> bool {
-        **self == LEN_A::THREE
-    }
-}
-impl core::ops::Deref for LEN_R {
-    type Target = crate::FieldReader<u8, LEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LEN_A::THREE
     }
 }
 #[doc = "Field `LEN` writer - CRC length. Decision point: START task."]
-pub struct LEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LEN_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type LEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CRCCNF_SPEC, u8, LEN_A, 2, O>;
+impl<'a, const O: u8> LEN_W<'a, O> {
     #[doc = "CRC calculation disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -129,13 +111,9 @@ impl<'a> LEN_W<'a> {
     pub fn three(self) -> &'a mut W {
         self.variant(LEN_A::THREE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
+#[doc = "Field `SKIPADDR` reader - Leave packet address field out of the CRC calculation. Decision point: START task."]
+pub type SKIPADDR_R = crate::BitReader<SKIPADDR_A>;
 #[doc = "Leave packet address field out of the CRC calculation. Decision point: START task.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SKIPADDR_A {
@@ -150,14 +128,8 @@ impl From<SKIPADDR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SKIPADDR` reader - Leave packet address field out of the CRC calculation. Decision point: START task."]
-pub struct SKIPADDR_R(crate::FieldReader<bool, SKIPADDR_A>);
 impl SKIPADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SKIPADDR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SKIPADDR_A {
         match self.bits {
@@ -168,31 +140,17 @@ impl SKIPADDR_R {
     #[doc = "Checks if the value of the field is `INCLUDE`"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        **self == SKIPADDR_A::INCLUDE
+        *self == SKIPADDR_A::INCLUDE
     }
     #[doc = "Checks if the value of the field is `SKIP`"]
     #[inline(always)]
     pub fn is_skip(&self) -> bool {
-        **self == SKIPADDR_A::SKIP
-    }
-}
-impl core::ops::Deref for SKIPADDR_R {
-    type Target = crate::FieldReader<bool, SKIPADDR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SKIPADDR_A::SKIP
     }
 }
 #[doc = "Field `SKIPADDR` writer - Leave packet address field out of the CRC calculation. Decision point: START task."]
-pub struct SKIPADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SKIPADDR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SKIPADDR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SKIPADDR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CRCCNF_SPEC, SKIPADDR_A, O>;
+impl<'a, const O: u8> SKIPADDR_W<'a, O> {
     #[doc = "Include packet address in CRC calculation."]
     #[inline(always)]
     pub fn include(self) -> &'a mut W {
@@ -203,45 +161,29 @@ impl<'a> SKIPADDR_W<'a> {
     pub fn skip(self) -> &'a mut W {
         self.variant(SKIPADDR_A::SKIP)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - CRC length. Decision point: START task."]
     #[inline(always)]
     pub fn len(&self) -> LEN_R {
-        LEN_R::new((self.bits & 0x03) as u8)
+        LEN_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 8 - Leave packet address field out of the CRC calculation. Decision point: START task."]
     #[inline(always)]
     pub fn skipaddr(&self) -> SKIPADDR_R {
-        SKIPADDR_R::new(((self.bits >> 8) & 0x01) != 0)
+        SKIPADDR_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - CRC length. Decision point: START task."]
     #[inline(always)]
-    pub fn len(&mut self) -> LEN_W {
-        LEN_W { w: self }
+    pub fn len(&mut self) -> LEN_W<0> {
+        LEN_W::new(self)
     }
     #[doc = "Bit 8 - Leave packet address field out of the CRC calculation. Decision point: START task."]
     #[inline(always)]
-    pub fn skipaddr(&mut self) -> SKIPADDR_W {
-        SKIPADDR_W { w: self }
+    pub fn skipaddr(&mut self) -> SKIPADDR_W<8> {
+        SKIPADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

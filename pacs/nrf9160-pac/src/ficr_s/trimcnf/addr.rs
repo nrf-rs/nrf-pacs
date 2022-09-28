@@ -14,20 +14,7 @@ impl From<crate::R<ADDR_SPEC>> for R {
     }
 }
 #[doc = "Field `Address` reader - Address"]
-pub struct ADDRESS_R(crate::FieldReader<u32, u32>);
-impl ADDRESS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        ADDRESS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDRESS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDRESS_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Address"]
     #[inline(always)]

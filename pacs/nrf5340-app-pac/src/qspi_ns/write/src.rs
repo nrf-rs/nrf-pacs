@@ -35,32 +35,9 @@ impl From<crate::W<SRC_SPEC>> for W {
     }
 }
 #[doc = "Field `SRC` reader - Word-aligned RAM source address."]
-pub struct SRC_R(crate::FieldReader<u32, u32>);
-impl SRC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SRC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SRC_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SRC_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SRC` writer - Word-aligned RAM source address."]
-pub struct SRC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type SRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SRC_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Word-aligned RAM source address."]
     #[inline(always)]
@@ -71,8 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Word-aligned RAM source address."]
     #[inline(always)]
-    pub fn src(&mut self) -> SRC_W {
-        SRC_W { w: self }
+    pub fn src(&mut self) -> SRC_W<0> {
+        SRC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
