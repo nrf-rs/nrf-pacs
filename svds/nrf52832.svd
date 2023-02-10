@@ -11913,6 +11913,12 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             </field>
           </fields>
         </register>
+        <register>
+          <name>PER_POWER</name>
+          <description>Peripheral power control register</description>
+          <addressOffset>0xffc</addressOffset>
+          <access>read-write</access>
+        </register>
       </registers>
     </peripheral>
     <peripheral>

@@ -62,6 +62,9 @@ pub struct RegisterBlock {
     _reserved22: [u8; 0x34],
     #[doc = "0x588 - Address used in the TWI transfer"]
     pub address: ADDRESS,
+    _reserved23: [u8; 0x0a70],
+    #[doc = "0xffc - Peripheral power control register"]
+    pub per_power: PER_POWER,
 }
 #[doc = "TASKS_STARTRX (w) register accessor: an alias for `Reg<TASKS_STARTRX_SPEC>`"]
 pub type TASKS_STARTRX = crate::Reg<tasks_startrx::TASKS_STARTRX_SPEC>;
@@ -158,3 +161,7 @@ pub mod txd;
 pub type ADDRESS = crate::Reg<address::ADDRESS_SPEC>;
 #[doc = "Address used in the TWI transfer"]
 pub mod address;
+#[doc = "PER_POWER (rw) register accessor: an alias for `Reg<PER_POWER_SPEC>`"]
+pub type PER_POWER = crate::Reg<per_power::PER_POWER_SPEC>;
+#[doc = "Peripheral power control register"]
+pub mod per_power;
