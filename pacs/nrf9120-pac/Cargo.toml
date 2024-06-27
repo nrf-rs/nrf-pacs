@@ -1,0 +1,21 @@
+[package]
+name = "nrf9120-pac"
+description = "Peripheral Access Crate for Nordic's nrf9120 microcontroller"
+documentation = "https://docs.rs/nrf9120-pac"
+version.workspace = true
+edition.workspace = true
+keywords.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+
+[dependencies]
+cortex-m.workspace = true
+vcell.workspace = true
+
+[dependencies.cortex-m-rt]
+optional = true
+workspace = true
+
+[features]
+rt = ["cortex-m-rt/device"]
