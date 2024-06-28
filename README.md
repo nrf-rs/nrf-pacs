@@ -48,6 +48,8 @@ Every nRF chip has its own PAC, listed below:
 | [`nRF5340`](https://www.nordicsemi.com/Products/nRF5340) | [`v1.1`](https://infocenter.nordicsemi.com/pdf/nRF5340_PS_v1.1.pdf) | [`v1.0.0`](https://infocenter.nordicsemi.com/pdf/nRF5340_DK_User_Guide_20210304.pdf) |
 | [`nRF9160`](https://www.nordicsemi.com/Products/nrf9160) | [`v2.0`](https://infocenter.nordicsemi.com/pdf/nRF9160_PS_v2.0.pdf) | [`v0.9.3`](https://infocenter.nordicsemi.com/pdf/nRF9160_DK_HW_User_Guide_v0.9.3.pdf) |
 | [`nRF9161 (nrf9120)`](https://www.nordicsemi.com/Products/nRF9161) | [`v1.0`](https://infocenter.nordicsemi.com/pdf/nRF9161_PS_v1.0.pdf) | [`v0.9.1`](https://infocenter.nordicsemi.com/pdf/nRF9161_DK_HW_User_Guide_v0.9.1.pdf) |
-| [`nRF9151 (nrf9120)`](https://www.nordicsemi.com/Products/nRF9151) | | |
+| [`nRF9151 (nrf9120)`](https://www.nordicsemi.com/Products/nRF9151) | ** | ** |
 
 \* These devices do not have a separate development kit and share the [NRF52 DK](https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF52-DK)
+
+\*\* As of 2024-6-28, the Product Specification and the DK Reference Guide have not been published for the nRF9151.
