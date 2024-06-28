@@ -1,259 +1,257 @@
 #[doc = "Register `POWERSET` writer"]
-pub type W = crate::W<PowersetSpec>;
-#[doc = "Keep RAM section S0 of RAM n on or off in System ON mode\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S0power {
-    #[doc = "1: On"]
-    On = 1,
-}
-impl From<S0power> for bool {
+pub struct W(crate::W<POWERSET_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<POWERSET_SPEC>;
     #[inline(always)]
-    fn from(variant: S0power) -> Self {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<POWERSET_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<POWERSET_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Keep RAM section S0 of RAM n on or off in System ON mode\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum S0POWER_AW {
+    #[doc = "1: On"]
+    ON = 1,
+}
+impl From<S0POWER_AW> for bool {
+    #[inline(always)]
+    fn from(variant: S0POWER_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S0POWER` writer - Keep RAM section S0 of RAM n on or off in System ON mode"]
-pub type S0powerW<'a, REG> = crate::BitWriter<'a, REG, S0power>;
-impl<'a, REG> S0powerW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type S0POWER_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWERSET_SPEC, S0POWER_AW, O>;
+impl<'a, const O: u8> S0POWER_W<'a, O> {
     #[doc = "On"]
     #[inline(always)]
-    pub fn on(self) -> &'a mut crate::W<REG> {
-        self.variant(S0power::On)
+    pub fn on(self) -> &'a mut W {
+        self.variant(S0POWER_AW::ON)
     }
 }
 #[doc = "Keep RAM section S1 of RAM n on or off in System ON mode\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S1power {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum S1POWER_AW {
     #[doc = "1: On"]
-    On = 1,
+    ON = 1,
 }
-impl From<S1power> for bool {
+impl From<S1POWER_AW> for bool {
     #[inline(always)]
-    fn from(variant: S1power) -> Self {
+    fn from(variant: S1POWER_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S1POWER` writer - Keep RAM section S1 of RAM n on or off in System ON mode"]
-pub type S1powerW<'a, REG> = crate::BitWriter<'a, REG, S1power>;
-impl<'a, REG> S1powerW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type S1POWER_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWERSET_SPEC, S1POWER_AW, O>;
+impl<'a, const O: u8> S1POWER_W<'a, O> {
     #[doc = "On"]
     #[inline(always)]
-    pub fn on(self) -> &'a mut crate::W<REG> {
-        self.variant(S1power::On)
+    pub fn on(self) -> &'a mut W {
+        self.variant(S1POWER_AW::ON)
     }
 }
 #[doc = "Keep RAM section S2 of RAM n on or off in System ON mode\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S2power {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum S2POWER_AW {
     #[doc = "1: On"]
-    On = 1,
+    ON = 1,
 }
-impl From<S2power> for bool {
+impl From<S2POWER_AW> for bool {
     #[inline(always)]
-    fn from(variant: S2power) -> Self {
+    fn from(variant: S2POWER_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S2POWER` writer - Keep RAM section S2 of RAM n on or off in System ON mode"]
-pub type S2powerW<'a, REG> = crate::BitWriter<'a, REG, S2power>;
-impl<'a, REG> S2powerW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type S2POWER_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWERSET_SPEC, S2POWER_AW, O>;
+impl<'a, const O: u8> S2POWER_W<'a, O> {
     #[doc = "On"]
     #[inline(always)]
-    pub fn on(self) -> &'a mut crate::W<REG> {
-        self.variant(S2power::On)
+    pub fn on(self) -> &'a mut W {
+        self.variant(S2POWER_AW::ON)
     }
 }
 #[doc = "Keep RAM section S3 of RAM n on or off in System ON mode\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S3power {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum S3POWER_AW {
     #[doc = "1: On"]
-    On = 1,
+    ON = 1,
 }
-impl From<S3power> for bool {
+impl From<S3POWER_AW> for bool {
     #[inline(always)]
-    fn from(variant: S3power) -> Self {
+    fn from(variant: S3POWER_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S3POWER` writer - Keep RAM section S3 of RAM n on or off in System ON mode"]
-pub type S3powerW<'a, REG> = crate::BitWriter<'a, REG, S3power>;
-impl<'a, REG> S3powerW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type S3POWER_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWERSET_SPEC, S3POWER_AW, O>;
+impl<'a, const O: u8> S3POWER_W<'a, O> {
     #[doc = "On"]
     #[inline(always)]
-    pub fn on(self) -> &'a mut crate::W<REG> {
-        self.variant(S3power::On)
+    pub fn on(self) -> &'a mut W {
+        self.variant(S3POWER_AW::ON)
     }
 }
 #[doc = "Keep retention on RAM section S0 of RAM n when RAM section is switched off\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S0retention {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum S0RETENTION_AW {
     #[doc = "1: On"]
-    On = 1,
+    ON = 1,
 }
-impl From<S0retention> for bool {
+impl From<S0RETENTION_AW> for bool {
     #[inline(always)]
-    fn from(variant: S0retention) -> Self {
+    fn from(variant: S0RETENTION_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S0RETENTION` writer - Keep retention on RAM section S0 of RAM n when RAM section is switched off"]
-pub type S0retentionW<'a, REG> = crate::BitWriter<'a, REG, S0retention>;
-impl<'a, REG> S0retentionW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type S0RETENTION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, POWERSET_SPEC, S0RETENTION_AW, O>;
+impl<'a, const O: u8> S0RETENTION_W<'a, O> {
     #[doc = "On"]
     #[inline(always)]
-    pub fn on(self) -> &'a mut crate::W<REG> {
-        self.variant(S0retention::On)
+    pub fn on(self) -> &'a mut W {
+        self.variant(S0RETENTION_AW::ON)
     }
 }
 #[doc = "Keep retention on RAM section S1 of RAM n when RAM section is switched off\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S1retention {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum S1RETENTION_AW {
     #[doc = "1: On"]
-    On = 1,
+    ON = 1,
 }
-impl From<S1retention> for bool {
+impl From<S1RETENTION_AW> for bool {
     #[inline(always)]
-    fn from(variant: S1retention) -> Self {
+    fn from(variant: S1RETENTION_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S1RETENTION` writer - Keep retention on RAM section S1 of RAM n when RAM section is switched off"]
-pub type S1retentionW<'a, REG> = crate::BitWriter<'a, REG, S1retention>;
-impl<'a, REG> S1retentionW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type S1RETENTION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, POWERSET_SPEC, S1RETENTION_AW, O>;
+impl<'a, const O: u8> S1RETENTION_W<'a, O> {
     #[doc = "On"]
     #[inline(always)]
-    pub fn on(self) -> &'a mut crate::W<REG> {
-        self.variant(S1retention::On)
+    pub fn on(self) -> &'a mut W {
+        self.variant(S1RETENTION_AW::ON)
     }
 }
 #[doc = "Keep retention on RAM section S2 of RAM n when RAM section is switched off\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S2retention {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum S2RETENTION_AW {
     #[doc = "1: On"]
-    On = 1,
+    ON = 1,
 }
-impl From<S2retention> for bool {
+impl From<S2RETENTION_AW> for bool {
     #[inline(always)]
-    fn from(variant: S2retention) -> Self {
+    fn from(variant: S2RETENTION_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S2RETENTION` writer - Keep retention on RAM section S2 of RAM n when RAM section is switched off"]
-pub type S2retentionW<'a, REG> = crate::BitWriter<'a, REG, S2retention>;
-impl<'a, REG> S2retentionW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type S2RETENTION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, POWERSET_SPEC, S2RETENTION_AW, O>;
+impl<'a, const O: u8> S2RETENTION_W<'a, O> {
     #[doc = "On"]
     #[inline(always)]
-    pub fn on(self) -> &'a mut crate::W<REG> {
-        self.variant(S2retention::On)
+    pub fn on(self) -> &'a mut W {
+        self.variant(S2RETENTION_AW::ON)
     }
 }
 #[doc = "Keep retention on RAM section S3 of RAM n when RAM section is switched off\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S3retention {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum S3RETENTION_AW {
     #[doc = "1: On"]
-    On = 1,
+    ON = 1,
 }
-impl From<S3retention> for bool {
+impl From<S3RETENTION_AW> for bool {
     #[inline(always)]
-    fn from(variant: S3retention) -> Self {
+    fn from(variant: S3RETENTION_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S3RETENTION` writer - Keep retention on RAM section S3 of RAM n when RAM section is switched off"]
-pub type S3retentionW<'a, REG> = crate::BitWriter<'a, REG, S3retention>;
-impl<'a, REG> S3retentionW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type S3RETENTION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, POWERSET_SPEC, S3RETENTION_AW, O>;
+impl<'a, const O: u8> S3RETENTION_W<'a, O> {
     #[doc = "On"]
     #[inline(always)]
-    pub fn on(self) -> &'a mut crate::W<REG> {
-        self.variant(S3retention::On)
+    pub fn on(self) -> &'a mut W {
+        self.variant(S3RETENTION_AW::ON)
     }
 }
 impl W {
     #[doc = "Bit 0 - Keep RAM section S0 of RAM n on or off in System ON mode"]
     #[inline(always)]
-    #[must_use]
-    pub fn s0power(&mut self) -> S0powerW<PowersetSpec> {
-        S0powerW::new(self, 0)
+    pub fn s0power(&mut self) -> S0POWER_W<0> {
+        S0POWER_W::new(self)
     }
     #[doc = "Bit 1 - Keep RAM section S1 of RAM n on or off in System ON mode"]
     #[inline(always)]
-    #[must_use]
-    pub fn s1power(&mut self) -> S1powerW<PowersetSpec> {
-        S1powerW::new(self, 1)
+    pub fn s1power(&mut self) -> S1POWER_W<1> {
+        S1POWER_W::new(self)
     }
     #[doc = "Bit 2 - Keep RAM section S2 of RAM n on or off in System ON mode"]
     #[inline(always)]
-    #[must_use]
-    pub fn s2power(&mut self) -> S2powerW<PowersetSpec> {
-        S2powerW::new(self, 2)
+    pub fn s2power(&mut self) -> S2POWER_W<2> {
+        S2POWER_W::new(self)
     }
     #[doc = "Bit 3 - Keep RAM section S3 of RAM n on or off in System ON mode"]
     #[inline(always)]
-    #[must_use]
-    pub fn s3power(&mut self) -> S3powerW<PowersetSpec> {
-        S3powerW::new(self, 3)
+    pub fn s3power(&mut self) -> S3POWER_W<3> {
+        S3POWER_W::new(self)
     }
     #[doc = "Bit 16 - Keep retention on RAM section S0 of RAM n when RAM section is switched off"]
     #[inline(always)]
-    #[must_use]
-    pub fn s0retention(&mut self) -> S0retentionW<PowersetSpec> {
-        S0retentionW::new(self, 16)
+    pub fn s0retention(&mut self) -> S0RETENTION_W<16> {
+        S0RETENTION_W::new(self)
     }
     #[doc = "Bit 17 - Keep retention on RAM section S1 of RAM n when RAM section is switched off"]
     #[inline(always)]
-    #[must_use]
-    pub fn s1retention(&mut self) -> S1retentionW<PowersetSpec> {
-        S1retentionW::new(self, 17)
+    pub fn s1retention(&mut self) -> S1RETENTION_W<17> {
+        S1RETENTION_W::new(self)
     }
     #[doc = "Bit 18 - Keep retention on RAM section S2 of RAM n when RAM section is switched off"]
     #[inline(always)]
-    #[must_use]
-    pub fn s2retention(&mut self) -> S2retentionW<PowersetSpec> {
-        S2retentionW::new(self, 18)
+    pub fn s2retention(&mut self) -> S2RETENTION_W<18> {
+        S2RETENTION_W::new(self)
     }
     #[doc = "Bit 19 - Keep retention on RAM section S3 of RAM n when RAM section is switched off"]
     #[inline(always)]
-    #[must_use]
-    pub fn s3retention(&mut self) -> S3retentionW<PowersetSpec> {
-        S3retentionW::new(self, 19)
+    pub fn s3retention(&mut self) -> S3RETENTION_W<19> {
+        S3RETENTION_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Description cluster: RAMn power control set register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`powerset::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PowersetSpec;
-impl crate::RegisterSpec for PowersetSpec {
+#[doc = "Description cluster: RAMn power control set register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [powerset](index.html) module"]
+pub struct POWERSET_SPEC;
+impl crate::RegisterSpec for POWERSET_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [`powerset::W`](W) writer structure"]
-impl crate::Writable for PowersetSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`write(|w| ..)` method takes [powerset::W](W) writer structure"]
+impl crate::Writable for POWERSET_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets POWERSET to value 0xffff"]
-impl crate::Resettable for PowersetSpec {
-    const RESET_VALUE: u32 = 0xffff;
+impl crate::Resettable for POWERSET_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff
+    }
 }

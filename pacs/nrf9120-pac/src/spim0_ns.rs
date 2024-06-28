@@ -1,360 +1,196 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Register block"]
 pub struct RegisterBlock {
     _reserved0: [u8; 0x10],
-    tasks_start: TasksStart,
-    tasks_stop: TasksStop,
-    _reserved2: [u8; 0x04],
-    tasks_suspend: TasksSuspend,
-    tasks_resume: TasksResume,
-    _reserved4: [u8; 0x6c],
-    subscribe_start: SubscribeStart,
-    subscribe_stop: SubscribeStop,
-    _reserved6: [u8; 0x04],
-    subscribe_suspend: SubscribeSuspend,
-    subscribe_resume: SubscribeResume,
-    _reserved8: [u8; 0x60],
-    events_stopped: EventsStopped,
-    _reserved9: [u8; 0x08],
-    events_endrx: EventsEndrx,
-    _reserved10: [u8; 0x04],
-    events_end: EventsEnd,
-    _reserved11: [u8; 0x04],
-    events_endtx: EventsEndtx,
-    _reserved12: [u8; 0x28],
-    events_started: EventsStarted,
-    _reserved13: [u8; 0x34],
-    publish_stopped: PublishStopped,
-    _reserved14: [u8; 0x08],
-    publish_endrx: PublishEndrx,
-    _reserved15: [u8; 0x04],
-    publish_end: PublishEnd,
-    _reserved16: [u8; 0x04],
-    publish_endtx: PublishEndtx,
-    _reserved17: [u8; 0x28],
-    publish_started: PublishStarted,
-    _reserved18: [u8; 0x30],
-    shorts: Shorts,
-    _reserved19: [u8; 0x0100],
-    intenset: Intenset,
-    intenclr: Intenclr,
-    _reserved21: [u8; 0x01f4],
-    enable: Enable,
-    _reserved22: [u8; 0x04],
-    psel: Psel,
-    _reserved23: [u8; 0x10],
-    frequency: Frequency,
-    _reserved24: [u8; 0x0c],
-    rxd: Rxd,
-    txd: Txd,
-    config: Config,
-    _reserved27: [u8; 0x68],
-    orc: Orc,
-}
-impl RegisterBlock {
     #[doc = "0x10 - Start SPI transaction"]
-    #[inline(always)]
-    pub const fn tasks_start(&self) -> &TasksStart {
-        &self.tasks_start
-    }
+    pub tasks_start: TASKS_START,
     #[doc = "0x14 - Stop SPI transaction"]
-    #[inline(always)]
-    pub const fn tasks_stop(&self) -> &TasksStop {
-        &self.tasks_stop
-    }
+    pub tasks_stop: TASKS_STOP,
+    _reserved2: [u8; 0x04],
     #[doc = "0x1c - Suspend SPI transaction"]
-    #[inline(always)]
-    pub const fn tasks_suspend(&self) -> &TasksSuspend {
-        &self.tasks_suspend
-    }
+    pub tasks_suspend: TASKS_SUSPEND,
     #[doc = "0x20 - Resume SPI transaction"]
-    #[inline(always)]
-    pub const fn tasks_resume(&self) -> &TasksResume {
-        &self.tasks_resume
-    }
+    pub tasks_resume: TASKS_RESUME,
+    _reserved4: [u8; 0x6c],
     #[doc = "0x90 - Subscribe configuration for task START"]
-    #[inline(always)]
-    pub const fn subscribe_start(&self) -> &SubscribeStart {
-        &self.subscribe_start
-    }
+    pub subscribe_start: SUBSCRIBE_START,
     #[doc = "0x94 - Subscribe configuration for task STOP"]
-    #[inline(always)]
-    pub const fn subscribe_stop(&self) -> &SubscribeStop {
-        &self.subscribe_stop
-    }
+    pub subscribe_stop: SUBSCRIBE_STOP,
+    _reserved6: [u8; 0x04],
     #[doc = "0x9c - Subscribe configuration for task SUSPEND"]
-    #[inline(always)]
-    pub const fn subscribe_suspend(&self) -> &SubscribeSuspend {
-        &self.subscribe_suspend
-    }
+    pub subscribe_suspend: SUBSCRIBE_SUSPEND,
     #[doc = "0xa0 - Subscribe configuration for task RESUME"]
-    #[inline(always)]
-    pub const fn subscribe_resume(&self) -> &SubscribeResume {
-        &self.subscribe_resume
-    }
+    pub subscribe_resume: SUBSCRIBE_RESUME,
+    _reserved8: [u8; 0x60],
     #[doc = "0x104 - SPI transaction has stopped"]
-    #[inline(always)]
-    pub const fn events_stopped(&self) -> &EventsStopped {
-        &self.events_stopped
-    }
+    pub events_stopped: EVENTS_STOPPED,
+    _reserved9: [u8; 0x08],
     #[doc = "0x110 - End of RXD buffer reached"]
-    #[inline(always)]
-    pub const fn events_endrx(&self) -> &EventsEndrx {
-        &self.events_endrx
-    }
+    pub events_endrx: EVENTS_ENDRX,
+    _reserved10: [u8; 0x04],
     #[doc = "0x118 - End of RXD buffer and TXD buffer reached"]
-    #[inline(always)]
-    pub const fn events_end(&self) -> &EventsEnd {
-        &self.events_end
-    }
+    pub events_end: EVENTS_END,
+    _reserved11: [u8; 0x04],
     #[doc = "0x120 - End of TXD buffer reached"]
-    #[inline(always)]
-    pub const fn events_endtx(&self) -> &EventsEndtx {
-        &self.events_endtx
-    }
+    pub events_endtx: EVENTS_ENDTX,
+    _reserved12: [u8; 0x28],
     #[doc = "0x14c - Transaction started"]
-    #[inline(always)]
-    pub const fn events_started(&self) -> &EventsStarted {
-        &self.events_started
-    }
+    pub events_started: EVENTS_STARTED,
+    _reserved13: [u8; 0x34],
     #[doc = "0x184 - Publish configuration for event STOPPED"]
-    #[inline(always)]
-    pub const fn publish_stopped(&self) -> &PublishStopped {
-        &self.publish_stopped
-    }
+    pub publish_stopped: PUBLISH_STOPPED,
+    _reserved14: [u8; 0x08],
     #[doc = "0x190 - Publish configuration for event ENDRX"]
-    #[inline(always)]
-    pub const fn publish_endrx(&self) -> &PublishEndrx {
-        &self.publish_endrx
-    }
+    pub publish_endrx: PUBLISH_ENDRX,
+    _reserved15: [u8; 0x04],
     #[doc = "0x198 - Publish configuration for event END"]
-    #[inline(always)]
-    pub const fn publish_end(&self) -> &PublishEnd {
-        &self.publish_end
-    }
+    pub publish_end: PUBLISH_END,
+    _reserved16: [u8; 0x04],
     #[doc = "0x1a0 - Publish configuration for event ENDTX"]
-    #[inline(always)]
-    pub const fn publish_endtx(&self) -> &PublishEndtx {
-        &self.publish_endtx
-    }
+    pub publish_endtx: PUBLISH_ENDTX,
+    _reserved17: [u8; 0x28],
     #[doc = "0x1cc - Publish configuration for event STARTED"]
-    #[inline(always)]
-    pub const fn publish_started(&self) -> &PublishStarted {
-        &self.publish_started
-    }
+    pub publish_started: PUBLISH_STARTED,
+    _reserved18: [u8; 0x30],
     #[doc = "0x200 - Shortcuts between local events and tasks"]
-    #[inline(always)]
-    pub const fn shorts(&self) -> &Shorts {
-        &self.shorts
-    }
+    pub shorts: SHORTS,
+    _reserved19: [u8; 0x0100],
     #[doc = "0x304 - Enable interrupt"]
-    #[inline(always)]
-    pub const fn intenset(&self) -> &Intenset {
-        &self.intenset
-    }
+    pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
-    #[inline(always)]
-    pub const fn intenclr(&self) -> &Intenclr {
-        &self.intenclr
-    }
+    pub intenclr: INTENCLR,
+    _reserved21: [u8; 0x01f4],
     #[doc = "0x500 - Enable SPIM"]
-    #[inline(always)]
-    pub const fn enable(&self) -> &Enable {
-        &self.enable
-    }
+    pub enable: ENABLE,
+    _reserved22: [u8; 0x04],
     #[doc = "0x508..0x514 - Unspecified"]
-    #[inline(always)]
-    pub const fn psel(&self) -> &Psel {
-        &self.psel
-    }
+    pub psel: PSEL,
+    _reserved23: [u8; 0x10],
     #[doc = "0x524 - SPI frequency. Accuracy depends on the HFCLK source selected."]
-    #[inline(always)]
-    pub const fn frequency(&self) -> &Frequency {
-        &self.frequency
-    }
+    pub frequency: FREQUENCY,
+    _reserved24: [u8; 0x0c],
     #[doc = "0x534..0x544 - RXD EasyDMA channel"]
-    #[inline(always)]
-    pub const fn rxd(&self) -> &Rxd {
-        &self.rxd
-    }
+    pub rxd: RXD,
     #[doc = "0x544..0x554 - TXD EasyDMA channel"]
-    #[inline(always)]
-    pub const fn txd(&self) -> &Txd {
-        &self.txd
-    }
+    pub txd: TXD,
     #[doc = "0x554 - Configuration register"]
-    #[inline(always)]
-    pub const fn config(&self) -> &Config {
-        &self.config
-    }
+    pub config: CONFIG,
+    _reserved27: [u8; 0x68],
     #[doc = "0x5c0 - Over-read character. Character clocked out in case an over-read of the TXD buffer."]
-    #[inline(always)]
-    pub const fn orc(&self) -> &Orc {
-        &self.orc
-    }
+    pub orc: ORC,
 }
-#[doc = "TASKS_START (w) register accessor: Start SPI transaction\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tasks_start::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_start`]
-module"]
-#[doc(alias = "TASKS_START")]
-pub type TasksStart = crate::Reg<tasks_start::TasksStartSpec>;
+#[doc = "TASKS_START (w) register accessor: an alias for `Reg<TASKS_START_SPEC>`"]
+pub type TASKS_START = crate::Reg<tasks_start::TASKS_START_SPEC>;
 #[doc = "Start SPI transaction"]
 pub mod tasks_start;
-#[doc = "TASKS_STOP (w) register accessor: Stop SPI transaction\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tasks_stop::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_stop`]
-module"]
-#[doc(alias = "TASKS_STOP")]
-pub type TasksStop = crate::Reg<tasks_stop::TasksStopSpec>;
+#[doc = "TASKS_STOP (w) register accessor: an alias for `Reg<TASKS_STOP_SPEC>`"]
+pub type TASKS_STOP = crate::Reg<tasks_stop::TASKS_STOP_SPEC>;
 #[doc = "Stop SPI transaction"]
 pub mod tasks_stop;
-#[doc = "TASKS_SUSPEND (w) register accessor: Suspend SPI transaction\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tasks_suspend::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_suspend`]
-module"]
-#[doc(alias = "TASKS_SUSPEND")]
-pub type TasksSuspend = crate::Reg<tasks_suspend::TasksSuspendSpec>;
+#[doc = "TASKS_SUSPEND (w) register accessor: an alias for `Reg<TASKS_SUSPEND_SPEC>`"]
+pub type TASKS_SUSPEND = crate::Reg<tasks_suspend::TASKS_SUSPEND_SPEC>;
 #[doc = "Suspend SPI transaction"]
 pub mod tasks_suspend;
-#[doc = "TASKS_RESUME (w) register accessor: Resume SPI transaction\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tasks_resume::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_resume`]
-module"]
-#[doc(alias = "TASKS_RESUME")]
-pub type TasksResume = crate::Reg<tasks_resume::TasksResumeSpec>;
+#[doc = "TASKS_RESUME (w) register accessor: an alias for `Reg<TASKS_RESUME_SPEC>`"]
+pub type TASKS_RESUME = crate::Reg<tasks_resume::TASKS_RESUME_SPEC>;
 #[doc = "Resume SPI transaction"]
 pub mod tasks_resume;
-#[doc = "SUBSCRIBE_START (rw) register accessor: Subscribe configuration for task START\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`subscribe_start::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`subscribe_start::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@subscribe_start`]
-module"]
-#[doc(alias = "SUBSCRIBE_START")]
-pub type SubscribeStart = crate::Reg<subscribe_start::SubscribeStartSpec>;
+#[doc = "SUBSCRIBE_START (rw) register accessor: an alias for `Reg<SUBSCRIBE_START_SPEC>`"]
+pub type SUBSCRIBE_START = crate::Reg<subscribe_start::SUBSCRIBE_START_SPEC>;
 #[doc = "Subscribe configuration for task START"]
 pub mod subscribe_start;
-#[doc = "SUBSCRIBE_STOP (rw) register accessor: Subscribe configuration for task STOP\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`subscribe_stop::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`subscribe_stop::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@subscribe_stop`]
-module"]
-#[doc(alias = "SUBSCRIBE_STOP")]
-pub type SubscribeStop = crate::Reg<subscribe_stop::SubscribeStopSpec>;
+#[doc = "SUBSCRIBE_STOP (rw) register accessor: an alias for `Reg<SUBSCRIBE_STOP_SPEC>`"]
+pub type SUBSCRIBE_STOP = crate::Reg<subscribe_stop::SUBSCRIBE_STOP_SPEC>;
 #[doc = "Subscribe configuration for task STOP"]
 pub mod subscribe_stop;
-#[doc = "SUBSCRIBE_SUSPEND (rw) register accessor: Subscribe configuration for task SUSPEND\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`subscribe_suspend::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`subscribe_suspend::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@subscribe_suspend`]
-module"]
-#[doc(alias = "SUBSCRIBE_SUSPEND")]
-pub type SubscribeSuspend = crate::Reg<subscribe_suspend::SubscribeSuspendSpec>;
+#[doc = "SUBSCRIBE_SUSPEND (rw) register accessor: an alias for `Reg<SUBSCRIBE_SUSPEND_SPEC>`"]
+pub type SUBSCRIBE_SUSPEND = crate::Reg<subscribe_suspend::SUBSCRIBE_SUSPEND_SPEC>;
 #[doc = "Subscribe configuration for task SUSPEND"]
 pub mod subscribe_suspend;
-#[doc = "SUBSCRIBE_RESUME (rw) register accessor: Subscribe configuration for task RESUME\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`subscribe_resume::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`subscribe_resume::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@subscribe_resume`]
-module"]
-#[doc(alias = "SUBSCRIBE_RESUME")]
-pub type SubscribeResume = crate::Reg<subscribe_resume::SubscribeResumeSpec>;
+#[doc = "SUBSCRIBE_RESUME (rw) register accessor: an alias for `Reg<SUBSCRIBE_RESUME_SPEC>`"]
+pub type SUBSCRIBE_RESUME = crate::Reg<subscribe_resume::SUBSCRIBE_RESUME_SPEC>;
 #[doc = "Subscribe configuration for task RESUME"]
 pub mod subscribe_resume;
-#[doc = "EVENTS_STOPPED (rw) register accessor: SPI transaction has stopped\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_stopped::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_stopped::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_stopped`]
-module"]
-#[doc(alias = "EVENTS_STOPPED")]
-pub type EventsStopped = crate::Reg<events_stopped::EventsStoppedSpec>;
+#[doc = "EVENTS_STOPPED (rw) register accessor: an alias for `Reg<EVENTS_STOPPED_SPEC>`"]
+pub type EVENTS_STOPPED = crate::Reg<events_stopped::EVENTS_STOPPED_SPEC>;
 #[doc = "SPI transaction has stopped"]
 pub mod events_stopped;
-#[doc = "EVENTS_ENDRX (rw) register accessor: End of RXD buffer reached\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_endrx::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_endrx::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_endrx`]
-module"]
-#[doc(alias = "EVENTS_ENDRX")]
-pub type EventsEndrx = crate::Reg<events_endrx::EventsEndrxSpec>;
+#[doc = "EVENTS_ENDRX (rw) register accessor: an alias for `Reg<EVENTS_ENDRX_SPEC>`"]
+pub type EVENTS_ENDRX = crate::Reg<events_endrx::EVENTS_ENDRX_SPEC>;
 #[doc = "End of RXD buffer reached"]
 pub mod events_endrx;
-#[doc = "EVENTS_END (rw) register accessor: End of RXD buffer and TXD buffer reached\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_end::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_end::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_end`]
-module"]
-#[doc(alias = "EVENTS_END")]
-pub type EventsEnd = crate::Reg<events_end::EventsEndSpec>;
+#[doc = "EVENTS_END (rw) register accessor: an alias for `Reg<EVENTS_END_SPEC>`"]
+pub type EVENTS_END = crate::Reg<events_end::EVENTS_END_SPEC>;
 #[doc = "End of RXD buffer and TXD buffer reached"]
 pub mod events_end;
-#[doc = "EVENTS_ENDTX (rw) register accessor: End of TXD buffer reached\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_endtx::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_endtx::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_endtx`]
-module"]
-#[doc(alias = "EVENTS_ENDTX")]
-pub type EventsEndtx = crate::Reg<events_endtx::EventsEndtxSpec>;
+#[doc = "EVENTS_ENDTX (rw) register accessor: an alias for `Reg<EVENTS_ENDTX_SPEC>`"]
+pub type EVENTS_ENDTX = crate::Reg<events_endtx::EVENTS_ENDTX_SPEC>;
 #[doc = "End of TXD buffer reached"]
 pub mod events_endtx;
-#[doc = "EVENTS_STARTED (rw) register accessor: Transaction started\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_started::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_started::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_started`]
-module"]
-#[doc(alias = "EVENTS_STARTED")]
-pub type EventsStarted = crate::Reg<events_started::EventsStartedSpec>;
+#[doc = "EVENTS_STARTED (rw) register accessor: an alias for `Reg<EVENTS_STARTED_SPEC>`"]
+pub type EVENTS_STARTED = crate::Reg<events_started::EVENTS_STARTED_SPEC>;
 #[doc = "Transaction started"]
 pub mod events_started;
-#[doc = "PUBLISH_STOPPED (rw) register accessor: Publish configuration for event STOPPED\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`publish_stopped::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`publish_stopped::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@publish_stopped`]
-module"]
-#[doc(alias = "PUBLISH_STOPPED")]
-pub type PublishStopped = crate::Reg<publish_stopped::PublishStoppedSpec>;
+#[doc = "PUBLISH_STOPPED (rw) register accessor: an alias for `Reg<PUBLISH_STOPPED_SPEC>`"]
+pub type PUBLISH_STOPPED = crate::Reg<publish_stopped::PUBLISH_STOPPED_SPEC>;
 #[doc = "Publish configuration for event STOPPED"]
 pub mod publish_stopped;
-#[doc = "PUBLISH_ENDRX (rw) register accessor: Publish configuration for event ENDRX\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`publish_endrx::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`publish_endrx::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@publish_endrx`]
-module"]
-#[doc(alias = "PUBLISH_ENDRX")]
-pub type PublishEndrx = crate::Reg<publish_endrx::PublishEndrxSpec>;
+#[doc = "PUBLISH_ENDRX (rw) register accessor: an alias for `Reg<PUBLISH_ENDRX_SPEC>`"]
+pub type PUBLISH_ENDRX = crate::Reg<publish_endrx::PUBLISH_ENDRX_SPEC>;
 #[doc = "Publish configuration for event ENDRX"]
 pub mod publish_endrx;
-#[doc = "PUBLISH_END (rw) register accessor: Publish configuration for event END\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`publish_end::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`publish_end::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@publish_end`]
-module"]
-#[doc(alias = "PUBLISH_END")]
-pub type PublishEnd = crate::Reg<publish_end::PublishEndSpec>;
+#[doc = "PUBLISH_END (rw) register accessor: an alias for `Reg<PUBLISH_END_SPEC>`"]
+pub type PUBLISH_END = crate::Reg<publish_end::PUBLISH_END_SPEC>;
 #[doc = "Publish configuration for event END"]
 pub mod publish_end;
-#[doc = "PUBLISH_ENDTX (rw) register accessor: Publish configuration for event ENDTX\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`publish_endtx::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`publish_endtx::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@publish_endtx`]
-module"]
-#[doc(alias = "PUBLISH_ENDTX")]
-pub type PublishEndtx = crate::Reg<publish_endtx::PublishEndtxSpec>;
+#[doc = "PUBLISH_ENDTX (rw) register accessor: an alias for `Reg<PUBLISH_ENDTX_SPEC>`"]
+pub type PUBLISH_ENDTX = crate::Reg<publish_endtx::PUBLISH_ENDTX_SPEC>;
 #[doc = "Publish configuration for event ENDTX"]
 pub mod publish_endtx;
-#[doc = "PUBLISH_STARTED (rw) register accessor: Publish configuration for event STARTED\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`publish_started::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`publish_started::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@publish_started`]
-module"]
-#[doc(alias = "PUBLISH_STARTED")]
-pub type PublishStarted = crate::Reg<publish_started::PublishStartedSpec>;
+#[doc = "PUBLISH_STARTED (rw) register accessor: an alias for `Reg<PUBLISH_STARTED_SPEC>`"]
+pub type PUBLISH_STARTED = crate::Reg<publish_started::PUBLISH_STARTED_SPEC>;
 #[doc = "Publish configuration for event STARTED"]
 pub mod publish_started;
-#[doc = "SHORTS (rw) register accessor: Shortcuts between local events and tasks\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`shorts::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`shorts::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@shorts`]
-module"]
-#[doc(alias = "SHORTS")]
-pub type Shorts = crate::Reg<shorts::ShortsSpec>;
+#[doc = "SHORTS (rw) register accessor: an alias for `Reg<SHORTS_SPEC>`"]
+pub type SHORTS = crate::Reg<shorts::SHORTS_SPEC>;
 #[doc = "Shortcuts between local events and tasks"]
 pub mod shorts;
-#[doc = "INTENSET (rw) register accessor: Enable interrupt\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intenset::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenset::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenset`]
-module"]
-#[doc(alias = "INTENSET")]
-pub type Intenset = crate::Reg<intenset::IntensetSpec>;
+#[doc = "INTENSET (rw) register accessor: an alias for `Reg<INTENSET_SPEC>`"]
+pub type INTENSET = crate::Reg<intenset::INTENSET_SPEC>;
 #[doc = "Enable interrupt"]
 pub mod intenset;
-#[doc = "INTENCLR (rw) register accessor: Disable interrupt\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intenclr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenclr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenclr`]
-module"]
-#[doc(alias = "INTENCLR")]
-pub type Intenclr = crate::Reg<intenclr::IntenclrSpec>;
+#[doc = "INTENCLR (rw) register accessor: an alias for `Reg<INTENCLR_SPEC>`"]
+pub type INTENCLR = crate::Reg<intenclr::INTENCLR_SPEC>;
 #[doc = "Disable interrupt"]
 pub mod intenclr;
-#[doc = "ENABLE (rw) register accessor: Enable SPIM\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`enable::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`enable::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@enable`]
-module"]
-#[doc(alias = "ENABLE")]
-pub type Enable = crate::Reg<enable::EnableSpec>;
+#[doc = "ENABLE (rw) register accessor: an alias for `Reg<ENABLE_SPEC>`"]
+pub type ENABLE = crate::Reg<enable::ENABLE_SPEC>;
 #[doc = "Enable SPIM"]
 pub mod enable;
 #[doc = "Unspecified"]
-pub use self::psel::Psel;
+pub use psel::PSEL;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod psel;
-#[doc = "FREQUENCY (rw) register accessor: SPI frequency. Accuracy depends on the HFCLK source selected.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frequency::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`frequency::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frequency`]
-module"]
-#[doc(alias = "FREQUENCY")]
-pub type Frequency = crate::Reg<frequency::FrequencySpec>;
+#[doc = "FREQUENCY (rw) register accessor: an alias for `Reg<FREQUENCY_SPEC>`"]
+pub type FREQUENCY = crate::Reg<frequency::FREQUENCY_SPEC>;
 #[doc = "SPI frequency. Accuracy depends on the HFCLK source selected."]
 pub mod frequency;
 #[doc = "RXD EasyDMA channel"]
-pub use self::rxd::Rxd;
+pub use rxd::RXD;
 #[doc = r"Cluster"]
 #[doc = "RXD EasyDMA channel"]
 pub mod rxd;
 #[doc = "TXD EasyDMA channel"]
-pub use self::txd::Txd;
+pub use txd::TXD;
 #[doc = r"Cluster"]
 #[doc = "TXD EasyDMA channel"]
 pub mod txd;
-#[doc = "CONFIG (rw) register accessor: Configuration register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`config::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`config::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@config`]
-module"]
-#[doc(alias = "CONFIG")]
-pub type Config = crate::Reg<config::ConfigSpec>;
+#[doc = "CONFIG (rw) register accessor: an alias for `Reg<CONFIG_SPEC>`"]
+pub type CONFIG = crate::Reg<config::CONFIG_SPEC>;
 #[doc = "Configuration register"]
 pub mod config;
-#[doc = "ORC (rw) register accessor: Over-read character. Character clocked out in case an over-read of the TXD buffer.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`orc::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`orc::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@orc`]
-module"]
-#[doc(alias = "ORC")]
-pub type Orc = crate::Reg<orc::OrcSpec>;
+#[doc = "ORC (rw) register accessor: an alias for `Reg<ORC_SPEC>`"]
+pub type ORC = crate::Reg<orc::ORC_SPEC>;
 #[doc = "Over-read character. Character clocked out in case an over-read of the TXD buffer."]
 pub mod orc;

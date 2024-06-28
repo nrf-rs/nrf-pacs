@@ -1,49 +1,71 @@
 #[doc = "Register `DIS` writer"]
-pub type W = crate::W<DisSpec>;
-#[doc = "Disable channel group n\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Dis {
-    #[doc = "1: Trigger task"]
-    Trigger = 1,
-}
-impl From<Dis> for bool {
+pub struct W(crate::W<DIS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DIS_SPEC>;
     #[inline(always)]
-    fn from(variant: Dis) -> Self {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DIS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DIS_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Disable channel group n\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DIS_AW {
+    #[doc = "1: Trigger task"]
+    TRIGGER = 1,
+}
+impl From<DIS_AW> for bool {
+    #[inline(always)]
+    fn from(variant: DIS_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DIS` writer - Disable channel group n"]
-pub type DisW<'a, REG> = crate::BitWriter<'a, REG, Dis>;
-impl<'a, REG> DisW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIS_SPEC, DIS_AW, O>;
+impl<'a, const O: u8> DIS_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
-    pub fn trigger(self) -> &'a mut crate::W<REG> {
-        self.variant(Dis::Trigger)
+    pub fn trigger(self) -> &'a mut W {
+        self.variant(DIS_AW::TRIGGER)
     }
 }
 impl W {
     #[doc = "Bit 0 - Disable channel group n"]
     #[inline(always)]
-    #[must_use]
-    pub fn dis(&mut self) -> DisW<DisSpec> {
-        DisW::new(self, 0)
+    pub fn dis(&mut self) -> DIS_W<0> {
+        DIS_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Description cluster: Disable channel group n\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dis::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DisSpec;
-impl crate::RegisterSpec for DisSpec {
+#[doc = "Description cluster: Disable channel group n\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dis](index.html) module"]
+pub struct DIS_SPEC;
+impl crate::RegisterSpec for DIS_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [`dis::W`](W) writer structure"]
-impl crate::Writable for DisSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`write(|w| ..)` method takes [dis::W](W) writer structure"]
+impl crate::Writable for DIS_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets DIS to value 0"]
-impl crate::Resettable for DisSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for DIS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

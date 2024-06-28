@@ -1,23 +1,41 @@
 #[doc = "Register `DEVICEID[%s]` reader"]
-pub type R = crate::R<DeviceidSpec>;
+pub struct R(crate::R<DEVICEID_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DEVICEID_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DEVICEID_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DEVICEID_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Field `DEVICEID` reader - 64 bit unique device identifier"]
-pub type DeviceidR = crate::FieldReader<u32>;
+pub type DEVICEID_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - 64 bit unique device identifier"]
     #[inline(always)]
-    pub fn deviceid(&self) -> DeviceidR {
-        DeviceidR::new(self.bits)
+    pub fn deviceid(&self) -> DEVICEID_R {
+        DEVICEID_R::new(self.bits)
     }
 }
-#[doc = "Description collection: Device identifier\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`deviceid::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DeviceidSpec;
-impl crate::RegisterSpec for DeviceidSpec {
+#[doc = "Description collection: Device identifier\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [deviceid](index.html) module"]
+pub struct DEVICEID_SPEC;
+impl crate::RegisterSpec for DEVICEID_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`deviceid::R`](R) reader structure"]
-impl crate::Readable for DeviceidSpec {}
+#[doc = "`read()` method returns [deviceid::R](R) reader structure"]
+impl crate::Readable for DEVICEID_SPEC {
+    type Reader = R;
+}
 #[doc = "`reset()` method sets DEVICEID[%s]
 to value 0xffff_ffff"]
-impl crate::Resettable for DeviceidSpec {
-    const RESET_VALUE: u32 = 0xffff_ffff;
+impl crate::Resettable for DEVICEID_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff_ffff
+    }
 }

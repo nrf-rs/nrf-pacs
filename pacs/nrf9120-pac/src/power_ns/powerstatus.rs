@@ -1,56 +1,74 @@
 #[doc = "Register `POWERSTATUS` reader"]
-pub type R = crate::R<PowerstatusSpec>;
-#[doc = "LTE modem domain status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ltemodem {
-    #[doc = "0: LTE modem domain is powered off"]
-    Off = 0,
-    #[doc = "1: LTE modem domain is powered on"]
-    On = 1,
-}
-impl From<Ltemodem> for bool {
+pub struct R(crate::R<POWERSTATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<POWERSTATUS_SPEC>;
     #[inline(always)]
-    fn from(variant: Ltemodem) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<POWERSTATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<POWERSTATUS_SPEC>) -> Self {
+        R(reader)
     }
 }
 #[doc = "Field `LTEMODEM` reader - LTE modem domain status"]
-pub type LtemodemR = crate::BitReader<Ltemodem>;
-impl LtemodemR {
+pub type LTEMODEM_R = crate::BitReader<LTEMODEM_A>;
+#[doc = "LTE modem domain status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LTEMODEM_A {
+    #[doc = "0: LTE modem domain is powered off"]
+    OFF = 0,
+    #[doc = "1: LTE modem domain is powered on"]
+    ON = 1,
+}
+impl From<LTEMODEM_A> for bool {
+    #[inline(always)]
+    fn from(variant: LTEMODEM_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl LTEMODEM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ltemodem {
+    pub fn variant(&self) -> LTEMODEM_A {
         match self.bits {
-            false => Ltemodem::Off,
-            true => Ltemodem::On,
+            false => LTEMODEM_A::OFF,
+            true => LTEMODEM_A::ON,
         }
     }
-    #[doc = "LTE modem domain is powered off"]
+    #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        *self == Ltemodem::Off
+        *self == LTEMODEM_A::OFF
     }
-    #[doc = "LTE modem domain is powered on"]
+    #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        *self == Ltemodem::On
+        *self == LTEMODEM_A::ON
     }
 }
 impl R {
     #[doc = "Bit 0 - LTE modem domain status"]
     #[inline(always)]
-    pub fn ltemodem(&self) -> LtemodemR {
-        LtemodemR::new((self.bits & 1) != 0)
+    pub fn ltemodem(&self) -> LTEMODEM_R {
+        LTEMODEM_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Modem domain power status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`powerstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PowerstatusSpec;
-impl crate::RegisterSpec for PowerstatusSpec {
+#[doc = "Modem domain power status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [powerstatus](index.html) module"]
+pub struct POWERSTATUS_SPEC;
+impl crate::RegisterSpec for POWERSTATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`powerstatus::R`](R) reader structure"]
-impl crate::Readable for PowerstatusSpec {}
+#[doc = "`read()` method returns [powerstatus::R](R) reader structure"]
+impl crate::Readable for POWERSTATUS_SPEC {
+    type Reader = R;
+}
 #[doc = "`reset()` method sets POWERSTATUS to value 0"]
-impl crate::Resettable for PowerstatusSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for POWERSTATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

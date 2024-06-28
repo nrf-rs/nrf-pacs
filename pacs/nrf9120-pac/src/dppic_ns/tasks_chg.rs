@@ -1,31 +1,16 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Channel group tasks"]
-#[doc(alias = "TASKS_CHG")]
-pub struct TasksChg {
-    en: En,
-    dis: Dis,
-}
-impl TasksChg {
+pub struct TASKS_CHG {
     #[doc = "0x00 - Description cluster: Enable channel group n"]
-    #[inline(always)]
-    pub const fn en(&self) -> &En {
-        &self.en
-    }
+    pub en: EN,
     #[doc = "0x04 - Description cluster: Disable channel group n"]
-    #[inline(always)]
-    pub const fn dis(&self) -> &Dis {
-        &self.dis
-    }
+    pub dis: DIS,
 }
-#[doc = "EN (w) register accessor: Description cluster: Enable channel group n\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`en::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@en`]
-module"]
-#[doc(alias = "EN")]
-pub type En = crate::Reg<en::EnSpec>;
+#[doc = "EN (w) register accessor: an alias for `Reg<EN_SPEC>`"]
+pub type EN = crate::Reg<en::EN_SPEC>;
 #[doc = "Description cluster: Enable channel group n"]
 pub mod en;
-#[doc = "DIS (w) register accessor: Description cluster: Disable channel group n\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dis::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dis`]
-module"]
-#[doc(alias = "DIS")]
-pub type Dis = crate::Reg<dis::DisSpec>;
+#[doc = "DIS (w) register accessor: an alias for `Reg<DIS_SPEC>`"]
+pub type DIS = crate::Reg<dis::DIS_SPEC>;
 #[doc = "Description cluster: Disable channel group n"]
 pub mod dis;

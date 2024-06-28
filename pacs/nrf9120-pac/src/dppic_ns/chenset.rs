@@ -1,1161 +1,1138 @@
 #[doc = "Register `CHENSET` reader"]
-pub type R = crate::R<ChensetSpec>;
-#[doc = "Register `CHENSET` writer"]
-pub type W = crate::W<ChensetSpec>;
-#[doc = "Channel 0 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch0 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch0> for bool {
+pub struct R(crate::R<CHENSET_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CHENSET_SPEC>;
     #[inline(always)]
-    fn from(variant: Ch0) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CHENSET_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CHENSET_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CHENSET` writer"]
+pub struct W(crate::W<CHENSET_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CHENSET_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CHENSET_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CHENSET_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `CH0` reader - Channel 0 enable set register. Writing 0 has no effect."]
-pub type Ch0R = crate::BitReader<Ch0>;
-impl Ch0R {
+pub type CH0_R = crate::BitReader<CH0_A>;
+#[doc = "Channel 0 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH0_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH0_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH0_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch0 {
+    pub fn variant(&self) -> CH0_A {
         match self.bits {
-            false => Ch0::Disabled,
-            true => Ch0::Enabled,
+            false => CH0_A::DISABLED,
+            true => CH0_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch0::Disabled
+        *self == CH0_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch0::Enabled
+        *self == CH0_A::ENABLED
     }
 }
 #[doc = "Channel 0 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch0WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH0_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch0WO> for bool {
+impl From<CH0_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch0WO) -> Self {
+    fn from(variant: CH0_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH0` writer - Channel 0 enable set register. Writing 0 has no effect."]
-pub type Ch0W<'a, REG> = crate::BitWriter1S<'a, REG, Ch0WO>;
-impl<'a, REG> Ch0W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH0_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH0_AW, O>;
+impl<'a, const O: u8> CH0_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch0WO::Set)
-    }
-}
-#[doc = "Channel 1 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch1 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch1> for bool {
-    #[inline(always)]
-    fn from(variant: Ch1) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH0_AW::SET)
     }
 }
 #[doc = "Field `CH1` reader - Channel 1 enable set register. Writing 0 has no effect."]
-pub type Ch1R = crate::BitReader<Ch1>;
-impl Ch1R {
+pub type CH1_R = crate::BitReader<CH1_A>;
+#[doc = "Channel 1 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH1_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH1_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH1_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch1 {
+    pub fn variant(&self) -> CH1_A {
         match self.bits {
-            false => Ch1::Disabled,
-            true => Ch1::Enabled,
+            false => CH1_A::DISABLED,
+            true => CH1_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch1::Disabled
+        *self == CH1_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch1::Enabled
+        *self == CH1_A::ENABLED
     }
 }
 #[doc = "Channel 1 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch1WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH1_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch1WO> for bool {
+impl From<CH1_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch1WO) -> Self {
+    fn from(variant: CH1_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH1` writer - Channel 1 enable set register. Writing 0 has no effect."]
-pub type Ch1W<'a, REG> = crate::BitWriter1S<'a, REG, Ch1WO>;
-impl<'a, REG> Ch1W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH1_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH1_AW, O>;
+impl<'a, const O: u8> CH1_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch1WO::Set)
-    }
-}
-#[doc = "Channel 2 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch2 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch2> for bool {
-    #[inline(always)]
-    fn from(variant: Ch2) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH1_AW::SET)
     }
 }
 #[doc = "Field `CH2` reader - Channel 2 enable set register. Writing 0 has no effect."]
-pub type Ch2R = crate::BitReader<Ch2>;
-impl Ch2R {
+pub type CH2_R = crate::BitReader<CH2_A>;
+#[doc = "Channel 2 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH2_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH2_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH2_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch2 {
+    pub fn variant(&self) -> CH2_A {
         match self.bits {
-            false => Ch2::Disabled,
-            true => Ch2::Enabled,
+            false => CH2_A::DISABLED,
+            true => CH2_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch2::Disabled
+        *self == CH2_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch2::Enabled
+        *self == CH2_A::ENABLED
     }
 }
 #[doc = "Channel 2 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch2WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH2_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch2WO> for bool {
+impl From<CH2_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch2WO) -> Self {
+    fn from(variant: CH2_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH2` writer - Channel 2 enable set register. Writing 0 has no effect."]
-pub type Ch2W<'a, REG> = crate::BitWriter1S<'a, REG, Ch2WO>;
-impl<'a, REG> Ch2W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH2_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH2_AW, O>;
+impl<'a, const O: u8> CH2_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch2WO::Set)
-    }
-}
-#[doc = "Channel 3 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch3 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch3> for bool {
-    #[inline(always)]
-    fn from(variant: Ch3) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH2_AW::SET)
     }
 }
 #[doc = "Field `CH3` reader - Channel 3 enable set register. Writing 0 has no effect."]
-pub type Ch3R = crate::BitReader<Ch3>;
-impl Ch3R {
+pub type CH3_R = crate::BitReader<CH3_A>;
+#[doc = "Channel 3 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH3_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH3_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH3_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch3 {
+    pub fn variant(&self) -> CH3_A {
         match self.bits {
-            false => Ch3::Disabled,
-            true => Ch3::Enabled,
+            false => CH3_A::DISABLED,
+            true => CH3_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch3::Disabled
+        *self == CH3_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch3::Enabled
+        *self == CH3_A::ENABLED
     }
 }
 #[doc = "Channel 3 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch3WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH3_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch3WO> for bool {
+impl From<CH3_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch3WO) -> Self {
+    fn from(variant: CH3_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH3` writer - Channel 3 enable set register. Writing 0 has no effect."]
-pub type Ch3W<'a, REG> = crate::BitWriter1S<'a, REG, Ch3WO>;
-impl<'a, REG> Ch3W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH3_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH3_AW, O>;
+impl<'a, const O: u8> CH3_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch3WO::Set)
-    }
-}
-#[doc = "Channel 4 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch4 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch4> for bool {
-    #[inline(always)]
-    fn from(variant: Ch4) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH3_AW::SET)
     }
 }
 #[doc = "Field `CH4` reader - Channel 4 enable set register. Writing 0 has no effect."]
-pub type Ch4R = crate::BitReader<Ch4>;
-impl Ch4R {
+pub type CH4_R = crate::BitReader<CH4_A>;
+#[doc = "Channel 4 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH4_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH4_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH4_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch4 {
+    pub fn variant(&self) -> CH4_A {
         match self.bits {
-            false => Ch4::Disabled,
-            true => Ch4::Enabled,
+            false => CH4_A::DISABLED,
+            true => CH4_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch4::Disabled
+        *self == CH4_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch4::Enabled
+        *self == CH4_A::ENABLED
     }
 }
 #[doc = "Channel 4 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch4WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH4_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch4WO> for bool {
+impl From<CH4_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch4WO) -> Self {
+    fn from(variant: CH4_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH4` writer - Channel 4 enable set register. Writing 0 has no effect."]
-pub type Ch4W<'a, REG> = crate::BitWriter1S<'a, REG, Ch4WO>;
-impl<'a, REG> Ch4W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH4_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH4_AW, O>;
+impl<'a, const O: u8> CH4_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch4WO::Set)
-    }
-}
-#[doc = "Channel 5 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch5 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch5> for bool {
-    #[inline(always)]
-    fn from(variant: Ch5) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH4_AW::SET)
     }
 }
 #[doc = "Field `CH5` reader - Channel 5 enable set register. Writing 0 has no effect."]
-pub type Ch5R = crate::BitReader<Ch5>;
-impl Ch5R {
+pub type CH5_R = crate::BitReader<CH5_A>;
+#[doc = "Channel 5 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH5_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH5_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH5_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch5 {
+    pub fn variant(&self) -> CH5_A {
         match self.bits {
-            false => Ch5::Disabled,
-            true => Ch5::Enabled,
+            false => CH5_A::DISABLED,
+            true => CH5_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch5::Disabled
+        *self == CH5_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch5::Enabled
+        *self == CH5_A::ENABLED
     }
 }
 #[doc = "Channel 5 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch5WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH5_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch5WO> for bool {
+impl From<CH5_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch5WO) -> Self {
+    fn from(variant: CH5_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH5` writer - Channel 5 enable set register. Writing 0 has no effect."]
-pub type Ch5W<'a, REG> = crate::BitWriter1S<'a, REG, Ch5WO>;
-impl<'a, REG> Ch5W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH5_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH5_AW, O>;
+impl<'a, const O: u8> CH5_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch5WO::Set)
-    }
-}
-#[doc = "Channel 6 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch6 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch6> for bool {
-    #[inline(always)]
-    fn from(variant: Ch6) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH5_AW::SET)
     }
 }
 #[doc = "Field `CH6` reader - Channel 6 enable set register. Writing 0 has no effect."]
-pub type Ch6R = crate::BitReader<Ch6>;
-impl Ch6R {
+pub type CH6_R = crate::BitReader<CH6_A>;
+#[doc = "Channel 6 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH6_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH6_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH6_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch6 {
+    pub fn variant(&self) -> CH6_A {
         match self.bits {
-            false => Ch6::Disabled,
-            true => Ch6::Enabled,
+            false => CH6_A::DISABLED,
+            true => CH6_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch6::Disabled
+        *self == CH6_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch6::Enabled
+        *self == CH6_A::ENABLED
     }
 }
 #[doc = "Channel 6 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch6WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH6_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch6WO> for bool {
+impl From<CH6_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch6WO) -> Self {
+    fn from(variant: CH6_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH6` writer - Channel 6 enable set register. Writing 0 has no effect."]
-pub type Ch6W<'a, REG> = crate::BitWriter1S<'a, REG, Ch6WO>;
-impl<'a, REG> Ch6W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH6_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH6_AW, O>;
+impl<'a, const O: u8> CH6_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch6WO::Set)
-    }
-}
-#[doc = "Channel 7 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch7 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch7> for bool {
-    #[inline(always)]
-    fn from(variant: Ch7) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH6_AW::SET)
     }
 }
 #[doc = "Field `CH7` reader - Channel 7 enable set register. Writing 0 has no effect."]
-pub type Ch7R = crate::BitReader<Ch7>;
-impl Ch7R {
+pub type CH7_R = crate::BitReader<CH7_A>;
+#[doc = "Channel 7 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH7_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH7_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH7_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch7 {
+    pub fn variant(&self) -> CH7_A {
         match self.bits {
-            false => Ch7::Disabled,
-            true => Ch7::Enabled,
+            false => CH7_A::DISABLED,
+            true => CH7_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch7::Disabled
+        *self == CH7_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch7::Enabled
+        *self == CH7_A::ENABLED
     }
 }
 #[doc = "Channel 7 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch7WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH7_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch7WO> for bool {
+impl From<CH7_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch7WO) -> Self {
+    fn from(variant: CH7_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH7` writer - Channel 7 enable set register. Writing 0 has no effect."]
-pub type Ch7W<'a, REG> = crate::BitWriter1S<'a, REG, Ch7WO>;
-impl<'a, REG> Ch7W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH7_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH7_AW, O>;
+impl<'a, const O: u8> CH7_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch7WO::Set)
-    }
-}
-#[doc = "Channel 8 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch8 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch8> for bool {
-    #[inline(always)]
-    fn from(variant: Ch8) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH7_AW::SET)
     }
 }
 #[doc = "Field `CH8` reader - Channel 8 enable set register. Writing 0 has no effect."]
-pub type Ch8R = crate::BitReader<Ch8>;
-impl Ch8R {
+pub type CH8_R = crate::BitReader<CH8_A>;
+#[doc = "Channel 8 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH8_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH8_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH8_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch8 {
+    pub fn variant(&self) -> CH8_A {
         match self.bits {
-            false => Ch8::Disabled,
-            true => Ch8::Enabled,
+            false => CH8_A::DISABLED,
+            true => CH8_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch8::Disabled
+        *self == CH8_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch8::Enabled
+        *self == CH8_A::ENABLED
     }
 }
 #[doc = "Channel 8 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch8WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH8_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch8WO> for bool {
+impl From<CH8_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch8WO) -> Self {
+    fn from(variant: CH8_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH8` writer - Channel 8 enable set register. Writing 0 has no effect."]
-pub type Ch8W<'a, REG> = crate::BitWriter1S<'a, REG, Ch8WO>;
-impl<'a, REG> Ch8W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH8_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH8_AW, O>;
+impl<'a, const O: u8> CH8_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch8WO::Set)
-    }
-}
-#[doc = "Channel 9 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch9 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch9> for bool {
-    #[inline(always)]
-    fn from(variant: Ch9) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH8_AW::SET)
     }
 }
 #[doc = "Field `CH9` reader - Channel 9 enable set register. Writing 0 has no effect."]
-pub type Ch9R = crate::BitReader<Ch9>;
-impl Ch9R {
+pub type CH9_R = crate::BitReader<CH9_A>;
+#[doc = "Channel 9 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH9_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH9_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH9_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch9 {
+    pub fn variant(&self) -> CH9_A {
         match self.bits {
-            false => Ch9::Disabled,
-            true => Ch9::Enabled,
+            false => CH9_A::DISABLED,
+            true => CH9_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch9::Disabled
+        *self == CH9_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch9::Enabled
+        *self == CH9_A::ENABLED
     }
 }
 #[doc = "Channel 9 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch9WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH9_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch9WO> for bool {
+impl From<CH9_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch9WO) -> Self {
+    fn from(variant: CH9_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH9` writer - Channel 9 enable set register. Writing 0 has no effect."]
-pub type Ch9W<'a, REG> = crate::BitWriter1S<'a, REG, Ch9WO>;
-impl<'a, REG> Ch9W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH9_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH9_AW, O>;
+impl<'a, const O: u8> CH9_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch9WO::Set)
-    }
-}
-#[doc = "Channel 10 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch10 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch10> for bool {
-    #[inline(always)]
-    fn from(variant: Ch10) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH9_AW::SET)
     }
 }
 #[doc = "Field `CH10` reader - Channel 10 enable set register. Writing 0 has no effect."]
-pub type Ch10R = crate::BitReader<Ch10>;
-impl Ch10R {
+pub type CH10_R = crate::BitReader<CH10_A>;
+#[doc = "Channel 10 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH10_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH10_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH10_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch10 {
+    pub fn variant(&self) -> CH10_A {
         match self.bits {
-            false => Ch10::Disabled,
-            true => Ch10::Enabled,
+            false => CH10_A::DISABLED,
+            true => CH10_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch10::Disabled
+        *self == CH10_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch10::Enabled
+        *self == CH10_A::ENABLED
     }
 }
 #[doc = "Channel 10 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch10WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH10_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch10WO> for bool {
+impl From<CH10_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch10WO) -> Self {
+    fn from(variant: CH10_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH10` writer - Channel 10 enable set register. Writing 0 has no effect."]
-pub type Ch10W<'a, REG> = crate::BitWriter1S<'a, REG, Ch10WO>;
-impl<'a, REG> Ch10W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH10_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH10_AW, O>;
+impl<'a, const O: u8> CH10_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch10WO::Set)
-    }
-}
-#[doc = "Channel 11 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch11 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch11> for bool {
-    #[inline(always)]
-    fn from(variant: Ch11) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH10_AW::SET)
     }
 }
 #[doc = "Field `CH11` reader - Channel 11 enable set register. Writing 0 has no effect."]
-pub type Ch11R = crate::BitReader<Ch11>;
-impl Ch11R {
+pub type CH11_R = crate::BitReader<CH11_A>;
+#[doc = "Channel 11 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH11_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH11_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH11_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch11 {
+    pub fn variant(&self) -> CH11_A {
         match self.bits {
-            false => Ch11::Disabled,
-            true => Ch11::Enabled,
+            false => CH11_A::DISABLED,
+            true => CH11_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch11::Disabled
+        *self == CH11_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch11::Enabled
+        *self == CH11_A::ENABLED
     }
 }
 #[doc = "Channel 11 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch11WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH11_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch11WO> for bool {
+impl From<CH11_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch11WO) -> Self {
+    fn from(variant: CH11_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH11` writer - Channel 11 enable set register. Writing 0 has no effect."]
-pub type Ch11W<'a, REG> = crate::BitWriter1S<'a, REG, Ch11WO>;
-impl<'a, REG> Ch11W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH11_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH11_AW, O>;
+impl<'a, const O: u8> CH11_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch11WO::Set)
-    }
-}
-#[doc = "Channel 12 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch12 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch12> for bool {
-    #[inline(always)]
-    fn from(variant: Ch12) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH11_AW::SET)
     }
 }
 #[doc = "Field `CH12` reader - Channel 12 enable set register. Writing 0 has no effect."]
-pub type Ch12R = crate::BitReader<Ch12>;
-impl Ch12R {
+pub type CH12_R = crate::BitReader<CH12_A>;
+#[doc = "Channel 12 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH12_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH12_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH12_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch12 {
+    pub fn variant(&self) -> CH12_A {
         match self.bits {
-            false => Ch12::Disabled,
-            true => Ch12::Enabled,
+            false => CH12_A::DISABLED,
+            true => CH12_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch12::Disabled
+        *self == CH12_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch12::Enabled
+        *self == CH12_A::ENABLED
     }
 }
 #[doc = "Channel 12 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch12WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH12_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch12WO> for bool {
+impl From<CH12_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch12WO) -> Self {
+    fn from(variant: CH12_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH12` writer - Channel 12 enable set register. Writing 0 has no effect."]
-pub type Ch12W<'a, REG> = crate::BitWriter1S<'a, REG, Ch12WO>;
-impl<'a, REG> Ch12W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH12_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH12_AW, O>;
+impl<'a, const O: u8> CH12_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch12WO::Set)
-    }
-}
-#[doc = "Channel 13 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch13 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch13> for bool {
-    #[inline(always)]
-    fn from(variant: Ch13) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH12_AW::SET)
     }
 }
 #[doc = "Field `CH13` reader - Channel 13 enable set register. Writing 0 has no effect."]
-pub type Ch13R = crate::BitReader<Ch13>;
-impl Ch13R {
+pub type CH13_R = crate::BitReader<CH13_A>;
+#[doc = "Channel 13 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH13_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH13_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH13_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch13 {
+    pub fn variant(&self) -> CH13_A {
         match self.bits {
-            false => Ch13::Disabled,
-            true => Ch13::Enabled,
+            false => CH13_A::DISABLED,
+            true => CH13_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch13::Disabled
+        *self == CH13_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch13::Enabled
+        *self == CH13_A::ENABLED
     }
 }
 #[doc = "Channel 13 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch13WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH13_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch13WO> for bool {
+impl From<CH13_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch13WO) -> Self {
+    fn from(variant: CH13_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH13` writer - Channel 13 enable set register. Writing 0 has no effect."]
-pub type Ch13W<'a, REG> = crate::BitWriter1S<'a, REG, Ch13WO>;
-impl<'a, REG> Ch13W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH13_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH13_AW, O>;
+impl<'a, const O: u8> CH13_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch13WO::Set)
-    }
-}
-#[doc = "Channel 14 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch14 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch14> for bool {
-    #[inline(always)]
-    fn from(variant: Ch14) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH13_AW::SET)
     }
 }
 #[doc = "Field `CH14` reader - Channel 14 enable set register. Writing 0 has no effect."]
-pub type Ch14R = crate::BitReader<Ch14>;
-impl Ch14R {
+pub type CH14_R = crate::BitReader<CH14_A>;
+#[doc = "Channel 14 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH14_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH14_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH14_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH14_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch14 {
+    pub fn variant(&self) -> CH14_A {
         match self.bits {
-            false => Ch14::Disabled,
-            true => Ch14::Enabled,
+            false => CH14_A::DISABLED,
+            true => CH14_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch14::Disabled
+        *self == CH14_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch14::Enabled
+        *self == CH14_A::ENABLED
     }
 }
 #[doc = "Channel 14 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch14WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH14_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch14WO> for bool {
+impl From<CH14_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch14WO) -> Self {
+    fn from(variant: CH14_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH14` writer - Channel 14 enable set register. Writing 0 has no effect."]
-pub type Ch14W<'a, REG> = crate::BitWriter1S<'a, REG, Ch14WO>;
-impl<'a, REG> Ch14W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH14_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH14_AW, O>;
+impl<'a, const O: u8> CH14_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch14WO::Set)
-    }
-}
-#[doc = "Channel 15 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch15 {
-    #[doc = "0: Read: Channel disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Channel enabled"]
-    Enabled = 1,
-}
-impl From<Ch15> for bool {
-    #[inline(always)]
-    fn from(variant: Ch15) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH14_AW::SET)
     }
 }
 #[doc = "Field `CH15` reader - Channel 15 enable set register. Writing 0 has no effect."]
-pub type Ch15R = crate::BitReader<Ch15>;
-impl Ch15R {
+pub type CH15_R = crate::BitReader<CH15_A>;
+#[doc = "Channel 15 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH15_A {
+    #[doc = "0: Read: Channel disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Channel enabled"]
+    ENABLED = 1,
+}
+impl From<CH15_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH15_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CH15_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch15 {
+    pub fn variant(&self) -> CH15_A {
         match self.bits {
-            false => Ch15::Disabled,
-            true => Ch15::Enabled,
+            false => CH15_A::DISABLED,
+            true => CH15_A::ENABLED,
         }
     }
-    #[doc = "Read: Channel disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Ch15::Disabled
+        *self == CH15_A::DISABLED
     }
-    #[doc = "Read: Channel enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Ch15::Enabled
+        *self == CH15_A::ENABLED
     }
 }
 #[doc = "Channel 15 enable set register. Writing 0 has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch15WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH15_AW {
     #[doc = "1: Write: Enable channel"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Ch15WO> for bool {
+impl From<CH15_AW> for bool {
     #[inline(always)]
-    fn from(variant: Ch15WO) -> Self {
+    fn from(variant: CH15_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH15` writer - Channel 15 enable set register. Writing 0 has no effect."]
-pub type Ch15W<'a, REG> = crate::BitWriter1S<'a, REG, Ch15WO>;
-impl<'a, REG> Ch15W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CH15_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CHENSET_SPEC, CH15_AW, O>;
+impl<'a, const O: u8> CH15_W<'a, O> {
     #[doc = "Write: Enable channel"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch15WO::Set)
+    pub fn set(self) -> &'a mut W {
+        self.variant(CH15_AW::SET)
     }
 }
 impl R {
     #[doc = "Bit 0 - Channel 0 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch0(&self) -> Ch0R {
-        Ch0R::new((self.bits & 1) != 0)
+    pub fn ch0(&self) -> CH0_R {
+        CH0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Channel 1 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch1(&self) -> Ch1R {
-        Ch1R::new(((self.bits >> 1) & 1) != 0)
+    pub fn ch1(&self) -> CH1_R {
+        CH1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Channel 2 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch2(&self) -> Ch2R {
-        Ch2R::new(((self.bits >> 2) & 1) != 0)
+    pub fn ch2(&self) -> CH2_R {
+        CH2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Channel 3 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch3(&self) -> Ch3R {
-        Ch3R::new(((self.bits >> 3) & 1) != 0)
+    pub fn ch3(&self) -> CH3_R {
+        CH3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Channel 4 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch4(&self) -> Ch4R {
-        Ch4R::new(((self.bits >> 4) & 1) != 0)
+    pub fn ch4(&self) -> CH4_R {
+        CH4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Channel 5 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch5(&self) -> Ch5R {
-        Ch5R::new(((self.bits >> 5) & 1) != 0)
+    pub fn ch5(&self) -> CH5_R {
+        CH5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Channel 6 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch6(&self) -> Ch6R {
-        Ch6R::new(((self.bits >> 6) & 1) != 0)
+    pub fn ch6(&self) -> CH6_R {
+        CH6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Channel 7 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch7(&self) -> Ch7R {
-        Ch7R::new(((self.bits >> 7) & 1) != 0)
+    pub fn ch7(&self) -> CH7_R {
+        CH7_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Channel 8 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch8(&self) -> Ch8R {
-        Ch8R::new(((self.bits >> 8) & 1) != 0)
+    pub fn ch8(&self) -> CH8_R {
+        CH8_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Channel 9 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch9(&self) -> Ch9R {
-        Ch9R::new(((self.bits >> 9) & 1) != 0)
+    pub fn ch9(&self) -> CH9_R {
+        CH9_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Channel 10 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch10(&self) -> Ch10R {
-        Ch10R::new(((self.bits >> 10) & 1) != 0)
+    pub fn ch10(&self) -> CH10_R {
+        CH10_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Channel 11 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch11(&self) -> Ch11R {
-        Ch11R::new(((self.bits >> 11) & 1) != 0)
+    pub fn ch11(&self) -> CH11_R {
+        CH11_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Channel 12 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch12(&self) -> Ch12R {
-        Ch12R::new(((self.bits >> 12) & 1) != 0)
+    pub fn ch12(&self) -> CH12_R {
+        CH12_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Channel 13 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch13(&self) -> Ch13R {
-        Ch13R::new(((self.bits >> 13) & 1) != 0)
+    pub fn ch13(&self) -> CH13_R {
+        CH13_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Channel 14 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch14(&self) -> Ch14R {
-        Ch14R::new(((self.bits >> 14) & 1) != 0)
+    pub fn ch14(&self) -> CH14_R {
+        CH14_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Channel 15 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    pub fn ch15(&self) -> Ch15R {
-        Ch15R::new(((self.bits >> 15) & 1) != 0)
+    pub fn ch15(&self) -> CH15_R {
+        CH15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Channel 0 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch0(&mut self) -> Ch0W<ChensetSpec> {
-        Ch0W::new(self, 0)
+    pub fn ch0(&mut self) -> CH0_W<0> {
+        CH0_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch1(&mut self) -> Ch1W<ChensetSpec> {
-        Ch1W::new(self, 1)
+    pub fn ch1(&mut self) -> CH1_W<1> {
+        CH1_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch2(&mut self) -> Ch2W<ChensetSpec> {
-        Ch2W::new(self, 2)
+    pub fn ch2(&mut self) -> CH2_W<2> {
+        CH2_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch3(&mut self) -> Ch3W<ChensetSpec> {
-        Ch3W::new(self, 3)
+    pub fn ch3(&mut self) -> CH3_W<3> {
+        CH3_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch4(&mut self) -> Ch4W<ChensetSpec> {
-        Ch4W::new(self, 4)
+    pub fn ch4(&mut self) -> CH4_W<4> {
+        CH4_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch5(&mut self) -> Ch5W<ChensetSpec> {
-        Ch5W::new(self, 5)
+    pub fn ch5(&mut self) -> CH5_W<5> {
+        CH5_W::new(self)
     }
     #[doc = "Bit 6 - Channel 6 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch6(&mut self) -> Ch6W<ChensetSpec> {
-        Ch6W::new(self, 6)
+    pub fn ch6(&mut self) -> CH6_W<6> {
+        CH6_W::new(self)
     }
     #[doc = "Bit 7 - Channel 7 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch7(&mut self) -> Ch7W<ChensetSpec> {
-        Ch7W::new(self, 7)
+    pub fn ch7(&mut self) -> CH7_W<7> {
+        CH7_W::new(self)
     }
     #[doc = "Bit 8 - Channel 8 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch8(&mut self) -> Ch8W<ChensetSpec> {
-        Ch8W::new(self, 8)
+    pub fn ch8(&mut self) -> CH8_W<8> {
+        CH8_W::new(self)
     }
     #[doc = "Bit 9 - Channel 9 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch9(&mut self) -> Ch9W<ChensetSpec> {
-        Ch9W::new(self, 9)
+    pub fn ch9(&mut self) -> CH9_W<9> {
+        CH9_W::new(self)
     }
     #[doc = "Bit 10 - Channel 10 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch10(&mut self) -> Ch10W<ChensetSpec> {
-        Ch10W::new(self, 10)
+    pub fn ch10(&mut self) -> CH10_W<10> {
+        CH10_W::new(self)
     }
     #[doc = "Bit 11 - Channel 11 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch11(&mut self) -> Ch11W<ChensetSpec> {
-        Ch11W::new(self, 11)
+    pub fn ch11(&mut self) -> CH11_W<11> {
+        CH11_W::new(self)
     }
     #[doc = "Bit 12 - Channel 12 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch12(&mut self) -> Ch12W<ChensetSpec> {
-        Ch12W::new(self, 12)
+    pub fn ch12(&mut self) -> CH12_W<12> {
+        CH12_W::new(self)
     }
     #[doc = "Bit 13 - Channel 13 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch13(&mut self) -> Ch13W<ChensetSpec> {
-        Ch13W::new(self, 13)
+    pub fn ch13(&mut self) -> CH13_W<13> {
+        CH13_W::new(self)
     }
     #[doc = "Bit 14 - Channel 14 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch14(&mut self) -> Ch14W<ChensetSpec> {
-        Ch14W::new(self, 14)
+    pub fn ch14(&mut self) -> CH14_W<14> {
+        CH14_W::new(self)
     }
     #[doc = "Bit 15 - Channel 15 enable set register. Writing 0 has no effect."]
     #[inline(always)]
-    #[must_use]
-    pub fn ch15(&mut self) -> Ch15W<ChensetSpec> {
-        Ch15W::new(self, 15)
+    pub fn ch15(&mut self) -> CH15_W<15> {
+        CH15_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Channel enable set register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chenset::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`chenset::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ChensetSpec;
-impl crate::RegisterSpec for ChensetSpec {
+#[doc = "Channel enable set register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chenset](index.html) module"]
+pub struct CHENSET_SPEC;
+impl crate::RegisterSpec for CHENSET_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`chenset::R`](R) reader structure"]
-impl crate::Readable for ChensetSpec {}
-#[doc = "`write(|w| ..)` method takes [`chenset::W`](W) writer structure"]
-impl crate::Writable for ChensetSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0xffff;
+#[doc = "`read()` method returns [chenset::R](R) reader structure"]
+impl crate::Readable for CHENSET_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [chenset::W](W) writer structure"]
+impl crate::Writable for CHENSET_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets CHENSET to value 0"]
-impl crate::Resettable for ChensetSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for CHENSET_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

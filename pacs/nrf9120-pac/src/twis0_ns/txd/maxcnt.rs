@@ -1,40 +1,80 @@
 #[doc = "Register `MAXCNT` reader"]
-pub type R = crate::R<MaxcntSpec>;
+pub struct R(crate::R<MAXCNT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MAXCNT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<MAXCNT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MAXCNT_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Register `MAXCNT` writer"]
-pub type W = crate::W<MaxcntSpec>;
+pub struct W(crate::W<MAXCNT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MAXCNT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MAXCNT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MAXCNT_SPEC>) -> Self {
+        W(writer)
+    }
+}
 #[doc = "Field `MAXCNT` reader - Maximum number of bytes in TXD buffer"]
-pub type MaxcntR = crate::FieldReader<u16>;
+pub type MAXCNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MAXCNT` writer - Maximum number of bytes in TXD buffer"]
-pub type MaxcntW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
+pub type MAXCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAXCNT_SPEC, u16, u16, 13, O>;
 impl R {
     #[doc = "Bits 0:12 - Maximum number of bytes in TXD buffer"]
     #[inline(always)]
-    pub fn maxcnt(&self) -> MaxcntR {
-        MaxcntR::new((self.bits & 0x1fff) as u16)
+    pub fn maxcnt(&self) -> MAXCNT_R {
+        MAXCNT_R::new((self.bits & 0x1fff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:12 - Maximum number of bytes in TXD buffer"]
     #[inline(always)]
-    #[must_use]
-    pub fn maxcnt(&mut self) -> MaxcntW<MaxcntSpec> {
-        MaxcntW::new(self, 0)
+    pub fn maxcnt(&mut self) -> MAXCNT_W<0> {
+        MAXCNT_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Maximum number of bytes in TXD buffer\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`maxcnt::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`maxcnt::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct MaxcntSpec;
-impl crate::RegisterSpec for MaxcntSpec {
+#[doc = "Maximum number of bytes in TXD buffer\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [maxcnt](index.html) module"]
+pub struct MAXCNT_SPEC;
+impl crate::RegisterSpec for MAXCNT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`maxcnt::R`](R) reader structure"]
-impl crate::Readable for MaxcntSpec {}
-#[doc = "`write(|w| ..)` method takes [`maxcnt::W`](W) writer structure"]
-impl crate::Writable for MaxcntSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [maxcnt::R](R) reader structure"]
+impl crate::Readable for MAXCNT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [maxcnt::W](W) writer structure"]
+impl crate::Writable for MAXCNT_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets MAXCNT to value 0"]
-impl crate::Resettable for MaxcntSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for MAXCNT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

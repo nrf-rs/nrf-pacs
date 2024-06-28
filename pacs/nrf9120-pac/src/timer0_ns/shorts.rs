@@ -1,853 +1,858 @@
 #[doc = "Register `SHORTS` reader"]
-pub type R = crate::R<ShortsSpec>;
-#[doc = "Register `SHORTS` writer"]
-pub type W = crate::W<ShortsSpec>;
-#[doc = "Shortcut between event COMPARE\\[0\\]
-and task CLEAR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare0Clear {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare0Clear> for bool {
+pub struct R(crate::R<SHORTS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SHORTS_SPEC>;
     #[inline(always)]
-    fn from(variant: Compare0Clear) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SHORTS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SHORTS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SHORTS` writer"]
+pub struct W(crate::W<SHORTS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SHORTS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SHORTS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SHORTS_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `COMPARE0_CLEAR` reader - Shortcut between event COMPARE\\[0\\]
 and task CLEAR"]
-pub type Compare0ClearR = crate::BitReader<Compare0Clear>;
-impl Compare0ClearR {
+pub type COMPARE0_CLEAR_R = crate::BitReader<COMPARE0_CLEAR_A>;
+#[doc = "Shortcut between event COMPARE\\[0\\]
+and task CLEAR\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE0_CLEAR_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE0_CLEAR_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE0_CLEAR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE0_CLEAR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare0Clear {
+    pub fn variant(&self) -> COMPARE0_CLEAR_A {
         match self.bits {
-            false => Compare0Clear::Disabled,
-            true => Compare0Clear::Enabled,
+            false => COMPARE0_CLEAR_A::DISABLED,
+            true => COMPARE0_CLEAR_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare0Clear::Disabled
+        *self == COMPARE0_CLEAR_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare0Clear::Enabled
+        *self == COMPARE0_CLEAR_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE0_CLEAR` writer - Shortcut between event COMPARE\\[0\\]
 and task CLEAR"]
-pub type Compare0ClearW<'a, REG> = crate::BitWriter<'a, REG, Compare0Clear>;
-impl<'a, REG> Compare0ClearW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE0_CLEAR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE0_CLEAR_A, O>;
+impl<'a, const O: u8> COMPARE0_CLEAR_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare0Clear::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE0_CLEAR_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare0Clear::Enabled)
-    }
-}
-#[doc = "Shortcut between event COMPARE\\[1\\]
-and task CLEAR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare1Clear {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare1Clear> for bool {
-    #[inline(always)]
-    fn from(variant: Compare1Clear) -> Self {
-        variant as u8 != 0
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE0_CLEAR_A::ENABLED)
     }
 }
 #[doc = "Field `COMPARE1_CLEAR` reader - Shortcut between event COMPARE\\[1\\]
 and task CLEAR"]
-pub type Compare1ClearR = crate::BitReader<Compare1Clear>;
-impl Compare1ClearR {
+pub type COMPARE1_CLEAR_R = crate::BitReader<COMPARE1_CLEAR_A>;
+#[doc = "Shortcut between event COMPARE\\[1\\]
+and task CLEAR\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE1_CLEAR_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE1_CLEAR_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE1_CLEAR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE1_CLEAR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare1Clear {
+    pub fn variant(&self) -> COMPARE1_CLEAR_A {
         match self.bits {
-            false => Compare1Clear::Disabled,
-            true => Compare1Clear::Enabled,
+            false => COMPARE1_CLEAR_A::DISABLED,
+            true => COMPARE1_CLEAR_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare1Clear::Disabled
+        *self == COMPARE1_CLEAR_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare1Clear::Enabled
+        *self == COMPARE1_CLEAR_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE1_CLEAR` writer - Shortcut between event COMPARE\\[1\\]
 and task CLEAR"]
-pub type Compare1ClearW<'a, REG> = crate::BitWriter<'a, REG, Compare1Clear>;
-impl<'a, REG> Compare1ClearW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE1_CLEAR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE1_CLEAR_A, O>;
+impl<'a, const O: u8> COMPARE1_CLEAR_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare1Clear::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE1_CLEAR_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare1Clear::Enabled)
-    }
-}
-#[doc = "Shortcut between event COMPARE\\[2\\]
-and task CLEAR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare2Clear {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare2Clear> for bool {
-    #[inline(always)]
-    fn from(variant: Compare2Clear) -> Self {
-        variant as u8 != 0
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE1_CLEAR_A::ENABLED)
     }
 }
 #[doc = "Field `COMPARE2_CLEAR` reader - Shortcut between event COMPARE\\[2\\]
 and task CLEAR"]
-pub type Compare2ClearR = crate::BitReader<Compare2Clear>;
-impl Compare2ClearR {
+pub type COMPARE2_CLEAR_R = crate::BitReader<COMPARE2_CLEAR_A>;
+#[doc = "Shortcut between event COMPARE\\[2\\]
+and task CLEAR\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE2_CLEAR_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE2_CLEAR_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE2_CLEAR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE2_CLEAR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare2Clear {
+    pub fn variant(&self) -> COMPARE2_CLEAR_A {
         match self.bits {
-            false => Compare2Clear::Disabled,
-            true => Compare2Clear::Enabled,
+            false => COMPARE2_CLEAR_A::DISABLED,
+            true => COMPARE2_CLEAR_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare2Clear::Disabled
+        *self == COMPARE2_CLEAR_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare2Clear::Enabled
+        *self == COMPARE2_CLEAR_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE2_CLEAR` writer - Shortcut between event COMPARE\\[2\\]
 and task CLEAR"]
-pub type Compare2ClearW<'a, REG> = crate::BitWriter<'a, REG, Compare2Clear>;
-impl<'a, REG> Compare2ClearW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE2_CLEAR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE2_CLEAR_A, O>;
+impl<'a, const O: u8> COMPARE2_CLEAR_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare2Clear::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE2_CLEAR_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare2Clear::Enabled)
-    }
-}
-#[doc = "Shortcut between event COMPARE\\[3\\]
-and task CLEAR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare3Clear {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare3Clear> for bool {
-    #[inline(always)]
-    fn from(variant: Compare3Clear) -> Self {
-        variant as u8 != 0
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE2_CLEAR_A::ENABLED)
     }
 }
 #[doc = "Field `COMPARE3_CLEAR` reader - Shortcut between event COMPARE\\[3\\]
 and task CLEAR"]
-pub type Compare3ClearR = crate::BitReader<Compare3Clear>;
-impl Compare3ClearR {
+pub type COMPARE3_CLEAR_R = crate::BitReader<COMPARE3_CLEAR_A>;
+#[doc = "Shortcut between event COMPARE\\[3\\]
+and task CLEAR\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE3_CLEAR_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE3_CLEAR_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE3_CLEAR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE3_CLEAR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare3Clear {
+    pub fn variant(&self) -> COMPARE3_CLEAR_A {
         match self.bits {
-            false => Compare3Clear::Disabled,
-            true => Compare3Clear::Enabled,
+            false => COMPARE3_CLEAR_A::DISABLED,
+            true => COMPARE3_CLEAR_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare3Clear::Disabled
+        *self == COMPARE3_CLEAR_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare3Clear::Enabled
+        *self == COMPARE3_CLEAR_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE3_CLEAR` writer - Shortcut between event COMPARE\\[3\\]
 and task CLEAR"]
-pub type Compare3ClearW<'a, REG> = crate::BitWriter<'a, REG, Compare3Clear>;
-impl<'a, REG> Compare3ClearW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE3_CLEAR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE3_CLEAR_A, O>;
+impl<'a, const O: u8> COMPARE3_CLEAR_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare3Clear::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE3_CLEAR_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare3Clear::Enabled)
-    }
-}
-#[doc = "Shortcut between event COMPARE\\[4\\]
-and task CLEAR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare4Clear {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare4Clear> for bool {
-    #[inline(always)]
-    fn from(variant: Compare4Clear) -> Self {
-        variant as u8 != 0
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE3_CLEAR_A::ENABLED)
     }
 }
 #[doc = "Field `COMPARE4_CLEAR` reader - Shortcut between event COMPARE\\[4\\]
 and task CLEAR"]
-pub type Compare4ClearR = crate::BitReader<Compare4Clear>;
-impl Compare4ClearR {
+pub type COMPARE4_CLEAR_R = crate::BitReader<COMPARE4_CLEAR_A>;
+#[doc = "Shortcut between event COMPARE\\[4\\]
+and task CLEAR\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE4_CLEAR_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE4_CLEAR_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE4_CLEAR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE4_CLEAR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare4Clear {
+    pub fn variant(&self) -> COMPARE4_CLEAR_A {
         match self.bits {
-            false => Compare4Clear::Disabled,
-            true => Compare4Clear::Enabled,
+            false => COMPARE4_CLEAR_A::DISABLED,
+            true => COMPARE4_CLEAR_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare4Clear::Disabled
+        *self == COMPARE4_CLEAR_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare4Clear::Enabled
+        *self == COMPARE4_CLEAR_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE4_CLEAR` writer - Shortcut between event COMPARE\\[4\\]
 and task CLEAR"]
-pub type Compare4ClearW<'a, REG> = crate::BitWriter<'a, REG, Compare4Clear>;
-impl<'a, REG> Compare4ClearW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE4_CLEAR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE4_CLEAR_A, O>;
+impl<'a, const O: u8> COMPARE4_CLEAR_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare4Clear::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE4_CLEAR_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare4Clear::Enabled)
-    }
-}
-#[doc = "Shortcut between event COMPARE\\[5\\]
-and task CLEAR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare5Clear {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare5Clear> for bool {
-    #[inline(always)]
-    fn from(variant: Compare5Clear) -> Self {
-        variant as u8 != 0
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE4_CLEAR_A::ENABLED)
     }
 }
 #[doc = "Field `COMPARE5_CLEAR` reader - Shortcut between event COMPARE\\[5\\]
 and task CLEAR"]
-pub type Compare5ClearR = crate::BitReader<Compare5Clear>;
-impl Compare5ClearR {
+pub type COMPARE5_CLEAR_R = crate::BitReader<COMPARE5_CLEAR_A>;
+#[doc = "Shortcut between event COMPARE\\[5\\]
+and task CLEAR\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE5_CLEAR_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE5_CLEAR_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE5_CLEAR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE5_CLEAR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare5Clear {
+    pub fn variant(&self) -> COMPARE5_CLEAR_A {
         match self.bits {
-            false => Compare5Clear::Disabled,
-            true => Compare5Clear::Enabled,
+            false => COMPARE5_CLEAR_A::DISABLED,
+            true => COMPARE5_CLEAR_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare5Clear::Disabled
+        *self == COMPARE5_CLEAR_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare5Clear::Enabled
+        *self == COMPARE5_CLEAR_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE5_CLEAR` writer - Shortcut between event COMPARE\\[5\\]
 and task CLEAR"]
-pub type Compare5ClearW<'a, REG> = crate::BitWriter<'a, REG, Compare5Clear>;
-impl<'a, REG> Compare5ClearW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE5_CLEAR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE5_CLEAR_A, O>;
+impl<'a, const O: u8> COMPARE5_CLEAR_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare5Clear::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE5_CLEAR_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare5Clear::Enabled)
-    }
-}
-#[doc = "Shortcut between event COMPARE\\[0\\]
-and task STOP\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare0Stop {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare0Stop> for bool {
-    #[inline(always)]
-    fn from(variant: Compare0Stop) -> Self {
-        variant as u8 != 0
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE5_CLEAR_A::ENABLED)
     }
 }
 #[doc = "Field `COMPARE0_STOP` reader - Shortcut between event COMPARE\\[0\\]
 and task STOP"]
-pub type Compare0StopR = crate::BitReader<Compare0Stop>;
-impl Compare0StopR {
+pub type COMPARE0_STOP_R = crate::BitReader<COMPARE0_STOP_A>;
+#[doc = "Shortcut between event COMPARE\\[0\\]
+and task STOP\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE0_STOP_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE0_STOP_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE0_STOP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE0_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare0Stop {
+    pub fn variant(&self) -> COMPARE0_STOP_A {
         match self.bits {
-            false => Compare0Stop::Disabled,
-            true => Compare0Stop::Enabled,
+            false => COMPARE0_STOP_A::DISABLED,
+            true => COMPARE0_STOP_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare0Stop::Disabled
+        *self == COMPARE0_STOP_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare0Stop::Enabled
+        *self == COMPARE0_STOP_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE0_STOP` writer - Shortcut between event COMPARE\\[0\\]
 and task STOP"]
-pub type Compare0StopW<'a, REG> = crate::BitWriter<'a, REG, Compare0Stop>;
-impl<'a, REG> Compare0StopW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE0_STOP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE0_STOP_A, O>;
+impl<'a, const O: u8> COMPARE0_STOP_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare0Stop::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE0_STOP_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare0Stop::Enabled)
-    }
-}
-#[doc = "Shortcut between event COMPARE\\[1\\]
-and task STOP\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare1Stop {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare1Stop> for bool {
-    #[inline(always)]
-    fn from(variant: Compare1Stop) -> Self {
-        variant as u8 != 0
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE0_STOP_A::ENABLED)
     }
 }
 #[doc = "Field `COMPARE1_STOP` reader - Shortcut between event COMPARE\\[1\\]
 and task STOP"]
-pub type Compare1StopR = crate::BitReader<Compare1Stop>;
-impl Compare1StopR {
+pub type COMPARE1_STOP_R = crate::BitReader<COMPARE1_STOP_A>;
+#[doc = "Shortcut between event COMPARE\\[1\\]
+and task STOP\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE1_STOP_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE1_STOP_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE1_STOP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE1_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare1Stop {
+    pub fn variant(&self) -> COMPARE1_STOP_A {
         match self.bits {
-            false => Compare1Stop::Disabled,
-            true => Compare1Stop::Enabled,
+            false => COMPARE1_STOP_A::DISABLED,
+            true => COMPARE1_STOP_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare1Stop::Disabled
+        *self == COMPARE1_STOP_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare1Stop::Enabled
+        *self == COMPARE1_STOP_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE1_STOP` writer - Shortcut between event COMPARE\\[1\\]
 and task STOP"]
-pub type Compare1StopW<'a, REG> = crate::BitWriter<'a, REG, Compare1Stop>;
-impl<'a, REG> Compare1StopW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE1_STOP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE1_STOP_A, O>;
+impl<'a, const O: u8> COMPARE1_STOP_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare1Stop::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE1_STOP_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare1Stop::Enabled)
-    }
-}
-#[doc = "Shortcut between event COMPARE\\[2\\]
-and task STOP\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare2Stop {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare2Stop> for bool {
-    #[inline(always)]
-    fn from(variant: Compare2Stop) -> Self {
-        variant as u8 != 0
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE1_STOP_A::ENABLED)
     }
 }
 #[doc = "Field `COMPARE2_STOP` reader - Shortcut between event COMPARE\\[2\\]
 and task STOP"]
-pub type Compare2StopR = crate::BitReader<Compare2Stop>;
-impl Compare2StopR {
+pub type COMPARE2_STOP_R = crate::BitReader<COMPARE2_STOP_A>;
+#[doc = "Shortcut between event COMPARE\\[2\\]
+and task STOP\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE2_STOP_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE2_STOP_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE2_STOP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE2_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare2Stop {
+    pub fn variant(&self) -> COMPARE2_STOP_A {
         match self.bits {
-            false => Compare2Stop::Disabled,
-            true => Compare2Stop::Enabled,
+            false => COMPARE2_STOP_A::DISABLED,
+            true => COMPARE2_STOP_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare2Stop::Disabled
+        *self == COMPARE2_STOP_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare2Stop::Enabled
+        *self == COMPARE2_STOP_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE2_STOP` writer - Shortcut between event COMPARE\\[2\\]
 and task STOP"]
-pub type Compare2StopW<'a, REG> = crate::BitWriter<'a, REG, Compare2Stop>;
-impl<'a, REG> Compare2StopW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE2_STOP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE2_STOP_A, O>;
+impl<'a, const O: u8> COMPARE2_STOP_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare2Stop::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE2_STOP_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare2Stop::Enabled)
-    }
-}
-#[doc = "Shortcut between event COMPARE\\[3\\]
-and task STOP\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare3Stop {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare3Stop> for bool {
-    #[inline(always)]
-    fn from(variant: Compare3Stop) -> Self {
-        variant as u8 != 0
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE2_STOP_A::ENABLED)
     }
 }
 #[doc = "Field `COMPARE3_STOP` reader - Shortcut between event COMPARE\\[3\\]
 and task STOP"]
-pub type Compare3StopR = crate::BitReader<Compare3Stop>;
-impl Compare3StopR {
+pub type COMPARE3_STOP_R = crate::BitReader<COMPARE3_STOP_A>;
+#[doc = "Shortcut between event COMPARE\\[3\\]
+and task STOP\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE3_STOP_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE3_STOP_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE3_STOP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE3_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare3Stop {
+    pub fn variant(&self) -> COMPARE3_STOP_A {
         match self.bits {
-            false => Compare3Stop::Disabled,
-            true => Compare3Stop::Enabled,
+            false => COMPARE3_STOP_A::DISABLED,
+            true => COMPARE3_STOP_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare3Stop::Disabled
+        *self == COMPARE3_STOP_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare3Stop::Enabled
+        *self == COMPARE3_STOP_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE3_STOP` writer - Shortcut between event COMPARE\\[3\\]
 and task STOP"]
-pub type Compare3StopW<'a, REG> = crate::BitWriter<'a, REG, Compare3Stop>;
-impl<'a, REG> Compare3StopW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE3_STOP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE3_STOP_A, O>;
+impl<'a, const O: u8> COMPARE3_STOP_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare3Stop::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE3_STOP_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare3Stop::Enabled)
-    }
-}
-#[doc = "Shortcut between event COMPARE\\[4\\]
-and task STOP\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare4Stop {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare4Stop> for bool {
-    #[inline(always)]
-    fn from(variant: Compare4Stop) -> Self {
-        variant as u8 != 0
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE3_STOP_A::ENABLED)
     }
 }
 #[doc = "Field `COMPARE4_STOP` reader - Shortcut between event COMPARE\\[4\\]
 and task STOP"]
-pub type Compare4StopR = crate::BitReader<Compare4Stop>;
-impl Compare4StopR {
+pub type COMPARE4_STOP_R = crate::BitReader<COMPARE4_STOP_A>;
+#[doc = "Shortcut between event COMPARE\\[4\\]
+and task STOP\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE4_STOP_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE4_STOP_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE4_STOP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE4_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare4Stop {
+    pub fn variant(&self) -> COMPARE4_STOP_A {
         match self.bits {
-            false => Compare4Stop::Disabled,
-            true => Compare4Stop::Enabled,
+            false => COMPARE4_STOP_A::DISABLED,
+            true => COMPARE4_STOP_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare4Stop::Disabled
+        *self == COMPARE4_STOP_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare4Stop::Enabled
+        *self == COMPARE4_STOP_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE4_STOP` writer - Shortcut between event COMPARE\\[4\\]
 and task STOP"]
-pub type Compare4StopW<'a, REG> = crate::BitWriter<'a, REG, Compare4Stop>;
-impl<'a, REG> Compare4StopW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE4_STOP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE4_STOP_A, O>;
+impl<'a, const O: u8> COMPARE4_STOP_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare4Stop::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE4_STOP_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare4Stop::Enabled)
-    }
-}
-#[doc = "Shortcut between event COMPARE\\[5\\]
-and task STOP\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Compare5Stop {
-    #[doc = "0: Disable shortcut"]
-    Disabled = 0,
-    #[doc = "1: Enable shortcut"]
-    Enabled = 1,
-}
-impl From<Compare5Stop> for bool {
-    #[inline(always)]
-    fn from(variant: Compare5Stop) -> Self {
-        variant as u8 != 0
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE4_STOP_A::ENABLED)
     }
 }
 #[doc = "Field `COMPARE5_STOP` reader - Shortcut between event COMPARE\\[5\\]
 and task STOP"]
-pub type Compare5StopR = crate::BitReader<Compare5Stop>;
-impl Compare5StopR {
+pub type COMPARE5_STOP_R = crate::BitReader<COMPARE5_STOP_A>;
+#[doc = "Shortcut between event COMPARE\\[5\\]
+and task STOP\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE5_STOP_A {
+    #[doc = "0: Disable shortcut"]
+    DISABLED = 0,
+    #[doc = "1: Enable shortcut"]
+    ENABLED = 1,
+}
+impl From<COMPARE5_STOP_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE5_STOP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl COMPARE5_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Compare5Stop {
+    pub fn variant(&self) -> COMPARE5_STOP_A {
         match self.bits {
-            false => Compare5Stop::Disabled,
-            true => Compare5Stop::Enabled,
+            false => COMPARE5_STOP_A::DISABLED,
+            true => COMPARE5_STOP_A::ENABLED,
         }
     }
-    #[doc = "Disable shortcut"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Compare5Stop::Disabled
+        *self == COMPARE5_STOP_A::DISABLED
     }
-    #[doc = "Enable shortcut"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Compare5Stop::Enabled
+        *self == COMPARE5_STOP_A::ENABLED
     }
 }
 #[doc = "Field `COMPARE5_STOP` writer - Shortcut between event COMPARE\\[5\\]
 and task STOP"]
-pub type Compare5StopW<'a, REG> = crate::BitWriter<'a, REG, Compare5Stop>;
-impl<'a, REG> Compare5StopW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type COMPARE5_STOP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SHORTS_SPEC, COMPARE5_STOP_A, O>;
+impl<'a, const O: u8> COMPARE5_STOP_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare5Stop::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(COMPARE5_STOP_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Compare5Stop::Enabled)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(COMPARE5_STOP_A::ENABLED)
     }
 }
 impl R {
     #[doc = "Bit 0 - Shortcut between event COMPARE\\[0\\]
 and task CLEAR"]
     #[inline(always)]
-    pub fn compare0_clear(&self) -> Compare0ClearR {
-        Compare0ClearR::new((self.bits & 1) != 0)
+    pub fn compare0_clear(&self) -> COMPARE0_CLEAR_R {
+        COMPARE0_CLEAR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Shortcut between event COMPARE\\[1\\]
 and task CLEAR"]
     #[inline(always)]
-    pub fn compare1_clear(&self) -> Compare1ClearR {
-        Compare1ClearR::new(((self.bits >> 1) & 1) != 0)
+    pub fn compare1_clear(&self) -> COMPARE1_CLEAR_R {
+        COMPARE1_CLEAR_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Shortcut between event COMPARE\\[2\\]
 and task CLEAR"]
     #[inline(always)]
-    pub fn compare2_clear(&self) -> Compare2ClearR {
-        Compare2ClearR::new(((self.bits >> 2) & 1) != 0)
+    pub fn compare2_clear(&self) -> COMPARE2_CLEAR_R {
+        COMPARE2_CLEAR_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Shortcut between event COMPARE\\[3\\]
 and task CLEAR"]
     #[inline(always)]
-    pub fn compare3_clear(&self) -> Compare3ClearR {
-        Compare3ClearR::new(((self.bits >> 3) & 1) != 0)
+    pub fn compare3_clear(&self) -> COMPARE3_CLEAR_R {
+        COMPARE3_CLEAR_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Shortcut between event COMPARE\\[4\\]
 and task CLEAR"]
     #[inline(always)]
-    pub fn compare4_clear(&self) -> Compare4ClearR {
-        Compare4ClearR::new(((self.bits >> 4) & 1) != 0)
+    pub fn compare4_clear(&self) -> COMPARE4_CLEAR_R {
+        COMPARE4_CLEAR_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Shortcut between event COMPARE\\[5\\]
 and task CLEAR"]
     #[inline(always)]
-    pub fn compare5_clear(&self) -> Compare5ClearR {
-        Compare5ClearR::new(((self.bits >> 5) & 1) != 0)
+    pub fn compare5_clear(&self) -> COMPARE5_CLEAR_R {
+        COMPARE5_CLEAR_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 8 - Shortcut between event COMPARE\\[0\\]
 and task STOP"]
     #[inline(always)]
-    pub fn compare0_stop(&self) -> Compare0StopR {
-        Compare0StopR::new(((self.bits >> 8) & 1) != 0)
+    pub fn compare0_stop(&self) -> COMPARE0_STOP_R {
+        COMPARE0_STOP_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Shortcut between event COMPARE\\[1\\]
 and task STOP"]
     #[inline(always)]
-    pub fn compare1_stop(&self) -> Compare1StopR {
-        Compare1StopR::new(((self.bits >> 9) & 1) != 0)
+    pub fn compare1_stop(&self) -> COMPARE1_STOP_R {
+        COMPARE1_STOP_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Shortcut between event COMPARE\\[2\\]
 and task STOP"]
     #[inline(always)]
-    pub fn compare2_stop(&self) -> Compare2StopR {
-        Compare2StopR::new(((self.bits >> 10) & 1) != 0)
+    pub fn compare2_stop(&self) -> COMPARE2_STOP_R {
+        COMPARE2_STOP_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Shortcut between event COMPARE\\[3\\]
 and task STOP"]
     #[inline(always)]
-    pub fn compare3_stop(&self) -> Compare3StopR {
-        Compare3StopR::new(((self.bits >> 11) & 1) != 0)
+    pub fn compare3_stop(&self) -> COMPARE3_STOP_R {
+        COMPARE3_STOP_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Shortcut between event COMPARE\\[4\\]
 and task STOP"]
     #[inline(always)]
-    pub fn compare4_stop(&self) -> Compare4StopR {
-        Compare4StopR::new(((self.bits >> 12) & 1) != 0)
+    pub fn compare4_stop(&self) -> COMPARE4_STOP_R {
+        COMPARE4_STOP_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Shortcut between event COMPARE\\[5\\]
 and task STOP"]
     #[inline(always)]
-    pub fn compare5_stop(&self) -> Compare5StopR {
-        Compare5StopR::new(((self.bits >> 13) & 1) != 0)
+    pub fn compare5_stop(&self) -> COMPARE5_STOP_R {
+        COMPARE5_STOP_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Shortcut between event COMPARE\\[0\\]
 and task CLEAR"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare0_clear(&mut self) -> Compare0ClearW<ShortsSpec> {
-        Compare0ClearW::new(self, 0)
+    pub fn compare0_clear(&mut self) -> COMPARE0_CLEAR_W<0> {
+        COMPARE0_CLEAR_W::new(self)
     }
     #[doc = "Bit 1 - Shortcut between event COMPARE\\[1\\]
 and task CLEAR"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare1_clear(&mut self) -> Compare1ClearW<ShortsSpec> {
-        Compare1ClearW::new(self, 1)
+    pub fn compare1_clear(&mut self) -> COMPARE1_CLEAR_W<1> {
+        COMPARE1_CLEAR_W::new(self)
     }
     #[doc = "Bit 2 - Shortcut between event COMPARE\\[2\\]
 and task CLEAR"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare2_clear(&mut self) -> Compare2ClearW<ShortsSpec> {
-        Compare2ClearW::new(self, 2)
+    pub fn compare2_clear(&mut self) -> COMPARE2_CLEAR_W<2> {
+        COMPARE2_CLEAR_W::new(self)
     }
     #[doc = "Bit 3 - Shortcut between event COMPARE\\[3\\]
 and task CLEAR"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare3_clear(&mut self) -> Compare3ClearW<ShortsSpec> {
-        Compare3ClearW::new(self, 3)
+    pub fn compare3_clear(&mut self) -> COMPARE3_CLEAR_W<3> {
+        COMPARE3_CLEAR_W::new(self)
     }
     #[doc = "Bit 4 - Shortcut between event COMPARE\\[4\\]
 and task CLEAR"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare4_clear(&mut self) -> Compare4ClearW<ShortsSpec> {
-        Compare4ClearW::new(self, 4)
+    pub fn compare4_clear(&mut self) -> COMPARE4_CLEAR_W<4> {
+        COMPARE4_CLEAR_W::new(self)
     }
     #[doc = "Bit 5 - Shortcut between event COMPARE\\[5\\]
 and task CLEAR"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare5_clear(&mut self) -> Compare5ClearW<ShortsSpec> {
-        Compare5ClearW::new(self, 5)
+    pub fn compare5_clear(&mut self) -> COMPARE5_CLEAR_W<5> {
+        COMPARE5_CLEAR_W::new(self)
     }
     #[doc = "Bit 8 - Shortcut between event COMPARE\\[0\\]
 and task STOP"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare0_stop(&mut self) -> Compare0StopW<ShortsSpec> {
-        Compare0StopW::new(self, 8)
+    pub fn compare0_stop(&mut self) -> COMPARE0_STOP_W<8> {
+        COMPARE0_STOP_W::new(self)
     }
     #[doc = "Bit 9 - Shortcut between event COMPARE\\[1\\]
 and task STOP"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare1_stop(&mut self) -> Compare1StopW<ShortsSpec> {
-        Compare1StopW::new(self, 9)
+    pub fn compare1_stop(&mut self) -> COMPARE1_STOP_W<9> {
+        COMPARE1_STOP_W::new(self)
     }
     #[doc = "Bit 10 - Shortcut between event COMPARE\\[2\\]
 and task STOP"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare2_stop(&mut self) -> Compare2StopW<ShortsSpec> {
-        Compare2StopW::new(self, 10)
+    pub fn compare2_stop(&mut self) -> COMPARE2_STOP_W<10> {
+        COMPARE2_STOP_W::new(self)
     }
     #[doc = "Bit 11 - Shortcut between event COMPARE\\[3\\]
 and task STOP"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare3_stop(&mut self) -> Compare3StopW<ShortsSpec> {
-        Compare3StopW::new(self, 11)
+    pub fn compare3_stop(&mut self) -> COMPARE3_STOP_W<11> {
+        COMPARE3_STOP_W::new(self)
     }
     #[doc = "Bit 12 - Shortcut between event COMPARE\\[4\\]
 and task STOP"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare4_stop(&mut self) -> Compare4StopW<ShortsSpec> {
-        Compare4StopW::new(self, 12)
+    pub fn compare4_stop(&mut self) -> COMPARE4_STOP_W<12> {
+        COMPARE4_STOP_W::new(self)
     }
     #[doc = "Bit 13 - Shortcut between event COMPARE\\[5\\]
 and task STOP"]
     #[inline(always)]
-    #[must_use]
-    pub fn compare5_stop(&mut self) -> Compare5StopW<ShortsSpec> {
-        Compare5StopW::new(self, 13)
+    pub fn compare5_stop(&mut self) -> COMPARE5_STOP_W<13> {
+        COMPARE5_STOP_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Shortcuts between local events and tasks\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`shorts::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`shorts::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ShortsSpec;
-impl crate::RegisterSpec for ShortsSpec {
+#[doc = "Shortcuts between local events and tasks\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [shorts](index.html) module"]
+pub struct SHORTS_SPEC;
+impl crate::RegisterSpec for SHORTS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`shorts::R`](R) reader structure"]
-impl crate::Readable for ShortsSpec {}
-#[doc = "`write(|w| ..)` method takes [`shorts::W`](W) writer structure"]
-impl crate::Writable for ShortsSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [shorts::R](R) reader structure"]
+impl crate::Readable for SHORTS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [shorts::W](W) writer structure"]
+impl crate::Writable for SHORTS_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets SHORTS to value 0"]
-impl crate::Resettable for ShortsSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for SHORTS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

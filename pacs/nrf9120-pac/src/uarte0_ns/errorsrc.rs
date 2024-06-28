@@ -1,281 +1,306 @@
 #[doc = "Register `ERRORSRC` reader"]
-pub type R = crate::R<ErrorsrcSpec>;
-#[doc = "Register `ERRORSRC` writer"]
-pub type W = crate::W<ErrorsrcSpec>;
-#[doc = "Overrun error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Overrun {
-    #[doc = "0: Read: error not present"]
-    NotPresent = 0,
-    #[doc = "1: Read: error present"]
-    Present = 1,
-}
-impl From<Overrun> for bool {
+pub struct R(crate::R<ERRORSRC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ERRORSRC_SPEC>;
     #[inline(always)]
-    fn from(variant: Overrun) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<ERRORSRC_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ERRORSRC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ERRORSRC` writer"]
+pub struct W(crate::W<ERRORSRC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ERRORSRC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ERRORSRC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ERRORSRC_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `OVERRUN` reader - Overrun error"]
-pub type OverrunR = crate::BitReader<Overrun>;
-impl OverrunR {
+pub type OVERRUN_R = crate::BitReader<OVERRUN_A>;
+#[doc = "Overrun error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OVERRUN_A {
+    #[doc = "0: Read: error not present"]
+    NOT_PRESENT = 0,
+    #[doc = "1: Read: error present"]
+    PRESENT = 1,
+}
+impl From<OVERRUN_A> for bool {
+    #[inline(always)]
+    fn from(variant: OVERRUN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl OVERRUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Overrun {
+    pub fn variant(&self) -> OVERRUN_A {
         match self.bits {
-            false => Overrun::NotPresent,
-            true => Overrun::Present,
+            false => OVERRUN_A::NOT_PRESENT,
+            true => OVERRUN_A::PRESENT,
         }
     }
-    #[doc = "Read: error not present"]
+    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        *self == Overrun::NotPresent
+        *self == OVERRUN_A::NOT_PRESENT
     }
-    #[doc = "Read: error present"]
+    #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == Overrun::Present
+        *self == OVERRUN_A::PRESENT
     }
 }
 #[doc = "Field `OVERRUN` writer - Overrun error"]
-pub type OverrunW<'a, REG> = crate::BitWriter1C<'a, REG, Overrun>;
-impl<'a, REG> OverrunW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type OVERRUN_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, ERRORSRC_SPEC, OVERRUN_A, O>;
+impl<'a, const O: u8> OVERRUN_W<'a, O> {
     #[doc = "Read: error not present"]
     #[inline(always)]
-    pub fn not_present(self) -> &'a mut crate::W<REG> {
-        self.variant(Overrun::NotPresent)
+    pub fn not_present(self) -> &'a mut W {
+        self.variant(OVERRUN_A::NOT_PRESENT)
     }
     #[doc = "Read: error present"]
     #[inline(always)]
-    pub fn present(self) -> &'a mut crate::W<REG> {
-        self.variant(Overrun::Present)
-    }
-}
-#[doc = "Parity error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Parity {
-    #[doc = "0: Read: error not present"]
-    NotPresent = 0,
-    #[doc = "1: Read: error present"]
-    Present = 1,
-}
-impl From<Parity> for bool {
-    #[inline(always)]
-    fn from(variant: Parity) -> Self {
-        variant as u8 != 0
+    pub fn present(self) -> &'a mut W {
+        self.variant(OVERRUN_A::PRESENT)
     }
 }
 #[doc = "Field `PARITY` reader - Parity error"]
-pub type ParityR = crate::BitReader<Parity>;
-impl ParityR {
+pub type PARITY_R = crate::BitReader<PARITY_A>;
+#[doc = "Parity error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PARITY_A {
+    #[doc = "0: Read: error not present"]
+    NOT_PRESENT = 0,
+    #[doc = "1: Read: error present"]
+    PRESENT = 1,
+}
+impl From<PARITY_A> for bool {
+    #[inline(always)]
+    fn from(variant: PARITY_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PARITY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Parity {
+    pub fn variant(&self) -> PARITY_A {
         match self.bits {
-            false => Parity::NotPresent,
-            true => Parity::Present,
+            false => PARITY_A::NOT_PRESENT,
+            true => PARITY_A::PRESENT,
         }
     }
-    #[doc = "Read: error not present"]
+    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        *self == Parity::NotPresent
+        *self == PARITY_A::NOT_PRESENT
     }
-    #[doc = "Read: error present"]
+    #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == Parity::Present
+        *self == PARITY_A::PRESENT
     }
 }
 #[doc = "Field `PARITY` writer - Parity error"]
-pub type ParityW<'a, REG> = crate::BitWriter1C<'a, REG, Parity>;
-impl<'a, REG> ParityW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PARITY_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, ERRORSRC_SPEC, PARITY_A, O>;
+impl<'a, const O: u8> PARITY_W<'a, O> {
     #[doc = "Read: error not present"]
     #[inline(always)]
-    pub fn not_present(self) -> &'a mut crate::W<REG> {
-        self.variant(Parity::NotPresent)
+    pub fn not_present(self) -> &'a mut W {
+        self.variant(PARITY_A::NOT_PRESENT)
     }
     #[doc = "Read: error present"]
     #[inline(always)]
-    pub fn present(self) -> &'a mut crate::W<REG> {
-        self.variant(Parity::Present)
-    }
-}
-#[doc = "Framing error occurred\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Framing {
-    #[doc = "0: Read: error not present"]
-    NotPresent = 0,
-    #[doc = "1: Read: error present"]
-    Present = 1,
-}
-impl From<Framing> for bool {
-    #[inline(always)]
-    fn from(variant: Framing) -> Self {
-        variant as u8 != 0
+    pub fn present(self) -> &'a mut W {
+        self.variant(PARITY_A::PRESENT)
     }
 }
 #[doc = "Field `FRAMING` reader - Framing error occurred"]
-pub type FramingR = crate::BitReader<Framing>;
-impl FramingR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> Framing {
-        match self.bits {
-            false => Framing::NotPresent,
-            true => Framing::Present,
-        }
-    }
-    #[doc = "Read: error not present"]
-    #[inline(always)]
-    pub fn is_not_present(&self) -> bool {
-        *self == Framing::NotPresent
-    }
-    #[doc = "Read: error present"]
-    #[inline(always)]
-    pub fn is_present(&self) -> bool {
-        *self == Framing::Present
-    }
-}
-#[doc = "Field `FRAMING` writer - Framing error occurred"]
-pub type FramingW<'a, REG> = crate::BitWriter1C<'a, REG, Framing>;
-impl<'a, REG> FramingW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Read: error not present"]
-    #[inline(always)]
-    pub fn not_present(self) -> &'a mut crate::W<REG> {
-        self.variant(Framing::NotPresent)
-    }
-    #[doc = "Read: error present"]
-    #[inline(always)]
-    pub fn present(self) -> &'a mut crate::W<REG> {
-        self.variant(Framing::Present)
-    }
-}
-#[doc = "Break condition\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Break {
+pub type FRAMING_R = crate::BitReader<FRAMING_A>;
+#[doc = "Framing error occurred\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FRAMING_A {
     #[doc = "0: Read: error not present"]
-    NotPresent = 0,
+    NOT_PRESENT = 0,
     #[doc = "1: Read: error present"]
-    Present = 1,
+    PRESENT = 1,
 }
-impl From<Break> for bool {
+impl From<FRAMING_A> for bool {
     #[inline(always)]
-    fn from(variant: Break) -> Self {
+    fn from(variant: FRAMING_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BREAK` reader - Break condition"]
-pub type BreakR = crate::BitReader<Break>;
-impl BreakR {
+impl FRAMING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Break {
+    pub fn variant(&self) -> FRAMING_A {
         match self.bits {
-            false => Break::NotPresent,
-            true => Break::Present,
+            false => FRAMING_A::NOT_PRESENT,
+            true => FRAMING_A::PRESENT,
         }
     }
-    #[doc = "Read: error not present"]
+    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        *self == Break::NotPresent
+        *self == FRAMING_A::NOT_PRESENT
+    }
+    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[inline(always)]
+    pub fn is_present(&self) -> bool {
+        *self == FRAMING_A::PRESENT
+    }
+}
+#[doc = "Field `FRAMING` writer - Framing error occurred"]
+pub type FRAMING_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, ERRORSRC_SPEC, FRAMING_A, O>;
+impl<'a, const O: u8> FRAMING_W<'a, O> {
+    #[doc = "Read: error not present"]
+    #[inline(always)]
+    pub fn not_present(self) -> &'a mut W {
+        self.variant(FRAMING_A::NOT_PRESENT)
     }
     #[doc = "Read: error present"]
     #[inline(always)]
+    pub fn present(self) -> &'a mut W {
+        self.variant(FRAMING_A::PRESENT)
+    }
+}
+#[doc = "Field `BREAK` reader - Break condition"]
+pub type BREAK_R = crate::BitReader<BREAK_A>;
+#[doc = "Break condition\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BREAK_A {
+    #[doc = "0: Read: error not present"]
+    NOT_PRESENT = 0,
+    #[doc = "1: Read: error present"]
+    PRESENT = 1,
+}
+impl From<BREAK_A> for bool {
+    #[inline(always)]
+    fn from(variant: BREAK_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl BREAK_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BREAK_A {
+        match self.bits {
+            false => BREAK_A::NOT_PRESENT,
+            true => BREAK_A::PRESENT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
+    #[inline(always)]
+    pub fn is_not_present(&self) -> bool {
+        *self == BREAK_A::NOT_PRESENT
+    }
+    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == Break::Present
+        *self == BREAK_A::PRESENT
     }
 }
 #[doc = "Field `BREAK` writer - Break condition"]
-pub type BreakW<'a, REG> = crate::BitWriter1C<'a, REG, Break>;
-impl<'a, REG> BreakW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type BREAK_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, ERRORSRC_SPEC, BREAK_A, O>;
+impl<'a, const O: u8> BREAK_W<'a, O> {
     #[doc = "Read: error not present"]
     #[inline(always)]
-    pub fn not_present(self) -> &'a mut crate::W<REG> {
-        self.variant(Break::NotPresent)
+    pub fn not_present(self) -> &'a mut W {
+        self.variant(BREAK_A::NOT_PRESENT)
     }
     #[doc = "Read: error present"]
     #[inline(always)]
-    pub fn present(self) -> &'a mut crate::W<REG> {
-        self.variant(Break::Present)
+    pub fn present(self) -> &'a mut W {
+        self.variant(BREAK_A::PRESENT)
     }
 }
 impl R {
     #[doc = "Bit 0 - Overrun error"]
     #[inline(always)]
-    pub fn overrun(&self) -> OverrunR {
-        OverrunR::new((self.bits & 1) != 0)
+    pub fn overrun(&self) -> OVERRUN_R {
+        OVERRUN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Parity error"]
     #[inline(always)]
-    pub fn parity(&self) -> ParityR {
-        ParityR::new(((self.bits >> 1) & 1) != 0)
+    pub fn parity(&self) -> PARITY_R {
+        PARITY_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Framing error occurred"]
     #[inline(always)]
-    pub fn framing(&self) -> FramingR {
-        FramingR::new(((self.bits >> 2) & 1) != 0)
+    pub fn framing(&self) -> FRAMING_R {
+        FRAMING_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Break condition"]
     #[inline(always)]
-    pub fn break_(&self) -> BreakR {
-        BreakR::new(((self.bits >> 3) & 1) != 0)
+    pub fn break_(&self) -> BREAK_R {
+        BREAK_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Overrun error"]
     #[inline(always)]
-    #[must_use]
-    pub fn overrun(&mut self) -> OverrunW<ErrorsrcSpec> {
-        OverrunW::new(self, 0)
+    pub fn overrun(&mut self) -> OVERRUN_W<0> {
+        OVERRUN_W::new(self)
     }
     #[doc = "Bit 1 - Parity error"]
     #[inline(always)]
-    #[must_use]
-    pub fn parity(&mut self) -> ParityW<ErrorsrcSpec> {
-        ParityW::new(self, 1)
+    pub fn parity(&mut self) -> PARITY_W<1> {
+        PARITY_W::new(self)
     }
     #[doc = "Bit 2 - Framing error occurred"]
     #[inline(always)]
-    #[must_use]
-    pub fn framing(&mut self) -> FramingW<ErrorsrcSpec> {
-        FramingW::new(self, 2)
+    pub fn framing(&mut self) -> FRAMING_W<2> {
+        FRAMING_W::new(self)
     }
     #[doc = "Bit 3 - Break condition"]
     #[inline(always)]
-    #[must_use]
-    pub fn break_(&mut self) -> BreakW<ErrorsrcSpec> {
-        BreakW::new(self, 3)
+    pub fn break_(&mut self) -> BREAK_W<3> {
+        BREAK_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Error source This register is read/write one to clear.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errorsrc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`errorsrc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ErrorsrcSpec;
-impl crate::RegisterSpec for ErrorsrcSpec {
+#[doc = "Error source This register is read/write one to clear.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [errorsrc](index.html) module"]
+pub struct ERRORSRC_SPEC;
+impl crate::RegisterSpec for ERRORSRC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`errorsrc::R`](R) reader structure"]
-impl crate::Readable for ErrorsrcSpec {}
-#[doc = "`write(|w| ..)` method takes [`errorsrc::W`](W) writer structure"]
-impl crate::Writable for ErrorsrcSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x0f;
+#[doc = "`read()` method returns [errorsrc::R](R) reader structure"]
+impl crate::Readable for ERRORSRC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [errorsrc::W](W) writer structure"]
+impl crate::Writable for ERRORSRC_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets ERRORSRC to value 0"]
-impl crate::Resettable for ErrorsrcSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for ERRORSRC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

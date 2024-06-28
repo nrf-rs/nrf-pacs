@@ -1,89 +1,127 @@
 #[doc = "Register `EVENTS_LASTRX` reader"]
-pub type R = crate::R<EventsLastrxSpec>;
-#[doc = "Register `EVENTS_LASTRX` writer"]
-pub type W = crate::W<EventsLastrxSpec>;
-#[doc = "Byte boundary, starting to receive the last byte\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum EventsLastrx {
-    #[doc = "0: Event not generated"]
-    NotGenerated = 0,
-    #[doc = "1: Event generated"]
-    Generated = 1,
-}
-impl From<EventsLastrx> for bool {
+pub struct R(crate::R<EVENTS_LASTRX_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EVENTS_LASTRX_SPEC>;
     #[inline(always)]
-    fn from(variant: EventsLastrx) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<EVENTS_LASTRX_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EVENTS_LASTRX_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `EVENTS_LASTRX` writer"]
+pub struct W(crate::W<EVENTS_LASTRX_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<EVENTS_LASTRX_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<EVENTS_LASTRX_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<EVENTS_LASTRX_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `EVENTS_LASTRX` reader - Byte boundary, starting to receive the last byte"]
-pub type EventsLastrxR = crate::BitReader<EventsLastrx>;
-impl EventsLastrxR {
+pub type EVENTS_LASTRX_R = crate::BitReader<EVENTS_LASTRX_A>;
+#[doc = "Byte boundary, starting to receive the last byte\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EVENTS_LASTRX_A {
+    #[doc = "0: Event not generated"]
+    NOT_GENERATED = 0,
+    #[doc = "1: Event generated"]
+    GENERATED = 1,
+}
+impl From<EVENTS_LASTRX_A> for bool {
+    #[inline(always)]
+    fn from(variant: EVENTS_LASTRX_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl EVENTS_LASTRX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> EventsLastrx {
+    pub fn variant(&self) -> EVENTS_LASTRX_A {
         match self.bits {
-            false => EventsLastrx::NotGenerated,
-            true => EventsLastrx::Generated,
+            false => EVENTS_LASTRX_A::NOT_GENERATED,
+            true => EVENTS_LASTRX_A::GENERATED,
         }
     }
-    #[doc = "Event not generated"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        *self == EventsLastrx::NotGenerated
+        *self == EVENTS_LASTRX_A::NOT_GENERATED
     }
-    #[doc = "Event generated"]
+    #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        *self == EventsLastrx::Generated
+        *self == EVENTS_LASTRX_A::GENERATED
     }
 }
 #[doc = "Field `EVENTS_LASTRX` writer - Byte boundary, starting to receive the last byte"]
-pub type EventsLastrxW<'a, REG> = crate::BitWriter<'a, REG, EventsLastrx>;
-impl<'a, REG> EventsLastrxW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type EVENTS_LASTRX_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_LASTRX_SPEC, EVENTS_LASTRX_A, O>;
+impl<'a, const O: u8> EVENTS_LASTRX_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsLastrx::NotGenerated)
+    pub fn not_generated(self) -> &'a mut W {
+        self.variant(EVENTS_LASTRX_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsLastrx::Generated)
+    pub fn generated(self) -> &'a mut W {
+        self.variant(EVENTS_LASTRX_A::GENERATED)
     }
 }
 impl R {
     #[doc = "Bit 0 - Byte boundary, starting to receive the last byte"]
     #[inline(always)]
-    pub fn events_lastrx(&self) -> EventsLastrxR {
-        EventsLastrxR::new((self.bits & 1) != 0)
+    pub fn events_lastrx(&self) -> EVENTS_LASTRX_R {
+        EVENTS_LASTRX_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Byte boundary, starting to receive the last byte"]
     #[inline(always)]
-    #[must_use]
-    pub fn events_lastrx(&mut self) -> EventsLastrxW<EventsLastrxSpec> {
-        EventsLastrxW::new(self, 0)
+    pub fn events_lastrx(&mut self) -> EVENTS_LASTRX_W<0> {
+        EVENTS_LASTRX_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Byte boundary, starting to receive the last byte\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_lastrx::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_lastrx::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct EventsLastrxSpec;
-impl crate::RegisterSpec for EventsLastrxSpec {
+#[doc = "Byte boundary, starting to receive the last byte\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_lastrx](index.html) module"]
+pub struct EVENTS_LASTRX_SPEC;
+impl crate::RegisterSpec for EVENTS_LASTRX_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`events_lastrx::R`](R) reader structure"]
-impl crate::Readable for EventsLastrxSpec {}
-#[doc = "`write(|w| ..)` method takes [`events_lastrx::W`](W) writer structure"]
-impl crate::Writable for EventsLastrxSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [events_lastrx::R](R) reader structure"]
+impl crate::Readable for EVENTS_LASTRX_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [events_lastrx::W](W) writer structure"]
+impl crate::Writable for EVENTS_LASTRX_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets EVENTS_LASTRX to value 0"]
-impl crate::Resettable for EventsLastrxSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for EVENTS_LASTRX_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

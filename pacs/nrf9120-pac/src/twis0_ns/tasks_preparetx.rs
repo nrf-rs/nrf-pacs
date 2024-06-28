@@ -1,49 +1,72 @@
 #[doc = "Register `TASKS_PREPARETX` writer"]
-pub type W = crate::W<TasksPreparetxSpec>;
-#[doc = "Prepare the TWI slave to respond to a read command\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TasksPreparetx {
-    #[doc = "1: Trigger task"]
-    Trigger = 1,
-}
-impl From<TasksPreparetx> for bool {
+pub struct W(crate::W<TASKS_PREPARETX_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TASKS_PREPARETX_SPEC>;
     #[inline(always)]
-    fn from(variant: TasksPreparetx) -> Self {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TASKS_PREPARETX_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TASKS_PREPARETX_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Prepare the TWI slave to respond to a read command\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TASKS_PREPARETX_AW {
+    #[doc = "1: Trigger task"]
+    TRIGGER = 1,
+}
+impl From<TASKS_PREPARETX_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TASKS_PREPARETX_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TASKS_PREPARETX` writer - Prepare the TWI slave to respond to a read command"]
-pub type TasksPreparetxW<'a, REG> = crate::BitWriter<'a, REG, TasksPreparetx>;
-impl<'a, REG> TasksPreparetxW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type TASKS_PREPARETX_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_PREPARETX_SPEC, TASKS_PREPARETX_AW, O>;
+impl<'a, const O: u8> TASKS_PREPARETX_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
-    pub fn trigger(self) -> &'a mut crate::W<REG> {
-        self.variant(TasksPreparetx::Trigger)
+    pub fn trigger(self) -> &'a mut W {
+        self.variant(TASKS_PREPARETX_AW::TRIGGER)
     }
 }
 impl W {
     #[doc = "Bit 0 - Prepare the TWI slave to respond to a read command"]
     #[inline(always)]
-    #[must_use]
-    pub fn tasks_preparetx(&mut self) -> TasksPreparetxW<TasksPreparetxSpec> {
-        TasksPreparetxW::new(self, 0)
+    pub fn tasks_preparetx(&mut self) -> TASKS_PREPARETX_W<0> {
+        TASKS_PREPARETX_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Prepare the TWI slave to respond to a read command\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tasks_preparetx::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TasksPreparetxSpec;
-impl crate::RegisterSpec for TasksPreparetxSpec {
+#[doc = "Prepare the TWI slave to respond to a read command\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_preparetx](index.html) module"]
+pub struct TASKS_PREPARETX_SPEC;
+impl crate::RegisterSpec for TASKS_PREPARETX_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [`tasks_preparetx::W`](W) writer structure"]
-impl crate::Writable for TasksPreparetxSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`write(|w| ..)` method takes [tasks_preparetx::W](W) writer structure"]
+impl crate::Writable for TASKS_PREPARETX_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets TASKS_PREPARETX to value 0"]
-impl crate::Resettable for TasksPreparetxSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for TASKS_PREPARETX_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

@@ -1,31 +1,16 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Subscribe configuration for tasks"]
-#[doc(alias = "SUBSCRIBE_CHG")]
-pub struct SubscribeChg {
-    en: En,
-    dis: Dis,
-}
-impl SubscribeChg {
+pub struct SUBSCRIBE_CHG {
     #[doc = "0x00 - Description cluster: Subscribe configuration for task CHG\\[n\\].EN"]
-    #[inline(always)]
-    pub const fn en(&self) -> &En {
-        &self.en
-    }
+    pub en: EN,
     #[doc = "0x04 - Description cluster: Subscribe configuration for task CHG\\[n\\].DIS"]
-    #[inline(always)]
-    pub const fn dis(&self) -> &Dis {
-        &self.dis
-    }
+    pub dis: DIS,
 }
-#[doc = "EN (rw) register accessor: Description cluster: Subscribe configuration for task CHG\\[n\\].EN\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`en::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`en::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@en`]
-module"]
-#[doc(alias = "EN")]
-pub type En = crate::Reg<en::EnSpec>;
+#[doc = "EN (rw) register accessor: an alias for `Reg<EN_SPEC>`"]
+pub type EN = crate::Reg<en::EN_SPEC>;
 #[doc = "Description cluster: Subscribe configuration for task CHG\\[n\\].EN"]
 pub mod en;
-#[doc = "DIS (rw) register accessor: Description cluster: Subscribe configuration for task CHG\\[n\\].DIS\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dis::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dis::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dis`]
-module"]
-#[doc(alias = "DIS")]
-pub type Dis = crate::Reg<dis::DisSpec>;
+#[doc = "DIS (rw) register accessor: an alias for `Reg<DIS_SPEC>`"]
+pub type DIS = crate::Reg<dis::DIS_SPEC>;
 #[doc = "Description cluster: Subscribe configuration for task CHG\\[n\\].DIS"]
 pub mod dis;

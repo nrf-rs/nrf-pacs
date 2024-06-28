@@ -1,97 +1,115 @@
 #[doc = "Register `HFCLKSTAT` reader"]
-pub type R = crate::R<HfclkstatSpec>;
-#[doc = "Active clock source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Src {
-    #[doc = "0: HFINT - 64 MHz on-chip oscillator"]
-    Hfint = 0,
-    #[doc = "1: HFXO - 64 MHz clock derived from external 32 MHz crystal oscillator"]
-    Hfxo = 1,
-}
-impl From<Src> for bool {
+pub struct R(crate::R<HFCLKSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<HFCLKSTAT_SPEC>;
     #[inline(always)]
-    fn from(variant: Src) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<HFCLKSTAT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<HFCLKSTAT_SPEC>) -> Self {
+        R(reader)
     }
 }
 #[doc = "Field `SRC` reader - Active clock source"]
-pub type SrcR = crate::BitReader<Src>;
-impl SrcR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> Src {
-        match self.bits {
-            false => Src::Hfint,
-            true => Src::Hfxo,
-        }
-    }
-    #[doc = "HFINT - 64 MHz on-chip oscillator"]
-    #[inline(always)]
-    pub fn is_hfint(&self) -> bool {
-        *self == Src::Hfint
-    }
-    #[doc = "HFXO - 64 MHz clock derived from external 32 MHz crystal oscillator"]
-    #[inline(always)]
-    pub fn is_hfxo(&self) -> bool {
-        *self == Src::Hfxo
-    }
+pub type SRC_R = crate::BitReader<SRC_A>;
+#[doc = "Active clock source\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SRC_A {
+    #[doc = "0: HFINT - 64 MHz on-chip oscillator"]
+    HFINT = 0,
+    #[doc = "1: HFXO - 64 MHz clock derived from external 32 MHz crystal oscillator"]
+    HFXO = 1,
 }
-#[doc = "HFCLK state\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum State {
-    #[doc = "0: HFXO has not been started or HFCLKSTOP task has been triggered"]
-    NotRunning = 0,
-    #[doc = "1: HFXO has been started (HFCLKSTARTED event has been generated)"]
-    Running = 1,
-}
-impl From<State> for bool {
+impl From<SRC_A> for bool {
     #[inline(always)]
-    fn from(variant: State) -> Self {
+    fn from(variant: SRC_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STATE` reader - HFCLK state"]
-pub type StateR = crate::BitReader<State>;
-impl StateR {
+impl SRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> State {
+    pub fn variant(&self) -> SRC_A {
         match self.bits {
-            false => State::NotRunning,
-            true => State::Running,
+            false => SRC_A::HFINT,
+            true => SRC_A::HFXO,
         }
     }
-    #[doc = "HFXO has not been started or HFCLKSTOP task has been triggered"]
+    #[doc = "Checks if the value of the field is `HFINT`"]
+    #[inline(always)]
+    pub fn is_hfint(&self) -> bool {
+        *self == SRC_A::HFINT
+    }
+    #[doc = "Checks if the value of the field is `HFXO`"]
+    #[inline(always)]
+    pub fn is_hfxo(&self) -> bool {
+        *self == SRC_A::HFXO
+    }
+}
+#[doc = "Field `STATE` reader - HFCLK state"]
+pub type STATE_R = crate::BitReader<STATE_A>;
+#[doc = "HFCLK state\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STATE_A {
+    #[doc = "0: HFXO has not been started or HFCLKSTOP task has been triggered"]
+    NOT_RUNNING = 0,
+    #[doc = "1: HFXO has been started (HFCLKSTARTED event has been generated)"]
+    RUNNING = 1,
+}
+impl From<STATE_A> for bool {
+    #[inline(always)]
+    fn from(variant: STATE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl STATE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STATE_A {
+        match self.bits {
+            false => STATE_A::NOT_RUNNING,
+            true => STATE_A::RUNNING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_RUNNING`"]
     #[inline(always)]
     pub fn is_not_running(&self) -> bool {
-        *self == State::NotRunning
+        *self == STATE_A::NOT_RUNNING
     }
-    #[doc = "HFXO has been started (HFCLKSTARTED event has been generated)"]
+    #[doc = "Checks if the value of the field is `RUNNING`"]
     #[inline(always)]
     pub fn is_running(&self) -> bool {
-        *self == State::Running
+        *self == STATE_A::RUNNING
     }
 }
 impl R {
     #[doc = "Bit 0 - Active clock source"]
     #[inline(always)]
-    pub fn src(&self) -> SrcR {
-        SrcR::new((self.bits & 1) != 0)
+    pub fn src(&self) -> SRC_R {
+        SRC_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 16 - HFCLK state"]
     #[inline(always)]
-    pub fn state(&self) -> StateR {
-        StateR::new(((self.bits >> 16) & 1) != 0)
+    pub fn state(&self) -> STATE_R {
+        STATE_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "The register shows if HFXO has been requested by triggering HFCLKSTART task and if it has been started (STATE)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfclkstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct HfclkstatSpec;
-impl crate::RegisterSpec for HfclkstatSpec {
+#[doc = "The register shows if HFXO has been requested by triggering HFCLKSTART task and if it has been started (STATE)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfclkstat](index.html) module"]
+pub struct HFCLKSTAT_SPEC;
+impl crate::RegisterSpec for HFCLKSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`hfclkstat::R`](R) reader structure"]
-impl crate::Readable for HfclkstatSpec {}
+#[doc = "`read()` method returns [hfclkstat::R](R) reader structure"]
+impl crate::Readable for HFCLKSTAT_SPEC {
+    type Reader = R;
+}
 #[doc = "`reset()` method sets HFCLKSTAT to value 0"]
-impl crate::Resettable for HfclkstatSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for HFCLKSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

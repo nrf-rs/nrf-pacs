@@ -1,89 +1,127 @@
 #[doc = "Register `EVENTS_CTS` reader"]
-pub type R = crate::R<EventsCtsSpec>;
-#[doc = "Register `EVENTS_CTS` writer"]
-pub type W = crate::W<EventsCtsSpec>;
-#[doc = "CTS is activated (set low). Clear To Send.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum EventsCts {
-    #[doc = "0: Event not generated"]
-    NotGenerated = 0,
-    #[doc = "1: Event generated"]
-    Generated = 1,
-}
-impl From<EventsCts> for bool {
+pub struct R(crate::R<EVENTS_CTS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EVENTS_CTS_SPEC>;
     #[inline(always)]
-    fn from(variant: EventsCts) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<EVENTS_CTS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EVENTS_CTS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `EVENTS_CTS` writer"]
+pub struct W(crate::W<EVENTS_CTS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<EVENTS_CTS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<EVENTS_CTS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<EVENTS_CTS_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `EVENTS_CTS` reader - CTS is activated (set low). Clear To Send."]
-pub type EventsCtsR = crate::BitReader<EventsCts>;
-impl EventsCtsR {
+pub type EVENTS_CTS_R = crate::BitReader<EVENTS_CTS_A>;
+#[doc = "CTS is activated (set low). Clear To Send.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EVENTS_CTS_A {
+    #[doc = "0: Event not generated"]
+    NOT_GENERATED = 0,
+    #[doc = "1: Event generated"]
+    GENERATED = 1,
+}
+impl From<EVENTS_CTS_A> for bool {
+    #[inline(always)]
+    fn from(variant: EVENTS_CTS_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl EVENTS_CTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> EventsCts {
+    pub fn variant(&self) -> EVENTS_CTS_A {
         match self.bits {
-            false => EventsCts::NotGenerated,
-            true => EventsCts::Generated,
+            false => EVENTS_CTS_A::NOT_GENERATED,
+            true => EVENTS_CTS_A::GENERATED,
         }
     }
-    #[doc = "Event not generated"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        *self == EventsCts::NotGenerated
+        *self == EVENTS_CTS_A::NOT_GENERATED
     }
-    #[doc = "Event generated"]
+    #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        *self == EventsCts::Generated
+        *self == EVENTS_CTS_A::GENERATED
     }
 }
 #[doc = "Field `EVENTS_CTS` writer - CTS is activated (set low). Clear To Send."]
-pub type EventsCtsW<'a, REG> = crate::BitWriter<'a, REG, EventsCts>;
-impl<'a, REG> EventsCtsW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type EVENTS_CTS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_CTS_SPEC, EVENTS_CTS_A, O>;
+impl<'a, const O: u8> EVENTS_CTS_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsCts::NotGenerated)
+    pub fn not_generated(self) -> &'a mut W {
+        self.variant(EVENTS_CTS_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsCts::Generated)
+    pub fn generated(self) -> &'a mut W {
+        self.variant(EVENTS_CTS_A::GENERATED)
     }
 }
 impl R {
     #[doc = "Bit 0 - CTS is activated (set low). Clear To Send."]
     #[inline(always)]
-    pub fn events_cts(&self) -> EventsCtsR {
-        EventsCtsR::new((self.bits & 1) != 0)
+    pub fn events_cts(&self) -> EVENTS_CTS_R {
+        EVENTS_CTS_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - CTS is activated (set low). Clear To Send."]
     #[inline(always)]
-    #[must_use]
-    pub fn events_cts(&mut self) -> EventsCtsW<EventsCtsSpec> {
-        EventsCtsW::new(self, 0)
+    pub fn events_cts(&mut self) -> EVENTS_CTS_W<0> {
+        EVENTS_CTS_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "CTS is activated (set low). Clear To Send.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_cts::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_cts::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct EventsCtsSpec;
-impl crate::RegisterSpec for EventsCtsSpec {
+#[doc = "CTS is activated (set low). Clear To Send.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_cts](index.html) module"]
+pub struct EVENTS_CTS_SPEC;
+impl crate::RegisterSpec for EVENTS_CTS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`events_cts::R`](R) reader structure"]
-impl crate::Readable for EventsCtsSpec {}
-#[doc = "`write(|w| ..)` method takes [`events_cts::W`](W) writer structure"]
-impl crate::Writable for EventsCtsSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [events_cts::R](R) reader structure"]
+impl crate::Readable for EVENTS_CTS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [events_cts::W](W) writer structure"]
+impl crate::Writable for EVENTS_CTS_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets EVENTS_CTS to value 0"]
-impl crate::Resettable for EventsCtsSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for EVENTS_CTS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

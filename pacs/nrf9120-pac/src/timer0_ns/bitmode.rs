@@ -1,122 +1,155 @@
 #[doc = "Register `BITMODE` reader"]
-pub type R = crate::R<BitmodeSpec>;
-#[doc = "Register `BITMODE` writer"]
-pub type W = crate::W<BitmodeSpec>;
-#[doc = "Timer bit width\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u8)]
-pub enum Bitmode {
-    #[doc = "0: 16 bit timer bit width"]
-    _16bit = 0,
-    #[doc = "1: 8 bit timer bit width"]
-    _08bit = 1,
-    #[doc = "2: 24 bit timer bit width"]
-    _24bit = 2,
-    #[doc = "3: 32 bit timer bit width"]
-    _32bit = 3,
-}
-impl From<Bitmode> for u8 {
+pub struct R(crate::R<BITMODE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BITMODE_SPEC>;
     #[inline(always)]
-    fn from(variant: Bitmode) -> Self {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<BITMODE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<BITMODE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `BITMODE` writer"]
+pub struct W(crate::W<BITMODE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<BITMODE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<BITMODE_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<BITMODE_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `BITMODE` reader - Timer bit width"]
+pub type BITMODE_R = crate::FieldReader<u8, BITMODE_A>;
+#[doc = "Timer bit width\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum BITMODE_A {
+    #[doc = "0: 16 bit timer bit width"]
+    _16BIT = 0,
+    #[doc = "1: 8 bit timer bit width"]
+    _08BIT = 1,
+    #[doc = "2: 24 bit timer bit width"]
+    _24BIT = 2,
+    #[doc = "3: 32 bit timer bit width"]
+    _32BIT = 3,
+}
+impl From<BITMODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: BITMODE_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Bitmode {
-    type Ux = u8;
-}
-impl crate::IsEnum for Bitmode {}
-#[doc = "Field `BITMODE` reader - Timer bit width"]
-pub type BitmodeR = crate::FieldReader<Bitmode>;
-impl BitmodeR {
+impl BITMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Bitmode {
+    pub fn variant(&self) -> BITMODE_A {
         match self.bits {
-            0 => Bitmode::_16bit,
-            1 => Bitmode::_08bit,
-            2 => Bitmode::_24bit,
-            3 => Bitmode::_32bit,
+            0 => BITMODE_A::_16BIT,
+            1 => BITMODE_A::_08BIT,
+            2 => BITMODE_A::_24BIT,
+            3 => BITMODE_A::_32BIT,
             _ => unreachable!(),
         }
     }
-    #[doc = "16 bit timer bit width"]
+    #[doc = "Checks if the value of the field is `_16BIT`"]
     #[inline(always)]
     pub fn is_16bit(&self) -> bool {
-        *self == Bitmode::_16bit
+        *self == BITMODE_A::_16BIT
     }
-    #[doc = "8 bit timer bit width"]
+    #[doc = "Checks if the value of the field is `_08BIT`"]
     #[inline(always)]
     pub fn is_08bit(&self) -> bool {
-        *self == Bitmode::_08bit
+        *self == BITMODE_A::_08BIT
     }
-    #[doc = "24 bit timer bit width"]
+    #[doc = "Checks if the value of the field is `_24BIT`"]
     #[inline(always)]
     pub fn is_24bit(&self) -> bool {
-        *self == Bitmode::_24bit
+        *self == BITMODE_A::_24BIT
     }
-    #[doc = "32 bit timer bit width"]
+    #[doc = "Checks if the value of the field is `_32BIT`"]
     #[inline(always)]
     pub fn is_32bit(&self) -> bool {
-        *self == Bitmode::_32bit
+        *self == BITMODE_A::_32BIT
     }
 }
 #[doc = "Field `BITMODE` writer - Timer bit width"]
-pub type BitmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Bitmode, crate::Safe>;
-impl<'a, REG> BitmodeW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u8>,
-{
+pub type BITMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, BITMODE_SPEC, u8, BITMODE_A, 2, O>;
+impl<'a, const O: u8> BITMODE_W<'a, O> {
     #[doc = "16 bit timer bit width"]
     #[inline(always)]
-    pub fn _16bit(self) -> &'a mut crate::W<REG> {
-        self.variant(Bitmode::_16bit)
+    pub fn _16bit(self) -> &'a mut W {
+        self.variant(BITMODE_A::_16BIT)
     }
     #[doc = "8 bit timer bit width"]
     #[inline(always)]
-    pub fn _08bit(self) -> &'a mut crate::W<REG> {
-        self.variant(Bitmode::_08bit)
+    pub fn _08bit(self) -> &'a mut W {
+        self.variant(BITMODE_A::_08BIT)
     }
     #[doc = "24 bit timer bit width"]
     #[inline(always)]
-    pub fn _24bit(self) -> &'a mut crate::W<REG> {
-        self.variant(Bitmode::_24bit)
+    pub fn _24bit(self) -> &'a mut W {
+        self.variant(BITMODE_A::_24BIT)
     }
     #[doc = "32 bit timer bit width"]
     #[inline(always)]
-    pub fn _32bit(self) -> &'a mut crate::W<REG> {
-        self.variant(Bitmode::_32bit)
+    pub fn _32bit(self) -> &'a mut W {
+        self.variant(BITMODE_A::_32BIT)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Timer bit width"]
     #[inline(always)]
-    pub fn bitmode(&self) -> BitmodeR {
-        BitmodeR::new((self.bits & 3) as u8)
+    pub fn bitmode(&self) -> BITMODE_R {
+        BITMODE_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Timer bit width"]
     #[inline(always)]
-    #[must_use]
-    pub fn bitmode(&mut self) -> BitmodeW<BitmodeSpec> {
-        BitmodeW::new(self, 0)
+    pub fn bitmode(&mut self) -> BITMODE_W<0> {
+        BITMODE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Configure the number of bits used by the TIMER\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bitmode::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`bitmode::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct BitmodeSpec;
-impl crate::RegisterSpec for BitmodeSpec {
+#[doc = "Configure the number of bits used by the TIMER\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bitmode](index.html) module"]
+pub struct BITMODE_SPEC;
+impl crate::RegisterSpec for BITMODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`bitmode::R`](R) reader structure"]
-impl crate::Readable for BitmodeSpec {}
-#[doc = "`write(|w| ..)` method takes [`bitmode::W`](W) writer structure"]
-impl crate::Writable for BitmodeSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [bitmode::R](R) reader structure"]
+impl crate::Readable for BITMODE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [bitmode::W](W) writer structure"]
+impl crate::Writable for BITMODE_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets BITMODE to value 0"]
-impl crate::Resettable for BitmodeSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for BITMODE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

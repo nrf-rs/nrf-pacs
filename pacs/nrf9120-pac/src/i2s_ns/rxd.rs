@@ -1,19 +1,10 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Unspecified"]
-#[doc(alias = "RXD")]
-pub struct Rxd {
-    ptr: Ptr,
-}
-impl Rxd {
+pub struct RXD {
     #[doc = "0x00 - Receive buffer RAM start address."]
-    #[inline(always)]
-    pub const fn ptr(&self) -> &Ptr {
-        &self.ptr
-    }
+    pub ptr: PTR,
 }
-#[doc = "PTR (rw) register accessor: Receive buffer RAM start address.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ptr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ptr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ptr`]
-module"]
-#[doc(alias = "PTR")]
-pub type Ptr = crate::Reg<ptr::PtrSpec>;
+#[doc = "PTR (rw) register accessor: an alias for `Reg<PTR_SPEC>`"]
+pub type PTR = crate::Reg<ptr::PTR_SPEC>;
 #[doc = "Receive buffer RAM start address."]
 pub mod ptr;

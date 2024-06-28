@@ -1,2073 +1,1986 @@
 #[doc = "Register `OUT` reader"]
-pub type R = crate::R<OutSpec>;
-#[doc = "Register `OUT` writer"]
-pub type W = crate::W<OutSpec>;
-#[doc = "Pin 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin0 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin0> for bool {
+pub struct R(crate::R<OUT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<OUT_SPEC>;
     #[inline(always)]
-    fn from(variant: Pin0) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<OUT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<OUT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `OUT` writer"]
+pub struct W(crate::W<OUT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<OUT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<OUT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<OUT_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `PIN0` reader - Pin 0"]
-pub type Pin0R = crate::BitReader<Pin0>;
-impl Pin0R {
+pub type PIN0_R = crate::BitReader<PIN0_A>;
+#[doc = "Pin 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN0_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN0_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN0_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin0 {
+    pub fn variant(&self) -> PIN0_A {
         match self.bits {
-            false => Pin0::Low,
-            true => Pin0::High,
+            false => PIN0_A::LOW,
+            true => PIN0_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin0::Low
+        *self == PIN0_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin0::High
+        *self == PIN0_A::HIGH
     }
 }
 #[doc = "Field `PIN0` writer - Pin 0"]
-pub type Pin0W<'a, REG> = crate::BitWriter<'a, REG, Pin0>;
-impl<'a, REG> Pin0W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN0_A, O>;
+impl<'a, const O: u8> PIN0_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin0::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN0_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin0::High)
-    }
-}
-#[doc = "Pin 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin1 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin1> for bool {
-    #[inline(always)]
-    fn from(variant: Pin1) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN0_A::HIGH)
     }
 }
 #[doc = "Field `PIN1` reader - Pin 1"]
-pub type Pin1R = crate::BitReader<Pin1>;
-impl Pin1R {
+pub type PIN1_R = crate::BitReader<PIN1_A>;
+#[doc = "Pin 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN1_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN1_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN1_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin1 {
+    pub fn variant(&self) -> PIN1_A {
         match self.bits {
-            false => Pin1::Low,
-            true => Pin1::High,
+            false => PIN1_A::LOW,
+            true => PIN1_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin1::Low
+        *self == PIN1_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin1::High
+        *self == PIN1_A::HIGH
     }
 }
 #[doc = "Field `PIN1` writer - Pin 1"]
-pub type Pin1W<'a, REG> = crate::BitWriter<'a, REG, Pin1>;
-impl<'a, REG> Pin1W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN1_A, O>;
+impl<'a, const O: u8> PIN1_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin1::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN1_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin1::High)
-    }
-}
-#[doc = "Pin 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin2 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin2> for bool {
-    #[inline(always)]
-    fn from(variant: Pin2) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN1_A::HIGH)
     }
 }
 #[doc = "Field `PIN2` reader - Pin 2"]
-pub type Pin2R = crate::BitReader<Pin2>;
-impl Pin2R {
+pub type PIN2_R = crate::BitReader<PIN2_A>;
+#[doc = "Pin 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN2_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN2_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN2_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin2 {
+    pub fn variant(&self) -> PIN2_A {
         match self.bits {
-            false => Pin2::Low,
-            true => Pin2::High,
+            false => PIN2_A::LOW,
+            true => PIN2_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin2::Low
+        *self == PIN2_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin2::High
+        *self == PIN2_A::HIGH
     }
 }
 #[doc = "Field `PIN2` writer - Pin 2"]
-pub type Pin2W<'a, REG> = crate::BitWriter<'a, REG, Pin2>;
-impl<'a, REG> Pin2W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN2_A, O>;
+impl<'a, const O: u8> PIN2_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin2::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN2_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin2::High)
-    }
-}
-#[doc = "Pin 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin3 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin3> for bool {
-    #[inline(always)]
-    fn from(variant: Pin3) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN2_A::HIGH)
     }
 }
 #[doc = "Field `PIN3` reader - Pin 3"]
-pub type Pin3R = crate::BitReader<Pin3>;
-impl Pin3R {
+pub type PIN3_R = crate::BitReader<PIN3_A>;
+#[doc = "Pin 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN3_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN3_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN3_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin3 {
+    pub fn variant(&self) -> PIN3_A {
         match self.bits {
-            false => Pin3::Low,
-            true => Pin3::High,
+            false => PIN3_A::LOW,
+            true => PIN3_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin3::Low
+        *self == PIN3_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin3::High
+        *self == PIN3_A::HIGH
     }
 }
 #[doc = "Field `PIN3` writer - Pin 3"]
-pub type Pin3W<'a, REG> = crate::BitWriter<'a, REG, Pin3>;
-impl<'a, REG> Pin3W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN3_A, O>;
+impl<'a, const O: u8> PIN3_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin3::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN3_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin3::High)
-    }
-}
-#[doc = "Pin 4\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin4 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin4> for bool {
-    #[inline(always)]
-    fn from(variant: Pin4) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN3_A::HIGH)
     }
 }
 #[doc = "Field `PIN4` reader - Pin 4"]
-pub type Pin4R = crate::BitReader<Pin4>;
-impl Pin4R {
+pub type PIN4_R = crate::BitReader<PIN4_A>;
+#[doc = "Pin 4\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN4_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN4_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN4_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin4 {
+    pub fn variant(&self) -> PIN4_A {
         match self.bits {
-            false => Pin4::Low,
-            true => Pin4::High,
+            false => PIN4_A::LOW,
+            true => PIN4_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin4::Low
+        *self == PIN4_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin4::High
+        *self == PIN4_A::HIGH
     }
 }
 #[doc = "Field `PIN4` writer - Pin 4"]
-pub type Pin4W<'a, REG> = crate::BitWriter<'a, REG, Pin4>;
-impl<'a, REG> Pin4W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN4_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN4_A, O>;
+impl<'a, const O: u8> PIN4_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin4::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN4_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin4::High)
-    }
-}
-#[doc = "Pin 5\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin5 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin5> for bool {
-    #[inline(always)]
-    fn from(variant: Pin5) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN4_A::HIGH)
     }
 }
 #[doc = "Field `PIN5` reader - Pin 5"]
-pub type Pin5R = crate::BitReader<Pin5>;
-impl Pin5R {
+pub type PIN5_R = crate::BitReader<PIN5_A>;
+#[doc = "Pin 5\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN5_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN5_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN5_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin5 {
+    pub fn variant(&self) -> PIN5_A {
         match self.bits {
-            false => Pin5::Low,
-            true => Pin5::High,
+            false => PIN5_A::LOW,
+            true => PIN5_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin5::Low
+        *self == PIN5_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin5::High
+        *self == PIN5_A::HIGH
     }
 }
 #[doc = "Field `PIN5` writer - Pin 5"]
-pub type Pin5W<'a, REG> = crate::BitWriter<'a, REG, Pin5>;
-impl<'a, REG> Pin5W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN5_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN5_A, O>;
+impl<'a, const O: u8> PIN5_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin5::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN5_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin5::High)
-    }
-}
-#[doc = "Pin 6\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin6 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin6> for bool {
-    #[inline(always)]
-    fn from(variant: Pin6) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN5_A::HIGH)
     }
 }
 #[doc = "Field `PIN6` reader - Pin 6"]
-pub type Pin6R = crate::BitReader<Pin6>;
-impl Pin6R {
+pub type PIN6_R = crate::BitReader<PIN6_A>;
+#[doc = "Pin 6\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN6_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN6_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN6_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin6 {
+    pub fn variant(&self) -> PIN6_A {
         match self.bits {
-            false => Pin6::Low,
-            true => Pin6::High,
+            false => PIN6_A::LOW,
+            true => PIN6_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin6::Low
+        *self == PIN6_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin6::High
+        *self == PIN6_A::HIGH
     }
 }
 #[doc = "Field `PIN6` writer - Pin 6"]
-pub type Pin6W<'a, REG> = crate::BitWriter<'a, REG, Pin6>;
-impl<'a, REG> Pin6W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN6_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN6_A, O>;
+impl<'a, const O: u8> PIN6_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin6::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN6_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin6::High)
-    }
-}
-#[doc = "Pin 7\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin7 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin7> for bool {
-    #[inline(always)]
-    fn from(variant: Pin7) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN6_A::HIGH)
     }
 }
 #[doc = "Field `PIN7` reader - Pin 7"]
-pub type Pin7R = crate::BitReader<Pin7>;
-impl Pin7R {
+pub type PIN7_R = crate::BitReader<PIN7_A>;
+#[doc = "Pin 7\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN7_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN7_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN7_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin7 {
+    pub fn variant(&self) -> PIN7_A {
         match self.bits {
-            false => Pin7::Low,
-            true => Pin7::High,
+            false => PIN7_A::LOW,
+            true => PIN7_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin7::Low
+        *self == PIN7_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin7::High
+        *self == PIN7_A::HIGH
     }
 }
 #[doc = "Field `PIN7` writer - Pin 7"]
-pub type Pin7W<'a, REG> = crate::BitWriter<'a, REG, Pin7>;
-impl<'a, REG> Pin7W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN7_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN7_A, O>;
+impl<'a, const O: u8> PIN7_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin7::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN7_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin7::High)
-    }
-}
-#[doc = "Pin 8\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin8 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin8> for bool {
-    #[inline(always)]
-    fn from(variant: Pin8) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN7_A::HIGH)
     }
 }
 #[doc = "Field `PIN8` reader - Pin 8"]
-pub type Pin8R = crate::BitReader<Pin8>;
-impl Pin8R {
+pub type PIN8_R = crate::BitReader<PIN8_A>;
+#[doc = "Pin 8\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN8_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN8_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN8_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin8 {
+    pub fn variant(&self) -> PIN8_A {
         match self.bits {
-            false => Pin8::Low,
-            true => Pin8::High,
+            false => PIN8_A::LOW,
+            true => PIN8_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin8::Low
+        *self == PIN8_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin8::High
+        *self == PIN8_A::HIGH
     }
 }
 #[doc = "Field `PIN8` writer - Pin 8"]
-pub type Pin8W<'a, REG> = crate::BitWriter<'a, REG, Pin8>;
-impl<'a, REG> Pin8W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN8_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN8_A, O>;
+impl<'a, const O: u8> PIN8_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin8::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN8_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin8::High)
-    }
-}
-#[doc = "Pin 9\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin9 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin9> for bool {
-    #[inline(always)]
-    fn from(variant: Pin9) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN8_A::HIGH)
     }
 }
 #[doc = "Field `PIN9` reader - Pin 9"]
-pub type Pin9R = crate::BitReader<Pin9>;
-impl Pin9R {
+pub type PIN9_R = crate::BitReader<PIN9_A>;
+#[doc = "Pin 9\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN9_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN9_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN9_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin9 {
+    pub fn variant(&self) -> PIN9_A {
         match self.bits {
-            false => Pin9::Low,
-            true => Pin9::High,
+            false => PIN9_A::LOW,
+            true => PIN9_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin9::Low
+        *self == PIN9_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin9::High
+        *self == PIN9_A::HIGH
     }
 }
 #[doc = "Field `PIN9` writer - Pin 9"]
-pub type Pin9W<'a, REG> = crate::BitWriter<'a, REG, Pin9>;
-impl<'a, REG> Pin9W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN9_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN9_A, O>;
+impl<'a, const O: u8> PIN9_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin9::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN9_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin9::High)
-    }
-}
-#[doc = "Pin 10\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin10 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin10> for bool {
-    #[inline(always)]
-    fn from(variant: Pin10) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN9_A::HIGH)
     }
 }
 #[doc = "Field `PIN10` reader - Pin 10"]
-pub type Pin10R = crate::BitReader<Pin10>;
-impl Pin10R {
+pub type PIN10_R = crate::BitReader<PIN10_A>;
+#[doc = "Pin 10\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN10_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN10_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN10_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin10 {
+    pub fn variant(&self) -> PIN10_A {
         match self.bits {
-            false => Pin10::Low,
-            true => Pin10::High,
+            false => PIN10_A::LOW,
+            true => PIN10_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin10::Low
+        *self == PIN10_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin10::High
+        *self == PIN10_A::HIGH
     }
 }
 #[doc = "Field `PIN10` writer - Pin 10"]
-pub type Pin10W<'a, REG> = crate::BitWriter<'a, REG, Pin10>;
-impl<'a, REG> Pin10W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN10_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN10_A, O>;
+impl<'a, const O: u8> PIN10_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin10::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN10_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin10::High)
-    }
-}
-#[doc = "Pin 11\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin11 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin11> for bool {
-    #[inline(always)]
-    fn from(variant: Pin11) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN10_A::HIGH)
     }
 }
 #[doc = "Field `PIN11` reader - Pin 11"]
-pub type Pin11R = crate::BitReader<Pin11>;
-impl Pin11R {
+pub type PIN11_R = crate::BitReader<PIN11_A>;
+#[doc = "Pin 11\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN11_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN11_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN11_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin11 {
+    pub fn variant(&self) -> PIN11_A {
         match self.bits {
-            false => Pin11::Low,
-            true => Pin11::High,
+            false => PIN11_A::LOW,
+            true => PIN11_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin11::Low
+        *self == PIN11_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin11::High
+        *self == PIN11_A::HIGH
     }
 }
 #[doc = "Field `PIN11` writer - Pin 11"]
-pub type Pin11W<'a, REG> = crate::BitWriter<'a, REG, Pin11>;
-impl<'a, REG> Pin11W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN11_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN11_A, O>;
+impl<'a, const O: u8> PIN11_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin11::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN11_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin11::High)
-    }
-}
-#[doc = "Pin 12\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin12 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin12> for bool {
-    #[inline(always)]
-    fn from(variant: Pin12) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN11_A::HIGH)
     }
 }
 #[doc = "Field `PIN12` reader - Pin 12"]
-pub type Pin12R = crate::BitReader<Pin12>;
-impl Pin12R {
+pub type PIN12_R = crate::BitReader<PIN12_A>;
+#[doc = "Pin 12\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN12_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN12_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN12_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin12 {
+    pub fn variant(&self) -> PIN12_A {
         match self.bits {
-            false => Pin12::Low,
-            true => Pin12::High,
+            false => PIN12_A::LOW,
+            true => PIN12_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin12::Low
+        *self == PIN12_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin12::High
+        *self == PIN12_A::HIGH
     }
 }
 #[doc = "Field `PIN12` writer - Pin 12"]
-pub type Pin12W<'a, REG> = crate::BitWriter<'a, REG, Pin12>;
-impl<'a, REG> Pin12W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN12_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN12_A, O>;
+impl<'a, const O: u8> PIN12_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin12::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN12_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin12::High)
-    }
-}
-#[doc = "Pin 13\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin13 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin13> for bool {
-    #[inline(always)]
-    fn from(variant: Pin13) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN12_A::HIGH)
     }
 }
 #[doc = "Field `PIN13` reader - Pin 13"]
-pub type Pin13R = crate::BitReader<Pin13>;
-impl Pin13R {
+pub type PIN13_R = crate::BitReader<PIN13_A>;
+#[doc = "Pin 13\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN13_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN13_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN13_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin13 {
+    pub fn variant(&self) -> PIN13_A {
         match self.bits {
-            false => Pin13::Low,
-            true => Pin13::High,
+            false => PIN13_A::LOW,
+            true => PIN13_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin13::Low
+        *self == PIN13_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin13::High
+        *self == PIN13_A::HIGH
     }
 }
 #[doc = "Field `PIN13` writer - Pin 13"]
-pub type Pin13W<'a, REG> = crate::BitWriter<'a, REG, Pin13>;
-impl<'a, REG> Pin13W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN13_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN13_A, O>;
+impl<'a, const O: u8> PIN13_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin13::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN13_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin13::High)
-    }
-}
-#[doc = "Pin 14\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin14 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin14> for bool {
-    #[inline(always)]
-    fn from(variant: Pin14) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN13_A::HIGH)
     }
 }
 #[doc = "Field `PIN14` reader - Pin 14"]
-pub type Pin14R = crate::BitReader<Pin14>;
-impl Pin14R {
+pub type PIN14_R = crate::BitReader<PIN14_A>;
+#[doc = "Pin 14\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN14_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN14_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN14_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN14_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin14 {
+    pub fn variant(&self) -> PIN14_A {
         match self.bits {
-            false => Pin14::Low,
-            true => Pin14::High,
+            false => PIN14_A::LOW,
+            true => PIN14_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin14::Low
+        *self == PIN14_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin14::High
+        *self == PIN14_A::HIGH
     }
 }
 #[doc = "Field `PIN14` writer - Pin 14"]
-pub type Pin14W<'a, REG> = crate::BitWriter<'a, REG, Pin14>;
-impl<'a, REG> Pin14W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN14_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN14_A, O>;
+impl<'a, const O: u8> PIN14_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin14::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN14_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin14::High)
-    }
-}
-#[doc = "Pin 15\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin15 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin15> for bool {
-    #[inline(always)]
-    fn from(variant: Pin15) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN14_A::HIGH)
     }
 }
 #[doc = "Field `PIN15` reader - Pin 15"]
-pub type Pin15R = crate::BitReader<Pin15>;
-impl Pin15R {
+pub type PIN15_R = crate::BitReader<PIN15_A>;
+#[doc = "Pin 15\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN15_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN15_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN15_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN15_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin15 {
+    pub fn variant(&self) -> PIN15_A {
         match self.bits {
-            false => Pin15::Low,
-            true => Pin15::High,
+            false => PIN15_A::LOW,
+            true => PIN15_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin15::Low
+        *self == PIN15_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin15::High
+        *self == PIN15_A::HIGH
     }
 }
 #[doc = "Field `PIN15` writer - Pin 15"]
-pub type Pin15W<'a, REG> = crate::BitWriter<'a, REG, Pin15>;
-impl<'a, REG> Pin15W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN15_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN15_A, O>;
+impl<'a, const O: u8> PIN15_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin15::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN15_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin15::High)
-    }
-}
-#[doc = "Pin 16\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin16 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin16> for bool {
-    #[inline(always)]
-    fn from(variant: Pin16) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN15_A::HIGH)
     }
 }
 #[doc = "Field `PIN16` reader - Pin 16"]
-pub type Pin16R = crate::BitReader<Pin16>;
-impl Pin16R {
+pub type PIN16_R = crate::BitReader<PIN16_A>;
+#[doc = "Pin 16\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN16_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN16_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN16_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN16_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin16 {
+    pub fn variant(&self) -> PIN16_A {
         match self.bits {
-            false => Pin16::Low,
-            true => Pin16::High,
+            false => PIN16_A::LOW,
+            true => PIN16_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin16::Low
+        *self == PIN16_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin16::High
+        *self == PIN16_A::HIGH
     }
 }
 #[doc = "Field `PIN16` writer - Pin 16"]
-pub type Pin16W<'a, REG> = crate::BitWriter<'a, REG, Pin16>;
-impl<'a, REG> Pin16W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN16_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN16_A, O>;
+impl<'a, const O: u8> PIN16_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin16::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN16_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin16::High)
-    }
-}
-#[doc = "Pin 17\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin17 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin17> for bool {
-    #[inline(always)]
-    fn from(variant: Pin17) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN16_A::HIGH)
     }
 }
 #[doc = "Field `PIN17` reader - Pin 17"]
-pub type Pin17R = crate::BitReader<Pin17>;
-impl Pin17R {
+pub type PIN17_R = crate::BitReader<PIN17_A>;
+#[doc = "Pin 17\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN17_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN17_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN17_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN17_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin17 {
+    pub fn variant(&self) -> PIN17_A {
         match self.bits {
-            false => Pin17::Low,
-            true => Pin17::High,
+            false => PIN17_A::LOW,
+            true => PIN17_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin17::Low
+        *self == PIN17_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin17::High
+        *self == PIN17_A::HIGH
     }
 }
 #[doc = "Field `PIN17` writer - Pin 17"]
-pub type Pin17W<'a, REG> = crate::BitWriter<'a, REG, Pin17>;
-impl<'a, REG> Pin17W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN17_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN17_A, O>;
+impl<'a, const O: u8> PIN17_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin17::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN17_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin17::High)
-    }
-}
-#[doc = "Pin 18\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin18 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin18> for bool {
-    #[inline(always)]
-    fn from(variant: Pin18) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN17_A::HIGH)
     }
 }
 #[doc = "Field `PIN18` reader - Pin 18"]
-pub type Pin18R = crate::BitReader<Pin18>;
-impl Pin18R {
+pub type PIN18_R = crate::BitReader<PIN18_A>;
+#[doc = "Pin 18\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN18_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN18_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN18_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN18_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin18 {
+    pub fn variant(&self) -> PIN18_A {
         match self.bits {
-            false => Pin18::Low,
-            true => Pin18::High,
+            false => PIN18_A::LOW,
+            true => PIN18_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin18::Low
+        *self == PIN18_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin18::High
+        *self == PIN18_A::HIGH
     }
 }
 #[doc = "Field `PIN18` writer - Pin 18"]
-pub type Pin18W<'a, REG> = crate::BitWriter<'a, REG, Pin18>;
-impl<'a, REG> Pin18W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN18_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN18_A, O>;
+impl<'a, const O: u8> PIN18_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin18::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN18_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin18::High)
-    }
-}
-#[doc = "Pin 19\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin19 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin19> for bool {
-    #[inline(always)]
-    fn from(variant: Pin19) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN18_A::HIGH)
     }
 }
 #[doc = "Field `PIN19` reader - Pin 19"]
-pub type Pin19R = crate::BitReader<Pin19>;
-impl Pin19R {
+pub type PIN19_R = crate::BitReader<PIN19_A>;
+#[doc = "Pin 19\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN19_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN19_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN19_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN19_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin19 {
+    pub fn variant(&self) -> PIN19_A {
         match self.bits {
-            false => Pin19::Low,
-            true => Pin19::High,
+            false => PIN19_A::LOW,
+            true => PIN19_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin19::Low
+        *self == PIN19_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin19::High
+        *self == PIN19_A::HIGH
     }
 }
 #[doc = "Field `PIN19` writer - Pin 19"]
-pub type Pin19W<'a, REG> = crate::BitWriter<'a, REG, Pin19>;
-impl<'a, REG> Pin19W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN19_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN19_A, O>;
+impl<'a, const O: u8> PIN19_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin19::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN19_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin19::High)
-    }
-}
-#[doc = "Pin 20\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin20 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin20> for bool {
-    #[inline(always)]
-    fn from(variant: Pin20) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN19_A::HIGH)
     }
 }
 #[doc = "Field `PIN20` reader - Pin 20"]
-pub type Pin20R = crate::BitReader<Pin20>;
-impl Pin20R {
+pub type PIN20_R = crate::BitReader<PIN20_A>;
+#[doc = "Pin 20\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN20_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN20_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN20_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN20_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin20 {
+    pub fn variant(&self) -> PIN20_A {
         match self.bits {
-            false => Pin20::Low,
-            true => Pin20::High,
+            false => PIN20_A::LOW,
+            true => PIN20_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin20::Low
+        *self == PIN20_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin20::High
+        *self == PIN20_A::HIGH
     }
 }
 #[doc = "Field `PIN20` writer - Pin 20"]
-pub type Pin20W<'a, REG> = crate::BitWriter<'a, REG, Pin20>;
-impl<'a, REG> Pin20W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN20_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN20_A, O>;
+impl<'a, const O: u8> PIN20_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin20::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN20_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin20::High)
-    }
-}
-#[doc = "Pin 21\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin21 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin21> for bool {
-    #[inline(always)]
-    fn from(variant: Pin21) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN20_A::HIGH)
     }
 }
 #[doc = "Field `PIN21` reader - Pin 21"]
-pub type Pin21R = crate::BitReader<Pin21>;
-impl Pin21R {
+pub type PIN21_R = crate::BitReader<PIN21_A>;
+#[doc = "Pin 21\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN21_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN21_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN21_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN21_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin21 {
+    pub fn variant(&self) -> PIN21_A {
         match self.bits {
-            false => Pin21::Low,
-            true => Pin21::High,
+            false => PIN21_A::LOW,
+            true => PIN21_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin21::Low
+        *self == PIN21_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin21::High
+        *self == PIN21_A::HIGH
     }
 }
 #[doc = "Field `PIN21` writer - Pin 21"]
-pub type Pin21W<'a, REG> = crate::BitWriter<'a, REG, Pin21>;
-impl<'a, REG> Pin21W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN21_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN21_A, O>;
+impl<'a, const O: u8> PIN21_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin21::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN21_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin21::High)
-    }
-}
-#[doc = "Pin 22\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin22 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin22> for bool {
-    #[inline(always)]
-    fn from(variant: Pin22) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN21_A::HIGH)
     }
 }
 #[doc = "Field `PIN22` reader - Pin 22"]
-pub type Pin22R = crate::BitReader<Pin22>;
-impl Pin22R {
+pub type PIN22_R = crate::BitReader<PIN22_A>;
+#[doc = "Pin 22\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN22_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN22_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN22_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN22_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin22 {
+    pub fn variant(&self) -> PIN22_A {
         match self.bits {
-            false => Pin22::Low,
-            true => Pin22::High,
+            false => PIN22_A::LOW,
+            true => PIN22_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin22::Low
+        *self == PIN22_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin22::High
+        *self == PIN22_A::HIGH
     }
 }
 #[doc = "Field `PIN22` writer - Pin 22"]
-pub type Pin22W<'a, REG> = crate::BitWriter<'a, REG, Pin22>;
-impl<'a, REG> Pin22W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN22_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN22_A, O>;
+impl<'a, const O: u8> PIN22_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin22::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN22_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin22::High)
-    }
-}
-#[doc = "Pin 23\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin23 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin23> for bool {
-    #[inline(always)]
-    fn from(variant: Pin23) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN22_A::HIGH)
     }
 }
 #[doc = "Field `PIN23` reader - Pin 23"]
-pub type Pin23R = crate::BitReader<Pin23>;
-impl Pin23R {
+pub type PIN23_R = crate::BitReader<PIN23_A>;
+#[doc = "Pin 23\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN23_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN23_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN23_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN23_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin23 {
+    pub fn variant(&self) -> PIN23_A {
         match self.bits {
-            false => Pin23::Low,
-            true => Pin23::High,
+            false => PIN23_A::LOW,
+            true => PIN23_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin23::Low
+        *self == PIN23_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin23::High
+        *self == PIN23_A::HIGH
     }
 }
 #[doc = "Field `PIN23` writer - Pin 23"]
-pub type Pin23W<'a, REG> = crate::BitWriter<'a, REG, Pin23>;
-impl<'a, REG> Pin23W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN23_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN23_A, O>;
+impl<'a, const O: u8> PIN23_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin23::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN23_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin23::High)
-    }
-}
-#[doc = "Pin 24\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin24 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin24> for bool {
-    #[inline(always)]
-    fn from(variant: Pin24) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN23_A::HIGH)
     }
 }
 #[doc = "Field `PIN24` reader - Pin 24"]
-pub type Pin24R = crate::BitReader<Pin24>;
-impl Pin24R {
+pub type PIN24_R = crate::BitReader<PIN24_A>;
+#[doc = "Pin 24\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN24_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN24_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN24_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN24_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin24 {
+    pub fn variant(&self) -> PIN24_A {
         match self.bits {
-            false => Pin24::Low,
-            true => Pin24::High,
+            false => PIN24_A::LOW,
+            true => PIN24_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin24::Low
+        *self == PIN24_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin24::High
+        *self == PIN24_A::HIGH
     }
 }
 #[doc = "Field `PIN24` writer - Pin 24"]
-pub type Pin24W<'a, REG> = crate::BitWriter<'a, REG, Pin24>;
-impl<'a, REG> Pin24W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN24_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN24_A, O>;
+impl<'a, const O: u8> PIN24_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin24::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN24_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin24::High)
-    }
-}
-#[doc = "Pin 25\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin25 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin25> for bool {
-    #[inline(always)]
-    fn from(variant: Pin25) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN24_A::HIGH)
     }
 }
 #[doc = "Field `PIN25` reader - Pin 25"]
-pub type Pin25R = crate::BitReader<Pin25>;
-impl Pin25R {
+pub type PIN25_R = crate::BitReader<PIN25_A>;
+#[doc = "Pin 25\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN25_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN25_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN25_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN25_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin25 {
+    pub fn variant(&self) -> PIN25_A {
         match self.bits {
-            false => Pin25::Low,
-            true => Pin25::High,
+            false => PIN25_A::LOW,
+            true => PIN25_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin25::Low
+        *self == PIN25_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin25::High
+        *self == PIN25_A::HIGH
     }
 }
 #[doc = "Field `PIN25` writer - Pin 25"]
-pub type Pin25W<'a, REG> = crate::BitWriter<'a, REG, Pin25>;
-impl<'a, REG> Pin25W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN25_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN25_A, O>;
+impl<'a, const O: u8> PIN25_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin25::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN25_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin25::High)
-    }
-}
-#[doc = "Pin 26\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin26 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin26> for bool {
-    #[inline(always)]
-    fn from(variant: Pin26) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN25_A::HIGH)
     }
 }
 #[doc = "Field `PIN26` reader - Pin 26"]
-pub type Pin26R = crate::BitReader<Pin26>;
-impl Pin26R {
+pub type PIN26_R = crate::BitReader<PIN26_A>;
+#[doc = "Pin 26\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN26_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN26_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN26_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN26_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin26 {
+    pub fn variant(&self) -> PIN26_A {
         match self.bits {
-            false => Pin26::Low,
-            true => Pin26::High,
+            false => PIN26_A::LOW,
+            true => PIN26_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin26::Low
+        *self == PIN26_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin26::High
+        *self == PIN26_A::HIGH
     }
 }
 #[doc = "Field `PIN26` writer - Pin 26"]
-pub type Pin26W<'a, REG> = crate::BitWriter<'a, REG, Pin26>;
-impl<'a, REG> Pin26W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN26_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN26_A, O>;
+impl<'a, const O: u8> PIN26_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin26::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN26_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin26::High)
-    }
-}
-#[doc = "Pin 27\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin27 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin27> for bool {
-    #[inline(always)]
-    fn from(variant: Pin27) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN26_A::HIGH)
     }
 }
 #[doc = "Field `PIN27` reader - Pin 27"]
-pub type Pin27R = crate::BitReader<Pin27>;
-impl Pin27R {
+pub type PIN27_R = crate::BitReader<PIN27_A>;
+#[doc = "Pin 27\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN27_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN27_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN27_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN27_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin27 {
+    pub fn variant(&self) -> PIN27_A {
         match self.bits {
-            false => Pin27::Low,
-            true => Pin27::High,
+            false => PIN27_A::LOW,
+            true => PIN27_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin27::Low
+        *self == PIN27_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin27::High
+        *self == PIN27_A::HIGH
     }
 }
 #[doc = "Field `PIN27` writer - Pin 27"]
-pub type Pin27W<'a, REG> = crate::BitWriter<'a, REG, Pin27>;
-impl<'a, REG> Pin27W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN27_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN27_A, O>;
+impl<'a, const O: u8> PIN27_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin27::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN27_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin27::High)
-    }
-}
-#[doc = "Pin 28\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin28 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin28> for bool {
-    #[inline(always)]
-    fn from(variant: Pin28) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN27_A::HIGH)
     }
 }
 #[doc = "Field `PIN28` reader - Pin 28"]
-pub type Pin28R = crate::BitReader<Pin28>;
-impl Pin28R {
+pub type PIN28_R = crate::BitReader<PIN28_A>;
+#[doc = "Pin 28\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN28_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN28_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN28_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN28_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin28 {
+    pub fn variant(&self) -> PIN28_A {
         match self.bits {
-            false => Pin28::Low,
-            true => Pin28::High,
+            false => PIN28_A::LOW,
+            true => PIN28_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin28::Low
+        *self == PIN28_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin28::High
+        *self == PIN28_A::HIGH
     }
 }
 #[doc = "Field `PIN28` writer - Pin 28"]
-pub type Pin28W<'a, REG> = crate::BitWriter<'a, REG, Pin28>;
-impl<'a, REG> Pin28W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN28_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN28_A, O>;
+impl<'a, const O: u8> PIN28_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin28::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN28_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin28::High)
-    }
-}
-#[doc = "Pin 29\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin29 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin29> for bool {
-    #[inline(always)]
-    fn from(variant: Pin29) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN28_A::HIGH)
     }
 }
 #[doc = "Field `PIN29` reader - Pin 29"]
-pub type Pin29R = crate::BitReader<Pin29>;
-impl Pin29R {
+pub type PIN29_R = crate::BitReader<PIN29_A>;
+#[doc = "Pin 29\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN29_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN29_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN29_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN29_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin29 {
+    pub fn variant(&self) -> PIN29_A {
         match self.bits {
-            false => Pin29::Low,
-            true => Pin29::High,
+            false => PIN29_A::LOW,
+            true => PIN29_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin29::Low
+        *self == PIN29_A::LOW
     }
-    #[doc = "Pin driver is high"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin29::High
+        *self == PIN29_A::HIGH
     }
 }
 #[doc = "Field `PIN29` writer - Pin 29"]
-pub type Pin29W<'a, REG> = crate::BitWriter<'a, REG, Pin29>;
-impl<'a, REG> Pin29W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN29_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN29_A, O>;
+impl<'a, const O: u8> PIN29_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin29::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN29_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin29::High)
-    }
-}
-#[doc = "Pin 30\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin30 {
-    #[doc = "0: Pin driver is low"]
-    Low = 0,
-    #[doc = "1: Pin driver is high"]
-    High = 1,
-}
-impl From<Pin30> for bool {
-    #[inline(always)]
-    fn from(variant: Pin30) -> Self {
-        variant as u8 != 0
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN29_A::HIGH)
     }
 }
 #[doc = "Field `PIN30` reader - Pin 30"]
-pub type Pin30R = crate::BitReader<Pin30>;
-impl Pin30R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> Pin30 {
-        match self.bits {
-            false => Pin30::Low,
-            true => Pin30::High,
-        }
-    }
-    #[doc = "Pin driver is low"]
-    #[inline(always)]
-    pub fn is_low(&self) -> bool {
-        *self == Pin30::Low
-    }
-    #[doc = "Pin driver is high"]
-    #[inline(always)]
-    pub fn is_high(&self) -> bool {
-        *self == Pin30::High
-    }
-}
-#[doc = "Field `PIN30` writer - Pin 30"]
-pub type Pin30W<'a, REG> = crate::BitWriter<'a, REG, Pin30>;
-impl<'a, REG> Pin30W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Pin driver is low"]
-    #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin30::Low)
-    }
-    #[doc = "Pin driver is high"]
-    #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin30::High)
-    }
-}
-#[doc = "Pin 31\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pin31 {
+pub type PIN30_R = crate::BitReader<PIN30_A>;
+#[doc = "Pin 30\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN30_A {
     #[doc = "0: Pin driver is low"]
-    Low = 0,
+    LOW = 0,
     #[doc = "1: Pin driver is high"]
-    High = 1,
+    HIGH = 1,
 }
-impl From<Pin31> for bool {
+impl From<PIN30_A> for bool {
     #[inline(always)]
-    fn from(variant: Pin31) -> Self {
+    fn from(variant: PIN30_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PIN31` reader - Pin 31"]
-pub type Pin31R = crate::BitReader<Pin31>;
-impl Pin31R {
+impl PIN30_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pin31 {
+    pub fn variant(&self) -> PIN30_A {
         match self.bits {
-            false => Pin31::Low,
-            true => Pin31::High,
+            false => PIN30_A::LOW,
+            true => PIN30_A::HIGH,
         }
     }
-    #[doc = "Pin driver is low"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == Pin31::Low
+        *self == PIN30_A::LOW
+    }
+    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[inline(always)]
+    pub fn is_high(&self) -> bool {
+        *self == PIN30_A::HIGH
+    }
+}
+#[doc = "Field `PIN30` writer - Pin 30"]
+pub type PIN30_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN30_A, O>;
+impl<'a, const O: u8> PIN30_W<'a, O> {
+    #[doc = "Pin driver is low"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN30_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN30_A::HIGH)
+    }
+}
+#[doc = "Field `PIN31` reader - Pin 31"]
+pub type PIN31_R = crate::BitReader<PIN31_A>;
+#[doc = "Pin 31\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIN31_A {
+    #[doc = "0: Pin driver is low"]
+    LOW = 0,
+    #[doc = "1: Pin driver is high"]
+    HIGH = 1,
+}
+impl From<PIN31_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN31_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PIN31_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN31_A {
+        match self.bits {
+            false => PIN31_A::LOW,
+            true => PIN31_A::HIGH,
+        }
+    }
+    #[doc = "Checks if the value of the field is `LOW`"]
+    #[inline(always)]
+    pub fn is_low(&self) -> bool {
+        *self == PIN31_A::LOW
+    }
+    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == Pin31::High
+        *self == PIN31_A::HIGH
     }
 }
 #[doc = "Field `PIN31` writer - Pin 31"]
-pub type Pin31W<'a, REG> = crate::BitWriter<'a, REG, Pin31>;
-impl<'a, REG> Pin31W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PIN31_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, PIN31_A, O>;
+impl<'a, const O: u8> PIN31_W<'a, O> {
     #[doc = "Pin driver is low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin31::Low)
+    pub fn low(self) -> &'a mut W {
+        self.variant(PIN31_A::LOW)
     }
     #[doc = "Pin driver is high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut crate::W<REG> {
-        self.variant(Pin31::High)
+    pub fn high(self) -> &'a mut W {
+        self.variant(PIN31_A::HIGH)
     }
 }
 impl R {
     #[doc = "Bit 0 - Pin 0"]
     #[inline(always)]
-    pub fn pin0(&self) -> Pin0R {
-        Pin0R::new((self.bits & 1) != 0)
+    pub fn pin0(&self) -> PIN0_R {
+        PIN0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Pin 1"]
     #[inline(always)]
-    pub fn pin1(&self) -> Pin1R {
-        Pin1R::new(((self.bits >> 1) & 1) != 0)
+    pub fn pin1(&self) -> PIN1_R {
+        PIN1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Pin 2"]
     #[inline(always)]
-    pub fn pin2(&self) -> Pin2R {
-        Pin2R::new(((self.bits >> 2) & 1) != 0)
+    pub fn pin2(&self) -> PIN2_R {
+        PIN2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Pin 3"]
     #[inline(always)]
-    pub fn pin3(&self) -> Pin3R {
-        Pin3R::new(((self.bits >> 3) & 1) != 0)
+    pub fn pin3(&self) -> PIN3_R {
+        PIN3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Pin 4"]
     #[inline(always)]
-    pub fn pin4(&self) -> Pin4R {
-        Pin4R::new(((self.bits >> 4) & 1) != 0)
+    pub fn pin4(&self) -> PIN4_R {
+        PIN4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Pin 5"]
     #[inline(always)]
-    pub fn pin5(&self) -> Pin5R {
-        Pin5R::new(((self.bits >> 5) & 1) != 0)
+    pub fn pin5(&self) -> PIN5_R {
+        PIN5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Pin 6"]
     #[inline(always)]
-    pub fn pin6(&self) -> Pin6R {
-        Pin6R::new(((self.bits >> 6) & 1) != 0)
+    pub fn pin6(&self) -> PIN6_R {
+        PIN6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Pin 7"]
     #[inline(always)]
-    pub fn pin7(&self) -> Pin7R {
-        Pin7R::new(((self.bits >> 7) & 1) != 0)
+    pub fn pin7(&self) -> PIN7_R {
+        PIN7_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Pin 8"]
     #[inline(always)]
-    pub fn pin8(&self) -> Pin8R {
-        Pin8R::new(((self.bits >> 8) & 1) != 0)
+    pub fn pin8(&self) -> PIN8_R {
+        PIN8_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Pin 9"]
     #[inline(always)]
-    pub fn pin9(&self) -> Pin9R {
-        Pin9R::new(((self.bits >> 9) & 1) != 0)
+    pub fn pin9(&self) -> PIN9_R {
+        PIN9_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Pin 10"]
     #[inline(always)]
-    pub fn pin10(&self) -> Pin10R {
-        Pin10R::new(((self.bits >> 10) & 1) != 0)
+    pub fn pin10(&self) -> PIN10_R {
+        PIN10_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Pin 11"]
     #[inline(always)]
-    pub fn pin11(&self) -> Pin11R {
-        Pin11R::new(((self.bits >> 11) & 1) != 0)
+    pub fn pin11(&self) -> PIN11_R {
+        PIN11_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Pin 12"]
     #[inline(always)]
-    pub fn pin12(&self) -> Pin12R {
-        Pin12R::new(((self.bits >> 12) & 1) != 0)
+    pub fn pin12(&self) -> PIN12_R {
+        PIN12_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Pin 13"]
     #[inline(always)]
-    pub fn pin13(&self) -> Pin13R {
-        Pin13R::new(((self.bits >> 13) & 1) != 0)
+    pub fn pin13(&self) -> PIN13_R {
+        PIN13_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Pin 14"]
     #[inline(always)]
-    pub fn pin14(&self) -> Pin14R {
-        Pin14R::new(((self.bits >> 14) & 1) != 0)
+    pub fn pin14(&self) -> PIN14_R {
+        PIN14_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Pin 15"]
     #[inline(always)]
-    pub fn pin15(&self) -> Pin15R {
-        Pin15R::new(((self.bits >> 15) & 1) != 0)
+    pub fn pin15(&self) -> PIN15_R {
+        PIN15_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Pin 16"]
     #[inline(always)]
-    pub fn pin16(&self) -> Pin16R {
-        Pin16R::new(((self.bits >> 16) & 1) != 0)
+    pub fn pin16(&self) -> PIN16_R {
+        PIN16_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Pin 17"]
     #[inline(always)]
-    pub fn pin17(&self) -> Pin17R {
-        Pin17R::new(((self.bits >> 17) & 1) != 0)
+    pub fn pin17(&self) -> PIN17_R {
+        PIN17_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Pin 18"]
     #[inline(always)]
-    pub fn pin18(&self) -> Pin18R {
-        Pin18R::new(((self.bits >> 18) & 1) != 0)
+    pub fn pin18(&self) -> PIN18_R {
+        PIN18_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Pin 19"]
     #[inline(always)]
-    pub fn pin19(&self) -> Pin19R {
-        Pin19R::new(((self.bits >> 19) & 1) != 0)
+    pub fn pin19(&self) -> PIN19_R {
+        PIN19_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Pin 20"]
     #[inline(always)]
-    pub fn pin20(&self) -> Pin20R {
-        Pin20R::new(((self.bits >> 20) & 1) != 0)
+    pub fn pin20(&self) -> PIN20_R {
+        PIN20_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Pin 21"]
     #[inline(always)]
-    pub fn pin21(&self) -> Pin21R {
-        Pin21R::new(((self.bits >> 21) & 1) != 0)
+    pub fn pin21(&self) -> PIN21_R {
+        PIN21_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Pin 22"]
     #[inline(always)]
-    pub fn pin22(&self) -> Pin22R {
-        Pin22R::new(((self.bits >> 22) & 1) != 0)
+    pub fn pin22(&self) -> PIN22_R {
+        PIN22_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - Pin 23"]
     #[inline(always)]
-    pub fn pin23(&self) -> Pin23R {
-        Pin23R::new(((self.bits >> 23) & 1) != 0)
+    pub fn pin23(&self) -> PIN23_R {
+        PIN23_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - Pin 24"]
     #[inline(always)]
-    pub fn pin24(&self) -> Pin24R {
-        Pin24R::new(((self.bits >> 24) & 1) != 0)
+    pub fn pin24(&self) -> PIN24_R {
+        PIN24_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Pin 25"]
     #[inline(always)]
-    pub fn pin25(&self) -> Pin25R {
-        Pin25R::new(((self.bits >> 25) & 1) != 0)
+    pub fn pin25(&self) -> PIN25_R {
+        PIN25_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Pin 26"]
     #[inline(always)]
-    pub fn pin26(&self) -> Pin26R {
-        Pin26R::new(((self.bits >> 26) & 1) != 0)
+    pub fn pin26(&self) -> PIN26_R {
+        PIN26_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - Pin 27"]
     #[inline(always)]
-    pub fn pin27(&self) -> Pin27R {
-        Pin27R::new(((self.bits >> 27) & 1) != 0)
+    pub fn pin27(&self) -> PIN27_R {
+        PIN27_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 28 - Pin 28"]
     #[inline(always)]
-    pub fn pin28(&self) -> Pin28R {
-        Pin28R::new(((self.bits >> 28) & 1) != 0)
+    pub fn pin28(&self) -> PIN28_R {
+        PIN28_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - Pin 29"]
     #[inline(always)]
-    pub fn pin29(&self) -> Pin29R {
-        Pin29R::new(((self.bits >> 29) & 1) != 0)
+    pub fn pin29(&self) -> PIN29_R {
+        PIN29_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - Pin 30"]
     #[inline(always)]
-    pub fn pin30(&self) -> Pin30R {
-        Pin30R::new(((self.bits >> 30) & 1) != 0)
+    pub fn pin30(&self) -> PIN30_R {
+        PIN30_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Pin 31"]
     #[inline(always)]
-    pub fn pin31(&self) -> Pin31R {
-        Pin31R::new(((self.bits >> 31) & 1) != 0)
+    pub fn pin31(&self) -> PIN31_R {
+        PIN31_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Pin 0"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin0(&mut self) -> Pin0W<OutSpec> {
-        Pin0W::new(self, 0)
+    pub fn pin0(&mut self) -> PIN0_W<0> {
+        PIN0_W::new(self)
     }
     #[doc = "Bit 1 - Pin 1"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin1(&mut self) -> Pin1W<OutSpec> {
-        Pin1W::new(self, 1)
+    pub fn pin1(&mut self) -> PIN1_W<1> {
+        PIN1_W::new(self)
     }
     #[doc = "Bit 2 - Pin 2"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin2(&mut self) -> Pin2W<OutSpec> {
-        Pin2W::new(self, 2)
+    pub fn pin2(&mut self) -> PIN2_W<2> {
+        PIN2_W::new(self)
     }
     #[doc = "Bit 3 - Pin 3"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin3(&mut self) -> Pin3W<OutSpec> {
-        Pin3W::new(self, 3)
+    pub fn pin3(&mut self) -> PIN3_W<3> {
+        PIN3_W::new(self)
     }
     #[doc = "Bit 4 - Pin 4"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin4(&mut self) -> Pin4W<OutSpec> {
-        Pin4W::new(self, 4)
+    pub fn pin4(&mut self) -> PIN4_W<4> {
+        PIN4_W::new(self)
     }
     #[doc = "Bit 5 - Pin 5"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin5(&mut self) -> Pin5W<OutSpec> {
-        Pin5W::new(self, 5)
+    pub fn pin5(&mut self) -> PIN5_W<5> {
+        PIN5_W::new(self)
     }
     #[doc = "Bit 6 - Pin 6"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin6(&mut self) -> Pin6W<OutSpec> {
-        Pin6W::new(self, 6)
+    pub fn pin6(&mut self) -> PIN6_W<6> {
+        PIN6_W::new(self)
     }
     #[doc = "Bit 7 - Pin 7"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin7(&mut self) -> Pin7W<OutSpec> {
-        Pin7W::new(self, 7)
+    pub fn pin7(&mut self) -> PIN7_W<7> {
+        PIN7_W::new(self)
     }
     #[doc = "Bit 8 - Pin 8"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin8(&mut self) -> Pin8W<OutSpec> {
-        Pin8W::new(self, 8)
+    pub fn pin8(&mut self) -> PIN8_W<8> {
+        PIN8_W::new(self)
     }
     #[doc = "Bit 9 - Pin 9"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin9(&mut self) -> Pin9W<OutSpec> {
-        Pin9W::new(self, 9)
+    pub fn pin9(&mut self) -> PIN9_W<9> {
+        PIN9_W::new(self)
     }
     #[doc = "Bit 10 - Pin 10"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin10(&mut self) -> Pin10W<OutSpec> {
-        Pin10W::new(self, 10)
+    pub fn pin10(&mut self) -> PIN10_W<10> {
+        PIN10_W::new(self)
     }
     #[doc = "Bit 11 - Pin 11"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin11(&mut self) -> Pin11W<OutSpec> {
-        Pin11W::new(self, 11)
+    pub fn pin11(&mut self) -> PIN11_W<11> {
+        PIN11_W::new(self)
     }
     #[doc = "Bit 12 - Pin 12"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin12(&mut self) -> Pin12W<OutSpec> {
-        Pin12W::new(self, 12)
+    pub fn pin12(&mut self) -> PIN12_W<12> {
+        PIN12_W::new(self)
     }
     #[doc = "Bit 13 - Pin 13"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin13(&mut self) -> Pin13W<OutSpec> {
-        Pin13W::new(self, 13)
+    pub fn pin13(&mut self) -> PIN13_W<13> {
+        PIN13_W::new(self)
     }
     #[doc = "Bit 14 - Pin 14"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin14(&mut self) -> Pin14W<OutSpec> {
-        Pin14W::new(self, 14)
+    pub fn pin14(&mut self) -> PIN14_W<14> {
+        PIN14_W::new(self)
     }
     #[doc = "Bit 15 - Pin 15"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin15(&mut self) -> Pin15W<OutSpec> {
-        Pin15W::new(self, 15)
+    pub fn pin15(&mut self) -> PIN15_W<15> {
+        PIN15_W::new(self)
     }
     #[doc = "Bit 16 - Pin 16"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin16(&mut self) -> Pin16W<OutSpec> {
-        Pin16W::new(self, 16)
+    pub fn pin16(&mut self) -> PIN16_W<16> {
+        PIN16_W::new(self)
     }
     #[doc = "Bit 17 - Pin 17"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin17(&mut self) -> Pin17W<OutSpec> {
-        Pin17W::new(self, 17)
+    pub fn pin17(&mut self) -> PIN17_W<17> {
+        PIN17_W::new(self)
     }
     #[doc = "Bit 18 - Pin 18"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin18(&mut self) -> Pin18W<OutSpec> {
-        Pin18W::new(self, 18)
+    pub fn pin18(&mut self) -> PIN18_W<18> {
+        PIN18_W::new(self)
     }
     #[doc = "Bit 19 - Pin 19"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin19(&mut self) -> Pin19W<OutSpec> {
-        Pin19W::new(self, 19)
+    pub fn pin19(&mut self) -> PIN19_W<19> {
+        PIN19_W::new(self)
     }
     #[doc = "Bit 20 - Pin 20"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin20(&mut self) -> Pin20W<OutSpec> {
-        Pin20W::new(self, 20)
+    pub fn pin20(&mut self) -> PIN20_W<20> {
+        PIN20_W::new(self)
     }
     #[doc = "Bit 21 - Pin 21"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin21(&mut self) -> Pin21W<OutSpec> {
-        Pin21W::new(self, 21)
+    pub fn pin21(&mut self) -> PIN21_W<21> {
+        PIN21_W::new(self)
     }
     #[doc = "Bit 22 - Pin 22"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin22(&mut self) -> Pin22W<OutSpec> {
-        Pin22W::new(self, 22)
+    pub fn pin22(&mut self) -> PIN22_W<22> {
+        PIN22_W::new(self)
     }
     #[doc = "Bit 23 - Pin 23"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin23(&mut self) -> Pin23W<OutSpec> {
-        Pin23W::new(self, 23)
+    pub fn pin23(&mut self) -> PIN23_W<23> {
+        PIN23_W::new(self)
     }
     #[doc = "Bit 24 - Pin 24"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin24(&mut self) -> Pin24W<OutSpec> {
-        Pin24W::new(self, 24)
+    pub fn pin24(&mut self) -> PIN24_W<24> {
+        PIN24_W::new(self)
     }
     #[doc = "Bit 25 - Pin 25"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin25(&mut self) -> Pin25W<OutSpec> {
-        Pin25W::new(self, 25)
+    pub fn pin25(&mut self) -> PIN25_W<25> {
+        PIN25_W::new(self)
     }
     #[doc = "Bit 26 - Pin 26"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin26(&mut self) -> Pin26W<OutSpec> {
-        Pin26W::new(self, 26)
+    pub fn pin26(&mut self) -> PIN26_W<26> {
+        PIN26_W::new(self)
     }
     #[doc = "Bit 27 - Pin 27"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin27(&mut self) -> Pin27W<OutSpec> {
-        Pin27W::new(self, 27)
+    pub fn pin27(&mut self) -> PIN27_W<27> {
+        PIN27_W::new(self)
     }
     #[doc = "Bit 28 - Pin 28"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin28(&mut self) -> Pin28W<OutSpec> {
-        Pin28W::new(self, 28)
+    pub fn pin28(&mut self) -> PIN28_W<28> {
+        PIN28_W::new(self)
     }
     #[doc = "Bit 29 - Pin 29"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin29(&mut self) -> Pin29W<OutSpec> {
-        Pin29W::new(self, 29)
+    pub fn pin29(&mut self) -> PIN29_W<29> {
+        PIN29_W::new(self)
     }
     #[doc = "Bit 30 - Pin 30"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin30(&mut self) -> Pin30W<OutSpec> {
-        Pin30W::new(self, 30)
+    pub fn pin30(&mut self) -> PIN30_W<30> {
+        PIN30_W::new(self)
     }
     #[doc = "Bit 31 - Pin 31"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin31(&mut self) -> Pin31W<OutSpec> {
-        Pin31W::new(self, 31)
+    pub fn pin31(&mut self) -> PIN31_W<31> {
+        PIN31_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Write GPIO port\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`out::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`out::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct OutSpec;
-impl crate::RegisterSpec for OutSpec {
+#[doc = "Write GPIO port\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out](index.html) module"]
+pub struct OUT_SPEC;
+impl crate::RegisterSpec for OUT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`out::R`](R) reader structure"]
-impl crate::Readable for OutSpec {}
-#[doc = "`write(|w| ..)` method takes [`out::W`](W) writer structure"]
-impl crate::Writable for OutSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [out::R](R) reader structure"]
+impl crate::Readable for OUT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [out::W](W) writer structure"]
+impl crate::Writable for OUT_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets OUT to value 0"]
-impl crate::Resettable for OutSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for OUT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

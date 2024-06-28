@@ -1,90 +1,128 @@
 #[doc = "Register `EVENTS_SEQSTARTED[%s]` reader"]
-pub type R = crate::R<EventsSeqstartedSpec>;
-#[doc = "Register `EVENTS_SEQSTARTED[%s]` writer"]
-pub type W = crate::W<EventsSeqstartedSpec>;
-#[doc = "First PWM period started on sequence n\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum EventsSeqstarted {
-    #[doc = "0: Event not generated"]
-    NotGenerated = 0,
-    #[doc = "1: Event generated"]
-    Generated = 1,
-}
-impl From<EventsSeqstarted> for bool {
+pub struct R(crate::R<EVENTS_SEQSTARTED_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EVENTS_SEQSTARTED_SPEC>;
     #[inline(always)]
-    fn from(variant: EventsSeqstarted) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<EVENTS_SEQSTARTED_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EVENTS_SEQSTARTED_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `EVENTS_SEQSTARTED[%s]` writer"]
+pub struct W(crate::W<EVENTS_SEQSTARTED_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<EVENTS_SEQSTARTED_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<EVENTS_SEQSTARTED_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<EVENTS_SEQSTARTED_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `EVENTS_SEQSTARTED` reader - First PWM period started on sequence n"]
-pub type EventsSeqstartedR = crate::BitReader<EventsSeqstarted>;
-impl EventsSeqstartedR {
+pub type EVENTS_SEQSTARTED_R = crate::BitReader<EVENTS_SEQSTARTED_A>;
+#[doc = "First PWM period started on sequence n\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EVENTS_SEQSTARTED_A {
+    #[doc = "0: Event not generated"]
+    NOT_GENERATED = 0,
+    #[doc = "1: Event generated"]
+    GENERATED = 1,
+}
+impl From<EVENTS_SEQSTARTED_A> for bool {
+    #[inline(always)]
+    fn from(variant: EVENTS_SEQSTARTED_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl EVENTS_SEQSTARTED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> EventsSeqstarted {
+    pub fn variant(&self) -> EVENTS_SEQSTARTED_A {
         match self.bits {
-            false => EventsSeqstarted::NotGenerated,
-            true => EventsSeqstarted::Generated,
+            false => EVENTS_SEQSTARTED_A::NOT_GENERATED,
+            true => EVENTS_SEQSTARTED_A::GENERATED,
         }
     }
-    #[doc = "Event not generated"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        *self == EventsSeqstarted::NotGenerated
+        *self == EVENTS_SEQSTARTED_A::NOT_GENERATED
     }
-    #[doc = "Event generated"]
+    #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        *self == EventsSeqstarted::Generated
+        *self == EVENTS_SEQSTARTED_A::GENERATED
     }
 }
 #[doc = "Field `EVENTS_SEQSTARTED` writer - First PWM period started on sequence n"]
-pub type EventsSeqstartedW<'a, REG> = crate::BitWriter<'a, REG, EventsSeqstarted>;
-impl<'a, REG> EventsSeqstartedW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type EVENTS_SEQSTARTED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_SEQSTARTED_SPEC, EVENTS_SEQSTARTED_A, O>;
+impl<'a, const O: u8> EVENTS_SEQSTARTED_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsSeqstarted::NotGenerated)
+    pub fn not_generated(self) -> &'a mut W {
+        self.variant(EVENTS_SEQSTARTED_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsSeqstarted::Generated)
+    pub fn generated(self) -> &'a mut W {
+        self.variant(EVENTS_SEQSTARTED_A::GENERATED)
     }
 }
 impl R {
     #[doc = "Bit 0 - First PWM period started on sequence n"]
     #[inline(always)]
-    pub fn events_seqstarted(&self) -> EventsSeqstartedR {
-        EventsSeqstartedR::new((self.bits & 1) != 0)
+    pub fn events_seqstarted(&self) -> EVENTS_SEQSTARTED_R {
+        EVENTS_SEQSTARTED_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - First PWM period started on sequence n"]
     #[inline(always)]
-    #[must_use]
-    pub fn events_seqstarted(&mut self) -> EventsSeqstartedW<EventsSeqstartedSpec> {
-        EventsSeqstartedW::new(self, 0)
+    pub fn events_seqstarted(&mut self) -> EVENTS_SEQSTARTED_W<0> {
+        EVENTS_SEQSTARTED_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Description collection: First PWM period started on sequence n\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_seqstarted::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_seqstarted::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct EventsSeqstartedSpec;
-impl crate::RegisterSpec for EventsSeqstartedSpec {
+#[doc = "Description collection: First PWM period started on sequence n\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_seqstarted](index.html) module"]
+pub struct EVENTS_SEQSTARTED_SPEC;
+impl crate::RegisterSpec for EVENTS_SEQSTARTED_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`events_seqstarted::R`](R) reader structure"]
-impl crate::Readable for EventsSeqstartedSpec {}
-#[doc = "`write(|w| ..)` method takes [`events_seqstarted::W`](W) writer structure"]
-impl crate::Writable for EventsSeqstartedSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [events_seqstarted::R](R) reader structure"]
+impl crate::Readable for EVENTS_SEQSTARTED_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [events_seqstarted::W](W) writer structure"]
+impl crate::Writable for EVENTS_SEQSTARTED_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets EVENTS_SEQSTARTED[%s]
 to value 0"]
-impl crate::Resettable for EventsSeqstartedSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for EVENTS_SEQSTARTED_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

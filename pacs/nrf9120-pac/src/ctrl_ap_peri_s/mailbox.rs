@@ -1,56 +1,29 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Unspecified"]
-#[doc(alias = "MAILBOX")]
-pub struct Mailbox {
-    rxdata: Rxdata,
-    rxstatus: Rxstatus,
-    _reserved2: [u8; 0x78],
-    txdata: Txdata,
-    txstatus: Txstatus,
-}
-impl Mailbox {
+pub struct MAILBOX {
     #[doc = "0x00 - Data sent from the debugger to the CPU."]
-    #[inline(always)]
-    pub const fn rxdata(&self) -> &Rxdata {
-        &self.rxdata
-    }
+    pub rxdata: RXDATA,
     #[doc = "0x04 - This register shows a status that indicates if data sent from the debugger to the CPU has been read."]
-    #[inline(always)]
-    pub const fn rxstatus(&self) -> &Rxstatus {
-        &self.rxstatus
-    }
+    pub rxstatus: RXSTATUS,
+    _reserved2: [u8; 0x78],
     #[doc = "0x80 - Data sent from the CPU to the debugger."]
-    #[inline(always)]
-    pub const fn txdata(&self) -> &Txdata {
-        &self.txdata
-    }
+    pub txdata: TXDATA,
     #[doc = "0x84 - This register shows a status that indicates if the data sent from the CPU to the debugger has been read."]
-    #[inline(always)]
-    pub const fn txstatus(&self) -> &Txstatus {
-        &self.txstatus
-    }
+    pub txstatus: TXSTATUS,
 }
-#[doc = "RXDATA (r) register accessor: Data sent from the debugger to the CPU.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdata::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxdata`]
-module"]
-#[doc(alias = "RXDATA")]
-pub type Rxdata = crate::Reg<rxdata::RxdataSpec>;
+#[doc = "RXDATA (r) register accessor: an alias for `Reg<RXDATA_SPEC>`"]
+pub type RXDATA = crate::Reg<rxdata::RXDATA_SPEC>;
 #[doc = "Data sent from the debugger to the CPU."]
 pub mod rxdata;
-#[doc = "RXSTATUS (r) register accessor: This register shows a status that indicates if data sent from the debugger to the CPU has been read.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxstatus::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxstatus`]
-module"]
-#[doc(alias = "RXSTATUS")]
-pub type Rxstatus = crate::Reg<rxstatus::RxstatusSpec>;
+#[doc = "RXSTATUS (r) register accessor: an alias for `Reg<RXSTATUS_SPEC>`"]
+pub type RXSTATUS = crate::Reg<rxstatus::RXSTATUS_SPEC>;
 #[doc = "This register shows a status that indicates if data sent from the debugger to the CPU has been read."]
 pub mod rxstatus;
-#[doc = "TXDATA (rw) register accessor: Data sent from the CPU to the debugger.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdata::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdata::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txdata`]
-module"]
-#[doc(alias = "TXDATA")]
-pub type Txdata = crate::Reg<txdata::TxdataSpec>;
+#[doc = "TXDATA (rw) register accessor: an alias for `Reg<TXDATA_SPEC>`"]
+pub type TXDATA = crate::Reg<txdata::TXDATA_SPEC>;
 #[doc = "Data sent from the CPU to the debugger."]
 pub mod txdata;
-#[doc = "TXSTATUS (r) register accessor: This register shows a status that indicates if the data sent from the CPU to the debugger has been read.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txstatus::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txstatus`]
-module"]
-#[doc(alias = "TXSTATUS")]
-pub type Txstatus = crate::Reg<txstatus::TxstatusSpec>;
+#[doc = "TXSTATUS (r) register accessor: an alias for `Reg<TXSTATUS_SPEC>`"]
+pub type TXSTATUS = crate::Reg<txstatus::TXSTATUS_SPEC>;
 #[doc = "This register shows a status that indicates if the data sent from the CPU to the debugger has been read."]
 pub mod txstatus;

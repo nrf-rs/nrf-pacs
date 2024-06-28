@@ -1,538 +1,547 @@
 #[doc = "Register `SEND_CNF[%s]` reader"]
-pub type R = crate::R<SendCnfSpec>;
-#[doc = "Register `SEND_CNF[%s]` writer"]
-pub type W = crate::W<SendCnfSpec>;
-#[doc = "Enable broadcasting on IPC channel 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Chen0 {
-    #[doc = "0: Disable broadcast"]
-    Disable = 0,
-    #[doc = "1: Enable broadcast"]
-    Enable = 1,
-}
-impl From<Chen0> for bool {
+pub struct R(crate::R<SEND_CNF_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SEND_CNF_SPEC>;
     #[inline(always)]
-    fn from(variant: Chen0) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SEND_CNF_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SEND_CNF_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SEND_CNF[%s]` writer"]
+pub struct W(crate::W<SEND_CNF_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SEND_CNF_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SEND_CNF_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SEND_CNF_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `CHEN0` reader - Enable broadcasting on IPC channel 0"]
-pub type Chen0R = crate::BitReader<Chen0>;
-impl Chen0R {
+pub type CHEN0_R = crate::BitReader<CHEN0_A>;
+#[doc = "Enable broadcasting on IPC channel 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CHEN0_A {
+    #[doc = "0: Disable broadcast"]
+    DISABLE = 0,
+    #[doc = "1: Enable broadcast"]
+    ENABLE = 1,
+}
+impl From<CHEN0_A> for bool {
+    #[inline(always)]
+    fn from(variant: CHEN0_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CHEN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Chen0 {
+    pub fn variant(&self) -> CHEN0_A {
         match self.bits {
-            false => Chen0::Disable,
-            true => Chen0::Enable,
+            false => CHEN0_A::DISABLE,
+            true => CHEN0_A::ENABLE,
         }
     }
-    #[doc = "Disable broadcast"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == Chen0::Disable
+        *self == CHEN0_A::DISABLE
     }
-    #[doc = "Enable broadcast"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == Chen0::Enable
+        *self == CHEN0_A::ENABLE
     }
 }
 #[doc = "Field `CHEN0` writer - Enable broadcasting on IPC channel 0"]
-pub type Chen0W<'a, REG> = crate::BitWriter<'a, REG, Chen0>;
-impl<'a, REG> Chen0W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CHEN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEND_CNF_SPEC, CHEN0_A, O>;
+impl<'a, const O: u8> CHEN0_W<'a, O> {
     #[doc = "Disable broadcast"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen0::Disable)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CHEN0_A::DISABLE)
     }
     #[doc = "Enable broadcast"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen0::Enable)
-    }
-}
-#[doc = "Enable broadcasting on IPC channel 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Chen1 {
-    #[doc = "0: Disable broadcast"]
-    Disable = 0,
-    #[doc = "1: Enable broadcast"]
-    Enable = 1,
-}
-impl From<Chen1> for bool {
-    #[inline(always)]
-    fn from(variant: Chen1) -> Self {
-        variant as u8 != 0
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CHEN0_A::ENABLE)
     }
 }
 #[doc = "Field `CHEN1` reader - Enable broadcasting on IPC channel 1"]
-pub type Chen1R = crate::BitReader<Chen1>;
-impl Chen1R {
+pub type CHEN1_R = crate::BitReader<CHEN1_A>;
+#[doc = "Enable broadcasting on IPC channel 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CHEN1_A {
+    #[doc = "0: Disable broadcast"]
+    DISABLE = 0,
+    #[doc = "1: Enable broadcast"]
+    ENABLE = 1,
+}
+impl From<CHEN1_A> for bool {
+    #[inline(always)]
+    fn from(variant: CHEN1_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CHEN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Chen1 {
+    pub fn variant(&self) -> CHEN1_A {
         match self.bits {
-            false => Chen1::Disable,
-            true => Chen1::Enable,
+            false => CHEN1_A::DISABLE,
+            true => CHEN1_A::ENABLE,
         }
     }
-    #[doc = "Disable broadcast"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == Chen1::Disable
+        *self == CHEN1_A::DISABLE
     }
-    #[doc = "Enable broadcast"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == Chen1::Enable
+        *self == CHEN1_A::ENABLE
     }
 }
 #[doc = "Field `CHEN1` writer - Enable broadcasting on IPC channel 1"]
-pub type Chen1W<'a, REG> = crate::BitWriter<'a, REG, Chen1>;
-impl<'a, REG> Chen1W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CHEN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEND_CNF_SPEC, CHEN1_A, O>;
+impl<'a, const O: u8> CHEN1_W<'a, O> {
     #[doc = "Disable broadcast"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen1::Disable)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CHEN1_A::DISABLE)
     }
     #[doc = "Enable broadcast"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen1::Enable)
-    }
-}
-#[doc = "Enable broadcasting on IPC channel 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Chen2 {
-    #[doc = "0: Disable broadcast"]
-    Disable = 0,
-    #[doc = "1: Enable broadcast"]
-    Enable = 1,
-}
-impl From<Chen2> for bool {
-    #[inline(always)]
-    fn from(variant: Chen2) -> Self {
-        variant as u8 != 0
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CHEN1_A::ENABLE)
     }
 }
 #[doc = "Field `CHEN2` reader - Enable broadcasting on IPC channel 2"]
-pub type Chen2R = crate::BitReader<Chen2>;
-impl Chen2R {
+pub type CHEN2_R = crate::BitReader<CHEN2_A>;
+#[doc = "Enable broadcasting on IPC channel 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CHEN2_A {
+    #[doc = "0: Disable broadcast"]
+    DISABLE = 0,
+    #[doc = "1: Enable broadcast"]
+    ENABLE = 1,
+}
+impl From<CHEN2_A> for bool {
+    #[inline(always)]
+    fn from(variant: CHEN2_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CHEN2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Chen2 {
+    pub fn variant(&self) -> CHEN2_A {
         match self.bits {
-            false => Chen2::Disable,
-            true => Chen2::Enable,
+            false => CHEN2_A::DISABLE,
+            true => CHEN2_A::ENABLE,
         }
     }
-    #[doc = "Disable broadcast"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == Chen2::Disable
+        *self == CHEN2_A::DISABLE
     }
-    #[doc = "Enable broadcast"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == Chen2::Enable
+        *self == CHEN2_A::ENABLE
     }
 }
 #[doc = "Field `CHEN2` writer - Enable broadcasting on IPC channel 2"]
-pub type Chen2W<'a, REG> = crate::BitWriter<'a, REG, Chen2>;
-impl<'a, REG> Chen2W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CHEN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEND_CNF_SPEC, CHEN2_A, O>;
+impl<'a, const O: u8> CHEN2_W<'a, O> {
     #[doc = "Disable broadcast"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen2::Disable)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CHEN2_A::DISABLE)
     }
     #[doc = "Enable broadcast"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen2::Enable)
-    }
-}
-#[doc = "Enable broadcasting on IPC channel 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Chen3 {
-    #[doc = "0: Disable broadcast"]
-    Disable = 0,
-    #[doc = "1: Enable broadcast"]
-    Enable = 1,
-}
-impl From<Chen3> for bool {
-    #[inline(always)]
-    fn from(variant: Chen3) -> Self {
-        variant as u8 != 0
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CHEN2_A::ENABLE)
     }
 }
 #[doc = "Field `CHEN3` reader - Enable broadcasting on IPC channel 3"]
-pub type Chen3R = crate::BitReader<Chen3>;
-impl Chen3R {
+pub type CHEN3_R = crate::BitReader<CHEN3_A>;
+#[doc = "Enable broadcasting on IPC channel 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CHEN3_A {
+    #[doc = "0: Disable broadcast"]
+    DISABLE = 0,
+    #[doc = "1: Enable broadcast"]
+    ENABLE = 1,
+}
+impl From<CHEN3_A> for bool {
+    #[inline(always)]
+    fn from(variant: CHEN3_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CHEN3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Chen3 {
+    pub fn variant(&self) -> CHEN3_A {
         match self.bits {
-            false => Chen3::Disable,
-            true => Chen3::Enable,
+            false => CHEN3_A::DISABLE,
+            true => CHEN3_A::ENABLE,
         }
     }
-    #[doc = "Disable broadcast"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == Chen3::Disable
+        *self == CHEN3_A::DISABLE
     }
-    #[doc = "Enable broadcast"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == Chen3::Enable
+        *self == CHEN3_A::ENABLE
     }
 }
 #[doc = "Field `CHEN3` writer - Enable broadcasting on IPC channel 3"]
-pub type Chen3W<'a, REG> = crate::BitWriter<'a, REG, Chen3>;
-impl<'a, REG> Chen3W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CHEN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEND_CNF_SPEC, CHEN3_A, O>;
+impl<'a, const O: u8> CHEN3_W<'a, O> {
     #[doc = "Disable broadcast"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen3::Disable)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CHEN3_A::DISABLE)
     }
     #[doc = "Enable broadcast"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen3::Enable)
-    }
-}
-#[doc = "Enable broadcasting on IPC channel 4\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Chen4 {
-    #[doc = "0: Disable broadcast"]
-    Disable = 0,
-    #[doc = "1: Enable broadcast"]
-    Enable = 1,
-}
-impl From<Chen4> for bool {
-    #[inline(always)]
-    fn from(variant: Chen4) -> Self {
-        variant as u8 != 0
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CHEN3_A::ENABLE)
     }
 }
 #[doc = "Field `CHEN4` reader - Enable broadcasting on IPC channel 4"]
-pub type Chen4R = crate::BitReader<Chen4>;
-impl Chen4R {
+pub type CHEN4_R = crate::BitReader<CHEN4_A>;
+#[doc = "Enable broadcasting on IPC channel 4\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CHEN4_A {
+    #[doc = "0: Disable broadcast"]
+    DISABLE = 0,
+    #[doc = "1: Enable broadcast"]
+    ENABLE = 1,
+}
+impl From<CHEN4_A> for bool {
+    #[inline(always)]
+    fn from(variant: CHEN4_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CHEN4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Chen4 {
+    pub fn variant(&self) -> CHEN4_A {
         match self.bits {
-            false => Chen4::Disable,
-            true => Chen4::Enable,
+            false => CHEN4_A::DISABLE,
+            true => CHEN4_A::ENABLE,
         }
     }
-    #[doc = "Disable broadcast"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == Chen4::Disable
+        *self == CHEN4_A::DISABLE
     }
-    #[doc = "Enable broadcast"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == Chen4::Enable
+        *self == CHEN4_A::ENABLE
     }
 }
 #[doc = "Field `CHEN4` writer - Enable broadcasting on IPC channel 4"]
-pub type Chen4W<'a, REG> = crate::BitWriter<'a, REG, Chen4>;
-impl<'a, REG> Chen4W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CHEN4_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEND_CNF_SPEC, CHEN4_A, O>;
+impl<'a, const O: u8> CHEN4_W<'a, O> {
     #[doc = "Disable broadcast"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen4::Disable)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CHEN4_A::DISABLE)
     }
     #[doc = "Enable broadcast"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen4::Enable)
-    }
-}
-#[doc = "Enable broadcasting on IPC channel 5\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Chen5 {
-    #[doc = "0: Disable broadcast"]
-    Disable = 0,
-    #[doc = "1: Enable broadcast"]
-    Enable = 1,
-}
-impl From<Chen5> for bool {
-    #[inline(always)]
-    fn from(variant: Chen5) -> Self {
-        variant as u8 != 0
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CHEN4_A::ENABLE)
     }
 }
 #[doc = "Field `CHEN5` reader - Enable broadcasting on IPC channel 5"]
-pub type Chen5R = crate::BitReader<Chen5>;
-impl Chen5R {
+pub type CHEN5_R = crate::BitReader<CHEN5_A>;
+#[doc = "Enable broadcasting on IPC channel 5\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CHEN5_A {
+    #[doc = "0: Disable broadcast"]
+    DISABLE = 0,
+    #[doc = "1: Enable broadcast"]
+    ENABLE = 1,
+}
+impl From<CHEN5_A> for bool {
+    #[inline(always)]
+    fn from(variant: CHEN5_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CHEN5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Chen5 {
+    pub fn variant(&self) -> CHEN5_A {
         match self.bits {
-            false => Chen5::Disable,
-            true => Chen5::Enable,
+            false => CHEN5_A::DISABLE,
+            true => CHEN5_A::ENABLE,
         }
     }
-    #[doc = "Disable broadcast"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == Chen5::Disable
+        *self == CHEN5_A::DISABLE
     }
-    #[doc = "Enable broadcast"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == Chen5::Enable
+        *self == CHEN5_A::ENABLE
     }
 }
 #[doc = "Field `CHEN5` writer - Enable broadcasting on IPC channel 5"]
-pub type Chen5W<'a, REG> = crate::BitWriter<'a, REG, Chen5>;
-impl<'a, REG> Chen5W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CHEN5_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEND_CNF_SPEC, CHEN5_A, O>;
+impl<'a, const O: u8> CHEN5_W<'a, O> {
     #[doc = "Disable broadcast"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen5::Disable)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CHEN5_A::DISABLE)
     }
     #[doc = "Enable broadcast"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen5::Enable)
-    }
-}
-#[doc = "Enable broadcasting on IPC channel 6\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Chen6 {
-    #[doc = "0: Disable broadcast"]
-    Disable = 0,
-    #[doc = "1: Enable broadcast"]
-    Enable = 1,
-}
-impl From<Chen6> for bool {
-    #[inline(always)]
-    fn from(variant: Chen6) -> Self {
-        variant as u8 != 0
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CHEN5_A::ENABLE)
     }
 }
 #[doc = "Field `CHEN6` reader - Enable broadcasting on IPC channel 6"]
-pub type Chen6R = crate::BitReader<Chen6>;
-impl Chen6R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> Chen6 {
-        match self.bits {
-            false => Chen6::Disable,
-            true => Chen6::Enable,
-        }
-    }
-    #[doc = "Disable broadcast"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == Chen6::Disable
-    }
-    #[doc = "Enable broadcast"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == Chen6::Enable
-    }
-}
-#[doc = "Field `CHEN6` writer - Enable broadcasting on IPC channel 6"]
-pub type Chen6W<'a, REG> = crate::BitWriter<'a, REG, Chen6>;
-impl<'a, REG> Chen6W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Disable broadcast"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen6::Disable)
-    }
-    #[doc = "Enable broadcast"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen6::Enable)
-    }
-}
-#[doc = "Enable broadcasting on IPC channel 7\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Chen7 {
+pub type CHEN6_R = crate::BitReader<CHEN6_A>;
+#[doc = "Enable broadcasting on IPC channel 6\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CHEN6_A {
     #[doc = "0: Disable broadcast"]
-    Disable = 0,
+    DISABLE = 0,
     #[doc = "1: Enable broadcast"]
-    Enable = 1,
+    ENABLE = 1,
 }
-impl From<Chen7> for bool {
+impl From<CHEN6_A> for bool {
     #[inline(always)]
-    fn from(variant: Chen7) -> Self {
+    fn from(variant: CHEN6_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHEN7` reader - Enable broadcasting on IPC channel 7"]
-pub type Chen7R = crate::BitReader<Chen7>;
-impl Chen7R {
+impl CHEN6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Chen7 {
+    pub fn variant(&self) -> CHEN6_A {
         match self.bits {
-            false => Chen7::Disable,
-            true => Chen7::Enable,
+            false => CHEN6_A::DISABLE,
+            true => CHEN6_A::ENABLE,
         }
     }
-    #[doc = "Disable broadcast"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == Chen7::Disable
+        *self == CHEN6_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == CHEN6_A::ENABLE
+    }
+}
+#[doc = "Field `CHEN6` writer - Enable broadcasting on IPC channel 6"]
+pub type CHEN6_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEND_CNF_SPEC, CHEN6_A, O>;
+impl<'a, const O: u8> CHEN6_W<'a, O> {
+    #[doc = "Disable broadcast"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CHEN6_A::DISABLE)
     }
     #[doc = "Enable broadcast"]
     #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CHEN6_A::ENABLE)
+    }
+}
+#[doc = "Field `CHEN7` reader - Enable broadcasting on IPC channel 7"]
+pub type CHEN7_R = crate::BitReader<CHEN7_A>;
+#[doc = "Enable broadcasting on IPC channel 7\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CHEN7_A {
+    #[doc = "0: Disable broadcast"]
+    DISABLE = 0,
+    #[doc = "1: Enable broadcast"]
+    ENABLE = 1,
+}
+impl From<CHEN7_A> for bool {
+    #[inline(always)]
+    fn from(variant: CHEN7_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CHEN7_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CHEN7_A {
+        match self.bits {
+            false => CHEN7_A::DISABLE,
+            true => CHEN7_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == CHEN7_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == Chen7::Enable
+        *self == CHEN7_A::ENABLE
     }
 }
 #[doc = "Field `CHEN7` writer - Enable broadcasting on IPC channel 7"]
-pub type Chen7W<'a, REG> = crate::BitWriter<'a, REG, Chen7>;
-impl<'a, REG> Chen7W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CHEN7_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEND_CNF_SPEC, CHEN7_A, O>;
+impl<'a, const O: u8> CHEN7_W<'a, O> {
     #[doc = "Disable broadcast"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen7::Disable)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CHEN7_A::DISABLE)
     }
     #[doc = "Enable broadcast"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut crate::W<REG> {
-        self.variant(Chen7::Enable)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CHEN7_A::ENABLE)
     }
 }
 impl R {
     #[doc = "Bit 0 - Enable broadcasting on IPC channel 0"]
     #[inline(always)]
-    pub fn chen0(&self) -> Chen0R {
-        Chen0R::new((self.bits & 1) != 0)
+    pub fn chen0(&self) -> CHEN0_R {
+        CHEN0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable broadcasting on IPC channel 1"]
     #[inline(always)]
-    pub fn chen1(&self) -> Chen1R {
-        Chen1R::new(((self.bits >> 1) & 1) != 0)
+    pub fn chen1(&self) -> CHEN1_R {
+        CHEN1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable broadcasting on IPC channel 2"]
     #[inline(always)]
-    pub fn chen2(&self) -> Chen2R {
-        Chen2R::new(((self.bits >> 2) & 1) != 0)
+    pub fn chen2(&self) -> CHEN2_R {
+        CHEN2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable broadcasting on IPC channel 3"]
     #[inline(always)]
-    pub fn chen3(&self) -> Chen3R {
-        Chen3R::new(((self.bits >> 3) & 1) != 0)
+    pub fn chen3(&self) -> CHEN3_R {
+        CHEN3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable broadcasting on IPC channel 4"]
     #[inline(always)]
-    pub fn chen4(&self) -> Chen4R {
-        Chen4R::new(((self.bits >> 4) & 1) != 0)
+    pub fn chen4(&self) -> CHEN4_R {
+        CHEN4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable broadcasting on IPC channel 5"]
     #[inline(always)]
-    pub fn chen5(&self) -> Chen5R {
-        Chen5R::new(((self.bits >> 5) & 1) != 0)
+    pub fn chen5(&self) -> CHEN5_R {
+        CHEN5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable broadcasting on IPC channel 6"]
     #[inline(always)]
-    pub fn chen6(&self) -> Chen6R {
-        Chen6R::new(((self.bits >> 6) & 1) != 0)
+    pub fn chen6(&self) -> CHEN6_R {
+        CHEN6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable broadcasting on IPC channel 7"]
     #[inline(always)]
-    pub fn chen7(&self) -> Chen7R {
-        Chen7R::new(((self.bits >> 7) & 1) != 0)
+    pub fn chen7(&self) -> CHEN7_R {
+        CHEN7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable broadcasting on IPC channel 0"]
     #[inline(always)]
-    #[must_use]
-    pub fn chen0(&mut self) -> Chen0W<SendCnfSpec> {
-        Chen0W::new(self, 0)
+    pub fn chen0(&mut self) -> CHEN0_W<0> {
+        CHEN0_W::new(self)
     }
     #[doc = "Bit 1 - Enable broadcasting on IPC channel 1"]
     #[inline(always)]
-    #[must_use]
-    pub fn chen1(&mut self) -> Chen1W<SendCnfSpec> {
-        Chen1W::new(self, 1)
+    pub fn chen1(&mut self) -> CHEN1_W<1> {
+        CHEN1_W::new(self)
     }
     #[doc = "Bit 2 - Enable broadcasting on IPC channel 2"]
     #[inline(always)]
-    #[must_use]
-    pub fn chen2(&mut self) -> Chen2W<SendCnfSpec> {
-        Chen2W::new(self, 2)
+    pub fn chen2(&mut self) -> CHEN2_W<2> {
+        CHEN2_W::new(self)
     }
     #[doc = "Bit 3 - Enable broadcasting on IPC channel 3"]
     #[inline(always)]
-    #[must_use]
-    pub fn chen3(&mut self) -> Chen3W<SendCnfSpec> {
-        Chen3W::new(self, 3)
+    pub fn chen3(&mut self) -> CHEN3_W<3> {
+        CHEN3_W::new(self)
     }
     #[doc = "Bit 4 - Enable broadcasting on IPC channel 4"]
     #[inline(always)]
-    #[must_use]
-    pub fn chen4(&mut self) -> Chen4W<SendCnfSpec> {
-        Chen4W::new(self, 4)
+    pub fn chen4(&mut self) -> CHEN4_W<4> {
+        CHEN4_W::new(self)
     }
     #[doc = "Bit 5 - Enable broadcasting on IPC channel 5"]
     #[inline(always)]
-    #[must_use]
-    pub fn chen5(&mut self) -> Chen5W<SendCnfSpec> {
-        Chen5W::new(self, 5)
+    pub fn chen5(&mut self) -> CHEN5_W<5> {
+        CHEN5_W::new(self)
     }
     #[doc = "Bit 6 - Enable broadcasting on IPC channel 6"]
     #[inline(always)]
-    #[must_use]
-    pub fn chen6(&mut self) -> Chen6W<SendCnfSpec> {
-        Chen6W::new(self, 6)
+    pub fn chen6(&mut self) -> CHEN6_W<6> {
+        CHEN6_W::new(self)
     }
     #[doc = "Bit 7 - Enable broadcasting on IPC channel 7"]
     #[inline(always)]
-    #[must_use]
-    pub fn chen7(&mut self) -> Chen7W<SendCnfSpec> {
-        Chen7W::new(self, 7)
+    pub fn chen7(&mut self) -> CHEN7_W<7> {
+        CHEN7_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Description collection: Send event configuration for TASKS_SEND\\[n\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`send_cnf::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`send_cnf::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct SendCnfSpec;
-impl crate::RegisterSpec for SendCnfSpec {
+#[doc = "Description collection: Send event configuration for TASKS_SEND\\[n\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [send_cnf](index.html) module"]
+pub struct SEND_CNF_SPEC;
+impl crate::RegisterSpec for SEND_CNF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`send_cnf::R`](R) reader structure"]
-impl crate::Readable for SendCnfSpec {}
-#[doc = "`write(|w| ..)` method takes [`send_cnf::W`](W) writer structure"]
-impl crate::Writable for SendCnfSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [send_cnf::R](R) reader structure"]
+impl crate::Readable for SEND_CNF_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [send_cnf::W](W) writer structure"]
+impl crate::Writable for SEND_CNF_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets SEND_CNF[%s]
 to value 0"]
-impl crate::Resettable for SendCnfSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for SEND_CNF_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

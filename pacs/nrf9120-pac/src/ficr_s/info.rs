@@ -1,122 +1,59 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Device info"]
-#[doc(alias = "INFO")]
-pub struct Info {
+pub struct INFO {
     _reserved0: [u8; 0x04],
-    deviceid: [Deviceid; 2],
-    part: Part,
-    variant: Variant,
-    package: Package,
-    ram: Ram,
-    flash: Flash,
-    codepagesize: Codepagesize,
-    codesize: Codesize,
-    devicetype: Devicetype,
-}
-impl Info {
     #[doc = "0x04..0x0c - Description collection: Device identifier"]
-    #[inline(always)]
-    pub const fn deviceid(&self, n: usize) -> &Deviceid {
-        &self.deviceid[n]
-    }
-    #[doc = "Iterator for array of:"]
-    #[doc = "0x04..0x0c - Description collection: Device identifier"]
-    #[inline(always)]
-    pub fn deviceid_iter(&self) -> impl Iterator<Item = &Deviceid> {
-        self.deviceid.iter()
-    }
+    pub deviceid: [DEVICEID; 2],
     #[doc = "0x0c - Part code"]
-    #[inline(always)]
-    pub const fn part(&self) -> &Part {
-        &self.part
-    }
+    pub part: PART,
     #[doc = "0x10 - Part Variant, Hardware version and Production configuration"]
-    #[inline(always)]
-    pub const fn variant(&self) -> &Variant {
-        &self.variant
-    }
+    pub variant: VARIANT,
     #[doc = "0x14 - Package option"]
-    #[inline(always)]
-    pub const fn package(&self) -> &Package {
-        &self.package
-    }
+    pub package: PACKAGE,
     #[doc = "0x18 - RAM variant"]
-    #[inline(always)]
-    pub const fn ram(&self) -> &Ram {
-        &self.ram
-    }
+    pub ram: RAM,
     #[doc = "0x1c - Flash variant"]
-    #[inline(always)]
-    pub const fn flash(&self) -> &Flash {
-        &self.flash
-    }
+    pub flash: FLASH,
     #[doc = "0x20 - Code memory page size"]
-    #[inline(always)]
-    pub const fn codepagesize(&self) -> &Codepagesize {
-        &self.codepagesize
-    }
+    pub codepagesize: CODEPAGESIZE,
     #[doc = "0x24 - Code memory size"]
-    #[inline(always)]
-    pub const fn codesize(&self) -> &Codesize {
-        &self.codesize
-    }
+    pub codesize: CODESIZE,
     #[doc = "0x28 - Device type"]
-    #[inline(always)]
-    pub const fn devicetype(&self) -> &Devicetype {
-        &self.devicetype
-    }
+    pub devicetype: DEVICETYPE,
 }
-#[doc = "DEVICEID (r) register accessor: Description collection: Device identifier\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`deviceid::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@deviceid`]
-module"]
-#[doc(alias = "DEVICEID")]
-pub type Deviceid = crate::Reg<deviceid::DeviceidSpec>;
+#[doc = "DEVICEID (r) register accessor: an alias for `Reg<DEVICEID_SPEC>`"]
+pub type DEVICEID = crate::Reg<deviceid::DEVICEID_SPEC>;
 #[doc = "Description collection: Device identifier"]
 pub mod deviceid;
-#[doc = "PART (r) register accessor: Part code\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`part::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@part`]
-module"]
-#[doc(alias = "PART")]
-pub type Part = crate::Reg<part::PartSpec>;
+#[doc = "PART (r) register accessor: an alias for `Reg<PART_SPEC>`"]
+pub type PART = crate::Reg<part::PART_SPEC>;
 #[doc = "Part code"]
 pub mod part;
-#[doc = "VARIANT (r) register accessor: Part Variant, Hardware version and Production configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`variant::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@variant`]
-module"]
-#[doc(alias = "VARIANT")]
-pub type Variant = crate::Reg<variant::VariantSpec>;
+#[doc = "VARIANT (r) register accessor: an alias for `Reg<VARIANT_SPEC>`"]
+pub type VARIANT = crate::Reg<variant::VARIANT_SPEC>;
 #[doc = "Part Variant, Hardware version and Production configuration"]
 pub mod variant;
-#[doc = "PACKAGE (r) register accessor: Package option\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`package::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@package`]
-module"]
-#[doc(alias = "PACKAGE")]
-pub type Package = crate::Reg<package::PackageSpec>;
+#[doc = "PACKAGE (r) register accessor: an alias for `Reg<PACKAGE_SPEC>`"]
+pub type PACKAGE = crate::Reg<package::PACKAGE_SPEC>;
 #[doc = "Package option"]
 pub mod package;
-#[doc = "RAM (r) register accessor: RAM variant\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram`]
-module"]
-#[doc(alias = "RAM")]
-pub type Ram = crate::Reg<ram::RamSpec>;
+#[doc = "RAM (r) register accessor: an alias for `Reg<RAM_SPEC>`"]
+pub type RAM = crate::Reg<ram::RAM_SPEC>;
 #[doc = "RAM variant"]
 pub mod ram;
-#[doc = "FLASH (r) register accessor: Flash variant\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`flash::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@flash`]
-module"]
-#[doc(alias = "FLASH")]
-pub type Flash = crate::Reg<flash::FlashSpec>;
+#[doc = "FLASH (r) register accessor: an alias for `Reg<FLASH_SPEC>`"]
+pub type FLASH = crate::Reg<flash::FLASH_SPEC>;
 #[doc = "Flash variant"]
 pub mod flash;
-#[doc = "CODEPAGESIZE (r) register accessor: Code memory page size\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`codepagesize::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@codepagesize`]
-module"]
-#[doc(alias = "CODEPAGESIZE")]
-pub type Codepagesize = crate::Reg<codepagesize::CodepagesizeSpec>;
+#[doc = "CODEPAGESIZE (r) register accessor: an alias for `Reg<CODEPAGESIZE_SPEC>`"]
+pub type CODEPAGESIZE = crate::Reg<codepagesize::CODEPAGESIZE_SPEC>;
 #[doc = "Code memory page size"]
 pub mod codepagesize;
-#[doc = "CODESIZE (r) register accessor: Code memory size\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`codesize::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@codesize`]
-module"]
-#[doc(alias = "CODESIZE")]
-pub type Codesize = crate::Reg<codesize::CodesizeSpec>;
+#[doc = "CODESIZE (r) register accessor: an alias for `Reg<CODESIZE_SPEC>`"]
+pub type CODESIZE = crate::Reg<codesize::CODESIZE_SPEC>;
 #[doc = "Code memory size"]
 pub mod codesize;
-#[doc = "DEVICETYPE (r) register accessor: Device type\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`devicetype::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@devicetype`]
-module"]
-#[doc(alias = "DEVICETYPE")]
-pub type Devicetype = crate::Reg<devicetype::DevicetypeSpec>;
+#[doc = "DEVICETYPE (r) register accessor: an alias for `Reg<DEVICETYPE_SPEC>`"]
+pub type DEVICETYPE = crate::Reg<devicetype::DEVICETYPE_SPEC>;
 #[doc = "Device type"]
 pub mod devicetype;

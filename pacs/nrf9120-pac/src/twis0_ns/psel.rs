@@ -1,31 +1,16 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Unspecified"]
-#[doc(alias = "PSEL")]
-pub struct Psel {
-    scl: Scl,
-    sda: Sda,
-}
-impl Psel {
+pub struct PSEL {
     #[doc = "0x00 - Pin select for SCL signal"]
-    #[inline(always)]
-    pub const fn scl(&self) -> &Scl {
-        &self.scl
-    }
+    pub scl: SCL,
     #[doc = "0x04 - Pin select for SDA signal"]
-    #[inline(always)]
-    pub const fn sda(&self) -> &Sda {
-        &self.sda
-    }
+    pub sda: SDA,
 }
-#[doc = "SCL (rw) register accessor: Pin select for SCL signal\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scl`]
-module"]
-#[doc(alias = "SCL")]
-pub type Scl = crate::Reg<scl::SclSpec>;
+#[doc = "SCL (rw) register accessor: an alias for `Reg<SCL_SPEC>`"]
+pub type SCL = crate::Reg<scl::SCL_SPEC>;
 #[doc = "Pin select for SCL signal"]
 pub mod scl;
-#[doc = "SDA (rw) register accessor: Pin select for SDA signal\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sda::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sda::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sda`]
-module"]
-#[doc(alias = "SDA")]
-pub type Sda = crate::Reg<sda::SdaSpec>;
+#[doc = "SDA (rw) register accessor: an alias for `Reg<SDA_SPEC>`"]
+pub type SDA = crate::Reg<sda::SDA_SPEC>;
 #[doc = "Pin select for SDA signal"]
 pub mod sda;

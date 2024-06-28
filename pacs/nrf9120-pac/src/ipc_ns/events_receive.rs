@@ -1,90 +1,128 @@
 #[doc = "Register `EVENTS_RECEIVE[%s]` reader"]
-pub type R = crate::R<EventsReceiveSpec>;
-#[doc = "Register `EVENTS_RECEIVE[%s]` writer"]
-pub type W = crate::W<EventsReceiveSpec>;
-#[doc = "Event received on one or more of the enabled IPC channels in RECEIVE_CNF\\[n\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum EventsReceive {
-    #[doc = "0: Event not generated"]
-    NotGenerated = 0,
-    #[doc = "1: Event generated"]
-    Generated = 1,
-}
-impl From<EventsReceive> for bool {
+pub struct R(crate::R<EVENTS_RECEIVE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EVENTS_RECEIVE_SPEC>;
     #[inline(always)]
-    fn from(variant: EventsReceive) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<EVENTS_RECEIVE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EVENTS_RECEIVE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `EVENTS_RECEIVE[%s]` writer"]
+pub struct W(crate::W<EVENTS_RECEIVE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<EVENTS_RECEIVE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<EVENTS_RECEIVE_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<EVENTS_RECEIVE_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `EVENTS_RECEIVE` reader - Event received on one or more of the enabled IPC channels in RECEIVE_CNF\\[n\\]"]
-pub type EventsReceiveR = crate::BitReader<EventsReceive>;
-impl EventsReceiveR {
+pub type EVENTS_RECEIVE_R = crate::BitReader<EVENTS_RECEIVE_A>;
+#[doc = "Event received on one or more of the enabled IPC channels in RECEIVE_CNF\\[n\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EVENTS_RECEIVE_A {
+    #[doc = "0: Event not generated"]
+    NOT_GENERATED = 0,
+    #[doc = "1: Event generated"]
+    GENERATED = 1,
+}
+impl From<EVENTS_RECEIVE_A> for bool {
+    #[inline(always)]
+    fn from(variant: EVENTS_RECEIVE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl EVENTS_RECEIVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> EventsReceive {
+    pub fn variant(&self) -> EVENTS_RECEIVE_A {
         match self.bits {
-            false => EventsReceive::NotGenerated,
-            true => EventsReceive::Generated,
+            false => EVENTS_RECEIVE_A::NOT_GENERATED,
+            true => EVENTS_RECEIVE_A::GENERATED,
         }
     }
-    #[doc = "Event not generated"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        *self == EventsReceive::NotGenerated
+        *self == EVENTS_RECEIVE_A::NOT_GENERATED
     }
-    #[doc = "Event generated"]
+    #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        *self == EventsReceive::Generated
+        *self == EVENTS_RECEIVE_A::GENERATED
     }
 }
 #[doc = "Field `EVENTS_RECEIVE` writer - Event received on one or more of the enabled IPC channels in RECEIVE_CNF\\[n\\]"]
-pub type EventsReceiveW<'a, REG> = crate::BitWriter<'a, REG, EventsReceive>;
-impl<'a, REG> EventsReceiveW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type EVENTS_RECEIVE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_RECEIVE_SPEC, EVENTS_RECEIVE_A, O>;
+impl<'a, const O: u8> EVENTS_RECEIVE_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsReceive::NotGenerated)
+    pub fn not_generated(self) -> &'a mut W {
+        self.variant(EVENTS_RECEIVE_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsReceive::Generated)
+    pub fn generated(self) -> &'a mut W {
+        self.variant(EVENTS_RECEIVE_A::GENERATED)
     }
 }
 impl R {
     #[doc = "Bit 0 - Event received on one or more of the enabled IPC channels in RECEIVE_CNF\\[n\\]"]
     #[inline(always)]
-    pub fn events_receive(&self) -> EventsReceiveR {
-        EventsReceiveR::new((self.bits & 1) != 0)
+    pub fn events_receive(&self) -> EVENTS_RECEIVE_R {
+        EVENTS_RECEIVE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Event received on one or more of the enabled IPC channels in RECEIVE_CNF\\[n\\]"]
     #[inline(always)]
-    #[must_use]
-    pub fn events_receive(&mut self) -> EventsReceiveW<EventsReceiveSpec> {
-        EventsReceiveW::new(self, 0)
+    pub fn events_receive(&mut self) -> EVENTS_RECEIVE_W<0> {
+        EVENTS_RECEIVE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Description collection: Event received on one or more of the enabled IPC channels in RECEIVE_CNF\\[n\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_receive::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_receive::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct EventsReceiveSpec;
-impl crate::RegisterSpec for EventsReceiveSpec {
+#[doc = "Description collection: Event received on one or more of the enabled IPC channels in RECEIVE_CNF\\[n\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_receive](index.html) module"]
+pub struct EVENTS_RECEIVE_SPEC;
+impl crate::RegisterSpec for EVENTS_RECEIVE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`events_receive::R`](R) reader structure"]
-impl crate::Readable for EventsReceiveSpec {}
-#[doc = "`write(|w| ..)` method takes [`events_receive::W`](W) writer structure"]
-impl crate::Writable for EventsReceiveSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [events_receive::R](R) reader structure"]
+impl crate::Readable for EVENTS_RECEIVE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [events_receive::W](W) writer structure"]
+impl crate::Writable for EVENTS_RECEIVE_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets EVENTS_RECEIVE[%s]
 to value 0"]
-impl crate::Resettable for EventsReceiveSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for EVENTS_RECEIVE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

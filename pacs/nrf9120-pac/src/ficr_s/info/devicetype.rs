@@ -1,62 +1,76 @@
 #[doc = "Register `DEVICETYPE` reader"]
-pub type R = crate::R<DevicetypeSpec>;
-#[doc = "Device type\n\nValue on reset: 4294967295"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum Devicetype {
-    #[doc = "0: Device is an physical DIE"]
-    Die = 0,
-    #[doc = "4294967295: Device is an FPGA"]
-    Fpga = 4294967295,
-}
-impl From<Devicetype> for u32 {
+pub struct R(crate::R<DEVICETYPE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DEVICETYPE_SPEC>;
     #[inline(always)]
-    fn from(variant: Devicetype) -> Self {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DEVICETYPE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DEVICETYPE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `DEVICETYPE` reader - Device type"]
+pub type DEVICETYPE_R = crate::FieldReader<u32, DEVICETYPE_A>;
+#[doc = "Device type\n\nValue on reset: 4294967295"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
+pub enum DEVICETYPE_A {
+    #[doc = "0: Device is an physical DIE"]
+    DIE = 0,
+    #[doc = "4294967295: Device is an FPGA"]
+    FPGA = 4294967295,
+}
+impl From<DEVICETYPE_A> for u32 {
+    #[inline(always)]
+    fn from(variant: DEVICETYPE_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Devicetype {
-    type Ux = u32;
-}
-impl crate::IsEnum for Devicetype {}
-#[doc = "Field `DEVICETYPE` reader - Device type"]
-pub type DevicetypeR = crate::FieldReader<Devicetype>;
-impl DevicetypeR {
+impl DEVICETYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Devicetype> {
+    pub fn variant(&self) -> Option<DEVICETYPE_A> {
         match self.bits {
-            0 => Some(Devicetype::Die),
-            4294967295 => Some(Devicetype::Fpga),
+            0 => Some(DEVICETYPE_A::DIE),
+            4294967295 => Some(DEVICETYPE_A::FPGA),
             _ => None,
         }
     }
-    #[doc = "Device is an physical DIE"]
+    #[doc = "Checks if the value of the field is `DIE`"]
     #[inline(always)]
     pub fn is_die(&self) -> bool {
-        *self == Devicetype::Die
+        *self == DEVICETYPE_A::DIE
     }
-    #[doc = "Device is an FPGA"]
+    #[doc = "Checks if the value of the field is `FPGA`"]
     #[inline(always)]
     pub fn is_fpga(&self) -> bool {
-        *self == Devicetype::Fpga
+        *self == DEVICETYPE_A::FPGA
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Device type"]
     #[inline(always)]
-    pub fn devicetype(&self) -> DevicetypeR {
-        DevicetypeR::new(self.bits)
+    pub fn devicetype(&self) -> DEVICETYPE_R {
+        DEVICETYPE_R::new(self.bits)
     }
 }
-#[doc = "Device type\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`devicetype::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DevicetypeSpec;
-impl crate::RegisterSpec for DevicetypeSpec {
+#[doc = "Device type\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [devicetype](index.html) module"]
+pub struct DEVICETYPE_SPEC;
+impl crate::RegisterSpec for DEVICETYPE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`devicetype::R`](R) reader structure"]
-impl crate::Readable for DevicetypeSpec {}
+#[doc = "`read()` method returns [devicetype::R](R) reader structure"]
+impl crate::Readable for DEVICETYPE_SPEC {
+    type Reader = R;
+}
 #[doc = "`reset()` method sets DEVICETYPE to value 0xffff_ffff"]
-impl crate::Resettable for DevicetypeSpec {
-    const RESET_VALUE: u32 = 0xffff_ffff;
+impl crate::Resettable for DEVICETYPE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff_ffff
+    }
 }

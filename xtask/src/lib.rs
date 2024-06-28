@@ -13,6 +13,7 @@ pub static PACS: &[(&str, &str)] = &[
     ("nrf5340-app", "thumbv8m.main-none-eabihf"),
     ("nrf5340-net", "thumbv8m.main-none-eabihf"),
     ("nrf9160", "thumbv8m.main-none-eabihf"),
+    ("nrf9120", "thumbv8m.main-none-eabihf"),
 ];
 
 pub fn install_tools() {

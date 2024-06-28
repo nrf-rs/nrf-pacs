@@ -1,399 +1,401 @@
 #[doc = "Register `REQSTATUS` reader"]
-pub type R = crate::R<ReqstatusSpec>;
-#[doc = "Request status for RR\\[0\\]
-register\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rr0 {
-    #[doc = "0: RR\\[0\\]
-register is not enabled, or are already requesting reload"]
-    DisabledOrRequested = 0,
-    #[doc = "1: RR\\[0\\]
-register is enabled, and are not yet requesting reload"]
-    EnabledAndUnrequested = 1,
-}
-impl From<Rr0> for bool {
+pub struct R(crate::R<REQSTATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<REQSTATUS_SPEC>;
     #[inline(always)]
-    fn from(variant: Rr0) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<REQSTATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<REQSTATUS_SPEC>) -> Self {
+        R(reader)
     }
 }
 #[doc = "Field `RR0` reader - Request status for RR\\[0\\]
 register"]
-pub type Rr0R = crate::BitReader<Rr0>;
-impl Rr0R {
+pub type RR0_R = crate::BitReader<RR0_A>;
+#[doc = "Request status for RR\\[0\\]
+register\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RR0_A {
+    #[doc = "0: RR\\[0\\]
+register is not enabled, or are already requesting reload"]
+    DISABLED_OR_REQUESTED = 0,
+    #[doc = "1: RR\\[0\\]
+register is enabled, and are not yet requesting reload"]
+    ENABLED_AND_UNREQUESTED = 1,
+}
+impl From<RR0_A> for bool {
+    #[inline(always)]
+    fn from(variant: RR0_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RR0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rr0 {
+    pub fn variant(&self) -> RR0_A {
         match self.bits {
-            false => Rr0::DisabledOrRequested,
-            true => Rr0::EnabledAndUnrequested,
+            false => RR0_A::DISABLED_OR_REQUESTED,
+            true => RR0_A::ENABLED_AND_UNREQUESTED,
         }
     }
-    #[doc = "RR\\[0\\]
-register is not enabled, or are already requesting reload"]
+    #[doc = "Checks if the value of the field is `DISABLED_OR_REQUESTED`"]
     #[inline(always)]
     pub fn is_disabled_or_requested(&self) -> bool {
-        *self == Rr0::DisabledOrRequested
+        *self == RR0_A::DISABLED_OR_REQUESTED
     }
-    #[doc = "RR\\[0\\]
-register is enabled, and are not yet requesting reload"]
+    #[doc = "Checks if the value of the field is `ENABLED_AND_UNREQUESTED`"]
     #[inline(always)]
     pub fn is_enabled_and_unrequested(&self) -> bool {
-        *self == Rr0::EnabledAndUnrequested
-    }
-}
-#[doc = "Request status for RR\\[1\\]
-register\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rr1 {
-    #[doc = "0: RR\\[1\\]
-register is not enabled, or are already requesting reload"]
-    DisabledOrRequested = 0,
-    #[doc = "1: RR\\[1\\]
-register is enabled, and are not yet requesting reload"]
-    EnabledAndUnrequested = 1,
-}
-impl From<Rr1> for bool {
-    #[inline(always)]
-    fn from(variant: Rr1) -> Self {
-        variant as u8 != 0
+        *self == RR0_A::ENABLED_AND_UNREQUESTED
     }
 }
 #[doc = "Field `RR1` reader - Request status for RR\\[1\\]
 register"]
-pub type Rr1R = crate::BitReader<Rr1>;
-impl Rr1R {
+pub type RR1_R = crate::BitReader<RR1_A>;
+#[doc = "Request status for RR\\[1\\]
+register\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RR1_A {
+    #[doc = "0: RR\\[1\\]
+register is not enabled, or are already requesting reload"]
+    DISABLED_OR_REQUESTED = 0,
+    #[doc = "1: RR\\[1\\]
+register is enabled, and are not yet requesting reload"]
+    ENABLED_AND_UNREQUESTED = 1,
+}
+impl From<RR1_A> for bool {
+    #[inline(always)]
+    fn from(variant: RR1_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RR1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rr1 {
+    pub fn variant(&self) -> RR1_A {
         match self.bits {
-            false => Rr1::DisabledOrRequested,
-            true => Rr1::EnabledAndUnrequested,
+            false => RR1_A::DISABLED_OR_REQUESTED,
+            true => RR1_A::ENABLED_AND_UNREQUESTED,
         }
     }
-    #[doc = "RR\\[1\\]
-register is not enabled, or are already requesting reload"]
+    #[doc = "Checks if the value of the field is `DISABLED_OR_REQUESTED`"]
     #[inline(always)]
     pub fn is_disabled_or_requested(&self) -> bool {
-        *self == Rr1::DisabledOrRequested
+        *self == RR1_A::DISABLED_OR_REQUESTED
     }
-    #[doc = "RR\\[1\\]
-register is enabled, and are not yet requesting reload"]
+    #[doc = "Checks if the value of the field is `ENABLED_AND_UNREQUESTED`"]
     #[inline(always)]
     pub fn is_enabled_and_unrequested(&self) -> bool {
-        *self == Rr1::EnabledAndUnrequested
-    }
-}
-#[doc = "Request status for RR\\[2\\]
-register\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rr2 {
-    #[doc = "0: RR\\[2\\]
-register is not enabled, or are already requesting reload"]
-    DisabledOrRequested = 0,
-    #[doc = "1: RR\\[2\\]
-register is enabled, and are not yet requesting reload"]
-    EnabledAndUnrequested = 1,
-}
-impl From<Rr2> for bool {
-    #[inline(always)]
-    fn from(variant: Rr2) -> Self {
-        variant as u8 != 0
+        *self == RR1_A::ENABLED_AND_UNREQUESTED
     }
 }
 #[doc = "Field `RR2` reader - Request status for RR\\[2\\]
 register"]
-pub type Rr2R = crate::BitReader<Rr2>;
-impl Rr2R {
+pub type RR2_R = crate::BitReader<RR2_A>;
+#[doc = "Request status for RR\\[2\\]
+register\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RR2_A {
+    #[doc = "0: RR\\[2\\]
+register is not enabled, or are already requesting reload"]
+    DISABLED_OR_REQUESTED = 0,
+    #[doc = "1: RR\\[2\\]
+register is enabled, and are not yet requesting reload"]
+    ENABLED_AND_UNREQUESTED = 1,
+}
+impl From<RR2_A> for bool {
+    #[inline(always)]
+    fn from(variant: RR2_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RR2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rr2 {
+    pub fn variant(&self) -> RR2_A {
         match self.bits {
-            false => Rr2::DisabledOrRequested,
-            true => Rr2::EnabledAndUnrequested,
+            false => RR2_A::DISABLED_OR_REQUESTED,
+            true => RR2_A::ENABLED_AND_UNREQUESTED,
         }
     }
-    #[doc = "RR\\[2\\]
-register is not enabled, or are already requesting reload"]
+    #[doc = "Checks if the value of the field is `DISABLED_OR_REQUESTED`"]
     #[inline(always)]
     pub fn is_disabled_or_requested(&self) -> bool {
-        *self == Rr2::DisabledOrRequested
+        *self == RR2_A::DISABLED_OR_REQUESTED
     }
-    #[doc = "RR\\[2\\]
-register is enabled, and are not yet requesting reload"]
+    #[doc = "Checks if the value of the field is `ENABLED_AND_UNREQUESTED`"]
     #[inline(always)]
     pub fn is_enabled_and_unrequested(&self) -> bool {
-        *self == Rr2::EnabledAndUnrequested
-    }
-}
-#[doc = "Request status for RR\\[3\\]
-register\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rr3 {
-    #[doc = "0: RR\\[3\\]
-register is not enabled, or are already requesting reload"]
-    DisabledOrRequested = 0,
-    #[doc = "1: RR\\[3\\]
-register is enabled, and are not yet requesting reload"]
-    EnabledAndUnrequested = 1,
-}
-impl From<Rr3> for bool {
-    #[inline(always)]
-    fn from(variant: Rr3) -> Self {
-        variant as u8 != 0
+        *self == RR2_A::ENABLED_AND_UNREQUESTED
     }
 }
 #[doc = "Field `RR3` reader - Request status for RR\\[3\\]
 register"]
-pub type Rr3R = crate::BitReader<Rr3>;
-impl Rr3R {
+pub type RR3_R = crate::BitReader<RR3_A>;
+#[doc = "Request status for RR\\[3\\]
+register\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RR3_A {
+    #[doc = "0: RR\\[3\\]
+register is not enabled, or are already requesting reload"]
+    DISABLED_OR_REQUESTED = 0,
+    #[doc = "1: RR\\[3\\]
+register is enabled, and are not yet requesting reload"]
+    ENABLED_AND_UNREQUESTED = 1,
+}
+impl From<RR3_A> for bool {
+    #[inline(always)]
+    fn from(variant: RR3_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RR3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rr3 {
+    pub fn variant(&self) -> RR3_A {
         match self.bits {
-            false => Rr3::DisabledOrRequested,
-            true => Rr3::EnabledAndUnrequested,
+            false => RR3_A::DISABLED_OR_REQUESTED,
+            true => RR3_A::ENABLED_AND_UNREQUESTED,
         }
     }
-    #[doc = "RR\\[3\\]
-register is not enabled, or are already requesting reload"]
+    #[doc = "Checks if the value of the field is `DISABLED_OR_REQUESTED`"]
     #[inline(always)]
     pub fn is_disabled_or_requested(&self) -> bool {
-        *self == Rr3::DisabledOrRequested
+        *self == RR3_A::DISABLED_OR_REQUESTED
     }
-    #[doc = "RR\\[3\\]
-register is enabled, and are not yet requesting reload"]
+    #[doc = "Checks if the value of the field is `ENABLED_AND_UNREQUESTED`"]
     #[inline(always)]
     pub fn is_enabled_and_unrequested(&self) -> bool {
-        *self == Rr3::EnabledAndUnrequested
-    }
-}
-#[doc = "Request status for RR\\[4\\]
-register\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rr4 {
-    #[doc = "0: RR\\[4\\]
-register is not enabled, or are already requesting reload"]
-    DisabledOrRequested = 0,
-    #[doc = "1: RR\\[4\\]
-register is enabled, and are not yet requesting reload"]
-    EnabledAndUnrequested = 1,
-}
-impl From<Rr4> for bool {
-    #[inline(always)]
-    fn from(variant: Rr4) -> Self {
-        variant as u8 != 0
+        *self == RR3_A::ENABLED_AND_UNREQUESTED
     }
 }
 #[doc = "Field `RR4` reader - Request status for RR\\[4\\]
 register"]
-pub type Rr4R = crate::BitReader<Rr4>;
-impl Rr4R {
+pub type RR4_R = crate::BitReader<RR4_A>;
+#[doc = "Request status for RR\\[4\\]
+register\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RR4_A {
+    #[doc = "0: RR\\[4\\]
+register is not enabled, or are already requesting reload"]
+    DISABLED_OR_REQUESTED = 0,
+    #[doc = "1: RR\\[4\\]
+register is enabled, and are not yet requesting reload"]
+    ENABLED_AND_UNREQUESTED = 1,
+}
+impl From<RR4_A> for bool {
+    #[inline(always)]
+    fn from(variant: RR4_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RR4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rr4 {
+    pub fn variant(&self) -> RR4_A {
         match self.bits {
-            false => Rr4::DisabledOrRequested,
-            true => Rr4::EnabledAndUnrequested,
+            false => RR4_A::DISABLED_OR_REQUESTED,
+            true => RR4_A::ENABLED_AND_UNREQUESTED,
         }
     }
-    #[doc = "RR\\[4\\]
-register is not enabled, or are already requesting reload"]
+    #[doc = "Checks if the value of the field is `DISABLED_OR_REQUESTED`"]
     #[inline(always)]
     pub fn is_disabled_or_requested(&self) -> bool {
-        *self == Rr4::DisabledOrRequested
+        *self == RR4_A::DISABLED_OR_REQUESTED
     }
-    #[doc = "RR\\[4\\]
-register is enabled, and are not yet requesting reload"]
+    #[doc = "Checks if the value of the field is `ENABLED_AND_UNREQUESTED`"]
     #[inline(always)]
     pub fn is_enabled_and_unrequested(&self) -> bool {
-        *self == Rr4::EnabledAndUnrequested
-    }
-}
-#[doc = "Request status for RR\\[5\\]
-register\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rr5 {
-    #[doc = "0: RR\\[5\\]
-register is not enabled, or are already requesting reload"]
-    DisabledOrRequested = 0,
-    #[doc = "1: RR\\[5\\]
-register is enabled, and are not yet requesting reload"]
-    EnabledAndUnrequested = 1,
-}
-impl From<Rr5> for bool {
-    #[inline(always)]
-    fn from(variant: Rr5) -> Self {
-        variant as u8 != 0
+        *self == RR4_A::ENABLED_AND_UNREQUESTED
     }
 }
 #[doc = "Field `RR5` reader - Request status for RR\\[5\\]
 register"]
-pub type Rr5R = crate::BitReader<Rr5>;
-impl Rr5R {
+pub type RR5_R = crate::BitReader<RR5_A>;
+#[doc = "Request status for RR\\[5\\]
+register\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RR5_A {
+    #[doc = "0: RR\\[5\\]
+register is not enabled, or are already requesting reload"]
+    DISABLED_OR_REQUESTED = 0,
+    #[doc = "1: RR\\[5\\]
+register is enabled, and are not yet requesting reload"]
+    ENABLED_AND_UNREQUESTED = 1,
+}
+impl From<RR5_A> for bool {
+    #[inline(always)]
+    fn from(variant: RR5_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RR5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rr5 {
+    pub fn variant(&self) -> RR5_A {
         match self.bits {
-            false => Rr5::DisabledOrRequested,
-            true => Rr5::EnabledAndUnrequested,
+            false => RR5_A::DISABLED_OR_REQUESTED,
+            true => RR5_A::ENABLED_AND_UNREQUESTED,
         }
     }
-    #[doc = "RR\\[5\\]
-register is not enabled, or are already requesting reload"]
+    #[doc = "Checks if the value of the field is `DISABLED_OR_REQUESTED`"]
     #[inline(always)]
     pub fn is_disabled_or_requested(&self) -> bool {
-        *self == Rr5::DisabledOrRequested
+        *self == RR5_A::DISABLED_OR_REQUESTED
     }
-    #[doc = "RR\\[5\\]
-register is enabled, and are not yet requesting reload"]
+    #[doc = "Checks if the value of the field is `ENABLED_AND_UNREQUESTED`"]
     #[inline(always)]
     pub fn is_enabled_and_unrequested(&self) -> bool {
-        *self == Rr5::EnabledAndUnrequested
-    }
-}
-#[doc = "Request status for RR\\[6\\]
-register\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rr6 {
-    #[doc = "0: RR\\[6\\]
-register is not enabled, or are already requesting reload"]
-    DisabledOrRequested = 0,
-    #[doc = "1: RR\\[6\\]
-register is enabled, and are not yet requesting reload"]
-    EnabledAndUnrequested = 1,
-}
-impl From<Rr6> for bool {
-    #[inline(always)]
-    fn from(variant: Rr6) -> Self {
-        variant as u8 != 0
+        *self == RR5_A::ENABLED_AND_UNREQUESTED
     }
 }
 #[doc = "Field `RR6` reader - Request status for RR\\[6\\]
 register"]
-pub type Rr6R = crate::BitReader<Rr6>;
-impl Rr6R {
+pub type RR6_R = crate::BitReader<RR6_A>;
+#[doc = "Request status for RR\\[6\\]
+register\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RR6_A {
+    #[doc = "0: RR\\[6\\]
+register is not enabled, or are already requesting reload"]
+    DISABLED_OR_REQUESTED = 0,
+    #[doc = "1: RR\\[6\\]
+register is enabled, and are not yet requesting reload"]
+    ENABLED_AND_UNREQUESTED = 1,
+}
+impl From<RR6_A> for bool {
+    #[inline(always)]
+    fn from(variant: RR6_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RR6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rr6 {
+    pub fn variant(&self) -> RR6_A {
         match self.bits {
-            false => Rr6::DisabledOrRequested,
-            true => Rr6::EnabledAndUnrequested,
+            false => RR6_A::DISABLED_OR_REQUESTED,
+            true => RR6_A::ENABLED_AND_UNREQUESTED,
         }
     }
-    #[doc = "RR\\[6\\]
-register is not enabled, or are already requesting reload"]
+    #[doc = "Checks if the value of the field is `DISABLED_OR_REQUESTED`"]
     #[inline(always)]
     pub fn is_disabled_or_requested(&self) -> bool {
-        *self == Rr6::DisabledOrRequested
+        *self == RR6_A::DISABLED_OR_REQUESTED
     }
-    #[doc = "RR\\[6\\]
-register is enabled, and are not yet requesting reload"]
+    #[doc = "Checks if the value of the field is `ENABLED_AND_UNREQUESTED`"]
     #[inline(always)]
     pub fn is_enabled_and_unrequested(&self) -> bool {
-        *self == Rr6::EnabledAndUnrequested
-    }
-}
-#[doc = "Request status for RR\\[7\\]
-register\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rr7 {
-    #[doc = "0: RR\\[7\\]
-register is not enabled, or are already requesting reload"]
-    DisabledOrRequested = 0,
-    #[doc = "1: RR\\[7\\]
-register is enabled, and are not yet requesting reload"]
-    EnabledAndUnrequested = 1,
-}
-impl From<Rr7> for bool {
-    #[inline(always)]
-    fn from(variant: Rr7) -> Self {
-        variant as u8 != 0
+        *self == RR6_A::ENABLED_AND_UNREQUESTED
     }
 }
 #[doc = "Field `RR7` reader - Request status for RR\\[7\\]
 register"]
-pub type Rr7R = crate::BitReader<Rr7>;
-impl Rr7R {
+pub type RR7_R = crate::BitReader<RR7_A>;
+#[doc = "Request status for RR\\[7\\]
+register\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RR7_A {
+    #[doc = "0: RR\\[7\\]
+register is not enabled, or are already requesting reload"]
+    DISABLED_OR_REQUESTED = 0,
+    #[doc = "1: RR\\[7\\]
+register is enabled, and are not yet requesting reload"]
+    ENABLED_AND_UNREQUESTED = 1,
+}
+impl From<RR7_A> for bool {
+    #[inline(always)]
+    fn from(variant: RR7_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RR7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rr7 {
+    pub fn variant(&self) -> RR7_A {
         match self.bits {
-            false => Rr7::DisabledOrRequested,
-            true => Rr7::EnabledAndUnrequested,
+            false => RR7_A::DISABLED_OR_REQUESTED,
+            true => RR7_A::ENABLED_AND_UNREQUESTED,
         }
     }
-    #[doc = "RR\\[7\\]
-register is not enabled, or are already requesting reload"]
+    #[doc = "Checks if the value of the field is `DISABLED_OR_REQUESTED`"]
     #[inline(always)]
     pub fn is_disabled_or_requested(&self) -> bool {
-        *self == Rr7::DisabledOrRequested
+        *self == RR7_A::DISABLED_OR_REQUESTED
     }
-    #[doc = "RR\\[7\\]
-register is enabled, and are not yet requesting reload"]
+    #[doc = "Checks if the value of the field is `ENABLED_AND_UNREQUESTED`"]
     #[inline(always)]
     pub fn is_enabled_and_unrequested(&self) -> bool {
-        *self == Rr7::EnabledAndUnrequested
+        *self == RR7_A::ENABLED_AND_UNREQUESTED
     }
 }
 impl R {
     #[doc = "Bit 0 - Request status for RR\\[0\\]
 register"]
     #[inline(always)]
-    pub fn rr0(&self) -> Rr0R {
-        Rr0R::new((self.bits & 1) != 0)
+    pub fn rr0(&self) -> RR0_R {
+        RR0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Request status for RR\\[1\\]
 register"]
     #[inline(always)]
-    pub fn rr1(&self) -> Rr1R {
-        Rr1R::new(((self.bits >> 1) & 1) != 0)
+    pub fn rr1(&self) -> RR1_R {
+        RR1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Request status for RR\\[2\\]
 register"]
     #[inline(always)]
-    pub fn rr2(&self) -> Rr2R {
-        Rr2R::new(((self.bits >> 2) & 1) != 0)
+    pub fn rr2(&self) -> RR2_R {
+        RR2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Request status for RR\\[3\\]
 register"]
     #[inline(always)]
-    pub fn rr3(&self) -> Rr3R {
-        Rr3R::new(((self.bits >> 3) & 1) != 0)
+    pub fn rr3(&self) -> RR3_R {
+        RR3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Request status for RR\\[4\\]
 register"]
     #[inline(always)]
-    pub fn rr4(&self) -> Rr4R {
-        Rr4R::new(((self.bits >> 4) & 1) != 0)
+    pub fn rr4(&self) -> RR4_R {
+        RR4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Request status for RR\\[5\\]
 register"]
     #[inline(always)]
-    pub fn rr5(&self) -> Rr5R {
-        Rr5R::new(((self.bits >> 5) & 1) != 0)
+    pub fn rr5(&self) -> RR5_R {
+        RR5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Request status for RR\\[6\\]
 register"]
     #[inline(always)]
-    pub fn rr6(&self) -> Rr6R {
-        Rr6R::new(((self.bits >> 6) & 1) != 0)
+    pub fn rr6(&self) -> RR6_R {
+        RR6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Request status for RR\\[7\\]
 register"]
     #[inline(always)]
-    pub fn rr7(&self) -> Rr7R {
-        Rr7R::new(((self.bits >> 7) & 1) != 0)
+    pub fn rr7(&self) -> RR7_R {
+        RR7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Request status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`reqstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ReqstatusSpec;
-impl crate::RegisterSpec for ReqstatusSpec {
+#[doc = "Request status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [reqstatus](index.html) module"]
+pub struct REQSTATUS_SPEC;
+impl crate::RegisterSpec for REQSTATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`reqstatus::R`](R) reader structure"]
-impl crate::Readable for ReqstatusSpec {}
+#[doc = "`read()` method returns [reqstatus::R](R) reader structure"]
+impl crate::Readable for REQSTATUS_SPEC {
+    type Reader = R;
+}
 #[doc = "`reset()` method sets REQSTATUS to value 0x01"]
-impl crate::Resettable for ReqstatusSpec {
-    const RESET_VALUE: u32 = 0x01;
+impl crate::Resettable for REQSTATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x01
+    }
 }

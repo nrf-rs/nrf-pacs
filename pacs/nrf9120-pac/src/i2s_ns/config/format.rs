@@ -1,89 +1,126 @@
 #[doc = "Register `FORMAT` reader"]
-pub type R = crate::R<FormatSpec>;
-#[doc = "Register `FORMAT` writer"]
-pub type W = crate::W<FormatSpec>;
-#[doc = "Frame format.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Format {
-    #[doc = "0: Original I2S format."]
-    I2s = 0,
-    #[doc = "1: Alternate (left- or right-aligned) format."]
-    Aligned = 1,
-}
-impl From<Format> for bool {
+pub struct R(crate::R<FORMAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FORMAT_SPEC>;
     #[inline(always)]
-    fn from(variant: Format) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<FORMAT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<FORMAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FORMAT` writer"]
+pub struct W(crate::W<FORMAT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FORMAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<FORMAT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<FORMAT_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `FORMAT` reader - Frame format."]
-pub type FormatR = crate::BitReader<Format>;
-impl FormatR {
+pub type FORMAT_R = crate::BitReader<FORMAT_A>;
+#[doc = "Frame format.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FORMAT_A {
+    #[doc = "0: Original I2S format."]
+    I2S = 0,
+    #[doc = "1: Alternate (left- or right-aligned) format."]
+    ALIGNED = 1,
+}
+impl From<FORMAT_A> for bool {
+    #[inline(always)]
+    fn from(variant: FORMAT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl FORMAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Format {
+    pub fn variant(&self) -> FORMAT_A {
         match self.bits {
-            false => Format::I2s,
-            true => Format::Aligned,
+            false => FORMAT_A::I2S,
+            true => FORMAT_A::ALIGNED,
         }
     }
-    #[doc = "Original I2S format."]
+    #[doc = "Checks if the value of the field is `I2S`"]
     #[inline(always)]
     pub fn is_i2s(&self) -> bool {
-        *self == Format::I2s
+        *self == FORMAT_A::I2S
     }
-    #[doc = "Alternate (left- or right-aligned) format."]
+    #[doc = "Checks if the value of the field is `ALIGNED`"]
     #[inline(always)]
     pub fn is_aligned(&self) -> bool {
-        *self == Format::Aligned
+        *self == FORMAT_A::ALIGNED
     }
 }
 #[doc = "Field `FORMAT` writer - Frame format."]
-pub type FormatW<'a, REG> = crate::BitWriter<'a, REG, Format>;
-impl<'a, REG> FormatW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type FORMAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, FORMAT_SPEC, FORMAT_A, O>;
+impl<'a, const O: u8> FORMAT_W<'a, O> {
     #[doc = "Original I2S format."]
     #[inline(always)]
-    pub fn i2s(self) -> &'a mut crate::W<REG> {
-        self.variant(Format::I2s)
+    pub fn i2s(self) -> &'a mut W {
+        self.variant(FORMAT_A::I2S)
     }
     #[doc = "Alternate (left- or right-aligned) format."]
     #[inline(always)]
-    pub fn aligned(self) -> &'a mut crate::W<REG> {
-        self.variant(Format::Aligned)
+    pub fn aligned(self) -> &'a mut W {
+        self.variant(FORMAT_A::ALIGNED)
     }
 }
 impl R {
     #[doc = "Bit 0 - Frame format."]
     #[inline(always)]
-    pub fn format(&self) -> FormatR {
-        FormatR::new((self.bits & 1) != 0)
+    pub fn format(&self) -> FORMAT_R {
+        FORMAT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Frame format."]
     #[inline(always)]
-    #[must_use]
-    pub fn format(&mut self) -> FormatW<FormatSpec> {
-        FormatW::new(self, 0)
+    pub fn format(&mut self) -> FORMAT_W<0> {
+        FORMAT_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Frame format.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`format::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`format::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct FormatSpec;
-impl crate::RegisterSpec for FormatSpec {
+#[doc = "Frame format.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [format](index.html) module"]
+pub struct FORMAT_SPEC;
+impl crate::RegisterSpec for FORMAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`format::R`](R) reader structure"]
-impl crate::Readable for FormatSpec {}
-#[doc = "`write(|w| ..)` method takes [`format::W`](W) writer structure"]
-impl crate::Writable for FormatSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [format::R](R) reader structure"]
+impl crate::Readable for FORMAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [format::W](W) writer structure"]
+impl crate::Writable for FORMAT_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets FORMAT to value 0"]
-impl crate::Resettable for FormatSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for FORMAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

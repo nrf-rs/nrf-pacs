@@ -1,31 +1,16 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Unspecified"]
-#[doc(alias = "SAMPLE")]
-pub struct Sample {
-    ptr: Ptr,
-    maxcnt: Maxcnt,
-}
-impl Sample {
+pub struct SAMPLE {
     #[doc = "0x00 - RAM address pointer to write samples to with EasyDMA"]
-    #[inline(always)]
-    pub const fn ptr(&self) -> &Ptr {
-        &self.ptr
-    }
+    pub ptr: PTR,
     #[doc = "0x04 - Number of samples to allocate memory for in EasyDMA mode"]
-    #[inline(always)]
-    pub const fn maxcnt(&self) -> &Maxcnt {
-        &self.maxcnt
-    }
+    pub maxcnt: MAXCNT,
 }
-#[doc = "PTR (rw) register accessor: RAM address pointer to write samples to with EasyDMA\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ptr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ptr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ptr`]
-module"]
-#[doc(alias = "PTR")]
-pub type Ptr = crate::Reg<ptr::PtrSpec>;
+#[doc = "PTR (rw) register accessor: an alias for `Reg<PTR_SPEC>`"]
+pub type PTR = crate::Reg<ptr::PTR_SPEC>;
 #[doc = "RAM address pointer to write samples to with EasyDMA"]
 pub mod ptr;
-#[doc = "MAXCNT (rw) register accessor: Number of samples to allocate memory for in EasyDMA mode\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`maxcnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`maxcnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@maxcnt`]
-module"]
-#[doc(alias = "MAXCNT")]
-pub type Maxcnt = crate::Reg<maxcnt::MaxcntSpec>;
+#[doc = "MAXCNT (rw) register accessor: an alias for `Reg<MAXCNT_SPEC>`"]
+pub type MAXCNT = crate::Reg<maxcnt::MAXCNT_SPEC>;
 #[doc = "Number of samples to allocate memory for in EasyDMA mode"]
 pub mod maxcnt;

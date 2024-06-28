@@ -1,41 +1,81 @@
 #[doc = "Register `GPMEM[%s]` reader"]
-pub type R = crate::R<GpmemSpec>;
+pub struct R(crate::R<GPMEM_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GPMEM_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<GPMEM_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GPMEM_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Register `GPMEM[%s]` writer"]
-pub type W = crate::W<GpmemSpec>;
+pub struct W(crate::W<GPMEM_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GPMEM_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<GPMEM_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<GPMEM_SPEC>) -> Self {
+        W(writer)
+    }
+}
 #[doc = "Field `GPMEM` reader - General purpose memory"]
-pub type GpmemR = crate::FieldReader<u32>;
+pub type GPMEM_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `GPMEM` writer - General purpose memory"]
-pub type GpmemW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+pub type GPMEM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GPMEM_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - General purpose memory"]
     #[inline(always)]
-    pub fn gpmem(&self) -> GpmemR {
-        GpmemR::new(self.bits)
+    pub fn gpmem(&self) -> GPMEM_R {
+        GPMEM_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - General purpose memory"]
     #[inline(always)]
-    #[must_use]
-    pub fn gpmem(&mut self) -> GpmemW<GpmemSpec> {
-        GpmemW::new(self, 0)
+    pub fn gpmem(&mut self) -> GPMEM_W<0> {
+        GPMEM_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Description collection: General purpose memory\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpmem::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpmem::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct GpmemSpec;
-impl crate::RegisterSpec for GpmemSpec {
+#[doc = "Description collection: General purpose memory\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gpmem](index.html) module"]
+pub struct GPMEM_SPEC;
+impl crate::RegisterSpec for GPMEM_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`gpmem::R`](R) reader structure"]
-impl crate::Readable for GpmemSpec {}
-#[doc = "`write(|w| ..)` method takes [`gpmem::W`](W) writer structure"]
-impl crate::Writable for GpmemSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [gpmem::R](R) reader structure"]
+impl crate::Readable for GPMEM_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [gpmem::W](W) writer structure"]
+impl crate::Writable for GPMEM_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets GPMEM[%s]
 to value 0"]
-impl crate::Resettable for GpmemSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for GPMEM_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

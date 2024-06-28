@@ -1,90 +1,128 @@
 #[doc = "Register `EVENTS_SEQEND[%s]` reader"]
-pub type R = crate::R<EventsSeqendSpec>;
-#[doc = "Register `EVENTS_SEQEND[%s]` writer"]
-pub type W = crate::W<EventsSeqendSpec>;
-#[doc = "Emitted at end of every sequence n, when last value from RAM has been applied to wave counter\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum EventsSeqend {
-    #[doc = "0: Event not generated"]
-    NotGenerated = 0,
-    #[doc = "1: Event generated"]
-    Generated = 1,
-}
-impl From<EventsSeqend> for bool {
+pub struct R(crate::R<EVENTS_SEQEND_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EVENTS_SEQEND_SPEC>;
     #[inline(always)]
-    fn from(variant: EventsSeqend) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<EVENTS_SEQEND_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EVENTS_SEQEND_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `EVENTS_SEQEND[%s]` writer"]
+pub struct W(crate::W<EVENTS_SEQEND_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<EVENTS_SEQEND_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<EVENTS_SEQEND_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<EVENTS_SEQEND_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `EVENTS_SEQEND` reader - Emitted at end of every sequence n, when last value from RAM has been applied to wave counter"]
-pub type EventsSeqendR = crate::BitReader<EventsSeqend>;
-impl EventsSeqendR {
+pub type EVENTS_SEQEND_R = crate::BitReader<EVENTS_SEQEND_A>;
+#[doc = "Emitted at end of every sequence n, when last value from RAM has been applied to wave counter\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EVENTS_SEQEND_A {
+    #[doc = "0: Event not generated"]
+    NOT_GENERATED = 0,
+    #[doc = "1: Event generated"]
+    GENERATED = 1,
+}
+impl From<EVENTS_SEQEND_A> for bool {
+    #[inline(always)]
+    fn from(variant: EVENTS_SEQEND_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl EVENTS_SEQEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> EventsSeqend {
+    pub fn variant(&self) -> EVENTS_SEQEND_A {
         match self.bits {
-            false => EventsSeqend::NotGenerated,
-            true => EventsSeqend::Generated,
+            false => EVENTS_SEQEND_A::NOT_GENERATED,
+            true => EVENTS_SEQEND_A::GENERATED,
         }
     }
-    #[doc = "Event not generated"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        *self == EventsSeqend::NotGenerated
+        *self == EVENTS_SEQEND_A::NOT_GENERATED
     }
-    #[doc = "Event generated"]
+    #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        *self == EventsSeqend::Generated
+        *self == EVENTS_SEQEND_A::GENERATED
     }
 }
 #[doc = "Field `EVENTS_SEQEND` writer - Emitted at end of every sequence n, when last value from RAM has been applied to wave counter"]
-pub type EventsSeqendW<'a, REG> = crate::BitWriter<'a, REG, EventsSeqend>;
-impl<'a, REG> EventsSeqendW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type EVENTS_SEQEND_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_SEQEND_SPEC, EVENTS_SEQEND_A, O>;
+impl<'a, const O: u8> EVENTS_SEQEND_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsSeqend::NotGenerated)
+    pub fn not_generated(self) -> &'a mut W {
+        self.variant(EVENTS_SEQEND_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsSeqend::Generated)
+    pub fn generated(self) -> &'a mut W {
+        self.variant(EVENTS_SEQEND_A::GENERATED)
     }
 }
 impl R {
     #[doc = "Bit 0 - Emitted at end of every sequence n, when last value from RAM has been applied to wave counter"]
     #[inline(always)]
-    pub fn events_seqend(&self) -> EventsSeqendR {
-        EventsSeqendR::new((self.bits & 1) != 0)
+    pub fn events_seqend(&self) -> EVENTS_SEQEND_R {
+        EVENTS_SEQEND_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Emitted at end of every sequence n, when last value from RAM has been applied to wave counter"]
     #[inline(always)]
-    #[must_use]
-    pub fn events_seqend(&mut self) -> EventsSeqendW<EventsSeqendSpec> {
-        EventsSeqendW::new(self, 0)
+    pub fn events_seqend(&mut self) -> EVENTS_SEQEND_W<0> {
+        EVENTS_SEQEND_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Description collection: Emitted at end of every sequence n, when last value from RAM has been applied to wave counter\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_seqend::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_seqend::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct EventsSeqendSpec;
-impl crate::RegisterSpec for EventsSeqendSpec {
+#[doc = "Description collection: Emitted at end of every sequence n, when last value from RAM has been applied to wave counter\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_seqend](index.html) module"]
+pub struct EVENTS_SEQEND_SPEC;
+impl crate::RegisterSpec for EVENTS_SEQEND_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`events_seqend::R`](R) reader structure"]
-impl crate::Readable for EventsSeqendSpec {}
-#[doc = "`write(|w| ..)` method takes [`events_seqend::W`](W) writer structure"]
-impl crate::Writable for EventsSeqendSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [events_seqend::R](R) reader structure"]
+impl crate::Readable for EVENTS_SEQEND_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [events_seqend::W](W) writer structure"]
+impl crate::Writable for EVENTS_SEQEND_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets EVENTS_SEQEND[%s]
 to value 0"]
-impl crate::Resettable for EventsSeqendSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for EVENTS_SEQEND_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

@@ -1,19 +1,10 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Unspecified"]
-#[doc(alias = "RAMREGION")]
-pub struct Ramregion {
-    perm: Perm,
-}
-impl Ramregion {
+pub struct RAMREGION {
     #[doc = "0x00 - Description cluster: Access permissions for RAM region n"]
-    #[inline(always)]
-    pub const fn perm(&self) -> &Perm {
-        &self.perm
-    }
+    pub perm: PERM,
 }
-#[doc = "PERM (rw) register accessor: Description cluster: Access permissions for RAM region n\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`perm::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`perm::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@perm`]
-module"]
-#[doc(alias = "PERM")]
-pub type Perm = crate::Reg<perm::PermSpec>;
+#[doc = "PERM (rw) register accessor: an alias for `Reg<PERM_SPEC>`"]
+pub type PERM = crate::Reg<perm::PERM_SPEC>;
 #[doc = "Description cluster: Access permissions for RAM region n"]
 pub mod perm;

@@ -1,109 +1,145 @@
 #[doc = "Register `PUBLISH_COMPARE[%s]` reader"]
-pub type R = crate::R<PublishCompareSpec>;
+pub struct R(crate::R<PUBLISH_COMPARE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PUBLISH_COMPARE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PUBLISH_COMPARE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PUBLISH_COMPARE_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Register `PUBLISH_COMPARE[%s]` writer"]
-pub type W = crate::W<PublishCompareSpec>;
+pub struct W(crate::W<PUBLISH_COMPARE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PUBLISH_COMPARE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PUBLISH_COMPARE_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PUBLISH_COMPARE_SPEC>) -> Self {
+        W(writer)
+    }
+}
 #[doc = "Field `CHIDX` reader - DPPI channel that event COMPARE\\[n\\]
 will publish to"]
-pub type ChidxR = crate::FieldReader;
+pub type CHIDX_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CHIDX` writer - DPPI channel that event COMPARE\\[n\\]
 will publish to"]
-pub type ChidxW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+pub type CHIDX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PUBLISH_COMPARE_SPEC, u8, u8, 8, O>;
+#[doc = "Field `EN` reader - "]
+pub type EN_R = crate::BitReader<EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum En {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EN_A {
     #[doc = "0: Disable publishing"]
-    Disabled = 0,
+    DISABLED = 0,
     #[doc = "1: Enable publishing"]
-    Enabled = 1,
+    ENABLED = 1,
 }
-impl From<En> for bool {
+impl From<EN_A> for bool {
     #[inline(always)]
-    fn from(variant: En) -> Self {
+    fn from(variant: EN_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EN` reader - "]
-pub type EnR = crate::BitReader<En>;
-impl EnR {
+impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> En {
+    pub fn variant(&self) -> EN_A {
         match self.bits {
-            false => En::Disabled,
-            true => En::Enabled,
+            false => EN_A::DISABLED,
+            true => EN_A::ENABLED,
         }
     }
-    #[doc = "Disable publishing"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == En::Disabled
+        *self == EN_A::DISABLED
     }
-    #[doc = "Enable publishing"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == En::Enabled
+        *self == EN_A::ENABLED
     }
 }
 #[doc = "Field `EN` writer - "]
-pub type EnW<'a, REG> = crate::BitWriter<'a, REG, En>;
-impl<'a, REG> EnW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PUBLISH_COMPARE_SPEC, EN_A, O>;
+impl<'a, const O: u8> EN_W<'a, O> {
     #[doc = "Disable publishing"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(En::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(EN_A::DISABLED)
     }
     #[doc = "Enable publishing"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(En::Enabled)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(EN_A::ENABLED)
     }
 }
 impl R {
     #[doc = "Bits 0:7 - DPPI channel that event COMPARE\\[n\\]
 will publish to"]
     #[inline(always)]
-    pub fn chidx(&self) -> ChidxR {
-        ChidxR::new((self.bits & 0xff) as u8)
+    pub fn chidx(&self) -> CHIDX_R {
+        CHIDX_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn en(&self) -> EnR {
-        EnR::new(((self.bits >> 31) & 1) != 0)
+    pub fn en(&self) -> EN_R {
+        EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - DPPI channel that event COMPARE\\[n\\]
 will publish to"]
     #[inline(always)]
-    #[must_use]
-    pub fn chidx(&mut self) -> ChidxW<PublishCompareSpec> {
-        ChidxW::new(self, 0)
+    pub fn chidx(&mut self) -> CHIDX_W<0> {
+        CHIDX_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
-    #[must_use]
-    pub fn en(&mut self) -> EnW<PublishCompareSpec> {
-        EnW::new(self, 31)
+    pub fn en(&mut self) -> EN_W<31> {
+        EN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Description collection: Publish configuration for event COMPARE\\[n\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`publish_compare::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`publish_compare::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PublishCompareSpec;
-impl crate::RegisterSpec for PublishCompareSpec {
+#[doc = "Description collection: Publish configuration for event COMPARE\\[n\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [publish_compare](index.html) module"]
+pub struct PUBLISH_COMPARE_SPEC;
+impl crate::RegisterSpec for PUBLISH_COMPARE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`publish_compare::R`](R) reader structure"]
-impl crate::Readable for PublishCompareSpec {}
-#[doc = "`write(|w| ..)` method takes [`publish_compare::W`](W) writer structure"]
-impl crate::Writable for PublishCompareSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [publish_compare::R](R) reader structure"]
+impl crate::Readable for PUBLISH_COMPARE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [publish_compare::W](W) writer structure"]
+impl crate::Writable for PUBLISH_COMPARE_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets PUBLISH_COMPARE[%s]
 to value 0"]
-impl crate::Resettable for PublishCompareSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for PUBLISH_COMPARE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

@@ -1,522 +1,538 @@
 #[doc = "Register `INTENSET` reader"]
-pub type R = crate::R<IntensetSpec>;
-#[doc = "Register `INTENSET` writer"]
-pub type W = crate::W<IntensetSpec>;
-#[doc = "Write '1' to enable interrupt for event STOPPED\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Stopped {
-    #[doc = "0: Read: Disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Enabled"]
-    Enabled = 1,
-}
-impl From<Stopped> for bool {
+pub struct R(crate::R<INTENSET_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<INTENSET_SPEC>;
     #[inline(always)]
-    fn from(variant: Stopped) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<INTENSET_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<INTENSET_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `INTENSET` writer"]
+pub struct W(crate::W<INTENSET_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<INTENSET_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<INTENSET_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<INTENSET_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `STOPPED` reader - Write '1' to enable interrupt for event STOPPED"]
-pub type StoppedR = crate::BitReader<Stopped>;
-impl StoppedR {
+pub type STOPPED_R = crate::BitReader<STOPPED_A>;
+#[doc = "Write '1' to enable interrupt for event STOPPED\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STOPPED_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Enabled"]
+    ENABLED = 1,
+}
+impl From<STOPPED_A> for bool {
+    #[inline(always)]
+    fn from(variant: STOPPED_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl STOPPED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Stopped {
+    pub fn variant(&self) -> STOPPED_A {
         match self.bits {
-            false => Stopped::Disabled,
-            true => Stopped::Enabled,
+            false => STOPPED_A::DISABLED,
+            true => STOPPED_A::ENABLED,
         }
     }
-    #[doc = "Read: Disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Stopped::Disabled
+        *self == STOPPED_A::DISABLED
     }
-    #[doc = "Read: Enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Stopped::Enabled
+        *self == STOPPED_A::ENABLED
     }
 }
 #[doc = "Write '1' to enable interrupt for event STOPPED\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum StoppedWO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STOPPED_AW {
     #[doc = "1: Enable"]
-    Set = 1,
+    SET = 1,
 }
-impl From<StoppedWO> for bool {
+impl From<STOPPED_AW> for bool {
     #[inline(always)]
-    fn from(variant: StoppedWO) -> Self {
+    fn from(variant: STOPPED_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `STOPPED` writer - Write '1' to enable interrupt for event STOPPED"]
-pub type StoppedW<'a, REG> = crate::BitWriter<'a, REG, StoppedWO>;
-impl<'a, REG> StoppedW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type STOPPED_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENSET_SPEC, STOPPED_AW, O>;
+impl<'a, const O: u8> STOPPED_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(StoppedWO::Set)
-    }
-}
-#[doc = "Write '1' to enable interrupt for event SEQSTARTED\\[0\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Seqstarted0 {
-    #[doc = "0: Read: Disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Enabled"]
-    Enabled = 1,
-}
-impl From<Seqstarted0> for bool {
-    #[inline(always)]
-    fn from(variant: Seqstarted0) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(STOPPED_AW::SET)
     }
 }
 #[doc = "Field `SEQSTARTED0` reader - Write '1' to enable interrupt for event SEQSTARTED\\[0\\]"]
-pub type Seqstarted0R = crate::BitReader<Seqstarted0>;
-impl Seqstarted0R {
+pub type SEQSTARTED0_R = crate::BitReader<SEQSTARTED0_A>;
+#[doc = "Write '1' to enable interrupt for event SEQSTARTED\\[0\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEQSTARTED0_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Enabled"]
+    ENABLED = 1,
+}
+impl From<SEQSTARTED0_A> for bool {
+    #[inline(always)]
+    fn from(variant: SEQSTARTED0_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl SEQSTARTED0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Seqstarted0 {
+    pub fn variant(&self) -> SEQSTARTED0_A {
         match self.bits {
-            false => Seqstarted0::Disabled,
-            true => Seqstarted0::Enabled,
+            false => SEQSTARTED0_A::DISABLED,
+            true => SEQSTARTED0_A::ENABLED,
         }
     }
-    #[doc = "Read: Disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Seqstarted0::Disabled
+        *self == SEQSTARTED0_A::DISABLED
     }
-    #[doc = "Read: Enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Seqstarted0::Enabled
+        *self == SEQSTARTED0_A::ENABLED
     }
 }
 #[doc = "Write '1' to enable interrupt for event SEQSTARTED\\[0\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Seqstarted0WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEQSTARTED0_AW {
     #[doc = "1: Enable"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Seqstarted0WO> for bool {
+impl From<SEQSTARTED0_AW> for bool {
     #[inline(always)]
-    fn from(variant: Seqstarted0WO) -> Self {
+    fn from(variant: SEQSTARTED0_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SEQSTARTED0` writer - Write '1' to enable interrupt for event SEQSTARTED\\[0\\]"]
-pub type Seqstarted0W<'a, REG> = crate::BitWriter<'a, REG, Seqstarted0WO>;
-impl<'a, REG> Seqstarted0W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type SEQSTARTED0_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTENSET_SPEC, SEQSTARTED0_AW, O>;
+impl<'a, const O: u8> SEQSTARTED0_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Seqstarted0WO::Set)
-    }
-}
-#[doc = "Write '1' to enable interrupt for event SEQSTARTED\\[1\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Seqstarted1 {
-    #[doc = "0: Read: Disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Enabled"]
-    Enabled = 1,
-}
-impl From<Seqstarted1> for bool {
-    #[inline(always)]
-    fn from(variant: Seqstarted1) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(SEQSTARTED0_AW::SET)
     }
 }
 #[doc = "Field `SEQSTARTED1` reader - Write '1' to enable interrupt for event SEQSTARTED\\[1\\]"]
-pub type Seqstarted1R = crate::BitReader<Seqstarted1>;
-impl Seqstarted1R {
+pub type SEQSTARTED1_R = crate::BitReader<SEQSTARTED1_A>;
+#[doc = "Write '1' to enable interrupt for event SEQSTARTED\\[1\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEQSTARTED1_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Enabled"]
+    ENABLED = 1,
+}
+impl From<SEQSTARTED1_A> for bool {
+    #[inline(always)]
+    fn from(variant: SEQSTARTED1_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl SEQSTARTED1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Seqstarted1 {
+    pub fn variant(&self) -> SEQSTARTED1_A {
         match self.bits {
-            false => Seqstarted1::Disabled,
-            true => Seqstarted1::Enabled,
+            false => SEQSTARTED1_A::DISABLED,
+            true => SEQSTARTED1_A::ENABLED,
         }
     }
-    #[doc = "Read: Disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Seqstarted1::Disabled
+        *self == SEQSTARTED1_A::DISABLED
     }
-    #[doc = "Read: Enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Seqstarted1::Enabled
+        *self == SEQSTARTED1_A::ENABLED
     }
 }
 #[doc = "Write '1' to enable interrupt for event SEQSTARTED\\[1\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Seqstarted1WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEQSTARTED1_AW {
     #[doc = "1: Enable"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Seqstarted1WO> for bool {
+impl From<SEQSTARTED1_AW> for bool {
     #[inline(always)]
-    fn from(variant: Seqstarted1WO) -> Self {
+    fn from(variant: SEQSTARTED1_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SEQSTARTED1` writer - Write '1' to enable interrupt for event SEQSTARTED\\[1\\]"]
-pub type Seqstarted1W<'a, REG> = crate::BitWriter<'a, REG, Seqstarted1WO>;
-impl<'a, REG> Seqstarted1W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type SEQSTARTED1_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTENSET_SPEC, SEQSTARTED1_AW, O>;
+impl<'a, const O: u8> SEQSTARTED1_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Seqstarted1WO::Set)
-    }
-}
-#[doc = "Write '1' to enable interrupt for event SEQEND\\[0\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Seqend0 {
-    #[doc = "0: Read: Disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Enabled"]
-    Enabled = 1,
-}
-impl From<Seqend0> for bool {
-    #[inline(always)]
-    fn from(variant: Seqend0) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(SEQSTARTED1_AW::SET)
     }
 }
 #[doc = "Field `SEQEND0` reader - Write '1' to enable interrupt for event SEQEND\\[0\\]"]
-pub type Seqend0R = crate::BitReader<Seqend0>;
-impl Seqend0R {
+pub type SEQEND0_R = crate::BitReader<SEQEND0_A>;
+#[doc = "Write '1' to enable interrupt for event SEQEND\\[0\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEQEND0_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Enabled"]
+    ENABLED = 1,
+}
+impl From<SEQEND0_A> for bool {
+    #[inline(always)]
+    fn from(variant: SEQEND0_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl SEQEND0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Seqend0 {
+    pub fn variant(&self) -> SEQEND0_A {
         match self.bits {
-            false => Seqend0::Disabled,
-            true => Seqend0::Enabled,
+            false => SEQEND0_A::DISABLED,
+            true => SEQEND0_A::ENABLED,
         }
     }
-    #[doc = "Read: Disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Seqend0::Disabled
+        *self == SEQEND0_A::DISABLED
     }
-    #[doc = "Read: Enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Seqend0::Enabled
+        *self == SEQEND0_A::ENABLED
     }
 }
 #[doc = "Write '1' to enable interrupt for event SEQEND\\[0\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Seqend0WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEQEND0_AW {
     #[doc = "1: Enable"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Seqend0WO> for bool {
+impl From<SEQEND0_AW> for bool {
     #[inline(always)]
-    fn from(variant: Seqend0WO) -> Self {
+    fn from(variant: SEQEND0_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SEQEND0` writer - Write '1' to enable interrupt for event SEQEND\\[0\\]"]
-pub type Seqend0W<'a, REG> = crate::BitWriter<'a, REG, Seqend0WO>;
-impl<'a, REG> Seqend0W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type SEQEND0_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENSET_SPEC, SEQEND0_AW, O>;
+impl<'a, const O: u8> SEQEND0_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Seqend0WO::Set)
-    }
-}
-#[doc = "Write '1' to enable interrupt for event SEQEND\\[1\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Seqend1 {
-    #[doc = "0: Read: Disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Enabled"]
-    Enabled = 1,
-}
-impl From<Seqend1> for bool {
-    #[inline(always)]
-    fn from(variant: Seqend1) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(SEQEND0_AW::SET)
     }
 }
 #[doc = "Field `SEQEND1` reader - Write '1' to enable interrupt for event SEQEND\\[1\\]"]
-pub type Seqend1R = crate::BitReader<Seqend1>;
-impl Seqend1R {
+pub type SEQEND1_R = crate::BitReader<SEQEND1_A>;
+#[doc = "Write '1' to enable interrupt for event SEQEND\\[1\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEQEND1_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Enabled"]
+    ENABLED = 1,
+}
+impl From<SEQEND1_A> for bool {
+    #[inline(always)]
+    fn from(variant: SEQEND1_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl SEQEND1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Seqend1 {
+    pub fn variant(&self) -> SEQEND1_A {
         match self.bits {
-            false => Seqend1::Disabled,
-            true => Seqend1::Enabled,
+            false => SEQEND1_A::DISABLED,
+            true => SEQEND1_A::ENABLED,
         }
     }
-    #[doc = "Read: Disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Seqend1::Disabled
+        *self == SEQEND1_A::DISABLED
     }
-    #[doc = "Read: Enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Seqend1::Enabled
+        *self == SEQEND1_A::ENABLED
     }
 }
 #[doc = "Write '1' to enable interrupt for event SEQEND\\[1\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Seqend1WO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEQEND1_AW {
     #[doc = "1: Enable"]
-    Set = 1,
+    SET = 1,
 }
-impl From<Seqend1WO> for bool {
+impl From<SEQEND1_AW> for bool {
     #[inline(always)]
-    fn from(variant: Seqend1WO) -> Self {
+    fn from(variant: SEQEND1_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SEQEND1` writer - Write '1' to enable interrupt for event SEQEND\\[1\\]"]
-pub type Seqend1W<'a, REG> = crate::BitWriter<'a, REG, Seqend1WO>;
-impl<'a, REG> Seqend1W<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type SEQEND1_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENSET_SPEC, SEQEND1_AW, O>;
+impl<'a, const O: u8> SEQEND1_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(Seqend1WO::Set)
-    }
-}
-#[doc = "Write '1' to enable interrupt for event PWMPERIODEND\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pwmperiodend {
-    #[doc = "0: Read: Disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Enabled"]
-    Enabled = 1,
-}
-impl From<Pwmperiodend> for bool {
-    #[inline(always)]
-    fn from(variant: Pwmperiodend) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(SEQEND1_AW::SET)
     }
 }
 #[doc = "Field `PWMPERIODEND` reader - Write '1' to enable interrupt for event PWMPERIODEND"]
-pub type PwmperiodendR = crate::BitReader<Pwmperiodend>;
-impl PwmperiodendR {
+pub type PWMPERIODEND_R = crate::BitReader<PWMPERIODEND_A>;
+#[doc = "Write '1' to enable interrupt for event PWMPERIODEND\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PWMPERIODEND_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Enabled"]
+    ENABLED = 1,
+}
+impl From<PWMPERIODEND_A> for bool {
+    #[inline(always)]
+    fn from(variant: PWMPERIODEND_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PWMPERIODEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pwmperiodend {
+    pub fn variant(&self) -> PWMPERIODEND_A {
         match self.bits {
-            false => Pwmperiodend::Disabled,
-            true => Pwmperiodend::Enabled,
+            false => PWMPERIODEND_A::DISABLED,
+            true => PWMPERIODEND_A::ENABLED,
         }
     }
-    #[doc = "Read: Disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Pwmperiodend::Disabled
+        *self == PWMPERIODEND_A::DISABLED
     }
-    #[doc = "Read: Enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Pwmperiodend::Enabled
+        *self == PWMPERIODEND_A::ENABLED
     }
 }
 #[doc = "Write '1' to enable interrupt for event PWMPERIODEND\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PwmperiodendWO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PWMPERIODEND_AW {
     #[doc = "1: Enable"]
-    Set = 1,
+    SET = 1,
 }
-impl From<PwmperiodendWO> for bool {
+impl From<PWMPERIODEND_AW> for bool {
     #[inline(always)]
-    fn from(variant: PwmperiodendWO) -> Self {
+    fn from(variant: PWMPERIODEND_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PWMPERIODEND` writer - Write '1' to enable interrupt for event PWMPERIODEND"]
-pub type PwmperiodendW<'a, REG> = crate::BitWriter<'a, REG, PwmperiodendWO>;
-impl<'a, REG> PwmperiodendW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type PWMPERIODEND_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTENSET_SPEC, PWMPERIODEND_AW, O>;
+impl<'a, const O: u8> PWMPERIODEND_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(PwmperiodendWO::Set)
-    }
-}
-#[doc = "Write '1' to enable interrupt for event LOOPSDONE\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Loopsdone {
-    #[doc = "0: Read: Disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Enabled"]
-    Enabled = 1,
-}
-impl From<Loopsdone> for bool {
-    #[inline(always)]
-    fn from(variant: Loopsdone) -> Self {
-        variant as u8 != 0
+    pub fn set(self) -> &'a mut W {
+        self.variant(PWMPERIODEND_AW::SET)
     }
 }
 #[doc = "Field `LOOPSDONE` reader - Write '1' to enable interrupt for event LOOPSDONE"]
-pub type LoopsdoneR = crate::BitReader<Loopsdone>;
-impl LoopsdoneR {
+pub type LOOPSDONE_R = crate::BitReader<LOOPSDONE_A>;
+#[doc = "Write '1' to enable interrupt for event LOOPSDONE\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LOOPSDONE_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Enabled"]
+    ENABLED = 1,
+}
+impl From<LOOPSDONE_A> for bool {
+    #[inline(always)]
+    fn from(variant: LOOPSDONE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl LOOPSDONE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Loopsdone {
+    pub fn variant(&self) -> LOOPSDONE_A {
         match self.bits {
-            false => Loopsdone::Disabled,
-            true => Loopsdone::Enabled,
+            false => LOOPSDONE_A::DISABLED,
+            true => LOOPSDONE_A::ENABLED,
         }
     }
-    #[doc = "Read: Disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Loopsdone::Disabled
+        *self == LOOPSDONE_A::DISABLED
     }
-    #[doc = "Read: Enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Loopsdone::Enabled
+        *self == LOOPSDONE_A::ENABLED
     }
 }
 #[doc = "Write '1' to enable interrupt for event LOOPSDONE\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum LoopsdoneWO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LOOPSDONE_AW {
     #[doc = "1: Enable"]
-    Set = 1,
+    SET = 1,
 }
-impl From<LoopsdoneWO> for bool {
+impl From<LOOPSDONE_AW> for bool {
     #[inline(always)]
-    fn from(variant: LoopsdoneWO) -> Self {
+    fn from(variant: LOOPSDONE_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LOOPSDONE` writer - Write '1' to enable interrupt for event LOOPSDONE"]
-pub type LoopsdoneW<'a, REG> = crate::BitWriter<'a, REG, LoopsdoneWO>;
-impl<'a, REG> LoopsdoneW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type LOOPSDONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENSET_SPEC, LOOPSDONE_AW, O>;
+impl<'a, const O: u8> LOOPSDONE_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn set_(self) -> &'a mut crate::W<REG> {
-        self.variant(LoopsdoneWO::Set)
+    pub fn set(self) -> &'a mut W {
+        self.variant(LOOPSDONE_AW::SET)
     }
 }
 impl R {
     #[doc = "Bit 1 - Write '1' to enable interrupt for event STOPPED"]
     #[inline(always)]
-    pub fn stopped(&self) -> StoppedR {
-        StoppedR::new(((self.bits >> 1) & 1) != 0)
+    pub fn stopped(&self) -> STOPPED_R {
+        STOPPED_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Write '1' to enable interrupt for event SEQSTARTED\\[0\\]"]
     #[inline(always)]
-    pub fn seqstarted0(&self) -> Seqstarted0R {
-        Seqstarted0R::new(((self.bits >> 2) & 1) != 0)
+    pub fn seqstarted0(&self) -> SEQSTARTED0_R {
+        SEQSTARTED0_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Write '1' to enable interrupt for event SEQSTARTED\\[1\\]"]
     #[inline(always)]
-    pub fn seqstarted1(&self) -> Seqstarted1R {
-        Seqstarted1R::new(((self.bits >> 3) & 1) != 0)
+    pub fn seqstarted1(&self) -> SEQSTARTED1_R {
+        SEQSTARTED1_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Write '1' to enable interrupt for event SEQEND\\[0\\]"]
     #[inline(always)]
-    pub fn seqend0(&self) -> Seqend0R {
-        Seqend0R::new(((self.bits >> 4) & 1) != 0)
+    pub fn seqend0(&self) -> SEQEND0_R {
+        SEQEND0_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Write '1' to enable interrupt for event SEQEND\\[1\\]"]
     #[inline(always)]
-    pub fn seqend1(&self) -> Seqend1R {
-        Seqend1R::new(((self.bits >> 5) & 1) != 0)
+    pub fn seqend1(&self) -> SEQEND1_R {
+        SEQEND1_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Write '1' to enable interrupt for event PWMPERIODEND"]
     #[inline(always)]
-    pub fn pwmperiodend(&self) -> PwmperiodendR {
-        PwmperiodendR::new(((self.bits >> 6) & 1) != 0)
+    pub fn pwmperiodend(&self) -> PWMPERIODEND_R {
+        PWMPERIODEND_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Write '1' to enable interrupt for event LOOPSDONE"]
     #[inline(always)]
-    pub fn loopsdone(&self) -> LoopsdoneR {
-        LoopsdoneR::new(((self.bits >> 7) & 1) != 0)
+    pub fn loopsdone(&self) -> LOOPSDONE_R {
+        LOOPSDONE_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 1 - Write '1' to enable interrupt for event STOPPED"]
     #[inline(always)]
-    #[must_use]
-    pub fn stopped(&mut self) -> StoppedW<IntensetSpec> {
-        StoppedW::new(self, 1)
+    pub fn stopped(&mut self) -> STOPPED_W<1> {
+        STOPPED_W::new(self)
     }
     #[doc = "Bit 2 - Write '1' to enable interrupt for event SEQSTARTED\\[0\\]"]
     #[inline(always)]
-    #[must_use]
-    pub fn seqstarted0(&mut self) -> Seqstarted0W<IntensetSpec> {
-        Seqstarted0W::new(self, 2)
+    pub fn seqstarted0(&mut self) -> SEQSTARTED0_W<2> {
+        SEQSTARTED0_W::new(self)
     }
     #[doc = "Bit 3 - Write '1' to enable interrupt for event SEQSTARTED\\[1\\]"]
     #[inline(always)]
-    #[must_use]
-    pub fn seqstarted1(&mut self) -> Seqstarted1W<IntensetSpec> {
-        Seqstarted1W::new(self, 3)
+    pub fn seqstarted1(&mut self) -> SEQSTARTED1_W<3> {
+        SEQSTARTED1_W::new(self)
     }
     #[doc = "Bit 4 - Write '1' to enable interrupt for event SEQEND\\[0\\]"]
     #[inline(always)]
-    #[must_use]
-    pub fn seqend0(&mut self) -> Seqend0W<IntensetSpec> {
-        Seqend0W::new(self, 4)
+    pub fn seqend0(&mut self) -> SEQEND0_W<4> {
+        SEQEND0_W::new(self)
     }
     #[doc = "Bit 5 - Write '1' to enable interrupt for event SEQEND\\[1\\]"]
     #[inline(always)]
-    #[must_use]
-    pub fn seqend1(&mut self) -> Seqend1W<IntensetSpec> {
-        Seqend1W::new(self, 5)
+    pub fn seqend1(&mut self) -> SEQEND1_W<5> {
+        SEQEND1_W::new(self)
     }
     #[doc = "Bit 6 - Write '1' to enable interrupt for event PWMPERIODEND"]
     #[inline(always)]
-    #[must_use]
-    pub fn pwmperiodend(&mut self) -> PwmperiodendW<IntensetSpec> {
-        PwmperiodendW::new(self, 6)
+    pub fn pwmperiodend(&mut self) -> PWMPERIODEND_W<6> {
+        PWMPERIODEND_W::new(self)
     }
     #[doc = "Bit 7 - Write '1' to enable interrupt for event LOOPSDONE"]
     #[inline(always)]
-    #[must_use]
-    pub fn loopsdone(&mut self) -> LoopsdoneW<IntensetSpec> {
-        LoopsdoneW::new(self, 7)
+    pub fn loopsdone(&mut self) -> LOOPSDONE_W<7> {
+        LOOPSDONE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Enable interrupt\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intenset::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenset::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct IntensetSpec;
-impl crate::RegisterSpec for IntensetSpec {
+#[doc = "Enable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenset](index.html) module"]
+pub struct INTENSET_SPEC;
+impl crate::RegisterSpec for INTENSET_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`intenset::R`](R) reader structure"]
-impl crate::Readable for IntensetSpec {}
-#[doc = "`write(|w| ..)` method takes [`intenset::W`](W) writer structure"]
-impl crate::Writable for IntensetSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [intenset::R](R) reader structure"]
+impl crate::Readable for INTENSET_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [intenset::W](W) writer structure"]
+impl crate::Writable for INTENSET_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets INTENSET to value 0"]
-impl crate::Resettable for IntensetSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for INTENSET_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

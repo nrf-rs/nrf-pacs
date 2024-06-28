@@ -1,89 +1,126 @@
 #[doc = "Register `RATIO` reader"]
-pub type R = crate::R<RatioSpec>;
-#[doc = "Register `RATIO` writer"]
-pub type W = crate::W<RatioSpec>;
-#[doc = "Selects the ratio between PDM_CLK and output sample rate\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ratio {
-    #[doc = "0: Ratio of 64"]
-    Ratio64 = 0,
-    #[doc = "1: Ratio of 80"]
-    Ratio80 = 1,
-}
-impl From<Ratio> for bool {
+pub struct R(crate::R<RATIO_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RATIO_SPEC>;
     #[inline(always)]
-    fn from(variant: Ratio) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<RATIO_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<RATIO_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RATIO` writer"]
+pub struct W(crate::W<RATIO_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RATIO_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<RATIO_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<RATIO_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `RATIO` reader - Selects the ratio between PDM_CLK and output sample rate"]
-pub type RatioR = crate::BitReader<Ratio>;
-impl RatioR {
+pub type RATIO_R = crate::BitReader<RATIO_A>;
+#[doc = "Selects the ratio between PDM_CLK and output sample rate\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RATIO_A {
+    #[doc = "0: Ratio of 64"]
+    RATIO64 = 0,
+    #[doc = "1: Ratio of 80"]
+    RATIO80 = 1,
+}
+impl From<RATIO_A> for bool {
+    #[inline(always)]
+    fn from(variant: RATIO_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RATIO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ratio {
+    pub fn variant(&self) -> RATIO_A {
         match self.bits {
-            false => Ratio::Ratio64,
-            true => Ratio::Ratio80,
+            false => RATIO_A::RATIO64,
+            true => RATIO_A::RATIO80,
         }
     }
-    #[doc = "Ratio of 64"]
+    #[doc = "Checks if the value of the field is `RATIO64`"]
     #[inline(always)]
     pub fn is_ratio64(&self) -> bool {
-        *self == Ratio::Ratio64
+        *self == RATIO_A::RATIO64
     }
-    #[doc = "Ratio of 80"]
+    #[doc = "Checks if the value of the field is `RATIO80`"]
     #[inline(always)]
     pub fn is_ratio80(&self) -> bool {
-        *self == Ratio::Ratio80
+        *self == RATIO_A::RATIO80
     }
 }
 #[doc = "Field `RATIO` writer - Selects the ratio between PDM_CLK and output sample rate"]
-pub type RatioW<'a, REG> = crate::BitWriter<'a, REG, Ratio>;
-impl<'a, REG> RatioW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type RATIO_W<'a, const O: u8> = crate::BitWriter<'a, u32, RATIO_SPEC, RATIO_A, O>;
+impl<'a, const O: u8> RATIO_W<'a, O> {
     #[doc = "Ratio of 64"]
     #[inline(always)]
-    pub fn ratio64(self) -> &'a mut crate::W<REG> {
-        self.variant(Ratio::Ratio64)
+    pub fn ratio64(self) -> &'a mut W {
+        self.variant(RATIO_A::RATIO64)
     }
     #[doc = "Ratio of 80"]
     #[inline(always)]
-    pub fn ratio80(self) -> &'a mut crate::W<REG> {
-        self.variant(Ratio::Ratio80)
+    pub fn ratio80(self) -> &'a mut W {
+        self.variant(RATIO_A::RATIO80)
     }
 }
 impl R {
     #[doc = "Bit 0 - Selects the ratio between PDM_CLK and output sample rate"]
     #[inline(always)]
-    pub fn ratio(&self) -> RatioR {
-        RatioR::new((self.bits & 1) != 0)
+    pub fn ratio(&self) -> RATIO_R {
+        RATIO_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Selects the ratio between PDM_CLK and output sample rate"]
     #[inline(always)]
-    #[must_use]
-    pub fn ratio(&mut self) -> RatioW<RatioSpec> {
-        RatioW::new(self, 0)
+    pub fn ratio(&mut self) -> RATIO_W<0> {
+        RATIO_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Selects the ratio between PDM_CLK and output sample rate. Change PDMCLKCTRL accordingly.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ratio::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ratio::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RatioSpec;
-impl crate::RegisterSpec for RatioSpec {
+#[doc = "Selects the ratio between PDM_CLK and output sample rate. Change PDMCLKCTRL accordingly.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ratio](index.html) module"]
+pub struct RATIO_SPEC;
+impl crate::RegisterSpec for RATIO_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`ratio::R`](R) reader structure"]
-impl crate::Readable for RatioSpec {}
-#[doc = "`write(|w| ..)` method takes [`ratio::W`](W) writer structure"]
-impl crate::Writable for RatioSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [ratio::R](R) reader structure"]
+impl crate::Readable for RATIO_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ratio::W](W) writer structure"]
+impl crate::Writable for RATIO_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets RATIO to value 0"]
-impl crate::Resettable for RatioSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for RATIO_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

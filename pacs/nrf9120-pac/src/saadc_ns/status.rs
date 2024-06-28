@@ -1,56 +1,74 @@
 #[doc = "Register `STATUS` reader"]
-pub type R = crate::R<StatusSpec>;
-#[doc = "Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Status {
-    #[doc = "0: ADC is ready. No on-going conversion."]
-    Ready = 0,
-    #[doc = "1: ADC is busy. Single conversion in progress."]
-    Busy = 1,
-}
-impl From<Status> for bool {
+pub struct R(crate::R<STATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STATUS_SPEC>;
     #[inline(always)]
-    fn from(variant: Status) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
+        R(reader)
     }
 }
 #[doc = "Field `STATUS` reader - Status"]
-pub type StatusR = crate::BitReader<Status>;
-impl StatusR {
+pub type STATUS_R = crate::BitReader<STATUS_A>;
+#[doc = "Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STATUS_A {
+    #[doc = "0: ADC is ready. No on-going conversion."]
+    READY = 0,
+    #[doc = "1: ADC is busy. Single conversion in progress."]
+    BUSY = 1,
+}
+impl From<STATUS_A> for bool {
+    #[inline(always)]
+    fn from(variant: STATUS_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Status {
+    pub fn variant(&self) -> STATUS_A {
         match self.bits {
-            false => Status::Ready,
-            true => Status::Busy,
+            false => STATUS_A::READY,
+            true => STATUS_A::BUSY,
         }
     }
-    #[doc = "ADC is ready. No on-going conversion."]
+    #[doc = "Checks if the value of the field is `READY`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        *self == Status::Ready
+        *self == STATUS_A::READY
     }
-    #[doc = "ADC is busy. Single conversion in progress."]
+    #[doc = "Checks if the value of the field is `BUSY`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        *self == Status::Busy
+        *self == STATUS_A::BUSY
     }
 }
 impl R {
     #[doc = "Bit 0 - Status"]
     #[inline(always)]
-    pub fn status(&self) -> StatusR {
-        StatusR::new((self.bits & 1) != 0)
+    pub fn status(&self) -> STATUS_R {
+        STATUS_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct StatusSpec;
-impl crate::RegisterSpec for StatusSpec {
+#[doc = "Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
+pub struct STATUS_SPEC;
+impl crate::RegisterSpec for STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`status::R`](R) reader structure"]
-impl crate::Readable for StatusSpec {}
+#[doc = "`read()` method returns [status::R](R) reader structure"]
+impl crate::Readable for STATUS_SPEC {
+    type Reader = R;
+}
 #[doc = "`reset()` method sets STATUS to value 0"]
-impl crate::Resettable for StatusSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

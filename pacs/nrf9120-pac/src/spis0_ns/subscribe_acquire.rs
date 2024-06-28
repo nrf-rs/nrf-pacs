@@ -1,104 +1,141 @@
 #[doc = "Register `SUBSCRIBE_ACQUIRE` reader"]
-pub type R = crate::R<SubscribeAcquireSpec>;
-#[doc = "Register `SUBSCRIBE_ACQUIRE` writer"]
-pub type W = crate::W<SubscribeAcquireSpec>;
-#[doc = "Field `CHIDX` reader - DPPI channel that task ACQUIRE will subscribe to"]
-pub type ChidxR = crate::FieldReader;
-#[doc = "Field `CHIDX` writer - DPPI channel that task ACQUIRE will subscribe to"]
-pub type ChidxW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum En {
-    #[doc = "0: Disable subscription"]
-    Disabled = 0,
-    #[doc = "1: Enable subscription"]
-    Enabled = 1,
-}
-impl From<En> for bool {
+pub struct R(crate::R<SUBSCRIBE_ACQUIRE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SUBSCRIBE_ACQUIRE_SPEC>;
     #[inline(always)]
-    fn from(variant: En) -> Self {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SUBSCRIBE_ACQUIRE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SUBSCRIBE_ACQUIRE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SUBSCRIBE_ACQUIRE` writer"]
+pub struct W(crate::W<SUBSCRIBE_ACQUIRE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SUBSCRIBE_ACQUIRE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SUBSCRIBE_ACQUIRE_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SUBSCRIBE_ACQUIRE_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CHIDX` reader - DPPI channel that task ACQUIRE will subscribe to"]
+pub type CHIDX_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `CHIDX` writer - DPPI channel that task ACQUIRE will subscribe to"]
+pub type CHIDX_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SUBSCRIBE_ACQUIRE_SPEC, u8, u8, 8, O>;
+#[doc = "Field `EN` reader - "]
+pub type EN_R = crate::BitReader<EN_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EN_A {
+    #[doc = "0: Disable subscription"]
+    DISABLED = 0,
+    #[doc = "1: Enable subscription"]
+    ENABLED = 1,
+}
+impl From<EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: EN_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EN` reader - "]
-pub type EnR = crate::BitReader<En>;
-impl EnR {
+impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> En {
+    pub fn variant(&self) -> EN_A {
         match self.bits {
-            false => En::Disabled,
-            true => En::Enabled,
+            false => EN_A::DISABLED,
+            true => EN_A::ENABLED,
         }
     }
-    #[doc = "Disable subscription"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == En::Disabled
+        *self == EN_A::DISABLED
     }
-    #[doc = "Enable subscription"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == En::Enabled
+        *self == EN_A::ENABLED
     }
 }
 #[doc = "Field `EN` writer - "]
-pub type EnW<'a, REG> = crate::BitWriter<'a, REG, En>;
-impl<'a, REG> EnW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBSCRIBE_ACQUIRE_SPEC, EN_A, O>;
+impl<'a, const O: u8> EN_W<'a, O> {
     #[doc = "Disable subscription"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(En::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(EN_A::DISABLED)
     }
     #[doc = "Enable subscription"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(En::Enabled)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(EN_A::ENABLED)
     }
 }
 impl R {
     #[doc = "Bits 0:7 - DPPI channel that task ACQUIRE will subscribe to"]
     #[inline(always)]
-    pub fn chidx(&self) -> ChidxR {
-        ChidxR::new((self.bits & 0xff) as u8)
+    pub fn chidx(&self) -> CHIDX_R {
+        CHIDX_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn en(&self) -> EnR {
-        EnR::new(((self.bits >> 31) & 1) != 0)
+    pub fn en(&self) -> EN_R {
+        EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - DPPI channel that task ACQUIRE will subscribe to"]
     #[inline(always)]
-    #[must_use]
-    pub fn chidx(&mut self) -> ChidxW<SubscribeAcquireSpec> {
-        ChidxW::new(self, 0)
+    pub fn chidx(&mut self) -> CHIDX_W<0> {
+        CHIDX_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
-    #[must_use]
-    pub fn en(&mut self) -> EnW<SubscribeAcquireSpec> {
-        EnW::new(self, 31)
+    pub fn en(&mut self) -> EN_W<31> {
+        EN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Subscribe configuration for task ACQUIRE\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`subscribe_acquire::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`subscribe_acquire::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct SubscribeAcquireSpec;
-impl crate::RegisterSpec for SubscribeAcquireSpec {
+#[doc = "Subscribe configuration for task ACQUIRE\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [subscribe_acquire](index.html) module"]
+pub struct SUBSCRIBE_ACQUIRE_SPEC;
+impl crate::RegisterSpec for SUBSCRIBE_ACQUIRE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`subscribe_acquire::R`](R) reader structure"]
-impl crate::Readable for SubscribeAcquireSpec {}
-#[doc = "`write(|w| ..)` method takes [`subscribe_acquire::W`](W) writer structure"]
-impl crate::Writable for SubscribeAcquireSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [subscribe_acquire::R](R) reader structure"]
+impl crate::Readable for SUBSCRIBE_ACQUIRE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [subscribe_acquire::W](W) writer structure"]
+impl crate::Writable for SUBSCRIBE_ACQUIRE_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets SUBSCRIBE_ACQUIRE to value 0"]
-impl crate::Resettable for SubscribeAcquireSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for SUBSCRIBE_ACQUIRE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

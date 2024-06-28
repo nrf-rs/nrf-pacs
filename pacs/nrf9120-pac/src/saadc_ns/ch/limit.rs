@@ -1,55 +1,94 @@
 #[doc = "Register `LIMIT` reader"]
-pub type R = crate::R<LimitSpec>;
+pub struct R(crate::R<LIMIT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LIMIT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<LIMIT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<LIMIT_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Register `LIMIT` writer"]
-pub type W = crate::W<LimitSpec>;
+pub struct W(crate::W<LIMIT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LIMIT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<LIMIT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<LIMIT_SPEC>) -> Self {
+        W(writer)
+    }
+}
 #[doc = "Field `LOW` reader - Low level limit"]
-pub type LowR = crate::FieldReader<u16>;
+pub type LOW_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LOW` writer - Low level limit"]
-pub type LowW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+pub type LOW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LIMIT_SPEC, u16, u16, 16, O>;
 #[doc = "Field `HIGH` reader - High level limit"]
-pub type HighR = crate::FieldReader<u16>;
+pub type HIGH_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `HIGH` writer - High level limit"]
-pub type HighW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+pub type HIGH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LIMIT_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Low level limit"]
     #[inline(always)]
-    pub fn low(&self) -> LowR {
-        LowR::new((self.bits & 0xffff) as u16)
+    pub fn low(&self) -> LOW_R {
+        LOW_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:31 - High level limit"]
     #[inline(always)]
-    pub fn high(&self) -> HighR {
-        HighR::new(((self.bits >> 16) & 0xffff) as u16)
+    pub fn high(&self) -> HIGH_R {
+        HIGH_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Low level limit"]
     #[inline(always)]
-    #[must_use]
-    pub fn low(&mut self) -> LowW<LimitSpec> {
-        LowW::new(self, 0)
+    pub fn low(&mut self) -> LOW_W<0> {
+        LOW_W::new(self)
     }
     #[doc = "Bits 16:31 - High level limit"]
     #[inline(always)]
-    #[must_use]
-    pub fn high(&mut self) -> HighW<LimitSpec> {
-        HighW::new(self, 16)
+    pub fn high(&mut self) -> HIGH_W<16> {
+        HIGH_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Description cluster: High/low limits for event monitoring a channel\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`limit::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`limit::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct LimitSpec;
-impl crate::RegisterSpec for LimitSpec {
+#[doc = "Description cluster: High/low limits for event monitoring a channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [limit](index.html) module"]
+pub struct LIMIT_SPEC;
+impl crate::RegisterSpec for LIMIT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`limit::R`](R) reader structure"]
-impl crate::Readable for LimitSpec {}
-#[doc = "`write(|w| ..)` method takes [`limit::W`](W) writer structure"]
-impl crate::Writable for LimitSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [limit::R](R) reader structure"]
+impl crate::Readable for LIMIT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [limit::W](W) writer structure"]
+impl crate::Writable for LIMIT_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets LIMIT to value 0x7fff_8000"]
-impl crate::Resettable for LimitSpec {
-    const RESET_VALUE: u32 = 0x7fff_8000;
+impl crate::Resettable for LIMIT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x7fff_8000
+    }
 }

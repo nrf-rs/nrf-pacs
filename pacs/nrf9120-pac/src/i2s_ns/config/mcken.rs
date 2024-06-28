@@ -1,89 +1,126 @@
 #[doc = "Register `MCKEN` reader"]
-pub type R = crate::R<MckenSpec>;
-#[doc = "Register `MCKEN` writer"]
-pub type W = crate::W<MckenSpec>;
-#[doc = "Master clock generator enable.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Mcken {
-    #[doc = "0: Master clock generator disabled and PSEL.MCK not connected(available as GPIO)."]
-    Disabled = 0,
-    #[doc = "1: Master clock generator running and MCK output on PSEL.MCK."]
-    Enabled = 1,
-}
-impl From<Mcken> for bool {
+pub struct R(crate::R<MCKEN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MCKEN_SPEC>;
     #[inline(always)]
-    fn from(variant: Mcken) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<MCKEN_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MCKEN_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MCKEN` writer"]
+pub struct W(crate::W<MCKEN_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MCKEN_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MCKEN_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MCKEN_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `MCKEN` reader - Master clock generator enable."]
-pub type MckenR = crate::BitReader<Mcken>;
-impl MckenR {
+pub type MCKEN_R = crate::BitReader<MCKEN_A>;
+#[doc = "Master clock generator enable.\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MCKEN_A {
+    #[doc = "0: Master clock generator disabled and PSEL.MCK not connected(available as GPIO)."]
+    DISABLED = 0,
+    #[doc = "1: Master clock generator running and MCK output on PSEL.MCK."]
+    ENABLED = 1,
+}
+impl From<MCKEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: MCKEN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl MCKEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Mcken {
+    pub fn variant(&self) -> MCKEN_A {
         match self.bits {
-            false => Mcken::Disabled,
-            true => Mcken::Enabled,
+            false => MCKEN_A::DISABLED,
+            true => MCKEN_A::ENABLED,
         }
     }
-    #[doc = "Master clock generator disabled and PSEL.MCK not connected(available as GPIO)."]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Mcken::Disabled
+        *self == MCKEN_A::DISABLED
     }
-    #[doc = "Master clock generator running and MCK output on PSEL.MCK."]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Mcken::Enabled
+        *self == MCKEN_A::ENABLED
     }
 }
 #[doc = "Field `MCKEN` writer - Master clock generator enable."]
-pub type MckenW<'a, REG> = crate::BitWriter<'a, REG, Mcken>;
-impl<'a, REG> MckenW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type MCKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCKEN_SPEC, MCKEN_A, O>;
+impl<'a, const O: u8> MCKEN_W<'a, O> {
     #[doc = "Master clock generator disabled and PSEL.MCK not connected(available as GPIO)."]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Mcken::Disabled)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MCKEN_A::DISABLED)
     }
     #[doc = "Master clock generator running and MCK output on PSEL.MCK."]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut crate::W<REG> {
-        self.variant(Mcken::Enabled)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(MCKEN_A::ENABLED)
     }
 }
 impl R {
     #[doc = "Bit 0 - Master clock generator enable."]
     #[inline(always)]
-    pub fn mcken(&self) -> MckenR {
-        MckenR::new((self.bits & 1) != 0)
+    pub fn mcken(&self) -> MCKEN_R {
+        MCKEN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Master clock generator enable."]
     #[inline(always)]
-    #[must_use]
-    pub fn mcken(&mut self) -> MckenW<MckenSpec> {
-        MckenW::new(self, 0)
+    pub fn mcken(&mut self) -> MCKEN_W<0> {
+        MCKEN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Master clock generator enable.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mcken::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mcken::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct MckenSpec;
-impl crate::RegisterSpec for MckenSpec {
+#[doc = "Master clock generator enable.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mcken](index.html) module"]
+pub struct MCKEN_SPEC;
+impl crate::RegisterSpec for MCKEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`mcken::R`](R) reader structure"]
-impl crate::Readable for MckenSpec {}
-#[doc = "`write(|w| ..)` method takes [`mcken::W`](W) writer structure"]
-impl crate::Writable for MckenSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [mcken::R](R) reader structure"]
+impl crate::Readable for MCKEN_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mcken::W](W) writer structure"]
+impl crate::Writable for MCKEN_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets MCKEN to value 0x01"]
-impl crate::Resettable for MckenSpec {
-    const RESET_VALUE: u32 = 0x01;
+impl crate::Resettable for MCKEN_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x01
+    }
 }

@@ -1,96 +1,128 @@
 #[doc = "Register `APPROTECT` reader"]
-pub type R = crate::R<ApprotectSpec>;
-#[doc = "Register `APPROTECT` writer"]
-pub type W = crate::W<ApprotectSpec>;
-#[doc = "Blocks debugger read/write access to all CPU registers and memory mapped addresses\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum Pall {
-    #[doc = "1358582010: HwUnprotected"]
-    HwUnprotected = 1358582010,
-    #[doc = "0: Protected"]
-    Protected = 0,
-}
-impl From<Pall> for u32 {
+pub struct R(crate::R<APPROTECT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<APPROTECT_SPEC>;
     #[inline(always)]
-    fn from(variant: Pall) -> Self {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<APPROTECT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<APPROTECT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `APPROTECT` writer"]
+pub struct W(crate::W<APPROTECT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<APPROTECT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<APPROTECT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<APPROTECT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PALL` reader - Blocks debugger read/write access to all CPU registers and memory mapped addresses"]
+pub type PALL_R = crate::FieldReader<u32, PALL_A>;
+#[doc = "Blocks debugger read/write access to all CPU registers and memory mapped addresses\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
+pub enum PALL_A {
+    #[doc = "1358582010: HwUnprotected"]
+    HW_UNPROTECTED = 1358582010,
+    #[doc = "0: Protected"]
+    PROTECTED = 0,
+}
+impl From<PALL_A> for u32 {
+    #[inline(always)]
+    fn from(variant: PALL_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Pall {
-    type Ux = u32;
-}
-impl crate::IsEnum for Pall {}
-#[doc = "Field `PALL` reader - Blocks debugger read/write access to all CPU registers and memory mapped addresses"]
-pub type PallR = crate::FieldReader<Pall>;
-impl PallR {
+impl PALL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Pall> {
+    pub fn variant(&self) -> Option<PALL_A> {
         match self.bits {
-            1358582010 => Some(Pall::HwUnprotected),
-            0 => Some(Pall::Protected),
+            1358582010 => Some(PALL_A::HW_UNPROTECTED),
+            0 => Some(PALL_A::PROTECTED),
             _ => None,
         }
     }
-    #[doc = "HwUnprotected"]
+    #[doc = "Checks if the value of the field is `HW_UNPROTECTED`"]
     #[inline(always)]
     pub fn is_hw_unprotected(&self) -> bool {
-        *self == Pall::HwUnprotected
+        *self == PALL_A::HW_UNPROTECTED
     }
-    #[doc = "Protected"]
+    #[doc = "Checks if the value of the field is `PROTECTED`"]
     #[inline(always)]
     pub fn is_protected(&self) -> bool {
-        *self == Pall::Protected
+        *self == PALL_A::PROTECTED
     }
 }
 #[doc = "Field `PALL` writer - Blocks debugger read/write access to all CPU registers and memory mapped addresses"]
-pub type PallW<'a, REG> = crate::FieldWriter<'a, REG, 32, Pall>;
-impl<'a, REG> PallW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u32>,
-{
+pub type PALL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, APPROTECT_SPEC, u32, PALL_A, 32, O>;
+impl<'a, const O: u8> PALL_W<'a, O> {
     #[doc = "HwUnprotected"]
     #[inline(always)]
-    pub fn hw_unprotected(self) -> &'a mut crate::W<REG> {
-        self.variant(Pall::HwUnprotected)
+    pub fn hw_unprotected(self) -> &'a mut W {
+        self.variant(PALL_A::HW_UNPROTECTED)
     }
     #[doc = "Protected"]
     #[inline(always)]
-    pub fn protected(self) -> &'a mut crate::W<REG> {
-        self.variant(Pall::Protected)
+    pub fn protected(self) -> &'a mut W {
+        self.variant(PALL_A::PROTECTED)
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Blocks debugger read/write access to all CPU registers and memory mapped addresses"]
     #[inline(always)]
-    pub fn pall(&self) -> PallR {
-        PallR::new(self.bits)
+    pub fn pall(&self) -> PALL_R {
+        PALL_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Blocks debugger read/write access to all CPU registers and memory mapped addresses"]
     #[inline(always)]
-    #[must_use]
-    pub fn pall(&mut self) -> PallW<ApprotectSpec> {
-        PallW::new(self, 0)
+    pub fn pall(&mut self) -> PALL_W<0> {
+        PALL_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Access port protection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`approtect::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`approtect::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ApprotectSpec;
-impl crate::RegisterSpec for ApprotectSpec {
+#[doc = "Access port protection\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [approtect](index.html) module"]
+pub struct APPROTECT_SPEC;
+impl crate::RegisterSpec for APPROTECT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`approtect::R`](R) reader structure"]
-impl crate::Readable for ApprotectSpec {}
-#[doc = "`write(|w| ..)` method takes [`approtect::W`](W) writer structure"]
-impl crate::Writable for ApprotectSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [approtect::R](R) reader structure"]
+impl crate::Readable for APPROTECT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [approtect::W](W) writer structure"]
+impl crate::Writable for APPROTECT_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets APPROTECT to value 0"]
-impl crate::Resettable for ApprotectSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for APPROTECT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

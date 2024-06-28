@@ -1,19 +1,10 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Unspecified"]
-#[doc(alias = "RXTXD")]
-pub struct Rxtxd {
-    maxcnt: Maxcnt,
-}
-impl Rxtxd {
+pub struct RXTXD {
     #[doc = "0x00 - Size of RXD and TXD buffers."]
-    #[inline(always)]
-    pub const fn maxcnt(&self) -> &Maxcnt {
-        &self.maxcnt
-    }
+    pub maxcnt: MAXCNT,
 }
-#[doc = "MAXCNT (rw) register accessor: Size of RXD and TXD buffers.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`maxcnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`maxcnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@maxcnt`]
-module"]
-#[doc(alias = "MAXCNT")]
-pub type Maxcnt = crate::Reg<maxcnt::MaxcntSpec>;
+#[doc = "MAXCNT (rw) register accessor: an alias for `Reg<MAXCNT_SPEC>`"]
+pub type MAXCNT = crate::Reg<maxcnt::MAXCNT_SPEC>;
 #[doc = "Size of RXD and TXD buffers."]
 pub mod maxcnt;

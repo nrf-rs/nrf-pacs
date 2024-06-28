@@ -1,54 +1,77 @@
 #[doc = "Register `TASKS_CAPTURE[%s]` writer"]
-pub type W = crate::W<TasksCaptureSpec>;
+pub struct W(crate::W<TASKS_CAPTURE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TASKS_CAPTURE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TASKS_CAPTURE_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TASKS_CAPTURE_SPEC>) -> Self {
+        W(writer)
+    }
+}
 #[doc = "Capture Timer value to CC\\[n\\]
 register\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TasksCapture {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TASKS_CAPTURE_AW {
     #[doc = "1: Trigger task"]
-    Trigger = 1,
+    TRIGGER = 1,
 }
-impl From<TasksCapture> for bool {
+impl From<TASKS_CAPTURE_AW> for bool {
     #[inline(always)]
-    fn from(variant: TasksCapture) -> Self {
+    fn from(variant: TASKS_CAPTURE_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TASKS_CAPTURE` writer - Capture Timer value to CC\\[n\\]
 register"]
-pub type TasksCaptureW<'a, REG> = crate::BitWriter<'a, REG, TasksCapture>;
-impl<'a, REG> TasksCaptureW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type TASKS_CAPTURE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_CAPTURE_SPEC, TASKS_CAPTURE_AW, O>;
+impl<'a, const O: u8> TASKS_CAPTURE_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
-    pub fn trigger(self) -> &'a mut crate::W<REG> {
-        self.variant(TasksCapture::Trigger)
+    pub fn trigger(self) -> &'a mut W {
+        self.variant(TASKS_CAPTURE_AW::TRIGGER)
     }
 }
 impl W {
     #[doc = "Bit 0 - Capture Timer value to CC\\[n\\]
 register"]
     #[inline(always)]
-    #[must_use]
-    pub fn tasks_capture(&mut self) -> TasksCaptureW<TasksCaptureSpec> {
-        TasksCaptureW::new(self, 0)
+    pub fn tasks_capture(&mut self) -> TASKS_CAPTURE_W<0> {
+        TASKS_CAPTURE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
 #[doc = "Description collection: Capture Timer value to CC\\[n\\]
-register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tasks_capture::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TasksCaptureSpec;
-impl crate::RegisterSpec for TasksCaptureSpec {
+register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_capture](index.html) module"]
+pub struct TASKS_CAPTURE_SPEC;
+impl crate::RegisterSpec for TASKS_CAPTURE_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [`tasks_capture::W`](W) writer structure"]
-impl crate::Writable for TasksCaptureSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`write(|w| ..)` method takes [tasks_capture::W](W) writer structure"]
+impl crate::Writable for TASKS_CAPTURE_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets TASKS_CAPTURE[%s]
 to value 0"]
-impl crate::Resettable for TasksCaptureSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for TASKS_CAPTURE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

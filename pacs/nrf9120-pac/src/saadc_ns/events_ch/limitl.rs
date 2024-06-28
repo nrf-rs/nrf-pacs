@@ -1,89 +1,126 @@
 #[doc = "Register `LIMITL` reader"]
-pub type R = crate::R<LimitlSpec>;
-#[doc = "Register `LIMITL` writer"]
-pub type W = crate::W<LimitlSpec>;
-#[doc = "Last results is equal or below CH\\[n\\].LIMIT.LOW\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Limitl {
-    #[doc = "0: Event not generated"]
-    NotGenerated = 0,
-    #[doc = "1: Event generated"]
-    Generated = 1,
-}
-impl From<Limitl> for bool {
+pub struct R(crate::R<LIMITL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LIMITL_SPEC>;
     #[inline(always)]
-    fn from(variant: Limitl) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<LIMITL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<LIMITL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LIMITL` writer"]
+pub struct W(crate::W<LIMITL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LIMITL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<LIMITL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<LIMITL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `LIMITL` reader - Last results is equal or below CH\\[n\\].LIMIT.LOW"]
-pub type LimitlR = crate::BitReader<Limitl>;
-impl LimitlR {
+pub type LIMITL_R = crate::BitReader<LIMITL_A>;
+#[doc = "Last results is equal or below CH\\[n\\].LIMIT.LOW\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LIMITL_A {
+    #[doc = "0: Event not generated"]
+    NOT_GENERATED = 0,
+    #[doc = "1: Event generated"]
+    GENERATED = 1,
+}
+impl From<LIMITL_A> for bool {
+    #[inline(always)]
+    fn from(variant: LIMITL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl LIMITL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Limitl {
+    pub fn variant(&self) -> LIMITL_A {
         match self.bits {
-            false => Limitl::NotGenerated,
-            true => Limitl::Generated,
+            false => LIMITL_A::NOT_GENERATED,
+            true => LIMITL_A::GENERATED,
         }
     }
-    #[doc = "Event not generated"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        *self == Limitl::NotGenerated
+        *self == LIMITL_A::NOT_GENERATED
     }
-    #[doc = "Event generated"]
+    #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        *self == Limitl::Generated
+        *self == LIMITL_A::GENERATED
     }
 }
 #[doc = "Field `LIMITL` writer - Last results is equal or below CH\\[n\\].LIMIT.LOW"]
-pub type LimitlW<'a, REG> = crate::BitWriter<'a, REG, Limitl>;
-impl<'a, REG> LimitlW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type LIMITL_W<'a, const O: u8> = crate::BitWriter<'a, u32, LIMITL_SPEC, LIMITL_A, O>;
+impl<'a, const O: u8> LIMITL_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut crate::W<REG> {
-        self.variant(Limitl::NotGenerated)
+    pub fn not_generated(self) -> &'a mut W {
+        self.variant(LIMITL_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut crate::W<REG> {
-        self.variant(Limitl::Generated)
+    pub fn generated(self) -> &'a mut W {
+        self.variant(LIMITL_A::GENERATED)
     }
 }
 impl R {
     #[doc = "Bit 0 - Last results is equal or below CH\\[n\\].LIMIT.LOW"]
     #[inline(always)]
-    pub fn limitl(&self) -> LimitlR {
-        LimitlR::new((self.bits & 1) != 0)
+    pub fn limitl(&self) -> LIMITL_R {
+        LIMITL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Last results is equal or below CH\\[n\\].LIMIT.LOW"]
     #[inline(always)]
-    #[must_use]
-    pub fn limitl(&mut self) -> LimitlW<LimitlSpec> {
-        LimitlW::new(self, 0)
+    pub fn limitl(&mut self) -> LIMITL_W<0> {
+        LIMITL_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Description cluster: Last results is equal or below CH\\[n\\].LIMIT.LOW\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`limitl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`limitl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct LimitlSpec;
-impl crate::RegisterSpec for LimitlSpec {
+#[doc = "Description cluster: Last results is equal or below CH\\[n\\].LIMIT.LOW\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [limitl](index.html) module"]
+pub struct LIMITL_SPEC;
+impl crate::RegisterSpec for LIMITL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`limitl::R`](R) reader structure"]
-impl crate::Readable for LimitlSpec {}
-#[doc = "`write(|w| ..)` method takes [`limitl::W`](W) writer structure"]
-impl crate::Writable for LimitlSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [limitl::R](R) reader structure"]
+impl crate::Readable for LIMITL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [limitl::W](W) writer structure"]
+impl crate::Writable for LIMITL_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets LIMITL to value 0"]
-impl crate::Resettable for LimitlSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for LIMITL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

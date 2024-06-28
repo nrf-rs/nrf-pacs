@@ -1,163 +1,83 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Register block"]
 pub struct RegisterBlock {
-    tasks_start: TasksStart,
-    _reserved1: [u8; 0x7c],
-    subscribe_start: SubscribeStart,
-    _reserved2: [u8; 0x7c],
-    events_timeout: EventsTimeout,
-    _reserved3: [u8; 0x7c],
-    publish_timeout: PublishTimeout,
-    _reserved4: [u8; 0x0180],
-    intenset: Intenset,
-    intenclr: Intenclr,
-    _reserved6: [u8; 0xf4],
-    runstatus: Runstatus,
-    reqstatus: Reqstatus,
-    _reserved8: [u8; 0xfc],
-    crv: Crv,
-    rren: Rren,
-    config: Config,
-    _reserved11: [u8; 0xf0],
-    rr: [Rr; 8],
-}
-impl RegisterBlock {
     #[doc = "0x00 - Start the watchdog"]
-    #[inline(always)]
-    pub const fn tasks_start(&self) -> &TasksStart {
-        &self.tasks_start
-    }
+    pub tasks_start: TASKS_START,
+    _reserved1: [u8; 0x7c],
     #[doc = "0x80 - Subscribe configuration for task START"]
-    #[inline(always)]
-    pub const fn subscribe_start(&self) -> &SubscribeStart {
-        &self.subscribe_start
-    }
+    pub subscribe_start: SUBSCRIBE_START,
+    _reserved2: [u8; 0x7c],
     #[doc = "0x100 - Watchdog timeout"]
-    #[inline(always)]
-    pub const fn events_timeout(&self) -> &EventsTimeout {
-        &self.events_timeout
-    }
+    pub events_timeout: EVENTS_TIMEOUT,
+    _reserved3: [u8; 0x7c],
     #[doc = "0x180 - Publish configuration for event TIMEOUT"]
-    #[inline(always)]
-    pub const fn publish_timeout(&self) -> &PublishTimeout {
-        &self.publish_timeout
-    }
+    pub publish_timeout: PUBLISH_TIMEOUT,
+    _reserved4: [u8; 0x0180],
     #[doc = "0x304 - Enable interrupt"]
-    #[inline(always)]
-    pub const fn intenset(&self) -> &Intenset {
-        &self.intenset
-    }
+    pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
-    #[inline(always)]
-    pub const fn intenclr(&self) -> &Intenclr {
-        &self.intenclr
-    }
+    pub intenclr: INTENCLR,
+    _reserved6: [u8; 0xf4],
     #[doc = "0x400 - Run status"]
-    #[inline(always)]
-    pub const fn runstatus(&self) -> &Runstatus {
-        &self.runstatus
-    }
+    pub runstatus: RUNSTATUS,
     #[doc = "0x404 - Request status"]
-    #[inline(always)]
-    pub const fn reqstatus(&self) -> &Reqstatus {
-        &self.reqstatus
-    }
+    pub reqstatus: REQSTATUS,
+    _reserved8: [u8; 0xfc],
     #[doc = "0x504 - Counter reload value"]
-    #[inline(always)]
-    pub const fn crv(&self) -> &Crv {
-        &self.crv
-    }
+    pub crv: CRV,
     #[doc = "0x508 - Enable register for reload request registers"]
-    #[inline(always)]
-    pub const fn rren(&self) -> &Rren {
-        &self.rren
-    }
+    pub rren: RREN,
     #[doc = "0x50c - Configuration register"]
-    #[inline(always)]
-    pub const fn config(&self) -> &Config {
-        &self.config
-    }
+    pub config: CONFIG,
+    _reserved11: [u8; 0xf0],
     #[doc = "0x600..0x620 - Description collection: Reload request n"]
-    #[inline(always)]
-    pub const fn rr(&self, n: usize) -> &Rr {
-        &self.rr[n]
-    }
-    #[doc = "Iterator for array of:"]
-    #[doc = "0x600..0x620 - Description collection: Reload request n"]
-    #[inline(always)]
-    pub fn rr_iter(&self) -> impl Iterator<Item = &Rr> {
-        self.rr.iter()
-    }
+    pub rr: [RR; 8],
 }
-#[doc = "TASKS_START (w) register accessor: Start the watchdog\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tasks_start::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_start`]
-module"]
-#[doc(alias = "TASKS_START")]
-pub type TasksStart = crate::Reg<tasks_start::TasksStartSpec>;
+#[doc = "TASKS_START (w) register accessor: an alias for `Reg<TASKS_START_SPEC>`"]
+pub type TASKS_START = crate::Reg<tasks_start::TASKS_START_SPEC>;
 #[doc = "Start the watchdog"]
 pub mod tasks_start;
-#[doc = "SUBSCRIBE_START (rw) register accessor: Subscribe configuration for task START\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`subscribe_start::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`subscribe_start::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@subscribe_start`]
-module"]
-#[doc(alias = "SUBSCRIBE_START")]
-pub type SubscribeStart = crate::Reg<subscribe_start::SubscribeStartSpec>;
+#[doc = "SUBSCRIBE_START (rw) register accessor: an alias for `Reg<SUBSCRIBE_START_SPEC>`"]
+pub type SUBSCRIBE_START = crate::Reg<subscribe_start::SUBSCRIBE_START_SPEC>;
 #[doc = "Subscribe configuration for task START"]
 pub mod subscribe_start;
-#[doc = "EVENTS_TIMEOUT (rw) register accessor: Watchdog timeout\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_timeout::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_timeout::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_timeout`]
-module"]
-#[doc(alias = "EVENTS_TIMEOUT")]
-pub type EventsTimeout = crate::Reg<events_timeout::EventsTimeoutSpec>;
+#[doc = "EVENTS_TIMEOUT (rw) register accessor: an alias for `Reg<EVENTS_TIMEOUT_SPEC>`"]
+pub type EVENTS_TIMEOUT = crate::Reg<events_timeout::EVENTS_TIMEOUT_SPEC>;
 #[doc = "Watchdog timeout"]
 pub mod events_timeout;
-#[doc = "PUBLISH_TIMEOUT (rw) register accessor: Publish configuration for event TIMEOUT\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`publish_timeout::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`publish_timeout::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@publish_timeout`]
-module"]
-#[doc(alias = "PUBLISH_TIMEOUT")]
-pub type PublishTimeout = crate::Reg<publish_timeout::PublishTimeoutSpec>;
+#[doc = "PUBLISH_TIMEOUT (rw) register accessor: an alias for `Reg<PUBLISH_TIMEOUT_SPEC>`"]
+pub type PUBLISH_TIMEOUT = crate::Reg<publish_timeout::PUBLISH_TIMEOUT_SPEC>;
 #[doc = "Publish configuration for event TIMEOUT"]
 pub mod publish_timeout;
-#[doc = "INTENSET (rw) register accessor: Enable interrupt\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intenset::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenset::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenset`]
-module"]
-#[doc(alias = "INTENSET")]
-pub type Intenset = crate::Reg<intenset::IntensetSpec>;
+#[doc = "INTENSET (rw) register accessor: an alias for `Reg<INTENSET_SPEC>`"]
+pub type INTENSET = crate::Reg<intenset::INTENSET_SPEC>;
 #[doc = "Enable interrupt"]
 pub mod intenset;
-#[doc = "INTENCLR (rw) register accessor: Disable interrupt\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intenclr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenclr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenclr`]
-module"]
-#[doc(alias = "INTENCLR")]
-pub type Intenclr = crate::Reg<intenclr::IntenclrSpec>;
+#[doc = "INTENCLR (rw) register accessor: an alias for `Reg<INTENCLR_SPEC>`"]
+pub type INTENCLR = crate::Reg<intenclr::INTENCLR_SPEC>;
 #[doc = "Disable interrupt"]
 pub mod intenclr;
-#[doc = "RUNSTATUS (r) register accessor: Run status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`runstatus::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@runstatus`]
-module"]
-#[doc(alias = "RUNSTATUS")]
-pub type Runstatus = crate::Reg<runstatus::RunstatusSpec>;
+#[doc = "RUNSTATUS (r) register accessor: an alias for `Reg<RUNSTATUS_SPEC>`"]
+pub type RUNSTATUS = crate::Reg<runstatus::RUNSTATUS_SPEC>;
 #[doc = "Run status"]
 pub mod runstatus;
-#[doc = "REQSTATUS (r) register accessor: Request status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`reqstatus::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@reqstatus`]
-module"]
-#[doc(alias = "REQSTATUS")]
-pub type Reqstatus = crate::Reg<reqstatus::ReqstatusSpec>;
+#[doc = "REQSTATUS (r) register accessor: an alias for `Reg<REQSTATUS_SPEC>`"]
+pub type REQSTATUS = crate::Reg<reqstatus::REQSTATUS_SPEC>;
 #[doc = "Request status"]
 pub mod reqstatus;
-#[doc = "CRV (rw) register accessor: Counter reload value\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`crv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`crv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@crv`]
-module"]
-#[doc(alias = "CRV")]
-pub type Crv = crate::Reg<crv::CrvSpec>;
+#[doc = "CRV (rw) register accessor: an alias for `Reg<CRV_SPEC>`"]
+pub type CRV = crate::Reg<crv::CRV_SPEC>;
 #[doc = "Counter reload value"]
 pub mod crv;
-#[doc = "RREN (rw) register accessor: Enable register for reload request registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rren::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rren::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rren`]
-module"]
-#[doc(alias = "RREN")]
-pub type Rren = crate::Reg<rren::RrenSpec>;
+#[doc = "RREN (rw) register accessor: an alias for `Reg<RREN_SPEC>`"]
+pub type RREN = crate::Reg<rren::RREN_SPEC>;
 #[doc = "Enable register for reload request registers"]
 pub mod rren;
-#[doc = "CONFIG (rw) register accessor: Configuration register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`config::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`config::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@config`]
-module"]
-#[doc(alias = "CONFIG")]
-pub type Config = crate::Reg<config::ConfigSpec>;
+#[doc = "CONFIG (rw) register accessor: an alias for `Reg<CONFIG_SPEC>`"]
+pub type CONFIG = crate::Reg<config::CONFIG_SPEC>;
 #[doc = "Configuration register"]
 pub mod config;
-#[doc = "RR (w) register accessor: Description collection: Reload request n\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rr`]
-module"]
-#[doc(alias = "RR")]
-pub type Rr = crate::Reg<rr::RrSpec>;
+#[doc = "RR (w) register accessor: an alias for `Reg<RR_SPEC>`"]
+pub type RR = crate::Reg<rr::RR_SPEC>;
 #[doc = "Description collection: Reload request n"]
 pub mod rr;

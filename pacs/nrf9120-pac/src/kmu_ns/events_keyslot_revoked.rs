@@ -1,89 +1,127 @@
 #[doc = "Register `EVENTS_KEYSLOT_REVOKED` reader"]
-pub type R = crate::R<EventsKeyslotRevokedSpec>;
-#[doc = "Register `EVENTS_KEYSLOT_REVOKED` writer"]
-pub type W = crate::W<EventsKeyslotRevokedSpec>;
-#[doc = "Key slot has been revoked and cannot be tasked for selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum EventsKeyslotRevoked {
-    #[doc = "0: Event not generated"]
-    NotGenerated = 0,
-    #[doc = "1: Event generated"]
-    Generated = 1,
-}
-impl From<EventsKeyslotRevoked> for bool {
+pub struct R(crate::R<EVENTS_KEYSLOT_REVOKED_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EVENTS_KEYSLOT_REVOKED_SPEC>;
     #[inline(always)]
-    fn from(variant: EventsKeyslotRevoked) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<EVENTS_KEYSLOT_REVOKED_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EVENTS_KEYSLOT_REVOKED_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `EVENTS_KEYSLOT_REVOKED` writer"]
+pub struct W(crate::W<EVENTS_KEYSLOT_REVOKED_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<EVENTS_KEYSLOT_REVOKED_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<EVENTS_KEYSLOT_REVOKED_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<EVENTS_KEYSLOT_REVOKED_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `EVENTS_KEYSLOT_REVOKED` reader - Key slot has been revoked and cannot be tasked for selection"]
-pub type EventsKeyslotRevokedR = crate::BitReader<EventsKeyslotRevoked>;
-impl EventsKeyslotRevokedR {
+pub type EVENTS_KEYSLOT_REVOKED_R = crate::BitReader<EVENTS_KEYSLOT_REVOKED_A>;
+#[doc = "Key slot has been revoked and cannot be tasked for selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EVENTS_KEYSLOT_REVOKED_A {
+    #[doc = "0: Event not generated"]
+    NOT_GENERATED = 0,
+    #[doc = "1: Event generated"]
+    GENERATED = 1,
+}
+impl From<EVENTS_KEYSLOT_REVOKED_A> for bool {
+    #[inline(always)]
+    fn from(variant: EVENTS_KEYSLOT_REVOKED_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl EVENTS_KEYSLOT_REVOKED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> EventsKeyslotRevoked {
+    pub fn variant(&self) -> EVENTS_KEYSLOT_REVOKED_A {
         match self.bits {
-            false => EventsKeyslotRevoked::NotGenerated,
-            true => EventsKeyslotRevoked::Generated,
+            false => EVENTS_KEYSLOT_REVOKED_A::NOT_GENERATED,
+            true => EVENTS_KEYSLOT_REVOKED_A::GENERATED,
         }
     }
-    #[doc = "Event not generated"]
+    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
     #[inline(always)]
     pub fn is_not_generated(&self) -> bool {
-        *self == EventsKeyslotRevoked::NotGenerated
+        *self == EVENTS_KEYSLOT_REVOKED_A::NOT_GENERATED
     }
-    #[doc = "Event generated"]
+    #[doc = "Checks if the value of the field is `GENERATED`"]
     #[inline(always)]
     pub fn is_generated(&self) -> bool {
-        *self == EventsKeyslotRevoked::Generated
+        *self == EVENTS_KEYSLOT_REVOKED_A::GENERATED
     }
 }
 #[doc = "Field `EVENTS_KEYSLOT_REVOKED` writer - Key slot has been revoked and cannot be tasked for selection"]
-pub type EventsKeyslotRevokedW<'a, REG> = crate::BitWriter<'a, REG, EventsKeyslotRevoked>;
-impl<'a, REG> EventsKeyslotRevokedW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type EVENTS_KEYSLOT_REVOKED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EVENTS_KEYSLOT_REVOKED_SPEC, EVENTS_KEYSLOT_REVOKED_A, O>;
+impl<'a, const O: u8> EVENTS_KEYSLOT_REVOKED_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsKeyslotRevoked::NotGenerated)
+    pub fn not_generated(self) -> &'a mut W {
+        self.variant(EVENTS_KEYSLOT_REVOKED_A::NOT_GENERATED)
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut crate::W<REG> {
-        self.variant(EventsKeyslotRevoked::Generated)
+    pub fn generated(self) -> &'a mut W {
+        self.variant(EVENTS_KEYSLOT_REVOKED_A::GENERATED)
     }
 }
 impl R {
     #[doc = "Bit 0 - Key slot has been revoked and cannot be tasked for selection"]
     #[inline(always)]
-    pub fn events_keyslot_revoked(&self) -> EventsKeyslotRevokedR {
-        EventsKeyslotRevokedR::new((self.bits & 1) != 0)
+    pub fn events_keyslot_revoked(&self) -> EVENTS_KEYSLOT_REVOKED_R {
+        EVENTS_KEYSLOT_REVOKED_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Key slot has been revoked and cannot be tasked for selection"]
     #[inline(always)]
-    #[must_use]
-    pub fn events_keyslot_revoked(&mut self) -> EventsKeyslotRevokedW<EventsKeyslotRevokedSpec> {
-        EventsKeyslotRevokedW::new(self, 0)
+    pub fn events_keyslot_revoked(&mut self) -> EVENTS_KEYSLOT_REVOKED_W<0> {
+        EVENTS_KEYSLOT_REVOKED_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Key slot has been revoked and cannot be tasked for selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_keyslot_revoked::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_keyslot_revoked::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct EventsKeyslotRevokedSpec;
-impl crate::RegisterSpec for EventsKeyslotRevokedSpec {
+#[doc = "Key slot has been revoked and cannot be tasked for selection\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_keyslot_revoked](index.html) module"]
+pub struct EVENTS_KEYSLOT_REVOKED_SPEC;
+impl crate::RegisterSpec for EVENTS_KEYSLOT_REVOKED_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`events_keyslot_revoked::R`](R) reader structure"]
-impl crate::Readable for EventsKeyslotRevokedSpec {}
-#[doc = "`write(|w| ..)` method takes [`events_keyslot_revoked::W`](W) writer structure"]
-impl crate::Writable for EventsKeyslotRevokedSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [events_keyslot_revoked::R](R) reader structure"]
+impl crate::Readable for EVENTS_KEYSLOT_REVOKED_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [events_keyslot_revoked::W](W) writer structure"]
+impl crate::Writable for EVENTS_KEYSLOT_REVOKED_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets EVENTS_KEYSLOT_REVOKED to value 0"]
-impl crate::Resettable for EventsKeyslotRevokedSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for EVENTS_KEYSLOT_REVOKED_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

@@ -1,11 +1,45 @@
 #[doc = "Register `FREQUENCY` reader"]
-pub type R = crate::R<FrequencySpec>;
+pub struct R(crate::R<FREQUENCY_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FREQUENCY_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<FREQUENCY_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<FREQUENCY_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Register `FREQUENCY` writer"]
-pub type W = crate::W<FrequencySpec>;
+pub struct W(crate::W<FREQUENCY_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FREQUENCY_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<FREQUENCY_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<FREQUENCY_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `FREQUENCY` reader - TWI master clock frequency"]
+pub type FREQUENCY_R = crate::FieldReader<u32, FREQUENCY_A>;
 #[doc = "TWI master clock frequency\n\nValue on reset: 67108864"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Frequency {
+pub enum FREQUENCY_A {
     #[doc = "26738688: 100 kbps"]
     K100 = 26738688,
     #[doc = "67108864: 250 kbps"]
@@ -13,97 +47,96 @@ pub enum Frequency {
     #[doc = "104857600: 400 kbps"]
     K400 = 104857600,
 }
-impl From<Frequency> for u32 {
+impl From<FREQUENCY_A> for u32 {
     #[inline(always)]
-    fn from(variant: Frequency) -> Self {
+    fn from(variant: FREQUENCY_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Frequency {
-    type Ux = u32;
-}
-impl crate::IsEnum for Frequency {}
-#[doc = "Field `FREQUENCY` reader - TWI master clock frequency"]
-pub type FrequencyR = crate::FieldReader<Frequency>;
-impl FrequencyR {
+impl FREQUENCY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Frequency> {
+    pub fn variant(&self) -> Option<FREQUENCY_A> {
         match self.bits {
-            26738688 => Some(Frequency::K100),
-            67108864 => Some(Frequency::K250),
-            104857600 => Some(Frequency::K400),
+            26738688 => Some(FREQUENCY_A::K100),
+            67108864 => Some(FREQUENCY_A::K250),
+            104857600 => Some(FREQUENCY_A::K400),
             _ => None,
         }
     }
-    #[doc = "100 kbps"]
+    #[doc = "Checks if the value of the field is `K100`"]
     #[inline(always)]
     pub fn is_k100(&self) -> bool {
-        *self == Frequency::K100
+        *self == FREQUENCY_A::K100
     }
-    #[doc = "250 kbps"]
+    #[doc = "Checks if the value of the field is `K250`"]
     #[inline(always)]
     pub fn is_k250(&self) -> bool {
-        *self == Frequency::K250
+        *self == FREQUENCY_A::K250
     }
-    #[doc = "400 kbps"]
+    #[doc = "Checks if the value of the field is `K400`"]
     #[inline(always)]
     pub fn is_k400(&self) -> bool {
-        *self == Frequency::K400
+        *self == FREQUENCY_A::K400
     }
 }
 #[doc = "Field `FREQUENCY` writer - TWI master clock frequency"]
-pub type FrequencyW<'a, REG> = crate::FieldWriter<'a, REG, 32, Frequency>;
-impl<'a, REG> FrequencyW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u32>,
-{
+pub type FREQUENCY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FREQUENCY_SPEC, u32, FREQUENCY_A, 32, O>;
+impl<'a, const O: u8> FREQUENCY_W<'a, O> {
     #[doc = "100 kbps"]
     #[inline(always)]
-    pub fn k100(self) -> &'a mut crate::W<REG> {
-        self.variant(Frequency::K100)
+    pub fn k100(self) -> &'a mut W {
+        self.variant(FREQUENCY_A::K100)
     }
     #[doc = "250 kbps"]
     #[inline(always)]
-    pub fn k250(self) -> &'a mut crate::W<REG> {
-        self.variant(Frequency::K250)
+    pub fn k250(self) -> &'a mut W {
+        self.variant(FREQUENCY_A::K250)
     }
     #[doc = "400 kbps"]
     #[inline(always)]
-    pub fn k400(self) -> &'a mut crate::W<REG> {
-        self.variant(Frequency::K400)
+    pub fn k400(self) -> &'a mut W {
+        self.variant(FREQUENCY_A::K400)
     }
 }
 impl R {
     #[doc = "Bits 0:31 - TWI master clock frequency"]
     #[inline(always)]
-    pub fn frequency(&self) -> FrequencyR {
-        FrequencyR::new(self.bits)
+    pub fn frequency(&self) -> FREQUENCY_R {
+        FREQUENCY_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - TWI master clock frequency"]
     #[inline(always)]
-    #[must_use]
-    pub fn frequency(&mut self) -> FrequencyW<FrequencySpec> {
-        FrequencyW::new(self, 0)
+    pub fn frequency(&mut self) -> FREQUENCY_W<0> {
+        FREQUENCY_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "TWI frequency. Accuracy depends on the HFCLK source selected.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frequency::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`frequency::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct FrequencySpec;
-impl crate::RegisterSpec for FrequencySpec {
+#[doc = "TWI frequency. Accuracy depends on the HFCLK source selected.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [frequency](index.html) module"]
+pub struct FREQUENCY_SPEC;
+impl crate::RegisterSpec for FREQUENCY_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`frequency::R`](R) reader structure"]
-impl crate::Readable for FrequencySpec {}
-#[doc = "`write(|w| ..)` method takes [`frequency::W`](W) writer structure"]
-impl crate::Writable for FrequencySpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [frequency::R](R) reader structure"]
+impl crate::Readable for FREQUENCY_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [frequency::W](W) writer structure"]
+impl crate::Writable for FREQUENCY_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets FREQUENCY to value 0x0400_0000"]
-impl crate::Resettable for FrequencySpec {
-    const RESET_VALUE: u32 = 0x0400_0000;
+impl crate::Resettable for FREQUENCY_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0400_0000
+    }
 }

@@ -1,49 +1,72 @@
 #[doc = "Register `TASKS_COUNT` writer"]
-pub type W = crate::W<TasksCountSpec>;
-#[doc = "Increment Timer (Counter mode only)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TasksCount {
-    #[doc = "1: Trigger task"]
-    Trigger = 1,
-}
-impl From<TasksCount> for bool {
+pub struct W(crate::W<TASKS_COUNT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TASKS_COUNT_SPEC>;
     #[inline(always)]
-    fn from(variant: TasksCount) -> Self {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TASKS_COUNT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TASKS_COUNT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Increment Timer (Counter mode only)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TASKS_COUNT_AW {
+    #[doc = "1: Trigger task"]
+    TRIGGER = 1,
+}
+impl From<TASKS_COUNT_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TASKS_COUNT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TASKS_COUNT` writer - Increment Timer (Counter mode only)"]
-pub type TasksCountW<'a, REG> = crate::BitWriter<'a, REG, TasksCount>;
-impl<'a, REG> TasksCountW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type TASKS_COUNT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_COUNT_SPEC, TASKS_COUNT_AW, O>;
+impl<'a, const O: u8> TASKS_COUNT_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
-    pub fn trigger(self) -> &'a mut crate::W<REG> {
-        self.variant(TasksCount::Trigger)
+    pub fn trigger(self) -> &'a mut W {
+        self.variant(TASKS_COUNT_AW::TRIGGER)
     }
 }
 impl W {
     #[doc = "Bit 0 - Increment Timer (Counter mode only)"]
     #[inline(always)]
-    #[must_use]
-    pub fn tasks_count(&mut self) -> TasksCountW<TasksCountSpec> {
-        TasksCountW::new(self, 0)
+    pub fn tasks_count(&mut self) -> TASKS_COUNT_W<0> {
+        TASKS_COUNT_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Increment Timer (Counter mode only)\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tasks_count::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TasksCountSpec;
-impl crate::RegisterSpec for TasksCountSpec {
+#[doc = "Increment Timer (Counter mode only)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_count](index.html) module"]
+pub struct TASKS_COUNT_SPEC;
+impl crate::RegisterSpec for TASKS_COUNT_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [`tasks_count::W`](W) writer structure"]
-impl crate::Writable for TasksCountSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`write(|w| ..)` method takes [tasks_count::W](W) writer structure"]
+impl crate::Writable for TASKS_COUNT_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets TASKS_COUNT to value 0"]
-impl crate::Resettable for TasksCountSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for TASKS_COUNT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

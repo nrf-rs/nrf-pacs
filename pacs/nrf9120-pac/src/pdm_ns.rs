@@ -1,264 +1,140 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Register block"]
 pub struct RegisterBlock {
-    tasks_start: TasksStart,
-    tasks_stop: TasksStop,
-    _reserved2: [u8; 0x78],
-    subscribe_start: SubscribeStart,
-    subscribe_stop: SubscribeStop,
-    _reserved4: [u8; 0x78],
-    events_started: EventsStarted,
-    events_stopped: EventsStopped,
-    events_end: EventsEnd,
-    _reserved7: [u8; 0x74],
-    publish_started: PublishStarted,
-    publish_stopped: PublishStopped,
-    publish_end: PublishEnd,
-    _reserved10: [u8; 0x0174],
-    inten: Inten,
-    intenset: Intenset,
-    intenclr: Intenclr,
-    _reserved13: [u8; 0x01f4],
-    enable: Enable,
-    pdmclkctrl: Pdmclkctrl,
-    mode: Mode,
-    _reserved16: [u8; 0x0c],
-    gainl: Gainl,
-    gainr: Gainr,
-    ratio: Ratio,
-    _reserved19: [u8; 0x1c],
-    psel: Psel,
-    _reserved20: [u8; 0x18],
-    sample: Sample,
-}
-impl RegisterBlock {
     #[doc = "0x00 - Starts continuous PDM transfer"]
-    #[inline(always)]
-    pub const fn tasks_start(&self) -> &TasksStart {
-        &self.tasks_start
-    }
+    pub tasks_start: TASKS_START,
     #[doc = "0x04 - Stops PDM transfer"]
-    #[inline(always)]
-    pub const fn tasks_stop(&self) -> &TasksStop {
-        &self.tasks_stop
-    }
+    pub tasks_stop: TASKS_STOP,
+    _reserved2: [u8; 0x78],
     #[doc = "0x80 - Subscribe configuration for task START"]
-    #[inline(always)]
-    pub const fn subscribe_start(&self) -> &SubscribeStart {
-        &self.subscribe_start
-    }
+    pub subscribe_start: SUBSCRIBE_START,
     #[doc = "0x84 - Subscribe configuration for task STOP"]
-    #[inline(always)]
-    pub const fn subscribe_stop(&self) -> &SubscribeStop {
-        &self.subscribe_stop
-    }
+    pub subscribe_stop: SUBSCRIBE_STOP,
+    _reserved4: [u8; 0x78],
     #[doc = "0x100 - PDM transfer has started"]
-    #[inline(always)]
-    pub const fn events_started(&self) -> &EventsStarted {
-        &self.events_started
-    }
+    pub events_started: EVENTS_STARTED,
     #[doc = "0x104 - PDM transfer has finished"]
-    #[inline(always)]
-    pub const fn events_stopped(&self) -> &EventsStopped {
-        &self.events_stopped
-    }
+    pub events_stopped: EVENTS_STOPPED,
     #[doc = "0x108 - The PDM has written the last sample specified by SAMPLE.MAXCNT (or the last sample after a STOP task has been received) to Data RAM"]
-    #[inline(always)]
-    pub const fn events_end(&self) -> &EventsEnd {
-        &self.events_end
-    }
+    pub events_end: EVENTS_END,
+    _reserved7: [u8; 0x74],
     #[doc = "0x180 - Publish configuration for event STARTED"]
-    #[inline(always)]
-    pub const fn publish_started(&self) -> &PublishStarted {
-        &self.publish_started
-    }
+    pub publish_started: PUBLISH_STARTED,
     #[doc = "0x184 - Publish configuration for event STOPPED"]
-    #[inline(always)]
-    pub const fn publish_stopped(&self) -> &PublishStopped {
-        &self.publish_stopped
-    }
+    pub publish_stopped: PUBLISH_STOPPED,
     #[doc = "0x188 - Publish configuration for event END"]
-    #[inline(always)]
-    pub const fn publish_end(&self) -> &PublishEnd {
-        &self.publish_end
-    }
+    pub publish_end: PUBLISH_END,
+    _reserved10: [u8; 0x0174],
     #[doc = "0x300 - Enable or disable interrupt"]
-    #[inline(always)]
-    pub const fn inten(&self) -> &Inten {
-        &self.inten
-    }
+    pub inten: INTEN,
     #[doc = "0x304 - Enable interrupt"]
-    #[inline(always)]
-    pub const fn intenset(&self) -> &Intenset {
-        &self.intenset
-    }
+    pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
-    #[inline(always)]
-    pub const fn intenclr(&self) -> &Intenclr {
-        &self.intenclr
-    }
+    pub intenclr: INTENCLR,
+    _reserved13: [u8; 0x01f4],
     #[doc = "0x500 - PDM module enable register"]
-    #[inline(always)]
-    pub const fn enable(&self) -> &Enable {
-        &self.enable
-    }
+    pub enable: ENABLE,
     #[doc = "0x504 - PDM clock generator control"]
-    #[inline(always)]
-    pub const fn pdmclkctrl(&self) -> &Pdmclkctrl {
-        &self.pdmclkctrl
-    }
+    pub pdmclkctrl: PDMCLKCTRL,
     #[doc = "0x508 - Defines the routing of the connected PDM microphones' signals"]
-    #[inline(always)]
-    pub const fn mode(&self) -> &Mode {
-        &self.mode
-    }
+    pub mode: MODE,
+    _reserved16: [u8; 0x0c],
     #[doc = "0x518 - Left output gain adjustment"]
-    #[inline(always)]
-    pub const fn gainl(&self) -> &Gainl {
-        &self.gainl
-    }
+    pub gainl: GAINL,
     #[doc = "0x51c - Right output gain adjustment"]
-    #[inline(always)]
-    pub const fn gainr(&self) -> &Gainr {
-        &self.gainr
-    }
+    pub gainr: GAINR,
     #[doc = "0x520 - Selects the ratio between PDM_CLK and output sample rate. Change PDMCLKCTRL accordingly."]
-    #[inline(always)]
-    pub const fn ratio(&self) -> &Ratio {
-        &self.ratio
-    }
+    pub ratio: RATIO,
+    _reserved19: [u8; 0x1c],
     #[doc = "0x540..0x548 - Unspecified"]
-    #[inline(always)]
-    pub const fn psel(&self) -> &Psel {
-        &self.psel
-    }
+    pub psel: PSEL,
+    _reserved20: [u8; 0x18],
     #[doc = "0x560..0x568 - Unspecified"]
-    #[inline(always)]
-    pub const fn sample(&self) -> &Sample {
-        &self.sample
-    }
+    pub sample: SAMPLE,
 }
-#[doc = "TASKS_START (w) register accessor: Starts continuous PDM transfer\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tasks_start::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_start`]
-module"]
-#[doc(alias = "TASKS_START")]
-pub type TasksStart = crate::Reg<tasks_start::TasksStartSpec>;
+#[doc = "TASKS_START (w) register accessor: an alias for `Reg<TASKS_START_SPEC>`"]
+pub type TASKS_START = crate::Reg<tasks_start::TASKS_START_SPEC>;
 #[doc = "Starts continuous PDM transfer"]
 pub mod tasks_start;
-#[doc = "TASKS_STOP (w) register accessor: Stops PDM transfer\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tasks_stop::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_stop`]
-module"]
-#[doc(alias = "TASKS_STOP")]
-pub type TasksStop = crate::Reg<tasks_stop::TasksStopSpec>;
+#[doc = "TASKS_STOP (w) register accessor: an alias for `Reg<TASKS_STOP_SPEC>`"]
+pub type TASKS_STOP = crate::Reg<tasks_stop::TASKS_STOP_SPEC>;
 #[doc = "Stops PDM transfer"]
 pub mod tasks_stop;
-#[doc = "SUBSCRIBE_START (rw) register accessor: Subscribe configuration for task START\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`subscribe_start::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`subscribe_start::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@subscribe_start`]
-module"]
-#[doc(alias = "SUBSCRIBE_START")]
-pub type SubscribeStart = crate::Reg<subscribe_start::SubscribeStartSpec>;
+#[doc = "SUBSCRIBE_START (rw) register accessor: an alias for `Reg<SUBSCRIBE_START_SPEC>`"]
+pub type SUBSCRIBE_START = crate::Reg<subscribe_start::SUBSCRIBE_START_SPEC>;
 #[doc = "Subscribe configuration for task START"]
 pub mod subscribe_start;
-#[doc = "SUBSCRIBE_STOP (rw) register accessor: Subscribe configuration for task STOP\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`subscribe_stop::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`subscribe_stop::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@subscribe_stop`]
-module"]
-#[doc(alias = "SUBSCRIBE_STOP")]
-pub type SubscribeStop = crate::Reg<subscribe_stop::SubscribeStopSpec>;
+#[doc = "SUBSCRIBE_STOP (rw) register accessor: an alias for `Reg<SUBSCRIBE_STOP_SPEC>`"]
+pub type SUBSCRIBE_STOP = crate::Reg<subscribe_stop::SUBSCRIBE_STOP_SPEC>;
 #[doc = "Subscribe configuration for task STOP"]
 pub mod subscribe_stop;
-#[doc = "EVENTS_STARTED (rw) register accessor: PDM transfer has started\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_started::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_started::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_started`]
-module"]
-#[doc(alias = "EVENTS_STARTED")]
-pub type EventsStarted = crate::Reg<events_started::EventsStartedSpec>;
+#[doc = "EVENTS_STARTED (rw) register accessor: an alias for `Reg<EVENTS_STARTED_SPEC>`"]
+pub type EVENTS_STARTED = crate::Reg<events_started::EVENTS_STARTED_SPEC>;
 #[doc = "PDM transfer has started"]
 pub mod events_started;
-#[doc = "EVENTS_STOPPED (rw) register accessor: PDM transfer has finished\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_stopped::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_stopped::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_stopped`]
-module"]
-#[doc(alias = "EVENTS_STOPPED")]
-pub type EventsStopped = crate::Reg<events_stopped::EventsStoppedSpec>;
+#[doc = "EVENTS_STOPPED (rw) register accessor: an alias for `Reg<EVENTS_STOPPED_SPEC>`"]
+pub type EVENTS_STOPPED = crate::Reg<events_stopped::EVENTS_STOPPED_SPEC>;
 #[doc = "PDM transfer has finished"]
 pub mod events_stopped;
-#[doc = "EVENTS_END (rw) register accessor: The PDM has written the last sample specified by SAMPLE.MAXCNT (or the last sample after a STOP task has been received) to Data RAM\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`events_end::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`events_end::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_end`]
-module"]
-#[doc(alias = "EVENTS_END")]
-pub type EventsEnd = crate::Reg<events_end::EventsEndSpec>;
+#[doc = "EVENTS_END (rw) register accessor: an alias for `Reg<EVENTS_END_SPEC>`"]
+pub type EVENTS_END = crate::Reg<events_end::EVENTS_END_SPEC>;
 #[doc = "The PDM has written the last sample specified by SAMPLE.MAXCNT (or the last sample after a STOP task has been received) to Data RAM"]
 pub mod events_end;
-#[doc = "PUBLISH_STARTED (rw) register accessor: Publish configuration for event STARTED\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`publish_started::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`publish_started::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@publish_started`]
-module"]
-#[doc(alias = "PUBLISH_STARTED")]
-pub type PublishStarted = crate::Reg<publish_started::PublishStartedSpec>;
+#[doc = "PUBLISH_STARTED (rw) register accessor: an alias for `Reg<PUBLISH_STARTED_SPEC>`"]
+pub type PUBLISH_STARTED = crate::Reg<publish_started::PUBLISH_STARTED_SPEC>;
 #[doc = "Publish configuration for event STARTED"]
 pub mod publish_started;
-#[doc = "PUBLISH_STOPPED (rw) register accessor: Publish configuration for event STOPPED\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`publish_stopped::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`publish_stopped::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@publish_stopped`]
-module"]
-#[doc(alias = "PUBLISH_STOPPED")]
-pub type PublishStopped = crate::Reg<publish_stopped::PublishStoppedSpec>;
+#[doc = "PUBLISH_STOPPED (rw) register accessor: an alias for `Reg<PUBLISH_STOPPED_SPEC>`"]
+pub type PUBLISH_STOPPED = crate::Reg<publish_stopped::PUBLISH_STOPPED_SPEC>;
 #[doc = "Publish configuration for event STOPPED"]
 pub mod publish_stopped;
-#[doc = "PUBLISH_END (rw) register accessor: Publish configuration for event END\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`publish_end::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`publish_end::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@publish_end`]
-module"]
-#[doc(alias = "PUBLISH_END")]
-pub type PublishEnd = crate::Reg<publish_end::PublishEndSpec>;
+#[doc = "PUBLISH_END (rw) register accessor: an alias for `Reg<PUBLISH_END_SPEC>`"]
+pub type PUBLISH_END = crate::Reg<publish_end::PUBLISH_END_SPEC>;
 #[doc = "Publish configuration for event END"]
 pub mod publish_end;
-#[doc = "INTEN (rw) register accessor: Enable or disable interrupt\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`inten::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`inten::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@inten`]
-module"]
-#[doc(alias = "INTEN")]
-pub type Inten = crate::Reg<inten::IntenSpec>;
+#[doc = "INTEN (rw) register accessor: an alias for `Reg<INTEN_SPEC>`"]
+pub type INTEN = crate::Reg<inten::INTEN_SPEC>;
 #[doc = "Enable or disable interrupt"]
 pub mod inten;
-#[doc = "INTENSET (rw) register accessor: Enable interrupt\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intenset::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenset::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenset`]
-module"]
-#[doc(alias = "INTENSET")]
-pub type Intenset = crate::Reg<intenset::IntensetSpec>;
+#[doc = "INTENSET (rw) register accessor: an alias for `Reg<INTENSET_SPEC>`"]
+pub type INTENSET = crate::Reg<intenset::INTENSET_SPEC>;
 #[doc = "Enable interrupt"]
 pub mod intenset;
-#[doc = "INTENCLR (rw) register accessor: Disable interrupt\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intenclr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenclr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenclr`]
-module"]
-#[doc(alias = "INTENCLR")]
-pub type Intenclr = crate::Reg<intenclr::IntenclrSpec>;
+#[doc = "INTENCLR (rw) register accessor: an alias for `Reg<INTENCLR_SPEC>`"]
+pub type INTENCLR = crate::Reg<intenclr::INTENCLR_SPEC>;
 #[doc = "Disable interrupt"]
 pub mod intenclr;
-#[doc = "ENABLE (rw) register accessor: PDM module enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`enable::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`enable::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@enable`]
-module"]
-#[doc(alias = "ENABLE")]
-pub type Enable = crate::Reg<enable::EnableSpec>;
+#[doc = "ENABLE (rw) register accessor: an alias for `Reg<ENABLE_SPEC>`"]
+pub type ENABLE = crate::Reg<enable::ENABLE_SPEC>;
 #[doc = "PDM module enable register"]
 pub mod enable;
-#[doc = "PDMCLKCTRL (rw) register accessor: PDM clock generator control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdmclkctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pdmclkctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pdmclkctrl`]
-module"]
-#[doc(alias = "PDMCLKCTRL")]
-pub type Pdmclkctrl = crate::Reg<pdmclkctrl::PdmclkctrlSpec>;
+#[doc = "PDMCLKCTRL (rw) register accessor: an alias for `Reg<PDMCLKCTRL_SPEC>`"]
+pub type PDMCLKCTRL = crate::Reg<pdmclkctrl::PDMCLKCTRL_SPEC>;
 #[doc = "PDM clock generator control"]
 pub mod pdmclkctrl;
-#[doc = "MODE (rw) register accessor: Defines the routing of the connected PDM microphones' signals\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mode::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mode::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mode`]
-module"]
-#[doc(alias = "MODE")]
-pub type Mode = crate::Reg<mode::ModeSpec>;
+#[doc = "MODE (rw) register accessor: an alias for `Reg<MODE_SPEC>`"]
+pub type MODE = crate::Reg<mode::MODE_SPEC>;
 #[doc = "Defines the routing of the connected PDM microphones' signals"]
 pub mod mode;
-#[doc = "GAINL (rw) register accessor: Left output gain adjustment\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gainl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gainl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gainl`]
-module"]
-#[doc(alias = "GAINL")]
-pub type Gainl = crate::Reg<gainl::GainlSpec>;
+#[doc = "GAINL (rw) register accessor: an alias for `Reg<GAINL_SPEC>`"]
+pub type GAINL = crate::Reg<gainl::GAINL_SPEC>;
 #[doc = "Left output gain adjustment"]
 pub mod gainl;
-#[doc = "GAINR (rw) register accessor: Right output gain adjustment\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gainr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gainr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gainr`]
-module"]
-#[doc(alias = "GAINR")]
-pub type Gainr = crate::Reg<gainr::GainrSpec>;
+#[doc = "GAINR (rw) register accessor: an alias for `Reg<GAINR_SPEC>`"]
+pub type GAINR = crate::Reg<gainr::GAINR_SPEC>;
 #[doc = "Right output gain adjustment"]
 pub mod gainr;
-#[doc = "RATIO (rw) register accessor: Selects the ratio between PDM_CLK and output sample rate. Change PDMCLKCTRL accordingly.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ratio::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ratio::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ratio`]
-module"]
-#[doc(alias = "RATIO")]
-pub type Ratio = crate::Reg<ratio::RatioSpec>;
+#[doc = "RATIO (rw) register accessor: an alias for `Reg<RATIO_SPEC>`"]
+pub type RATIO = crate::Reg<ratio::RATIO_SPEC>;
 #[doc = "Selects the ratio between PDM_CLK and output sample rate. Change PDMCLKCTRL accordingly."]
 pub mod ratio;
 #[doc = "Unspecified"]
-pub use self::psel::Psel;
+pub use psel::PSEL;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod psel;
 #[doc = "Unspecified"]
-pub use self::sample::Sample;
+pub use sample::SAMPLE;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod sample;

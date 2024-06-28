@@ -1,96 +1,133 @@
 #[doc = "Register `INTENCLR` reader"]
-pub type R = crate::R<IntenclrSpec>;
-#[doc = "Register `INTENCLR` writer"]
-pub type W = crate::W<IntenclrSpec>;
-#[doc = "Write '1' to disable interrupt for event TIMEOUT\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Timeout {
-    #[doc = "0: Read: Disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Enabled"]
-    Enabled = 1,
-}
-impl From<Timeout> for bool {
+pub struct R(crate::R<INTENCLR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<INTENCLR_SPEC>;
     #[inline(always)]
-    fn from(variant: Timeout) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<INTENCLR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<INTENCLR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `INTENCLR` writer"]
+pub struct W(crate::W<INTENCLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<INTENCLR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<INTENCLR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<INTENCLR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `TIMEOUT` reader - Write '1' to disable interrupt for event TIMEOUT"]
-pub type TimeoutR = crate::BitReader<Timeout>;
-impl TimeoutR {
+pub type TIMEOUT_R = crate::BitReader<TIMEOUT_A>;
+#[doc = "Write '1' to disable interrupt for event TIMEOUT\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TIMEOUT_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Enabled"]
+    ENABLED = 1,
+}
+impl From<TIMEOUT_A> for bool {
+    #[inline(always)]
+    fn from(variant: TIMEOUT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TIMEOUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Timeout {
+    pub fn variant(&self) -> TIMEOUT_A {
         match self.bits {
-            false => Timeout::Disabled,
-            true => Timeout::Enabled,
+            false => TIMEOUT_A::DISABLED,
+            true => TIMEOUT_A::ENABLED,
         }
     }
-    #[doc = "Read: Disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Timeout::Disabled
+        *self == TIMEOUT_A::DISABLED
     }
-    #[doc = "Read: Enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Timeout::Enabled
+        *self == TIMEOUT_A::ENABLED
     }
 }
 #[doc = "Write '1' to disable interrupt for event TIMEOUT\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TimeoutWO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TIMEOUT_AW {
     #[doc = "1: Disable"]
-    Clear = 1,
+    CLEAR = 1,
 }
-impl From<TimeoutWO> for bool {
+impl From<TIMEOUT_AW> for bool {
     #[inline(always)]
-    fn from(variant: TimeoutWO) -> Self {
+    fn from(variant: TIMEOUT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TIMEOUT` writer - Write '1' to disable interrupt for event TIMEOUT"]
-pub type TimeoutW<'a, REG> = crate::BitWriter<'a, REG, TimeoutWO>;
-impl<'a, REG> TimeoutW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type TIMEOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, TIMEOUT_AW, O>;
+impl<'a, const O: u8> TIMEOUT_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(TimeoutWO::Clear)
+    pub fn clear(self) -> &'a mut W {
+        self.variant(TIMEOUT_AW::CLEAR)
     }
 }
 impl R {
     #[doc = "Bit 0 - Write '1' to disable interrupt for event TIMEOUT"]
     #[inline(always)]
-    pub fn timeout(&self) -> TimeoutR {
-        TimeoutR::new((self.bits & 1) != 0)
+    pub fn timeout(&self) -> TIMEOUT_R {
+        TIMEOUT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write '1' to disable interrupt for event TIMEOUT"]
     #[inline(always)]
-    #[must_use]
-    pub fn timeout(&mut self) -> TimeoutW<IntenclrSpec> {
-        TimeoutW::new(self, 0)
+    pub fn timeout(&mut self) -> TIMEOUT_W<0> {
+        TIMEOUT_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Disable interrupt\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intenclr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenclr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct IntenclrSpec;
-impl crate::RegisterSpec for IntenclrSpec {
+#[doc = "Disable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenclr](index.html) module"]
+pub struct INTENCLR_SPEC;
+impl crate::RegisterSpec for INTENCLR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`intenclr::R`](R) reader structure"]
-impl crate::Readable for IntenclrSpec {}
-#[doc = "`write(|w| ..)` method takes [`intenclr::W`](W) writer structure"]
-impl crate::Writable for IntenclrSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [intenclr::R](R) reader structure"]
+impl crate::Readable for INTENCLR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [intenclr::W](W) writer structure"]
+impl crate::Writable for INTENCLR_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets INTENCLR to value 0"]
-impl crate::Resettable for IntenclrSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for INTENCLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

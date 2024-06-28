@@ -1,104 +1,140 @@
 #[doc = "Register `LRCK` reader"]
-pub type R = crate::R<LrckSpec>;
-#[doc = "Register `LRCK` writer"]
-pub type W = crate::W<LrckSpec>;
-#[doc = "Field `PIN` reader - Pin number"]
-pub type PinR = crate::FieldReader;
-#[doc = "Field `PIN` writer - Pin number"]
-pub type PinW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Connection\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Connect {
-    #[doc = "1: Disconnect"]
-    Disconnected = 1,
-    #[doc = "0: Connect"]
-    Connected = 0,
-}
-impl From<Connect> for bool {
+pub struct R(crate::R<LRCK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LRCK_SPEC>;
     #[inline(always)]
-    fn from(variant: Connect) -> Self {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<LRCK_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<LRCK_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LRCK` writer"]
+pub struct W(crate::W<LRCK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LRCK_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<LRCK_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<LRCK_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PIN` reader - Pin number"]
+pub type PIN_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `PIN` writer - Pin number"]
+pub type PIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LRCK_SPEC, u8, u8, 5, O>;
+#[doc = "Field `CONNECT` reader - Connection"]
+pub type CONNECT_R = crate::BitReader<CONNECT_A>;
+#[doc = "Connection\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CONNECT_A {
+    #[doc = "1: Disconnect"]
+    DISCONNECTED = 1,
+    #[doc = "0: Connect"]
+    CONNECTED = 0,
+}
+impl From<CONNECT_A> for bool {
+    #[inline(always)]
+    fn from(variant: CONNECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CONNECT` reader - Connection"]
-pub type ConnectR = crate::BitReader<Connect>;
-impl ConnectR {
+impl CONNECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Connect {
+    pub fn variant(&self) -> CONNECT_A {
         match self.bits {
-            true => Connect::Disconnected,
-            false => Connect::Connected,
+            true => CONNECT_A::DISCONNECTED,
+            false => CONNECT_A::CONNECTED,
         }
     }
-    #[doc = "Disconnect"]
+    #[doc = "Checks if the value of the field is `DISCONNECTED`"]
     #[inline(always)]
     pub fn is_disconnected(&self) -> bool {
-        *self == Connect::Disconnected
+        *self == CONNECT_A::DISCONNECTED
     }
-    #[doc = "Connect"]
+    #[doc = "Checks if the value of the field is `CONNECTED`"]
     #[inline(always)]
     pub fn is_connected(&self) -> bool {
-        *self == Connect::Connected
+        *self == CONNECT_A::CONNECTED
     }
 }
 #[doc = "Field `CONNECT` writer - Connection"]
-pub type ConnectW<'a, REG> = crate::BitWriter<'a, REG, Connect>;
-impl<'a, REG> ConnectW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type CONNECT_W<'a, const O: u8> = crate::BitWriter<'a, u32, LRCK_SPEC, CONNECT_A, O>;
+impl<'a, const O: u8> CONNECT_W<'a, O> {
     #[doc = "Disconnect"]
     #[inline(always)]
-    pub fn disconnected(self) -> &'a mut crate::W<REG> {
-        self.variant(Connect::Disconnected)
+    pub fn disconnected(self) -> &'a mut W {
+        self.variant(CONNECT_A::DISCONNECTED)
     }
     #[doc = "Connect"]
     #[inline(always)]
-    pub fn connected(self) -> &'a mut crate::W<REG> {
-        self.variant(Connect::Connected)
+    pub fn connected(self) -> &'a mut W {
+        self.variant(CONNECT_A::CONNECTED)
     }
 }
 impl R {
     #[doc = "Bits 0:4 - Pin number"]
     #[inline(always)]
-    pub fn pin(&self) -> PinR {
-        PinR::new((self.bits & 0x1f) as u8)
+    pub fn pin(&self) -> PIN_R {
+        PIN_R::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bit 31 - Connection"]
     #[inline(always)]
-    pub fn connect(&self) -> ConnectR {
-        ConnectR::new(((self.bits >> 31) & 1) != 0)
+    pub fn connect(&self) -> CONNECT_R {
+        CONNECT_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Pin number"]
     #[inline(always)]
-    #[must_use]
-    pub fn pin(&mut self) -> PinW<LrckSpec> {
-        PinW::new(self, 0)
+    pub fn pin(&mut self) -> PIN_W<0> {
+        PIN_W::new(self)
     }
     #[doc = "Bit 31 - Connection"]
     #[inline(always)]
-    #[must_use]
-    pub fn connect(&mut self) -> ConnectW<LrckSpec> {
-        ConnectW::new(self, 31)
+    pub fn connect(&mut self) -> CONNECT_W<31> {
+        CONNECT_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Pin select for LRCK signal.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lrck::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lrck::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct LrckSpec;
-impl crate::RegisterSpec for LrckSpec {
+#[doc = "Pin select for LRCK signal.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lrck](index.html) module"]
+pub struct LRCK_SPEC;
+impl crate::RegisterSpec for LRCK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`lrck::R`](R) reader structure"]
-impl crate::Readable for LrckSpec {}
-#[doc = "`write(|w| ..)` method takes [`lrck::W`](W) writer structure"]
-impl crate::Writable for LrckSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [lrck::R](R) reader structure"]
+impl crate::Readable for LRCK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [lrck::W](W) writer structure"]
+impl crate::Writable for LRCK_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets LRCK to value 0xffff_ffff"]
-impl crate::Resettable for LrckSpec {
-    const RESET_VALUE: u32 = 0xffff_ffff;
+impl crate::Resettable for LRCK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff_ffff
+    }
 }

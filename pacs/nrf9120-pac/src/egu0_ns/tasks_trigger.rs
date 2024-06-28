@@ -1,54 +1,77 @@
 #[doc = "Register `TASKS_TRIGGER[%s]` writer"]
-pub type W = crate::W<TasksTriggerSpec>;
+pub struct W(crate::W<TASKS_TRIGGER_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TASKS_TRIGGER_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TASKS_TRIGGER_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TASKS_TRIGGER_SPEC>) -> Self {
+        W(writer)
+    }
+}
 #[doc = "Trigger n for triggering the corresponding TRIGGERED\\[n\\]
 event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TasksTrigger {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TASKS_TRIGGER_AW {
     #[doc = "1: Trigger task"]
-    Trigger = 1,
+    TRIGGER = 1,
 }
-impl From<TasksTrigger> for bool {
+impl From<TASKS_TRIGGER_AW> for bool {
     #[inline(always)]
-    fn from(variant: TasksTrigger) -> Self {
+    fn from(variant: TASKS_TRIGGER_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TASKS_TRIGGER` writer - Trigger n for triggering the corresponding TRIGGERED\\[n\\]
 event"]
-pub type TasksTriggerW<'a, REG> = crate::BitWriter<'a, REG, TasksTrigger>;
-impl<'a, REG> TasksTriggerW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type TASKS_TRIGGER_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TASKS_TRIGGER_SPEC, TASKS_TRIGGER_AW, O>;
+impl<'a, const O: u8> TASKS_TRIGGER_W<'a, O> {
     #[doc = "Trigger task"]
     #[inline(always)]
-    pub fn trigger(self) -> &'a mut crate::W<REG> {
-        self.variant(TasksTrigger::Trigger)
+    pub fn trigger(self) -> &'a mut W {
+        self.variant(TASKS_TRIGGER_AW::TRIGGER)
     }
 }
 impl W {
     #[doc = "Bit 0 - Trigger n for triggering the corresponding TRIGGERED\\[n\\]
 event"]
     #[inline(always)]
-    #[must_use]
-    pub fn tasks_trigger(&mut self) -> TasksTriggerW<TasksTriggerSpec> {
-        TasksTriggerW::new(self, 0)
+    pub fn tasks_trigger(&mut self) -> TASKS_TRIGGER_W<0> {
+        TASKS_TRIGGER_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
 #[doc = "Description collection: Trigger n for triggering the corresponding TRIGGERED\\[n\\]
-event\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tasks_trigger::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TasksTriggerSpec;
-impl crate::RegisterSpec for TasksTriggerSpec {
+event\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_trigger](index.html) module"]
+pub struct TASKS_TRIGGER_SPEC;
+impl crate::RegisterSpec for TASKS_TRIGGER_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [`tasks_trigger::W`](W) writer structure"]
-impl crate::Writable for TasksTriggerSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`write(|w| ..)` method takes [tasks_trigger::W](W) writer structure"]
+impl crate::Writable for TASKS_TRIGGER_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets TASKS_TRIGGER[%s]
 to value 0"]
-impl crate::Resettable for TasksTriggerSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for TASKS_TRIGGER_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

@@ -1,89 +1,127 @@
 #[doc = "Register `DETECTMODE_SEC` reader"]
-pub type R = crate::R<DetectmodeSecSpec>;
-#[doc = "Register `DETECTMODE_SEC` writer"]
-pub type W = crate::W<DetectmodeSecSpec>;
-#[doc = "Select between default DETECT signal behavior and LDETECT mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Detectmode {
-    #[doc = "0: DETECT directly connected to PIN DETECT signals"]
-    Default = 0,
-    #[doc = "1: Use the latched LDETECT behavior"]
-    Ldetect = 1,
-}
-impl From<Detectmode> for bool {
+pub struct R(crate::R<DETECTMODE_SEC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DETECTMODE_SEC_SPEC>;
     #[inline(always)]
-    fn from(variant: Detectmode) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DETECTMODE_SEC_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DETECTMODE_SEC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DETECTMODE_SEC` writer"]
+pub struct W(crate::W<DETECTMODE_SEC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DETECTMODE_SEC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DETECTMODE_SEC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DETECTMODE_SEC_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `DETECTMODE` reader - Select between default DETECT signal behavior and LDETECT mode"]
-pub type DetectmodeR = crate::BitReader<Detectmode>;
-impl DetectmodeR {
+pub type DETECTMODE_R = crate::BitReader<DETECTMODE_A>;
+#[doc = "Select between default DETECT signal behavior and LDETECT mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DETECTMODE_A {
+    #[doc = "0: DETECT directly connected to PIN DETECT signals"]
+    DEFAULT = 0,
+    #[doc = "1: Use the latched LDETECT behavior"]
+    LDETECT = 1,
+}
+impl From<DETECTMODE_A> for bool {
+    #[inline(always)]
+    fn from(variant: DETECTMODE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl DETECTMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Detectmode {
+    pub fn variant(&self) -> DETECTMODE_A {
         match self.bits {
-            false => Detectmode::Default,
-            true => Detectmode::Ldetect,
+            false => DETECTMODE_A::DEFAULT,
+            true => DETECTMODE_A::LDETECT,
         }
     }
-    #[doc = "DETECT directly connected to PIN DETECT signals"]
+    #[doc = "Checks if the value of the field is `DEFAULT`"]
     #[inline(always)]
     pub fn is_default(&self) -> bool {
-        *self == Detectmode::Default
+        *self == DETECTMODE_A::DEFAULT
     }
-    #[doc = "Use the latched LDETECT behavior"]
+    #[doc = "Checks if the value of the field is `LDETECT`"]
     #[inline(always)]
     pub fn is_ldetect(&self) -> bool {
-        *self == Detectmode::Ldetect
+        *self == DETECTMODE_A::LDETECT
     }
 }
 #[doc = "Field `DETECTMODE` writer - Select between default DETECT signal behavior and LDETECT mode"]
-pub type DetectmodeW<'a, REG> = crate::BitWriter<'a, REG, Detectmode>;
-impl<'a, REG> DetectmodeW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type DETECTMODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DETECTMODE_SEC_SPEC, DETECTMODE_A, O>;
+impl<'a, const O: u8> DETECTMODE_W<'a, O> {
     #[doc = "DETECT directly connected to PIN DETECT signals"]
     #[inline(always)]
-    pub fn default(self) -> &'a mut crate::W<REG> {
-        self.variant(Detectmode::Default)
+    pub fn default(self) -> &'a mut W {
+        self.variant(DETECTMODE_A::DEFAULT)
     }
     #[doc = "Use the latched LDETECT behavior"]
     #[inline(always)]
-    pub fn ldetect(self) -> &'a mut crate::W<REG> {
-        self.variant(Detectmode::Ldetect)
+    pub fn ldetect(self) -> &'a mut W {
+        self.variant(DETECTMODE_A::LDETECT)
     }
 }
 impl R {
     #[doc = "Bit 0 - Select between default DETECT signal behavior and LDETECT mode"]
     #[inline(always)]
-    pub fn detectmode(&self) -> DetectmodeR {
-        DetectmodeR::new((self.bits & 1) != 0)
+    pub fn detectmode(&self) -> DETECTMODE_R {
+        DETECTMODE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Select between default DETECT signal behavior and LDETECT mode"]
     #[inline(always)]
-    #[must_use]
-    pub fn detectmode(&mut self) -> DetectmodeW<DetectmodeSecSpec> {
-        DetectmodeW::new(self, 0)
+    pub fn detectmode(&mut self) -> DETECTMODE_W<0> {
+        DETECTMODE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Select between default DETECT signal behavior and LDETECT mode (For secure pin only)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`detectmode_sec::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`detectmode_sec::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DetectmodeSecSpec;
-impl crate::RegisterSpec for DetectmodeSecSpec {
+#[doc = "Select between default DETECT signal behavior and LDETECT mode (For secure pin only)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [detectmode_sec](index.html) module"]
+pub struct DETECTMODE_SEC_SPEC;
+impl crate::RegisterSpec for DETECTMODE_SEC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`detectmode_sec::R`](R) reader structure"]
-impl crate::Readable for DetectmodeSecSpec {}
-#[doc = "`write(|w| ..)` method takes [`detectmode_sec::W`](W) writer structure"]
-impl crate::Writable for DetectmodeSecSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [detectmode_sec::R](R) reader structure"]
+impl crate::Readable for DETECTMODE_SEC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [detectmode_sec::W](W) writer structure"]
+impl crate::Writable for DETECTMODE_SEC_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets DETECTMODE_SEC to value 0"]
-impl crate::Resettable for DetectmodeSecSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for DETECTMODE_SEC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

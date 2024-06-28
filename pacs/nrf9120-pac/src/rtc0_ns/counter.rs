@@ -1,22 +1,40 @@
 #[doc = "Register `COUNTER` reader"]
-pub type R = crate::R<CounterSpec>;
+pub struct R(crate::R<COUNTER_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<COUNTER_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<COUNTER_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<COUNTER_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Field `COUNTER` reader - Counter value"]
-pub type CounterR = crate::FieldReader<u32>;
+pub type COUNTER_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:23 - Counter value"]
     #[inline(always)]
-    pub fn counter(&self) -> CounterR {
-        CounterR::new(self.bits & 0x00ff_ffff)
+    pub fn counter(&self) -> COUNTER_R {
+        COUNTER_R::new((self.bits & 0x00ff_ffff) as u32)
     }
 }
-#[doc = "Current counter value\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`counter::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CounterSpec;
-impl crate::RegisterSpec for CounterSpec {
+#[doc = "Current counter value\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [counter](index.html) module"]
+pub struct COUNTER_SPEC;
+impl crate::RegisterSpec for COUNTER_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`counter::R`](R) reader structure"]
-impl crate::Readable for CounterSpec {}
+#[doc = "`read()` method returns [counter::R](R) reader structure"]
+impl crate::Readable for COUNTER_SPEC {
+    type Reader = R;
+}
 #[doc = "`reset()` method sets COUNTER to value 0"]
-impl crate::Resettable for CounterSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for COUNTER_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

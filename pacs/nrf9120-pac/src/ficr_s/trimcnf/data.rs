@@ -1,22 +1,40 @@
 #[doc = "Register `DATA` reader"]
-pub type R = crate::R<DataSpec>;
+pub struct R(crate::R<DATA_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DATA_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DATA_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DATA_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Field `Data` reader - Data"]
-pub type DataR = crate::FieldReader<u32>;
+pub type DATA_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Data"]
     #[inline(always)]
-    pub fn data(&self) -> DataR {
-        DataR::new(self.bits)
+    pub fn data(&self) -> DATA_R {
+        DATA_R::new(self.bits)
     }
 }
-#[doc = "Description cluster: Data\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`data::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DataSpec;
-impl crate::RegisterSpec for DataSpec {
+#[doc = "Description cluster: Data\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [data](index.html) module"]
+pub struct DATA_SPEC;
+impl crate::RegisterSpec for DATA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`data::R`](R) reader structure"]
-impl crate::Readable for DataSpec {}
+#[doc = "`read()` method returns [data::R](R) reader structure"]
+impl crate::Readable for DATA_SPEC {
+    type Reader = R;
+}
 #[doc = "`reset()` method sets DATA to value 0xffff_ffff"]
-impl crate::Resettable for DataSpec {
-    const RESET_VALUE: u32 = 0xffff_ffff;
+impl crate::Resettable for DATA_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff_ffff
+    }
 }

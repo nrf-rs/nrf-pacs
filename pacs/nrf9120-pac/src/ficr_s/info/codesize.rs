@@ -1,54 +1,68 @@
 #[doc = "Register `CODESIZE` reader"]
-pub type R = crate::R<CodesizeSpec>;
+pub struct R(crate::R<CODESIZE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CODESIZE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CODESIZE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CODESIZE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `CODESIZE` reader - Code memory size in number of pages Total code space is: CODEPAGESIZE * CODESIZE"]
+pub type CODESIZE_R = crate::FieldReader<u32, CODESIZE_A>;
 #[doc = "Code memory size in number of pages Total code space is: CODEPAGESIZE * CODESIZE\n\nValue on reset: 256"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Codesize {
+pub enum CODESIZE_A {
     #[doc = "256: 256 pages"]
     P256 = 256,
 }
-impl From<Codesize> for u32 {
+impl From<CODESIZE_A> for u32 {
     #[inline(always)]
-    fn from(variant: Codesize) -> Self {
+    fn from(variant: CODESIZE_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Codesize {
-    type Ux = u32;
-}
-impl crate::IsEnum for Codesize {}
-#[doc = "Field `CODESIZE` reader - Code memory size in number of pages Total code space is: CODEPAGESIZE * CODESIZE"]
-pub type CodesizeR = crate::FieldReader<Codesize>;
-impl CodesizeR {
+impl CODESIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Codesize> {
+    pub fn variant(&self) -> Option<CODESIZE_A> {
         match self.bits {
-            256 => Some(Codesize::P256),
+            256 => Some(CODESIZE_A::P256),
             _ => None,
         }
     }
-    #[doc = "256 pages"]
+    #[doc = "Checks if the value of the field is `P256`"]
     #[inline(always)]
     pub fn is_p256(&self) -> bool {
-        *self == Codesize::P256
+        *self == CODESIZE_A::P256
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Code memory size in number of pages Total code space is: CODEPAGESIZE * CODESIZE"]
     #[inline(always)]
-    pub fn codesize(&self) -> CodesizeR {
-        CodesizeR::new(self.bits)
+    pub fn codesize(&self) -> CODESIZE_R {
+        CODESIZE_R::new(self.bits)
     }
 }
-#[doc = "Code memory size\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`codesize::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CodesizeSpec;
-impl crate::RegisterSpec for CodesizeSpec {
+#[doc = "Code memory size\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [codesize](index.html) module"]
+pub struct CODESIZE_SPEC;
+impl crate::RegisterSpec for CODESIZE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`codesize::R`](R) reader structure"]
-impl crate::Readable for CodesizeSpec {}
+#[doc = "`read()` method returns [codesize::R](R) reader structure"]
+impl crate::Readable for CODESIZE_SPEC {
+    type Reader = R;
+}
 #[doc = "`reset()` method sets CODESIZE to value 0x0100"]
-impl crate::Resettable for CodesizeSpec {
-    const RESET_VALUE: u32 = 0x0100;
+impl crate::Resettable for CODESIZE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0100
+    }
 }

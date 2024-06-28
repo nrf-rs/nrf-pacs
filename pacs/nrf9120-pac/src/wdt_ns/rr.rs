@@ -1,56 +1,73 @@
 #[doc = "Register `RR[%s]` writer"]
-pub type W = crate::W<RrSpec>;
-#[doc = "Reload request register\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum Rr {
-    #[doc = "1850885685: Value to request a reload of the watchdog timer"]
-    Reload = 1850885685,
-}
-impl From<Rr> for u32 {
+pub struct W(crate::W<RR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RR_SPEC>;
     #[inline(always)]
-    fn from(variant: Rr) -> Self {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<RR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<RR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Reload request register\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
+pub enum RR_AW {
+    #[doc = "1850885685: Value to request a reload of the watchdog timer"]
+    RELOAD = 1850885685,
+}
+impl From<RR_AW> for u32 {
+    #[inline(always)]
+    fn from(variant: RR_AW) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Rr {
-    type Ux = u32;
-}
-impl crate::IsEnum for Rr {}
 #[doc = "Field `RR` writer - Reload request register"]
-pub type RrW<'a, REG> = crate::FieldWriter<'a, REG, 32, Rr>;
-impl<'a, REG> RrW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u32>,
-{
+pub type RR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RR_SPEC, u32, RR_AW, 32, O>;
+impl<'a, const O: u8> RR_W<'a, O> {
     #[doc = "Value to request a reload of the watchdog timer"]
     #[inline(always)]
-    pub fn reload(self) -> &'a mut crate::W<REG> {
-        self.variant(Rr::Reload)
+    pub fn reload(self) -> &'a mut W {
+        self.variant(RR_AW::RELOAD)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Reload request register"]
     #[inline(always)]
-    #[must_use]
-    pub fn rr(&mut self) -> RrW<RrSpec> {
-        RrW::new(self, 0)
+    pub fn rr(&mut self) -> RR_W<0> {
+        RR_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Description collection: Reload request n\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RrSpec;
-impl crate::RegisterSpec for RrSpec {
+#[doc = "Description collection: Reload request n\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rr](index.html) module"]
+pub struct RR_SPEC;
+impl crate::RegisterSpec for RR_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [`rr::W`](W) writer structure"]
-impl crate::Writable for RrSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`write(|w| ..)` method takes [rr::W](W) writer structure"]
+impl crate::Writable for RR_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets RR[%s]
 to value 0"]
-impl crate::Resettable for RrSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for RR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

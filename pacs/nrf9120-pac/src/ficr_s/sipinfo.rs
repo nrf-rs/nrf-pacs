@@ -1,55 +1,22 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "SIP-specific device info"]
-#[doc(alias = "SIPINFO")]
-pub struct Sipinfo {
-    partno: Partno,
-    hwrevision: [Hwrevision; 4],
-    variant: [Variant; 4],
-}
-impl Sipinfo {
+pub struct SIPINFO {
     #[doc = "0x00 - SIP part number"]
-    #[inline(always)]
-    pub const fn partno(&self) -> &Partno {
-        &self.partno
-    }
+    pub partno: PARTNO,
     #[doc = "0x04 - Description collection: SIP hardware revision, encoded in ASCII, ex B0A or B1A"]
-    #[inline(always)]
-    pub const fn hwrevision(&self, n: usize) -> &Hwrevision {
-        &self.hwrevision[n]
-    }
-    #[doc = "Iterator for array of:"]
-    #[doc = "0x04 - Description collection: SIP hardware revision, encoded in ASCII, ex B0A or B1A"]
-    #[inline(always)]
-    pub fn hwrevision_iter(&self) -> impl Iterator<Item = &Hwrevision> {
-        self.hwrevision.iter()
-    }
+    pub hwrevision: [HWREVISION; 4],
     #[doc = "0x08 - Description collection: SIP VARIANT, encoded in ASCII, ex SIAA, SIBA or SICA"]
-    #[inline(always)]
-    pub const fn variant(&self, n: usize) -> &Variant {
-        &self.variant[n]
-    }
-    #[doc = "Iterator for array of:"]
-    #[doc = "0x08 - Description collection: SIP VARIANT, encoded in ASCII, ex SIAA, SIBA or SICA"]
-    #[inline(always)]
-    pub fn variant_iter(&self) -> impl Iterator<Item = &Variant> {
-        self.variant.iter()
-    }
+    pub variant: [VARIANT; 4],
 }
-#[doc = "PARTNO (r) register accessor: SIP part number\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`partno::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@partno`]
-module"]
-#[doc(alias = "PARTNO")]
-pub type Partno = crate::Reg<partno::PartnoSpec>;
+#[doc = "PARTNO (r) register accessor: an alias for `Reg<PARTNO_SPEC>`"]
+pub type PARTNO = crate::Reg<partno::PARTNO_SPEC>;
 #[doc = "SIP part number"]
 pub mod partno;
-#[doc = "HWREVISION (r) register accessor: Description collection: SIP hardware revision, encoded in ASCII, ex B0A or B1A\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hwrevision::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwrevision`]
-module"]
-#[doc(alias = "HWREVISION")]
-pub type Hwrevision = crate::Reg<hwrevision::HwrevisionSpec>;
+#[doc = "HWREVISION (r) register accessor: an alias for `Reg<HWREVISION_SPEC>`"]
+pub type HWREVISION = crate::Reg<hwrevision::HWREVISION_SPEC>;
 #[doc = "Description collection: SIP hardware revision, encoded in ASCII, ex B0A or B1A"]
 pub mod hwrevision;
-#[doc = "VARIANT (r) register accessor: Description collection: SIP VARIANT, encoded in ASCII, ex SIAA, SIBA or SICA\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`variant::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@variant`]
-module"]
-#[doc(alias = "VARIANT")]
-pub type Variant = crate::Reg<variant::VariantSpec>;
+#[doc = "VARIANT (r) register accessor: an alias for `Reg<VARIANT_SPEC>`"]
+pub type VARIANT = crate::Reg<variant::VARIANT_SPEC>;
 #[doc = "Description collection: SIP VARIANT, encoded in ASCII, ex SIAA, SIBA or SICA"]
 pub mod variant;

@@ -1,31 +1,16 @@
+#[doc = r"Register block"]
 #[repr(C)]
-#[doc = "Unspecified"]
-#[doc(alias = "PSEL")]
-pub struct Psel {
-    clk: Clk,
-    din: Din,
-}
-impl Psel {
+pub struct PSEL {
     #[doc = "0x00 - Pin number configuration for PDM CLK signal"]
-    #[inline(always)]
-    pub const fn clk(&self) -> &Clk {
-        &self.clk
-    }
+    pub clk: CLK,
     #[doc = "0x04 - Pin number configuration for PDM DIN signal"]
-    #[inline(always)]
-    pub const fn din(&self) -> &Din {
-        &self.din
-    }
+    pub din: DIN,
 }
-#[doc = "CLK (rw) register accessor: Pin number configuration for PDM CLK signal\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clk::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clk::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clk`]
-module"]
-#[doc(alias = "CLK")]
-pub type Clk = crate::Reg<clk::ClkSpec>;
+#[doc = "CLK (rw) register accessor: an alias for `Reg<CLK_SPEC>`"]
+pub type CLK = crate::Reg<clk::CLK_SPEC>;
 #[doc = "Pin number configuration for PDM CLK signal"]
 pub mod clk;
-#[doc = "DIN (rw) register accessor: Pin number configuration for PDM DIN signal\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`din::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`din::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@din`]
-module"]
-#[doc(alias = "DIN")]
-pub type Din = crate::Reg<din::DinSpec>;
+#[doc = "DIN (rw) register accessor: an alias for `Reg<DIN_SPEC>`"]
+pub type DIN = crate::Reg<din::DIN_SPEC>;
 #[doc = "Pin number configuration for PDM DIN signal"]
 pub mod din;

@@ -1,167 +1,202 @@
 #[doc = "Register `INTENCLR` reader"]
-pub type R = crate::R<IntenclrSpec>;
-#[doc = "Register `INTENCLR` writer"]
-pub type W = crate::W<IntenclrSpec>;
-#[doc = "Write '1' to disable interrupt for event HFCLKSTARTED\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Hfclkstarted {
-    #[doc = "0: Read: Disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Enabled"]
-    Enabled = 1,
-}
-impl From<Hfclkstarted> for bool {
+pub struct R(crate::R<INTENCLR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<INTENCLR_SPEC>;
     #[inline(always)]
-    fn from(variant: Hfclkstarted) -> Self {
-        variant as u8 != 0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<INTENCLR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<INTENCLR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `INTENCLR` writer"]
+pub struct W(crate::W<INTENCLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<INTENCLR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<INTENCLR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<INTENCLR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Field `HFCLKSTARTED` reader - Write '1' to disable interrupt for event HFCLKSTARTED"]
-pub type HfclkstartedR = crate::BitReader<Hfclkstarted>;
-impl HfclkstartedR {
+pub type HFCLKSTARTED_R = crate::BitReader<HFCLKSTARTED_A>;
+#[doc = "Write '1' to disable interrupt for event HFCLKSTARTED\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HFCLKSTARTED_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Enabled"]
+    ENABLED = 1,
+}
+impl From<HFCLKSTARTED_A> for bool {
+    #[inline(always)]
+    fn from(variant: HFCLKSTARTED_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl HFCLKSTARTED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Hfclkstarted {
+    pub fn variant(&self) -> HFCLKSTARTED_A {
         match self.bits {
-            false => Hfclkstarted::Disabled,
-            true => Hfclkstarted::Enabled,
+            false => HFCLKSTARTED_A::DISABLED,
+            true => HFCLKSTARTED_A::ENABLED,
         }
     }
-    #[doc = "Read: Disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Hfclkstarted::Disabled
+        *self == HFCLKSTARTED_A::DISABLED
     }
-    #[doc = "Read: Enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Hfclkstarted::Enabled
+        *self == HFCLKSTARTED_A::ENABLED
     }
 }
 #[doc = "Write '1' to disable interrupt for event HFCLKSTARTED\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum HfclkstartedWO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HFCLKSTARTED_AW {
     #[doc = "1: Disable"]
-    Clear = 1,
+    CLEAR = 1,
 }
-impl From<HfclkstartedWO> for bool {
+impl From<HFCLKSTARTED_AW> for bool {
     #[inline(always)]
-    fn from(variant: HfclkstartedWO) -> Self {
+    fn from(variant: HFCLKSTARTED_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `HFCLKSTARTED` writer - Write '1' to disable interrupt for event HFCLKSTARTED"]
-pub type HfclkstartedW<'a, REG> = crate::BitWriter<'a, REG, HfclkstartedWO>;
-impl<'a, REG> HfclkstartedW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type HFCLKSTARTED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTENCLR_SPEC, HFCLKSTARTED_AW, O>;
+impl<'a, const O: u8> HFCLKSTARTED_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(HfclkstartedWO::Clear)
-    }
-}
-#[doc = "Write '1' to disable interrupt for event LFCLKSTARTED\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Lfclkstarted {
-    #[doc = "0: Read: Disabled"]
-    Disabled = 0,
-    #[doc = "1: Read: Enabled"]
-    Enabled = 1,
-}
-impl From<Lfclkstarted> for bool {
-    #[inline(always)]
-    fn from(variant: Lfclkstarted) -> Self {
-        variant as u8 != 0
+    pub fn clear(self) -> &'a mut W {
+        self.variant(HFCLKSTARTED_AW::CLEAR)
     }
 }
 #[doc = "Field `LFCLKSTARTED` reader - Write '1' to disable interrupt for event LFCLKSTARTED"]
-pub type LfclkstartedR = crate::BitReader<Lfclkstarted>;
-impl LfclkstartedR {
+pub type LFCLKSTARTED_R = crate::BitReader<LFCLKSTARTED_A>;
+#[doc = "Write '1' to disable interrupt for event LFCLKSTARTED\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LFCLKSTARTED_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Read: Enabled"]
+    ENABLED = 1,
+}
+impl From<LFCLKSTARTED_A> for bool {
+    #[inline(always)]
+    fn from(variant: LFCLKSTARTED_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl LFCLKSTARTED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Lfclkstarted {
+    pub fn variant(&self) -> LFCLKSTARTED_A {
         match self.bits {
-            false => Lfclkstarted::Disabled,
-            true => Lfclkstarted::Enabled,
+            false => LFCLKSTARTED_A::DISABLED,
+            true => LFCLKSTARTED_A::ENABLED,
         }
     }
-    #[doc = "Read: Disabled"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == Lfclkstarted::Disabled
+        *self == LFCLKSTARTED_A::DISABLED
     }
-    #[doc = "Read: Enabled"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == Lfclkstarted::Enabled
+        *self == LFCLKSTARTED_A::ENABLED
     }
 }
 #[doc = "Write '1' to disable interrupt for event LFCLKSTARTED\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum LfclkstartedWO {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LFCLKSTARTED_AW {
     #[doc = "1: Disable"]
-    Clear = 1,
+    CLEAR = 1,
 }
-impl From<LfclkstartedWO> for bool {
+impl From<LFCLKSTARTED_AW> for bool {
     #[inline(always)]
-    fn from(variant: LfclkstartedWO) -> Self {
+    fn from(variant: LFCLKSTARTED_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LFCLKSTARTED` writer - Write '1' to disable interrupt for event LFCLKSTARTED"]
-pub type LfclkstartedW<'a, REG> = crate::BitWriter<'a, REG, LfclkstartedWO>;
-impl<'a, REG> LfclkstartedW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
+pub type LFCLKSTARTED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTENCLR_SPEC, LFCLKSTARTED_AW, O>;
+impl<'a, const O: u8> LFCLKSTARTED_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(LfclkstartedWO::Clear)
+    pub fn clear(self) -> &'a mut W {
+        self.variant(LFCLKSTARTED_AW::CLEAR)
     }
 }
 impl R {
     #[doc = "Bit 0 - Write '1' to disable interrupt for event HFCLKSTARTED"]
     #[inline(always)]
-    pub fn hfclkstarted(&self) -> HfclkstartedR {
-        HfclkstartedR::new((self.bits & 1) != 0)
+    pub fn hfclkstarted(&self) -> HFCLKSTARTED_R {
+        HFCLKSTARTED_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Write '1' to disable interrupt for event LFCLKSTARTED"]
     #[inline(always)]
-    pub fn lfclkstarted(&self) -> LfclkstartedR {
-        LfclkstartedR::new(((self.bits >> 1) & 1) != 0)
+    pub fn lfclkstarted(&self) -> LFCLKSTARTED_R {
+        LFCLKSTARTED_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write '1' to disable interrupt for event HFCLKSTARTED"]
     #[inline(always)]
-    #[must_use]
-    pub fn hfclkstarted(&mut self) -> HfclkstartedW<IntenclrSpec> {
-        HfclkstartedW::new(self, 0)
+    pub fn hfclkstarted(&mut self) -> HFCLKSTARTED_W<0> {
+        HFCLKSTARTED_W::new(self)
     }
     #[doc = "Bit 1 - Write '1' to disable interrupt for event LFCLKSTARTED"]
     #[inline(always)]
-    #[must_use]
-    pub fn lfclkstarted(&mut self) -> LfclkstartedW<IntenclrSpec> {
-        LfclkstartedW::new(self, 1)
+    pub fn lfclkstarted(&mut self) -> LFCLKSTARTED_W<1> {
+        LFCLKSTARTED_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Disable interrupt\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intenclr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenclr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct IntenclrSpec;
-impl crate::RegisterSpec for IntenclrSpec {
+#[doc = "Disable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenclr](index.html) module"]
+pub struct INTENCLR_SPEC;
+impl crate::RegisterSpec for INTENCLR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`intenclr::R`](R) reader structure"]
-impl crate::Readable for IntenclrSpec {}
-#[doc = "`write(|w| ..)` method takes [`intenclr::W`](W) writer structure"]
-impl crate::Writable for IntenclrSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [intenclr::R](R) reader structure"]
+impl crate::Readable for INTENCLR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [intenclr::W](W) writer structure"]
+impl crate::Writable for INTENCLR_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets INTENCLR to value 0"]
-impl crate::Resettable for IntenclrSpec {
-    const RESET_VALUE: u32 = 0;
+impl crate::Resettable for INTENCLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

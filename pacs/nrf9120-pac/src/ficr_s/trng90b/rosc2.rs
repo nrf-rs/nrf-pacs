@@ -1,22 +1,40 @@
 #[doc = "Register `ROSC2` reader"]
-pub type R = crate::R<Rosc2Spec>;
+pub struct R(crate::R<ROSC2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ROSC2_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<ROSC2_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ROSC2_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Field `ROSC2` reader - Sample count for ring oscillator 2"]
-pub type Rosc2R = crate::FieldReader<u32>;
+pub type ROSC2_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Sample count for ring oscillator 2"]
     #[inline(always)]
-    pub fn rosc2(&self) -> Rosc2R {
-        Rosc2R::new(self.bits)
+    pub fn rosc2(&self) -> ROSC2_R {
+        ROSC2_R::new(self.bits)
     }
 }
-#[doc = "Sample count for ring oscillator 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rosc2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct Rosc2Spec;
-impl crate::RegisterSpec for Rosc2Spec {
+#[doc = "Sample count for ring oscillator 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rosc2](index.html) module"]
+pub struct ROSC2_SPEC;
+impl crate::RegisterSpec for ROSC2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`rosc2::R`](R) reader structure"]
-impl crate::Readable for Rosc2Spec {}
+#[doc = "`read()` method returns [rosc2::R](R) reader structure"]
+impl crate::Readable for ROSC2_SPEC {
+    type Reader = R;
+}
 #[doc = "`reset()` method sets ROSC2 to value 0xffff_ffff"]
-impl crate::Resettable for Rosc2Spec {
-    const RESET_VALUE: u32 = 0xffff_ffff;
+impl crate::Resettable for ROSC2_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff_ffff
+    }
 }

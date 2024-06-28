@@ -1,40 +1,81 @@
 #[doc = "Register `COUNTERTOP` reader"]
-pub type R = crate::R<CountertopSpec>;
+pub struct R(crate::R<COUNTERTOP_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<COUNTERTOP_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<COUNTERTOP_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<COUNTERTOP_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Register `COUNTERTOP` writer"]
-pub type W = crate::W<CountertopSpec>;
+pub struct W(crate::W<COUNTERTOP_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<COUNTERTOP_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<COUNTERTOP_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<COUNTERTOP_SPEC>) -> Self {
+        W(writer)
+    }
+}
 #[doc = "Field `COUNTERTOP` reader - Value up to which the pulse generator counter counts. This register is ignored when DECODER.MODE=WaveForm and only values from RAM are used."]
-pub type CountertopR = crate::FieldReader<u16>;
+pub type COUNTERTOP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `COUNTERTOP` writer - Value up to which the pulse generator counter counts. This register is ignored when DECODER.MODE=WaveForm and only values from RAM are used."]
-pub type CountertopW<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
+pub type COUNTERTOP_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, COUNTERTOP_SPEC, u16, u16, 15, O>;
 impl R {
     #[doc = "Bits 0:14 - Value up to which the pulse generator counter counts. This register is ignored when DECODER.MODE=WaveForm and only values from RAM are used."]
     #[inline(always)]
-    pub fn countertop(&self) -> CountertopR {
-        CountertopR::new((self.bits & 0x7fff) as u16)
+    pub fn countertop(&self) -> COUNTERTOP_R {
+        COUNTERTOP_R::new((self.bits & 0x7fff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:14 - Value up to which the pulse generator counter counts. This register is ignored when DECODER.MODE=WaveForm and only values from RAM are used."]
     #[inline(always)]
-    #[must_use]
-    pub fn countertop(&mut self) -> CountertopW<CountertopSpec> {
-        CountertopW::new(self, 0)
+    pub fn countertop(&mut self) -> COUNTERTOP_W<0> {
+        COUNTERTOP_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
     }
 }
-#[doc = "Value up to which the pulse generator counter counts\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`countertop::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`countertop::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CountertopSpec;
-impl crate::RegisterSpec for CountertopSpec {
+#[doc = "Value up to which the pulse generator counter counts\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [countertop](index.html) module"]
+pub struct COUNTERTOP_SPEC;
+impl crate::RegisterSpec for COUNTERTOP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`countertop::R`](R) reader structure"]
-impl crate::Readable for CountertopSpec {}
-#[doc = "`write(|w| ..)` method takes [`countertop::W`](W) writer structure"]
-impl crate::Writable for CountertopSpec {
-    type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+#[doc = "`read()` method returns [countertop::R](R) reader structure"]
+impl crate::Readable for COUNTERTOP_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [countertop::W](W) writer structure"]
+impl crate::Writable for COUNTERTOP_SPEC {
+    type Writer = W;
 }
 #[doc = "`reset()` method sets COUNTERTOP to value 0x03ff"]
-impl crate::Resettable for CountertopSpec {
-    const RESET_VALUE: u32 = 0x03ff;
+impl crate::Resettable for COUNTERTOP_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x03ff
+    }
 }
