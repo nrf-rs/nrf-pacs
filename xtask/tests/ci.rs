@@ -1,4 +1,4 @@
-use std::{collections::BTreeMap, env};
+use std::env;
 use xshell::cmd;
 use xtask::is_git_clean;
 
