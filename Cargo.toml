@@ -17,4 +17,4 @@ cortex-m-rt = ">=0.6.15,<0.8"
 
 # meta-dependencies (upgrade as needed, they apply to all PACs):
 # @svd2rust = 0.25.1
-# @form = 0.10.0
+# @form = 0.12.1
