@@ -7,6 +7,9 @@ fn main() {
         Some("generate") => {
             xtask::generate();
         }
+        Some("build") => {
+            xtask::build();
+        }
         Some("publish") => {
             let dry_run = match args.next() {
                 Some(arg) if arg == "--dry-run" => true,
@@ -20,6 +23,7 @@ fn main() {
             eprintln!();
             eprintln!("subcommands:");
             eprintln!("    generate - regenerate crates");
+            eprintln!("    build - build crates");
             eprintln!("    publish [--dry-run] - publish crates to crates.io");
         }
     }
