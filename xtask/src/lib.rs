@@ -1,3 +1,4 @@
+use std::collections::BTreeMap;
 use std::fs;
 use xshell::cmd;
 
@@ -13,6 +14,7 @@ pub static PACS: &[(&str, &str)] = &[
     ("nrf5340-app", "thumbv8m.main-none-eabihf"),
     ("nrf5340-net", "thumbv8m.main-none-eabihf"),
     ("nrf9160", "thumbv8m.main-none-eabihf"),
+    ("nrf9120", "thumbv8m.main-none-eabihf"),
 ];
 
 pub fn install_tools() {
@@ -62,6 +64,40 @@ pub fn generate() {
     }
 
     cmd!("cargo fmt").run().unwrap();
+
+    clean_generation();
+}
+
+// Remove deprecated lint warnings
+pub fn clean_generation() {
+    for (pac, _target) in PACS {
+        let crate_dir = format!("pacs/{}-pac", pac);
+
+        cmd!("sed -i '/#!\\[deny(const_err)\\]/d' {crate_dir}/src/lib.rs")
+            .run()
+            .unwrap();
+        cmd!("sed -i '/#!\\[deny(private_in_public)\\]/d' {crate_dir}/src/lib.rs")
+            .run()
+            .unwrap();
+    }
+}
+
+pub fn build() {
+    // We group them by target so that we can have Cargo build some of them in parallel.
+    // FIXME: With https://github.com/rust-lang/cargo/issues/8176 this could be a single invocation.
+    let mut target_map: BTreeMap<_, Vec<_>> = BTreeMap::new();
+    for (pac, target) in PACS {
+        target_map.entry(target).or_default().push(pac);
+    }
+
+    for (target, pacs) in target_map {
+        let mut cmd = cmd!("cargo build --target {target}");
+        for pac in pacs {
+            let package = format!("{}-pac", pac);
+            cmd = cmd.args(&["-p", &package]);
+        }
+        cmd.run().unwrap();
+    }
 }
 
 pub fn is_git_clean() -> bool {
