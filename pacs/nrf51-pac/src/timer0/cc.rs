@@ -34,7 +34,23 @@ impl From<crate::W<CC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CC` reader - Capture/Compare value"]
+pub type CC_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `CC` writer - Capture/Compare value"]
+pub type CC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - Capture/Compare value"]
+    #[inline(always)]
+    pub fn cc(&self) -> CC_R {
+        CC_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - Capture/Compare value"]
+    #[inline(always)]
+    pub fn cc(&mut self) -> CC_W<0> {
+        CC_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
