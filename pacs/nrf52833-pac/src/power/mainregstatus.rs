@@ -1,74 +1,54 @@
 #[doc = "Register `MAINREGSTATUS` reader"]
-pub struct R(crate::R<MAINREGSTATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MAINREGSTATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MAINREGSTATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MAINREGSTATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `MAINREGSTATUS` reader - Main supply status"]
-pub type MAINREGSTATUS_R = crate::BitReader<MAINREGSTATUS_A>;
+pub type R = crate::R<MainregstatusSpec>;
 #[doc = "Main supply status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MAINREGSTATUS_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Mainregstatus {
     #[doc = "0: Normal voltage mode. Voltage supplied on VDD."]
-    NORMAL = 0,
+    Normal = 0,
     #[doc = "1: High voltage mode. Voltage supplied on VDDH."]
-    HIGH = 1,
+    High = 1,
 }
-impl From<MAINREGSTATUS_A> for bool {
+impl From<Mainregstatus> for bool {
     #[inline(always)]
-    fn from(variant: MAINREGSTATUS_A) -> Self {
+    fn from(variant: Mainregstatus) -> Self {
         variant as u8 != 0
     }
 }
-impl MAINREGSTATUS_R {
+#[doc = "Field `MAINREGSTATUS` reader - Main supply status"]
+pub type MainregstatusR = crate::BitReader<Mainregstatus>;
+impl MainregstatusR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MAINREGSTATUS_A {
+    pub const fn variant(&self) -> Mainregstatus {
         match self.bits {
-            false => MAINREGSTATUS_A::NORMAL,
-            true => MAINREGSTATUS_A::HIGH,
+            false => Mainregstatus::Normal,
+            true => Mainregstatus::High,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Normal voltage mode. Voltage supplied on VDD."]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        *self == MAINREGSTATUS_A::NORMAL
+        *self == Mainregstatus::Normal
     }
-    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[doc = "High voltage mode. Voltage supplied on VDDH."]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == MAINREGSTATUS_A::HIGH
+        *self == Mainregstatus::High
     }
 }
 impl R {
     #[doc = "Bit 0 - Main supply status"]
     #[inline(always)]
-    pub fn mainregstatus(&self) -> MAINREGSTATUS_R {
-        MAINREGSTATUS_R::new((self.bits & 1) != 0)
+    pub fn mainregstatus(&self) -> MainregstatusR {
+        MainregstatusR::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Main supply status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mainregstatus](index.html) module"]
-pub struct MAINREGSTATUS_SPEC;
-impl crate::RegisterSpec for MAINREGSTATUS_SPEC {
+#[doc = "Main supply status\n\nYou can [`read`](crate::Reg::read) this register and get [`mainregstatus::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct MainregstatusSpec;
+impl crate::RegisterSpec for MainregstatusSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mainregstatus::R](R) reader structure"]
-impl crate::Readable for MAINREGSTATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`mainregstatus::R`](R) reader structure"]
+impl crate::Readable for MainregstatusSpec {}
 #[doc = "`reset()` method sets MAINREGSTATUS to value 0"]
-impl crate::Resettable for MAINREGSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for MainregstatusSpec {}

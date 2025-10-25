@@ -1,127 +1,84 @@
 #[doc = "Register `EVENTS_STOPPED` reader"]
-pub struct R(crate::R<EVENTS_STOPPED_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_STOPPED_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_STOPPED_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_STOPPED_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsStoppedSpec>;
 #[doc = "Register `EVENTS_STOPPED` writer"]
-pub struct W(crate::W<EVENTS_STOPPED_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_STOPPED_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVENTS_STOPPED_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVENTS_STOPPED_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `EVENTS_STOPPED` reader - QDEC has been stopped"]
-pub type EVENTS_STOPPED_R = crate::BitReader<EVENTS_STOPPED_A>;
+pub type W = crate::W<EventsStoppedSpec>;
 #[doc = "QDEC has been stopped\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVENTS_STOPPED_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsStopped {
     #[doc = "0: Event not generated"]
-    NOT_GENERATED = 0,
+    NotGenerated = 0,
     #[doc = "1: Event generated"]
-    GENERATED = 1,
+    Generated = 1,
 }
-impl From<EVENTS_STOPPED_A> for bool {
+impl From<EventsStopped> for bool {
     #[inline(always)]
-    fn from(variant: EVENTS_STOPPED_A) -> Self {
+    fn from(variant: EventsStopped) -> Self {
         variant as u8 != 0
     }
 }
-impl EVENTS_STOPPED_R {
+#[doc = "Field `EVENTS_STOPPED` reader - QDEC has been stopped"]
+pub type EventsStoppedR = crate::BitReader<EventsStopped>;
+impl EventsStoppedR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVENTS_STOPPED_A {
+    pub const fn variant(&self) -> EventsStopped {
         match self.bits {
-            false => EVENTS_STOPPED_A::NOT_GENERATED,
-            true => EVENTS_STOPPED_A::GENERATED,
+            false => EventsStopped::NotGenerated,
+            true => EventsStopped::Generated,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
-    #[inline(always)]
-    pub fn is_not_generated(&self) -> bool {
-        *self == EVENTS_STOPPED_A::NOT_GENERATED
-    }
-    #[doc = "Checks if the value of the field is `GENERATED`"]
-    #[inline(always)]
-    pub fn is_generated(&self) -> bool {
-        *self == EVENTS_STOPPED_A::GENERATED
-    }
-}
-#[doc = "Field `EVENTS_STOPPED` writer - QDEC has been stopped"]
-pub type EVENTS_STOPPED_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_STOPPED_SPEC, EVENTS_STOPPED_A, O>;
-impl<'a, const O: u8> EVENTS_STOPPED_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_STOPPED_A::NOT_GENERATED)
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsStopped::NotGenerated
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut W {
-        self.variant(EVENTS_STOPPED_A::GENERATED)
+    pub fn is_generated(&self) -> bool {
+        *self == EventsStopped::Generated
+    }
+}
+#[doc = "Field `EVENTS_STOPPED` writer - QDEC has been stopped"]
+pub type EventsStoppedW<'a, REG> = crate::BitWriter<'a, REG, EventsStopped>;
+impl<'a, REG> EventsStoppedW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsStopped::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsStopped::Generated)
     }
 }
 impl R {
     #[doc = "Bit 0 - QDEC has been stopped"]
     #[inline(always)]
-    pub fn events_stopped(&self) -> EVENTS_STOPPED_R {
-        EVENTS_STOPPED_R::new((self.bits & 1) != 0)
+    pub fn events_stopped(&self) -> EventsStoppedR {
+        EventsStoppedR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - QDEC has been stopped"]
     #[inline(always)]
-    pub fn events_stopped(&mut self) -> EVENTS_STOPPED_W<0> {
-        EVENTS_STOPPED_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_stopped(&mut self) -> EventsStoppedW<'_, EventsStoppedSpec> {
+        EventsStoppedW::new(self, 0)
     }
 }
-#[doc = "QDEC has been stopped\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_stopped](index.html) module"]
-pub struct EVENTS_STOPPED_SPEC;
-impl crate::RegisterSpec for EVENTS_STOPPED_SPEC {
+#[doc = "QDEC has been stopped\n\nYou can [`read`](crate::Reg::read) this register and get [`events_stopped::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_stopped::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsStoppedSpec;
+impl crate::RegisterSpec for EventsStoppedSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_stopped::R](R) reader structure"]
-impl crate::Readable for EVENTS_STOPPED_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_stopped::W](W) writer structure"]
-impl crate::Writable for EVENTS_STOPPED_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_stopped::R`](R) reader structure"]
+impl crate::Readable for EventsStoppedSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_stopped::W`](W) writer structure"]
+impl crate::Writable for EventsStoppedSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_STOPPED to value 0"]
-impl crate::Resettable for EVENTS_STOPPED_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsStoppedSpec {}

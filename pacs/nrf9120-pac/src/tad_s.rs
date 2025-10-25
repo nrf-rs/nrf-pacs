@@ -1,36 +1,62 @@
-#[doc = r"Register block"]
 #[repr(C)]
+#[doc = "Register block"]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Start all trace and debug clocks."]
-    pub tasks_clockstart: TASKS_CLOCKSTART,
-    #[doc = "0x04 - Stop all trace and debug clocks."]
-    pub tasks_clockstop: TASKS_CLOCKSTOP,
+    tasks_clockstart: TasksClockstart,
+    tasks_clockstop: TasksClockstop,
     _reserved2: [u8; 0x04f8],
-    #[doc = "0x500 - Enable debug domain and aquire selected GPIOs"]
-    pub enable: ENABLE,
-    #[doc = "0x504..0x518 - Unspecified"]
-    pub psel: PSEL,
-    #[doc = "0x518 - Clocking options for the Trace Port debug interface Reset behavior is the same as debug components"]
-    pub traceportspeed: TRACEPORTSPEED,
+    enable: Enable,
+    psel: Psel,
+    traceportspeed: Traceportspeed,
 }
-#[doc = "TASKS_CLOCKSTART (w) register accessor: an alias for `Reg<TASKS_CLOCKSTART_SPEC>`"]
-pub type TASKS_CLOCKSTART = crate::Reg<tasks_clockstart::TASKS_CLOCKSTART_SPEC>;
+impl RegisterBlock {
+    #[doc = "0x00 - Start all trace and debug clocks."]
+    #[inline(always)]
+    pub const fn tasks_clockstart(&self) -> &TasksClockstart {
+        &self.tasks_clockstart
+    }
+    #[doc = "0x04 - Stop all trace and debug clocks."]
+    #[inline(always)]
+    pub const fn tasks_clockstop(&self) -> &TasksClockstop {
+        &self.tasks_clockstop
+    }
+    #[doc = "0x500 - Enable debug domain and aquire selected GPIOs"]
+    #[inline(always)]
+    pub const fn enable(&self) -> &Enable {
+        &self.enable
+    }
+    #[doc = "0x504..0x518 - Unspecified"]
+    #[inline(always)]
+    pub const fn psel(&self) -> &Psel {
+        &self.psel
+    }
+    #[doc = "0x518 - Clocking options for the Trace Port debug interface Reset behavior is the same as debug components"]
+    #[inline(always)]
+    pub const fn traceportspeed(&self) -> &Traceportspeed {
+        &self.traceportspeed
+    }
+}
+#[doc = "TASKS_CLOCKSTART (w) register accessor: Start all trace and debug clocks.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_clockstart::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_clockstart`] module"]
+#[doc(alias = "TASKS_CLOCKSTART")]
+pub type TasksClockstart = crate::Reg<tasks_clockstart::TasksClockstartSpec>;
 #[doc = "Start all trace and debug clocks."]
 pub mod tasks_clockstart;
-#[doc = "TASKS_CLOCKSTOP (w) register accessor: an alias for `Reg<TASKS_CLOCKSTOP_SPEC>`"]
-pub type TASKS_CLOCKSTOP = crate::Reg<tasks_clockstop::TASKS_CLOCKSTOP_SPEC>;
+#[doc = "TASKS_CLOCKSTOP (w) register accessor: Stop all trace and debug clocks.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_clockstop::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_clockstop`] module"]
+#[doc(alias = "TASKS_CLOCKSTOP")]
+pub type TasksClockstop = crate::Reg<tasks_clockstop::TasksClockstopSpec>;
 #[doc = "Stop all trace and debug clocks."]
 pub mod tasks_clockstop;
-#[doc = "ENABLE (rw) register accessor: an alias for `Reg<ENABLE_SPEC>`"]
-pub type ENABLE = crate::Reg<enable::ENABLE_SPEC>;
+#[doc = "ENABLE (rw) register accessor: Enable debug domain and aquire selected GPIOs\n\nYou can [`read`](crate::Reg::read) this register and get [`enable::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`enable::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@enable`] module"]
+#[doc(alias = "ENABLE")]
+pub type Enable = crate::Reg<enable::EnableSpec>;
 #[doc = "Enable debug domain and aquire selected GPIOs"]
 pub mod enable;
 #[doc = "Unspecified"]
-pub use psel::PSEL;
+pub use self::psel::Psel;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod psel;
-#[doc = "TRACEPORTSPEED (rw) register accessor: an alias for `Reg<TRACEPORTSPEED_SPEC>`"]
-pub type TRACEPORTSPEED = crate::Reg<traceportspeed::TRACEPORTSPEED_SPEC>;
+#[doc = "TRACEPORTSPEED (rw) register accessor: Clocking options for the Trace Port debug interface Reset behavior is the same as debug components\n\nYou can [`read`](crate::Reg::read) this register and get [`traceportspeed::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`traceportspeed::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@traceportspeed`] module"]
+#[doc(alias = "TRACEPORTSPEED")]
+pub type Traceportspeed = crate::Reg<traceportspeed::TraceportspeedSpec>;
 #[doc = "Clocking options for the Trace Port debug interface Reset behavior is the same as debug components"]
 pub mod traceportspeed;

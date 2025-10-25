@@ -1,100 +1,94 @@
 #[doc = "Register `VARIANT` reader"]
-pub struct R(crate::R<VARIANT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<VARIANT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<VARIANT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<VARIANT_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `VARIANT` reader - Build code (hardware version and production configuration). Encoded as ASCII."]
-pub type VARIANT_R = crate::FieldReader<u32, VARIANT_A>;
+pub type R = crate::R<VariantSpec>;
 #[doc = "Build code (hardware version and production configuration). Encoded as ASCII.\n\nValue on reset: 4294967295"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
-pub enum VARIANT_A {
+pub enum Variant {
     #[doc = "1094795585: AAAA"]
-    AAAA = 1094795585,
+    Aaaa = 1094795585,
     #[doc = "1094795843: AABC"]
-    AABC = 1094795843,
+    Aabc = 1094795843,
     #[doc = "1094796080: AAC0"]
-    AAC0 = 1094796080,
+    Aac0 = 1094796080,
     #[doc = "1094796081: AAC1"]
-    AAC1 = 1094796081,
+    Aac1 = 1094796081,
+    #[doc = "1094796336: AAD0"]
+    Aad0 = 1094796336,
     #[doc = "4294967295: Unspecified"]
-    UNSPECIFIED = 4294967295,
+    Unspecified = 4294967295,
 }
-impl From<VARIANT_A> for u32 {
+impl From<Variant> for u32 {
     #[inline(always)]
-    fn from(variant: VARIANT_A) -> Self {
+    fn from(variant: Variant) -> Self {
         variant as _
     }
 }
-impl VARIANT_R {
+impl crate::FieldSpec for Variant {
+    type Ux = u32;
+}
+impl crate::IsEnum for Variant {}
+#[doc = "Field `VARIANT` reader - Build code (hardware version and production configuration). Encoded as ASCII."]
+pub type VariantR = crate::FieldReader<Variant>;
+impl VariantR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<VARIANT_A> {
+    pub const fn variant(&self) -> Option<Variant> {
         match self.bits {
-            1094795585 => Some(VARIANT_A::AAAA),
-            1094795843 => Some(VARIANT_A::AABC),
-            1094796080 => Some(VARIANT_A::AAC0),
-            1094796081 => Some(VARIANT_A::AAC1),
-            4294967295 => Some(VARIANT_A::UNSPECIFIED),
+            1094795585 => Some(Variant::Aaaa),
+            1094795843 => Some(Variant::Aabc),
+            1094796080 => Some(Variant::Aac0),
+            1094796081 => Some(Variant::Aac1),
+            1094796336 => Some(Variant::Aad0),
+            4294967295 => Some(Variant::Unspecified),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `AAAA`"]
+    #[doc = "AAAA"]
     #[inline(always)]
     pub fn is_aaaa(&self) -> bool {
-        *self == VARIANT_A::AAAA
+        *self == Variant::Aaaa
     }
-    #[doc = "Checks if the value of the field is `AABC`"]
+    #[doc = "AABC"]
     #[inline(always)]
     pub fn is_aabc(&self) -> bool {
-        *self == VARIANT_A::AABC
+        *self == Variant::Aabc
     }
-    #[doc = "Checks if the value of the field is `AAC0`"]
+    #[doc = "AAC0"]
     #[inline(always)]
     pub fn is_aac0(&self) -> bool {
-        *self == VARIANT_A::AAC0
+        *self == Variant::Aac0
     }
-    #[doc = "Checks if the value of the field is `AAC1`"]
+    #[doc = "AAC1"]
     #[inline(always)]
     pub fn is_aac1(&self) -> bool {
-        *self == VARIANT_A::AAC1
+        *self == Variant::Aac1
     }
-    #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
+    #[doc = "AAD0"]
+    #[inline(always)]
+    pub fn is_aad0(&self) -> bool {
+        *self == Variant::Aad0
+    }
+    #[doc = "Unspecified"]
     #[inline(always)]
     pub fn is_unspecified(&self) -> bool {
-        *self == VARIANT_A::UNSPECIFIED
+        *self == Variant::Unspecified
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Build code (hardware version and production configuration). Encoded as ASCII."]
     #[inline(always)]
-    pub fn variant(&self) -> VARIANT_R {
-        VARIANT_R::new(self.bits)
+    pub fn variant(&self) -> VariantR {
+        VariantR::new(self.bits)
     }
 }
-#[doc = "Build code (hardware version and production configuration)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [variant](index.html) module"]
-pub struct VARIANT_SPEC;
-impl crate::RegisterSpec for VARIANT_SPEC {
+#[doc = "Build code (hardware version and production configuration)\n\nYou can [`read`](crate::Reg::read) this register and get [`variant::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct VariantSpec;
+impl crate::RegisterSpec for VariantSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [variant::R](R) reader structure"]
-impl crate::Readable for VARIANT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`variant::R`](R) reader structure"]
+impl crate::Readable for VariantSpec {}
 #[doc = "`reset()` method sets VARIANT to value 0xffff_ffff"]
-impl crate::Resettable for VARIANT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for VariantSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

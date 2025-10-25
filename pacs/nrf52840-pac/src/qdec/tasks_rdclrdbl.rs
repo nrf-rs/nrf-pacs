@@ -1,53 +1,44 @@
 #[doc = "Register `TASKS_RDCLRDBL` writer"]
-pub struct W(crate::W<TASKS_RDCLRDBL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TASKS_RDCLRDBL_SPEC>;
+pub type W = crate::W<TasksRdclrdblSpec>;
+#[doc = "Read and clear ACCDBL\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TasksRdclrdbl {
+    #[doc = "1: Trigger task"]
+    Trigger = 1,
+}
+impl From<TasksRdclrdbl> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: TasksRdclrdbl) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `TASKS_RDCLRDBL` writer - Read and clear ACCDBL"]
+pub type TasksRdclrdblW<'a, REG> = crate::BitWriter<'a, REG, TasksRdclrdbl>;
+impl<'a, REG> TasksRdclrdblW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Trigger task"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn trigger(self) -> &'a mut crate::W<REG> {
+        self.variant(TasksRdclrdbl::Trigger)
     }
 }
-impl From<crate::W<TASKS_RDCLRDBL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TASKS_RDCLRDBL_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `TASKS_RDCLRDBL` writer - "]
-pub type TASKS_RDCLRDBL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TASKS_RDCLRDBL_SPEC, bool, O>;
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Read and clear ACCDBL"]
     #[inline(always)]
-    pub fn tasks_rdclrdbl(&mut self) -> TASKS_RDCLRDBL_W<0> {
-        TASKS_RDCLRDBL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn tasks_rdclrdbl(&mut self) -> TasksRdclrdblW<'_, TasksRdclrdblSpec> {
+        TasksRdclrdblW::new(self, 0)
     }
 }
-#[doc = "Read and clear ACCDBL\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_rdclrdbl](index.html) module"]
-pub struct TASKS_RDCLRDBL_SPEC;
-impl crate::RegisterSpec for TASKS_RDCLRDBL_SPEC {
+#[doc = "Read and clear ACCDBL\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_rdclrdbl::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TasksRdclrdblSpec;
+impl crate::RegisterSpec for TasksRdclrdblSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [tasks_rdclrdbl::W](W) writer structure"]
-impl crate::Writable for TASKS_RDCLRDBL_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`tasks_rdclrdbl::W`](W) writer structure"]
+impl crate::Writable for TasksRdclrdblSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TASKS_RDCLRDBL to value 0"]
-impl crate::Resettable for TASKS_RDCLRDBL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for TasksRdclrdblSpec {}

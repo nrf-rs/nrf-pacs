@@ -1,1146 +1,1156 @@
 #[doc = "Register `EPSTATUS` reader"]
-pub struct R(crate::R<EPSTATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EPSTATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EPSTATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EPSTATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EpstatusSpec>;
 #[doc = "Register `EPSTATUS` writer"]
-pub struct W(crate::W<EPSTATUS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EPSTATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<EpstatusSpec>;
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epin0 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Epin0> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EPSTATUS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EPSTATUS_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Epin0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPIN0` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN0_R = crate::BitReader<EPIN0_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPIN0_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPIN0_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPIN0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPIN0_R {
+pub type Epin0R = crate::BitReader<Epin0>;
+impl Epin0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPIN0_A {
+    pub const fn variant(&self) -> Epin0 {
         match self.bits {
-            false => EPIN0_A::NO_DATA,
-            true => EPIN0_A::DATA_DONE,
+            false => Epin0::NoData,
+            true => Epin0::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPIN0_A::NO_DATA
+        *self == Epin0::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPIN0_A::DATA_DONE
+        *self == Epin0::DataDone
     }
 }
 #[doc = "Field `EPIN0` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN0_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPIN0_A, O>;
-impl<'a, const O: u8> EPIN0_W<'a, O> {
+pub type Epin0W<'a, REG> = crate::BitWriter1C<'a, REG, Epin0>;
+impl<'a, REG> Epin0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPIN0_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin0::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPIN0_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin0::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epin1 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epin1> for bool {
+    #[inline(always)]
+    fn from(variant: Epin1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPIN1` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN1_R = crate::BitReader<EPIN1_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPIN1_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPIN1_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPIN1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPIN1_R {
+pub type Epin1R = crate::BitReader<Epin1>;
+impl Epin1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPIN1_A {
+    pub const fn variant(&self) -> Epin1 {
         match self.bits {
-            false => EPIN1_A::NO_DATA,
-            true => EPIN1_A::DATA_DONE,
+            false => Epin1::NoData,
+            true => Epin1::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPIN1_A::NO_DATA
+        *self == Epin1::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPIN1_A::DATA_DONE
+        *self == Epin1::DataDone
     }
 }
 #[doc = "Field `EPIN1` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN1_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPIN1_A, O>;
-impl<'a, const O: u8> EPIN1_W<'a, O> {
+pub type Epin1W<'a, REG> = crate::BitWriter1C<'a, REG, Epin1>;
+impl<'a, REG> Epin1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPIN1_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin1::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPIN1_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin1::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epin2 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epin2> for bool {
+    #[inline(always)]
+    fn from(variant: Epin2) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPIN2` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN2_R = crate::BitReader<EPIN2_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPIN2_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPIN2_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPIN2_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPIN2_R {
+pub type Epin2R = crate::BitReader<Epin2>;
+impl Epin2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPIN2_A {
+    pub const fn variant(&self) -> Epin2 {
         match self.bits {
-            false => EPIN2_A::NO_DATA,
-            true => EPIN2_A::DATA_DONE,
+            false => Epin2::NoData,
+            true => Epin2::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPIN2_A::NO_DATA
+        *self == Epin2::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPIN2_A::DATA_DONE
+        *self == Epin2::DataDone
     }
 }
 #[doc = "Field `EPIN2` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN2_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPIN2_A, O>;
-impl<'a, const O: u8> EPIN2_W<'a, O> {
+pub type Epin2W<'a, REG> = crate::BitWriter1C<'a, REG, Epin2>;
+impl<'a, REG> Epin2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPIN2_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin2::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPIN2_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin2::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epin3 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epin3> for bool {
+    #[inline(always)]
+    fn from(variant: Epin3) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPIN3` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN3_R = crate::BitReader<EPIN3_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPIN3_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPIN3_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPIN3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPIN3_R {
+pub type Epin3R = crate::BitReader<Epin3>;
+impl Epin3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPIN3_A {
+    pub const fn variant(&self) -> Epin3 {
         match self.bits {
-            false => EPIN3_A::NO_DATA,
-            true => EPIN3_A::DATA_DONE,
+            false => Epin3::NoData,
+            true => Epin3::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPIN3_A::NO_DATA
+        *self == Epin3::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPIN3_A::DATA_DONE
+        *self == Epin3::DataDone
     }
 }
 #[doc = "Field `EPIN3` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN3_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPIN3_A, O>;
-impl<'a, const O: u8> EPIN3_W<'a, O> {
+pub type Epin3W<'a, REG> = crate::BitWriter1C<'a, REG, Epin3>;
+impl<'a, REG> Epin3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPIN3_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin3::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPIN3_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin3::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epin4 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epin4> for bool {
+    #[inline(always)]
+    fn from(variant: Epin4) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPIN4` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN4_R = crate::BitReader<EPIN4_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPIN4_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPIN4_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPIN4_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPIN4_R {
+pub type Epin4R = crate::BitReader<Epin4>;
+impl Epin4R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPIN4_A {
+    pub const fn variant(&self) -> Epin4 {
         match self.bits {
-            false => EPIN4_A::NO_DATA,
-            true => EPIN4_A::DATA_DONE,
+            false => Epin4::NoData,
+            true => Epin4::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPIN4_A::NO_DATA
+        *self == Epin4::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPIN4_A::DATA_DONE
+        *self == Epin4::DataDone
     }
 }
 #[doc = "Field `EPIN4` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN4_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPIN4_A, O>;
-impl<'a, const O: u8> EPIN4_W<'a, O> {
+pub type Epin4W<'a, REG> = crate::BitWriter1C<'a, REG, Epin4>;
+impl<'a, REG> Epin4W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPIN4_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin4::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPIN4_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin4::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epin5 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epin5> for bool {
+    #[inline(always)]
+    fn from(variant: Epin5) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPIN5` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN5_R = crate::BitReader<EPIN5_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPIN5_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPIN5_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPIN5_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPIN5_R {
+pub type Epin5R = crate::BitReader<Epin5>;
+impl Epin5R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPIN5_A {
+    pub const fn variant(&self) -> Epin5 {
         match self.bits {
-            false => EPIN5_A::NO_DATA,
-            true => EPIN5_A::DATA_DONE,
+            false => Epin5::NoData,
+            true => Epin5::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPIN5_A::NO_DATA
+        *self == Epin5::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPIN5_A::DATA_DONE
+        *self == Epin5::DataDone
     }
 }
 #[doc = "Field `EPIN5` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN5_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPIN5_A, O>;
-impl<'a, const O: u8> EPIN5_W<'a, O> {
+pub type Epin5W<'a, REG> = crate::BitWriter1C<'a, REG, Epin5>;
+impl<'a, REG> Epin5W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPIN5_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin5::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPIN5_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin5::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epin6 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epin6> for bool {
+    #[inline(always)]
+    fn from(variant: Epin6) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPIN6` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN6_R = crate::BitReader<EPIN6_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPIN6_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPIN6_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPIN6_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPIN6_R {
+pub type Epin6R = crate::BitReader<Epin6>;
+impl Epin6R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPIN6_A {
+    pub const fn variant(&self) -> Epin6 {
         match self.bits {
-            false => EPIN6_A::NO_DATA,
-            true => EPIN6_A::DATA_DONE,
+            false => Epin6::NoData,
+            true => Epin6::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPIN6_A::NO_DATA
+        *self == Epin6::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPIN6_A::DATA_DONE
+        *self == Epin6::DataDone
     }
 }
 #[doc = "Field `EPIN6` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN6_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPIN6_A, O>;
-impl<'a, const O: u8> EPIN6_W<'a, O> {
+pub type Epin6W<'a, REG> = crate::BitWriter1C<'a, REG, Epin6>;
+impl<'a, REG> Epin6W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPIN6_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin6::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPIN6_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin6::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epin7 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epin7> for bool {
+    #[inline(always)]
+    fn from(variant: Epin7) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPIN7` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN7_R = crate::BitReader<EPIN7_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPIN7_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPIN7_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPIN7_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPIN7_R {
+pub type Epin7R = crate::BitReader<Epin7>;
+impl Epin7R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPIN7_A {
+    pub const fn variant(&self) -> Epin7 {
         match self.bits {
-            false => EPIN7_A::NO_DATA,
-            true => EPIN7_A::DATA_DONE,
+            false => Epin7::NoData,
+            true => Epin7::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPIN7_A::NO_DATA
+        *self == Epin7::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPIN7_A::DATA_DONE
+        *self == Epin7::DataDone
     }
 }
 #[doc = "Field `EPIN7` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN7_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPIN7_A, O>;
-impl<'a, const O: u8> EPIN7_W<'a, O> {
+pub type Epin7W<'a, REG> = crate::BitWriter1C<'a, REG, Epin7>;
+impl<'a, REG> Epin7W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPIN7_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin7::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPIN7_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin7::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epin8 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epin8> for bool {
+    #[inline(always)]
+    fn from(variant: Epin8) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPIN8` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN8_R = crate::BitReader<EPIN8_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPIN8_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPIN8_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPIN8_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPIN8_R {
+pub type Epin8R = crate::BitReader<Epin8>;
+impl Epin8R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPIN8_A {
+    pub const fn variant(&self) -> Epin8 {
         match self.bits {
-            false => EPIN8_A::NO_DATA,
-            true => EPIN8_A::DATA_DONE,
+            false => Epin8::NoData,
+            true => Epin8::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPIN8_A::NO_DATA
+        *self == Epin8::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPIN8_A::DATA_DONE
+        *self == Epin8::DataDone
     }
 }
 #[doc = "Field `EPIN8` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPIN8_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPIN8_A, O>;
-impl<'a, const O: u8> EPIN8_W<'a, O> {
+pub type Epin8W<'a, REG> = crate::BitWriter1C<'a, REG, Epin8>;
+impl<'a, REG> Epin8W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPIN8_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin8::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPIN8_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epin8::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epout0 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epout0> for bool {
+    #[inline(always)]
+    fn from(variant: Epout0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPOUT0` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT0_R = crate::BitReader<EPOUT0_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPOUT0_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPOUT0_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPOUT0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPOUT0_R {
+pub type Epout0R = crate::BitReader<Epout0>;
+impl Epout0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPOUT0_A {
+    pub const fn variant(&self) -> Epout0 {
         match self.bits {
-            false => EPOUT0_A::NO_DATA,
-            true => EPOUT0_A::DATA_DONE,
+            false => Epout0::NoData,
+            true => Epout0::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPOUT0_A::NO_DATA
+        *self == Epout0::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPOUT0_A::DATA_DONE
+        *self == Epout0::DataDone
     }
 }
 #[doc = "Field `EPOUT0` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT0_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPOUT0_A, O>;
-impl<'a, const O: u8> EPOUT0_W<'a, O> {
+pub type Epout0W<'a, REG> = crate::BitWriter1C<'a, REG, Epout0>;
+impl<'a, REG> Epout0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPOUT0_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout0::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPOUT0_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout0::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epout1 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epout1> for bool {
+    #[inline(always)]
+    fn from(variant: Epout1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPOUT1` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT1_R = crate::BitReader<EPOUT1_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPOUT1_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPOUT1_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPOUT1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPOUT1_R {
+pub type Epout1R = crate::BitReader<Epout1>;
+impl Epout1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPOUT1_A {
+    pub const fn variant(&self) -> Epout1 {
         match self.bits {
-            false => EPOUT1_A::NO_DATA,
-            true => EPOUT1_A::DATA_DONE,
+            false => Epout1::NoData,
+            true => Epout1::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPOUT1_A::NO_DATA
+        *self == Epout1::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPOUT1_A::DATA_DONE
+        *self == Epout1::DataDone
     }
 }
 #[doc = "Field `EPOUT1` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT1_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPOUT1_A, O>;
-impl<'a, const O: u8> EPOUT1_W<'a, O> {
+pub type Epout1W<'a, REG> = crate::BitWriter1C<'a, REG, Epout1>;
+impl<'a, REG> Epout1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPOUT1_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout1::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPOUT1_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout1::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epout2 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epout2> for bool {
+    #[inline(always)]
+    fn from(variant: Epout2) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPOUT2` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT2_R = crate::BitReader<EPOUT2_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPOUT2_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPOUT2_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPOUT2_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPOUT2_R {
+pub type Epout2R = crate::BitReader<Epout2>;
+impl Epout2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPOUT2_A {
+    pub const fn variant(&self) -> Epout2 {
         match self.bits {
-            false => EPOUT2_A::NO_DATA,
-            true => EPOUT2_A::DATA_DONE,
+            false => Epout2::NoData,
+            true => Epout2::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPOUT2_A::NO_DATA
+        *self == Epout2::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPOUT2_A::DATA_DONE
+        *self == Epout2::DataDone
     }
 }
 #[doc = "Field `EPOUT2` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT2_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPOUT2_A, O>;
-impl<'a, const O: u8> EPOUT2_W<'a, O> {
+pub type Epout2W<'a, REG> = crate::BitWriter1C<'a, REG, Epout2>;
+impl<'a, REG> Epout2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPOUT2_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout2::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPOUT2_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout2::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epout3 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epout3> for bool {
+    #[inline(always)]
+    fn from(variant: Epout3) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPOUT3` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT3_R = crate::BitReader<EPOUT3_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPOUT3_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPOUT3_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPOUT3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPOUT3_R {
+pub type Epout3R = crate::BitReader<Epout3>;
+impl Epout3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPOUT3_A {
+    pub const fn variant(&self) -> Epout3 {
         match self.bits {
-            false => EPOUT3_A::NO_DATA,
-            true => EPOUT3_A::DATA_DONE,
+            false => Epout3::NoData,
+            true => Epout3::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPOUT3_A::NO_DATA
+        *self == Epout3::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPOUT3_A::DATA_DONE
+        *self == Epout3::DataDone
     }
 }
 #[doc = "Field `EPOUT3` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT3_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPOUT3_A, O>;
-impl<'a, const O: u8> EPOUT3_W<'a, O> {
+pub type Epout3W<'a, REG> = crate::BitWriter1C<'a, REG, Epout3>;
+impl<'a, REG> Epout3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPOUT3_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout3::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPOUT3_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout3::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epout4 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epout4> for bool {
+    #[inline(always)]
+    fn from(variant: Epout4) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPOUT4` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT4_R = crate::BitReader<EPOUT4_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPOUT4_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPOUT4_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPOUT4_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPOUT4_R {
+pub type Epout4R = crate::BitReader<Epout4>;
+impl Epout4R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPOUT4_A {
+    pub const fn variant(&self) -> Epout4 {
         match self.bits {
-            false => EPOUT4_A::NO_DATA,
-            true => EPOUT4_A::DATA_DONE,
+            false => Epout4::NoData,
+            true => Epout4::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPOUT4_A::NO_DATA
+        *self == Epout4::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPOUT4_A::DATA_DONE
+        *self == Epout4::DataDone
     }
 }
 #[doc = "Field `EPOUT4` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT4_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPOUT4_A, O>;
-impl<'a, const O: u8> EPOUT4_W<'a, O> {
+pub type Epout4W<'a, REG> = crate::BitWriter1C<'a, REG, Epout4>;
+impl<'a, REG> Epout4W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPOUT4_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout4::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPOUT4_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout4::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epout5 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epout5> for bool {
+    #[inline(always)]
+    fn from(variant: Epout5) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPOUT5` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT5_R = crate::BitReader<EPOUT5_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPOUT5_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPOUT5_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPOUT5_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPOUT5_R {
+pub type Epout5R = crate::BitReader<Epout5>;
+impl Epout5R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPOUT5_A {
+    pub const fn variant(&self) -> Epout5 {
         match self.bits {
-            false => EPOUT5_A::NO_DATA,
-            true => EPOUT5_A::DATA_DONE,
+            false => Epout5::NoData,
+            true => Epout5::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPOUT5_A::NO_DATA
+        *self == Epout5::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPOUT5_A::DATA_DONE
+        *self == Epout5::DataDone
     }
 }
 #[doc = "Field `EPOUT5` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT5_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPOUT5_A, O>;
-impl<'a, const O: u8> EPOUT5_W<'a, O> {
+pub type Epout5W<'a, REG> = crate::BitWriter1C<'a, REG, Epout5>;
+impl<'a, REG> Epout5W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPOUT5_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout5::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPOUT5_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout5::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epout6 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epout6> for bool {
+    #[inline(always)]
+    fn from(variant: Epout6) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPOUT6` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT6_R = crate::BitReader<EPOUT6_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPOUT6_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPOUT6_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPOUT6_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPOUT6_R {
+pub type Epout6R = crate::BitReader<Epout6>;
+impl Epout6R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPOUT6_A {
+    pub const fn variant(&self) -> Epout6 {
         match self.bits {
-            false => EPOUT6_A::NO_DATA,
-            true => EPOUT6_A::DATA_DONE,
+            false => Epout6::NoData,
+            true => Epout6::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPOUT6_A::NO_DATA
+        *self == Epout6::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPOUT6_A::DATA_DONE
+        *self == Epout6::DataDone
     }
 }
 #[doc = "Field `EPOUT6` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT6_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPOUT6_A, O>;
-impl<'a, const O: u8> EPOUT6_W<'a, O> {
+pub type Epout6W<'a, REG> = crate::BitWriter1C<'a, REG, Epout6>;
+impl<'a, REG> Epout6W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPOUT6_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout6::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPOUT6_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout6::DataDone)
+    }
+}
+#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epout7 {
+    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
+    NoData = 0,
+    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
+    DataDone = 1,
+}
+impl From<Epout7> for bool {
+    #[inline(always)]
+    fn from(variant: Epout7) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EPOUT7` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT7_R = crate::BitReader<EPOUT7_A>;
-#[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPOUT7_A {
-    #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
-    #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
-}
-impl From<EPOUT7_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPOUT7_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EPOUT7_R {
+pub type Epout7R = crate::BitReader<Epout7>;
+impl Epout7R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPOUT7_A {
+    pub const fn variant(&self) -> Epout7 {
         match self.bits {
-            false => EPOUT7_A::NO_DATA,
-            true => EPOUT7_A::DATA_DONE,
+            false => Epout7::NoData,
+            true => Epout7::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
     pub fn is_no_data(&self) -> bool {
-        *self == EPOUT7_A::NO_DATA
+        *self == Epout7::NoData
     }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
     pub fn is_data_done(&self) -> bool {
-        *self == EPOUT7_A::DATA_DONE
+        *self == Epout7::DataDone
     }
 }
 #[doc = "Field `EPOUT7` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT7_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPOUT7_A, O>;
-impl<'a, const O: u8> EPOUT7_W<'a, O> {
+pub type Epout7W<'a, REG> = crate::BitWriter1C<'a, REG, Epout7>;
+impl<'a, REG> Epout7W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPOUT7_A::NO_DATA)
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout7::NoData)
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPOUT7_A::DATA_DONE)
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout7::DataDone)
     }
 }
-#[doc = "Field `EPOUT8` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT8_R = crate::BitReader<EPOUT8_A>;
 #[doc = "Captured state of endpoint's EasyDMA registers. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPOUT8_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Epout8 {
     #[doc = "0: EasyDMA registers have not been captured for this endpoint"]
-    NO_DATA = 0,
+    NoData = 0,
     #[doc = "1: EasyDMA registers have been captured for this endpoint"]
-    DATA_DONE = 1,
+    DataDone = 1,
 }
-impl From<EPOUT8_A> for bool {
+impl From<Epout8> for bool {
     #[inline(always)]
-    fn from(variant: EPOUT8_A) -> Self {
+    fn from(variant: Epout8) -> Self {
         variant as u8 != 0
     }
 }
-impl EPOUT8_R {
+#[doc = "Field `EPOUT8` reader - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
+pub type Epout8R = crate::BitReader<Epout8>;
+impl Epout8R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPOUT8_A {
+    pub const fn variant(&self) -> Epout8 {
         match self.bits {
-            false => EPOUT8_A::NO_DATA,
-            true => EPOUT8_A::DATA_DONE,
+            false => Epout8::NoData,
+            true => Epout8::DataDone,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_DATA`"]
-    #[inline(always)]
-    pub fn is_no_data(&self) -> bool {
-        *self == EPOUT8_A::NO_DATA
-    }
-    #[doc = "Checks if the value of the field is `DATA_DONE`"]
-    #[inline(always)]
-    pub fn is_data_done(&self) -> bool {
-        *self == EPOUT8_A::DATA_DONE
-    }
-}
-#[doc = "Field `EPOUT8` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
-pub type EPOUT8_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EPSTATUS_SPEC, EPOUT8_A, O>;
-impl<'a, const O: u8> EPOUT8_W<'a, O> {
     #[doc = "EasyDMA registers have not been captured for this endpoint"]
     #[inline(always)]
-    pub fn no_data(self) -> &'a mut W {
-        self.variant(EPOUT8_A::NO_DATA)
+    pub fn is_no_data(&self) -> bool {
+        *self == Epout8::NoData
     }
     #[doc = "EasyDMA registers have been captured for this endpoint"]
     #[inline(always)]
-    pub fn data_done(self) -> &'a mut W {
-        self.variant(EPOUT8_A::DATA_DONE)
+    pub fn is_data_done(&self) -> bool {
+        *self == Epout8::DataDone
+    }
+}
+#[doc = "Field `EPOUT8` writer - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
+pub type Epout8W<'a, REG> = crate::BitWriter1C<'a, REG, Epout8>;
+impl<'a, REG> Epout8W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "EasyDMA registers have not been captured for this endpoint"]
+    #[inline(always)]
+    pub fn no_data(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout8::NoData)
+    }
+    #[doc = "EasyDMA registers have been captured for this endpoint"]
+    #[inline(always)]
+    pub fn data_done(self) -> &'a mut crate::W<REG> {
+        self.variant(Epout8::DataDone)
     }
 }
 impl R {
     #[doc = "Bit 0 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin0(&self) -> EPIN0_R {
-        EPIN0_R::new((self.bits & 1) != 0)
+    pub fn epin0(&self) -> Epin0R {
+        Epin0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin1(&self) -> EPIN1_R {
-        EPIN1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn epin1(&self) -> Epin1R {
+        Epin1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin2(&self) -> EPIN2_R {
-        EPIN2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn epin2(&self) -> Epin2R {
+        Epin2R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin3(&self) -> EPIN3_R {
-        EPIN3_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn epin3(&self) -> Epin3R {
+        Epin3R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin4(&self) -> EPIN4_R {
-        EPIN4_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn epin4(&self) -> Epin4R {
+        Epin4R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin5(&self) -> EPIN5_R {
-        EPIN5_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn epin5(&self) -> Epin5R {
+        Epin5R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin6(&self) -> EPIN6_R {
-        EPIN6_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn epin6(&self) -> Epin6R {
+        Epin6R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin7(&self) -> EPIN7_R {
-        EPIN7_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn epin7(&self) -> Epin7R {
+        Epin7R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin8(&self) -> EPIN8_R {
-        EPIN8_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn epin8(&self) -> Epin8R {
+        Epin8R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 16 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout0(&self) -> EPOUT0_R {
-        EPOUT0_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn epout0(&self) -> Epout0R {
+        Epout0R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout1(&self) -> EPOUT1_R {
-        EPOUT1_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn epout1(&self) -> Epout1R {
+        Epout1R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout2(&self) -> EPOUT2_R {
-        EPOUT2_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn epout2(&self) -> Epout2R {
+        Epout2R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout3(&self) -> EPOUT3_R {
-        EPOUT3_R::new(((self.bits >> 19) & 1) != 0)
+    pub fn epout3(&self) -> Epout3R {
+        Epout3R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout4(&self) -> EPOUT4_R {
-        EPOUT4_R::new(((self.bits >> 20) & 1) != 0)
+    pub fn epout4(&self) -> Epout4R {
+        Epout4R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout5(&self) -> EPOUT5_R {
-        EPOUT5_R::new(((self.bits >> 21) & 1) != 0)
+    pub fn epout5(&self) -> Epout5R {
+        Epout5R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout6(&self) -> EPOUT6_R {
-        EPOUT6_R::new(((self.bits >> 22) & 1) != 0)
+    pub fn epout6(&self) -> Epout6R {
+        Epout6R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout7(&self) -> EPOUT7_R {
-        EPOUT7_R::new(((self.bits >> 23) & 1) != 0)
+    pub fn epout7(&self) -> Epout7R {
+        Epout7R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout8(&self) -> EPOUT8_R {
-        EPOUT8_R::new(((self.bits >> 24) & 1) != 0)
+    pub fn epout8(&self) -> Epout8R {
+        Epout8R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin0(&mut self) -> EPIN0_W<0> {
-        EPIN0_W::new(self)
+    pub fn epin0(&mut self) -> Epin0W<'_, EpstatusSpec> {
+        Epin0W::new(self, 0)
     }
     #[doc = "Bit 1 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin1(&mut self) -> EPIN1_W<1> {
-        EPIN1_W::new(self)
+    pub fn epin1(&mut self) -> Epin1W<'_, EpstatusSpec> {
+        Epin1W::new(self, 1)
     }
     #[doc = "Bit 2 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin2(&mut self) -> EPIN2_W<2> {
-        EPIN2_W::new(self)
+    pub fn epin2(&mut self) -> Epin2W<'_, EpstatusSpec> {
+        Epin2W::new(self, 2)
     }
     #[doc = "Bit 3 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin3(&mut self) -> EPIN3_W<3> {
-        EPIN3_W::new(self)
+    pub fn epin3(&mut self) -> Epin3W<'_, EpstatusSpec> {
+        Epin3W::new(self, 3)
     }
     #[doc = "Bit 4 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin4(&mut self) -> EPIN4_W<4> {
-        EPIN4_W::new(self)
+    pub fn epin4(&mut self) -> Epin4W<'_, EpstatusSpec> {
+        Epin4W::new(self, 4)
     }
     #[doc = "Bit 5 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin5(&mut self) -> EPIN5_W<5> {
-        EPIN5_W::new(self)
+    pub fn epin5(&mut self) -> Epin5W<'_, EpstatusSpec> {
+        Epin5W::new(self, 5)
     }
     #[doc = "Bit 6 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin6(&mut self) -> EPIN6_W<6> {
-        EPIN6_W::new(self)
+    pub fn epin6(&mut self) -> Epin6W<'_, EpstatusSpec> {
+        Epin6W::new(self, 6)
     }
     #[doc = "Bit 7 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin7(&mut self) -> EPIN7_W<7> {
-        EPIN7_W::new(self)
+    pub fn epin7(&mut self) -> Epin7W<'_, EpstatusSpec> {
+        Epin7W::new(self, 7)
     }
     #[doc = "Bit 8 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epin8(&mut self) -> EPIN8_W<8> {
-        EPIN8_W::new(self)
+    pub fn epin8(&mut self) -> Epin8W<'_, EpstatusSpec> {
+        Epin8W::new(self, 8)
     }
     #[doc = "Bit 16 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout0(&mut self) -> EPOUT0_W<16> {
-        EPOUT0_W::new(self)
+    pub fn epout0(&mut self) -> Epout0W<'_, EpstatusSpec> {
+        Epout0W::new(self, 16)
     }
     #[doc = "Bit 17 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout1(&mut self) -> EPOUT1_W<17> {
-        EPOUT1_W::new(self)
+    pub fn epout1(&mut self) -> Epout1W<'_, EpstatusSpec> {
+        Epout1W::new(self, 17)
     }
     #[doc = "Bit 18 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout2(&mut self) -> EPOUT2_W<18> {
-        EPOUT2_W::new(self)
+    pub fn epout2(&mut self) -> Epout2W<'_, EpstatusSpec> {
+        Epout2W::new(self, 18)
     }
     #[doc = "Bit 19 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout3(&mut self) -> EPOUT3_W<19> {
-        EPOUT3_W::new(self)
+    pub fn epout3(&mut self) -> Epout3W<'_, EpstatusSpec> {
+        Epout3W::new(self, 19)
     }
     #[doc = "Bit 20 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout4(&mut self) -> EPOUT4_W<20> {
-        EPOUT4_W::new(self)
+    pub fn epout4(&mut self) -> Epout4W<'_, EpstatusSpec> {
+        Epout4W::new(self, 20)
     }
     #[doc = "Bit 21 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout5(&mut self) -> EPOUT5_W<21> {
-        EPOUT5_W::new(self)
+    pub fn epout5(&mut self) -> Epout5W<'_, EpstatusSpec> {
+        Epout5W::new(self, 21)
     }
     #[doc = "Bit 22 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout6(&mut self) -> EPOUT6_W<22> {
-        EPOUT6_W::new(self)
+    pub fn epout6(&mut self) -> Epout6W<'_, EpstatusSpec> {
+        Epout6W::new(self, 22)
     }
     #[doc = "Bit 23 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout7(&mut self) -> EPOUT7_W<23> {
-        EPOUT7_W::new(self)
+    pub fn epout7(&mut self) -> Epout7W<'_, EpstatusSpec> {
+        Epout7W::new(self, 23)
     }
     #[doc = "Bit 24 - Captured state of endpoint's EasyDMA registers. Write '1' to clear."]
     #[inline(always)]
-    pub fn epout8(&mut self) -> EPOUT8_W<24> {
-        EPOUT8_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn epout8(&mut self) -> Epout8W<'_, EpstatusSpec> {
+        Epout8W::new(self, 24)
     }
 }
-#[doc = "Provides information on which endpoint's EasyDMA registers have been captured\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [epstatus](index.html) module"]
-pub struct EPSTATUS_SPEC;
-impl crate::RegisterSpec for EPSTATUS_SPEC {
+#[doc = "Provides information on which endpoint's EasyDMA registers have been captured\n\nYou can [`read`](crate::Reg::read) this register and get [`epstatus::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`epstatus::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EpstatusSpec;
+impl crate::RegisterSpec for EpstatusSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [epstatus::R](R) reader structure"]
-impl crate::Readable for EPSTATUS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [epstatus::W](W) writer structure"]
-impl crate::Writable for EPSTATUS_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`epstatus::R`](R) reader structure"]
+impl crate::Readable for EpstatusSpec {}
+#[doc = "`write(|w| ..)` method takes [`epstatus::W`](W) writer structure"]
+impl crate::Writable for EpstatusSpec {
+    type Safety = crate::Unsafe;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x01ff_01ff;
 }
 #[doc = "`reset()` method sets EPSTATUS to value 0"]
-impl crate::Resettable for EPSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EpstatusSpec {}

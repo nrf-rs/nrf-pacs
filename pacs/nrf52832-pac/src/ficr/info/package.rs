@@ -1,100 +1,86 @@
 #[doc = "Register `PACKAGE` reader"]
-pub struct R(crate::R<PACKAGE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PACKAGE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PACKAGE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PACKAGE_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `PACKAGE` reader - Package option"]
-pub type PACKAGE_R = crate::FieldReader<u32, PACKAGE_A>;
+pub type R = crate::R<PackageSpec>;
 #[doc = "Package option\n\nValue on reset: 8192"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
-pub enum PACKAGE_A {
+pub enum Package {
     #[doc = "8192: QFxx - 48-pin QFN"]
-    QF = 8192,
+    Qf = 8192,
     #[doc = "8193: CHxx - 7x8 WLCSP 56 balls"]
-    CH = 8193,
+    Ch = 8193,
     #[doc = "8194: CIxx - 7x8 WLCSP 56 balls"]
-    CI = 8194,
+    Ci = 8194,
     #[doc = "8197: CKxx - 7x8 WLCSP 56 balls with backside coating for light protection"]
-    CK = 8197,
+    Ck = 8197,
     #[doc = "4294967295: Unspecified"]
-    UNSPECIFIED = 4294967295,
+    Unspecified = 4294967295,
 }
-impl From<PACKAGE_A> for u32 {
+impl From<Package> for u32 {
     #[inline(always)]
-    fn from(variant: PACKAGE_A) -> Self {
+    fn from(variant: Package) -> Self {
         variant as _
     }
 }
-impl PACKAGE_R {
+impl crate::FieldSpec for Package {
+    type Ux = u32;
+}
+impl crate::IsEnum for Package {}
+#[doc = "Field `PACKAGE` reader - Package option"]
+pub type PackageR = crate::FieldReader<Package>;
+impl PackageR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PACKAGE_A> {
+    pub const fn variant(&self) -> Option<Package> {
         match self.bits {
-            8192 => Some(PACKAGE_A::QF),
-            8193 => Some(PACKAGE_A::CH),
-            8194 => Some(PACKAGE_A::CI),
-            8197 => Some(PACKAGE_A::CK),
-            4294967295 => Some(PACKAGE_A::UNSPECIFIED),
+            8192 => Some(Package::Qf),
+            8193 => Some(Package::Ch),
+            8194 => Some(Package::Ci),
+            8197 => Some(Package::Ck),
+            4294967295 => Some(Package::Unspecified),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `QF`"]
+    #[doc = "QFxx - 48-pin QFN"]
     #[inline(always)]
     pub fn is_qf(&self) -> bool {
-        *self == PACKAGE_A::QF
+        *self == Package::Qf
     }
-    #[doc = "Checks if the value of the field is `CH`"]
+    #[doc = "CHxx - 7x8 WLCSP 56 balls"]
     #[inline(always)]
     pub fn is_ch(&self) -> bool {
-        *self == PACKAGE_A::CH
+        *self == Package::Ch
     }
-    #[doc = "Checks if the value of the field is `CI`"]
+    #[doc = "CIxx - 7x8 WLCSP 56 balls"]
     #[inline(always)]
     pub fn is_ci(&self) -> bool {
-        *self == PACKAGE_A::CI
+        *self == Package::Ci
     }
-    #[doc = "Checks if the value of the field is `CK`"]
+    #[doc = "CKxx - 7x8 WLCSP 56 balls with backside coating for light protection"]
     #[inline(always)]
     pub fn is_ck(&self) -> bool {
-        *self == PACKAGE_A::CK
+        *self == Package::Ck
     }
-    #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
+    #[doc = "Unspecified"]
     #[inline(always)]
     pub fn is_unspecified(&self) -> bool {
-        *self == PACKAGE_A::UNSPECIFIED
+        *self == Package::Unspecified
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Package option"]
     #[inline(always)]
-    pub fn package(&self) -> PACKAGE_R {
-        PACKAGE_R::new(self.bits)
+    pub fn package(&self) -> PackageR {
+        PackageR::new(self.bits)
     }
 }
-#[doc = "Package option\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [package](index.html) module"]
-pub struct PACKAGE_SPEC;
-impl crate::RegisterSpec for PACKAGE_SPEC {
+#[doc = "Package option\n\nYou can [`read`](crate::Reg::read) this register and get [`package::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct PackageSpec;
+impl crate::RegisterSpec for PackageSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [package::R](R) reader structure"]
-impl crate::Readable for PACKAGE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`package::R`](R) reader structure"]
+impl crate::Readable for PackageSpec {}
 #[doc = "`reset()` method sets PACKAGE to value 0x2000"]
-impl crate::Resettable for PACKAGE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x2000
-    }
+impl crate::Resettable for PackageSpec {
+    const RESET_VALUE: u32 = 0x2000;
 }

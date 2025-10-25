@@ -1,129 +1,93 @@
 #[doc = "Register `HFXODEBOUNCE` reader"]
-pub struct R(crate::R<HFXODEBOUNCE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HFXODEBOUNCE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HFXODEBOUNCE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HFXODEBOUNCE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HfxodebounceSpec>;
 #[doc = "Register `HFXODEBOUNCE` writer"]
-pub struct W(crate::W<HFXODEBOUNCE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HFXODEBOUNCE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HFXODEBOUNCE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HFXODEBOUNCE_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `HFXODEBOUNCE` reader - HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us."]
-pub type HFXODEBOUNCE_R = crate::FieldReader<u8, HFXODEBOUNCE_A>;
+pub type W = crate::W<HfxodebounceSpec>;
 #[doc = "HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us.\n\nValue on reset: 16"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum HFXODEBOUNCE_A {
+pub enum Hfxodebounce {
     #[doc = "16: 256 us debounce time. Recommended for TSX-3225, FA-20H and FA-128 crystals."]
-    DB256US = 16,
+    Db256us = 16,
     #[doc = "64: 1024 us debounce time. Recommended for NX1612AA and NX1210AB crystals."]
-    DB1024US = 64,
+    Db1024us = 64,
 }
-impl From<HFXODEBOUNCE_A> for u8 {
+impl From<Hfxodebounce> for u8 {
     #[inline(always)]
-    fn from(variant: HFXODEBOUNCE_A) -> Self {
+    fn from(variant: Hfxodebounce) -> Self {
         variant as _
     }
 }
-impl HFXODEBOUNCE_R {
+impl crate::FieldSpec for Hfxodebounce {
+    type Ux = u8;
+}
+impl crate::IsEnum for Hfxodebounce {}
+#[doc = "Field `HFXODEBOUNCE` reader - HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us."]
+pub type HfxodebounceR = crate::FieldReader<Hfxodebounce>;
+impl HfxodebounceR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HFXODEBOUNCE_A> {
+    pub const fn variant(&self) -> Option<Hfxodebounce> {
         match self.bits {
-            16 => Some(HFXODEBOUNCE_A::DB256US),
-            64 => Some(HFXODEBOUNCE_A::DB1024US),
+            16 => Some(Hfxodebounce::Db256us),
+            64 => Some(Hfxodebounce::Db1024us),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DB256US`"]
-    #[inline(always)]
-    pub fn is_db256us(&self) -> bool {
-        *self == HFXODEBOUNCE_A::DB256US
-    }
-    #[doc = "Checks if the value of the field is `DB1024US`"]
-    #[inline(always)]
-    pub fn is_db1024us(&self) -> bool {
-        *self == HFXODEBOUNCE_A::DB1024US
-    }
-}
-#[doc = "Field `HFXODEBOUNCE` writer - HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us."]
-pub type HFXODEBOUNCE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXODEBOUNCE_SPEC, u8, HFXODEBOUNCE_A, 8, O>;
-impl<'a, const O: u8> HFXODEBOUNCE_W<'a, O> {
     #[doc = "256 us debounce time. Recommended for TSX-3225, FA-20H and FA-128 crystals."]
     #[inline(always)]
-    pub fn db256us(self) -> &'a mut W {
-        self.variant(HFXODEBOUNCE_A::DB256US)
+    pub fn is_db256us(&self) -> bool {
+        *self == Hfxodebounce::Db256us
     }
     #[doc = "1024 us debounce time. Recommended for NX1612AA and NX1210AB crystals."]
     #[inline(always)]
-    pub fn db1024us(self) -> &'a mut W {
-        self.variant(HFXODEBOUNCE_A::DB1024US)
+    pub fn is_db1024us(&self) -> bool {
+        *self == Hfxodebounce::Db1024us
+    }
+}
+#[doc = "Field `HFXODEBOUNCE` writer - HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us."]
+pub type HfxodebounceW<'a, REG> = crate::FieldWriter<'a, REG, 8, Hfxodebounce>;
+impl<'a, REG> HfxodebounceW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "256 us debounce time. Recommended for TSX-3225, FA-20H and FA-128 crystals."]
+    #[inline(always)]
+    pub fn db256us(self) -> &'a mut crate::W<REG> {
+        self.variant(Hfxodebounce::Db256us)
+    }
+    #[doc = "1024 us debounce time. Recommended for NX1612AA and NX1210AB crystals."]
+    #[inline(always)]
+    pub fn db1024us(self) -> &'a mut crate::W<REG> {
+        self.variant(Hfxodebounce::Db1024us)
     }
 }
 impl R {
     #[doc = "Bits 0:7 - HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us."]
     #[inline(always)]
-    pub fn hfxodebounce(&self) -> HFXODEBOUNCE_R {
-        HFXODEBOUNCE_R::new((self.bits & 0xff) as u8)
+    pub fn hfxodebounce(&self) -> HfxodebounceR {
+        HfxodebounceR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - HFXO debounce time. Debounce time = HFXODEBOUNCE * 16 us."]
     #[inline(always)]
-    pub fn hfxodebounce(&mut self) -> HFXODEBOUNCE_W<0> {
-        HFXODEBOUNCE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn hfxodebounce(&mut self) -> HfxodebounceW<'_, HfxodebounceSpec> {
+        HfxodebounceW::new(self, 0)
     }
 }
-#[doc = "HFXO debounce time. The HFXO is started by triggering the TASKS_HFCLKSTART task.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfxodebounce](index.html) module"]
-pub struct HFXODEBOUNCE_SPEC;
-impl crate::RegisterSpec for HFXODEBOUNCE_SPEC {
+#[doc = "HFXO debounce time. The HFXO is started by triggering the TASKS_HFCLKSTART task.\n\nYou can [`read`](crate::Reg::read) this register and get [`hfxodebounce::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hfxodebounce::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct HfxodebounceSpec;
+impl crate::RegisterSpec for HfxodebounceSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hfxodebounce::R](R) reader structure"]
-impl crate::Readable for HFXODEBOUNCE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hfxodebounce::W](W) writer structure"]
-impl crate::Writable for HFXODEBOUNCE_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`hfxodebounce::R`](R) reader structure"]
+impl crate::Readable for HfxodebounceSpec {}
+#[doc = "`write(|w| ..)` method takes [`hfxodebounce::W`](W) writer structure"]
+impl crate::Writable for HfxodebounceSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets HFXODEBOUNCE to value 0x10"]
-impl crate::Resettable for HFXODEBOUNCE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x10
-    }
+impl crate::Resettable for HfxodebounceSpec {
+    const RESET_VALUE: u32 = 0x10;
 }

@@ -1,155 +1,117 @@
 #[doc = "Register `INTCAP` reader"]
-pub struct R(crate::R<INTCAP_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTCAP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTCAP_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTCAP_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IntcapSpec>;
 #[doc = "Register `INTCAP` writer"]
-pub struct W(crate::W<INTCAP_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INTCAP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INTCAP_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INTCAP_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `INTCAP` reader - Control usage of internal load capacitors"]
-pub type INTCAP_R = crate::FieldReader<u8, INTCAP_A>;
+pub type W = crate::W<IntcapSpec>;
 #[doc = "Control usage of internal load capacitors\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum INTCAP_A {
+pub enum Intcap {
     #[doc = "0: Use external load capacitors"]
-    EXTERNAL = 0,
+    External = 0,
     #[doc = "1: 6 pF internal load capacitance"]
-    C6PF = 1,
+    C6pf = 1,
     #[doc = "2: 7 pF internal load capacitance"]
-    C7PF = 2,
+    C7pf = 2,
     #[doc = "3: 9 pF internal load capacitance"]
-    C9PF = 3,
+    C9pf = 3,
 }
-impl From<INTCAP_A> for u8 {
+impl From<Intcap> for u8 {
     #[inline(always)]
-    fn from(variant: INTCAP_A) -> Self {
+    fn from(variant: Intcap) -> Self {
         variant as _
     }
 }
-impl INTCAP_R {
+impl crate::FieldSpec for Intcap {
+    type Ux = u8;
+}
+impl crate::IsEnum for Intcap {}
+#[doc = "Field `INTCAP` reader - Control usage of internal load capacitors"]
+pub type IntcapR = crate::FieldReader<Intcap>;
+impl IntcapR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INTCAP_A {
+    pub const fn variant(&self) -> Intcap {
         match self.bits {
-            0 => INTCAP_A::EXTERNAL,
-            1 => INTCAP_A::C6PF,
-            2 => INTCAP_A::C7PF,
-            3 => INTCAP_A::C9PF,
+            0 => Intcap::External,
+            1 => Intcap::C6pf,
+            2 => Intcap::C7pf,
+            3 => Intcap::C9pf,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `EXTERNAL`"]
-    #[inline(always)]
-    pub fn is_external(&self) -> bool {
-        *self == INTCAP_A::EXTERNAL
-    }
-    #[doc = "Checks if the value of the field is `C6PF`"]
-    #[inline(always)]
-    pub fn is_c6pf(&self) -> bool {
-        *self == INTCAP_A::C6PF
-    }
-    #[doc = "Checks if the value of the field is `C7PF`"]
-    #[inline(always)]
-    pub fn is_c7pf(&self) -> bool {
-        *self == INTCAP_A::C7PF
-    }
-    #[doc = "Checks if the value of the field is `C9PF`"]
-    #[inline(always)]
-    pub fn is_c9pf(&self) -> bool {
-        *self == INTCAP_A::C9PF
-    }
-}
-#[doc = "Field `INTCAP` writer - Control usage of internal load capacitors"]
-pub type INTCAP_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, INTCAP_SPEC, u8, INTCAP_A, 2, O>;
-impl<'a, const O: u8> INTCAP_W<'a, O> {
     #[doc = "Use external load capacitors"]
     #[inline(always)]
-    pub fn external(self) -> &'a mut W {
-        self.variant(INTCAP_A::EXTERNAL)
+    pub fn is_external(&self) -> bool {
+        *self == Intcap::External
     }
     #[doc = "6 pF internal load capacitance"]
     #[inline(always)]
-    pub fn c6pf(self) -> &'a mut W {
-        self.variant(INTCAP_A::C6PF)
+    pub fn is_c6pf(&self) -> bool {
+        *self == Intcap::C6pf
     }
     #[doc = "7 pF internal load capacitance"]
     #[inline(always)]
-    pub fn c7pf(self) -> &'a mut W {
-        self.variant(INTCAP_A::C7PF)
+    pub fn is_c7pf(&self) -> bool {
+        *self == Intcap::C7pf
     }
     #[doc = "9 pF internal load capacitance"]
     #[inline(always)]
-    pub fn c9pf(self) -> &'a mut W {
-        self.variant(INTCAP_A::C9PF)
+    pub fn is_c9pf(&self) -> bool {
+        *self == Intcap::C9pf
+    }
+}
+#[doc = "Field `INTCAP` writer - Control usage of internal load capacitors"]
+pub type IntcapW<'a, REG> = crate::FieldWriter<'a, REG, 2, Intcap, crate::Safe>;
+impl<'a, REG> IntcapW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Use external load capacitors"]
+    #[inline(always)]
+    pub fn external(self) -> &'a mut crate::W<REG> {
+        self.variant(Intcap::External)
+    }
+    #[doc = "6 pF internal load capacitance"]
+    #[inline(always)]
+    pub fn c6pf(self) -> &'a mut crate::W<REG> {
+        self.variant(Intcap::C6pf)
+    }
+    #[doc = "7 pF internal load capacitance"]
+    #[inline(always)]
+    pub fn c7pf(self) -> &'a mut crate::W<REG> {
+        self.variant(Intcap::C7pf)
+    }
+    #[doc = "9 pF internal load capacitance"]
+    #[inline(always)]
+    pub fn c9pf(self) -> &'a mut crate::W<REG> {
+        self.variant(Intcap::C9pf)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Control usage of internal load capacitors"]
     #[inline(always)]
-    pub fn intcap(&self) -> INTCAP_R {
-        INTCAP_R::new((self.bits & 3) as u8)
+    pub fn intcap(&self) -> IntcapR {
+        IntcapR::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Control usage of internal load capacitors"]
     #[inline(always)]
-    pub fn intcap(&mut self) -> INTCAP_W<0> {
-        INTCAP_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn intcap(&mut self) -> IntcapW<'_, IntcapSpec> {
+        IntcapW::new(self, 0)
     }
 }
-#[doc = "Control usage of internal load capacitors\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intcap](index.html) module"]
-pub struct INTCAP_SPEC;
-impl crate::RegisterSpec for INTCAP_SPEC {
+#[doc = "Control usage of internal load capacitors\n\nYou can [`read`](crate::Reg::read) this register and get [`intcap::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intcap::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct IntcapSpec;
+impl crate::RegisterSpec for IntcapSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [intcap::R](R) reader structure"]
-impl crate::Readable for INTCAP_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [intcap::W](W) writer structure"]
-impl crate::Writable for INTCAP_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`intcap::R`](R) reader structure"]
+impl crate::Readable for IntcapSpec {}
+#[doc = "`write(|w| ..)` method takes [`intcap::W`](W) writer structure"]
+impl crate::Writable for IntcapSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets INTCAP to value 0"]
-impl crate::Resettable for INTCAP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for IntcapSpec {}

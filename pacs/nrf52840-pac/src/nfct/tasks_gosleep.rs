@@ -1,52 +1,44 @@
 #[doc = "Register `TASKS_GOSLEEP` writer"]
-pub struct W(crate::W<TASKS_GOSLEEP_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TASKS_GOSLEEP_SPEC>;
+pub type W = crate::W<TasksGosleepSpec>;
+#[doc = "Force state machine to SLEEP_A state\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TasksGosleep {
+    #[doc = "1: Trigger task"]
+    Trigger = 1,
+}
+impl From<TasksGosleep> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: TasksGosleep) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `TASKS_GOSLEEP` writer - Force state machine to SLEEP_A state"]
+pub type TasksGosleepW<'a, REG> = crate::BitWriter<'a, REG, TasksGosleep>;
+impl<'a, REG> TasksGosleepW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Trigger task"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn trigger(self) -> &'a mut crate::W<REG> {
+        self.variant(TasksGosleep::Trigger)
     }
 }
-impl From<crate::W<TASKS_GOSLEEP_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TASKS_GOSLEEP_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `TASKS_GOSLEEP` writer - "]
-pub type TASKS_GOSLEEP_W<'a, const O: u8> = crate::BitWriter<'a, u32, TASKS_GOSLEEP_SPEC, bool, O>;
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Force state machine to SLEEP_A state"]
     #[inline(always)]
-    pub fn tasks_gosleep(&mut self) -> TASKS_GOSLEEP_W<0> {
-        TASKS_GOSLEEP_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn tasks_gosleep(&mut self) -> TasksGosleepW<'_, TasksGosleepSpec> {
+        TasksGosleepW::new(self, 0)
     }
 }
-#[doc = "Force state machine to SLEEP_A state\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_gosleep](index.html) module"]
-pub struct TASKS_GOSLEEP_SPEC;
-impl crate::RegisterSpec for TASKS_GOSLEEP_SPEC {
+#[doc = "Force state machine to SLEEP_A state\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_gosleep::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TasksGosleepSpec;
+impl crate::RegisterSpec for TasksGosleepSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [tasks_gosleep::W](W) writer structure"]
-impl crate::Writable for TASKS_GOSLEEP_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`tasks_gosleep::W`](W) writer structure"]
+impl crate::Writable for TasksGosleepSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TASKS_GOSLEEP to value 0"]
-impl crate::Resettable for TASKS_GOSLEEP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for TasksGosleepSpec {}

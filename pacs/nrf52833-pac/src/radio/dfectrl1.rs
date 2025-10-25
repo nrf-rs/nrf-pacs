@@ -1,572 +1,561 @@
 #[doc = "Register `DFECTRL1` reader"]
-pub struct R(crate::R<DFECTRL1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DFECTRL1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DFECTRL1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DFECTRL1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Dfectrl1Spec>;
 #[doc = "Register `DFECTRL1` writer"]
-pub struct W(crate::W<DFECTRL1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DFECTRL1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DFECTRL1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DFECTRL1_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Dfectrl1Spec>;
 #[doc = "Field `NUMBEROF8US` reader - Length of the AoA/AoD procedure in number of 8 us units"]
-pub type NUMBEROF8US_R = crate::FieldReader<u8, u8>;
+pub type Numberof8usR = crate::FieldReader;
 #[doc = "Field `NUMBEROF8US` writer - Length of the AoA/AoD procedure in number of 8 us units"]
-pub type NUMBEROF8US_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DFECTRL1_SPEC, u8, u8, 6, O>;
-#[doc = "Field `DFEINEXTENSION` reader - Add CTE extension and do antenna switching/sampling in this extension"]
-pub type DFEINEXTENSION_R = crate::BitReader<DFEINEXTENSION_A>;
+pub type Numberof8usW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Add CTE extension and do antenna switching/sampling in this extension\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DFEINEXTENSION_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Dfeinextension {
     #[doc = "1: AoA/AoD procedure triggered at end of CRC"]
-    CRC = 1,
+    Crc = 1,
     #[doc = "0: Antenna switching/sampling is done in the packet payload"]
-    PAYLOAD = 0,
+    Payload = 0,
 }
-impl From<DFEINEXTENSION_A> for bool {
+impl From<Dfeinextension> for bool {
     #[inline(always)]
-    fn from(variant: DFEINEXTENSION_A) -> Self {
+    fn from(variant: Dfeinextension) -> Self {
         variant as u8 != 0
     }
 }
-impl DFEINEXTENSION_R {
+#[doc = "Field `DFEINEXTENSION` reader - Add CTE extension and do antenna switching/sampling in this extension"]
+pub type DfeinextensionR = crate::BitReader<Dfeinextension>;
+impl DfeinextensionR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DFEINEXTENSION_A {
+    pub const fn variant(&self) -> Dfeinextension {
         match self.bits {
-            true => DFEINEXTENSION_A::CRC,
-            false => DFEINEXTENSION_A::PAYLOAD,
+            true => Dfeinextension::Crc,
+            false => Dfeinextension::Payload,
         }
     }
-    #[doc = "Checks if the value of the field is `CRC`"]
-    #[inline(always)]
-    pub fn is_crc(&self) -> bool {
-        *self == DFEINEXTENSION_A::CRC
-    }
-    #[doc = "Checks if the value of the field is `PAYLOAD`"]
-    #[inline(always)]
-    pub fn is_payload(&self) -> bool {
-        *self == DFEINEXTENSION_A::PAYLOAD
-    }
-}
-#[doc = "Field `DFEINEXTENSION` writer - Add CTE extension and do antenna switching/sampling in this extension"]
-pub type DFEINEXTENSION_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, DFECTRL1_SPEC, DFEINEXTENSION_A, O>;
-impl<'a, const O: u8> DFEINEXTENSION_W<'a, O> {
     #[doc = "AoA/AoD procedure triggered at end of CRC"]
     #[inline(always)]
-    pub fn crc(self) -> &'a mut W {
-        self.variant(DFEINEXTENSION_A::CRC)
+    pub fn is_crc(&self) -> bool {
+        *self == Dfeinextension::Crc
     }
     #[doc = "Antenna switching/sampling is done in the packet payload"]
     #[inline(always)]
-    pub fn payload(self) -> &'a mut W {
-        self.variant(DFEINEXTENSION_A::PAYLOAD)
+    pub fn is_payload(&self) -> bool {
+        *self == Dfeinextension::Payload
     }
 }
-#[doc = "Field `TSWITCHSPACING` reader - Interval between every time the antenna is changed in the SWITCHING state"]
-pub type TSWITCHSPACING_R = crate::FieldReader<u8, TSWITCHSPACING_A>;
-#[doc = "Interval between every time the antenna is changed in the SWITCHING state\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum TSWITCHSPACING_A {
-    #[doc = "1: 4us"]
-    _4US = 1,
-    #[doc = "2: 2us"]
-    _2US = 2,
-    #[doc = "3: 1us"]
-    _1US = 3,
-}
-impl From<TSWITCHSPACING_A> for u8 {
+#[doc = "Field `DFEINEXTENSION` writer - Add CTE extension and do antenna switching/sampling in this extension"]
+pub type DfeinextensionW<'a, REG> = crate::BitWriter<'a, REG, Dfeinextension>;
+impl<'a, REG> DfeinextensionW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "AoA/AoD procedure triggered at end of CRC"]
     #[inline(always)]
-    fn from(variant: TSWITCHSPACING_A) -> Self {
+    pub fn crc(self) -> &'a mut crate::W<REG> {
+        self.variant(Dfeinextension::Crc)
+    }
+    #[doc = "Antenna switching/sampling is done in the packet payload"]
+    #[inline(always)]
+    pub fn payload(self) -> &'a mut crate::W<REG> {
+        self.variant(Dfeinextension::Payload)
+    }
+}
+#[doc = "Interval between every time the antenna is changed in the SWITCHING state\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Tswitchspacing {
+    #[doc = "1: 4 us"]
+    _4us = 1,
+    #[doc = "2: 2 us"]
+    _2us = 2,
+    #[doc = "3: 1 us"]
+    _1us = 3,
+}
+impl From<Tswitchspacing> for u8 {
+    #[inline(always)]
+    fn from(variant: Tswitchspacing) -> Self {
         variant as _
     }
 }
-impl TSWITCHSPACING_R {
+impl crate::FieldSpec for Tswitchspacing {
+    type Ux = u8;
+}
+impl crate::IsEnum for Tswitchspacing {}
+#[doc = "Field `TSWITCHSPACING` reader - Interval between every time the antenna is changed in the SWITCHING state"]
+pub type TswitchspacingR = crate::FieldReader<Tswitchspacing>;
+impl TswitchspacingR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TSWITCHSPACING_A> {
+    pub const fn variant(&self) -> Option<Tswitchspacing> {
         match self.bits {
-            1 => Some(TSWITCHSPACING_A::_4US),
-            2 => Some(TSWITCHSPACING_A::_2US),
-            3 => Some(TSWITCHSPACING_A::_1US),
+            1 => Some(Tswitchspacing::_4us),
+            2 => Some(Tswitchspacing::_2us),
+            3 => Some(Tswitchspacing::_1us),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_4US`"]
+    #[doc = "4 us"]
     #[inline(always)]
     pub fn is_4us(&self) -> bool {
-        *self == TSWITCHSPACING_A::_4US
+        *self == Tswitchspacing::_4us
     }
-    #[doc = "Checks if the value of the field is `_2US`"]
+    #[doc = "2 us"]
     #[inline(always)]
     pub fn is_2us(&self) -> bool {
-        *self == TSWITCHSPACING_A::_2US
+        *self == Tswitchspacing::_2us
     }
-    #[doc = "Checks if the value of the field is `_1US`"]
+    #[doc = "1 us"]
     #[inline(always)]
     pub fn is_1us(&self) -> bool {
-        *self == TSWITCHSPACING_A::_1US
+        *self == Tswitchspacing::_1us
     }
 }
 #[doc = "Field `TSWITCHSPACING` writer - Interval between every time the antenna is changed in the SWITCHING state"]
-pub type TSWITCHSPACING_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DFECTRL1_SPEC, u8, TSWITCHSPACING_A, 3, O>;
-impl<'a, const O: u8> TSWITCHSPACING_W<'a, O> {
-    #[doc = "4us"]
+pub type TswitchspacingW<'a, REG> = crate::FieldWriter<'a, REG, 3, Tswitchspacing>;
+impl<'a, REG> TswitchspacingW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "4 us"]
     #[inline(always)]
-    pub fn _4us(self) -> &'a mut W {
-        self.variant(TSWITCHSPACING_A::_4US)
+    pub fn _4us(self) -> &'a mut crate::W<REG> {
+        self.variant(Tswitchspacing::_4us)
     }
-    #[doc = "2us"]
+    #[doc = "2 us"]
     #[inline(always)]
-    pub fn _2us(self) -> &'a mut W {
-        self.variant(TSWITCHSPACING_A::_2US)
+    pub fn _2us(self) -> &'a mut crate::W<REG> {
+        self.variant(Tswitchspacing::_2us)
     }
-    #[doc = "1us"]
+    #[doc = "1 us"]
     #[inline(always)]
-    pub fn _1us(self) -> &'a mut W {
-        self.variant(TSWITCHSPACING_A::_1US)
+    pub fn _1us(self) -> &'a mut crate::W<REG> {
+        self.variant(Tswitchspacing::_1us)
     }
 }
-#[doc = "Field `TSAMPLESPACINGREF` reader - Interval between samples in the REFERENCE period"]
-pub type TSAMPLESPACINGREF_R = crate::FieldReader<u8, TSAMPLESPACINGREF_A>;
 #[doc = "Interval between samples in the REFERENCE period\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TSAMPLESPACINGREF_A {
-    #[doc = "1: 4us"]
-    _4US = 1,
-    #[doc = "2: 2us"]
-    _2US = 2,
-    #[doc = "3: 1us"]
-    _1US = 3,
-    #[doc = "4: 0.5us"]
-    _500NS = 4,
-    #[doc = "5: 0.25us"]
-    _250NS = 5,
-    #[doc = "6: 0.125us"]
-    _125NS = 6,
+pub enum Tsamplespacingref {
+    #[doc = "1: 4 us"]
+    _4us = 1,
+    #[doc = "2: 2 us"]
+    _2us = 2,
+    #[doc = "3: 1 us"]
+    _1us = 3,
+    #[doc = "4: 0.5 us"]
+    _500ns = 4,
+    #[doc = "5: 0.25 us"]
+    _250ns = 5,
+    #[doc = "6: 0.125 us"]
+    _125ns = 6,
 }
-impl From<TSAMPLESPACINGREF_A> for u8 {
+impl From<Tsamplespacingref> for u8 {
     #[inline(always)]
-    fn from(variant: TSAMPLESPACINGREF_A) -> Self {
+    fn from(variant: Tsamplespacingref) -> Self {
         variant as _
     }
 }
-impl TSAMPLESPACINGREF_R {
+impl crate::FieldSpec for Tsamplespacingref {
+    type Ux = u8;
+}
+impl crate::IsEnum for Tsamplespacingref {}
+#[doc = "Field `TSAMPLESPACINGREF` reader - Interval between samples in the REFERENCE period"]
+pub type TsamplespacingrefR = crate::FieldReader<Tsamplespacingref>;
+impl TsamplespacingrefR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TSAMPLESPACINGREF_A> {
+    pub const fn variant(&self) -> Option<Tsamplespacingref> {
         match self.bits {
-            1 => Some(TSAMPLESPACINGREF_A::_4US),
-            2 => Some(TSAMPLESPACINGREF_A::_2US),
-            3 => Some(TSAMPLESPACINGREF_A::_1US),
-            4 => Some(TSAMPLESPACINGREF_A::_500NS),
-            5 => Some(TSAMPLESPACINGREF_A::_250NS),
-            6 => Some(TSAMPLESPACINGREF_A::_125NS),
+            1 => Some(Tsamplespacingref::_4us),
+            2 => Some(Tsamplespacingref::_2us),
+            3 => Some(Tsamplespacingref::_1us),
+            4 => Some(Tsamplespacingref::_500ns),
+            5 => Some(Tsamplespacingref::_250ns),
+            6 => Some(Tsamplespacingref::_125ns),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_4US`"]
+    #[doc = "4 us"]
     #[inline(always)]
     pub fn is_4us(&self) -> bool {
-        *self == TSAMPLESPACINGREF_A::_4US
+        *self == Tsamplespacingref::_4us
     }
-    #[doc = "Checks if the value of the field is `_2US`"]
+    #[doc = "2 us"]
     #[inline(always)]
     pub fn is_2us(&self) -> bool {
-        *self == TSAMPLESPACINGREF_A::_2US
+        *self == Tsamplespacingref::_2us
     }
-    #[doc = "Checks if the value of the field is `_1US`"]
+    #[doc = "1 us"]
     #[inline(always)]
     pub fn is_1us(&self) -> bool {
-        *self == TSAMPLESPACINGREF_A::_1US
+        *self == Tsamplespacingref::_1us
     }
-    #[doc = "Checks if the value of the field is `_500NS`"]
+    #[doc = "0.5 us"]
     #[inline(always)]
     pub fn is_500ns(&self) -> bool {
-        *self == TSAMPLESPACINGREF_A::_500NS
+        *self == Tsamplespacingref::_500ns
     }
-    #[doc = "Checks if the value of the field is `_250NS`"]
+    #[doc = "0.25 us"]
     #[inline(always)]
     pub fn is_250ns(&self) -> bool {
-        *self == TSAMPLESPACINGREF_A::_250NS
+        *self == Tsamplespacingref::_250ns
     }
-    #[doc = "Checks if the value of the field is `_125NS`"]
+    #[doc = "0.125 us"]
     #[inline(always)]
     pub fn is_125ns(&self) -> bool {
-        *self == TSAMPLESPACINGREF_A::_125NS
+        *self == Tsamplespacingref::_125ns
     }
 }
 #[doc = "Field `TSAMPLESPACINGREF` writer - Interval between samples in the REFERENCE period"]
-pub type TSAMPLESPACINGREF_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DFECTRL1_SPEC, u8, TSAMPLESPACINGREF_A, 3, O>;
-impl<'a, const O: u8> TSAMPLESPACINGREF_W<'a, O> {
-    #[doc = "4us"]
+pub type TsamplespacingrefW<'a, REG> = crate::FieldWriter<'a, REG, 3, Tsamplespacingref>;
+impl<'a, REG> TsamplespacingrefW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "4 us"]
     #[inline(always)]
-    pub fn _4us(self) -> &'a mut W {
-        self.variant(TSAMPLESPACINGREF_A::_4US)
+    pub fn _4us(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacingref::_4us)
     }
-    #[doc = "2us"]
+    #[doc = "2 us"]
     #[inline(always)]
-    pub fn _2us(self) -> &'a mut W {
-        self.variant(TSAMPLESPACINGREF_A::_2US)
+    pub fn _2us(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacingref::_2us)
     }
-    #[doc = "1us"]
+    #[doc = "1 us"]
     #[inline(always)]
-    pub fn _1us(self) -> &'a mut W {
-        self.variant(TSAMPLESPACINGREF_A::_1US)
+    pub fn _1us(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacingref::_1us)
     }
-    #[doc = "0.5us"]
+    #[doc = "0.5 us"]
     #[inline(always)]
-    pub fn _500ns(self) -> &'a mut W {
-        self.variant(TSAMPLESPACINGREF_A::_500NS)
+    pub fn _500ns(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacingref::_500ns)
     }
-    #[doc = "0.25us"]
+    #[doc = "0.25 us"]
     #[inline(always)]
-    pub fn _250ns(self) -> &'a mut W {
-        self.variant(TSAMPLESPACINGREF_A::_250NS)
+    pub fn _250ns(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacingref::_250ns)
     }
-    #[doc = "0.125us"]
+    #[doc = "0.125 us"]
     #[inline(always)]
-    pub fn _125ns(self) -> &'a mut W {
-        self.variant(TSAMPLESPACINGREF_A::_125NS)
+    pub fn _125ns(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacingref::_125ns)
     }
 }
-#[doc = "Field `SAMPLETYPE` reader - Whether to sample I/Q or magnitude/phase"]
-pub type SAMPLETYPE_R = crate::BitReader<SAMPLETYPE_A>;
 #[doc = "Whether to sample I/Q or magnitude/phase\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SAMPLETYPE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sampletype {
     #[doc = "0: Complex samples in I and Q"]
-    IQ = 0,
+    Iq = 0,
     #[doc = "1: Complex samples as magnitude and phase"]
-    MAG_PHASE = 1,
+    MagPhase = 1,
 }
-impl From<SAMPLETYPE_A> for bool {
+impl From<Sampletype> for bool {
     #[inline(always)]
-    fn from(variant: SAMPLETYPE_A) -> Self {
+    fn from(variant: Sampletype) -> Self {
         variant as u8 != 0
     }
 }
-impl SAMPLETYPE_R {
+#[doc = "Field `SAMPLETYPE` reader - Whether to sample I/Q or magnitude/phase"]
+pub type SampletypeR = crate::BitReader<Sampletype>;
+impl SampletypeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SAMPLETYPE_A {
+    pub const fn variant(&self) -> Sampletype {
         match self.bits {
-            false => SAMPLETYPE_A::IQ,
-            true => SAMPLETYPE_A::MAG_PHASE,
+            false => Sampletype::Iq,
+            true => Sampletype::MagPhase,
         }
     }
-    #[doc = "Checks if the value of the field is `IQ`"]
-    #[inline(always)]
-    pub fn is_iq(&self) -> bool {
-        *self == SAMPLETYPE_A::IQ
-    }
-    #[doc = "Checks if the value of the field is `MAG_PHASE`"]
-    #[inline(always)]
-    pub fn is_mag_phase(&self) -> bool {
-        *self == SAMPLETYPE_A::MAG_PHASE
-    }
-}
-#[doc = "Field `SAMPLETYPE` writer - Whether to sample I/Q or magnitude/phase"]
-pub type SAMPLETYPE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFECTRL1_SPEC, SAMPLETYPE_A, O>;
-impl<'a, const O: u8> SAMPLETYPE_W<'a, O> {
     #[doc = "Complex samples in I and Q"]
     #[inline(always)]
-    pub fn iq(self) -> &'a mut W {
-        self.variant(SAMPLETYPE_A::IQ)
+    pub fn is_iq(&self) -> bool {
+        *self == Sampletype::Iq
     }
     #[doc = "Complex samples as magnitude and phase"]
     #[inline(always)]
-    pub fn mag_phase(self) -> &'a mut W {
-        self.variant(SAMPLETYPE_A::MAG_PHASE)
+    pub fn is_mag_phase(&self) -> bool {
+        *self == Sampletype::MagPhase
     }
 }
-#[doc = "Field `TSAMPLESPACING` reader - Interval between samples in the SWITCHING period when CTEINLINECTRLEN is 0"]
-pub type TSAMPLESPACING_R = crate::FieldReader<u8, TSAMPLESPACING_A>;
-#[doc = "Interval between samples in the SWITCHING period when CTEINLINECTRLEN is 0\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum TSAMPLESPACING_A {
-    #[doc = "1: 4us"]
-    _4US = 1,
-    #[doc = "2: 2us"]
-    _2US = 2,
-    #[doc = "3: 1us"]
-    _1US = 3,
-    #[doc = "4: 0.5us"]
-    _500NS = 4,
-    #[doc = "5: 0.25us"]
-    _250NS = 5,
-    #[doc = "6: 0.125us"]
-    _125NS = 6,
-}
-impl From<TSAMPLESPACING_A> for u8 {
+#[doc = "Field `SAMPLETYPE` writer - Whether to sample I/Q or magnitude/phase"]
+pub type SampletypeW<'a, REG> = crate::BitWriter<'a, REG, Sampletype>;
+impl<'a, REG> SampletypeW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Complex samples in I and Q"]
     #[inline(always)]
-    fn from(variant: TSAMPLESPACING_A) -> Self {
+    pub fn iq(self) -> &'a mut crate::W<REG> {
+        self.variant(Sampletype::Iq)
+    }
+    #[doc = "Complex samples as magnitude and phase"]
+    #[inline(always)]
+    pub fn mag_phase(self) -> &'a mut crate::W<REG> {
+        self.variant(Sampletype::MagPhase)
+    }
+}
+#[doc = "Interval between samples in the SWITCHING period when CTEINLINECTRLEN is 0\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Tsamplespacing {
+    #[doc = "1: 4 us"]
+    _4us = 1,
+    #[doc = "2: 2 us"]
+    _2us = 2,
+    #[doc = "3: 1 us"]
+    _1us = 3,
+    #[doc = "4: 0.5 us"]
+    _500ns = 4,
+    #[doc = "5: 0.25 us"]
+    _250ns = 5,
+    #[doc = "6: 0.125 us"]
+    _125ns = 6,
+}
+impl From<Tsamplespacing> for u8 {
+    #[inline(always)]
+    fn from(variant: Tsamplespacing) -> Self {
         variant as _
     }
 }
-impl TSAMPLESPACING_R {
+impl crate::FieldSpec for Tsamplespacing {
+    type Ux = u8;
+}
+impl crate::IsEnum for Tsamplespacing {}
+#[doc = "Field `TSAMPLESPACING` reader - Interval between samples in the SWITCHING period when CTEINLINECTRLEN is 0"]
+pub type TsamplespacingR = crate::FieldReader<Tsamplespacing>;
+impl TsamplespacingR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TSAMPLESPACING_A> {
+    pub const fn variant(&self) -> Option<Tsamplespacing> {
         match self.bits {
-            1 => Some(TSAMPLESPACING_A::_4US),
-            2 => Some(TSAMPLESPACING_A::_2US),
-            3 => Some(TSAMPLESPACING_A::_1US),
-            4 => Some(TSAMPLESPACING_A::_500NS),
-            5 => Some(TSAMPLESPACING_A::_250NS),
-            6 => Some(TSAMPLESPACING_A::_125NS),
+            1 => Some(Tsamplespacing::_4us),
+            2 => Some(Tsamplespacing::_2us),
+            3 => Some(Tsamplespacing::_1us),
+            4 => Some(Tsamplespacing::_500ns),
+            5 => Some(Tsamplespacing::_250ns),
+            6 => Some(Tsamplespacing::_125ns),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_4US`"]
+    #[doc = "4 us"]
     #[inline(always)]
     pub fn is_4us(&self) -> bool {
-        *self == TSAMPLESPACING_A::_4US
+        *self == Tsamplespacing::_4us
     }
-    #[doc = "Checks if the value of the field is `_2US`"]
+    #[doc = "2 us"]
     #[inline(always)]
     pub fn is_2us(&self) -> bool {
-        *self == TSAMPLESPACING_A::_2US
+        *self == Tsamplespacing::_2us
     }
-    #[doc = "Checks if the value of the field is `_1US`"]
+    #[doc = "1 us"]
     #[inline(always)]
     pub fn is_1us(&self) -> bool {
-        *self == TSAMPLESPACING_A::_1US
+        *self == Tsamplespacing::_1us
     }
-    #[doc = "Checks if the value of the field is `_500NS`"]
+    #[doc = "0.5 us"]
     #[inline(always)]
     pub fn is_500ns(&self) -> bool {
-        *self == TSAMPLESPACING_A::_500NS
+        *self == Tsamplespacing::_500ns
     }
-    #[doc = "Checks if the value of the field is `_250NS`"]
+    #[doc = "0.25 us"]
     #[inline(always)]
     pub fn is_250ns(&self) -> bool {
-        *self == TSAMPLESPACING_A::_250NS
+        *self == Tsamplespacing::_250ns
     }
-    #[doc = "Checks if the value of the field is `_125NS`"]
+    #[doc = "0.125 us"]
     #[inline(always)]
     pub fn is_125ns(&self) -> bool {
-        *self == TSAMPLESPACING_A::_125NS
+        *self == Tsamplespacing::_125ns
     }
 }
 #[doc = "Field `TSAMPLESPACING` writer - Interval between samples in the SWITCHING period when CTEINLINECTRLEN is 0"]
-pub type TSAMPLESPACING_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DFECTRL1_SPEC, u8, TSAMPLESPACING_A, 3, O>;
-impl<'a, const O: u8> TSAMPLESPACING_W<'a, O> {
-    #[doc = "4us"]
+pub type TsamplespacingW<'a, REG> = crate::FieldWriter<'a, REG, 3, Tsamplespacing>;
+impl<'a, REG> TsamplespacingW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "4 us"]
     #[inline(always)]
-    pub fn _4us(self) -> &'a mut W {
-        self.variant(TSAMPLESPACING_A::_4US)
+    pub fn _4us(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacing::_4us)
     }
-    #[doc = "2us"]
+    #[doc = "2 us"]
     #[inline(always)]
-    pub fn _2us(self) -> &'a mut W {
-        self.variant(TSAMPLESPACING_A::_2US)
+    pub fn _2us(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacing::_2us)
     }
-    #[doc = "1us"]
+    #[doc = "1 us"]
     #[inline(always)]
-    pub fn _1us(self) -> &'a mut W {
-        self.variant(TSAMPLESPACING_A::_1US)
+    pub fn _1us(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacing::_1us)
     }
-    #[doc = "0.5us"]
+    #[doc = "0.5 us"]
     #[inline(always)]
-    pub fn _500ns(self) -> &'a mut W {
-        self.variant(TSAMPLESPACING_A::_500NS)
+    pub fn _500ns(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacing::_500ns)
     }
-    #[doc = "0.25us"]
+    #[doc = "0.25 us"]
     #[inline(always)]
-    pub fn _250ns(self) -> &'a mut W {
-        self.variant(TSAMPLESPACING_A::_250NS)
+    pub fn _250ns(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacing::_250ns)
     }
-    #[doc = "0.125us"]
+    #[doc = "0.125 us"]
     #[inline(always)]
-    pub fn _125ns(self) -> &'a mut W {
-        self.variant(TSAMPLESPACING_A::_125NS)
+    pub fn _125ns(self) -> &'a mut crate::W<REG> {
+        self.variant(Tsamplespacing::_125ns)
     }
 }
-#[doc = "Field `REPEATPATTERN` reader - Repeat each individual antenna pattern N times sequentially, i.e. P0, P0, P1, P1, P2, P2, P3, P3, etc."]
-pub type REPEATPATTERN_R = crate::FieldReader<u8, REPEATPATTERN_A>;
 #[doc = "Repeat each individual antenna pattern N times sequentially, i.e. P0, P0, P1, P1, P2, P2, P3, P3, etc.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum REPEATPATTERN_A {
+pub enum Repeatpattern {
     #[doc = "0: Do not repeat (1 time in total)"]
-    NO_REPEAT = 0,
+    NoRepeat = 0,
 }
-impl From<REPEATPATTERN_A> for u8 {
+impl From<Repeatpattern> for u8 {
     #[inline(always)]
-    fn from(variant: REPEATPATTERN_A) -> Self {
+    fn from(variant: Repeatpattern) -> Self {
         variant as _
     }
 }
-impl REPEATPATTERN_R {
+impl crate::FieldSpec for Repeatpattern {
+    type Ux = u8;
+}
+impl crate::IsEnum for Repeatpattern {}
+#[doc = "Field `REPEATPATTERN` reader - Repeat each individual antenna pattern N times sequentially, i.e. P0, P0, P1, P1, P2, P2, P3, P3, etc."]
+pub type RepeatpatternR = crate::FieldReader<Repeatpattern>;
+impl RepeatpatternR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<REPEATPATTERN_A> {
+    pub const fn variant(&self) -> Option<Repeatpattern> {
         match self.bits {
-            0 => Some(REPEATPATTERN_A::NO_REPEAT),
+            0 => Some(Repeatpattern::NoRepeat),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_REPEAT`"]
+    #[doc = "Do not repeat (1 time in total)"]
     #[inline(always)]
     pub fn is_no_repeat(&self) -> bool {
-        *self == REPEATPATTERN_A::NO_REPEAT
+        *self == Repeatpattern::NoRepeat
     }
 }
 #[doc = "Field `REPEATPATTERN` writer - Repeat each individual antenna pattern N times sequentially, i.e. P0, P0, P1, P1, P2, P2, P3, P3, etc."]
-pub type REPEATPATTERN_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DFECTRL1_SPEC, u8, REPEATPATTERN_A, 4, O>;
-impl<'a, const O: u8> REPEATPATTERN_W<'a, O> {
+pub type RepeatpatternW<'a, REG> = crate::FieldWriter<'a, REG, 4, Repeatpattern>;
+impl<'a, REG> RepeatpatternW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Do not repeat (1 time in total)"]
     #[inline(always)]
-    pub fn no_repeat(self) -> &'a mut W {
-        self.variant(REPEATPATTERN_A::NO_REPEAT)
+    pub fn no_repeat(self) -> &'a mut crate::W<REG> {
+        self.variant(Repeatpattern::NoRepeat)
     }
 }
 #[doc = "Field `AGCBACKOFFGAIN` reader - Gain will be lowered by the specified number of gain steps at the start of CTE"]
-pub type AGCBACKOFFGAIN_R = crate::FieldReader<u8, u8>;
+pub type AgcbackoffgainR = crate::FieldReader;
 #[doc = "Field `AGCBACKOFFGAIN` writer - Gain will be lowered by the specified number of gain steps at the start of CTE"]
-pub type AGCBACKOFFGAIN_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DFECTRL1_SPEC, u8, u8, 4, O>;
+pub type AgcbackoffgainW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:5 - Length of the AoA/AoD procedure in number of 8 us units"]
     #[inline(always)]
-    pub fn numberof8us(&self) -> NUMBEROF8US_R {
-        NUMBEROF8US_R::new((self.bits & 0x3f) as u8)
+    pub fn numberof8us(&self) -> Numberof8usR {
+        Numberof8usR::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bit 7 - Add CTE extension and do antenna switching/sampling in this extension"]
     #[inline(always)]
-    pub fn dfeinextension(&self) -> DFEINEXTENSION_R {
-        DFEINEXTENSION_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn dfeinextension(&self) -> DfeinextensionR {
+        DfeinextensionR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:10 - Interval between every time the antenna is changed in the SWITCHING state"]
     #[inline(always)]
-    pub fn tswitchspacing(&self) -> TSWITCHSPACING_R {
-        TSWITCHSPACING_R::new(((self.bits >> 8) & 7) as u8)
+    pub fn tswitchspacing(&self) -> TswitchspacingR {
+        TswitchspacingR::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 12:14 - Interval between samples in the REFERENCE period"]
     #[inline(always)]
-    pub fn tsamplespacingref(&self) -> TSAMPLESPACINGREF_R {
-        TSAMPLESPACINGREF_R::new(((self.bits >> 12) & 7) as u8)
+    pub fn tsamplespacingref(&self) -> TsamplespacingrefR {
+        TsamplespacingrefR::new(((self.bits >> 12) & 7) as u8)
     }
     #[doc = "Bit 15 - Whether to sample I/Q or magnitude/phase"]
     #[inline(always)]
-    pub fn sampletype(&self) -> SAMPLETYPE_R {
-        SAMPLETYPE_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn sampletype(&self) -> SampletypeR {
+        SampletypeR::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:18 - Interval between samples in the SWITCHING period when CTEINLINECTRLEN is 0"]
     #[inline(always)]
-    pub fn tsamplespacing(&self) -> TSAMPLESPACING_R {
-        TSAMPLESPACING_R::new(((self.bits >> 16) & 7) as u8)
+    pub fn tsamplespacing(&self) -> TsamplespacingR {
+        TsamplespacingR::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:23 - Repeat each individual antenna pattern N times sequentially, i.e. P0, P0, P1, P1, P2, P2, P3, P3, etc."]
     #[inline(always)]
-    pub fn repeatpattern(&self) -> REPEATPATTERN_R {
-        REPEATPATTERN_R::new(((self.bits >> 20) & 0x0f) as u8)
+    pub fn repeatpattern(&self) -> RepeatpatternR {
+        RepeatpatternR::new(((self.bits >> 20) & 0x0f) as u8)
     }
     #[doc = "Bits 24:27 - Gain will be lowered by the specified number of gain steps at the start of CTE"]
     #[inline(always)]
-    pub fn agcbackoffgain(&self) -> AGCBACKOFFGAIN_R {
-        AGCBACKOFFGAIN_R::new(((self.bits >> 24) & 0x0f) as u8)
+    pub fn agcbackoffgain(&self) -> AgcbackoffgainR {
+        AgcbackoffgainR::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - Length of the AoA/AoD procedure in number of 8 us units"]
     #[inline(always)]
-    pub fn numberof8us(&mut self) -> NUMBEROF8US_W<0> {
-        NUMBEROF8US_W::new(self)
+    pub fn numberof8us(&mut self) -> Numberof8usW<'_, Dfectrl1Spec> {
+        Numberof8usW::new(self, 0)
     }
     #[doc = "Bit 7 - Add CTE extension and do antenna switching/sampling in this extension"]
     #[inline(always)]
-    pub fn dfeinextension(&mut self) -> DFEINEXTENSION_W<7> {
-        DFEINEXTENSION_W::new(self)
+    pub fn dfeinextension(&mut self) -> DfeinextensionW<'_, Dfectrl1Spec> {
+        DfeinextensionW::new(self, 7)
     }
     #[doc = "Bits 8:10 - Interval between every time the antenna is changed in the SWITCHING state"]
     #[inline(always)]
-    pub fn tswitchspacing(&mut self) -> TSWITCHSPACING_W<8> {
-        TSWITCHSPACING_W::new(self)
+    pub fn tswitchspacing(&mut self) -> TswitchspacingW<'_, Dfectrl1Spec> {
+        TswitchspacingW::new(self, 8)
     }
     #[doc = "Bits 12:14 - Interval between samples in the REFERENCE period"]
     #[inline(always)]
-    pub fn tsamplespacingref(&mut self) -> TSAMPLESPACINGREF_W<12> {
-        TSAMPLESPACINGREF_W::new(self)
+    pub fn tsamplespacingref(&mut self) -> TsamplespacingrefW<'_, Dfectrl1Spec> {
+        TsamplespacingrefW::new(self, 12)
     }
     #[doc = "Bit 15 - Whether to sample I/Q or magnitude/phase"]
     #[inline(always)]
-    pub fn sampletype(&mut self) -> SAMPLETYPE_W<15> {
-        SAMPLETYPE_W::new(self)
+    pub fn sampletype(&mut self) -> SampletypeW<'_, Dfectrl1Spec> {
+        SampletypeW::new(self, 15)
     }
     #[doc = "Bits 16:18 - Interval between samples in the SWITCHING period when CTEINLINECTRLEN is 0"]
     #[inline(always)]
-    pub fn tsamplespacing(&mut self) -> TSAMPLESPACING_W<16> {
-        TSAMPLESPACING_W::new(self)
+    pub fn tsamplespacing(&mut self) -> TsamplespacingW<'_, Dfectrl1Spec> {
+        TsamplespacingW::new(self, 16)
     }
     #[doc = "Bits 20:23 - Repeat each individual antenna pattern N times sequentially, i.e. P0, P0, P1, P1, P2, P2, P3, P3, etc."]
     #[inline(always)]
-    pub fn repeatpattern(&mut self) -> REPEATPATTERN_W<20> {
-        REPEATPATTERN_W::new(self)
+    pub fn repeatpattern(&mut self) -> RepeatpatternW<'_, Dfectrl1Spec> {
+        RepeatpatternW::new(self, 20)
     }
     #[doc = "Bits 24:27 - Gain will be lowered by the specified number of gain steps at the start of CTE"]
     #[inline(always)]
-    pub fn agcbackoffgain(&mut self) -> AGCBACKOFFGAIN_W<24> {
-        AGCBACKOFFGAIN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn agcbackoffgain(&mut self) -> AgcbackoffgainW<'_, Dfectrl1Spec> {
+        AgcbackoffgainW::new(self, 24)
     }
 }
-#[doc = "Various configuration for Direction finding\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dfectrl1](index.html) module"]
-pub struct DFECTRL1_SPEC;
-impl crate::RegisterSpec for DFECTRL1_SPEC {
+#[doc = "Various configuration for Direction finding\n\nYou can [`read`](crate::Reg::read) this register and get [`dfectrl1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dfectrl1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Dfectrl1Spec;
+impl crate::RegisterSpec for Dfectrl1Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dfectrl1::R](R) reader structure"]
-impl crate::Readable for DFECTRL1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dfectrl1::W](W) writer structure"]
-impl crate::Writable for DFECTRL1_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`dfectrl1::R`](R) reader structure"]
+impl crate::Readable for Dfectrl1Spec {}
+#[doc = "`write(|w| ..)` method takes [`dfectrl1::W`](W) writer structure"]
+impl crate::Writable for Dfectrl1Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets DFECTRL1 to value 0x0002_3282"]
-impl crate::Resettable for DFECTRL1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0002_3282
-    }
+impl crate::Resettable for Dfectrl1Spec {
+    const RESET_VALUE: u32 = 0x0002_3282;
 }

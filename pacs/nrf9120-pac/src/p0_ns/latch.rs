@@ -1,2146 +1,2037 @@
 #[doc = "Register `LATCH` reader"]
-pub struct R(crate::R<LATCH_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LATCH_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LATCH_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LATCH_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LatchSpec>;
 #[doc = "Register `LATCH` writer"]
-pub struct W(crate::W<LATCH_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LATCH_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LATCH_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LATCH_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `PIN0` reader - Status on whether PIN\\[0\\]
-has met criteria set in PIN_CNF\\[0\\].SENSE register. Write '1' to clear."]
-pub type PIN0_R = crate::BitReader<PIN0_A>;
-#[doc = "Status on whether PIN\\[0\\]
-has met criteria set in PIN_CNF\\[0\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN0_A {
+pub type W = crate::W<LatchSpec>;
+#[doc = "Status on whether PIN\\[0\\] has met criteria set in PIN_CNF\\[0\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin0 {
     #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
+    NotLatched = 0,
     #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
+    Latched = 1,
 }
-impl From<PIN0_A> for bool {
+impl From<Pin0> for bool {
     #[inline(always)]
-    fn from(variant: PIN0_A) -> Self {
+    fn from(variant: Pin0) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN0_R {
+#[doc = "Field `PIN0` reader - Status on whether PIN\\[0\\] has met criteria set in PIN_CNF\\[0\\].SENSE register. Write '1' to clear."]
+pub type Pin0R = crate::BitReader<Pin0>;
+impl Pin0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN0_A {
+    pub const fn variant(&self) -> Pin0 {
         match self.bits {
-            false => PIN0_A::NOT_LATCHED,
-            true => PIN0_A::LATCHED,
+            false => Pin0::NotLatched,
+            true => Pin0::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN0_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN0_A::LATCHED
-    }
-}
-#[doc = "Field `PIN0` writer - Status on whether PIN\\[0\\]
-has met criteria set in PIN_CNF\\[0\\].SENSE register. Write '1' to clear."]
-pub type PIN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN0_A, O>;
-impl<'a, const O: u8> PIN0_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN0_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin0::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN0_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin0::Latched
     }
 }
-#[doc = "Field `PIN1` reader - Status on whether PIN\\[1\\]
-has met criteria set in PIN_CNF\\[1\\].SENSE register. Write '1' to clear."]
-pub type PIN1_R = crate::BitReader<PIN1_A>;
-#[doc = "Status on whether PIN\\[1\\]
-has met criteria set in PIN_CNF\\[1\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN1_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN1_A> for bool {
+#[doc = "Field `PIN0` writer - Status on whether PIN\\[0\\] has met criteria set in PIN_CNF\\[0\\].SENSE register. Write '1' to clear."]
+pub type Pin0W<'a, REG> = crate::BitWriter<'a, REG, Pin0>;
+impl<'a, REG> Pin0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN1_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin0::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin0::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[1\\] has met criteria set in PIN_CNF\\[1\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin1 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin1> for bool {
+    #[inline(always)]
+    fn from(variant: Pin1) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN1_R {
+#[doc = "Field `PIN1` reader - Status on whether PIN\\[1\\] has met criteria set in PIN_CNF\\[1\\].SENSE register. Write '1' to clear."]
+pub type Pin1R = crate::BitReader<Pin1>;
+impl Pin1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN1_A {
+    pub const fn variant(&self) -> Pin1 {
         match self.bits {
-            false => PIN1_A::NOT_LATCHED,
-            true => PIN1_A::LATCHED,
+            false => Pin1::NotLatched,
+            true => Pin1::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN1_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN1_A::LATCHED
-    }
-}
-#[doc = "Field `PIN1` writer - Status on whether PIN\\[1\\]
-has met criteria set in PIN_CNF\\[1\\].SENSE register. Write '1' to clear."]
-pub type PIN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN1_A, O>;
-impl<'a, const O: u8> PIN1_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN1_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin1::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN1_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin1::Latched
     }
 }
-#[doc = "Field `PIN2` reader - Status on whether PIN\\[2\\]
-has met criteria set in PIN_CNF\\[2\\].SENSE register. Write '1' to clear."]
-pub type PIN2_R = crate::BitReader<PIN2_A>;
-#[doc = "Status on whether PIN\\[2\\]
-has met criteria set in PIN_CNF\\[2\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN2_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN2_A> for bool {
+#[doc = "Field `PIN1` writer - Status on whether PIN\\[1\\] has met criteria set in PIN_CNF\\[1\\].SENSE register. Write '1' to clear."]
+pub type Pin1W<'a, REG> = crate::BitWriter<'a, REG, Pin1>;
+impl<'a, REG> Pin1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN2_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin1::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin1::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[2\\] has met criteria set in PIN_CNF\\[2\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin2 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin2> for bool {
+    #[inline(always)]
+    fn from(variant: Pin2) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN2_R {
+#[doc = "Field `PIN2` reader - Status on whether PIN\\[2\\] has met criteria set in PIN_CNF\\[2\\].SENSE register. Write '1' to clear."]
+pub type Pin2R = crate::BitReader<Pin2>;
+impl Pin2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN2_A {
+    pub const fn variant(&self) -> Pin2 {
         match self.bits {
-            false => PIN2_A::NOT_LATCHED,
-            true => PIN2_A::LATCHED,
+            false => Pin2::NotLatched,
+            true => Pin2::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN2_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN2_A::LATCHED
-    }
-}
-#[doc = "Field `PIN2` writer - Status on whether PIN\\[2\\]
-has met criteria set in PIN_CNF\\[2\\].SENSE register. Write '1' to clear."]
-pub type PIN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN2_A, O>;
-impl<'a, const O: u8> PIN2_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN2_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin2::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN2_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin2::Latched
     }
 }
-#[doc = "Field `PIN3` reader - Status on whether PIN\\[3\\]
-has met criteria set in PIN_CNF\\[3\\].SENSE register. Write '1' to clear."]
-pub type PIN3_R = crate::BitReader<PIN3_A>;
-#[doc = "Status on whether PIN\\[3\\]
-has met criteria set in PIN_CNF\\[3\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN3_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN3_A> for bool {
+#[doc = "Field `PIN2` writer - Status on whether PIN\\[2\\] has met criteria set in PIN_CNF\\[2\\].SENSE register. Write '1' to clear."]
+pub type Pin2W<'a, REG> = crate::BitWriter<'a, REG, Pin2>;
+impl<'a, REG> Pin2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN3_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin2::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin2::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[3\\] has met criteria set in PIN_CNF\\[3\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin3 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin3> for bool {
+    #[inline(always)]
+    fn from(variant: Pin3) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN3_R {
+#[doc = "Field `PIN3` reader - Status on whether PIN\\[3\\] has met criteria set in PIN_CNF\\[3\\].SENSE register. Write '1' to clear."]
+pub type Pin3R = crate::BitReader<Pin3>;
+impl Pin3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN3_A {
+    pub const fn variant(&self) -> Pin3 {
         match self.bits {
-            false => PIN3_A::NOT_LATCHED,
-            true => PIN3_A::LATCHED,
+            false => Pin3::NotLatched,
+            true => Pin3::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN3_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN3_A::LATCHED
-    }
-}
-#[doc = "Field `PIN3` writer - Status on whether PIN\\[3\\]
-has met criteria set in PIN_CNF\\[3\\].SENSE register. Write '1' to clear."]
-pub type PIN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN3_A, O>;
-impl<'a, const O: u8> PIN3_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN3_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin3::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN3_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin3::Latched
     }
 }
-#[doc = "Field `PIN4` reader - Status on whether PIN\\[4\\]
-has met criteria set in PIN_CNF\\[4\\].SENSE register. Write '1' to clear."]
-pub type PIN4_R = crate::BitReader<PIN4_A>;
-#[doc = "Status on whether PIN\\[4\\]
-has met criteria set in PIN_CNF\\[4\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN4_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN4_A> for bool {
+#[doc = "Field `PIN3` writer - Status on whether PIN\\[3\\] has met criteria set in PIN_CNF\\[3\\].SENSE register. Write '1' to clear."]
+pub type Pin3W<'a, REG> = crate::BitWriter<'a, REG, Pin3>;
+impl<'a, REG> Pin3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN4_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin3::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin3::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[4\\] has met criteria set in PIN_CNF\\[4\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin4 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin4> for bool {
+    #[inline(always)]
+    fn from(variant: Pin4) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN4_R {
+#[doc = "Field `PIN4` reader - Status on whether PIN\\[4\\] has met criteria set in PIN_CNF\\[4\\].SENSE register. Write '1' to clear."]
+pub type Pin4R = crate::BitReader<Pin4>;
+impl Pin4R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN4_A {
+    pub const fn variant(&self) -> Pin4 {
         match self.bits {
-            false => PIN4_A::NOT_LATCHED,
-            true => PIN4_A::LATCHED,
+            false => Pin4::NotLatched,
+            true => Pin4::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN4_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN4_A::LATCHED
-    }
-}
-#[doc = "Field `PIN4` writer - Status on whether PIN\\[4\\]
-has met criteria set in PIN_CNF\\[4\\].SENSE register. Write '1' to clear."]
-pub type PIN4_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN4_A, O>;
-impl<'a, const O: u8> PIN4_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN4_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin4::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN4_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin4::Latched
     }
 }
-#[doc = "Field `PIN5` reader - Status on whether PIN\\[5\\]
-has met criteria set in PIN_CNF\\[5\\].SENSE register. Write '1' to clear."]
-pub type PIN5_R = crate::BitReader<PIN5_A>;
-#[doc = "Status on whether PIN\\[5\\]
-has met criteria set in PIN_CNF\\[5\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN5_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN5_A> for bool {
+#[doc = "Field `PIN4` writer - Status on whether PIN\\[4\\] has met criteria set in PIN_CNF\\[4\\].SENSE register. Write '1' to clear."]
+pub type Pin4W<'a, REG> = crate::BitWriter<'a, REG, Pin4>;
+impl<'a, REG> Pin4W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN5_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin4::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin4::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[5\\] has met criteria set in PIN_CNF\\[5\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin5 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin5> for bool {
+    #[inline(always)]
+    fn from(variant: Pin5) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN5_R {
+#[doc = "Field `PIN5` reader - Status on whether PIN\\[5\\] has met criteria set in PIN_CNF\\[5\\].SENSE register. Write '1' to clear."]
+pub type Pin5R = crate::BitReader<Pin5>;
+impl Pin5R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN5_A {
+    pub const fn variant(&self) -> Pin5 {
         match self.bits {
-            false => PIN5_A::NOT_LATCHED,
-            true => PIN5_A::LATCHED,
+            false => Pin5::NotLatched,
+            true => Pin5::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN5_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN5_A::LATCHED
-    }
-}
-#[doc = "Field `PIN5` writer - Status on whether PIN\\[5\\]
-has met criteria set in PIN_CNF\\[5\\].SENSE register. Write '1' to clear."]
-pub type PIN5_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN5_A, O>;
-impl<'a, const O: u8> PIN5_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN5_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin5::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN5_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin5::Latched
     }
 }
-#[doc = "Field `PIN6` reader - Status on whether PIN\\[6\\]
-has met criteria set in PIN_CNF\\[6\\].SENSE register. Write '1' to clear."]
-pub type PIN6_R = crate::BitReader<PIN6_A>;
-#[doc = "Status on whether PIN\\[6\\]
-has met criteria set in PIN_CNF\\[6\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN6_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN6_A> for bool {
+#[doc = "Field `PIN5` writer - Status on whether PIN\\[5\\] has met criteria set in PIN_CNF\\[5\\].SENSE register. Write '1' to clear."]
+pub type Pin5W<'a, REG> = crate::BitWriter<'a, REG, Pin5>;
+impl<'a, REG> Pin5W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN6_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin5::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin5::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[6\\] has met criteria set in PIN_CNF\\[6\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin6 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin6> for bool {
+    #[inline(always)]
+    fn from(variant: Pin6) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN6_R {
+#[doc = "Field `PIN6` reader - Status on whether PIN\\[6\\] has met criteria set in PIN_CNF\\[6\\].SENSE register. Write '1' to clear."]
+pub type Pin6R = crate::BitReader<Pin6>;
+impl Pin6R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN6_A {
+    pub const fn variant(&self) -> Pin6 {
         match self.bits {
-            false => PIN6_A::NOT_LATCHED,
-            true => PIN6_A::LATCHED,
+            false => Pin6::NotLatched,
+            true => Pin6::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN6_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN6_A::LATCHED
-    }
-}
-#[doc = "Field `PIN6` writer - Status on whether PIN\\[6\\]
-has met criteria set in PIN_CNF\\[6\\].SENSE register. Write '1' to clear."]
-pub type PIN6_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN6_A, O>;
-impl<'a, const O: u8> PIN6_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN6_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin6::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN6_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin6::Latched
     }
 }
-#[doc = "Field `PIN7` reader - Status on whether PIN\\[7\\]
-has met criteria set in PIN_CNF\\[7\\].SENSE register. Write '1' to clear."]
-pub type PIN7_R = crate::BitReader<PIN7_A>;
-#[doc = "Status on whether PIN\\[7\\]
-has met criteria set in PIN_CNF\\[7\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN7_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN7_A> for bool {
+#[doc = "Field `PIN6` writer - Status on whether PIN\\[6\\] has met criteria set in PIN_CNF\\[6\\].SENSE register. Write '1' to clear."]
+pub type Pin6W<'a, REG> = crate::BitWriter<'a, REG, Pin6>;
+impl<'a, REG> Pin6W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN7_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin6::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin6::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[7\\] has met criteria set in PIN_CNF\\[7\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin7 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin7> for bool {
+    #[inline(always)]
+    fn from(variant: Pin7) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN7_R {
+#[doc = "Field `PIN7` reader - Status on whether PIN\\[7\\] has met criteria set in PIN_CNF\\[7\\].SENSE register. Write '1' to clear."]
+pub type Pin7R = crate::BitReader<Pin7>;
+impl Pin7R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN7_A {
+    pub const fn variant(&self) -> Pin7 {
         match self.bits {
-            false => PIN7_A::NOT_LATCHED,
-            true => PIN7_A::LATCHED,
+            false => Pin7::NotLatched,
+            true => Pin7::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN7_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN7_A::LATCHED
-    }
-}
-#[doc = "Field `PIN7` writer - Status on whether PIN\\[7\\]
-has met criteria set in PIN_CNF\\[7\\].SENSE register. Write '1' to clear."]
-pub type PIN7_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN7_A, O>;
-impl<'a, const O: u8> PIN7_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN7_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin7::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN7_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin7::Latched
     }
 }
-#[doc = "Field `PIN8` reader - Status on whether PIN\\[8\\]
-has met criteria set in PIN_CNF\\[8\\].SENSE register. Write '1' to clear."]
-pub type PIN8_R = crate::BitReader<PIN8_A>;
-#[doc = "Status on whether PIN\\[8\\]
-has met criteria set in PIN_CNF\\[8\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN8_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN8_A> for bool {
+#[doc = "Field `PIN7` writer - Status on whether PIN\\[7\\] has met criteria set in PIN_CNF\\[7\\].SENSE register. Write '1' to clear."]
+pub type Pin7W<'a, REG> = crate::BitWriter<'a, REG, Pin7>;
+impl<'a, REG> Pin7W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN8_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin7::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin7::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[8\\] has met criteria set in PIN_CNF\\[8\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin8 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin8> for bool {
+    #[inline(always)]
+    fn from(variant: Pin8) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN8_R {
+#[doc = "Field `PIN8` reader - Status on whether PIN\\[8\\] has met criteria set in PIN_CNF\\[8\\].SENSE register. Write '1' to clear."]
+pub type Pin8R = crate::BitReader<Pin8>;
+impl Pin8R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN8_A {
+    pub const fn variant(&self) -> Pin8 {
         match self.bits {
-            false => PIN8_A::NOT_LATCHED,
-            true => PIN8_A::LATCHED,
+            false => Pin8::NotLatched,
+            true => Pin8::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN8_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN8_A::LATCHED
-    }
-}
-#[doc = "Field `PIN8` writer - Status on whether PIN\\[8\\]
-has met criteria set in PIN_CNF\\[8\\].SENSE register. Write '1' to clear."]
-pub type PIN8_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN8_A, O>;
-impl<'a, const O: u8> PIN8_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN8_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin8::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN8_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin8::Latched
     }
 }
-#[doc = "Field `PIN9` reader - Status on whether PIN\\[9\\]
-has met criteria set in PIN_CNF\\[9\\].SENSE register. Write '1' to clear."]
-pub type PIN9_R = crate::BitReader<PIN9_A>;
-#[doc = "Status on whether PIN\\[9\\]
-has met criteria set in PIN_CNF\\[9\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN9_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN9_A> for bool {
+#[doc = "Field `PIN8` writer - Status on whether PIN\\[8\\] has met criteria set in PIN_CNF\\[8\\].SENSE register. Write '1' to clear."]
+pub type Pin8W<'a, REG> = crate::BitWriter<'a, REG, Pin8>;
+impl<'a, REG> Pin8W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN9_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin8::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin8::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[9\\] has met criteria set in PIN_CNF\\[9\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin9 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin9> for bool {
+    #[inline(always)]
+    fn from(variant: Pin9) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN9_R {
+#[doc = "Field `PIN9` reader - Status on whether PIN\\[9\\] has met criteria set in PIN_CNF\\[9\\].SENSE register. Write '1' to clear."]
+pub type Pin9R = crate::BitReader<Pin9>;
+impl Pin9R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN9_A {
+    pub const fn variant(&self) -> Pin9 {
         match self.bits {
-            false => PIN9_A::NOT_LATCHED,
-            true => PIN9_A::LATCHED,
+            false => Pin9::NotLatched,
+            true => Pin9::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN9_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN9_A::LATCHED
-    }
-}
-#[doc = "Field `PIN9` writer - Status on whether PIN\\[9\\]
-has met criteria set in PIN_CNF\\[9\\].SENSE register. Write '1' to clear."]
-pub type PIN9_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN9_A, O>;
-impl<'a, const O: u8> PIN9_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN9_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin9::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN9_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin9::Latched
     }
 }
-#[doc = "Field `PIN10` reader - Status on whether PIN\\[10\\]
-has met criteria set in PIN_CNF\\[10\\].SENSE register. Write '1' to clear."]
-pub type PIN10_R = crate::BitReader<PIN10_A>;
-#[doc = "Status on whether PIN\\[10\\]
-has met criteria set in PIN_CNF\\[10\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN10_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN10_A> for bool {
+#[doc = "Field `PIN9` writer - Status on whether PIN\\[9\\] has met criteria set in PIN_CNF\\[9\\].SENSE register. Write '1' to clear."]
+pub type Pin9W<'a, REG> = crate::BitWriter<'a, REG, Pin9>;
+impl<'a, REG> Pin9W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN10_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin9::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin9::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[10\\] has met criteria set in PIN_CNF\\[10\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin10 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin10> for bool {
+    #[inline(always)]
+    fn from(variant: Pin10) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN10_R {
+#[doc = "Field `PIN10` reader - Status on whether PIN\\[10\\] has met criteria set in PIN_CNF\\[10\\].SENSE register. Write '1' to clear."]
+pub type Pin10R = crate::BitReader<Pin10>;
+impl Pin10R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN10_A {
+    pub const fn variant(&self) -> Pin10 {
         match self.bits {
-            false => PIN10_A::NOT_LATCHED,
-            true => PIN10_A::LATCHED,
+            false => Pin10::NotLatched,
+            true => Pin10::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN10_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN10_A::LATCHED
-    }
-}
-#[doc = "Field `PIN10` writer - Status on whether PIN\\[10\\]
-has met criteria set in PIN_CNF\\[10\\].SENSE register. Write '1' to clear."]
-pub type PIN10_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN10_A, O>;
-impl<'a, const O: u8> PIN10_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN10_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin10::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN10_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin10::Latched
     }
 }
-#[doc = "Field `PIN11` reader - Status on whether PIN\\[11\\]
-has met criteria set in PIN_CNF\\[11\\].SENSE register. Write '1' to clear."]
-pub type PIN11_R = crate::BitReader<PIN11_A>;
-#[doc = "Status on whether PIN\\[11\\]
-has met criteria set in PIN_CNF\\[11\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN11_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN11_A> for bool {
+#[doc = "Field `PIN10` writer - Status on whether PIN\\[10\\] has met criteria set in PIN_CNF\\[10\\].SENSE register. Write '1' to clear."]
+pub type Pin10W<'a, REG> = crate::BitWriter<'a, REG, Pin10>;
+impl<'a, REG> Pin10W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN11_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin10::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin10::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[11\\] has met criteria set in PIN_CNF\\[11\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin11 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin11> for bool {
+    #[inline(always)]
+    fn from(variant: Pin11) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN11_R {
+#[doc = "Field `PIN11` reader - Status on whether PIN\\[11\\] has met criteria set in PIN_CNF\\[11\\].SENSE register. Write '1' to clear."]
+pub type Pin11R = crate::BitReader<Pin11>;
+impl Pin11R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN11_A {
+    pub const fn variant(&self) -> Pin11 {
         match self.bits {
-            false => PIN11_A::NOT_LATCHED,
-            true => PIN11_A::LATCHED,
+            false => Pin11::NotLatched,
+            true => Pin11::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN11_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN11_A::LATCHED
-    }
-}
-#[doc = "Field `PIN11` writer - Status on whether PIN\\[11\\]
-has met criteria set in PIN_CNF\\[11\\].SENSE register. Write '1' to clear."]
-pub type PIN11_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN11_A, O>;
-impl<'a, const O: u8> PIN11_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN11_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin11::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN11_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin11::Latched
     }
 }
-#[doc = "Field `PIN12` reader - Status on whether PIN\\[12\\]
-has met criteria set in PIN_CNF\\[12\\].SENSE register. Write '1' to clear."]
-pub type PIN12_R = crate::BitReader<PIN12_A>;
-#[doc = "Status on whether PIN\\[12\\]
-has met criteria set in PIN_CNF\\[12\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN12_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN12_A> for bool {
+#[doc = "Field `PIN11` writer - Status on whether PIN\\[11\\] has met criteria set in PIN_CNF\\[11\\].SENSE register. Write '1' to clear."]
+pub type Pin11W<'a, REG> = crate::BitWriter<'a, REG, Pin11>;
+impl<'a, REG> Pin11W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN12_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin11::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin11::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[12\\] has met criteria set in PIN_CNF\\[12\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin12 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin12> for bool {
+    #[inline(always)]
+    fn from(variant: Pin12) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN12_R {
+#[doc = "Field `PIN12` reader - Status on whether PIN\\[12\\] has met criteria set in PIN_CNF\\[12\\].SENSE register. Write '1' to clear."]
+pub type Pin12R = crate::BitReader<Pin12>;
+impl Pin12R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN12_A {
+    pub const fn variant(&self) -> Pin12 {
         match self.bits {
-            false => PIN12_A::NOT_LATCHED,
-            true => PIN12_A::LATCHED,
+            false => Pin12::NotLatched,
+            true => Pin12::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN12_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN12_A::LATCHED
-    }
-}
-#[doc = "Field `PIN12` writer - Status on whether PIN\\[12\\]
-has met criteria set in PIN_CNF\\[12\\].SENSE register. Write '1' to clear."]
-pub type PIN12_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN12_A, O>;
-impl<'a, const O: u8> PIN12_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN12_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin12::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN12_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin12::Latched
     }
 }
-#[doc = "Field `PIN13` reader - Status on whether PIN\\[13\\]
-has met criteria set in PIN_CNF\\[13\\].SENSE register. Write '1' to clear."]
-pub type PIN13_R = crate::BitReader<PIN13_A>;
-#[doc = "Status on whether PIN\\[13\\]
-has met criteria set in PIN_CNF\\[13\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN13_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN13_A> for bool {
+#[doc = "Field `PIN12` writer - Status on whether PIN\\[12\\] has met criteria set in PIN_CNF\\[12\\].SENSE register. Write '1' to clear."]
+pub type Pin12W<'a, REG> = crate::BitWriter<'a, REG, Pin12>;
+impl<'a, REG> Pin12W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN13_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin12::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin12::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[13\\] has met criteria set in PIN_CNF\\[13\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin13 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin13> for bool {
+    #[inline(always)]
+    fn from(variant: Pin13) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN13_R {
+#[doc = "Field `PIN13` reader - Status on whether PIN\\[13\\] has met criteria set in PIN_CNF\\[13\\].SENSE register. Write '1' to clear."]
+pub type Pin13R = crate::BitReader<Pin13>;
+impl Pin13R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN13_A {
+    pub const fn variant(&self) -> Pin13 {
         match self.bits {
-            false => PIN13_A::NOT_LATCHED,
-            true => PIN13_A::LATCHED,
+            false => Pin13::NotLatched,
+            true => Pin13::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN13_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN13_A::LATCHED
-    }
-}
-#[doc = "Field `PIN13` writer - Status on whether PIN\\[13\\]
-has met criteria set in PIN_CNF\\[13\\].SENSE register. Write '1' to clear."]
-pub type PIN13_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN13_A, O>;
-impl<'a, const O: u8> PIN13_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN13_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin13::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN13_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin13::Latched
     }
 }
-#[doc = "Field `PIN14` reader - Status on whether PIN\\[14\\]
-has met criteria set in PIN_CNF\\[14\\].SENSE register. Write '1' to clear."]
-pub type PIN14_R = crate::BitReader<PIN14_A>;
-#[doc = "Status on whether PIN\\[14\\]
-has met criteria set in PIN_CNF\\[14\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN14_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN14_A> for bool {
+#[doc = "Field `PIN13` writer - Status on whether PIN\\[13\\] has met criteria set in PIN_CNF\\[13\\].SENSE register. Write '1' to clear."]
+pub type Pin13W<'a, REG> = crate::BitWriter<'a, REG, Pin13>;
+impl<'a, REG> Pin13W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN14_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin13::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin13::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[14\\] has met criteria set in PIN_CNF\\[14\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin14 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin14> for bool {
+    #[inline(always)]
+    fn from(variant: Pin14) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN14_R {
+#[doc = "Field `PIN14` reader - Status on whether PIN\\[14\\] has met criteria set in PIN_CNF\\[14\\].SENSE register. Write '1' to clear."]
+pub type Pin14R = crate::BitReader<Pin14>;
+impl Pin14R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN14_A {
+    pub const fn variant(&self) -> Pin14 {
         match self.bits {
-            false => PIN14_A::NOT_LATCHED,
-            true => PIN14_A::LATCHED,
+            false => Pin14::NotLatched,
+            true => Pin14::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN14_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN14_A::LATCHED
-    }
-}
-#[doc = "Field `PIN14` writer - Status on whether PIN\\[14\\]
-has met criteria set in PIN_CNF\\[14\\].SENSE register. Write '1' to clear."]
-pub type PIN14_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN14_A, O>;
-impl<'a, const O: u8> PIN14_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN14_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin14::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN14_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin14::Latched
     }
 }
-#[doc = "Field `PIN15` reader - Status on whether PIN\\[15\\]
-has met criteria set in PIN_CNF\\[15\\].SENSE register. Write '1' to clear."]
-pub type PIN15_R = crate::BitReader<PIN15_A>;
-#[doc = "Status on whether PIN\\[15\\]
-has met criteria set in PIN_CNF\\[15\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN15_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN15_A> for bool {
+#[doc = "Field `PIN14` writer - Status on whether PIN\\[14\\] has met criteria set in PIN_CNF\\[14\\].SENSE register. Write '1' to clear."]
+pub type Pin14W<'a, REG> = crate::BitWriter<'a, REG, Pin14>;
+impl<'a, REG> Pin14W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN15_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin14::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin14::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[15\\] has met criteria set in PIN_CNF\\[15\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin15 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin15> for bool {
+    #[inline(always)]
+    fn from(variant: Pin15) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN15_R {
+#[doc = "Field `PIN15` reader - Status on whether PIN\\[15\\] has met criteria set in PIN_CNF\\[15\\].SENSE register. Write '1' to clear."]
+pub type Pin15R = crate::BitReader<Pin15>;
+impl Pin15R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN15_A {
+    pub const fn variant(&self) -> Pin15 {
         match self.bits {
-            false => PIN15_A::NOT_LATCHED,
-            true => PIN15_A::LATCHED,
+            false => Pin15::NotLatched,
+            true => Pin15::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN15_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN15_A::LATCHED
-    }
-}
-#[doc = "Field `PIN15` writer - Status on whether PIN\\[15\\]
-has met criteria set in PIN_CNF\\[15\\].SENSE register. Write '1' to clear."]
-pub type PIN15_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN15_A, O>;
-impl<'a, const O: u8> PIN15_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN15_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin15::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN15_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin15::Latched
     }
 }
-#[doc = "Field `PIN16` reader - Status on whether PIN\\[16\\]
-has met criteria set in PIN_CNF\\[16\\].SENSE register. Write '1' to clear."]
-pub type PIN16_R = crate::BitReader<PIN16_A>;
-#[doc = "Status on whether PIN\\[16\\]
-has met criteria set in PIN_CNF\\[16\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN16_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN16_A> for bool {
+#[doc = "Field `PIN15` writer - Status on whether PIN\\[15\\] has met criteria set in PIN_CNF\\[15\\].SENSE register. Write '1' to clear."]
+pub type Pin15W<'a, REG> = crate::BitWriter<'a, REG, Pin15>;
+impl<'a, REG> Pin15W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN16_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin15::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin15::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[16\\] has met criteria set in PIN_CNF\\[16\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin16 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin16> for bool {
+    #[inline(always)]
+    fn from(variant: Pin16) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN16_R {
+#[doc = "Field `PIN16` reader - Status on whether PIN\\[16\\] has met criteria set in PIN_CNF\\[16\\].SENSE register. Write '1' to clear."]
+pub type Pin16R = crate::BitReader<Pin16>;
+impl Pin16R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN16_A {
+    pub const fn variant(&self) -> Pin16 {
         match self.bits {
-            false => PIN16_A::NOT_LATCHED,
-            true => PIN16_A::LATCHED,
+            false => Pin16::NotLatched,
+            true => Pin16::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN16_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN16_A::LATCHED
-    }
-}
-#[doc = "Field `PIN16` writer - Status on whether PIN\\[16\\]
-has met criteria set in PIN_CNF\\[16\\].SENSE register. Write '1' to clear."]
-pub type PIN16_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN16_A, O>;
-impl<'a, const O: u8> PIN16_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN16_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin16::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN16_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin16::Latched
     }
 }
-#[doc = "Field `PIN17` reader - Status on whether PIN\\[17\\]
-has met criteria set in PIN_CNF\\[17\\].SENSE register. Write '1' to clear."]
-pub type PIN17_R = crate::BitReader<PIN17_A>;
-#[doc = "Status on whether PIN\\[17\\]
-has met criteria set in PIN_CNF\\[17\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN17_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN17_A> for bool {
+#[doc = "Field `PIN16` writer - Status on whether PIN\\[16\\] has met criteria set in PIN_CNF\\[16\\].SENSE register. Write '1' to clear."]
+pub type Pin16W<'a, REG> = crate::BitWriter<'a, REG, Pin16>;
+impl<'a, REG> Pin16W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN17_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin16::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin16::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[17\\] has met criteria set in PIN_CNF\\[17\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin17 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin17> for bool {
+    #[inline(always)]
+    fn from(variant: Pin17) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN17_R {
+#[doc = "Field `PIN17` reader - Status on whether PIN\\[17\\] has met criteria set in PIN_CNF\\[17\\].SENSE register. Write '1' to clear."]
+pub type Pin17R = crate::BitReader<Pin17>;
+impl Pin17R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN17_A {
+    pub const fn variant(&self) -> Pin17 {
         match self.bits {
-            false => PIN17_A::NOT_LATCHED,
-            true => PIN17_A::LATCHED,
+            false => Pin17::NotLatched,
+            true => Pin17::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN17_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN17_A::LATCHED
-    }
-}
-#[doc = "Field `PIN17` writer - Status on whether PIN\\[17\\]
-has met criteria set in PIN_CNF\\[17\\].SENSE register. Write '1' to clear."]
-pub type PIN17_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN17_A, O>;
-impl<'a, const O: u8> PIN17_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN17_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin17::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN17_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin17::Latched
     }
 }
-#[doc = "Field `PIN18` reader - Status on whether PIN\\[18\\]
-has met criteria set in PIN_CNF\\[18\\].SENSE register. Write '1' to clear."]
-pub type PIN18_R = crate::BitReader<PIN18_A>;
-#[doc = "Status on whether PIN\\[18\\]
-has met criteria set in PIN_CNF\\[18\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN18_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN18_A> for bool {
+#[doc = "Field `PIN17` writer - Status on whether PIN\\[17\\] has met criteria set in PIN_CNF\\[17\\].SENSE register. Write '1' to clear."]
+pub type Pin17W<'a, REG> = crate::BitWriter<'a, REG, Pin17>;
+impl<'a, REG> Pin17W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN18_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin17::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin17::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[18\\] has met criteria set in PIN_CNF\\[18\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin18 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin18> for bool {
+    #[inline(always)]
+    fn from(variant: Pin18) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN18_R {
+#[doc = "Field `PIN18` reader - Status on whether PIN\\[18\\] has met criteria set in PIN_CNF\\[18\\].SENSE register. Write '1' to clear."]
+pub type Pin18R = crate::BitReader<Pin18>;
+impl Pin18R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN18_A {
+    pub const fn variant(&self) -> Pin18 {
         match self.bits {
-            false => PIN18_A::NOT_LATCHED,
-            true => PIN18_A::LATCHED,
+            false => Pin18::NotLatched,
+            true => Pin18::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN18_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN18_A::LATCHED
-    }
-}
-#[doc = "Field `PIN18` writer - Status on whether PIN\\[18\\]
-has met criteria set in PIN_CNF\\[18\\].SENSE register. Write '1' to clear."]
-pub type PIN18_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN18_A, O>;
-impl<'a, const O: u8> PIN18_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN18_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin18::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN18_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin18::Latched
     }
 }
-#[doc = "Field `PIN19` reader - Status on whether PIN\\[19\\]
-has met criteria set in PIN_CNF\\[19\\].SENSE register. Write '1' to clear."]
-pub type PIN19_R = crate::BitReader<PIN19_A>;
-#[doc = "Status on whether PIN\\[19\\]
-has met criteria set in PIN_CNF\\[19\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN19_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN19_A> for bool {
+#[doc = "Field `PIN18` writer - Status on whether PIN\\[18\\] has met criteria set in PIN_CNF\\[18\\].SENSE register. Write '1' to clear."]
+pub type Pin18W<'a, REG> = crate::BitWriter<'a, REG, Pin18>;
+impl<'a, REG> Pin18W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN19_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin18::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin18::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[19\\] has met criteria set in PIN_CNF\\[19\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin19 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin19> for bool {
+    #[inline(always)]
+    fn from(variant: Pin19) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN19_R {
+#[doc = "Field `PIN19` reader - Status on whether PIN\\[19\\] has met criteria set in PIN_CNF\\[19\\].SENSE register. Write '1' to clear."]
+pub type Pin19R = crate::BitReader<Pin19>;
+impl Pin19R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN19_A {
+    pub const fn variant(&self) -> Pin19 {
         match self.bits {
-            false => PIN19_A::NOT_LATCHED,
-            true => PIN19_A::LATCHED,
+            false => Pin19::NotLatched,
+            true => Pin19::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN19_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN19_A::LATCHED
-    }
-}
-#[doc = "Field `PIN19` writer - Status on whether PIN\\[19\\]
-has met criteria set in PIN_CNF\\[19\\].SENSE register. Write '1' to clear."]
-pub type PIN19_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN19_A, O>;
-impl<'a, const O: u8> PIN19_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN19_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin19::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN19_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin19::Latched
     }
 }
-#[doc = "Field `PIN20` reader - Status on whether PIN\\[20\\]
-has met criteria set in PIN_CNF\\[20\\].SENSE register. Write '1' to clear."]
-pub type PIN20_R = crate::BitReader<PIN20_A>;
-#[doc = "Status on whether PIN\\[20\\]
-has met criteria set in PIN_CNF\\[20\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN20_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN20_A> for bool {
+#[doc = "Field `PIN19` writer - Status on whether PIN\\[19\\] has met criteria set in PIN_CNF\\[19\\].SENSE register. Write '1' to clear."]
+pub type Pin19W<'a, REG> = crate::BitWriter<'a, REG, Pin19>;
+impl<'a, REG> Pin19W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN20_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin19::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin19::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[20\\] has met criteria set in PIN_CNF\\[20\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin20 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin20> for bool {
+    #[inline(always)]
+    fn from(variant: Pin20) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN20_R {
+#[doc = "Field `PIN20` reader - Status on whether PIN\\[20\\] has met criteria set in PIN_CNF\\[20\\].SENSE register. Write '1' to clear."]
+pub type Pin20R = crate::BitReader<Pin20>;
+impl Pin20R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN20_A {
+    pub const fn variant(&self) -> Pin20 {
         match self.bits {
-            false => PIN20_A::NOT_LATCHED,
-            true => PIN20_A::LATCHED,
+            false => Pin20::NotLatched,
+            true => Pin20::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN20_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN20_A::LATCHED
-    }
-}
-#[doc = "Field `PIN20` writer - Status on whether PIN\\[20\\]
-has met criteria set in PIN_CNF\\[20\\].SENSE register. Write '1' to clear."]
-pub type PIN20_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN20_A, O>;
-impl<'a, const O: u8> PIN20_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN20_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin20::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN20_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin20::Latched
     }
 }
-#[doc = "Field `PIN21` reader - Status on whether PIN\\[21\\]
-has met criteria set in PIN_CNF\\[21\\].SENSE register. Write '1' to clear."]
-pub type PIN21_R = crate::BitReader<PIN21_A>;
-#[doc = "Status on whether PIN\\[21\\]
-has met criteria set in PIN_CNF\\[21\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN21_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN21_A> for bool {
+#[doc = "Field `PIN20` writer - Status on whether PIN\\[20\\] has met criteria set in PIN_CNF\\[20\\].SENSE register. Write '1' to clear."]
+pub type Pin20W<'a, REG> = crate::BitWriter<'a, REG, Pin20>;
+impl<'a, REG> Pin20W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN21_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin20::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin20::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[21\\] has met criteria set in PIN_CNF\\[21\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin21 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin21> for bool {
+    #[inline(always)]
+    fn from(variant: Pin21) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN21_R {
+#[doc = "Field `PIN21` reader - Status on whether PIN\\[21\\] has met criteria set in PIN_CNF\\[21\\].SENSE register. Write '1' to clear."]
+pub type Pin21R = crate::BitReader<Pin21>;
+impl Pin21R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN21_A {
+    pub const fn variant(&self) -> Pin21 {
         match self.bits {
-            false => PIN21_A::NOT_LATCHED,
-            true => PIN21_A::LATCHED,
+            false => Pin21::NotLatched,
+            true => Pin21::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN21_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN21_A::LATCHED
-    }
-}
-#[doc = "Field `PIN21` writer - Status on whether PIN\\[21\\]
-has met criteria set in PIN_CNF\\[21\\].SENSE register. Write '1' to clear."]
-pub type PIN21_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN21_A, O>;
-impl<'a, const O: u8> PIN21_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN21_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin21::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN21_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin21::Latched
     }
 }
-#[doc = "Field `PIN22` reader - Status on whether PIN\\[22\\]
-has met criteria set in PIN_CNF\\[22\\].SENSE register. Write '1' to clear."]
-pub type PIN22_R = crate::BitReader<PIN22_A>;
-#[doc = "Status on whether PIN\\[22\\]
-has met criteria set in PIN_CNF\\[22\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN22_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN22_A> for bool {
+#[doc = "Field `PIN21` writer - Status on whether PIN\\[21\\] has met criteria set in PIN_CNF\\[21\\].SENSE register. Write '1' to clear."]
+pub type Pin21W<'a, REG> = crate::BitWriter<'a, REG, Pin21>;
+impl<'a, REG> Pin21W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN22_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin21::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin21::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[22\\] has met criteria set in PIN_CNF\\[22\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin22 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin22> for bool {
+    #[inline(always)]
+    fn from(variant: Pin22) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN22_R {
+#[doc = "Field `PIN22` reader - Status on whether PIN\\[22\\] has met criteria set in PIN_CNF\\[22\\].SENSE register. Write '1' to clear."]
+pub type Pin22R = crate::BitReader<Pin22>;
+impl Pin22R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN22_A {
+    pub const fn variant(&self) -> Pin22 {
         match self.bits {
-            false => PIN22_A::NOT_LATCHED,
-            true => PIN22_A::LATCHED,
+            false => Pin22::NotLatched,
+            true => Pin22::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN22_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN22_A::LATCHED
-    }
-}
-#[doc = "Field `PIN22` writer - Status on whether PIN\\[22\\]
-has met criteria set in PIN_CNF\\[22\\].SENSE register. Write '1' to clear."]
-pub type PIN22_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN22_A, O>;
-impl<'a, const O: u8> PIN22_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN22_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin22::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN22_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin22::Latched
     }
 }
-#[doc = "Field `PIN23` reader - Status on whether PIN\\[23\\]
-has met criteria set in PIN_CNF\\[23\\].SENSE register. Write '1' to clear."]
-pub type PIN23_R = crate::BitReader<PIN23_A>;
-#[doc = "Status on whether PIN\\[23\\]
-has met criteria set in PIN_CNF\\[23\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN23_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN23_A> for bool {
+#[doc = "Field `PIN22` writer - Status on whether PIN\\[22\\] has met criteria set in PIN_CNF\\[22\\].SENSE register. Write '1' to clear."]
+pub type Pin22W<'a, REG> = crate::BitWriter<'a, REG, Pin22>;
+impl<'a, REG> Pin22W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN23_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin22::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin22::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[23\\] has met criteria set in PIN_CNF\\[23\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin23 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin23> for bool {
+    #[inline(always)]
+    fn from(variant: Pin23) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN23_R {
+#[doc = "Field `PIN23` reader - Status on whether PIN\\[23\\] has met criteria set in PIN_CNF\\[23\\].SENSE register. Write '1' to clear."]
+pub type Pin23R = crate::BitReader<Pin23>;
+impl Pin23R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN23_A {
+    pub const fn variant(&self) -> Pin23 {
         match self.bits {
-            false => PIN23_A::NOT_LATCHED,
-            true => PIN23_A::LATCHED,
+            false => Pin23::NotLatched,
+            true => Pin23::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN23_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN23_A::LATCHED
-    }
-}
-#[doc = "Field `PIN23` writer - Status on whether PIN\\[23\\]
-has met criteria set in PIN_CNF\\[23\\].SENSE register. Write '1' to clear."]
-pub type PIN23_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN23_A, O>;
-impl<'a, const O: u8> PIN23_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN23_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin23::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN23_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin23::Latched
     }
 }
-#[doc = "Field `PIN24` reader - Status on whether PIN\\[24\\]
-has met criteria set in PIN_CNF\\[24\\].SENSE register. Write '1' to clear."]
-pub type PIN24_R = crate::BitReader<PIN24_A>;
-#[doc = "Status on whether PIN\\[24\\]
-has met criteria set in PIN_CNF\\[24\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN24_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN24_A> for bool {
+#[doc = "Field `PIN23` writer - Status on whether PIN\\[23\\] has met criteria set in PIN_CNF\\[23\\].SENSE register. Write '1' to clear."]
+pub type Pin23W<'a, REG> = crate::BitWriter<'a, REG, Pin23>;
+impl<'a, REG> Pin23W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN24_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin23::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin23::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[24\\] has met criteria set in PIN_CNF\\[24\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin24 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin24> for bool {
+    #[inline(always)]
+    fn from(variant: Pin24) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN24_R {
+#[doc = "Field `PIN24` reader - Status on whether PIN\\[24\\] has met criteria set in PIN_CNF\\[24\\].SENSE register. Write '1' to clear."]
+pub type Pin24R = crate::BitReader<Pin24>;
+impl Pin24R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN24_A {
+    pub const fn variant(&self) -> Pin24 {
         match self.bits {
-            false => PIN24_A::NOT_LATCHED,
-            true => PIN24_A::LATCHED,
+            false => Pin24::NotLatched,
+            true => Pin24::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN24_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN24_A::LATCHED
-    }
-}
-#[doc = "Field `PIN24` writer - Status on whether PIN\\[24\\]
-has met criteria set in PIN_CNF\\[24\\].SENSE register. Write '1' to clear."]
-pub type PIN24_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN24_A, O>;
-impl<'a, const O: u8> PIN24_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN24_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin24::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN24_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin24::Latched
     }
 }
-#[doc = "Field `PIN25` reader - Status on whether PIN\\[25\\]
-has met criteria set in PIN_CNF\\[25\\].SENSE register. Write '1' to clear."]
-pub type PIN25_R = crate::BitReader<PIN25_A>;
-#[doc = "Status on whether PIN\\[25\\]
-has met criteria set in PIN_CNF\\[25\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN25_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN25_A> for bool {
+#[doc = "Field `PIN24` writer - Status on whether PIN\\[24\\] has met criteria set in PIN_CNF\\[24\\].SENSE register. Write '1' to clear."]
+pub type Pin24W<'a, REG> = crate::BitWriter<'a, REG, Pin24>;
+impl<'a, REG> Pin24W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN25_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin24::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin24::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[25\\] has met criteria set in PIN_CNF\\[25\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin25 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin25> for bool {
+    #[inline(always)]
+    fn from(variant: Pin25) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN25_R {
+#[doc = "Field `PIN25` reader - Status on whether PIN\\[25\\] has met criteria set in PIN_CNF\\[25\\].SENSE register. Write '1' to clear."]
+pub type Pin25R = crate::BitReader<Pin25>;
+impl Pin25R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN25_A {
+    pub const fn variant(&self) -> Pin25 {
         match self.bits {
-            false => PIN25_A::NOT_LATCHED,
-            true => PIN25_A::LATCHED,
+            false => Pin25::NotLatched,
+            true => Pin25::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN25_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN25_A::LATCHED
-    }
-}
-#[doc = "Field `PIN25` writer - Status on whether PIN\\[25\\]
-has met criteria set in PIN_CNF\\[25\\].SENSE register. Write '1' to clear."]
-pub type PIN25_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN25_A, O>;
-impl<'a, const O: u8> PIN25_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN25_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin25::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN25_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin25::Latched
     }
 }
-#[doc = "Field `PIN26` reader - Status on whether PIN\\[26\\]
-has met criteria set in PIN_CNF\\[26\\].SENSE register. Write '1' to clear."]
-pub type PIN26_R = crate::BitReader<PIN26_A>;
-#[doc = "Status on whether PIN\\[26\\]
-has met criteria set in PIN_CNF\\[26\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN26_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN26_A> for bool {
+#[doc = "Field `PIN25` writer - Status on whether PIN\\[25\\] has met criteria set in PIN_CNF\\[25\\].SENSE register. Write '1' to clear."]
+pub type Pin25W<'a, REG> = crate::BitWriter<'a, REG, Pin25>;
+impl<'a, REG> Pin25W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN26_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin25::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin25::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[26\\] has met criteria set in PIN_CNF\\[26\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin26 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin26> for bool {
+    #[inline(always)]
+    fn from(variant: Pin26) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN26_R {
+#[doc = "Field `PIN26` reader - Status on whether PIN\\[26\\] has met criteria set in PIN_CNF\\[26\\].SENSE register. Write '1' to clear."]
+pub type Pin26R = crate::BitReader<Pin26>;
+impl Pin26R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN26_A {
+    pub const fn variant(&self) -> Pin26 {
         match self.bits {
-            false => PIN26_A::NOT_LATCHED,
-            true => PIN26_A::LATCHED,
+            false => Pin26::NotLatched,
+            true => Pin26::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN26_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN26_A::LATCHED
-    }
-}
-#[doc = "Field `PIN26` writer - Status on whether PIN\\[26\\]
-has met criteria set in PIN_CNF\\[26\\].SENSE register. Write '1' to clear."]
-pub type PIN26_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN26_A, O>;
-impl<'a, const O: u8> PIN26_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN26_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin26::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN26_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin26::Latched
     }
 }
-#[doc = "Field `PIN27` reader - Status on whether PIN\\[27\\]
-has met criteria set in PIN_CNF\\[27\\].SENSE register. Write '1' to clear."]
-pub type PIN27_R = crate::BitReader<PIN27_A>;
-#[doc = "Status on whether PIN\\[27\\]
-has met criteria set in PIN_CNF\\[27\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN27_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN27_A> for bool {
+#[doc = "Field `PIN26` writer - Status on whether PIN\\[26\\] has met criteria set in PIN_CNF\\[26\\].SENSE register. Write '1' to clear."]
+pub type Pin26W<'a, REG> = crate::BitWriter<'a, REG, Pin26>;
+impl<'a, REG> Pin26W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN27_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin26::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin26::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[27\\] has met criteria set in PIN_CNF\\[27\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin27 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin27> for bool {
+    #[inline(always)]
+    fn from(variant: Pin27) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN27_R {
+#[doc = "Field `PIN27` reader - Status on whether PIN\\[27\\] has met criteria set in PIN_CNF\\[27\\].SENSE register. Write '1' to clear."]
+pub type Pin27R = crate::BitReader<Pin27>;
+impl Pin27R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN27_A {
+    pub const fn variant(&self) -> Pin27 {
         match self.bits {
-            false => PIN27_A::NOT_LATCHED,
-            true => PIN27_A::LATCHED,
+            false => Pin27::NotLatched,
+            true => Pin27::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN27_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN27_A::LATCHED
-    }
-}
-#[doc = "Field `PIN27` writer - Status on whether PIN\\[27\\]
-has met criteria set in PIN_CNF\\[27\\].SENSE register. Write '1' to clear."]
-pub type PIN27_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN27_A, O>;
-impl<'a, const O: u8> PIN27_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN27_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin27::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN27_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin27::Latched
     }
 }
-#[doc = "Field `PIN28` reader - Status on whether PIN\\[28\\]
-has met criteria set in PIN_CNF\\[28\\].SENSE register. Write '1' to clear."]
-pub type PIN28_R = crate::BitReader<PIN28_A>;
-#[doc = "Status on whether PIN\\[28\\]
-has met criteria set in PIN_CNF\\[28\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN28_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN28_A> for bool {
+#[doc = "Field `PIN27` writer - Status on whether PIN\\[27\\] has met criteria set in PIN_CNF\\[27\\].SENSE register. Write '1' to clear."]
+pub type Pin27W<'a, REG> = crate::BitWriter<'a, REG, Pin27>;
+impl<'a, REG> Pin27W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN28_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin27::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin27::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[28\\] has met criteria set in PIN_CNF\\[28\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin28 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin28> for bool {
+    #[inline(always)]
+    fn from(variant: Pin28) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN28_R {
+#[doc = "Field `PIN28` reader - Status on whether PIN\\[28\\] has met criteria set in PIN_CNF\\[28\\].SENSE register. Write '1' to clear."]
+pub type Pin28R = crate::BitReader<Pin28>;
+impl Pin28R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN28_A {
+    pub const fn variant(&self) -> Pin28 {
         match self.bits {
-            false => PIN28_A::NOT_LATCHED,
-            true => PIN28_A::LATCHED,
+            false => Pin28::NotLatched,
+            true => Pin28::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN28_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN28_A::LATCHED
-    }
-}
-#[doc = "Field `PIN28` writer - Status on whether PIN\\[28\\]
-has met criteria set in PIN_CNF\\[28\\].SENSE register. Write '1' to clear."]
-pub type PIN28_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN28_A, O>;
-impl<'a, const O: u8> PIN28_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN28_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin28::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN28_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin28::Latched
     }
 }
-#[doc = "Field `PIN29` reader - Status on whether PIN\\[29\\]
-has met criteria set in PIN_CNF\\[29\\].SENSE register. Write '1' to clear."]
-pub type PIN29_R = crate::BitReader<PIN29_A>;
-#[doc = "Status on whether PIN\\[29\\]
-has met criteria set in PIN_CNF\\[29\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN29_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN29_A> for bool {
+#[doc = "Field `PIN28` writer - Status on whether PIN\\[28\\] has met criteria set in PIN_CNF\\[28\\].SENSE register. Write '1' to clear."]
+pub type Pin28W<'a, REG> = crate::BitWriter<'a, REG, Pin28>;
+impl<'a, REG> Pin28W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN29_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin28::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin28::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[29\\] has met criteria set in PIN_CNF\\[29\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin29 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin29> for bool {
+    #[inline(always)]
+    fn from(variant: Pin29) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN29_R {
+#[doc = "Field `PIN29` reader - Status on whether PIN\\[29\\] has met criteria set in PIN_CNF\\[29\\].SENSE register. Write '1' to clear."]
+pub type Pin29R = crate::BitReader<Pin29>;
+impl Pin29R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN29_A {
+    pub const fn variant(&self) -> Pin29 {
         match self.bits {
-            false => PIN29_A::NOT_LATCHED,
-            true => PIN29_A::LATCHED,
+            false => Pin29::NotLatched,
+            true => Pin29::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN29_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN29_A::LATCHED
-    }
-}
-#[doc = "Field `PIN29` writer - Status on whether PIN\\[29\\]
-has met criteria set in PIN_CNF\\[29\\].SENSE register. Write '1' to clear."]
-pub type PIN29_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN29_A, O>;
-impl<'a, const O: u8> PIN29_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN29_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin29::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN29_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin29::Latched
     }
 }
-#[doc = "Field `PIN30` reader - Status on whether PIN\\[30\\]
-has met criteria set in PIN_CNF\\[30\\].SENSE register. Write '1' to clear."]
-pub type PIN30_R = crate::BitReader<PIN30_A>;
-#[doc = "Status on whether PIN\\[30\\]
-has met criteria set in PIN_CNF\\[30\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN30_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN30_A> for bool {
+#[doc = "Field `PIN29` writer - Status on whether PIN\\[29\\] has met criteria set in PIN_CNF\\[29\\].SENSE register. Write '1' to clear."]
+pub type Pin29W<'a, REG> = crate::BitWriter<'a, REG, Pin29>;
+impl<'a, REG> Pin29W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN30_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin29::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin29::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[30\\] has met criteria set in PIN_CNF\\[30\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin30 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin30> for bool {
+    #[inline(always)]
+    fn from(variant: Pin30) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN30_R {
+#[doc = "Field `PIN30` reader - Status on whether PIN\\[30\\] has met criteria set in PIN_CNF\\[30\\].SENSE register. Write '1' to clear."]
+pub type Pin30R = crate::BitReader<Pin30>;
+impl Pin30R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN30_A {
+    pub const fn variant(&self) -> Pin30 {
         match self.bits {
-            false => PIN30_A::NOT_LATCHED,
-            true => PIN30_A::LATCHED,
+            false => Pin30::NotLatched,
+            true => Pin30::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN30_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN30_A::LATCHED
-    }
-}
-#[doc = "Field `PIN30` writer - Status on whether PIN\\[30\\]
-has met criteria set in PIN_CNF\\[30\\].SENSE register. Write '1' to clear."]
-pub type PIN30_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN30_A, O>;
-impl<'a, const O: u8> PIN30_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN30_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin30::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN30_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin30::Latched
     }
 }
-#[doc = "Field `PIN31` reader - Status on whether PIN\\[31\\]
-has met criteria set in PIN_CNF\\[31\\].SENSE register. Write '1' to clear."]
-pub type PIN31_R = crate::BitReader<PIN31_A>;
-#[doc = "Status on whether PIN\\[31\\]
-has met criteria set in PIN_CNF\\[31\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN31_A {
-    #[doc = "0: Criteria has not been met"]
-    NOT_LATCHED = 0,
-    #[doc = "1: Criteria has been met"]
-    LATCHED = 1,
-}
-impl From<PIN31_A> for bool {
+#[doc = "Field `PIN30` writer - Status on whether PIN\\[30\\] has met criteria set in PIN_CNF\\[30\\].SENSE register. Write '1' to clear."]
+pub type Pin30W<'a, REG> = crate::BitWriter<'a, REG, Pin30>;
+impl<'a, REG> Pin30W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
     #[inline(always)]
-    fn from(variant: PIN31_A) -> Self {
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin30::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin30::Latched)
+    }
+}
+#[doc = "Status on whether PIN\\[31\\] has met criteria set in PIN_CNF\\[31\\].SENSE register. Write '1' to clear.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pin31 {
+    #[doc = "0: Criteria has not been met"]
+    NotLatched = 0,
+    #[doc = "1: Criteria has been met"]
+    Latched = 1,
+}
+impl From<Pin31> for bool {
+    #[inline(always)]
+    fn from(variant: Pin31) -> Self {
         variant as u8 != 0
     }
 }
-impl PIN31_R {
+#[doc = "Field `PIN31` reader - Status on whether PIN\\[31\\] has met criteria set in PIN_CNF\\[31\\].SENSE register. Write '1' to clear."]
+pub type Pin31R = crate::BitReader<Pin31>;
+impl Pin31R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIN31_A {
+    pub const fn variant(&self) -> Pin31 {
         match self.bits {
-            false => PIN31_A::NOT_LATCHED,
-            true => PIN31_A::LATCHED,
+            false => Pin31::NotLatched,
+            true => Pin31::Latched,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_LATCHED`"]
-    #[inline(always)]
-    pub fn is_not_latched(&self) -> bool {
-        *self == PIN31_A::NOT_LATCHED
-    }
-    #[doc = "Checks if the value of the field is `LATCHED`"]
-    #[inline(always)]
-    pub fn is_latched(&self) -> bool {
-        *self == PIN31_A::LATCHED
-    }
-}
-#[doc = "Field `PIN31` writer - Status on whether PIN\\[31\\]
-has met criteria set in PIN_CNF\\[31\\].SENSE register. Write '1' to clear."]
-pub type PIN31_W<'a, const O: u8> = crate::BitWriter<'a, u32, LATCH_SPEC, PIN31_A, O>;
-impl<'a, const O: u8> PIN31_W<'a, O> {
     #[doc = "Criteria has not been met"]
     #[inline(always)]
-    pub fn not_latched(self) -> &'a mut W {
-        self.variant(PIN31_A::NOT_LATCHED)
+    pub fn is_not_latched(&self) -> bool {
+        *self == Pin31::NotLatched
     }
     #[doc = "Criteria has been met"]
     #[inline(always)]
-    pub fn latched(self) -> &'a mut W {
-        self.variant(PIN31_A::LATCHED)
+    pub fn is_latched(&self) -> bool {
+        *self == Pin31::Latched
+    }
+}
+#[doc = "Field `PIN31` writer - Status on whether PIN\\[31\\] has met criteria set in PIN_CNF\\[31\\].SENSE register. Write '1' to clear."]
+pub type Pin31W<'a, REG> = crate::BitWriter<'a, REG, Pin31>;
+impl<'a, REG> Pin31W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Criteria has not been met"]
+    #[inline(always)]
+    pub fn not_latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin31::NotLatched)
+    }
+    #[doc = "Criteria has been met"]
+    #[inline(always)]
+    pub fn latched(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin31::Latched)
     }
 }
 impl R {
-    #[doc = "Bit 0 - Status on whether PIN\\[0\\]
-has met criteria set in PIN_CNF\\[0\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 0 - Status on whether PIN\\[0\\] has met criteria set in PIN_CNF\\[0\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin0(&self) -> PIN0_R {
-        PIN0_R::new((self.bits & 1) != 0)
+    pub fn pin0(&self) -> Pin0R {
+        Pin0R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Status on whether PIN\\[1\\]
-has met criteria set in PIN_CNF\\[1\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 1 - Status on whether PIN\\[1\\] has met criteria set in PIN_CNF\\[1\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin1(&self) -> PIN1_R {
-        PIN1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn pin1(&self) -> Pin1R {
+        Pin1R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - Status on whether PIN\\[2\\]
-has met criteria set in PIN_CNF\\[2\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 2 - Status on whether PIN\\[2\\] has met criteria set in PIN_CNF\\[2\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin2(&self) -> PIN2_R {
-        PIN2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn pin2(&self) -> Pin2R {
+        Pin2R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Status on whether PIN\\[3\\]
-has met criteria set in PIN_CNF\\[3\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 3 - Status on whether PIN\\[3\\] has met criteria set in PIN_CNF\\[3\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin3(&self) -> PIN3_R {
-        PIN3_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn pin3(&self) -> Pin3R {
+        Pin3R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - Status on whether PIN\\[4\\]
-has met criteria set in PIN_CNF\\[4\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 4 - Status on whether PIN\\[4\\] has met criteria set in PIN_CNF\\[4\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin4(&self) -> PIN4_R {
-        PIN4_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn pin4(&self) -> Pin4R {
+        Pin4R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - Status on whether PIN\\[5\\]
-has met criteria set in PIN_CNF\\[5\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 5 - Status on whether PIN\\[5\\] has met criteria set in PIN_CNF\\[5\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin5(&self) -> PIN5_R {
-        PIN5_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn pin5(&self) -> Pin5R {
+        Pin5R::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - Status on whether PIN\\[6\\]
-has met criteria set in PIN_CNF\\[6\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 6 - Status on whether PIN\\[6\\] has met criteria set in PIN_CNF\\[6\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin6(&self) -> PIN6_R {
-        PIN6_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn pin6(&self) -> Pin6R {
+        Pin6R::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - Status on whether PIN\\[7\\]
-has met criteria set in PIN_CNF\\[7\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 7 - Status on whether PIN\\[7\\] has met criteria set in PIN_CNF\\[7\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin7(&self) -> PIN7_R {
-        PIN7_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn pin7(&self) -> Pin7R {
+        Pin7R::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - Status on whether PIN\\[8\\]
-has met criteria set in PIN_CNF\\[8\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 8 - Status on whether PIN\\[8\\] has met criteria set in PIN_CNF\\[8\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin8(&self) -> PIN8_R {
-        PIN8_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn pin8(&self) -> Pin8R {
+        Pin8R::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - Status on whether PIN\\[9\\]
-has met criteria set in PIN_CNF\\[9\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 9 - Status on whether PIN\\[9\\] has met criteria set in PIN_CNF\\[9\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin9(&self) -> PIN9_R {
-        PIN9_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn pin9(&self) -> Pin9R {
+        Pin9R::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - Status on whether PIN\\[10\\]
-has met criteria set in PIN_CNF\\[10\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 10 - Status on whether PIN\\[10\\] has met criteria set in PIN_CNF\\[10\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin10(&self) -> PIN10_R {
-        PIN10_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn pin10(&self) -> Pin10R {
+        Pin10R::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - Status on whether PIN\\[11\\]
-has met criteria set in PIN_CNF\\[11\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 11 - Status on whether PIN\\[11\\] has met criteria set in PIN_CNF\\[11\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin11(&self) -> PIN11_R {
-        PIN11_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn pin11(&self) -> Pin11R {
+        Pin11R::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 12 - Status on whether PIN\\[12\\]
-has met criteria set in PIN_CNF\\[12\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 12 - Status on whether PIN\\[12\\] has met criteria set in PIN_CNF\\[12\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin12(&self) -> PIN12_R {
-        PIN12_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn pin12(&self) -> Pin12R {
+        Pin12R::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - Status on whether PIN\\[13\\]
-has met criteria set in PIN_CNF\\[13\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 13 - Status on whether PIN\\[13\\] has met criteria set in PIN_CNF\\[13\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin13(&self) -> PIN13_R {
-        PIN13_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn pin13(&self) -> Pin13R {
+        Pin13R::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 14 - Status on whether PIN\\[14\\]
-has met criteria set in PIN_CNF\\[14\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 14 - Status on whether PIN\\[14\\] has met criteria set in PIN_CNF\\[14\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin14(&self) -> PIN14_R {
-        PIN14_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn pin14(&self) -> Pin14R {
+        Pin14R::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 15 - Status on whether PIN\\[15\\]
-has met criteria set in PIN_CNF\\[15\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 15 - Status on whether PIN\\[15\\] has met criteria set in PIN_CNF\\[15\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin15(&self) -> PIN15_R {
-        PIN15_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn pin15(&self) -> Pin15R {
+        Pin15R::new(((self.bits >> 15) & 1) != 0)
     }
-    #[doc = "Bit 16 - Status on whether PIN\\[16\\]
-has met criteria set in PIN_CNF\\[16\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 16 - Status on whether PIN\\[16\\] has met criteria set in PIN_CNF\\[16\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin16(&self) -> PIN16_R {
-        PIN16_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn pin16(&self) -> Pin16R {
+        Pin16R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 17 - Status on whether PIN\\[17\\]
-has met criteria set in PIN_CNF\\[17\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 17 - Status on whether PIN\\[17\\] has met criteria set in PIN_CNF\\[17\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin17(&self) -> PIN17_R {
-        PIN17_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn pin17(&self) -> Pin17R {
+        Pin17R::new(((self.bits >> 17) & 1) != 0)
     }
-    #[doc = "Bit 18 - Status on whether PIN\\[18\\]
-has met criteria set in PIN_CNF\\[18\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 18 - Status on whether PIN\\[18\\] has met criteria set in PIN_CNF\\[18\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin18(&self) -> PIN18_R {
-        PIN18_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn pin18(&self) -> Pin18R {
+        Pin18R::new(((self.bits >> 18) & 1) != 0)
     }
-    #[doc = "Bit 19 - Status on whether PIN\\[19\\]
-has met criteria set in PIN_CNF\\[19\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 19 - Status on whether PIN\\[19\\] has met criteria set in PIN_CNF\\[19\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin19(&self) -> PIN19_R {
-        PIN19_R::new(((self.bits >> 19) & 1) != 0)
+    pub fn pin19(&self) -> Pin19R {
+        Pin19R::new(((self.bits >> 19) & 1) != 0)
     }
-    #[doc = "Bit 20 - Status on whether PIN\\[20\\]
-has met criteria set in PIN_CNF\\[20\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 20 - Status on whether PIN\\[20\\] has met criteria set in PIN_CNF\\[20\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin20(&self) -> PIN20_R {
-        PIN20_R::new(((self.bits >> 20) & 1) != 0)
+    pub fn pin20(&self) -> Pin20R {
+        Pin20R::new(((self.bits >> 20) & 1) != 0)
     }
-    #[doc = "Bit 21 - Status on whether PIN\\[21\\]
-has met criteria set in PIN_CNF\\[21\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 21 - Status on whether PIN\\[21\\] has met criteria set in PIN_CNF\\[21\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin21(&self) -> PIN21_R {
-        PIN21_R::new(((self.bits >> 21) & 1) != 0)
+    pub fn pin21(&self) -> Pin21R {
+        Pin21R::new(((self.bits >> 21) & 1) != 0)
     }
-    #[doc = "Bit 22 - Status on whether PIN\\[22\\]
-has met criteria set in PIN_CNF\\[22\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 22 - Status on whether PIN\\[22\\] has met criteria set in PIN_CNF\\[22\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin22(&self) -> PIN22_R {
-        PIN22_R::new(((self.bits >> 22) & 1) != 0)
+    pub fn pin22(&self) -> Pin22R {
+        Pin22R::new(((self.bits >> 22) & 1) != 0)
     }
-    #[doc = "Bit 23 - Status on whether PIN\\[23\\]
-has met criteria set in PIN_CNF\\[23\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 23 - Status on whether PIN\\[23\\] has met criteria set in PIN_CNF\\[23\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin23(&self) -> PIN23_R {
-        PIN23_R::new(((self.bits >> 23) & 1) != 0)
+    pub fn pin23(&self) -> Pin23R {
+        Pin23R::new(((self.bits >> 23) & 1) != 0)
     }
-    #[doc = "Bit 24 - Status on whether PIN\\[24\\]
-has met criteria set in PIN_CNF\\[24\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 24 - Status on whether PIN\\[24\\] has met criteria set in PIN_CNF\\[24\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin24(&self) -> PIN24_R {
-        PIN24_R::new(((self.bits >> 24) & 1) != 0)
+    pub fn pin24(&self) -> Pin24R {
+        Pin24R::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bit 25 - Status on whether PIN\\[25\\]
-has met criteria set in PIN_CNF\\[25\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 25 - Status on whether PIN\\[25\\] has met criteria set in PIN_CNF\\[25\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin25(&self) -> PIN25_R {
-        PIN25_R::new(((self.bits >> 25) & 1) != 0)
+    pub fn pin25(&self) -> Pin25R {
+        Pin25R::new(((self.bits >> 25) & 1) != 0)
     }
-    #[doc = "Bit 26 - Status on whether PIN\\[26\\]
-has met criteria set in PIN_CNF\\[26\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 26 - Status on whether PIN\\[26\\] has met criteria set in PIN_CNF\\[26\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin26(&self) -> PIN26_R {
-        PIN26_R::new(((self.bits >> 26) & 1) != 0)
+    pub fn pin26(&self) -> Pin26R {
+        Pin26R::new(((self.bits >> 26) & 1) != 0)
     }
-    #[doc = "Bit 27 - Status on whether PIN\\[27\\]
-has met criteria set in PIN_CNF\\[27\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 27 - Status on whether PIN\\[27\\] has met criteria set in PIN_CNF\\[27\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin27(&self) -> PIN27_R {
-        PIN27_R::new(((self.bits >> 27) & 1) != 0)
+    pub fn pin27(&self) -> Pin27R {
+        Pin27R::new(((self.bits >> 27) & 1) != 0)
     }
-    #[doc = "Bit 28 - Status on whether PIN\\[28\\]
-has met criteria set in PIN_CNF\\[28\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 28 - Status on whether PIN\\[28\\] has met criteria set in PIN_CNF\\[28\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin28(&self) -> PIN28_R {
-        PIN28_R::new(((self.bits >> 28) & 1) != 0)
+    pub fn pin28(&self) -> Pin28R {
+        Pin28R::new(((self.bits >> 28) & 1) != 0)
     }
-    #[doc = "Bit 29 - Status on whether PIN\\[29\\]
-has met criteria set in PIN_CNF\\[29\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 29 - Status on whether PIN\\[29\\] has met criteria set in PIN_CNF\\[29\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin29(&self) -> PIN29_R {
-        PIN29_R::new(((self.bits >> 29) & 1) != 0)
+    pub fn pin29(&self) -> Pin29R {
+        Pin29R::new(((self.bits >> 29) & 1) != 0)
     }
-    #[doc = "Bit 30 - Status on whether PIN\\[30\\]
-has met criteria set in PIN_CNF\\[30\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 30 - Status on whether PIN\\[30\\] has met criteria set in PIN_CNF\\[30\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin30(&self) -> PIN30_R {
-        PIN30_R::new(((self.bits >> 30) & 1) != 0)
+    pub fn pin30(&self) -> Pin30R {
+        Pin30R::new(((self.bits >> 30) & 1) != 0)
     }
-    #[doc = "Bit 31 - Status on whether PIN\\[31\\]
-has met criteria set in PIN_CNF\\[31\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 31 - Status on whether PIN\\[31\\] has met criteria set in PIN_CNF\\[31\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin31(&self) -> PIN31_R {
-        PIN31_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn pin31(&self) -> Pin31R {
+        Pin31R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Status on whether PIN\\[0\\]
-has met criteria set in PIN_CNF\\[0\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 0 - Status on whether PIN\\[0\\] has met criteria set in PIN_CNF\\[0\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin0(&mut self) -> PIN0_W<0> {
-        PIN0_W::new(self)
+    pub fn pin0(&mut self) -> Pin0W<'_, LatchSpec> {
+        Pin0W::new(self, 0)
     }
-    #[doc = "Bit 1 - Status on whether PIN\\[1\\]
-has met criteria set in PIN_CNF\\[1\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 1 - Status on whether PIN\\[1\\] has met criteria set in PIN_CNF\\[1\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin1(&mut self) -> PIN1_W<1> {
-        PIN1_W::new(self)
+    pub fn pin1(&mut self) -> Pin1W<'_, LatchSpec> {
+        Pin1W::new(self, 1)
     }
-    #[doc = "Bit 2 - Status on whether PIN\\[2\\]
-has met criteria set in PIN_CNF\\[2\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 2 - Status on whether PIN\\[2\\] has met criteria set in PIN_CNF\\[2\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin2(&mut self) -> PIN2_W<2> {
-        PIN2_W::new(self)
+    pub fn pin2(&mut self) -> Pin2W<'_, LatchSpec> {
+        Pin2W::new(self, 2)
     }
-    #[doc = "Bit 3 - Status on whether PIN\\[3\\]
-has met criteria set in PIN_CNF\\[3\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 3 - Status on whether PIN\\[3\\] has met criteria set in PIN_CNF\\[3\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin3(&mut self) -> PIN3_W<3> {
-        PIN3_W::new(self)
+    pub fn pin3(&mut self) -> Pin3W<'_, LatchSpec> {
+        Pin3W::new(self, 3)
     }
-    #[doc = "Bit 4 - Status on whether PIN\\[4\\]
-has met criteria set in PIN_CNF\\[4\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 4 - Status on whether PIN\\[4\\] has met criteria set in PIN_CNF\\[4\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin4(&mut self) -> PIN4_W<4> {
-        PIN4_W::new(self)
+    pub fn pin4(&mut self) -> Pin4W<'_, LatchSpec> {
+        Pin4W::new(self, 4)
     }
-    #[doc = "Bit 5 - Status on whether PIN\\[5\\]
-has met criteria set in PIN_CNF\\[5\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 5 - Status on whether PIN\\[5\\] has met criteria set in PIN_CNF\\[5\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin5(&mut self) -> PIN5_W<5> {
-        PIN5_W::new(self)
+    pub fn pin5(&mut self) -> Pin5W<'_, LatchSpec> {
+        Pin5W::new(self, 5)
     }
-    #[doc = "Bit 6 - Status on whether PIN\\[6\\]
-has met criteria set in PIN_CNF\\[6\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 6 - Status on whether PIN\\[6\\] has met criteria set in PIN_CNF\\[6\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin6(&mut self) -> PIN6_W<6> {
-        PIN6_W::new(self)
+    pub fn pin6(&mut self) -> Pin6W<'_, LatchSpec> {
+        Pin6W::new(self, 6)
     }
-    #[doc = "Bit 7 - Status on whether PIN\\[7\\]
-has met criteria set in PIN_CNF\\[7\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 7 - Status on whether PIN\\[7\\] has met criteria set in PIN_CNF\\[7\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin7(&mut self) -> PIN7_W<7> {
-        PIN7_W::new(self)
+    pub fn pin7(&mut self) -> Pin7W<'_, LatchSpec> {
+        Pin7W::new(self, 7)
     }
-    #[doc = "Bit 8 - Status on whether PIN\\[8\\]
-has met criteria set in PIN_CNF\\[8\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 8 - Status on whether PIN\\[8\\] has met criteria set in PIN_CNF\\[8\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin8(&mut self) -> PIN8_W<8> {
-        PIN8_W::new(self)
+    pub fn pin8(&mut self) -> Pin8W<'_, LatchSpec> {
+        Pin8W::new(self, 8)
     }
-    #[doc = "Bit 9 - Status on whether PIN\\[9\\]
-has met criteria set in PIN_CNF\\[9\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 9 - Status on whether PIN\\[9\\] has met criteria set in PIN_CNF\\[9\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin9(&mut self) -> PIN9_W<9> {
-        PIN9_W::new(self)
+    pub fn pin9(&mut self) -> Pin9W<'_, LatchSpec> {
+        Pin9W::new(self, 9)
     }
-    #[doc = "Bit 10 - Status on whether PIN\\[10\\]
-has met criteria set in PIN_CNF\\[10\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 10 - Status on whether PIN\\[10\\] has met criteria set in PIN_CNF\\[10\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin10(&mut self) -> PIN10_W<10> {
-        PIN10_W::new(self)
+    pub fn pin10(&mut self) -> Pin10W<'_, LatchSpec> {
+        Pin10W::new(self, 10)
     }
-    #[doc = "Bit 11 - Status on whether PIN\\[11\\]
-has met criteria set in PIN_CNF\\[11\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 11 - Status on whether PIN\\[11\\] has met criteria set in PIN_CNF\\[11\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin11(&mut self) -> PIN11_W<11> {
-        PIN11_W::new(self)
+    pub fn pin11(&mut self) -> Pin11W<'_, LatchSpec> {
+        Pin11W::new(self, 11)
     }
-    #[doc = "Bit 12 - Status on whether PIN\\[12\\]
-has met criteria set in PIN_CNF\\[12\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 12 - Status on whether PIN\\[12\\] has met criteria set in PIN_CNF\\[12\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin12(&mut self) -> PIN12_W<12> {
-        PIN12_W::new(self)
+    pub fn pin12(&mut self) -> Pin12W<'_, LatchSpec> {
+        Pin12W::new(self, 12)
     }
-    #[doc = "Bit 13 - Status on whether PIN\\[13\\]
-has met criteria set in PIN_CNF\\[13\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 13 - Status on whether PIN\\[13\\] has met criteria set in PIN_CNF\\[13\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin13(&mut self) -> PIN13_W<13> {
-        PIN13_W::new(self)
+    pub fn pin13(&mut self) -> Pin13W<'_, LatchSpec> {
+        Pin13W::new(self, 13)
     }
-    #[doc = "Bit 14 - Status on whether PIN\\[14\\]
-has met criteria set in PIN_CNF\\[14\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 14 - Status on whether PIN\\[14\\] has met criteria set in PIN_CNF\\[14\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin14(&mut self) -> PIN14_W<14> {
-        PIN14_W::new(self)
+    pub fn pin14(&mut self) -> Pin14W<'_, LatchSpec> {
+        Pin14W::new(self, 14)
     }
-    #[doc = "Bit 15 - Status on whether PIN\\[15\\]
-has met criteria set in PIN_CNF\\[15\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 15 - Status on whether PIN\\[15\\] has met criteria set in PIN_CNF\\[15\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin15(&mut self) -> PIN15_W<15> {
-        PIN15_W::new(self)
+    pub fn pin15(&mut self) -> Pin15W<'_, LatchSpec> {
+        Pin15W::new(self, 15)
     }
-    #[doc = "Bit 16 - Status on whether PIN\\[16\\]
-has met criteria set in PIN_CNF\\[16\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 16 - Status on whether PIN\\[16\\] has met criteria set in PIN_CNF\\[16\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin16(&mut self) -> PIN16_W<16> {
-        PIN16_W::new(self)
+    pub fn pin16(&mut self) -> Pin16W<'_, LatchSpec> {
+        Pin16W::new(self, 16)
     }
-    #[doc = "Bit 17 - Status on whether PIN\\[17\\]
-has met criteria set in PIN_CNF\\[17\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 17 - Status on whether PIN\\[17\\] has met criteria set in PIN_CNF\\[17\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin17(&mut self) -> PIN17_W<17> {
-        PIN17_W::new(self)
+    pub fn pin17(&mut self) -> Pin17W<'_, LatchSpec> {
+        Pin17W::new(self, 17)
     }
-    #[doc = "Bit 18 - Status on whether PIN\\[18\\]
-has met criteria set in PIN_CNF\\[18\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 18 - Status on whether PIN\\[18\\] has met criteria set in PIN_CNF\\[18\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin18(&mut self) -> PIN18_W<18> {
-        PIN18_W::new(self)
+    pub fn pin18(&mut self) -> Pin18W<'_, LatchSpec> {
+        Pin18W::new(self, 18)
     }
-    #[doc = "Bit 19 - Status on whether PIN\\[19\\]
-has met criteria set in PIN_CNF\\[19\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 19 - Status on whether PIN\\[19\\] has met criteria set in PIN_CNF\\[19\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin19(&mut self) -> PIN19_W<19> {
-        PIN19_W::new(self)
+    pub fn pin19(&mut self) -> Pin19W<'_, LatchSpec> {
+        Pin19W::new(self, 19)
     }
-    #[doc = "Bit 20 - Status on whether PIN\\[20\\]
-has met criteria set in PIN_CNF\\[20\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 20 - Status on whether PIN\\[20\\] has met criteria set in PIN_CNF\\[20\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin20(&mut self) -> PIN20_W<20> {
-        PIN20_W::new(self)
+    pub fn pin20(&mut self) -> Pin20W<'_, LatchSpec> {
+        Pin20W::new(self, 20)
     }
-    #[doc = "Bit 21 - Status on whether PIN\\[21\\]
-has met criteria set in PIN_CNF\\[21\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 21 - Status on whether PIN\\[21\\] has met criteria set in PIN_CNF\\[21\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin21(&mut self) -> PIN21_W<21> {
-        PIN21_W::new(self)
+    pub fn pin21(&mut self) -> Pin21W<'_, LatchSpec> {
+        Pin21W::new(self, 21)
     }
-    #[doc = "Bit 22 - Status on whether PIN\\[22\\]
-has met criteria set in PIN_CNF\\[22\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 22 - Status on whether PIN\\[22\\] has met criteria set in PIN_CNF\\[22\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin22(&mut self) -> PIN22_W<22> {
-        PIN22_W::new(self)
+    pub fn pin22(&mut self) -> Pin22W<'_, LatchSpec> {
+        Pin22W::new(self, 22)
     }
-    #[doc = "Bit 23 - Status on whether PIN\\[23\\]
-has met criteria set in PIN_CNF\\[23\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 23 - Status on whether PIN\\[23\\] has met criteria set in PIN_CNF\\[23\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin23(&mut self) -> PIN23_W<23> {
-        PIN23_W::new(self)
+    pub fn pin23(&mut self) -> Pin23W<'_, LatchSpec> {
+        Pin23W::new(self, 23)
     }
-    #[doc = "Bit 24 - Status on whether PIN\\[24\\]
-has met criteria set in PIN_CNF\\[24\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 24 - Status on whether PIN\\[24\\] has met criteria set in PIN_CNF\\[24\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin24(&mut self) -> PIN24_W<24> {
-        PIN24_W::new(self)
+    pub fn pin24(&mut self) -> Pin24W<'_, LatchSpec> {
+        Pin24W::new(self, 24)
     }
-    #[doc = "Bit 25 - Status on whether PIN\\[25\\]
-has met criteria set in PIN_CNF\\[25\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 25 - Status on whether PIN\\[25\\] has met criteria set in PIN_CNF\\[25\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin25(&mut self) -> PIN25_W<25> {
-        PIN25_W::new(self)
+    pub fn pin25(&mut self) -> Pin25W<'_, LatchSpec> {
+        Pin25W::new(self, 25)
     }
-    #[doc = "Bit 26 - Status on whether PIN\\[26\\]
-has met criteria set in PIN_CNF\\[26\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 26 - Status on whether PIN\\[26\\] has met criteria set in PIN_CNF\\[26\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin26(&mut self) -> PIN26_W<26> {
-        PIN26_W::new(self)
+    pub fn pin26(&mut self) -> Pin26W<'_, LatchSpec> {
+        Pin26W::new(self, 26)
     }
-    #[doc = "Bit 27 - Status on whether PIN\\[27\\]
-has met criteria set in PIN_CNF\\[27\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 27 - Status on whether PIN\\[27\\] has met criteria set in PIN_CNF\\[27\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin27(&mut self) -> PIN27_W<27> {
-        PIN27_W::new(self)
+    pub fn pin27(&mut self) -> Pin27W<'_, LatchSpec> {
+        Pin27W::new(self, 27)
     }
-    #[doc = "Bit 28 - Status on whether PIN\\[28\\]
-has met criteria set in PIN_CNF\\[28\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 28 - Status on whether PIN\\[28\\] has met criteria set in PIN_CNF\\[28\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin28(&mut self) -> PIN28_W<28> {
-        PIN28_W::new(self)
+    pub fn pin28(&mut self) -> Pin28W<'_, LatchSpec> {
+        Pin28W::new(self, 28)
     }
-    #[doc = "Bit 29 - Status on whether PIN\\[29\\]
-has met criteria set in PIN_CNF\\[29\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 29 - Status on whether PIN\\[29\\] has met criteria set in PIN_CNF\\[29\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin29(&mut self) -> PIN29_W<29> {
-        PIN29_W::new(self)
+    pub fn pin29(&mut self) -> Pin29W<'_, LatchSpec> {
+        Pin29W::new(self, 29)
     }
-    #[doc = "Bit 30 - Status on whether PIN\\[30\\]
-has met criteria set in PIN_CNF\\[30\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 30 - Status on whether PIN\\[30\\] has met criteria set in PIN_CNF\\[30\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin30(&mut self) -> PIN30_W<30> {
-        PIN30_W::new(self)
+    pub fn pin30(&mut self) -> Pin30W<'_, LatchSpec> {
+        Pin30W::new(self, 30)
     }
-    #[doc = "Bit 31 - Status on whether PIN\\[31\\]
-has met criteria set in PIN_CNF\\[31\\].SENSE register. Write '1' to clear."]
+    #[doc = "Bit 31 - Status on whether PIN\\[31\\] has met criteria set in PIN_CNF\\[31\\].SENSE register. Write '1' to clear."]
     #[inline(always)]
-    pub fn pin31(&mut self) -> PIN31_W<31> {
-        PIN31_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn pin31(&mut self) -> Pin31W<'_, LatchSpec> {
+        Pin31W::new(self, 31)
     }
 }
-#[doc = "Latch register indicating what GPIO pins that have met the criteria set in the PIN_CNF\\[n\\].SENSE registers\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [latch](index.html) module"]
-pub struct LATCH_SPEC;
-impl crate::RegisterSpec for LATCH_SPEC {
+#[doc = "Latch register indicating what GPIO pins that have met the criteria set in the PIN_CNF\\[n\\].SENSE registers\n\nYou can [`read`](crate::Reg::read) this register and get [`latch::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`latch::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct LatchSpec;
+impl crate::RegisterSpec for LatchSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [latch::R](R) reader structure"]
-impl crate::Readable for LATCH_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [latch::W](W) writer structure"]
-impl crate::Writable for LATCH_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`latch::R`](R) reader structure"]
+impl crate::Readable for LatchSpec {}
+#[doc = "`write(|w| ..)` method takes [`latch::W`](W) writer structure"]
+impl crate::Writable for LatchSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets LATCH to value 0"]
-impl crate::Resettable for LATCH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for LatchSpec {}

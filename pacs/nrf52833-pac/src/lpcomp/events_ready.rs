@@ -1,127 +1,84 @@
 #[doc = "Register `EVENTS_READY` reader"]
-pub struct R(crate::R<EVENTS_READY_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_READY_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_READY_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_READY_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsReadySpec>;
 #[doc = "Register `EVENTS_READY` writer"]
-pub struct W(crate::W<EVENTS_READY_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_READY_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVENTS_READY_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVENTS_READY_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `EVENTS_READY` reader - LPCOMP is ready and output is valid"]
-pub type EVENTS_READY_R = crate::BitReader<EVENTS_READY_A>;
+pub type W = crate::W<EventsReadySpec>;
 #[doc = "LPCOMP is ready and output is valid\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVENTS_READY_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsReady {
     #[doc = "0: Event not generated"]
-    NOT_GENERATED = 0,
+    NotGenerated = 0,
     #[doc = "1: Event generated"]
-    GENERATED = 1,
+    Generated = 1,
 }
-impl From<EVENTS_READY_A> for bool {
+impl From<EventsReady> for bool {
     #[inline(always)]
-    fn from(variant: EVENTS_READY_A) -> Self {
+    fn from(variant: EventsReady) -> Self {
         variant as u8 != 0
     }
 }
-impl EVENTS_READY_R {
+#[doc = "Field `EVENTS_READY` reader - LPCOMP is ready and output is valid"]
+pub type EventsReadyR = crate::BitReader<EventsReady>;
+impl EventsReadyR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVENTS_READY_A {
+    pub const fn variant(&self) -> EventsReady {
         match self.bits {
-            false => EVENTS_READY_A::NOT_GENERATED,
-            true => EVENTS_READY_A::GENERATED,
+            false => EventsReady::NotGenerated,
+            true => EventsReady::Generated,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
-    #[inline(always)]
-    pub fn is_not_generated(&self) -> bool {
-        *self == EVENTS_READY_A::NOT_GENERATED
-    }
-    #[doc = "Checks if the value of the field is `GENERATED`"]
-    #[inline(always)]
-    pub fn is_generated(&self) -> bool {
-        *self == EVENTS_READY_A::GENERATED
-    }
-}
-#[doc = "Field `EVENTS_READY` writer - LPCOMP is ready and output is valid"]
-pub type EVENTS_READY_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_READY_SPEC, EVENTS_READY_A, O>;
-impl<'a, const O: u8> EVENTS_READY_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_READY_A::NOT_GENERATED)
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsReady::NotGenerated
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut W {
-        self.variant(EVENTS_READY_A::GENERATED)
+    pub fn is_generated(&self) -> bool {
+        *self == EventsReady::Generated
+    }
+}
+#[doc = "Field `EVENTS_READY` writer - LPCOMP is ready and output is valid"]
+pub type EventsReadyW<'a, REG> = crate::BitWriter<'a, REG, EventsReady>;
+impl<'a, REG> EventsReadyW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsReady::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsReady::Generated)
     }
 }
 impl R {
     #[doc = "Bit 0 - LPCOMP is ready and output is valid"]
     #[inline(always)]
-    pub fn events_ready(&self) -> EVENTS_READY_R {
-        EVENTS_READY_R::new((self.bits & 1) != 0)
+    pub fn events_ready(&self) -> EventsReadyR {
+        EventsReadyR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - LPCOMP is ready and output is valid"]
     #[inline(always)]
-    pub fn events_ready(&mut self) -> EVENTS_READY_W<0> {
-        EVENTS_READY_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_ready(&mut self) -> EventsReadyW<'_, EventsReadySpec> {
+        EventsReadyW::new(self, 0)
     }
 }
-#[doc = "LPCOMP is ready and output is valid\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_ready](index.html) module"]
-pub struct EVENTS_READY_SPEC;
-impl crate::RegisterSpec for EVENTS_READY_SPEC {
+#[doc = "LPCOMP is ready and output is valid\n\nYou can [`read`](crate::Reg::read) this register and get [`events_ready::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_ready::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsReadySpec;
+impl crate::RegisterSpec for EventsReadySpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_ready::R](R) reader structure"]
-impl crate::Readable for EVENTS_READY_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_ready::W](W) writer structure"]
-impl crate::Writable for EVENTS_READY_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_ready::R`](R) reader structure"]
+impl crate::Readable for EventsReadySpec {}
+#[doc = "`write(|w| ..)` method takes [`events_ready::W`](W) writer structure"]
+impl crate::Writable for EventsReadySpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_READY to value 0"]
-impl crate::Resettable for EVENTS_READY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsReadySpec {}

@@ -1,127 +1,86 @@
 #[doc = "Register `DISABLEINDEBUG` reader"]
-pub struct R(crate::R<DISABLEINDEBUG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DISABLEINDEBUG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DISABLEINDEBUG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DISABLEINDEBUG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DisableindebugSpec>;
 #[doc = "Register `DISABLEINDEBUG` writer"]
-pub struct W(crate::W<DISABLEINDEBUG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DISABLEINDEBUG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DISABLEINDEBUG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DISABLEINDEBUG_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `DISABLEINDEBUG` reader - Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode."]
-pub type DISABLEINDEBUG_R = crate::BitReader<DISABLEINDEBUG_A>;
+pub type W = crate::W<DisableindebugSpec>;
 #[doc = "Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DISABLEINDEBUG_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Disableindebug {
     #[doc = "1: Disabled in debug"]
-    DISABLED = 1,
+    Disabled = 1,
     #[doc = "0: Enabled in debug"]
-    ENABLED = 0,
+    Enabled = 0,
 }
-impl From<DISABLEINDEBUG_A> for bool {
+impl From<Disableindebug> for bool {
     #[inline(always)]
-    fn from(variant: DISABLEINDEBUG_A) -> Self {
+    fn from(variant: Disableindebug) -> Self {
         variant as u8 != 0
     }
 }
-impl DISABLEINDEBUG_R {
+#[doc = "Field `DISABLEINDEBUG` reader - Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode."]
+pub type DisableindebugR = crate::BitReader<Disableindebug>;
+impl DisableindebugR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DISABLEINDEBUG_A {
+    pub const fn variant(&self) -> Disableindebug {
         match self.bits {
-            true => DISABLEINDEBUG_A::DISABLED,
-            false => DISABLEINDEBUG_A::ENABLED,
+            true => Disableindebug::Disabled,
+            false => Disableindebug::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == DISABLEINDEBUG_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == DISABLEINDEBUG_A::ENABLED
-    }
-}
-#[doc = "Field `DISABLEINDEBUG` writer - Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode."]
-pub type DISABLEINDEBUG_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, DISABLEINDEBUG_SPEC, DISABLEINDEBUG_A, O>;
-impl<'a, const O: u8> DISABLEINDEBUG_W<'a, O> {
     #[doc = "Disabled in debug"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(DISABLEINDEBUG_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Disableindebug::Disabled
     }
     #[doc = "Enabled in debug"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(DISABLEINDEBUG_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Disableindebug::Enabled
+    }
+}
+#[doc = "Field `DISABLEINDEBUG` writer - Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode."]
+pub type DisableindebugW<'a, REG> = crate::BitWriter<'a, REG, Disableindebug>;
+impl<'a, REG> DisableindebugW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disabled in debug"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Disableindebug::Disabled)
+    }
+    #[doc = "Enabled in debug"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Disableindebug::Enabled)
     }
 }
 impl R {
     #[doc = "Bit 0 - Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode."]
     #[inline(always)]
-    pub fn disableindebug(&self) -> DISABLEINDEBUG_R {
-        DISABLEINDEBUG_R::new((self.bits & 1) != 0)
+    pub fn disableindebug(&self) -> DisableindebugR {
+        DisableindebugR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Disable the protection mechanism for NVM regions while in debug mode. This register will only disable the protection mechanism if the device is in debug mode."]
     #[inline(always)]
-    pub fn disableindebug(&mut self) -> DISABLEINDEBUG_W<0> {
-        DISABLEINDEBUG_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn disableindebug(&mut self) -> DisableindebugW<'_, DisableindebugSpec> {
+        DisableindebugW::new(self, 0)
     }
 }
-#[doc = "Disable protection mechanism in debug mode\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [disableindebug](index.html) module"]
-pub struct DISABLEINDEBUG_SPEC;
-impl crate::RegisterSpec for DISABLEINDEBUG_SPEC {
+#[doc = "Disable protection mechanism in debug mode\n\nYou can [`read`](crate::Reg::read) this register and get [`disableindebug::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`disableindebug::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct DisableindebugSpec;
+impl crate::RegisterSpec for DisableindebugSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [disableindebug::R](R) reader structure"]
-impl crate::Readable for DISABLEINDEBUG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [disableindebug::W](W) writer structure"]
-impl crate::Writable for DISABLEINDEBUG_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`disableindebug::R`](R) reader structure"]
+impl crate::Readable for DisableindebugSpec {}
+#[doc = "`write(|w| ..)` method takes [`disableindebug::W`](W) writer structure"]
+impl crate::Writable for DisableindebugSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets DISABLEINDEBUG to value 0x01"]
-impl crate::Resettable for DISABLEINDEBUG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+impl crate::Resettable for DisableindebugSpec {
+    const RESET_VALUE: u32 = 0x01;
 }

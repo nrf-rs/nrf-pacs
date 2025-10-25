@@ -1,361 +1,341 @@
 #[doc = "Register `CTITRIGOUTSTATUS` reader"]
-pub struct R(crate::R<CTITRIGOUTSTATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTITRIGOUTSTATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type R = crate::R<CtitrigoutstatusSpec>;
+#[doc = "Processor debug request\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Debugreq {
+    #[doc = "1: Ctitrigout 0 is active."]
+    Active = 1,
+    #[doc = "0: Ctitrigout 0 is inactive."]
+    Inactive = 0,
 }
-impl From<crate::R<CTITRIGOUTSTATUS_SPEC>> for R {
+impl From<Debugreq> for bool {
     #[inline(always)]
-    fn from(reader: crate::R<CTITRIGOUTSTATUS_SPEC>) -> Self {
-        R(reader)
+    fn from(variant: Debugreq) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `DEBUGREQ` reader - Processor debug request"]
-pub type DEBUGREQ_R = crate::BitReader<DEBUGREQ_A>;
-#[doc = "Processor debug request\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DEBUGREQ_A {
-    #[doc = "1: Ctitrigout 0 is active."]
-    ACTIVE = 1,
-    #[doc = "0: Ctitrigout 0 is inactive."]
-    INACTIVE = 0,
-}
-impl From<DEBUGREQ_A> for bool {
-    #[inline(always)]
-    fn from(variant: DEBUGREQ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl DEBUGREQ_R {
+pub type DebugreqR = crate::BitReader<Debugreq>;
+impl DebugreqR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DEBUGREQ_A {
+    pub const fn variant(&self) -> Debugreq {
         match self.bits {
-            true => DEBUGREQ_A::ACTIVE,
-            false => DEBUGREQ_A::INACTIVE,
+            true => Debugreq::Active,
+            false => Debugreq::Inactive,
         }
     }
-    #[doc = "Checks if the value of the field is `ACTIVE`"]
+    #[doc = "Ctitrigout 0 is active."]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        *self == DEBUGREQ_A::ACTIVE
+        *self == Debugreq::Active
     }
-    #[doc = "Checks if the value of the field is `INACTIVE`"]
+    #[doc = "Ctitrigout 0 is inactive."]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        *self == DEBUGREQ_A::INACTIVE
+        *self == Debugreq::Inactive
+    }
+}
+#[doc = "Processor Restart\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Cpurestart {
+    #[doc = "1: Ctitrigout 1 is active."]
+    Active = 1,
+    #[doc = "0: Ctitrigout 1 is inactive."]
+    Inactive = 0,
+}
+impl From<Cpurestart> for bool {
+    #[inline(always)]
+    fn from(variant: Cpurestart) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `CPURESTART` reader - Processor Restart"]
-pub type CPURESTART_R = crate::BitReader<CPURESTART_A>;
-#[doc = "Processor Restart\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPURESTART_A {
-    #[doc = "1: Ctitrigout 1 is active."]
-    ACTIVE = 1,
-    #[doc = "0: Ctitrigout 1 is inactive."]
-    INACTIVE = 0,
-}
-impl From<CPURESTART_A> for bool {
-    #[inline(always)]
-    fn from(variant: CPURESTART_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl CPURESTART_R {
+pub type CpurestartR = crate::BitReader<Cpurestart>;
+impl CpurestartR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CPURESTART_A {
+    pub const fn variant(&self) -> Cpurestart {
         match self.bits {
-            true => CPURESTART_A::ACTIVE,
-            false => CPURESTART_A::INACTIVE,
+            true => Cpurestart::Active,
+            false => Cpurestart::Inactive,
         }
     }
-    #[doc = "Checks if the value of the field is `ACTIVE`"]
+    #[doc = "Ctitrigout 1 is active."]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        *self == CPURESTART_A::ACTIVE
+        *self == Cpurestart::Active
     }
-    #[doc = "Checks if the value of the field is `INACTIVE`"]
+    #[doc = "Ctitrigout 1 is inactive."]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        *self == CPURESTART_A::INACTIVE
+        *self == Cpurestart::Inactive
+    }
+}
+#[doc = "N/A\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Unused0 {
+    #[doc = "1: Ctitrigout 2 is active."]
+    Active = 1,
+    #[doc = "0: Ctitrigout 2 is inactive."]
+    Inactive = 0,
+}
+impl From<Unused0> for bool {
+    #[inline(always)]
+    fn from(variant: Unused0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UNUSED0` reader - N/A"]
-pub type UNUSED0_R = crate::BitReader<UNUSED0_A>;
-#[doc = "N/A\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNUSED0_A {
-    #[doc = "1: Ctitrigout 2 is active."]
-    ACTIVE = 1,
-    #[doc = "0: Ctitrigout 2 is inactive."]
-    INACTIVE = 0,
-}
-impl From<UNUSED0_A> for bool {
-    #[inline(always)]
-    fn from(variant: UNUSED0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UNUSED0_R {
+pub type Unused0R = crate::BitReader<Unused0>;
+impl Unused0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UNUSED0_A {
+    pub const fn variant(&self) -> Unused0 {
         match self.bits {
-            true => UNUSED0_A::ACTIVE,
-            false => UNUSED0_A::INACTIVE,
+            true => Unused0::Active,
+            false => Unused0::Inactive,
         }
     }
-    #[doc = "Checks if the value of the field is `ACTIVE`"]
+    #[doc = "Ctitrigout 2 is active."]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        *self == UNUSED0_A::ACTIVE
+        *self == Unused0::Active
     }
-    #[doc = "Checks if the value of the field is `INACTIVE`"]
+    #[doc = "Ctitrigout 2 is inactive."]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        *self == UNUSED0_A::INACTIVE
+        *self == Unused0::Inactive
+    }
+}
+#[doc = "N/A\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Unused1 {
+    #[doc = "1: Ctitrigout 3 is active."]
+    Active = 1,
+    #[doc = "0: Ctitrigout 3 is inactive."]
+    Inactive = 0,
+}
+impl From<Unused1> for bool {
+    #[inline(always)]
+    fn from(variant: Unused1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UNUSED1` reader - N/A"]
-pub type UNUSED1_R = crate::BitReader<UNUSED1_A>;
-#[doc = "N/A\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNUSED1_A {
-    #[doc = "1: Ctitrigout 3 is active."]
-    ACTIVE = 1,
-    #[doc = "0: Ctitrigout 3 is inactive."]
-    INACTIVE = 0,
-}
-impl From<UNUSED1_A> for bool {
-    #[inline(always)]
-    fn from(variant: UNUSED1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UNUSED1_R {
+pub type Unused1R = crate::BitReader<Unused1>;
+impl Unused1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UNUSED1_A {
+    pub const fn variant(&self) -> Unused1 {
         match self.bits {
-            true => UNUSED1_A::ACTIVE,
-            false => UNUSED1_A::INACTIVE,
+            true => Unused1::Active,
+            false => Unused1::Inactive,
         }
     }
-    #[doc = "Checks if the value of the field is `ACTIVE`"]
+    #[doc = "Ctitrigout 3 is active."]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        *self == UNUSED1_A::ACTIVE
+        *self == Unused1::Active
     }
-    #[doc = "Checks if the value of the field is `INACTIVE`"]
+    #[doc = "Ctitrigout 3 is inactive."]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        *self == UNUSED1_A::INACTIVE
+        *self == Unused1::Inactive
+    }
+}
+#[doc = "N/A\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Unused2 {
+    #[doc = "1: Ctitrigout 4 is active."]
+    Active = 1,
+    #[doc = "0: Ctitrigout 4 is inactive."]
+    Inactive = 0,
+}
+impl From<Unused2> for bool {
+    #[inline(always)]
+    fn from(variant: Unused2) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UNUSED2` reader - N/A"]
-pub type UNUSED2_R = crate::BitReader<UNUSED2_A>;
-#[doc = "N/A\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNUSED2_A {
-    #[doc = "1: Ctitrigout 4 is active."]
-    ACTIVE = 1,
-    #[doc = "0: Ctitrigout 4 is inactive."]
-    INACTIVE = 0,
-}
-impl From<UNUSED2_A> for bool {
-    #[inline(always)]
-    fn from(variant: UNUSED2_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UNUSED2_R {
+pub type Unused2R = crate::BitReader<Unused2>;
+impl Unused2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UNUSED2_A {
+    pub const fn variant(&self) -> Unused2 {
         match self.bits {
-            true => UNUSED2_A::ACTIVE,
-            false => UNUSED2_A::INACTIVE,
+            true => Unused2::Active,
+            false => Unused2::Inactive,
         }
     }
-    #[doc = "Checks if the value of the field is `ACTIVE`"]
+    #[doc = "Ctitrigout 4 is active."]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        *self == UNUSED2_A::ACTIVE
+        *self == Unused2::Active
     }
-    #[doc = "Checks if the value of the field is `INACTIVE`"]
+    #[doc = "Ctitrigout 4 is inactive."]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        *self == UNUSED2_A::INACTIVE
+        *self == Unused2::Inactive
+    }
+}
+#[doc = "N/A\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Unused3 {
+    #[doc = "1: Ctitrigout 5 is active."]
+    Active = 1,
+    #[doc = "0: Ctitrigout 5 is inactive."]
+    Inactive = 0,
+}
+impl From<Unused3> for bool {
+    #[inline(always)]
+    fn from(variant: Unused3) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UNUSED3` reader - N/A"]
-pub type UNUSED3_R = crate::BitReader<UNUSED3_A>;
-#[doc = "N/A\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNUSED3_A {
-    #[doc = "1: Ctitrigout 5 is active."]
-    ACTIVE = 1,
-    #[doc = "0: Ctitrigout 5 is inactive."]
-    INACTIVE = 0,
-}
-impl From<UNUSED3_A> for bool {
-    #[inline(always)]
-    fn from(variant: UNUSED3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UNUSED3_R {
+pub type Unused3R = crate::BitReader<Unused3>;
+impl Unused3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UNUSED3_A {
+    pub const fn variant(&self) -> Unused3 {
         match self.bits {
-            true => UNUSED3_A::ACTIVE,
-            false => UNUSED3_A::INACTIVE,
+            true => Unused3::Active,
+            false => Unused3::Inactive,
         }
     }
-    #[doc = "Checks if the value of the field is `ACTIVE`"]
+    #[doc = "Ctitrigout 5 is active."]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        *self == UNUSED3_A::ACTIVE
+        *self == Unused3::Active
     }
-    #[doc = "Checks if the value of the field is `INACTIVE`"]
+    #[doc = "Ctitrigout 5 is inactive."]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        *self == UNUSED3_A::INACTIVE
+        *self == Unused3::Inactive
+    }
+}
+#[doc = "N/A\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Unused4 {
+    #[doc = "1: Ctitrigout 6 is active."]
+    Active = 1,
+    #[doc = "0: Ctitrigout 6 is inactive."]
+    Inactive = 0,
+}
+impl From<Unused4> for bool {
+    #[inline(always)]
+    fn from(variant: Unused4) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UNUSED4` reader - N/A"]
-pub type UNUSED4_R = crate::BitReader<UNUSED4_A>;
-#[doc = "N/A\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNUSED4_A {
-    #[doc = "1: Ctitrigout 6 is active."]
-    ACTIVE = 1,
-    #[doc = "0: Ctitrigout 6 is inactive."]
-    INACTIVE = 0,
-}
-impl From<UNUSED4_A> for bool {
-    #[inline(always)]
-    fn from(variant: UNUSED4_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UNUSED4_R {
+pub type Unused4R = crate::BitReader<Unused4>;
+impl Unused4R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UNUSED4_A {
+    pub const fn variant(&self) -> Unused4 {
         match self.bits {
-            true => UNUSED4_A::ACTIVE,
-            false => UNUSED4_A::INACTIVE,
+            true => Unused4::Active,
+            false => Unused4::Inactive,
         }
     }
-    #[doc = "Checks if the value of the field is `ACTIVE`"]
+    #[doc = "Ctitrigout 6 is active."]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        *self == UNUSED4_A::ACTIVE
+        *self == Unused4::Active
     }
-    #[doc = "Checks if the value of the field is `INACTIVE`"]
+    #[doc = "Ctitrigout 6 is inactive."]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        *self == UNUSED4_A::INACTIVE
+        *self == Unused4::Inactive
+    }
+}
+#[doc = "N/A\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Unused5 {
+    #[doc = "1: Ctitrigout 7 is active."]
+    Active = 1,
+    #[doc = "0: Ctitrigout 7 is inactive."]
+    Inactive = 0,
+}
+impl From<Unused5> for bool {
+    #[inline(always)]
+    fn from(variant: Unused5) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UNUSED5` reader - N/A"]
-pub type UNUSED5_R = crate::BitReader<UNUSED5_A>;
-#[doc = "N/A\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNUSED5_A {
-    #[doc = "1: Ctitrigout 7 is active."]
-    ACTIVE = 1,
-    #[doc = "0: Ctitrigout 7 is inactive."]
-    INACTIVE = 0,
-}
-impl From<UNUSED5_A> for bool {
-    #[inline(always)]
-    fn from(variant: UNUSED5_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UNUSED5_R {
+pub type Unused5R = crate::BitReader<Unused5>;
+impl Unused5R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UNUSED5_A {
+    pub const fn variant(&self) -> Unused5 {
         match self.bits {
-            true => UNUSED5_A::ACTIVE,
-            false => UNUSED5_A::INACTIVE,
+            true => Unused5::Active,
+            false => Unused5::Inactive,
         }
     }
-    #[doc = "Checks if the value of the field is `ACTIVE`"]
+    #[doc = "Ctitrigout 7 is active."]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        *self == UNUSED5_A::ACTIVE
+        *self == Unused5::Active
     }
-    #[doc = "Checks if the value of the field is `INACTIVE`"]
+    #[doc = "Ctitrigout 7 is inactive."]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        *self == UNUSED5_A::INACTIVE
+        *self == Unused5::Inactive
     }
 }
 impl R {
     #[doc = "Bit 0 - Processor debug request"]
     #[inline(always)]
-    pub fn debugreq(&self) -> DEBUGREQ_R {
-        DEBUGREQ_R::new((self.bits & 1) != 0)
+    pub fn debugreq(&self) -> DebugreqR {
+        DebugreqR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Processor Restart"]
     #[inline(always)]
-    pub fn cpurestart(&self) -> CPURESTART_R {
-        CPURESTART_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn cpurestart(&self) -> CpurestartR {
+        CpurestartR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - N/A"]
     #[inline(always)]
-    pub fn unused0(&self) -> UNUSED0_R {
-        UNUSED0_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn unused0(&self) -> Unused0R {
+        Unused0R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - N/A"]
     #[inline(always)]
-    pub fn unused1(&self) -> UNUSED1_R {
-        UNUSED1_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn unused1(&self) -> Unused1R {
+        Unused1R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - N/A"]
     #[inline(always)]
-    pub fn unused2(&self) -> UNUSED2_R {
-        UNUSED2_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn unused2(&self) -> Unused2R {
+        Unused2R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - N/A"]
     #[inline(always)]
-    pub fn unused3(&self) -> UNUSED3_R {
-        UNUSED3_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn unused3(&self) -> Unused3R {
+        Unused3R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - N/A"]
     #[inline(always)]
-    pub fn unused4(&self) -> UNUSED4_R {
-        UNUSED4_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn unused4(&self) -> Unused4R {
+        Unused4R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - N/A"]
     #[inline(always)]
-    pub fn unused5(&self) -> UNUSED5_R {
-        UNUSED5_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn unused5(&self) -> Unused5R {
+        Unused5R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "CTI Trigger Out Status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctitrigoutstatus](index.html) module"]
-pub struct CTITRIGOUTSTATUS_SPEC;
-impl crate::RegisterSpec for CTITRIGOUTSTATUS_SPEC {
+#[doc = "CTI Trigger Out Status register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctitrigoutstatus::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CtitrigoutstatusSpec;
+impl crate::RegisterSpec for CtitrigoutstatusSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ctitrigoutstatus::R](R) reader structure"]
-impl crate::Readable for CTITRIGOUTSTATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ctitrigoutstatus::R`](R) reader structure"]
+impl crate::Readable for CtitrigoutstatusSpec {}
 #[doc = "`reset()` method sets CTITRIGOUTSTATUS to value 0"]
-impl crate::Resettable for CTITRIGOUTSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for CtitrigoutstatusSpec {}

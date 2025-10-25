@@ -1,190 +1,163 @@
 #[doc = "Register `RBPCONF` reader"]
-pub struct R(crate::R<RBPCONF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RBPCONF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RBPCONF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RBPCONF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RbpconfSpec>;
 #[doc = "Register `RBPCONF` writer"]
-pub struct W(crate::W<RBPCONF_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RBPCONF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RBPCONF_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RBPCONF_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `PR0` reader - Readback protect region 0. Will be ignored if pre-programmed factory code is present on the chip."]
-pub type PR0_R = crate::FieldReader<u8, PR0_A>;
+pub type W = crate::W<RbpconfSpec>;
 #[doc = "Readback protect region 0. Will be ignored if pre-programmed factory code is present on the chip.\n\nValue on reset: 255"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PR0_A {
+pub enum Pr0 {
     #[doc = "255: Disabled."]
-    DISABLED = 255,
+    Disabled = 255,
     #[doc = "0: Enabled."]
-    ENABLED = 0,
+    Enabled = 0,
 }
-impl From<PR0_A> for u8 {
+impl From<Pr0> for u8 {
     #[inline(always)]
-    fn from(variant: PR0_A) -> Self {
+    fn from(variant: Pr0) -> Self {
         variant as _
     }
 }
-impl PR0_R {
+impl crate::FieldSpec for Pr0 {
+    type Ux = u8;
+}
+impl crate::IsEnum for Pr0 {}
+#[doc = "Field `PR0` reader - Readback protect region 0. Will be ignored if pre-programmed factory code is present on the chip."]
+pub type Pr0R = crate::FieldReader<Pr0>;
+impl Pr0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PR0_A> {
+    pub const fn variant(&self) -> Option<Pr0> {
         match self.bits {
-            255 => Some(PR0_A::DISABLED),
-            0 => Some(PR0_A::ENABLED),
+            255 => Some(Pr0::Disabled),
+            0 => Some(Pr0::Enabled),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled."]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == PR0_A::DISABLED
+        *self == Pr0::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled."]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == PR0_A::ENABLED
+        *self == Pr0::Enabled
     }
 }
 #[doc = "Field `PR0` writer - Readback protect region 0. Will be ignored if pre-programmed factory code is present on the chip."]
-pub type PR0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RBPCONF_SPEC, u8, PR0_A, 8, O>;
-impl<'a, const O: u8> PR0_W<'a, O> {
+pub type Pr0W<'a, REG> = crate::FieldWriter<'a, REG, 8, Pr0>;
+impl<'a, REG> Pr0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Disabled."]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PR0_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Pr0::Disabled)
     }
     #[doc = "Enabled."]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PR0_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Pr0::Enabled)
     }
 }
-#[doc = "Field `PALL` reader - Readback protect all code in the device."]
-pub type PALL_R = crate::FieldReader<u8, PALL_A>;
 #[doc = "Readback protect all code in the device.\n\nValue on reset: 255"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PALL_A {
+pub enum Pall {
     #[doc = "255: Disabled."]
-    DISABLED = 255,
+    Disabled = 255,
     #[doc = "0: Enabled."]
-    ENABLED = 0,
+    Enabled = 0,
 }
-impl From<PALL_A> for u8 {
+impl From<Pall> for u8 {
     #[inline(always)]
-    fn from(variant: PALL_A) -> Self {
+    fn from(variant: Pall) -> Self {
         variant as _
     }
 }
-impl PALL_R {
+impl crate::FieldSpec for Pall {
+    type Ux = u8;
+}
+impl crate::IsEnum for Pall {}
+#[doc = "Field `PALL` reader - Readback protect all code in the device."]
+pub type PallR = crate::FieldReader<Pall>;
+impl PallR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PALL_A> {
+    pub const fn variant(&self) -> Option<Pall> {
         match self.bits {
-            255 => Some(PALL_A::DISABLED),
-            0 => Some(PALL_A::ENABLED),
+            255 => Some(Pall::Disabled),
+            0 => Some(Pall::Enabled),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == PALL_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == PALL_A::ENABLED
-    }
-}
-#[doc = "Field `PALL` writer - Readback protect all code in the device."]
-pub type PALL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RBPCONF_SPEC, u8, PALL_A, 8, O>;
-impl<'a, const O: u8> PALL_W<'a, O> {
     #[doc = "Disabled."]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PALL_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Pall::Disabled
     }
     #[doc = "Enabled."]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PALL_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Pall::Enabled
+    }
+}
+#[doc = "Field `PALL` writer - Readback protect all code in the device."]
+pub type PallW<'a, REG> = crate::FieldWriter<'a, REG, 8, Pall>;
+impl<'a, REG> PallW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Disabled."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Pall::Disabled)
+    }
+    #[doc = "Enabled."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Pall::Enabled)
     }
 }
 impl R {
     #[doc = "Bits 0:7 - Readback protect region 0. Will be ignored if pre-programmed factory code is present on the chip."]
     #[inline(always)]
-    pub fn pr0(&self) -> PR0_R {
-        PR0_R::new((self.bits & 0xff) as u8)
+    pub fn pr0(&self) -> Pr0R {
+        Pr0R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Readback protect all code in the device."]
     #[inline(always)]
-    pub fn pall(&self) -> PALL_R {
-        PALL_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn pall(&self) -> PallR {
+        PallR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Readback protect region 0. Will be ignored if pre-programmed factory code is present on the chip."]
     #[inline(always)]
-    pub fn pr0(&mut self) -> PR0_W<0> {
-        PR0_W::new(self)
+    pub fn pr0(&mut self) -> Pr0W<'_, RbpconfSpec> {
+        Pr0W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Readback protect all code in the device."]
     #[inline(always)]
-    pub fn pall(&mut self) -> PALL_W<8> {
-        PALL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn pall(&mut self) -> PallW<'_, RbpconfSpec> {
+        PallW::new(self, 8)
     }
 }
-#[doc = "Readback protection configuration.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rbpconf](index.html) module"]
-pub struct RBPCONF_SPEC;
-impl crate::RegisterSpec for RBPCONF_SPEC {
+#[doc = "Readback protection configuration.\n\nYou can [`read`](crate::Reg::read) this register and get [`rbpconf::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rbpconf::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct RbpconfSpec;
+impl crate::RegisterSpec for RbpconfSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rbpconf::R](R) reader structure"]
-impl crate::Readable for RBPCONF_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [rbpconf::W](W) writer structure"]
-impl crate::Writable for RBPCONF_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`rbpconf::R`](R) reader structure"]
+impl crate::Readable for RbpconfSpec {}
+#[doc = "`write(|w| ..)` method takes [`rbpconf::W`](W) writer structure"]
+impl crate::Writable for RbpconfSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets RBPCONF to value 0xffff_ffff"]
-impl crate::Resettable for RBPCONF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for RbpconfSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

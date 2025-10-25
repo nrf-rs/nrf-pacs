@@ -1,122 +1,102 @@
 #[doc = "Register `STATUS` reader"]
-pub struct R(crate::R<STATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type R = crate::R<StatusSpec>;
+#[doc = "Deep power-down mode (DPM) status of external flash.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Dpm {
+    #[doc = "0: External flash is not in DPM."]
+    Disabled = 0,
+    #[doc = "1: External flash is in DPM."]
+    Enabled = 1,
 }
-impl From<crate::R<STATUS_SPEC>> for R {
+impl From<Dpm> for bool {
     #[inline(always)]
-    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
-        R(reader)
+    fn from(variant: Dpm) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `DPM` reader - Deep power-down mode (DPM) status of external flash."]
-pub type DPM_R = crate::BitReader<DPM_A>;
-#[doc = "Deep power-down mode (DPM) status of external flash.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DPM_A {
-    #[doc = "0: External flash is not in DPM."]
-    DISABLED = 0,
-    #[doc = "1: External flash is in DPM."]
-    ENABLED = 1,
-}
-impl From<DPM_A> for bool {
-    #[inline(always)]
-    fn from(variant: DPM_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl DPM_R {
+pub type DpmR = crate::BitReader<Dpm>;
+impl DpmR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DPM_A {
+    pub const fn variant(&self) -> Dpm {
         match self.bits {
-            false => DPM_A::DISABLED,
-            true => DPM_A::ENABLED,
+            false => Dpm::Disabled,
+            true => Dpm::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "External flash is not in DPM."]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == DPM_A::DISABLED
+        *self == Dpm::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "External flash is in DPM."]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == DPM_A::ENABLED
+        *self == Dpm::Enabled
+    }
+}
+#[doc = "Ready status.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ready {
+    #[doc = "1: QSPI peripheral is ready. It is allowed to trigger new tasks, writing custom instructions or enter/exit DPM."]
+    Ready = 1,
+    #[doc = "0: QSPI peripheral is busy. It is not allowed to trigger any new tasks, writing custom instructions or enter/exit DPM."]
+    Busy = 0,
+}
+impl From<Ready> for bool {
+    #[inline(always)]
+    fn from(variant: Ready) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `READY` reader - Ready status."]
-pub type READY_R = crate::BitReader<READY_A>;
-#[doc = "Ready status.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum READY_A {
-    #[doc = "1: QSPI peripheral is ready. It is allowed to trigger new tasks, writing custom instructions or enter/exit DPM."]
-    READY = 1,
-    #[doc = "0: QSPI peripheral is busy. It is not allowed to trigger any new tasks, writing custom instructions or enter/exit DPM."]
-    BUSY = 0,
-}
-impl From<READY_A> for bool {
-    #[inline(always)]
-    fn from(variant: READY_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl READY_R {
+pub type ReadyR = crate::BitReader<Ready>;
+impl ReadyR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> READY_A {
+    pub const fn variant(&self) -> Ready {
         match self.bits {
-            true => READY_A::READY,
-            false => READY_A::BUSY,
+            true => Ready::Ready,
+            false => Ready::Busy,
         }
     }
-    #[doc = "Checks if the value of the field is `READY`"]
+    #[doc = "QSPI peripheral is ready. It is allowed to trigger new tasks, writing custom instructions or enter/exit DPM."]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        *self == READY_A::READY
+        *self == Ready::Ready
     }
-    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[doc = "QSPI peripheral is busy. It is not allowed to trigger any new tasks, writing custom instructions or enter/exit DPM."]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        *self == READY_A::BUSY
+        *self == Ready::Busy
     }
 }
 #[doc = "Field `SREG` reader - Value of external flash device Status Register. When the external flash has two bytes status register this field includes the value of the low byte."]
-pub type SREG_R = crate::FieldReader<u8, u8>;
+pub type SregR = crate::FieldReader;
 impl R {
     #[doc = "Bit 2 - Deep power-down mode (DPM) status of external flash."]
     #[inline(always)]
-    pub fn dpm(&self) -> DPM_R {
-        DPM_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn dpm(&self) -> DpmR {
+        DpmR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Ready status."]
     #[inline(always)]
-    pub fn ready(&self) -> READY_R {
-        READY_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn ready(&self) -> ReadyR {
+        ReadyR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 24:31 - Value of external flash device Status Register. When the external flash has two bytes status register this field includes the value of the low byte."]
     #[inline(always)]
-    pub fn sreg(&self) -> SREG_R {
-        SREG_R::new(((self.bits >> 24) & 0xff) as u8)
+    pub fn sreg(&self) -> SregR {
+        SregR::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
-#[doc = "Status register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
-pub struct STATUS_SPEC;
-impl crate::RegisterSpec for STATUS_SPEC {
+#[doc = "Status register.\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct StatusSpec;
+impl crate::RegisterSpec for StatusSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [status::R](R) reader structure"]
-impl crate::Readable for STATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`status::R`](R) reader structure"]
+impl crate::Readable for StatusSpec {}
 #[doc = "`reset()` method sets STATUS to value 0"]
-impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for StatusSpec {}

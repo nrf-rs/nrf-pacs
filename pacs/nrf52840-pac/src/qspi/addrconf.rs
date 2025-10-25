@@ -1,316 +1,287 @@
 #[doc = "Register `ADDRCONF` reader"]
-pub struct R(crate::R<ADDRCONF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ADDRCONF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ADDRCONF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ADDRCONF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<AddrconfSpec>;
 #[doc = "Register `ADDRCONF` writer"]
-pub struct W(crate::W<ADDRCONF_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ADDRCONF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ADDRCONF_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ADDRCONF_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<AddrconfSpec>;
 #[doc = "Field `OPCODE` reader - Opcode that enters the 32-bit addressing mode."]
-pub type OPCODE_R = crate::FieldReader<u8, u8>;
+pub type OpcodeR = crate::FieldReader;
 #[doc = "Field `OPCODE` writer - Opcode that enters the 32-bit addressing mode."]
-pub type OPCODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ADDRCONF_SPEC, u8, u8, 8, O>;
+pub type OpcodeW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `BYTE0` reader - Byte 0 following opcode."]
-pub type BYTE0_R = crate::FieldReader<u8, u8>;
+pub type Byte0R = crate::FieldReader;
 #[doc = "Field `BYTE0` writer - Byte 0 following opcode."]
-pub type BYTE0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ADDRCONF_SPEC, u8, u8, 8, O>;
+pub type Byte0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `BYTE1` reader - Byte 1 following byte 0."]
-pub type BYTE1_R = crate::FieldReader<u8, u8>;
+pub type Byte1R = crate::FieldReader;
 #[doc = "Field `BYTE1` writer - Byte 1 following byte 0."]
-pub type BYTE1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ADDRCONF_SPEC, u8, u8, 8, O>;
-#[doc = "Field `MODE` reader - Extended addressing mode."]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type Byte1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Extended addressing mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum MODE_A {
+pub enum Mode {
     #[doc = "0: Do not send any instruction."]
-    NO_INSTR = 0,
+    NoInstr = 0,
     #[doc = "1: Send opcode."]
-    OPCODE = 1,
+    Opcode = 1,
     #[doc = "2: Send opcode, byte0."]
-    OP_BYTE0 = 2,
+    OpByte0 = 2,
     #[doc = "3: Send opcode, byte0, byte1."]
-    ALL = 3,
+    All = 3,
 }
-impl From<MODE_A> for u8 {
+impl From<Mode> for u8 {
     #[inline(always)]
-    fn from(variant: MODE_A) -> Self {
+    fn from(variant: Mode) -> Self {
         variant as _
     }
 }
-impl MODE_R {
+impl crate::FieldSpec for Mode {
+    type Ux = u8;
+}
+impl crate::IsEnum for Mode {}
+#[doc = "Field `MODE` reader - Extended addressing mode."]
+pub type ModeR = crate::FieldReader<Mode>;
+impl ModeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MODE_A {
+    pub const fn variant(&self) -> Mode {
         match self.bits {
-            0 => MODE_A::NO_INSTR,
-            1 => MODE_A::OPCODE,
-            2 => MODE_A::OP_BYTE0,
-            3 => MODE_A::ALL,
+            0 => Mode::NoInstr,
+            1 => Mode::Opcode,
+            2 => Mode::OpByte0,
+            3 => Mode::All,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NO_INSTR`"]
-    #[inline(always)]
-    pub fn is_no_instr(&self) -> bool {
-        *self == MODE_A::NO_INSTR
-    }
-    #[doc = "Checks if the value of the field is `OPCODE`"]
-    #[inline(always)]
-    pub fn is_opcode(&self) -> bool {
-        *self == MODE_A::OPCODE
-    }
-    #[doc = "Checks if the value of the field is `OP_BYTE0`"]
-    #[inline(always)]
-    pub fn is_op_byte0(&self) -> bool {
-        *self == MODE_A::OP_BYTE0
-    }
-    #[doc = "Checks if the value of the field is `ALL`"]
-    #[inline(always)]
-    pub fn is_all(&self) -> bool {
-        *self == MODE_A::ALL
-    }
-}
-#[doc = "Field `MODE` writer - Extended addressing mode."]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ADDRCONF_SPEC, u8, MODE_A, 2, O>;
-impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Do not send any instruction."]
     #[inline(always)]
-    pub fn no_instr(self) -> &'a mut W {
-        self.variant(MODE_A::NO_INSTR)
+    pub fn is_no_instr(&self) -> bool {
+        *self == Mode::NoInstr
     }
     #[doc = "Send opcode."]
     #[inline(always)]
-    pub fn opcode(self) -> &'a mut W {
-        self.variant(MODE_A::OPCODE)
+    pub fn is_opcode(&self) -> bool {
+        *self == Mode::Opcode
     }
     #[doc = "Send opcode, byte0."]
     #[inline(always)]
-    pub fn op_byte0(self) -> &'a mut W {
-        self.variant(MODE_A::OP_BYTE0)
+    pub fn is_op_byte0(&self) -> bool {
+        *self == Mode::OpByte0
     }
     #[doc = "Send opcode, byte0, byte1."]
     #[inline(always)]
-    pub fn all(self) -> &'a mut W {
-        self.variant(MODE_A::ALL)
+    pub fn is_all(&self) -> bool {
+        *self == Mode::All
+    }
+}
+#[doc = "Field `MODE` writer - Extended addressing mode."]
+pub type ModeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Mode, crate::Safe>;
+impl<'a, REG> ModeW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Do not send any instruction."]
+    #[inline(always)]
+    pub fn no_instr(self) -> &'a mut crate::W<REG> {
+        self.variant(Mode::NoInstr)
+    }
+    #[doc = "Send opcode."]
+    #[inline(always)]
+    pub fn opcode(self) -> &'a mut crate::W<REG> {
+        self.variant(Mode::Opcode)
+    }
+    #[doc = "Send opcode, byte0."]
+    #[inline(always)]
+    pub fn op_byte0(self) -> &'a mut crate::W<REG> {
+        self.variant(Mode::OpByte0)
+    }
+    #[doc = "Send opcode, byte0, byte1."]
+    #[inline(always)]
+    pub fn all(self) -> &'a mut crate::W<REG> {
+        self.variant(Mode::All)
+    }
+}
+#[doc = "Wait for write complete before sending command.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Wipwait {
+    #[doc = "0: No wait."]
+    Disable = 0,
+    #[doc = "1: Wait."]
+    Enable = 1,
+}
+impl From<Wipwait> for bool {
+    #[inline(always)]
+    fn from(variant: Wipwait) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `WIPWAIT` reader - Wait for write complete before sending command."]
-pub type WIPWAIT_R = crate::BitReader<WIPWAIT_A>;
-#[doc = "Wait for write complete before sending command.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WIPWAIT_A {
-    #[doc = "0: No wait."]
-    DISABLE = 0,
-    #[doc = "1: Wait."]
-    ENABLE = 1,
-}
-impl From<WIPWAIT_A> for bool {
-    #[inline(always)]
-    fn from(variant: WIPWAIT_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl WIPWAIT_R {
+pub type WipwaitR = crate::BitReader<Wipwait>;
+impl WipwaitR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WIPWAIT_A {
+    pub const fn variant(&self) -> Wipwait {
         match self.bits {
-            false => WIPWAIT_A::DISABLE,
-            true => WIPWAIT_A::ENABLE,
+            false => Wipwait::Disable,
+            true => Wipwait::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == WIPWAIT_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == WIPWAIT_A::ENABLE
-    }
-}
-#[doc = "Field `WIPWAIT` writer - Wait for write complete before sending command."]
-pub type WIPWAIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADDRCONF_SPEC, WIPWAIT_A, O>;
-impl<'a, const O: u8> WIPWAIT_W<'a, O> {
     #[doc = "No wait."]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(WIPWAIT_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == Wipwait::Disable
     }
     #[doc = "Wait."]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(WIPWAIT_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == Wipwait::Enable
     }
 }
-#[doc = "Field `WREN` reader - Send WREN (write enable opcode 0x06) before instruction."]
-pub type WREN_R = crate::BitReader<WREN_A>;
-#[doc = "Send WREN (write enable opcode 0x06) before instruction.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WREN_A {
-    #[doc = "0: Do not send WREN."]
-    DISABLE = 0,
-    #[doc = "1: Send WREN."]
-    ENABLE = 1,
-}
-impl From<WREN_A> for bool {
+#[doc = "Field `WIPWAIT` writer - Wait for write complete before sending command."]
+pub type WipwaitW<'a, REG> = crate::BitWriter<'a, REG, Wipwait>;
+impl<'a, REG> WipwaitW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "No wait."]
     #[inline(always)]
-    fn from(variant: WREN_A) -> Self {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(Wipwait::Disable)
+    }
+    #[doc = "Wait."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(Wipwait::Enable)
+    }
+}
+#[doc = "Send WREN (write enable opcode 0x06) before instruction.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Wren {
+    #[doc = "0: Do not send WREN."]
+    Disable = 0,
+    #[doc = "1: Send WREN."]
+    Enable = 1,
+}
+impl From<Wren> for bool {
+    #[inline(always)]
+    fn from(variant: Wren) -> Self {
         variant as u8 != 0
     }
 }
-impl WREN_R {
+#[doc = "Field `WREN` reader - Send WREN (write enable opcode 0x06) before instruction."]
+pub type WrenR = crate::BitReader<Wren>;
+impl WrenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WREN_A {
+    pub const fn variant(&self) -> Wren {
         match self.bits {
-            false => WREN_A::DISABLE,
-            true => WREN_A::ENABLE,
+            false => Wren::Disable,
+            true => Wren::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == WREN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == WREN_A::ENABLE
-    }
-}
-#[doc = "Field `WREN` writer - Send WREN (write enable opcode 0x06) before instruction."]
-pub type WREN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADDRCONF_SPEC, WREN_A, O>;
-impl<'a, const O: u8> WREN_W<'a, O> {
     #[doc = "Do not send WREN."]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(WREN_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == Wren::Disable
     }
     #[doc = "Send WREN."]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(WREN_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == Wren::Enable
+    }
+}
+#[doc = "Field `WREN` writer - Send WREN (write enable opcode 0x06) before instruction."]
+pub type WrenW<'a, REG> = crate::BitWriter<'a, REG, Wren>;
+impl<'a, REG> WrenW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Do not send WREN."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(Wren::Disable)
+    }
+    #[doc = "Send WREN."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(Wren::Enable)
     }
 }
 impl R {
     #[doc = "Bits 0:7 - Opcode that enters the 32-bit addressing mode."]
     #[inline(always)]
-    pub fn opcode(&self) -> OPCODE_R {
-        OPCODE_R::new((self.bits & 0xff) as u8)
+    pub fn opcode(&self) -> OpcodeR {
+        OpcodeR::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Byte 0 following opcode."]
     #[inline(always)]
-    pub fn byte0(&self) -> BYTE0_R {
-        BYTE0_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn byte0(&self) -> Byte0R {
+        Byte0R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - Byte 1 following byte 0."]
     #[inline(always)]
-    pub fn byte1(&self) -> BYTE1_R {
-        BYTE1_R::new(((self.bits >> 16) & 0xff) as u8)
+    pub fn byte1(&self) -> Byte1R {
+        Byte1R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:25 - Extended addressing mode."]
     #[inline(always)]
-    pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 24) & 3) as u8)
+    pub fn mode(&self) -> ModeR {
+        ModeR::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bit 26 - Wait for write complete before sending command."]
     #[inline(always)]
-    pub fn wipwait(&self) -> WIPWAIT_R {
-        WIPWAIT_R::new(((self.bits >> 26) & 1) != 0)
+    pub fn wipwait(&self) -> WipwaitR {
+        WipwaitR::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - Send WREN (write enable opcode 0x06) before instruction."]
     #[inline(always)]
-    pub fn wren(&self) -> WREN_R {
-        WREN_R::new(((self.bits >> 27) & 1) != 0)
+    pub fn wren(&self) -> WrenR {
+        WrenR::new(((self.bits >> 27) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Opcode that enters the 32-bit addressing mode."]
     #[inline(always)]
-    pub fn opcode(&mut self) -> OPCODE_W<0> {
-        OPCODE_W::new(self)
+    pub fn opcode(&mut self) -> OpcodeW<'_, AddrconfSpec> {
+        OpcodeW::new(self, 0)
     }
     #[doc = "Bits 8:15 - Byte 0 following opcode."]
     #[inline(always)]
-    pub fn byte0(&mut self) -> BYTE0_W<8> {
-        BYTE0_W::new(self)
+    pub fn byte0(&mut self) -> Byte0W<'_, AddrconfSpec> {
+        Byte0W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Byte 1 following byte 0."]
     #[inline(always)]
-    pub fn byte1(&mut self) -> BYTE1_W<16> {
-        BYTE1_W::new(self)
+    pub fn byte1(&mut self) -> Byte1W<'_, AddrconfSpec> {
+        Byte1W::new(self, 16)
     }
     #[doc = "Bits 24:25 - Extended addressing mode."]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W<24> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> ModeW<'_, AddrconfSpec> {
+        ModeW::new(self, 24)
     }
     #[doc = "Bit 26 - Wait for write complete before sending command."]
     #[inline(always)]
-    pub fn wipwait(&mut self) -> WIPWAIT_W<26> {
-        WIPWAIT_W::new(self)
+    pub fn wipwait(&mut self) -> WipwaitW<'_, AddrconfSpec> {
+        WipwaitW::new(self, 26)
     }
     #[doc = "Bit 27 - Send WREN (write enable opcode 0x06) before instruction."]
     #[inline(always)]
-    pub fn wren(&mut self) -> WREN_W<27> {
-        WREN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn wren(&mut self) -> WrenW<'_, AddrconfSpec> {
+        WrenW::new(self, 27)
     }
 }
-#[doc = "Extended address configuration.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [addrconf](index.html) module"]
-pub struct ADDRCONF_SPEC;
-impl crate::RegisterSpec for ADDRCONF_SPEC {
+#[doc = "Extended address configuration.\n\nYou can [`read`](crate::Reg::read) this register and get [`addrconf::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`addrconf::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct AddrconfSpec;
+impl crate::RegisterSpec for AddrconfSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [addrconf::R](R) reader structure"]
-impl crate::Readable for ADDRCONF_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [addrconf::W](W) writer structure"]
-impl crate::Writable for ADDRCONF_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`addrconf::R`](R) reader structure"]
+impl crate::Readable for AddrconfSpec {}
+#[doc = "`write(|w| ..)` method takes [`addrconf::W`](W) writer structure"]
+impl crate::Writable for AddrconfSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets ADDRCONF to value 0xb7"]
-impl crate::Resettable for ADDRCONF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xb7
-    }
+impl crate::Resettable for AddrconfSpec {
+    const RESET_VALUE: u32 = 0xb7;
 }

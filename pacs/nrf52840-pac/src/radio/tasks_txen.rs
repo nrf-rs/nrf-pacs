@@ -1,52 +1,44 @@
 #[doc = "Register `TASKS_TXEN` writer"]
-pub struct W(crate::W<TASKS_TXEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TASKS_TXEN_SPEC>;
+pub type W = crate::W<TasksTxenSpec>;
+#[doc = "Enable RADIO in TX mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TasksTxen {
+    #[doc = "1: Trigger task"]
+    Trigger = 1,
+}
+impl From<TasksTxen> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: TasksTxen) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `TASKS_TXEN` writer - Enable RADIO in TX mode"]
+pub type TasksTxenW<'a, REG> = crate::BitWriter<'a, REG, TasksTxen>;
+impl<'a, REG> TasksTxenW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Trigger task"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn trigger(self) -> &'a mut crate::W<REG> {
+        self.variant(TasksTxen::Trigger)
     }
 }
-impl From<crate::W<TASKS_TXEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TASKS_TXEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `TASKS_TXEN` writer - "]
-pub type TASKS_TXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TASKS_TXEN_SPEC, bool, O>;
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Enable RADIO in TX mode"]
     #[inline(always)]
-    pub fn tasks_txen(&mut self) -> TASKS_TXEN_W<0> {
-        TASKS_TXEN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn tasks_txen(&mut self) -> TasksTxenW<'_, TasksTxenSpec> {
+        TasksTxenW::new(self, 0)
     }
 }
-#[doc = "Enable RADIO in TX mode\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_txen](index.html) module"]
-pub struct TASKS_TXEN_SPEC;
-impl crate::RegisterSpec for TASKS_TXEN_SPEC {
+#[doc = "Enable RADIO in TX mode\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_txen::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TasksTxenSpec;
+impl crate::RegisterSpec for TasksTxenSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [tasks_txen::W](W) writer structure"]
-impl crate::Writable for TASKS_TXEN_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`tasks_txen::W`](W) writer structure"]
+impl crate::Writable for TasksTxenSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TASKS_TXEN to value 0"]
-impl crate::Resettable for TASKS_TXEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for TasksTxenSpec {}

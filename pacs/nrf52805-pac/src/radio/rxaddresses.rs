@@ -1,546 +1,525 @@
 #[doc = "Register `RXADDRESSES` reader"]
-pub struct R(crate::R<RXADDRESSES_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RXADDRESSES_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RXADDRESSES_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RXADDRESSES_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RxaddressesSpec>;
 #[doc = "Register `RXADDRESSES` writer"]
-pub struct W(crate::W<RXADDRESSES_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RXADDRESSES_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<RxaddressesSpec>;
+#[doc = "Enable or disable reception on logical address 0.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Addr0 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Addr0> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RXADDRESSES_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RXADDRESSES_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Addr0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ADDR0` reader - Enable or disable reception on logical address 0."]
-pub type ADDR0_R = crate::BitReader<ADDR0_A>;
-#[doc = "Enable or disable reception on logical address 0.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR0_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<ADDR0_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADDR0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ADDR0_R {
+pub type Addr0R = crate::BitReader<Addr0>;
+impl Addr0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDR0_A {
+    pub const fn variant(&self) -> Addr0 {
         match self.bits {
-            false => ADDR0_A::DISABLED,
-            true => ADDR0_A::ENABLED,
+            false => Addr0::Disabled,
+            true => Addr0::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ADDR0_A::DISABLED
+        *self == Addr0::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ADDR0_A::ENABLED
+        *self == Addr0::Enabled
     }
 }
 #[doc = "Field `ADDR0` writer - Enable or disable reception on logical address 0."]
-pub type ADDR0_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR0_A, O>;
-impl<'a, const O: u8> ADDR0_W<'a, O> {
+pub type Addr0W<'a, REG> = crate::BitWriter<'a, REG, Addr0>;
+impl<'a, REG> Addr0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR0_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr0::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR0_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr0::Enabled)
+    }
+}
+#[doc = "Enable or disable reception on logical address 1.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Addr1 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Addr1> for bool {
+    #[inline(always)]
+    fn from(variant: Addr1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ADDR1` reader - Enable or disable reception on logical address 1."]
-pub type ADDR1_R = crate::BitReader<ADDR1_A>;
-#[doc = "Enable or disable reception on logical address 1.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR1_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<ADDR1_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADDR1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ADDR1_R {
+pub type Addr1R = crate::BitReader<Addr1>;
+impl Addr1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDR1_A {
+    pub const fn variant(&self) -> Addr1 {
         match self.bits {
-            false => ADDR1_A::DISABLED,
-            true => ADDR1_A::ENABLED,
+            false => Addr1::Disabled,
+            true => Addr1::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ADDR1_A::DISABLED
+        *self == Addr1::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ADDR1_A::ENABLED
+        *self == Addr1::Enabled
     }
 }
 #[doc = "Field `ADDR1` writer - Enable or disable reception on logical address 1."]
-pub type ADDR1_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR1_A, O>;
-impl<'a, const O: u8> ADDR1_W<'a, O> {
+pub type Addr1W<'a, REG> = crate::BitWriter<'a, REG, Addr1>;
+impl<'a, REG> Addr1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR1_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr1::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR1_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr1::Enabled)
+    }
+}
+#[doc = "Enable or disable reception on logical address 2.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Addr2 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Addr2> for bool {
+    #[inline(always)]
+    fn from(variant: Addr2) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ADDR2` reader - Enable or disable reception on logical address 2."]
-pub type ADDR2_R = crate::BitReader<ADDR2_A>;
-#[doc = "Enable or disable reception on logical address 2.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR2_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<ADDR2_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADDR2_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ADDR2_R {
+pub type Addr2R = crate::BitReader<Addr2>;
+impl Addr2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDR2_A {
+    pub const fn variant(&self) -> Addr2 {
         match self.bits {
-            false => ADDR2_A::DISABLED,
-            true => ADDR2_A::ENABLED,
+            false => Addr2::Disabled,
+            true => Addr2::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ADDR2_A::DISABLED
+        *self == Addr2::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ADDR2_A::ENABLED
+        *self == Addr2::Enabled
     }
 }
 #[doc = "Field `ADDR2` writer - Enable or disable reception on logical address 2."]
-pub type ADDR2_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR2_A, O>;
-impl<'a, const O: u8> ADDR2_W<'a, O> {
+pub type Addr2W<'a, REG> = crate::BitWriter<'a, REG, Addr2>;
+impl<'a, REG> Addr2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR2_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr2::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR2_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr2::Enabled)
+    }
+}
+#[doc = "Enable or disable reception on logical address 3.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Addr3 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Addr3> for bool {
+    #[inline(always)]
+    fn from(variant: Addr3) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ADDR3` reader - Enable or disable reception on logical address 3."]
-pub type ADDR3_R = crate::BitReader<ADDR3_A>;
-#[doc = "Enable or disable reception on logical address 3.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR3_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<ADDR3_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADDR3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ADDR3_R {
+pub type Addr3R = crate::BitReader<Addr3>;
+impl Addr3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDR3_A {
+    pub const fn variant(&self) -> Addr3 {
         match self.bits {
-            false => ADDR3_A::DISABLED,
-            true => ADDR3_A::ENABLED,
+            false => Addr3::Disabled,
+            true => Addr3::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ADDR3_A::DISABLED
+        *self == Addr3::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ADDR3_A::ENABLED
+        *self == Addr3::Enabled
     }
 }
 #[doc = "Field `ADDR3` writer - Enable or disable reception on logical address 3."]
-pub type ADDR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR3_A, O>;
-impl<'a, const O: u8> ADDR3_W<'a, O> {
+pub type Addr3W<'a, REG> = crate::BitWriter<'a, REG, Addr3>;
+impl<'a, REG> Addr3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR3_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr3::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR3_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr3::Enabled)
+    }
+}
+#[doc = "Enable or disable reception on logical address 4.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Addr4 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Addr4> for bool {
+    #[inline(always)]
+    fn from(variant: Addr4) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ADDR4` reader - Enable or disable reception on logical address 4."]
-pub type ADDR4_R = crate::BitReader<ADDR4_A>;
-#[doc = "Enable or disable reception on logical address 4.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR4_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<ADDR4_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADDR4_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ADDR4_R {
+pub type Addr4R = crate::BitReader<Addr4>;
+impl Addr4R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDR4_A {
+    pub const fn variant(&self) -> Addr4 {
         match self.bits {
-            false => ADDR4_A::DISABLED,
-            true => ADDR4_A::ENABLED,
+            false => Addr4::Disabled,
+            true => Addr4::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ADDR4_A::DISABLED
+        *self == Addr4::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ADDR4_A::ENABLED
+        *self == Addr4::Enabled
     }
 }
 #[doc = "Field `ADDR4` writer - Enable or disable reception on logical address 4."]
-pub type ADDR4_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR4_A, O>;
-impl<'a, const O: u8> ADDR4_W<'a, O> {
+pub type Addr4W<'a, REG> = crate::BitWriter<'a, REG, Addr4>;
+impl<'a, REG> Addr4W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR4_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr4::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR4_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr4::Enabled)
+    }
+}
+#[doc = "Enable or disable reception on logical address 5.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Addr5 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Addr5> for bool {
+    #[inline(always)]
+    fn from(variant: Addr5) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ADDR5` reader - Enable or disable reception on logical address 5."]
-pub type ADDR5_R = crate::BitReader<ADDR5_A>;
-#[doc = "Enable or disable reception on logical address 5.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR5_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<ADDR5_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADDR5_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ADDR5_R {
+pub type Addr5R = crate::BitReader<Addr5>;
+impl Addr5R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDR5_A {
+    pub const fn variant(&self) -> Addr5 {
         match self.bits {
-            false => ADDR5_A::DISABLED,
-            true => ADDR5_A::ENABLED,
+            false => Addr5::Disabled,
+            true => Addr5::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ADDR5_A::DISABLED
+        *self == Addr5::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ADDR5_A::ENABLED
+        *self == Addr5::Enabled
     }
 }
 #[doc = "Field `ADDR5` writer - Enable or disable reception on logical address 5."]
-pub type ADDR5_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR5_A, O>;
-impl<'a, const O: u8> ADDR5_W<'a, O> {
+pub type Addr5W<'a, REG> = crate::BitWriter<'a, REG, Addr5>;
+impl<'a, REG> Addr5W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR5_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr5::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR5_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr5::Enabled)
+    }
+}
+#[doc = "Enable or disable reception on logical address 6.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Addr6 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Addr6> for bool {
+    #[inline(always)]
+    fn from(variant: Addr6) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ADDR6` reader - Enable or disable reception on logical address 6."]
-pub type ADDR6_R = crate::BitReader<ADDR6_A>;
-#[doc = "Enable or disable reception on logical address 6.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR6_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<ADDR6_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADDR6_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ADDR6_R {
+pub type Addr6R = crate::BitReader<Addr6>;
+impl Addr6R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDR6_A {
+    pub const fn variant(&self) -> Addr6 {
         match self.bits {
-            false => ADDR6_A::DISABLED,
-            true => ADDR6_A::ENABLED,
+            false => Addr6::Disabled,
+            true => Addr6::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ADDR6_A::DISABLED
+        *self == Addr6::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ADDR6_A::ENABLED
+        *self == Addr6::Enabled
     }
 }
 #[doc = "Field `ADDR6` writer - Enable or disable reception on logical address 6."]
-pub type ADDR6_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR6_A, O>;
-impl<'a, const O: u8> ADDR6_W<'a, O> {
+pub type Addr6W<'a, REG> = crate::BitWriter<'a, REG, Addr6>;
+impl<'a, REG> Addr6W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR6_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr6::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR6_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr6::Enabled)
     }
 }
-#[doc = "Field `ADDR7` reader - Enable or disable reception on logical address 7."]
-pub type ADDR7_R = crate::BitReader<ADDR7_A>;
 #[doc = "Enable or disable reception on logical address 7.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR7_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Addr7 {
     #[doc = "0: Disable"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Enable"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<ADDR7_A> for bool {
+impl From<Addr7> for bool {
     #[inline(always)]
-    fn from(variant: ADDR7_A) -> Self {
+    fn from(variant: Addr7) -> Self {
         variant as u8 != 0
     }
 }
-impl ADDR7_R {
+#[doc = "Field `ADDR7` reader - Enable or disable reception on logical address 7."]
+pub type Addr7R = crate::BitReader<Addr7>;
+impl Addr7R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDR7_A {
+    pub const fn variant(&self) -> Addr7 {
         match self.bits {
-            false => ADDR7_A::DISABLED,
-            true => ADDR7_A::ENABLED,
+            false => Addr7::Disabled,
+            true => Addr7::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == ADDR7_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == ADDR7_A::ENABLED
-    }
-}
-#[doc = "Field `ADDR7` writer - Enable or disable reception on logical address 7."]
-pub type ADDR7_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXADDRESSES_SPEC, ADDR7_A, O>;
-impl<'a, const O: u8> ADDR7_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR7_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Addr7::Disabled
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR7_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Addr7::Enabled
+    }
+}
+#[doc = "Field `ADDR7` writer - Enable or disable reception on logical address 7."]
+pub type Addr7W<'a, REG> = crate::BitWriter<'a, REG, Addr7>;
+impl<'a, REG> Addr7W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr7::Disabled)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Addr7::Enabled)
     }
 }
 impl R {
     #[doc = "Bit 0 - Enable or disable reception on logical address 0."]
     #[inline(always)]
-    pub fn addr0(&self) -> ADDR0_R {
-        ADDR0_R::new((self.bits & 1) != 0)
+    pub fn addr0(&self) -> Addr0R {
+        Addr0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable or disable reception on logical address 1."]
     #[inline(always)]
-    pub fn addr1(&self) -> ADDR1_R {
-        ADDR1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn addr1(&self) -> Addr1R {
+        Addr1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable or disable reception on logical address 2."]
     #[inline(always)]
-    pub fn addr2(&self) -> ADDR2_R {
-        ADDR2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn addr2(&self) -> Addr2R {
+        Addr2R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable or disable reception on logical address 3."]
     #[inline(always)]
-    pub fn addr3(&self) -> ADDR3_R {
-        ADDR3_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn addr3(&self) -> Addr3R {
+        Addr3R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable or disable reception on logical address 4."]
     #[inline(always)]
-    pub fn addr4(&self) -> ADDR4_R {
-        ADDR4_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn addr4(&self) -> Addr4R {
+        Addr4R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable or disable reception on logical address 5."]
     #[inline(always)]
-    pub fn addr5(&self) -> ADDR5_R {
-        ADDR5_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn addr5(&self) -> Addr5R {
+        Addr5R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable or disable reception on logical address 6."]
     #[inline(always)]
-    pub fn addr6(&self) -> ADDR6_R {
-        ADDR6_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn addr6(&self) -> Addr6R {
+        Addr6R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable or disable reception on logical address 7."]
     #[inline(always)]
-    pub fn addr7(&self) -> ADDR7_R {
-        ADDR7_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn addr7(&self) -> Addr7R {
+        Addr7R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable or disable reception on logical address 0."]
     #[inline(always)]
-    pub fn addr0(&mut self) -> ADDR0_W<0> {
-        ADDR0_W::new(self)
+    pub fn addr0(&mut self) -> Addr0W<'_, RxaddressesSpec> {
+        Addr0W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable or disable reception on logical address 1."]
     #[inline(always)]
-    pub fn addr1(&mut self) -> ADDR1_W<1> {
-        ADDR1_W::new(self)
+    pub fn addr1(&mut self) -> Addr1W<'_, RxaddressesSpec> {
+        Addr1W::new(self, 1)
     }
     #[doc = "Bit 2 - Enable or disable reception on logical address 2."]
     #[inline(always)]
-    pub fn addr2(&mut self) -> ADDR2_W<2> {
-        ADDR2_W::new(self)
+    pub fn addr2(&mut self) -> Addr2W<'_, RxaddressesSpec> {
+        Addr2W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable or disable reception on logical address 3."]
     #[inline(always)]
-    pub fn addr3(&mut self) -> ADDR3_W<3> {
-        ADDR3_W::new(self)
+    pub fn addr3(&mut self) -> Addr3W<'_, RxaddressesSpec> {
+        Addr3W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable or disable reception on logical address 4."]
     #[inline(always)]
-    pub fn addr4(&mut self) -> ADDR4_W<4> {
-        ADDR4_W::new(self)
+    pub fn addr4(&mut self) -> Addr4W<'_, RxaddressesSpec> {
+        Addr4W::new(self, 4)
     }
     #[doc = "Bit 5 - Enable or disable reception on logical address 5."]
     #[inline(always)]
-    pub fn addr5(&mut self) -> ADDR5_W<5> {
-        ADDR5_W::new(self)
+    pub fn addr5(&mut self) -> Addr5W<'_, RxaddressesSpec> {
+        Addr5W::new(self, 5)
     }
     #[doc = "Bit 6 - Enable or disable reception on logical address 6."]
     #[inline(always)]
-    pub fn addr6(&mut self) -> ADDR6_W<6> {
-        ADDR6_W::new(self)
+    pub fn addr6(&mut self) -> Addr6W<'_, RxaddressesSpec> {
+        Addr6W::new(self, 6)
     }
     #[doc = "Bit 7 - Enable or disable reception on logical address 7."]
     #[inline(always)]
-    pub fn addr7(&mut self) -> ADDR7_W<7> {
-        ADDR7_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn addr7(&mut self) -> Addr7W<'_, RxaddressesSpec> {
+        Addr7W::new(self, 7)
     }
 }
-#[doc = "Receive address select\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxaddresses](index.html) module"]
-pub struct RXADDRESSES_SPEC;
-impl crate::RegisterSpec for RXADDRESSES_SPEC {
+#[doc = "Receive address select\n\nYou can [`read`](crate::Reg::read) this register and get [`rxaddresses::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rxaddresses::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct RxaddressesSpec;
+impl crate::RegisterSpec for RxaddressesSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rxaddresses::R](R) reader structure"]
-impl crate::Readable for RXADDRESSES_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [rxaddresses::W](W) writer structure"]
-impl crate::Writable for RXADDRESSES_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`rxaddresses::R`](R) reader structure"]
+impl crate::Readable for RxaddressesSpec {}
+#[doc = "`write(|w| ..)` method takes [`rxaddresses::W`](W) writer structure"]
+impl crate::Writable for RxaddressesSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets RXADDRESSES to value 0"]
-impl crate::Resettable for RXADDRESSES_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for RxaddressesSpec {}

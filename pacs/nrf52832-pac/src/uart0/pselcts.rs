@@ -1,116 +1,80 @@
 #[doc = "Register `PSELCTS` reader"]
-pub struct R(crate::R<PSELCTS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PSELCTS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PSELCTS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PSELCTS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PselctsSpec>;
 #[doc = "Register `PSELCTS` writer"]
-pub struct W(crate::W<PSELCTS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PSELCTS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PSELCTS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PSELCTS_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `PSELCTS` reader - Pin number configuration for UART CTS signal"]
-pub type PSELCTS_R = crate::FieldReader<u32, PSELCTS_A>;
+pub type W = crate::W<PselctsSpec>;
 #[doc = "Pin number configuration for UART CTS signal\n\nValue on reset: 4294967295"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
-pub enum PSELCTS_A {
+pub enum Pselcts {
     #[doc = "4294967295: Disconnect"]
-    DISCONNECTED = 4294967295,
+    Disconnected = 4294967295,
 }
-impl From<PSELCTS_A> for u32 {
+impl From<Pselcts> for u32 {
     #[inline(always)]
-    fn from(variant: PSELCTS_A) -> Self {
+    fn from(variant: Pselcts) -> Self {
         variant as _
     }
 }
-impl PSELCTS_R {
+impl crate::FieldSpec for Pselcts {
+    type Ux = u32;
+}
+impl crate::IsEnum for Pselcts {}
+#[doc = "Field `PSELCTS` reader - Pin number configuration for UART CTS signal"]
+pub type PselctsR = crate::FieldReader<Pselcts>;
+impl PselctsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PSELCTS_A> {
+    pub const fn variant(&self) -> Option<Pselcts> {
         match self.bits {
-            4294967295 => Some(PSELCTS_A::DISCONNECTED),
+            4294967295 => Some(Pselcts::Disconnected),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DISCONNECTED`"]
+    #[doc = "Disconnect"]
     #[inline(always)]
     pub fn is_disconnected(&self) -> bool {
-        *self == PSELCTS_A::DISCONNECTED
+        *self == Pselcts::Disconnected
     }
 }
 #[doc = "Field `PSELCTS` writer - Pin number configuration for UART CTS signal"]
-pub type PSELCTS_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PSELCTS_SPEC, u32, PSELCTS_A, 32, O>;
-impl<'a, const O: u8> PSELCTS_W<'a, O> {
+pub type PselctsW<'a, REG> = crate::FieldWriter<'a, REG, 32, Pselcts>;
+impl<'a, REG> PselctsW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u32>,
+{
     #[doc = "Disconnect"]
     #[inline(always)]
-    pub fn disconnected(self) -> &'a mut W {
-        self.variant(PSELCTS_A::DISCONNECTED)
+    pub fn disconnected(self) -> &'a mut crate::W<REG> {
+        self.variant(Pselcts::Disconnected)
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Pin number configuration for UART CTS signal"]
     #[inline(always)]
-    pub fn pselcts(&self) -> PSELCTS_R {
-        PSELCTS_R::new(self.bits)
+    pub fn pselcts(&self) -> PselctsR {
+        PselctsR::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Pin number configuration for UART CTS signal"]
     #[inline(always)]
-    pub fn pselcts(&mut self) -> PSELCTS_W<0> {
-        PSELCTS_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn pselcts(&mut self) -> PselctsW<'_, PselctsSpec> {
+        PselctsW::new(self, 0)
     }
 }
-#[doc = "Pin select for CTS\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pselcts](index.html) module"]
-pub struct PSELCTS_SPEC;
-impl crate::RegisterSpec for PSELCTS_SPEC {
+#[doc = "Pin select for CTS\n\nYou can [`read`](crate::Reg::read) this register and get [`pselcts::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pselcts::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct PselctsSpec;
+impl crate::RegisterSpec for PselctsSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pselcts::R](R) reader structure"]
-impl crate::Readable for PSELCTS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pselcts::W](W) writer structure"]
-impl crate::Writable for PSELCTS_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`pselcts::R`](R) reader structure"]
+impl crate::Readable for PselctsSpec {}
+#[doc = "`write(|w| ..)` method takes [`pselcts::W`](W) writer structure"]
+impl crate::Writable for PselctsSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets PSELCTS to value 0xffff_ffff"]
-impl crate::Resettable for PSELCTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for PselctsSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

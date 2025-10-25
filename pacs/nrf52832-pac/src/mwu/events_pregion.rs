@@ -1,16 +1,29 @@
-#[doc = r"Register block"]
 #[repr(C)]
-pub struct EVENTS_PREGION {
-    #[doc = "0x00 - Description cluster\\[0\\]: Write access to peripheral region 0 detected"]
-    pub wa: WA,
-    #[doc = "0x04 - Description cluster\\[0\\]: Read access to peripheral region 0 detected"]
-    pub ra: RA,
+#[doc = "Unspecified"]
+#[doc(alias = "EVENTS_PREGION")]
+pub struct EventsPregion {
+    wa: Wa,
+    ra: Ra,
 }
-#[doc = "WA (rw) register accessor: an alias for `Reg<WA_SPEC>`"]
-pub type WA = crate::Reg<wa::WA_SPEC>;
+impl EventsPregion {
+    #[doc = "0x00 - Description cluster\\[0\\]: Write access to peripheral region 0 detected"]
+    #[inline(always)]
+    pub const fn wa(&self) -> &Wa {
+        &self.wa
+    }
+    #[doc = "0x04 - Description cluster\\[0\\]: Read access to peripheral region 0 detected"]
+    #[inline(always)]
+    pub const fn ra(&self) -> &Ra {
+        &self.ra
+    }
+}
+#[doc = "WA (rw) register accessor: Description cluster\\[0\\]: Write access to peripheral region 0 detected\n\nYou can [`read`](crate::Reg::read) this register and get [`wa::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wa::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wa`] module"]
+#[doc(alias = "WA")]
+pub type Wa = crate::Reg<wa::WaSpec>;
 #[doc = "Description cluster\\[0\\]: Write access to peripheral region 0 detected"]
 pub mod wa;
-#[doc = "RA (rw) register accessor: an alias for `Reg<RA_SPEC>`"]
-pub type RA = crate::Reg<ra::RA_SPEC>;
+#[doc = "RA (rw) register accessor: Description cluster\\[0\\]: Read access to peripheral region 0 detected\n\nYou can [`read`](crate::Reg::read) this register and get [`ra::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ra::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ra`] module"]
+#[doc(alias = "RA")]
+pub type Ra = crate::Reg<ra::RaSpec>;
 #[doc = "Description cluster\\[0\\]: Read access to peripheral region 0 detected"]
 pub mod ra;

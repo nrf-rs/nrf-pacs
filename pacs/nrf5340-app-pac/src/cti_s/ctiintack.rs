@@ -1,254 +1,247 @@
 #[doc = "Register `CTIINTACK` writer"]
-pub struct W(crate::W<CTIINTACK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTIINTACK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTIINTACK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTIINTACK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CtiintackSpec>;
 #[doc = "Processor debug request\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DEBUGREQ_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Debugreq {
     #[doc = "1: Clears the ctitrigout."]
-    ACKNOWLEDGE = 1,
+    Acknowledge = 1,
 }
-impl From<DEBUGREQ_AW> for bool {
+impl From<Debugreq> for bool {
     #[inline(always)]
-    fn from(variant: DEBUGREQ_AW) -> Self {
+    fn from(variant: Debugreq) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DEBUGREQ` writer - Processor debug request"]
-pub type DEBUGREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, DEBUGREQ_AW, O>;
-impl<'a, const O: u8> DEBUGREQ_W<'a, O> {
+pub type DebugreqW<'a, REG> = crate::BitWriter<'a, REG, Debugreq>;
+impl<'a, REG> DebugreqW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
-    pub fn acknowledge(self) -> &'a mut W {
-        self.variant(DEBUGREQ_AW::ACKNOWLEDGE)
+    pub fn acknowledge(self) -> &'a mut crate::W<REG> {
+        self.variant(Debugreq::Acknowledge)
     }
 }
 #[doc = "Processor Restart\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPURESTART_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Cpurestart {
     #[doc = "1: Clears the ctitrigout."]
-    ACKNOWLEDGE = 1,
+    Acknowledge = 1,
 }
-impl From<CPURESTART_AW> for bool {
+impl From<Cpurestart> for bool {
     #[inline(always)]
-    fn from(variant: CPURESTART_AW) -> Self {
+    fn from(variant: Cpurestart) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CPURESTART` writer - Processor Restart"]
-pub type CPURESTART_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CTIINTACK_SPEC, CPURESTART_AW, O>;
-impl<'a, const O: u8> CPURESTART_W<'a, O> {
+pub type CpurestartW<'a, REG> = crate::BitWriter<'a, REG, Cpurestart>;
+impl<'a, REG> CpurestartW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
-    pub fn acknowledge(self) -> &'a mut W {
-        self.variant(CPURESTART_AW::ACKNOWLEDGE)
+    pub fn acknowledge(self) -> &'a mut crate::W<REG> {
+        self.variant(Cpurestart::Acknowledge)
     }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNUSED0_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Unused0 {
     #[doc = "1: Clears the ctitrigout."]
-    ACKNOWLEDGE = 1,
+    Acknowledge = 1,
 }
-impl From<UNUSED0_AW> for bool {
+impl From<Unused0> for bool {
     #[inline(always)]
-    fn from(variant: UNUSED0_AW) -> Self {
+    fn from(variant: Unused0) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `UNUSED0` writer - N/A"]
-pub type UNUSED0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, UNUSED0_AW, O>;
-impl<'a, const O: u8> UNUSED0_W<'a, O> {
+pub type Unused0W<'a, REG> = crate::BitWriter<'a, REG, Unused0>;
+impl<'a, REG> Unused0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
-    pub fn acknowledge(self) -> &'a mut W {
-        self.variant(UNUSED0_AW::ACKNOWLEDGE)
+    pub fn acknowledge(self) -> &'a mut crate::W<REG> {
+        self.variant(Unused0::Acknowledge)
     }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNUSED1_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Unused1 {
     #[doc = "1: Clears the ctitrigout."]
-    ACKNOWLEDGE = 1,
+    Acknowledge = 1,
 }
-impl From<UNUSED1_AW> for bool {
+impl From<Unused1> for bool {
     #[inline(always)]
-    fn from(variant: UNUSED1_AW) -> Self {
+    fn from(variant: Unused1) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `UNUSED1` writer - N/A"]
-pub type UNUSED1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, UNUSED1_AW, O>;
-impl<'a, const O: u8> UNUSED1_W<'a, O> {
+pub type Unused1W<'a, REG> = crate::BitWriter<'a, REG, Unused1>;
+impl<'a, REG> Unused1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
-    pub fn acknowledge(self) -> &'a mut W {
-        self.variant(UNUSED1_AW::ACKNOWLEDGE)
+    pub fn acknowledge(self) -> &'a mut crate::W<REG> {
+        self.variant(Unused1::Acknowledge)
     }
 }
 #[doc = "ETM Event Input 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ETMEVTIN0_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Etmevtin0 {
     #[doc = "1: Clears the ctitrigout."]
-    ACKNOWLEDGE = 1,
+    Acknowledge = 1,
 }
-impl From<ETMEVTIN0_AW> for bool {
+impl From<Etmevtin0> for bool {
     #[inline(always)]
-    fn from(variant: ETMEVTIN0_AW) -> Self {
+    fn from(variant: Etmevtin0) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ETMEVTIN0` writer - ETM Event Input 0"]
-pub type ETMEVTIN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, ETMEVTIN0_AW, O>;
-impl<'a, const O: u8> ETMEVTIN0_W<'a, O> {
+pub type Etmevtin0W<'a, REG> = crate::BitWriter<'a, REG, Etmevtin0>;
+impl<'a, REG> Etmevtin0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
-    pub fn acknowledge(self) -> &'a mut W {
-        self.variant(ETMEVTIN0_AW::ACKNOWLEDGE)
+    pub fn acknowledge(self) -> &'a mut crate::W<REG> {
+        self.variant(Etmevtin0::Acknowledge)
     }
 }
 #[doc = "ETM Event Input 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ETMEVTIN1_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Etmevtin1 {
     #[doc = "1: Clears the ctitrigout."]
-    ACKNOWLEDGE = 1,
+    Acknowledge = 1,
 }
-impl From<ETMEVTIN1_AW> for bool {
+impl From<Etmevtin1> for bool {
     #[inline(always)]
-    fn from(variant: ETMEVTIN1_AW) -> Self {
+    fn from(variant: Etmevtin1) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ETMEVTIN1` writer - ETM Event Input 1"]
-pub type ETMEVTIN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, ETMEVTIN1_AW, O>;
-impl<'a, const O: u8> ETMEVTIN1_W<'a, O> {
+pub type Etmevtin1W<'a, REG> = crate::BitWriter<'a, REG, Etmevtin1>;
+impl<'a, REG> Etmevtin1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
-    pub fn acknowledge(self) -> &'a mut W {
-        self.variant(ETMEVTIN1_AW::ACKNOWLEDGE)
+    pub fn acknowledge(self) -> &'a mut crate::W<REG> {
+        self.variant(Etmevtin1::Acknowledge)
     }
 }
 #[doc = "ETM Event Input 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ETMEVTIN2_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Etmevtin2 {
     #[doc = "1: Clears the ctitrigout."]
-    ACKNOWLEDGE = 1,
+    Acknowledge = 1,
 }
-impl From<ETMEVTIN2_AW> for bool {
+impl From<Etmevtin2> for bool {
     #[inline(always)]
-    fn from(variant: ETMEVTIN2_AW) -> Self {
+    fn from(variant: Etmevtin2) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ETMEVTIN2` writer - ETM Event Input 2"]
-pub type ETMEVTIN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, ETMEVTIN2_AW, O>;
-impl<'a, const O: u8> ETMEVTIN2_W<'a, O> {
+pub type Etmevtin2W<'a, REG> = crate::BitWriter<'a, REG, Etmevtin2>;
+impl<'a, REG> Etmevtin2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
-    pub fn acknowledge(self) -> &'a mut W {
-        self.variant(ETMEVTIN2_AW::ACKNOWLEDGE)
+    pub fn acknowledge(self) -> &'a mut crate::W<REG> {
+        self.variant(Etmevtin2::Acknowledge)
     }
 }
 #[doc = "ETM Event Input 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ETMEVTIN3_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Etmevtin3 {
     #[doc = "1: Clears the ctitrigout."]
-    ACKNOWLEDGE = 1,
+    Acknowledge = 1,
 }
-impl From<ETMEVTIN3_AW> for bool {
+impl From<Etmevtin3> for bool {
     #[inline(always)]
-    fn from(variant: ETMEVTIN3_AW) -> Self {
+    fn from(variant: Etmevtin3) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ETMEVTIN3` writer - ETM Event Input 3"]
-pub type ETMEVTIN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTIINTACK_SPEC, ETMEVTIN3_AW, O>;
-impl<'a, const O: u8> ETMEVTIN3_W<'a, O> {
+pub type Etmevtin3W<'a, REG> = crate::BitWriter<'a, REG, Etmevtin3>;
+impl<'a, REG> Etmevtin3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Clears the ctitrigout."]
     #[inline(always)]
-    pub fn acknowledge(self) -> &'a mut W {
-        self.variant(ETMEVTIN3_AW::ACKNOWLEDGE)
+    pub fn acknowledge(self) -> &'a mut crate::W<REG> {
+        self.variant(Etmevtin3::Acknowledge)
     }
 }
 impl W {
     #[doc = "Bit 0 - Processor debug request"]
     #[inline(always)]
-    pub fn debugreq(&mut self) -> DEBUGREQ_W<0> {
-        DEBUGREQ_W::new(self)
+    pub fn debugreq(&mut self) -> DebugreqW<'_, CtiintackSpec> {
+        DebugreqW::new(self, 0)
     }
     #[doc = "Bit 1 - Processor Restart"]
     #[inline(always)]
-    pub fn cpurestart(&mut self) -> CPURESTART_W<1> {
-        CPURESTART_W::new(self)
+    pub fn cpurestart(&mut self) -> CpurestartW<'_, CtiintackSpec> {
+        CpurestartW::new(self, 1)
     }
     #[doc = "Bit 2 - N/A"]
     #[inline(always)]
-    pub fn unused0(&mut self) -> UNUSED0_W<2> {
-        UNUSED0_W::new(self)
+    pub fn unused0(&mut self) -> Unused0W<'_, CtiintackSpec> {
+        Unused0W::new(self, 2)
     }
     #[doc = "Bit 3 - N/A"]
     #[inline(always)]
-    pub fn unused1(&mut self) -> UNUSED1_W<3> {
-        UNUSED1_W::new(self)
+    pub fn unused1(&mut self) -> Unused1W<'_, CtiintackSpec> {
+        Unused1W::new(self, 3)
     }
     #[doc = "Bit 4 - ETM Event Input 0"]
     #[inline(always)]
-    pub fn etmevtin0(&mut self) -> ETMEVTIN0_W<4> {
-        ETMEVTIN0_W::new(self)
+    pub fn etmevtin0(&mut self) -> Etmevtin0W<'_, CtiintackSpec> {
+        Etmevtin0W::new(self, 4)
     }
     #[doc = "Bit 5 - ETM Event Input 1"]
     #[inline(always)]
-    pub fn etmevtin1(&mut self) -> ETMEVTIN1_W<5> {
-        ETMEVTIN1_W::new(self)
+    pub fn etmevtin1(&mut self) -> Etmevtin1W<'_, CtiintackSpec> {
+        Etmevtin1W::new(self, 5)
     }
     #[doc = "Bit 6 - ETM Event Input 2"]
     #[inline(always)]
-    pub fn etmevtin2(&mut self) -> ETMEVTIN2_W<6> {
-        ETMEVTIN2_W::new(self)
+    pub fn etmevtin2(&mut self) -> Etmevtin2W<'_, CtiintackSpec> {
+        Etmevtin2W::new(self, 6)
     }
     #[doc = "Bit 7 - ETM Event Input 3"]
     #[inline(always)]
-    pub fn etmevtin3(&mut self) -> ETMEVTIN3_W<7> {
-        ETMEVTIN3_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn etmevtin3(&mut self) -> Etmevtin3W<'_, CtiintackSpec> {
+        Etmevtin3W::new(self, 7)
     }
 }
-#[doc = "CTI Interrupt Acknowledge register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctiintack](index.html) module"]
-pub struct CTIINTACK_SPEC;
-impl crate::RegisterSpec for CTIINTACK_SPEC {
+#[doc = "CTI Interrupt Acknowledge register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctiintack::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CtiintackSpec;
+impl crate::RegisterSpec for CtiintackSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [ctiintack::W](W) writer structure"]
-impl crate::Writable for CTIINTACK_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`ctiintack::W`](W) writer structure"]
+impl crate::Writable for CtiintackSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CTIINTACK to value 0"]
-impl crate::Resettable for CTIINTACK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for CtiintackSpec {}

@@ -1,74 +1,54 @@
 #[doc = "Register `CRCSTATUS` reader"]
-pub struct R(crate::R<CRCSTATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CRCSTATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CRCSTATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CRCSTATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `CRCSTATUS` reader - CRC status of packet received"]
-pub type CRCSTATUS_R = crate::BitReader<CRCSTATUS_A>;
+pub type R = crate::R<CrcstatusSpec>;
 #[doc = "CRC status of packet received\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CRCSTATUS_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Crcstatus {
     #[doc = "0: Packet received with CRC error"]
-    CRCERROR = 0,
+    Crcerror = 0,
     #[doc = "1: Packet received with CRC ok"]
-    CRCOK = 1,
+    Crcok = 1,
 }
-impl From<CRCSTATUS_A> for bool {
+impl From<Crcstatus> for bool {
     #[inline(always)]
-    fn from(variant: CRCSTATUS_A) -> Self {
+    fn from(variant: Crcstatus) -> Self {
         variant as u8 != 0
     }
 }
-impl CRCSTATUS_R {
+#[doc = "Field `CRCSTATUS` reader - CRC status of packet received"]
+pub type CrcstatusR = crate::BitReader<Crcstatus>;
+impl CrcstatusR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CRCSTATUS_A {
+    pub const fn variant(&self) -> Crcstatus {
         match self.bits {
-            false => CRCSTATUS_A::CRCERROR,
-            true => CRCSTATUS_A::CRCOK,
+            false => Crcstatus::Crcerror,
+            true => Crcstatus::Crcok,
         }
     }
-    #[doc = "Checks if the value of the field is `CRCERROR`"]
+    #[doc = "Packet received with CRC error"]
     #[inline(always)]
     pub fn is_crcerror(&self) -> bool {
-        *self == CRCSTATUS_A::CRCERROR
+        *self == Crcstatus::Crcerror
     }
-    #[doc = "Checks if the value of the field is `CRCOK`"]
+    #[doc = "Packet received with CRC ok"]
     #[inline(always)]
     pub fn is_crcok(&self) -> bool {
-        *self == CRCSTATUS_A::CRCOK
+        *self == Crcstatus::Crcok
     }
 }
 impl R {
     #[doc = "Bit 0 - CRC status of packet received"]
     #[inline(always)]
-    pub fn crcstatus(&self) -> CRCSTATUS_R {
-        CRCSTATUS_R::new((self.bits & 1) != 0)
+    pub fn crcstatus(&self) -> CrcstatusR {
+        CrcstatusR::new((self.bits & 1) != 0)
     }
 }
-#[doc = "CRC status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [crcstatus](index.html) module"]
-pub struct CRCSTATUS_SPEC;
-impl crate::RegisterSpec for CRCSTATUS_SPEC {
+#[doc = "CRC status\n\nYou can [`read`](crate::Reg::read) this register and get [`crcstatus::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CrcstatusSpec;
+impl crate::RegisterSpec for CrcstatusSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [crcstatus::R](R) reader structure"]
-impl crate::Readable for CRCSTATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`crcstatus::R`](R) reader structure"]
+impl crate::Readable for CrcstatusSpec {}
 #[doc = "`reset()` method sets CRCSTATUS to value 0"]
-impl crate::Resettable for CRCSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for CrcstatusSpec {}

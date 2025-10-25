@@ -1,28 +1,40 @@
-#[doc = r"Register block"]
 #[repr(C)]
-pub struct RAM {
-    #[doc = "0x00 - Description cluster: RAM\\[n\\]
-power control register"]
-    pub power: POWER,
-    #[doc = "0x04 - Description cluster: RAM\\[n\\]
-power control set register"]
-    pub powerset: POWERSET,
-    #[doc = "0x08 - Description cluster: RAM\\[n\\]
-power control clear register"]
-    pub powerclr: POWERCLR,
+#[doc = "Unspecified"]
+#[doc(alias = "RAM")]
+pub struct Ram {
+    power: Power,
+    powerset: Powerset,
+    powerclr: Powerclr,
 }
-#[doc = "POWER (rw) register accessor: an alias for `Reg<POWER_SPEC>`"]
-pub type POWER = crate::Reg<power::POWER_SPEC>;
-#[doc = "Description cluster: RAM\\[n\\]
-power control register"]
+impl Ram {
+    #[doc = "0x00 - Description cluster: RAM\\[n\\] power control register"]
+    #[inline(always)]
+    pub const fn power(&self) -> &Power {
+        &self.power
+    }
+    #[doc = "0x04 - Description cluster: RAM\\[n\\] power control set register"]
+    #[inline(always)]
+    pub const fn powerset(&self) -> &Powerset {
+        &self.powerset
+    }
+    #[doc = "0x08 - Description cluster: RAM\\[n\\] power control clear register"]
+    #[inline(always)]
+    pub const fn powerclr(&self) -> &Powerclr {
+        &self.powerclr
+    }
+}
+#[doc = "POWER (rw) register accessor: Description cluster: RAM\\[n\\] power control register\n\nYou can [`read`](crate::Reg::read) this register and get [`power::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`power::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@power`] module"]
+#[doc(alias = "POWER")]
+pub type Power = crate::Reg<power::PowerSpec>;
+#[doc = "Description cluster: RAM\\[n\\] power control register"]
 pub mod power;
-#[doc = "POWERSET (rw) register accessor: an alias for `Reg<POWERSET_SPEC>`"]
-pub type POWERSET = crate::Reg<powerset::POWERSET_SPEC>;
-#[doc = "Description cluster: RAM\\[n\\]
-power control set register"]
+#[doc = "POWERSET (rw) register accessor: Description cluster: RAM\\[n\\] power control set register\n\nYou can [`read`](crate::Reg::read) this register and get [`powerset::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`powerset::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@powerset`] module"]
+#[doc(alias = "POWERSET")]
+pub type Powerset = crate::Reg<powerset::PowersetSpec>;
+#[doc = "Description cluster: RAM\\[n\\] power control set register"]
 pub mod powerset;
-#[doc = "POWERCLR (rw) register accessor: an alias for `Reg<POWERCLR_SPEC>`"]
-pub type POWERCLR = crate::Reg<powerclr::POWERCLR_SPEC>;
-#[doc = "Description cluster: RAM\\[n\\]
-power control clear register"]
+#[doc = "POWERCLR (rw) register accessor: Description cluster: RAM\\[n\\] power control clear register\n\nYou can [`read`](crate::Reg::read) this register and get [`powerclr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`powerclr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@powerclr`] module"]
+#[doc(alias = "POWERCLR")]
+pub type Powerclr = crate::Reg<powerclr::PowerclrSpec>;
+#[doc = "Description cluster: RAM\\[n\\] power control clear register"]
 pub mod powerclr;

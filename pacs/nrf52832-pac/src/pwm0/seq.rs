@@ -1,28 +1,51 @@
-#[doc = r"Register block"]
 #[repr(C)]
-pub struct SEQ {
-    #[doc = "0x00 - Description cluster\\[0\\]: Beginning address in Data RAM of this sequence"]
-    pub ptr: PTR,
-    #[doc = "0x04 - Description cluster\\[0\\]: Amount of values (duty cycles) in this sequence"]
-    pub cnt: CNT,
-    #[doc = "0x08 - Description cluster\\[0\\]: Amount of additional PWM periods between samples loaded into compare register"]
-    pub refresh: REFRESH,
-    #[doc = "0x0c - Description cluster\\[0\\]: Time added after the sequence"]
-    pub enddelay: ENDDELAY,
+#[doc = "Unspecified"]
+#[doc(alias = "SEQ")]
+pub struct Seq {
+    ptr: Ptr,
+    cnt: Cnt,
+    refresh: Refresh,
+    enddelay: Enddelay,
 }
-#[doc = "PTR (rw) register accessor: an alias for `Reg<PTR_SPEC>`"]
-pub type PTR = crate::Reg<ptr::PTR_SPEC>;
+impl Seq {
+    #[doc = "0x00 - Description cluster\\[0\\]: Beginning address in Data RAM of this sequence"]
+    #[inline(always)]
+    pub const fn ptr(&self) -> &Ptr {
+        &self.ptr
+    }
+    #[doc = "0x04 - Description cluster\\[0\\]: Amount of values (duty cycles) in this sequence"]
+    #[inline(always)]
+    pub const fn cnt(&self) -> &Cnt {
+        &self.cnt
+    }
+    #[doc = "0x08 - Description cluster\\[0\\]: Amount of additional PWM periods between samples loaded into compare register"]
+    #[inline(always)]
+    pub const fn refresh(&self) -> &Refresh {
+        &self.refresh
+    }
+    #[doc = "0x0c - Description cluster\\[0\\]: Time added after the sequence"]
+    #[inline(always)]
+    pub const fn enddelay(&self) -> &Enddelay {
+        &self.enddelay
+    }
+}
+#[doc = "PTR (rw) register accessor: Description cluster\\[0\\]: Beginning address in Data RAM of this sequence\n\nYou can [`read`](crate::Reg::read) this register and get [`ptr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ptr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ptr`] module"]
+#[doc(alias = "PTR")]
+pub type Ptr = crate::Reg<ptr::PtrSpec>;
 #[doc = "Description cluster\\[0\\]: Beginning address in Data RAM of this sequence"]
 pub mod ptr;
-#[doc = "CNT (rw) register accessor: an alias for `Reg<CNT_SPEC>`"]
-pub type CNT = crate::Reg<cnt::CNT_SPEC>;
+#[doc = "CNT (rw) register accessor: Description cluster\\[0\\]: Amount of values (duty cycles) in this sequence\n\nYou can [`read`](crate::Reg::read) this register and get [`cnt::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cnt::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cnt`] module"]
+#[doc(alias = "CNT")]
+pub type Cnt = crate::Reg<cnt::CntSpec>;
 #[doc = "Description cluster\\[0\\]: Amount of values (duty cycles) in this sequence"]
 pub mod cnt;
-#[doc = "REFRESH (rw) register accessor: an alias for `Reg<REFRESH_SPEC>`"]
-pub type REFRESH = crate::Reg<refresh::REFRESH_SPEC>;
+#[doc = "REFRESH (rw) register accessor: Description cluster\\[0\\]: Amount of additional PWM periods between samples loaded into compare register\n\nYou can [`read`](crate::Reg::read) this register and get [`refresh::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`refresh::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@refresh`] module"]
+#[doc(alias = "REFRESH")]
+pub type Refresh = crate::Reg<refresh::RefreshSpec>;
 #[doc = "Description cluster\\[0\\]: Amount of additional PWM periods between samples loaded into compare register"]
 pub mod refresh;
-#[doc = "ENDDELAY (rw) register accessor: an alias for `Reg<ENDDELAY_SPEC>`"]
-pub type ENDDELAY = crate::Reg<enddelay::ENDDELAY_SPEC>;
+#[doc = "ENDDELAY (rw) register accessor: Description cluster\\[0\\]: Time added after the sequence\n\nYou can [`read`](crate::Reg::read) this register and get [`enddelay::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`enddelay::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@enddelay`] module"]
+#[doc(alias = "ENDDELAY")]
+pub type Enddelay = crate::Reg<enddelay::EnddelaySpec>;
 #[doc = "Description cluster\\[0\\]: Time added after the sequence"]
 pub mod enddelay;

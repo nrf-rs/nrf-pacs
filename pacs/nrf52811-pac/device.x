@@ -1,8 +1,8 @@
 PROVIDE(POWER_CLOCK = DefaultHandler);
 PROVIDE(RADIO = DefaultHandler);
 PROVIDE(UARTE0_UART0 = DefaultHandler);
-PROVIDE(TWIM0_TWIS0_TWI0_SPIM0_SPIS0_SPI0 = DefaultHandler);
-PROVIDE(SPIM1_SPIS1_SPI1 = DefaultHandler);
+PROVIDE(TWIM0_TWIS0_TWI0_SPIM1_SPIS1_SPI1 = DefaultHandler);
+PROVIDE(SPIM0_SPIS0_SPI0 = DefaultHandler);
 PROVIDE(GPIOTE = DefaultHandler);
 PROVIDE(SAADC = DefaultHandler);
 PROVIDE(TIMER0 = DefaultHandler);

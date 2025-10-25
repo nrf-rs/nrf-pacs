@@ -1,71 +1,44 @@
 #[doc = "Register `SYSTEMOFF` writer"]
-pub struct W(crate::W<SYSTEMOFF_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SYSTEMOFF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SYSTEMOFF_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SYSTEMOFF_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SystemoffSpec>;
 #[doc = "Enter system off mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYSTEMOFF_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Systemoff {
     #[doc = "1: Enter system off mode."]
-    ENTER = 1,
+    Enter = 1,
 }
-impl From<SYSTEMOFF_AW> for bool {
+impl From<Systemoff> for bool {
     #[inline(always)]
-    fn from(variant: SYSTEMOFF_AW) -> Self {
+    fn from(variant: Systemoff) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SYSTEMOFF` writer - Enter system off mode."]
-pub type SYSTEMOFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYSTEMOFF_SPEC, SYSTEMOFF_AW, O>;
-impl<'a, const O: u8> SYSTEMOFF_W<'a, O> {
+pub type SystemoffW<'a, REG> = crate::BitWriter<'a, REG, Systemoff>;
+impl<'a, REG> SystemoffW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Enter system off mode."]
     #[inline(always)]
-    pub fn enter(self) -> &'a mut W {
-        self.variant(SYSTEMOFF_AW::ENTER)
+    pub fn enter(self) -> &'a mut crate::W<REG> {
+        self.variant(Systemoff::Enter)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enter system off mode."]
     #[inline(always)]
-    pub fn systemoff(&mut self) -> SYSTEMOFF_W<0> {
-        SYSTEMOFF_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn systemoff(&mut self) -> SystemoffW<'_, SystemoffSpec> {
+        SystemoffW::new(self, 0)
     }
 }
-#[doc = "System off register.\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [systemoff](index.html) module"]
-pub struct SYSTEMOFF_SPEC;
-impl crate::RegisterSpec for SYSTEMOFF_SPEC {
+#[doc = "System off register.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`systemoff::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct SystemoffSpec;
+impl crate::RegisterSpec for SystemoffSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [systemoff::W](W) writer structure"]
-impl crate::Writable for SYSTEMOFF_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`systemoff::W`](W) writer structure"]
+impl crate::Writable for SystemoffSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets SYSTEMOFF to value 0"]
-impl crate::Resettable for SYSTEMOFF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for SystemoffSpec {}

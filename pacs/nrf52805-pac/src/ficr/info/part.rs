@@ -1,24 +1,9 @@
 #[doc = "Register `PART` reader"]
-pub struct R(crate::R<PART_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PART_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PART_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PART_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `PART` reader - Part code"]
-pub type PART_R = crate::FieldReader<u32, PART_A>;
+pub type R = crate::R<PartSpec>;
 #[doc = "Part code\n\nValue on reset: 337925"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
-pub enum PART_A {
+pub enum Part {
     #[doc = "337925: nRF52805"]
     N52805 = 337925,
     #[doc = "337936: nRF52810"]
@@ -28,73 +13,74 @@ pub enum PART_A {
     #[doc = "337970: nRF52832"]
     N52832 = 337970,
     #[doc = "4294967295: Unspecified"]
-    UNSPECIFIED = 4294967295,
+    Unspecified = 4294967295,
 }
-impl From<PART_A> for u32 {
+impl From<Part> for u32 {
     #[inline(always)]
-    fn from(variant: PART_A) -> Self {
+    fn from(variant: Part) -> Self {
         variant as _
     }
 }
-impl PART_R {
+impl crate::FieldSpec for Part {
+    type Ux = u32;
+}
+impl crate::IsEnum for Part {}
+#[doc = "Field `PART` reader - Part code"]
+pub type PartR = crate::FieldReader<Part>;
+impl PartR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PART_A> {
+    pub const fn variant(&self) -> Option<Part> {
         match self.bits {
-            337925 => Some(PART_A::N52805),
-            337936 => Some(PART_A::N52810),
-            337937 => Some(PART_A::N52811),
-            337970 => Some(PART_A::N52832),
-            4294967295 => Some(PART_A::UNSPECIFIED),
+            337925 => Some(Part::N52805),
+            337936 => Some(Part::N52810),
+            337937 => Some(Part::N52811),
+            337970 => Some(Part::N52832),
+            4294967295 => Some(Part::Unspecified),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `N52805`"]
+    #[doc = "nRF52805"]
     #[inline(always)]
     pub fn is_n52805(&self) -> bool {
-        *self == PART_A::N52805
+        *self == Part::N52805
     }
-    #[doc = "Checks if the value of the field is `N52810`"]
+    #[doc = "nRF52810"]
     #[inline(always)]
     pub fn is_n52810(&self) -> bool {
-        *self == PART_A::N52810
+        *self == Part::N52810
     }
-    #[doc = "Checks if the value of the field is `N52811`"]
+    #[doc = "nRF52811"]
     #[inline(always)]
     pub fn is_n52811(&self) -> bool {
-        *self == PART_A::N52811
+        *self == Part::N52811
     }
-    #[doc = "Checks if the value of the field is `N52832`"]
+    #[doc = "nRF52832"]
     #[inline(always)]
     pub fn is_n52832(&self) -> bool {
-        *self == PART_A::N52832
+        *self == Part::N52832
     }
-    #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
+    #[doc = "Unspecified"]
     #[inline(always)]
     pub fn is_unspecified(&self) -> bool {
-        *self == PART_A::UNSPECIFIED
+        *self == Part::Unspecified
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Part code"]
     #[inline(always)]
-    pub fn part(&self) -> PART_R {
-        PART_R::new(self.bits)
+    pub fn part(&self) -> PartR {
+        PartR::new(self.bits)
     }
 }
-#[doc = "Part code\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [part](index.html) module"]
-pub struct PART_SPEC;
-impl crate::RegisterSpec for PART_SPEC {
+#[doc = "Part code\n\nYou can [`read`](crate::Reg::read) this register and get [`part::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct PartSpec;
+impl crate::RegisterSpec for PartSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [part::R](R) reader structure"]
-impl crate::Readable for PART_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`part::R`](R) reader structure"]
+impl crate::Readable for PartSpec {}
 #[doc = "`reset()` method sets PART to value 0x0005_2805"]
-impl crate::Resettable for PART_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0005_2805
-    }
+impl crate::Resettable for PartSpec {
+    const RESET_VALUE: u32 = 0x0005_2805;
 }

@@ -1,306 +1,275 @@
 #[doc = "Register `RAMON` reader"]
-pub struct R(crate::R<RAMON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RAMON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RAMON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RAMON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RamonSpec>;
 #[doc = "Register `RAMON` writer"]
-pub struct W(crate::W<RAMON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RAMON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<RamonSpec>;
+#[doc = "RAM block 0 behaviour in ON mode.\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Onram0 {
+    #[doc = "0: RAM block 0 OFF in ON mode."]
+    Ram0off = 0,
+    #[doc = "1: RAM block 0 ON in ON mode."]
+    Ram0on = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Onram0> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RAMON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RAMON_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Onram0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ONRAM0` reader - RAM block 0 behaviour in ON mode."]
-pub type ONRAM0_R = crate::BitReader<ONRAM0_A>;
-#[doc = "RAM block 0 behaviour in ON mode.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ONRAM0_A {
-    #[doc = "0: RAM block 0 OFF in ON mode."]
-    RAM0OFF = 0,
-    #[doc = "1: RAM block 0 ON in ON mode."]
-    RAM0ON = 1,
-}
-impl From<ONRAM0_A> for bool {
-    #[inline(always)]
-    fn from(variant: ONRAM0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ONRAM0_R {
+pub type Onram0R = crate::BitReader<Onram0>;
+impl Onram0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ONRAM0_A {
+    pub const fn variant(&self) -> Onram0 {
         match self.bits {
-            false => ONRAM0_A::RAM0OFF,
-            true => ONRAM0_A::RAM0ON,
+            false => Onram0::Ram0off,
+            true => Onram0::Ram0on,
         }
     }
-    #[doc = "Checks if the value of the field is `RAM0OFF`"]
-    #[inline(always)]
-    pub fn is_ram0off(&self) -> bool {
-        *self == ONRAM0_A::RAM0OFF
-    }
-    #[doc = "Checks if the value of the field is `RAM0ON`"]
-    #[inline(always)]
-    pub fn is_ram0on(&self) -> bool {
-        *self == ONRAM0_A::RAM0ON
-    }
-}
-#[doc = "Field `ONRAM0` writer - RAM block 0 behaviour in ON mode."]
-pub type ONRAM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAMON_SPEC, ONRAM0_A, O>;
-impl<'a, const O: u8> ONRAM0_W<'a, O> {
     #[doc = "RAM block 0 OFF in ON mode."]
     #[inline(always)]
-    pub fn ram0off(self) -> &'a mut W {
-        self.variant(ONRAM0_A::RAM0OFF)
+    pub fn is_ram0off(&self) -> bool {
+        *self == Onram0::Ram0off
     }
     #[doc = "RAM block 0 ON in ON mode."]
     #[inline(always)]
-    pub fn ram0on(self) -> &'a mut W {
-        self.variant(ONRAM0_A::RAM0ON)
+    pub fn is_ram0on(&self) -> bool {
+        *self == Onram0::Ram0on
+    }
+}
+#[doc = "Field `ONRAM0` writer - RAM block 0 behaviour in ON mode."]
+pub type Onram0W<'a, REG> = crate::BitWriter<'a, REG, Onram0>;
+impl<'a, REG> Onram0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "RAM block 0 OFF in ON mode."]
+    #[inline(always)]
+    pub fn ram0off(self) -> &'a mut crate::W<REG> {
+        self.variant(Onram0::Ram0off)
+    }
+    #[doc = "RAM block 0 ON in ON mode."]
+    #[inline(always)]
+    pub fn ram0on(self) -> &'a mut crate::W<REG> {
+        self.variant(Onram0::Ram0on)
+    }
+}
+#[doc = "RAM block 1 behaviour in ON mode.\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Onram1 {
+    #[doc = "0: RAM block 1 OFF in ON mode."]
+    Ram1off = 0,
+    #[doc = "1: RAM block 1 ON in ON mode."]
+    Ram1on = 1,
+}
+impl From<Onram1> for bool {
+    #[inline(always)]
+    fn from(variant: Onram1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ONRAM1` reader - RAM block 1 behaviour in ON mode."]
-pub type ONRAM1_R = crate::BitReader<ONRAM1_A>;
-#[doc = "RAM block 1 behaviour in ON mode.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ONRAM1_A {
-    #[doc = "0: RAM block 1 OFF in ON mode."]
-    RAM1OFF = 0,
-    #[doc = "1: RAM block 1 ON in ON mode."]
-    RAM1ON = 1,
-}
-impl From<ONRAM1_A> for bool {
-    #[inline(always)]
-    fn from(variant: ONRAM1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ONRAM1_R {
+pub type Onram1R = crate::BitReader<Onram1>;
+impl Onram1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ONRAM1_A {
+    pub const fn variant(&self) -> Onram1 {
         match self.bits {
-            false => ONRAM1_A::RAM1OFF,
-            true => ONRAM1_A::RAM1ON,
+            false => Onram1::Ram1off,
+            true => Onram1::Ram1on,
         }
     }
-    #[doc = "Checks if the value of the field is `RAM1OFF`"]
-    #[inline(always)]
-    pub fn is_ram1off(&self) -> bool {
-        *self == ONRAM1_A::RAM1OFF
-    }
-    #[doc = "Checks if the value of the field is `RAM1ON`"]
-    #[inline(always)]
-    pub fn is_ram1on(&self) -> bool {
-        *self == ONRAM1_A::RAM1ON
-    }
-}
-#[doc = "Field `ONRAM1` writer - RAM block 1 behaviour in ON mode."]
-pub type ONRAM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAMON_SPEC, ONRAM1_A, O>;
-impl<'a, const O: u8> ONRAM1_W<'a, O> {
     #[doc = "RAM block 1 OFF in ON mode."]
     #[inline(always)]
-    pub fn ram1off(self) -> &'a mut W {
-        self.variant(ONRAM1_A::RAM1OFF)
+    pub fn is_ram1off(&self) -> bool {
+        *self == Onram1::Ram1off
     }
     #[doc = "RAM block 1 ON in ON mode."]
     #[inline(always)]
-    pub fn ram1on(self) -> &'a mut W {
-        self.variant(ONRAM1_A::RAM1ON)
+    pub fn is_ram1on(&self) -> bool {
+        *self == Onram1::Ram1on
+    }
+}
+#[doc = "Field `ONRAM1` writer - RAM block 1 behaviour in ON mode."]
+pub type Onram1W<'a, REG> = crate::BitWriter<'a, REG, Onram1>;
+impl<'a, REG> Onram1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "RAM block 1 OFF in ON mode."]
+    #[inline(always)]
+    pub fn ram1off(self) -> &'a mut crate::W<REG> {
+        self.variant(Onram1::Ram1off)
+    }
+    #[doc = "RAM block 1 ON in ON mode."]
+    #[inline(always)]
+    pub fn ram1on(self) -> &'a mut crate::W<REG> {
+        self.variant(Onram1::Ram1on)
+    }
+}
+#[doc = "RAM block 0 behaviour in OFF mode.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Offram0 {
+    #[doc = "0: RAM block 0 OFF in OFF mode."]
+    Ram0off = 0,
+    #[doc = "1: RAM block 0 ON in OFF mode."]
+    Ram0on = 1,
+}
+impl From<Offram0> for bool {
+    #[inline(always)]
+    fn from(variant: Offram0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `OFFRAM0` reader - RAM block 0 behaviour in OFF mode."]
-pub type OFFRAM0_R = crate::BitReader<OFFRAM0_A>;
-#[doc = "RAM block 0 behaviour in OFF mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OFFRAM0_A {
-    #[doc = "0: RAM block 0 OFF in OFF mode."]
-    RAM0OFF = 0,
-    #[doc = "1: RAM block 0 ON in OFF mode."]
-    RAM0ON = 1,
-}
-impl From<OFFRAM0_A> for bool {
-    #[inline(always)]
-    fn from(variant: OFFRAM0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl OFFRAM0_R {
+pub type Offram0R = crate::BitReader<Offram0>;
+impl Offram0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OFFRAM0_A {
+    pub const fn variant(&self) -> Offram0 {
         match self.bits {
-            false => OFFRAM0_A::RAM0OFF,
-            true => OFFRAM0_A::RAM0ON,
+            false => Offram0::Ram0off,
+            true => Offram0::Ram0on,
         }
     }
-    #[doc = "Checks if the value of the field is `RAM0OFF`"]
-    #[inline(always)]
-    pub fn is_ram0off(&self) -> bool {
-        *self == OFFRAM0_A::RAM0OFF
-    }
-    #[doc = "Checks if the value of the field is `RAM0ON`"]
-    #[inline(always)]
-    pub fn is_ram0on(&self) -> bool {
-        *self == OFFRAM0_A::RAM0ON
-    }
-}
-#[doc = "Field `OFFRAM0` writer - RAM block 0 behaviour in OFF mode."]
-pub type OFFRAM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAMON_SPEC, OFFRAM0_A, O>;
-impl<'a, const O: u8> OFFRAM0_W<'a, O> {
     #[doc = "RAM block 0 OFF in OFF mode."]
     #[inline(always)]
-    pub fn ram0off(self) -> &'a mut W {
-        self.variant(OFFRAM0_A::RAM0OFF)
+    pub fn is_ram0off(&self) -> bool {
+        *self == Offram0::Ram0off
     }
     #[doc = "RAM block 0 ON in OFF mode."]
     #[inline(always)]
-    pub fn ram0on(self) -> &'a mut W {
-        self.variant(OFFRAM0_A::RAM0ON)
+    pub fn is_ram0on(&self) -> bool {
+        *self == Offram0::Ram0on
     }
 }
-#[doc = "Field `OFFRAM1` reader - RAM block 1 behaviour in OFF mode."]
-pub type OFFRAM1_R = crate::BitReader<OFFRAM1_A>;
-#[doc = "RAM block 1 behaviour in OFF mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OFFRAM1_A {
-    #[doc = "0: RAM block 1 OFF in OFF mode."]
-    RAM1OFF = 0,
-    #[doc = "1: RAM block 1 ON in OFF mode."]
-    RAM1ON = 1,
-}
-impl From<OFFRAM1_A> for bool {
+#[doc = "Field `OFFRAM0` writer - RAM block 0 behaviour in OFF mode."]
+pub type Offram0W<'a, REG> = crate::BitWriter<'a, REG, Offram0>;
+impl<'a, REG> Offram0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "RAM block 0 OFF in OFF mode."]
     #[inline(always)]
-    fn from(variant: OFFRAM1_A) -> Self {
+    pub fn ram0off(self) -> &'a mut crate::W<REG> {
+        self.variant(Offram0::Ram0off)
+    }
+    #[doc = "RAM block 0 ON in OFF mode."]
+    #[inline(always)]
+    pub fn ram0on(self) -> &'a mut crate::W<REG> {
+        self.variant(Offram0::Ram0on)
+    }
+}
+#[doc = "RAM block 1 behaviour in OFF mode.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Offram1 {
+    #[doc = "0: RAM block 1 OFF in OFF mode."]
+    Ram1off = 0,
+    #[doc = "1: RAM block 1 ON in OFF mode."]
+    Ram1on = 1,
+}
+impl From<Offram1> for bool {
+    #[inline(always)]
+    fn from(variant: Offram1) -> Self {
         variant as u8 != 0
     }
 }
-impl OFFRAM1_R {
+#[doc = "Field `OFFRAM1` reader - RAM block 1 behaviour in OFF mode."]
+pub type Offram1R = crate::BitReader<Offram1>;
+impl Offram1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OFFRAM1_A {
+    pub const fn variant(&self) -> Offram1 {
         match self.bits {
-            false => OFFRAM1_A::RAM1OFF,
-            true => OFFRAM1_A::RAM1ON,
+            false => Offram1::Ram1off,
+            true => Offram1::Ram1on,
         }
     }
-    #[doc = "Checks if the value of the field is `RAM1OFF`"]
-    #[inline(always)]
-    pub fn is_ram1off(&self) -> bool {
-        *self == OFFRAM1_A::RAM1OFF
-    }
-    #[doc = "Checks if the value of the field is `RAM1ON`"]
-    #[inline(always)]
-    pub fn is_ram1on(&self) -> bool {
-        *self == OFFRAM1_A::RAM1ON
-    }
-}
-#[doc = "Field `OFFRAM1` writer - RAM block 1 behaviour in OFF mode."]
-pub type OFFRAM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAMON_SPEC, OFFRAM1_A, O>;
-impl<'a, const O: u8> OFFRAM1_W<'a, O> {
     #[doc = "RAM block 1 OFF in OFF mode."]
     #[inline(always)]
-    pub fn ram1off(self) -> &'a mut W {
-        self.variant(OFFRAM1_A::RAM1OFF)
+    pub fn is_ram1off(&self) -> bool {
+        *self == Offram1::Ram1off
     }
     #[doc = "RAM block 1 ON in OFF mode."]
     #[inline(always)]
-    pub fn ram1on(self) -> &'a mut W {
-        self.variant(OFFRAM1_A::RAM1ON)
+    pub fn is_ram1on(&self) -> bool {
+        *self == Offram1::Ram1on
+    }
+}
+#[doc = "Field `OFFRAM1` writer - RAM block 1 behaviour in OFF mode."]
+pub type Offram1W<'a, REG> = crate::BitWriter<'a, REG, Offram1>;
+impl<'a, REG> Offram1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "RAM block 1 OFF in OFF mode."]
+    #[inline(always)]
+    pub fn ram1off(self) -> &'a mut crate::W<REG> {
+        self.variant(Offram1::Ram1off)
+    }
+    #[doc = "RAM block 1 ON in OFF mode."]
+    #[inline(always)]
+    pub fn ram1on(self) -> &'a mut crate::W<REG> {
+        self.variant(Offram1::Ram1on)
     }
 }
 impl R {
     #[doc = "Bit 0 - RAM block 0 behaviour in ON mode."]
     #[inline(always)]
-    pub fn onram0(&self) -> ONRAM0_R {
-        ONRAM0_R::new((self.bits & 1) != 0)
+    pub fn onram0(&self) -> Onram0R {
+        Onram0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - RAM block 1 behaviour in ON mode."]
     #[inline(always)]
-    pub fn onram1(&self) -> ONRAM1_R {
-        ONRAM1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn onram1(&self) -> Onram1R {
+        Onram1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 16 - RAM block 0 behaviour in OFF mode."]
     #[inline(always)]
-    pub fn offram0(&self) -> OFFRAM0_R {
-        OFFRAM0_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn offram0(&self) -> Offram0R {
+        Offram0R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - RAM block 1 behaviour in OFF mode."]
     #[inline(always)]
-    pub fn offram1(&self) -> OFFRAM1_R {
-        OFFRAM1_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn offram1(&self) -> Offram1R {
+        Offram1R::new(((self.bits >> 17) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - RAM block 0 behaviour in ON mode."]
     #[inline(always)]
-    pub fn onram0(&mut self) -> ONRAM0_W<0> {
-        ONRAM0_W::new(self)
+    pub fn onram0(&mut self) -> Onram0W<'_, RamonSpec> {
+        Onram0W::new(self, 0)
     }
     #[doc = "Bit 1 - RAM block 1 behaviour in ON mode."]
     #[inline(always)]
-    pub fn onram1(&mut self) -> ONRAM1_W<1> {
-        ONRAM1_W::new(self)
+    pub fn onram1(&mut self) -> Onram1W<'_, RamonSpec> {
+        Onram1W::new(self, 1)
     }
     #[doc = "Bit 16 - RAM block 0 behaviour in OFF mode."]
     #[inline(always)]
-    pub fn offram0(&mut self) -> OFFRAM0_W<16> {
-        OFFRAM0_W::new(self)
+    pub fn offram0(&mut self) -> Offram0W<'_, RamonSpec> {
+        Offram0W::new(self, 16)
     }
     #[doc = "Bit 17 - RAM block 1 behaviour in OFF mode."]
     #[inline(always)]
-    pub fn offram1(&mut self) -> OFFRAM1_W<17> {
-        OFFRAM1_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn offram1(&mut self) -> Offram1W<'_, RamonSpec> {
+        Offram1W::new(self, 17)
     }
 }
-#[doc = "Ram on/off.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ramon](index.html) module"]
-pub struct RAMON_SPEC;
-impl crate::RegisterSpec for RAMON_SPEC {
+#[doc = "Ram on/off.\n\nYou can [`read`](crate::Reg::read) this register and get [`ramon::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ramon::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct RamonSpec;
+impl crate::RegisterSpec for RamonSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ramon::R](R) reader structure"]
-impl crate::Readable for RAMON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ramon::W](W) writer structure"]
-impl crate::Writable for RAMON_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ramon::R`](R) reader structure"]
+impl crate::Readable for RamonSpec {}
+#[doc = "`write(|w| ..)` method takes [`ramon::W`](W) writer structure"]
+impl crate::Writable for RamonSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets RAMON to value 0x03"]
-impl crate::Resettable for RAMON_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x03
-    }
+impl crate::Resettable for RamonSpec {
+    const RESET_VALUE: u32 = 0x03;
 }

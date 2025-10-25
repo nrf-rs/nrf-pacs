@@ -1,77 +1,60 @@
 #[doc = "Register `EPIN[%s]` reader"]
-pub struct R(crate::R<EPIN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EPIN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EPIN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EPIN_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `GETSTATUS` reader - IN endpoint halted status. Can be used as is as response to a GetStatus() request to endpoint."]
-pub type GETSTATUS_R = crate::FieldReader<u16, GETSTATUS_A>;
+pub type R = crate::R<EpinSpec>;
 #[doc = "IN endpoint halted status. Can be used as is as response to a GetStatus() request to endpoint.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
-pub enum GETSTATUS_A {
+pub enum Getstatus {
     #[doc = "0: Endpoint is not halted"]
-    NOT_HALTED = 0,
+    NotHalted = 0,
     #[doc = "1: Endpoint is halted"]
-    HALTED = 1,
+    Halted = 1,
 }
-impl From<GETSTATUS_A> for u16 {
+impl From<Getstatus> for u16 {
     #[inline(always)]
-    fn from(variant: GETSTATUS_A) -> Self {
+    fn from(variant: Getstatus) -> Self {
         variant as _
     }
 }
-impl GETSTATUS_R {
+impl crate::FieldSpec for Getstatus {
+    type Ux = u16;
+}
+impl crate::IsEnum for Getstatus {}
+#[doc = "Field `GETSTATUS` reader - IN endpoint halted status. Can be used as is as response to a GetStatus() request to endpoint."]
+pub type GetstatusR = crate::FieldReader<Getstatus>;
+impl GetstatusR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<GETSTATUS_A> {
+    pub const fn variant(&self) -> Option<Getstatus> {
         match self.bits {
-            0 => Some(GETSTATUS_A::NOT_HALTED),
-            1 => Some(GETSTATUS_A::HALTED),
+            0 => Some(Getstatus::NotHalted),
+            1 => Some(Getstatus::Halted),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_HALTED`"]
+    #[doc = "Endpoint is not halted"]
     #[inline(always)]
     pub fn is_not_halted(&self) -> bool {
-        *self == GETSTATUS_A::NOT_HALTED
+        *self == Getstatus::NotHalted
     }
-    #[doc = "Checks if the value of the field is `HALTED`"]
+    #[doc = "Endpoint is halted"]
     #[inline(always)]
     pub fn is_halted(&self) -> bool {
-        *self == GETSTATUS_A::HALTED
+        *self == Getstatus::Halted
     }
 }
 impl R {
     #[doc = "Bits 0:15 - IN endpoint halted status. Can be used as is as response to a GetStatus() request to endpoint."]
     #[inline(always)]
-    pub fn getstatus(&self) -> GETSTATUS_R {
-        GETSTATUS_R::new((self.bits & 0xffff) as u16)
+    pub fn getstatus(&self) -> GetstatusR {
+        GetstatusR::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Description collection: IN endpoint halted status. Can be used as is as response to a GetStatus() request to endpoint.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [epin](index.html) module"]
-pub struct EPIN_SPEC;
-impl crate::RegisterSpec for EPIN_SPEC {
+#[doc = "Description collection: IN endpoint halted status. Can be used as is as response to a GetStatus() request to endpoint.\n\nYou can [`read`](crate::Reg::read) this register and get [`epin::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EpinSpec;
+impl crate::RegisterSpec for EpinSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [epin::R](R) reader structure"]
-impl crate::Readable for EPIN_SPEC {
-    type Reader = R;
-}
-#[doc = "`reset()` method sets EPIN[%s]
-to value 0"]
-impl crate::Resettable for EPIN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+#[doc = "`read()` method returns [`epin::R`](R) reader structure"]
+impl crate::Readable for EpinSpec {}
+#[doc = "`reset()` method sets EPIN[%s] to value 0"]
+impl crate::Resettable for EpinSpec {}

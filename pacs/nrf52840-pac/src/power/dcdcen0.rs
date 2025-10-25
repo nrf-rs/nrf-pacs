@@ -1,126 +1,84 @@
 #[doc = "Register `DCDCEN0` reader"]
-pub struct R(crate::R<DCDCEN0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DCDCEN0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DCDCEN0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DCDCEN0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Dcdcen0Spec>;
 #[doc = "Register `DCDCEN0` writer"]
-pub struct W(crate::W<DCDCEN0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DCDCEN0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DCDCEN0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DCDCEN0_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `DCDCEN` reader - Enable DC/DC converter for REG0 stage."]
-pub type DCDCEN_R = crate::BitReader<DCDCEN_A>;
+pub type W = crate::W<Dcdcen0Spec>;
 #[doc = "Enable DC/DC converter for REG0 stage.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DCDCEN_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Dcdcen {
     #[doc = "0: Disable"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Enable"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<DCDCEN_A> for bool {
+impl From<Dcdcen> for bool {
     #[inline(always)]
-    fn from(variant: DCDCEN_A) -> Self {
+    fn from(variant: Dcdcen) -> Self {
         variant as u8 != 0
     }
 }
-impl DCDCEN_R {
+#[doc = "Field `DCDCEN` reader - Enable DC/DC converter for REG0 stage."]
+pub type DcdcenR = crate::BitReader<Dcdcen>;
+impl DcdcenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DCDCEN_A {
+    pub const fn variant(&self) -> Dcdcen {
         match self.bits {
-            false => DCDCEN_A::DISABLED,
-            true => DCDCEN_A::ENABLED,
+            false => Dcdcen::Disabled,
+            true => Dcdcen::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == DCDCEN_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == DCDCEN_A::ENABLED
-    }
-}
-#[doc = "Field `DCDCEN` writer - Enable DC/DC converter for REG0 stage."]
-pub type DCDCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCEN0_SPEC, DCDCEN_A, O>;
-impl<'a, const O: u8> DCDCEN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(DCDCEN_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Dcdcen::Disabled
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(DCDCEN_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Dcdcen::Enabled
+    }
+}
+#[doc = "Field `DCDCEN` writer - Enable DC/DC converter for REG0 stage."]
+pub type DcdcenW<'a, REG> = crate::BitWriter<'a, REG, Dcdcen>;
+impl<'a, REG> DcdcenW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Dcdcen::Disabled)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Dcdcen::Enabled)
     }
 }
 impl R {
     #[doc = "Bit 0 - Enable DC/DC converter for REG0 stage."]
     #[inline(always)]
-    pub fn dcdcen(&self) -> DCDCEN_R {
-        DCDCEN_R::new((self.bits & 1) != 0)
+    pub fn dcdcen(&self) -> DcdcenR {
+        DcdcenR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable DC/DC converter for REG0 stage."]
     #[inline(always)]
-    pub fn dcdcen(&mut self) -> DCDCEN_W<0> {
-        DCDCEN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn dcdcen(&mut self) -> DcdcenW<'_, Dcdcen0Spec> {
+        DcdcenW::new(self, 0)
     }
 }
-#[doc = "Enable DC/DC converter for REG0 stage.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dcdcen0](index.html) module"]
-pub struct DCDCEN0_SPEC;
-impl crate::RegisterSpec for DCDCEN0_SPEC {
+#[doc = "Enable DC/DC converter for REG0 stage\n\nYou can [`read`](crate::Reg::read) this register and get [`dcdcen0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dcdcen0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Dcdcen0Spec;
+impl crate::RegisterSpec for Dcdcen0Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dcdcen0::R](R) reader structure"]
-impl crate::Readable for DCDCEN0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dcdcen0::W](W) writer structure"]
-impl crate::Writable for DCDCEN0_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`dcdcen0::R`](R) reader structure"]
+impl crate::Readable for Dcdcen0Spec {}
+#[doc = "`write(|w| ..)` method takes [`dcdcen0::W`](W) writer structure"]
+impl crate::Writable for Dcdcen0Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets DCDCEN0 to value 0"]
-impl crate::Resettable for DCDCEN0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Dcdcen0Spec {}

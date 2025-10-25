@@ -1,275 +1,245 @@
 #[doc = "Register `MODE` reader"]
-pub struct R(crate::R<MODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ModeSpec>;
 #[doc = "Register `MODE` writer"]
-pub struct W(crate::W<MODE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<ModeSpec>;
+#[doc = "The mode of operation to be used. The settings in this register apply whenever either the KSGEN or CRYPT tasks are triggered.\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Mode {
+    #[doc = "0: AES CCM packet encryption mode"]
+    Encryption = 0,
+    #[doc = "1: AES CCM packet decryption mode"]
+    Decryption = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Mode> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MODE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MODE_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Mode) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `MODE` reader - The mode of operation to be used. The settings in this register apply whenever either the KSGEN or CRYPT tasks are triggered."]
-pub type MODE_R = crate::BitReader<MODE_A>;
-#[doc = "The mode of operation to be used. The settings in this register apply whenever either the KSGEN or CRYPT tasks are triggered.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE_A {
-    #[doc = "0: AES CCM packet encryption mode"]
-    ENCRYPTION = 0,
-    #[doc = "1: AES CCM packet decryption mode"]
-    DECRYPTION = 1,
-}
-impl From<MODE_A> for bool {
-    #[inline(always)]
-    fn from(variant: MODE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl MODE_R {
+pub type ModeR = crate::BitReader<Mode>;
+impl ModeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MODE_A {
+    pub const fn variant(&self) -> Mode {
         match self.bits {
-            false => MODE_A::ENCRYPTION,
-            true => MODE_A::DECRYPTION,
+            false => Mode::Encryption,
+            true => Mode::Decryption,
         }
     }
-    #[doc = "Checks if the value of the field is `ENCRYPTION`"]
-    #[inline(always)]
-    pub fn is_encryption(&self) -> bool {
-        *self == MODE_A::ENCRYPTION
-    }
-    #[doc = "Checks if the value of the field is `DECRYPTION`"]
-    #[inline(always)]
-    pub fn is_decryption(&self) -> bool {
-        *self == MODE_A::DECRYPTION
-    }
-}
-#[doc = "Field `MODE` writer - The mode of operation to be used. The settings in this register apply whenever either the KSGEN or CRYPT tasks are triggered."]
-pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE_SPEC, MODE_A, O>;
-impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "AES CCM packet encryption mode"]
     #[inline(always)]
-    pub fn encryption(self) -> &'a mut W {
-        self.variant(MODE_A::ENCRYPTION)
+    pub fn is_encryption(&self) -> bool {
+        *self == Mode::Encryption
     }
     #[doc = "AES CCM packet decryption mode"]
     #[inline(always)]
-    pub fn decryption(self) -> &'a mut W {
-        self.variant(MODE_A::DECRYPTION)
+    pub fn is_decryption(&self) -> bool {
+        *self == Mode::Decryption
     }
 }
-#[doc = "Field `DATARATE` reader - Radio data rate that the CCM shall run synchronous with"]
-pub type DATARATE_R = crate::FieldReader<u8, DATARATE_A>;
-#[doc = "Radio data rate that the CCM shall run synchronous with\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum DATARATE_A {
-    #[doc = "0: 1 Mbps"]
-    _1MBIT = 0,
-    #[doc = "1: 2 Mbps"]
-    _2MBIT = 1,
-    #[doc = "2: 125 Kbps"]
-    _125KBPS = 2,
-    #[doc = "3: 500 Kbps"]
-    _500KBPS = 3,
-}
-impl From<DATARATE_A> for u8 {
+#[doc = "Field `MODE` writer - The mode of operation to be used. The settings in this register apply whenever either the KSGEN or CRYPT tasks are triggered."]
+pub type ModeW<'a, REG> = crate::BitWriter<'a, REG, Mode>;
+impl<'a, REG> ModeW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "AES CCM packet encryption mode"]
     #[inline(always)]
-    fn from(variant: DATARATE_A) -> Self {
+    pub fn encryption(self) -> &'a mut crate::W<REG> {
+        self.variant(Mode::Encryption)
+    }
+    #[doc = "AES CCM packet decryption mode"]
+    #[inline(always)]
+    pub fn decryption(self) -> &'a mut crate::W<REG> {
+        self.variant(Mode::Decryption)
+    }
+}
+#[doc = "Radio data rate that the CCM shall run synchronous with\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Datarate {
+    #[doc = "0: 1 Mbps"]
+    _1mbit = 0,
+    #[doc = "1: 2 Mbps"]
+    _2mbit = 1,
+    #[doc = "2: 125 Kbps"]
+    _125kbps = 2,
+    #[doc = "3: 500 Kbps"]
+    _500kbps = 3,
+}
+impl From<Datarate> for u8 {
+    #[inline(always)]
+    fn from(variant: Datarate) -> Self {
         variant as _
     }
 }
-impl DATARATE_R {
+impl crate::FieldSpec for Datarate {
+    type Ux = u8;
+}
+impl crate::IsEnum for Datarate {}
+#[doc = "Field `DATARATE` reader - Radio data rate that the CCM shall run synchronous with"]
+pub type DatarateR = crate::FieldReader<Datarate>;
+impl DatarateR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATARATE_A {
+    pub const fn variant(&self) -> Datarate {
         match self.bits {
-            0 => DATARATE_A::_1MBIT,
-            1 => DATARATE_A::_2MBIT,
-            2 => DATARATE_A::_125KBPS,
-            3 => DATARATE_A::_500KBPS,
+            0 => Datarate::_1mbit,
+            1 => Datarate::_2mbit,
+            2 => Datarate::_125kbps,
+            3 => Datarate::_500kbps,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_1MBIT`"]
-    #[inline(always)]
-    pub fn is_1mbit(&self) -> bool {
-        *self == DATARATE_A::_1MBIT
-    }
-    #[doc = "Checks if the value of the field is `_2MBIT`"]
-    #[inline(always)]
-    pub fn is_2mbit(&self) -> bool {
-        *self == DATARATE_A::_2MBIT
-    }
-    #[doc = "Checks if the value of the field is `_125KBPS`"]
-    #[inline(always)]
-    pub fn is_125kbps(&self) -> bool {
-        *self == DATARATE_A::_125KBPS
-    }
-    #[doc = "Checks if the value of the field is `_500KBPS`"]
-    #[inline(always)]
-    pub fn is_500kbps(&self) -> bool {
-        *self == DATARATE_A::_500KBPS
-    }
-}
-#[doc = "Field `DATARATE` writer - Radio data rate that the CCM shall run synchronous with"]
-pub type DATARATE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, MODE_SPEC, u8, DATARATE_A, 2, O>;
-impl<'a, const O: u8> DATARATE_W<'a, O> {
     #[doc = "1 Mbps"]
     #[inline(always)]
-    pub fn _1mbit(self) -> &'a mut W {
-        self.variant(DATARATE_A::_1MBIT)
+    pub fn is_1mbit(&self) -> bool {
+        *self == Datarate::_1mbit
     }
     #[doc = "2 Mbps"]
     #[inline(always)]
-    pub fn _2mbit(self) -> &'a mut W {
-        self.variant(DATARATE_A::_2MBIT)
+    pub fn is_2mbit(&self) -> bool {
+        *self == Datarate::_2mbit
     }
     #[doc = "125 Kbps"]
     #[inline(always)]
-    pub fn _125kbps(self) -> &'a mut W {
-        self.variant(DATARATE_A::_125KBPS)
+    pub fn is_125kbps(&self) -> bool {
+        *self == Datarate::_125kbps
     }
     #[doc = "500 Kbps"]
     #[inline(always)]
-    pub fn _500kbps(self) -> &'a mut W {
-        self.variant(DATARATE_A::_500KBPS)
+    pub fn is_500kbps(&self) -> bool {
+        *self == Datarate::_500kbps
     }
 }
-#[doc = "Field `LENGTH` reader - Packet length configuration"]
-pub type LENGTH_R = crate::BitReader<LENGTH_A>;
-#[doc = "Packet length configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LENGTH_A {
-    #[doc = "0: Default length. Effective length of LENGTH field in encrypted/decrypted packet is 5 bits. A keystream for packet payloads up to 27 bytes will be generated."]
-    DEFAULT = 0,
-    #[doc = "1: Extended length. Effective length of LENGTH field in encrypted/decrypted packet is 8 bits. A keystream for packet payloads up to MAXPACKETSIZE bytes will be generated."]
-    EXTENDED = 1,
-}
-impl From<LENGTH_A> for bool {
+#[doc = "Field `DATARATE` writer - Radio data rate that the CCM shall run synchronous with"]
+pub type DatarateW<'a, REG> = crate::FieldWriter<'a, REG, 2, Datarate, crate::Safe>;
+impl<'a, REG> DatarateW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "1 Mbps"]
     #[inline(always)]
-    fn from(variant: LENGTH_A) -> Self {
+    pub fn _1mbit(self) -> &'a mut crate::W<REG> {
+        self.variant(Datarate::_1mbit)
+    }
+    #[doc = "2 Mbps"]
+    #[inline(always)]
+    pub fn _2mbit(self) -> &'a mut crate::W<REG> {
+        self.variant(Datarate::_2mbit)
+    }
+    #[doc = "125 Kbps"]
+    #[inline(always)]
+    pub fn _125kbps(self) -> &'a mut crate::W<REG> {
+        self.variant(Datarate::_125kbps)
+    }
+    #[doc = "500 Kbps"]
+    #[inline(always)]
+    pub fn _500kbps(self) -> &'a mut crate::W<REG> {
+        self.variant(Datarate::_500kbps)
+    }
+}
+#[doc = "Packet length configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Length {
+    #[doc = "0: Default length. Effective length of LENGTH field in encrypted/decrypted packet is 5 bits. A keystream for packet payloads up to 27 bytes will be generated."]
+    Default = 0,
+    #[doc = "1: Extended length. Effective length of LENGTH field in encrypted/decrypted packet is 8 bits. A keystream for packet payloads up to MAXPACKETSIZE bytes will be generated."]
+    Extended = 1,
+}
+impl From<Length> for bool {
+    #[inline(always)]
+    fn from(variant: Length) -> Self {
         variant as u8 != 0
     }
 }
-impl LENGTH_R {
+#[doc = "Field `LENGTH` reader - Packet length configuration"]
+pub type LengthR = crate::BitReader<Length>;
+impl LengthR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LENGTH_A {
+    pub const fn variant(&self) -> Length {
         match self.bits {
-            false => LENGTH_A::DEFAULT,
-            true => LENGTH_A::EXTENDED,
+            false => Length::Default,
+            true => Length::Extended,
         }
     }
-    #[doc = "Checks if the value of the field is `DEFAULT`"]
-    #[inline(always)]
-    pub fn is_default(&self) -> bool {
-        *self == LENGTH_A::DEFAULT
-    }
-    #[doc = "Checks if the value of the field is `EXTENDED`"]
-    #[inline(always)]
-    pub fn is_extended(&self) -> bool {
-        *self == LENGTH_A::EXTENDED
-    }
-}
-#[doc = "Field `LENGTH` writer - Packet length configuration"]
-pub type LENGTH_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE_SPEC, LENGTH_A, O>;
-impl<'a, const O: u8> LENGTH_W<'a, O> {
     #[doc = "Default length. Effective length of LENGTH field in encrypted/decrypted packet is 5 bits. A keystream for packet payloads up to 27 bytes will be generated."]
     #[inline(always)]
-    pub fn default(self) -> &'a mut W {
-        self.variant(LENGTH_A::DEFAULT)
+    pub fn is_default(&self) -> bool {
+        *self == Length::Default
     }
     #[doc = "Extended length. Effective length of LENGTH field in encrypted/decrypted packet is 8 bits. A keystream for packet payloads up to MAXPACKETSIZE bytes will be generated."]
     #[inline(always)]
-    pub fn extended(self) -> &'a mut W {
-        self.variant(LENGTH_A::EXTENDED)
+    pub fn is_extended(&self) -> bool {
+        *self == Length::Extended
+    }
+}
+#[doc = "Field `LENGTH` writer - Packet length configuration"]
+pub type LengthW<'a, REG> = crate::BitWriter<'a, REG, Length>;
+impl<'a, REG> LengthW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Default length. Effective length of LENGTH field in encrypted/decrypted packet is 5 bits. A keystream for packet payloads up to 27 bytes will be generated."]
+    #[inline(always)]
+    pub fn default(self) -> &'a mut crate::W<REG> {
+        self.variant(Length::Default)
+    }
+    #[doc = "Extended length. Effective length of LENGTH field in encrypted/decrypted packet is 8 bits. A keystream for packet payloads up to MAXPACKETSIZE bytes will be generated."]
+    #[inline(always)]
+    pub fn extended(self) -> &'a mut crate::W<REG> {
+        self.variant(Length::Extended)
     }
 }
 impl R {
     #[doc = "Bit 0 - The mode of operation to be used. The settings in this register apply whenever either the KSGEN or CRYPT tasks are triggered."]
     #[inline(always)]
-    pub fn mode(&self) -> MODE_R {
-        MODE_R::new((self.bits & 1) != 0)
+    pub fn mode(&self) -> ModeR {
+        ModeR::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 16:17 - Radio data rate that the CCM shall run synchronous with"]
     #[inline(always)]
-    pub fn datarate(&self) -> DATARATE_R {
-        DATARATE_R::new(((self.bits >> 16) & 3) as u8)
+    pub fn datarate(&self) -> DatarateR {
+        DatarateR::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bit 24 - Packet length configuration"]
     #[inline(always)]
-    pub fn length(&self) -> LENGTH_R {
-        LENGTH_R::new(((self.bits >> 24) & 1) != 0)
+    pub fn length(&self) -> LengthR {
+        LengthR::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - The mode of operation to be used. The settings in this register apply whenever either the KSGEN or CRYPT tasks are triggered."]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W<0> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> ModeW<'_, ModeSpec> {
+        ModeW::new(self, 0)
     }
     #[doc = "Bits 16:17 - Radio data rate that the CCM shall run synchronous with"]
     #[inline(always)]
-    pub fn datarate(&mut self) -> DATARATE_W<16> {
-        DATARATE_W::new(self)
+    pub fn datarate(&mut self) -> DatarateW<'_, ModeSpec> {
+        DatarateW::new(self, 16)
     }
     #[doc = "Bit 24 - Packet length configuration"]
     #[inline(always)]
-    pub fn length(&mut self) -> LENGTH_W<24> {
-        LENGTH_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn length(&mut self) -> LengthW<'_, ModeSpec> {
+        LengthW::new(self, 24)
     }
 }
-#[doc = "Operation mode\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mode](index.html) module"]
-pub struct MODE_SPEC;
-impl crate::RegisterSpec for MODE_SPEC {
+#[doc = "Operation mode\n\nYou can [`read`](crate::Reg::read) this register and get [`mode::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mode::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ModeSpec;
+impl crate::RegisterSpec for ModeSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mode::R](R) reader structure"]
-impl crate::Readable for MODE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mode::W](W) writer structure"]
-impl crate::Writable for MODE_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`mode::R`](R) reader structure"]
+impl crate::Readable for ModeSpec {}
+#[doc = "`write(|w| ..)` method takes [`mode::W`](W) writer structure"]
+impl crate::Writable for ModeSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets MODE to value 0x01"]
-impl crate::Resettable for MODE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+impl crate::Resettable for ModeSpec {
+    const RESET_VALUE: u32 = 0x01;
 }

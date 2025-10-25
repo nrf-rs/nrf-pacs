@@ -17,5 +17,9 @@ vcell.workspace = true
 optional = true
 workspace = true
 
+[dependencies.critical-section]
+optional = true
+workspace = true
+
 [features]
 rt = ["cortex-m-rt/device"]

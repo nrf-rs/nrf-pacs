@@ -1,188 +1,147 @@
 #[doc = "Register `SHORTS` reader"]
-pub struct R(crate::R<SHORTS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SHORTS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SHORTS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SHORTS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ShortsSpec>;
 #[doc = "Register `SHORTS` writer"]
-pub struct W(crate::W<SHORTS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SHORTS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<ShortsSpec>;
+#[doc = "Shortcut between FIELDDETECTED event and ACTIVATE task\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FielddetectedActivate {
+    #[doc = "0: Disable shortcut"]
+    Disabled = 0,
+    #[doc = "1: Enable shortcut"]
+    Enabled = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<FielddetectedActivate> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SHORTS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SHORTS_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: FielddetectedActivate) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `FIELDDETECTED_ACTIVATE` reader - Shortcut between FIELDDETECTED event and ACTIVATE task"]
-pub type FIELDDETECTED_ACTIVATE_R = crate::BitReader<FIELDDETECTED_ACTIVATE_A>;
-#[doc = "Shortcut between FIELDDETECTED event and ACTIVATE task\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FIELDDETECTED_ACTIVATE_A {
-    #[doc = "0: Disable shortcut"]
-    DISABLED = 0,
-    #[doc = "1: Enable shortcut"]
-    ENABLED = 1,
-}
-impl From<FIELDDETECTED_ACTIVATE_A> for bool {
-    #[inline(always)]
-    fn from(variant: FIELDDETECTED_ACTIVATE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl FIELDDETECTED_ACTIVATE_R {
+pub type FielddetectedActivateR = crate::BitReader<FielddetectedActivate>;
+impl FielddetectedActivateR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIELDDETECTED_ACTIVATE_A {
+    pub const fn variant(&self) -> FielddetectedActivate {
         match self.bits {
-            false => FIELDDETECTED_ACTIVATE_A::DISABLED,
-            true => FIELDDETECTED_ACTIVATE_A::ENABLED,
+            false => FielddetectedActivate::Disabled,
+            true => FielddetectedActivate::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable shortcut"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == FIELDDETECTED_ACTIVATE_A::DISABLED
+        *self == FielddetectedActivate::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable shortcut"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == FIELDDETECTED_ACTIVATE_A::ENABLED
+        *self == FielddetectedActivate::Enabled
     }
 }
 #[doc = "Field `FIELDDETECTED_ACTIVATE` writer - Shortcut between FIELDDETECTED event and ACTIVATE task"]
-pub type FIELDDETECTED_ACTIVATE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, SHORTS_SPEC, FIELDDETECTED_ACTIVATE_A, O>;
-impl<'a, const O: u8> FIELDDETECTED_ACTIVATE_W<'a, O> {
+pub type FielddetectedActivateW<'a, REG> = crate::BitWriter<'a, REG, FielddetectedActivate>;
+impl<'a, REG> FielddetectedActivateW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(FIELDDETECTED_ACTIVATE_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(FielddetectedActivate::Disabled)
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(FIELDDETECTED_ACTIVATE_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(FielddetectedActivate::Enabled)
     }
 }
-#[doc = "Field `FIELDLOST_SENSE` reader - Shortcut between FIELDLOST event and SENSE task"]
-pub type FIELDLOST_SENSE_R = crate::BitReader<FIELDLOST_SENSE_A>;
 #[doc = "Shortcut between FIELDLOST event and SENSE task\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FIELDLOST_SENSE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FieldlostSense {
     #[doc = "0: Disable shortcut"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<FIELDLOST_SENSE_A> for bool {
+impl From<FieldlostSense> for bool {
     #[inline(always)]
-    fn from(variant: FIELDLOST_SENSE_A) -> Self {
+    fn from(variant: FieldlostSense) -> Self {
         variant as u8 != 0
     }
 }
-impl FIELDLOST_SENSE_R {
+#[doc = "Field `FIELDLOST_SENSE` reader - Shortcut between FIELDLOST event and SENSE task"]
+pub type FieldlostSenseR = crate::BitReader<FieldlostSense>;
+impl FieldlostSenseR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIELDLOST_SENSE_A {
+    pub const fn variant(&self) -> FieldlostSense {
         match self.bits {
-            false => FIELDLOST_SENSE_A::DISABLED,
-            true => FIELDLOST_SENSE_A::ENABLED,
+            false => FieldlostSense::Disabled,
+            true => FieldlostSense::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == FIELDLOST_SENSE_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == FIELDLOST_SENSE_A::ENABLED
-    }
-}
-#[doc = "Field `FIELDLOST_SENSE` writer - Shortcut between FIELDLOST event and SENSE task"]
-pub type FIELDLOST_SENSE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, SHORTS_SPEC, FIELDLOST_SENSE_A, O>;
-impl<'a, const O: u8> FIELDLOST_SENSE_W<'a, O> {
     #[doc = "Disable shortcut"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(FIELDLOST_SENSE_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == FieldlostSense::Disabled
     }
     #[doc = "Enable shortcut"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(FIELDLOST_SENSE_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == FieldlostSense::Enabled
+    }
+}
+#[doc = "Field `FIELDLOST_SENSE` writer - Shortcut between FIELDLOST event and SENSE task"]
+pub type FieldlostSenseW<'a, REG> = crate::BitWriter<'a, REG, FieldlostSense>;
+impl<'a, REG> FieldlostSenseW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable shortcut"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(FieldlostSense::Disabled)
+    }
+    #[doc = "Enable shortcut"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(FieldlostSense::Enabled)
     }
 }
 impl R {
     #[doc = "Bit 0 - Shortcut between FIELDDETECTED event and ACTIVATE task"]
     #[inline(always)]
-    pub fn fielddetected_activate(&self) -> FIELDDETECTED_ACTIVATE_R {
-        FIELDDETECTED_ACTIVATE_R::new((self.bits & 1) != 0)
+    pub fn fielddetected_activate(&self) -> FielddetectedActivateR {
+        FielddetectedActivateR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Shortcut between FIELDLOST event and SENSE task"]
     #[inline(always)]
-    pub fn fieldlost_sense(&self) -> FIELDLOST_SENSE_R {
-        FIELDLOST_SENSE_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn fieldlost_sense(&self) -> FieldlostSenseR {
+        FieldlostSenseR::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Shortcut between FIELDDETECTED event and ACTIVATE task"]
     #[inline(always)]
-    pub fn fielddetected_activate(&mut self) -> FIELDDETECTED_ACTIVATE_W<0> {
-        FIELDDETECTED_ACTIVATE_W::new(self)
+    pub fn fielddetected_activate(&mut self) -> FielddetectedActivateW<'_, ShortsSpec> {
+        FielddetectedActivateW::new(self, 0)
     }
     #[doc = "Bit 1 - Shortcut between FIELDLOST event and SENSE task"]
     #[inline(always)]
-    pub fn fieldlost_sense(&mut self) -> FIELDLOST_SENSE_W<1> {
-        FIELDLOST_SENSE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn fieldlost_sense(&mut self) -> FieldlostSenseW<'_, ShortsSpec> {
+        FieldlostSenseW::new(self, 1)
     }
 }
-#[doc = "Shortcut register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [shorts](index.html) module"]
-pub struct SHORTS_SPEC;
-impl crate::RegisterSpec for SHORTS_SPEC {
+#[doc = "Shortcut register\n\nYou can [`read`](crate::Reg::read) this register and get [`shorts::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`shorts::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ShortsSpec;
+impl crate::RegisterSpec for ShortsSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [shorts::R](R) reader structure"]
-impl crate::Readable for SHORTS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [shorts::W](W) writer structure"]
-impl crate::Writable for SHORTS_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`shorts::R`](R) reader structure"]
+impl crate::Readable for ShortsSpec {}
+#[doc = "`write(|w| ..)` method takes [`shorts::W`](W) writer structure"]
+impl crate::Writable for ShortsSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets SHORTS to value 0"]
-impl crate::Resettable for SHORTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for ShortsSpec {}

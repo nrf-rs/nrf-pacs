@@ -1,52 +1,22 @@
 #[doc = "Register `KEY3` writer"]
-pub struct W(crate::W<KEY3_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<KEY3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<KEY3_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<KEY3_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Key3Spec>;
 #[doc = "Field `KEY3` writer - Bits 127:96 of DMA AES KEY"]
-pub type KEY3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, KEY3_SPEC, u32, u32, 32, O>;
+pub type Key3W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
     #[doc = "Bits 0:31 - Bits 127:96 of DMA AES KEY"]
     #[inline(always)]
-    pub fn key3(&mut self) -> KEY3_W<0> {
-        KEY3_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn key3(&mut self) -> Key3W<'_, Key3Spec> {
+        Key3W::new(self, 0)
     }
 }
-#[doc = "Bits 127:96 of DMA AES KEY\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [key3](index.html) module"]
-pub struct KEY3_SPEC;
-impl crate::RegisterSpec for KEY3_SPEC {
+#[doc = "Bits 127:96 of DMA AES KEY\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`key3::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Key3Spec;
+impl crate::RegisterSpec for Key3Spec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [key3::W](W) writer structure"]
-impl crate::Writable for KEY3_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`key3::W`](W) writer structure"]
+impl crate::Writable for Key3Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets KEY3 to value 0"]
-impl crate::Resettable for KEY3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Key3Spec {}

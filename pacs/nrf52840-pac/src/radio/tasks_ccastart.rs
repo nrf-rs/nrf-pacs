@@ -1,53 +1,44 @@
 #[doc = "Register `TASKS_CCASTART` writer"]
-pub struct W(crate::W<TASKS_CCASTART_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TASKS_CCASTART_SPEC>;
+pub type W = crate::W<TasksCcastartSpec>;
+#[doc = "Start the clear channel assessment used in IEEE 802.15.4 mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TasksCcastart {
+    #[doc = "1: Trigger task"]
+    Trigger = 1,
+}
+impl From<TasksCcastart> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: TasksCcastart) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `TASKS_CCASTART` writer - Start the clear channel assessment used in IEEE 802.15.4 mode"]
+pub type TasksCcastartW<'a, REG> = crate::BitWriter<'a, REG, TasksCcastart>;
+impl<'a, REG> TasksCcastartW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Trigger task"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn trigger(self) -> &'a mut crate::W<REG> {
+        self.variant(TasksCcastart::Trigger)
     }
 }
-impl From<crate::W<TASKS_CCASTART_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TASKS_CCASTART_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `TASKS_CCASTART` writer - "]
-pub type TASKS_CCASTART_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TASKS_CCASTART_SPEC, bool, O>;
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Start the clear channel assessment used in IEEE 802.15.4 mode"]
     #[inline(always)]
-    pub fn tasks_ccastart(&mut self) -> TASKS_CCASTART_W<0> {
-        TASKS_CCASTART_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn tasks_ccastart(&mut self) -> TasksCcastartW<'_, TasksCcastartSpec> {
+        TasksCcastartW::new(self, 0)
     }
 }
-#[doc = "Start the clear channel assessment used in IEEE 802.15.4 mode\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_ccastart](index.html) module"]
-pub struct TASKS_CCASTART_SPEC;
-impl crate::RegisterSpec for TASKS_CCASTART_SPEC {
+#[doc = "Start the clear channel assessment used in IEEE 802.15.4 mode\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_ccastart::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TasksCcastartSpec;
+impl crate::RegisterSpec for TasksCcastartSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [tasks_ccastart::W](W) writer structure"]
-impl crate::Writable for TASKS_CCASTART_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`tasks_ccastart::W`](W) writer structure"]
+impl crate::Writable for TasksCcastartSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TASKS_CCASTART to value 0"]
-impl crate::Resettable for TASKS_CCASTART_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for TasksCcastartSpec {}

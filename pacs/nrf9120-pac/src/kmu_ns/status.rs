@@ -1,115 +1,95 @@
 #[doc = "Register `STATUS` reader"]
-pub struct R(crate::R<STATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type R = crate::R<StatusSpec>;
+#[doc = "Key slot ID successfully selected by the KMU\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Selected {
+    #[doc = "0: No key slot ID selected by KMU"]
+    Disabled = 0,
+    #[doc = "1: Key slot ID successfully selected by KMU"]
+    Enabled = 1,
 }
-impl From<crate::R<STATUS_SPEC>> for R {
+impl From<Selected> for bool {
     #[inline(always)]
-    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
-        R(reader)
+    fn from(variant: Selected) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SELECTED` reader - Key slot ID successfully selected by the KMU"]
-pub type SELECTED_R = crate::BitReader<SELECTED_A>;
-#[doc = "Key slot ID successfully selected by the KMU\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SELECTED_A {
-    #[doc = "0: No key slot ID selected by KMU"]
-    DISABLED = 0,
-    #[doc = "1: Key slot ID successfully selected by KMU"]
-    ENABLED = 1,
-}
-impl From<SELECTED_A> for bool {
-    #[inline(always)]
-    fn from(variant: SELECTED_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SELECTED_R {
+pub type SelectedR = crate::BitReader<Selected>;
+impl SelectedR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELECTED_A {
+    pub const fn variant(&self) -> Selected {
         match self.bits {
-            false => SELECTED_A::DISABLED,
-            true => SELECTED_A::ENABLED,
+            false => Selected::Disabled,
+            true => Selected::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "No key slot ID selected by KMU"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == SELECTED_A::DISABLED
+        *self == Selected::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Key slot ID successfully selected by KMU"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == SELECTED_A::ENABLED
+        *self == Selected::Enabled
+    }
+}
+#[doc = "Violation status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Blocked {
+    #[doc = "0: No access violation detected"]
+    Disabled = 0,
+    #[doc = "1: Access violation detected and blocked"]
+    Enabled = 1,
+}
+impl From<Blocked> for bool {
+    #[inline(always)]
+    fn from(variant: Blocked) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `BLOCKED` reader - Violation status"]
-pub type BLOCKED_R = crate::BitReader<BLOCKED_A>;
-#[doc = "Violation status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BLOCKED_A {
-    #[doc = "0: No access violation detected"]
-    DISABLED = 0,
-    #[doc = "1: Access violation detected and blocked"]
-    ENABLED = 1,
-}
-impl From<BLOCKED_A> for bool {
-    #[inline(always)]
-    fn from(variant: BLOCKED_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl BLOCKED_R {
+pub type BlockedR = crate::BitReader<Blocked>;
+impl BlockedR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BLOCKED_A {
+    pub const fn variant(&self) -> Blocked {
         match self.bits {
-            false => BLOCKED_A::DISABLED,
-            true => BLOCKED_A::ENABLED,
+            false => Blocked::Disabled,
+            true => Blocked::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "No access violation detected"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == BLOCKED_A::DISABLED
+        *self == Blocked::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Access violation detected and blocked"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == BLOCKED_A::ENABLED
+        *self == Blocked::Enabled
     }
 }
 impl R {
     #[doc = "Bit 0 - Key slot ID successfully selected by the KMU"]
     #[inline(always)]
-    pub fn selected(&self) -> SELECTED_R {
-        SELECTED_R::new((self.bits & 1) != 0)
+    pub fn selected(&self) -> SelectedR {
+        SelectedR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Violation status"]
     #[inline(always)]
-    pub fn blocked(&self) -> BLOCKED_R {
-        BLOCKED_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn blocked(&self) -> BlockedR {
+        BlockedR::new(((self.bits >> 1) & 1) != 0)
     }
 }
-#[doc = "Status bits for KMU operation\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
-pub struct STATUS_SPEC;
-impl crate::RegisterSpec for STATUS_SPEC {
+#[doc = "Status bits for KMU operation\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct StatusSpec;
+impl crate::RegisterSpec for StatusSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [status::R](R) reader structure"]
-impl crate::Readable for STATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`status::R`](R) reader structure"]
+impl crate::Readable for StatusSpec {}
 #[doc = "`reset()` method sets STATUS to value 0"]
-impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for StatusSpec {}

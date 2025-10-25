@@ -1,81 +1,35 @@
 #[doc = "Register `PACKETPTR` reader"]
-pub struct R(crate::R<PACKETPTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PACKETPTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PACKETPTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PACKETPTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PacketptrSpec>;
 #[doc = "Register `PACKETPTR` writer"]
-pub struct W(crate::W<PACKETPTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PACKETPTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PACKETPTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PACKETPTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PacketptrSpec>;
 #[doc = "Field `PACKETPTR` reader - Packet pointer"]
-pub type PACKETPTR_R = crate::FieldReader<u32, u32>;
+pub type PacketptrR = crate::FieldReader<u32>;
 #[doc = "Field `PACKETPTR` writer - Packet pointer"]
-pub type PACKETPTR_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PACKETPTR_SPEC, u32, u32, 32, O>;
+pub type PacketptrW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Packet pointer"]
     #[inline(always)]
-    pub fn packetptr(&self) -> PACKETPTR_R {
-        PACKETPTR_R::new(self.bits)
+    pub fn packetptr(&self) -> PacketptrR {
+        PacketptrR::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Packet pointer"]
     #[inline(always)]
-    pub fn packetptr(&mut self) -> PACKETPTR_W<0> {
-        PACKETPTR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn packetptr(&mut self) -> PacketptrW<'_, PacketptrSpec> {
+        PacketptrW::new(self, 0)
     }
 }
-#[doc = "Packet pointer\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [packetptr](index.html) module"]
-pub struct PACKETPTR_SPEC;
-impl crate::RegisterSpec for PACKETPTR_SPEC {
+#[doc = "Packet pointer\n\nYou can [`read`](crate::Reg::read) this register and get [`packetptr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`packetptr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct PacketptrSpec;
+impl crate::RegisterSpec for PacketptrSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [packetptr::R](R) reader structure"]
-impl crate::Readable for PACKETPTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [packetptr::W](W) writer structure"]
-impl crate::Writable for PACKETPTR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`packetptr::R`](R) reader structure"]
+impl crate::Readable for PacketptrSpec {}
+#[doc = "`write(|w| ..)` method takes [`packetptr::W`](W) writer structure"]
+impl crate::Writable for PacketptrSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets PACKETPTR to value 0"]
-impl crate::Resettable for PACKETPTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for PacketptrSpec {}

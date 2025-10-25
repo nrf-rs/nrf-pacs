@@ -1,606 +1,590 @@
 #[doc = "Register `EPINEN` reader"]
-pub struct R(crate::R<EPINEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EPINEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EPINEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EPINEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EpinenSpec>;
 #[doc = "Register `EPINEN` writer"]
-pub struct W(crate::W<EPINEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EPINEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<EpinenSpec>;
+#[doc = "Enable IN endpoint 0\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum In0 {
+    #[doc = "0: Disable endpoint IN 0 (no response to IN tokens)"]
+    Disable = 0,
+    #[doc = "1: Enable endpoint IN 0 (response to IN tokens)"]
+    Enable = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<In0> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EPINEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EPINEN_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: In0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `IN0` reader - Enable IN endpoint 0"]
-pub type IN0_R = crate::BitReader<IN0_A>;
-#[doc = "Enable IN endpoint 0\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IN0_A {
-    #[doc = "0: Disable endpoint IN 0 (no response to IN tokens)"]
-    DISABLE = 0,
-    #[doc = "1: Enable endpoint IN 0 (response to IN tokens)"]
-    ENABLE = 1,
-}
-impl From<IN0_A> for bool {
-    #[inline(always)]
-    fn from(variant: IN0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IN0_R {
+pub type In0R = crate::BitReader<In0>;
+impl In0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IN0_A {
+    pub const fn variant(&self) -> In0 {
         match self.bits {
-            false => IN0_A::DISABLE,
-            true => IN0_A::ENABLE,
+            false => In0::Disable,
+            true => In0::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == IN0_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == IN0_A::ENABLE
-    }
-}
-#[doc = "Field `IN0` writer - Enable IN endpoint 0"]
-pub type IN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPINEN_SPEC, IN0_A, O>;
-impl<'a, const O: u8> IN0_W<'a, O> {
     #[doc = "Disable endpoint IN 0 (no response to IN tokens)"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IN0_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == In0::Disable
     }
     #[doc = "Enable endpoint IN 0 (response to IN tokens)"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(IN0_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == In0::Enable
+    }
+}
+#[doc = "Field `IN0` writer - Enable IN endpoint 0"]
+pub type In0W<'a, REG> = crate::BitWriter<'a, REG, In0>;
+impl<'a, REG> In0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable endpoint IN 0 (no response to IN tokens)"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(In0::Disable)
+    }
+    #[doc = "Enable endpoint IN 0 (response to IN tokens)"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(In0::Enable)
+    }
+}
+#[doc = "Enable IN endpoint 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum In1 {
+    #[doc = "0: Disable endpoint IN 1 (no response to IN tokens)"]
+    Disable = 0,
+    #[doc = "1: Enable endpoint IN 1 (response to IN tokens)"]
+    Enable = 1,
+}
+impl From<In1> for bool {
+    #[inline(always)]
+    fn from(variant: In1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `IN1` reader - Enable IN endpoint 1"]
-pub type IN1_R = crate::BitReader<IN1_A>;
-#[doc = "Enable IN endpoint 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IN1_A {
-    #[doc = "0: Disable endpoint IN 1 (no response to IN tokens)"]
-    DISABLE = 0,
-    #[doc = "1: Enable endpoint IN 1 (response to IN tokens)"]
-    ENABLE = 1,
-}
-impl From<IN1_A> for bool {
-    #[inline(always)]
-    fn from(variant: IN1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IN1_R {
+pub type In1R = crate::BitReader<In1>;
+impl In1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IN1_A {
+    pub const fn variant(&self) -> In1 {
         match self.bits {
-            false => IN1_A::DISABLE,
-            true => IN1_A::ENABLE,
+            false => In1::Disable,
+            true => In1::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == IN1_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == IN1_A::ENABLE
-    }
-}
-#[doc = "Field `IN1` writer - Enable IN endpoint 1"]
-pub type IN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPINEN_SPEC, IN1_A, O>;
-impl<'a, const O: u8> IN1_W<'a, O> {
     #[doc = "Disable endpoint IN 1 (no response to IN tokens)"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IN1_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == In1::Disable
     }
     #[doc = "Enable endpoint IN 1 (response to IN tokens)"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(IN1_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == In1::Enable
+    }
+}
+#[doc = "Field `IN1` writer - Enable IN endpoint 1"]
+pub type In1W<'a, REG> = crate::BitWriter<'a, REG, In1>;
+impl<'a, REG> In1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable endpoint IN 1 (no response to IN tokens)"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(In1::Disable)
+    }
+    #[doc = "Enable endpoint IN 1 (response to IN tokens)"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(In1::Enable)
+    }
+}
+#[doc = "Enable IN endpoint 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum In2 {
+    #[doc = "0: Disable endpoint IN 2 (no response to IN tokens)"]
+    Disable = 0,
+    #[doc = "1: Enable endpoint IN 2 (response to IN tokens)"]
+    Enable = 1,
+}
+impl From<In2> for bool {
+    #[inline(always)]
+    fn from(variant: In2) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `IN2` reader - Enable IN endpoint 2"]
-pub type IN2_R = crate::BitReader<IN2_A>;
-#[doc = "Enable IN endpoint 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IN2_A {
-    #[doc = "0: Disable endpoint IN 2 (no response to IN tokens)"]
-    DISABLE = 0,
-    #[doc = "1: Enable endpoint IN 2 (response to IN tokens)"]
-    ENABLE = 1,
-}
-impl From<IN2_A> for bool {
-    #[inline(always)]
-    fn from(variant: IN2_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IN2_R {
+pub type In2R = crate::BitReader<In2>;
+impl In2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IN2_A {
+    pub const fn variant(&self) -> In2 {
         match self.bits {
-            false => IN2_A::DISABLE,
-            true => IN2_A::ENABLE,
+            false => In2::Disable,
+            true => In2::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == IN2_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == IN2_A::ENABLE
-    }
-}
-#[doc = "Field `IN2` writer - Enable IN endpoint 2"]
-pub type IN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPINEN_SPEC, IN2_A, O>;
-impl<'a, const O: u8> IN2_W<'a, O> {
     #[doc = "Disable endpoint IN 2 (no response to IN tokens)"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IN2_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == In2::Disable
     }
     #[doc = "Enable endpoint IN 2 (response to IN tokens)"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(IN2_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == In2::Enable
+    }
+}
+#[doc = "Field `IN2` writer - Enable IN endpoint 2"]
+pub type In2W<'a, REG> = crate::BitWriter<'a, REG, In2>;
+impl<'a, REG> In2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable endpoint IN 2 (no response to IN tokens)"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(In2::Disable)
+    }
+    #[doc = "Enable endpoint IN 2 (response to IN tokens)"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(In2::Enable)
+    }
+}
+#[doc = "Enable IN endpoint 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum In3 {
+    #[doc = "0: Disable endpoint IN 3 (no response to IN tokens)"]
+    Disable = 0,
+    #[doc = "1: Enable endpoint IN 3 (response to IN tokens)"]
+    Enable = 1,
+}
+impl From<In3> for bool {
+    #[inline(always)]
+    fn from(variant: In3) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `IN3` reader - Enable IN endpoint 3"]
-pub type IN3_R = crate::BitReader<IN3_A>;
-#[doc = "Enable IN endpoint 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IN3_A {
-    #[doc = "0: Disable endpoint IN 3 (no response to IN tokens)"]
-    DISABLE = 0,
-    #[doc = "1: Enable endpoint IN 3 (response to IN tokens)"]
-    ENABLE = 1,
-}
-impl From<IN3_A> for bool {
-    #[inline(always)]
-    fn from(variant: IN3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IN3_R {
+pub type In3R = crate::BitReader<In3>;
+impl In3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IN3_A {
+    pub const fn variant(&self) -> In3 {
         match self.bits {
-            false => IN3_A::DISABLE,
-            true => IN3_A::ENABLE,
+            false => In3::Disable,
+            true => In3::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == IN3_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == IN3_A::ENABLE
-    }
-}
-#[doc = "Field `IN3` writer - Enable IN endpoint 3"]
-pub type IN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPINEN_SPEC, IN3_A, O>;
-impl<'a, const O: u8> IN3_W<'a, O> {
     #[doc = "Disable endpoint IN 3 (no response to IN tokens)"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IN3_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == In3::Disable
     }
     #[doc = "Enable endpoint IN 3 (response to IN tokens)"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(IN3_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == In3::Enable
+    }
+}
+#[doc = "Field `IN3` writer - Enable IN endpoint 3"]
+pub type In3W<'a, REG> = crate::BitWriter<'a, REG, In3>;
+impl<'a, REG> In3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable endpoint IN 3 (no response to IN tokens)"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(In3::Disable)
+    }
+    #[doc = "Enable endpoint IN 3 (response to IN tokens)"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(In3::Enable)
+    }
+}
+#[doc = "Enable IN endpoint 4\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum In4 {
+    #[doc = "0: Disable endpoint IN 4 (no response to IN tokens)"]
+    Disable = 0,
+    #[doc = "1: Enable endpoint IN 4 (response to IN tokens)"]
+    Enable = 1,
+}
+impl From<In4> for bool {
+    #[inline(always)]
+    fn from(variant: In4) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `IN4` reader - Enable IN endpoint 4"]
-pub type IN4_R = crate::BitReader<IN4_A>;
-#[doc = "Enable IN endpoint 4\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IN4_A {
-    #[doc = "0: Disable endpoint IN 4 (no response to IN tokens)"]
-    DISABLE = 0,
-    #[doc = "1: Enable endpoint IN 4 (response to IN tokens)"]
-    ENABLE = 1,
-}
-impl From<IN4_A> for bool {
-    #[inline(always)]
-    fn from(variant: IN4_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IN4_R {
+pub type In4R = crate::BitReader<In4>;
+impl In4R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IN4_A {
+    pub const fn variant(&self) -> In4 {
         match self.bits {
-            false => IN4_A::DISABLE,
-            true => IN4_A::ENABLE,
+            false => In4::Disable,
+            true => In4::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == IN4_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == IN4_A::ENABLE
-    }
-}
-#[doc = "Field `IN4` writer - Enable IN endpoint 4"]
-pub type IN4_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPINEN_SPEC, IN4_A, O>;
-impl<'a, const O: u8> IN4_W<'a, O> {
     #[doc = "Disable endpoint IN 4 (no response to IN tokens)"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IN4_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == In4::Disable
     }
     #[doc = "Enable endpoint IN 4 (response to IN tokens)"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(IN4_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == In4::Enable
+    }
+}
+#[doc = "Field `IN4` writer - Enable IN endpoint 4"]
+pub type In4W<'a, REG> = crate::BitWriter<'a, REG, In4>;
+impl<'a, REG> In4W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable endpoint IN 4 (no response to IN tokens)"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(In4::Disable)
+    }
+    #[doc = "Enable endpoint IN 4 (response to IN tokens)"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(In4::Enable)
+    }
+}
+#[doc = "Enable IN endpoint 5\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum In5 {
+    #[doc = "0: Disable endpoint IN 5 (no response to IN tokens)"]
+    Disable = 0,
+    #[doc = "1: Enable endpoint IN 5 (response to IN tokens)"]
+    Enable = 1,
+}
+impl From<In5> for bool {
+    #[inline(always)]
+    fn from(variant: In5) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `IN5` reader - Enable IN endpoint 5"]
-pub type IN5_R = crate::BitReader<IN5_A>;
-#[doc = "Enable IN endpoint 5\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IN5_A {
-    #[doc = "0: Disable endpoint IN 5 (no response to IN tokens)"]
-    DISABLE = 0,
-    #[doc = "1: Enable endpoint IN 5 (response to IN tokens)"]
-    ENABLE = 1,
-}
-impl From<IN5_A> for bool {
-    #[inline(always)]
-    fn from(variant: IN5_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IN5_R {
+pub type In5R = crate::BitReader<In5>;
+impl In5R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IN5_A {
+    pub const fn variant(&self) -> In5 {
         match self.bits {
-            false => IN5_A::DISABLE,
-            true => IN5_A::ENABLE,
+            false => In5::Disable,
+            true => In5::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == IN5_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == IN5_A::ENABLE
-    }
-}
-#[doc = "Field `IN5` writer - Enable IN endpoint 5"]
-pub type IN5_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPINEN_SPEC, IN5_A, O>;
-impl<'a, const O: u8> IN5_W<'a, O> {
     #[doc = "Disable endpoint IN 5 (no response to IN tokens)"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IN5_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == In5::Disable
     }
     #[doc = "Enable endpoint IN 5 (response to IN tokens)"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(IN5_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == In5::Enable
+    }
+}
+#[doc = "Field `IN5` writer - Enable IN endpoint 5"]
+pub type In5W<'a, REG> = crate::BitWriter<'a, REG, In5>;
+impl<'a, REG> In5W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable endpoint IN 5 (no response to IN tokens)"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(In5::Disable)
+    }
+    #[doc = "Enable endpoint IN 5 (response to IN tokens)"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(In5::Enable)
+    }
+}
+#[doc = "Enable IN endpoint 6\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum In6 {
+    #[doc = "0: Disable endpoint IN 6 (no response to IN tokens)"]
+    Disable = 0,
+    #[doc = "1: Enable endpoint IN 6 (response to IN tokens)"]
+    Enable = 1,
+}
+impl From<In6> for bool {
+    #[inline(always)]
+    fn from(variant: In6) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `IN6` reader - Enable IN endpoint 6"]
-pub type IN6_R = crate::BitReader<IN6_A>;
-#[doc = "Enable IN endpoint 6\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IN6_A {
-    #[doc = "0: Disable endpoint IN 6 (no response to IN tokens)"]
-    DISABLE = 0,
-    #[doc = "1: Enable endpoint IN 6 (response to IN tokens)"]
-    ENABLE = 1,
-}
-impl From<IN6_A> for bool {
-    #[inline(always)]
-    fn from(variant: IN6_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IN6_R {
+pub type In6R = crate::BitReader<In6>;
+impl In6R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IN6_A {
+    pub const fn variant(&self) -> In6 {
         match self.bits {
-            false => IN6_A::DISABLE,
-            true => IN6_A::ENABLE,
+            false => In6::Disable,
+            true => In6::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == IN6_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == IN6_A::ENABLE
-    }
-}
-#[doc = "Field `IN6` writer - Enable IN endpoint 6"]
-pub type IN6_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPINEN_SPEC, IN6_A, O>;
-impl<'a, const O: u8> IN6_W<'a, O> {
     #[doc = "Disable endpoint IN 6 (no response to IN tokens)"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IN6_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == In6::Disable
     }
     #[doc = "Enable endpoint IN 6 (response to IN tokens)"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(IN6_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == In6::Enable
+    }
+}
+#[doc = "Field `IN6` writer - Enable IN endpoint 6"]
+pub type In6W<'a, REG> = crate::BitWriter<'a, REG, In6>;
+impl<'a, REG> In6W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable endpoint IN 6 (no response to IN tokens)"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(In6::Disable)
+    }
+    #[doc = "Enable endpoint IN 6 (response to IN tokens)"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(In6::Enable)
+    }
+}
+#[doc = "Enable IN endpoint 7\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum In7 {
+    #[doc = "0: Disable endpoint IN 7 (no response to IN tokens)"]
+    Disable = 0,
+    #[doc = "1: Enable endpoint IN 7 (response to IN tokens)"]
+    Enable = 1,
+}
+impl From<In7> for bool {
+    #[inline(always)]
+    fn from(variant: In7) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `IN7` reader - Enable IN endpoint 7"]
-pub type IN7_R = crate::BitReader<IN7_A>;
-#[doc = "Enable IN endpoint 7\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IN7_A {
-    #[doc = "0: Disable endpoint IN 7 (no response to IN tokens)"]
-    DISABLE = 0,
-    #[doc = "1: Enable endpoint IN 7 (response to IN tokens)"]
-    ENABLE = 1,
-}
-impl From<IN7_A> for bool {
-    #[inline(always)]
-    fn from(variant: IN7_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IN7_R {
+pub type In7R = crate::BitReader<In7>;
+impl In7R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IN7_A {
+    pub const fn variant(&self) -> In7 {
         match self.bits {
-            false => IN7_A::DISABLE,
-            true => IN7_A::ENABLE,
+            false => In7::Disable,
+            true => In7::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == IN7_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == IN7_A::ENABLE
-    }
-}
-#[doc = "Field `IN7` writer - Enable IN endpoint 7"]
-pub type IN7_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPINEN_SPEC, IN7_A, O>;
-impl<'a, const O: u8> IN7_W<'a, O> {
     #[doc = "Disable endpoint IN 7 (no response to IN tokens)"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(IN7_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == In7::Disable
     }
     #[doc = "Enable endpoint IN 7 (response to IN tokens)"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(IN7_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == In7::Enable
     }
 }
-#[doc = "Field `ISOIN` reader - Enable ISO IN endpoint"]
-pub type ISOIN_R = crate::BitReader<ISOIN_A>;
-#[doc = "Enable ISO IN endpoint\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISOIN_A {
-    #[doc = "0: Disable ISO IN endpoint 8"]
-    DISABLE = 0,
-    #[doc = "1: Enable ISO IN endpoint 8"]
-    ENABLE = 1,
-}
-impl From<ISOIN_A> for bool {
+#[doc = "Field `IN7` writer - Enable IN endpoint 7"]
+pub type In7W<'a, REG> = crate::BitWriter<'a, REG, In7>;
+impl<'a, REG> In7W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable endpoint IN 7 (no response to IN tokens)"]
     #[inline(always)]
-    fn from(variant: ISOIN_A) -> Self {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(In7::Disable)
+    }
+    #[doc = "Enable endpoint IN 7 (response to IN tokens)"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(In7::Enable)
+    }
+}
+#[doc = "Enable ISO IN endpoint\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Isoin {
+    #[doc = "0: Disable ISO IN endpoint 8"]
+    Disable = 0,
+    #[doc = "1: Enable ISO IN endpoint 8"]
+    Enable = 1,
+}
+impl From<Isoin> for bool {
+    #[inline(always)]
+    fn from(variant: Isoin) -> Self {
         variant as u8 != 0
     }
 }
-impl ISOIN_R {
+#[doc = "Field `ISOIN` reader - Enable ISO IN endpoint"]
+pub type IsoinR = crate::BitReader<Isoin>;
+impl IsoinR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ISOIN_A {
+    pub const fn variant(&self) -> Isoin {
         match self.bits {
-            false => ISOIN_A::DISABLE,
-            true => ISOIN_A::ENABLE,
+            false => Isoin::Disable,
+            true => Isoin::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == ISOIN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == ISOIN_A::ENABLE
-    }
-}
-#[doc = "Field `ISOIN` writer - Enable ISO IN endpoint"]
-pub type ISOIN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EPINEN_SPEC, ISOIN_A, O>;
-impl<'a, const O: u8> ISOIN_W<'a, O> {
     #[doc = "Disable ISO IN endpoint 8"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(ISOIN_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == Isoin::Disable
     }
     #[doc = "Enable ISO IN endpoint 8"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(ISOIN_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == Isoin::Enable
+    }
+}
+#[doc = "Field `ISOIN` writer - Enable ISO IN endpoint"]
+pub type IsoinW<'a, REG> = crate::BitWriter<'a, REG, Isoin>;
+impl<'a, REG> IsoinW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable ISO IN endpoint 8"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(Isoin::Disable)
+    }
+    #[doc = "Enable ISO IN endpoint 8"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(Isoin::Enable)
     }
 }
 impl R {
     #[doc = "Bit 0 - Enable IN endpoint 0"]
     #[inline(always)]
-    pub fn in0(&self) -> IN0_R {
-        IN0_R::new((self.bits & 1) != 0)
+    pub fn in0(&self) -> In0R {
+        In0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable IN endpoint 1"]
     #[inline(always)]
-    pub fn in1(&self) -> IN1_R {
-        IN1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn in1(&self) -> In1R {
+        In1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable IN endpoint 2"]
     #[inline(always)]
-    pub fn in2(&self) -> IN2_R {
-        IN2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn in2(&self) -> In2R {
+        In2R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable IN endpoint 3"]
     #[inline(always)]
-    pub fn in3(&self) -> IN3_R {
-        IN3_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn in3(&self) -> In3R {
+        In3R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable IN endpoint 4"]
     #[inline(always)]
-    pub fn in4(&self) -> IN4_R {
-        IN4_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn in4(&self) -> In4R {
+        In4R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable IN endpoint 5"]
     #[inline(always)]
-    pub fn in5(&self) -> IN5_R {
-        IN5_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn in5(&self) -> In5R {
+        In5R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable IN endpoint 6"]
     #[inline(always)]
-    pub fn in6(&self) -> IN6_R {
-        IN6_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn in6(&self) -> In6R {
+        In6R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable IN endpoint 7"]
     #[inline(always)]
-    pub fn in7(&self) -> IN7_R {
-        IN7_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn in7(&self) -> In7R {
+        In7R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Enable ISO IN endpoint"]
     #[inline(always)]
-    pub fn isoin(&self) -> ISOIN_R {
-        ISOIN_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn isoin(&self) -> IsoinR {
+        IsoinR::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable IN endpoint 0"]
     #[inline(always)]
-    pub fn in0(&mut self) -> IN0_W<0> {
-        IN0_W::new(self)
+    pub fn in0(&mut self) -> In0W<'_, EpinenSpec> {
+        In0W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable IN endpoint 1"]
     #[inline(always)]
-    pub fn in1(&mut self) -> IN1_W<1> {
-        IN1_W::new(self)
+    pub fn in1(&mut self) -> In1W<'_, EpinenSpec> {
+        In1W::new(self, 1)
     }
     #[doc = "Bit 2 - Enable IN endpoint 2"]
     #[inline(always)]
-    pub fn in2(&mut self) -> IN2_W<2> {
-        IN2_W::new(self)
+    pub fn in2(&mut self) -> In2W<'_, EpinenSpec> {
+        In2W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable IN endpoint 3"]
     #[inline(always)]
-    pub fn in3(&mut self) -> IN3_W<3> {
-        IN3_W::new(self)
+    pub fn in3(&mut self) -> In3W<'_, EpinenSpec> {
+        In3W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable IN endpoint 4"]
     #[inline(always)]
-    pub fn in4(&mut self) -> IN4_W<4> {
-        IN4_W::new(self)
+    pub fn in4(&mut self) -> In4W<'_, EpinenSpec> {
+        In4W::new(self, 4)
     }
     #[doc = "Bit 5 - Enable IN endpoint 5"]
     #[inline(always)]
-    pub fn in5(&mut self) -> IN5_W<5> {
-        IN5_W::new(self)
+    pub fn in5(&mut self) -> In5W<'_, EpinenSpec> {
+        In5W::new(self, 5)
     }
     #[doc = "Bit 6 - Enable IN endpoint 6"]
     #[inline(always)]
-    pub fn in6(&mut self) -> IN6_W<6> {
-        IN6_W::new(self)
+    pub fn in6(&mut self) -> In6W<'_, EpinenSpec> {
+        In6W::new(self, 6)
     }
     #[doc = "Bit 7 - Enable IN endpoint 7"]
     #[inline(always)]
-    pub fn in7(&mut self) -> IN7_W<7> {
-        IN7_W::new(self)
+    pub fn in7(&mut self) -> In7W<'_, EpinenSpec> {
+        In7W::new(self, 7)
     }
     #[doc = "Bit 8 - Enable ISO IN endpoint"]
     #[inline(always)]
-    pub fn isoin(&mut self) -> ISOIN_W<8> {
-        ISOIN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn isoin(&mut self) -> IsoinW<'_, EpinenSpec> {
+        IsoinW::new(self, 8)
     }
 }
-#[doc = "Endpoint IN enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [epinen](index.html) module"]
-pub struct EPINEN_SPEC;
-impl crate::RegisterSpec for EPINEN_SPEC {
+#[doc = "Endpoint IN enable\n\nYou can [`read`](crate::Reg::read) this register and get [`epinen::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`epinen::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EpinenSpec;
+impl crate::RegisterSpec for EpinenSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [epinen::R](R) reader structure"]
-impl crate::Readable for EPINEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [epinen::W](W) writer structure"]
-impl crate::Writable for EPINEN_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`epinen::R`](R) reader structure"]
+impl crate::Readable for EpinenSpec {}
+#[doc = "`write(|w| ..)` method takes [`epinen::W`](W) writer structure"]
+impl crate::Writable for EpinenSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EPINEN to value 0x01"]
-impl crate::Resettable for EPINEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+impl crate::Resettable for EpinenSpec {
+    const RESET_VALUE: u32 = 0x01;
 }

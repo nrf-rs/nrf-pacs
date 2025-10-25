@@ -1,127 +1,84 @@
 #[doc = "Register `MUTEX[%s]` reader"]
-pub struct R(crate::R<MUTEX_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MUTEX_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MUTEX_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MUTEX_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MutexSpec>;
 #[doc = "Register `MUTEX[%s]` writer"]
-pub struct W(crate::W<MUTEX_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MUTEX_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MUTEX_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MUTEX_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `MUTEX` reader - Mutex register n"]
-pub type MUTEX_R = crate::BitReader<MUTEX_A>;
+pub type W = crate::W<MutexSpec>;
 #[doc = "Mutex register n\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MUTEX_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Mutex {
     #[doc = "0: Mutex n is in unlocked state"]
-    UNLOCKED = 0,
+    Unlocked = 0,
     #[doc = "1: Mutex n is in locked state"]
-    LOCKED = 1,
+    Locked = 1,
 }
-impl From<MUTEX_A> for bool {
+impl From<Mutex> for bool {
     #[inline(always)]
-    fn from(variant: MUTEX_A) -> Self {
+    fn from(variant: Mutex) -> Self {
         variant as u8 != 0
     }
 }
-impl MUTEX_R {
+#[doc = "Field `MUTEX` reader - Mutex register n"]
+pub type MutexR = crate::BitReader<Mutex>;
+impl MutexR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MUTEX_A {
+    pub const fn variant(&self) -> Mutex {
         match self.bits {
-            false => MUTEX_A::UNLOCKED,
-            true => MUTEX_A::LOCKED,
+            false => Mutex::Unlocked,
+            true => Mutex::Locked,
         }
     }
-    #[doc = "Checks if the value of the field is `UNLOCKED`"]
-    #[inline(always)]
-    pub fn is_unlocked(&self) -> bool {
-        *self == MUTEX_A::UNLOCKED
-    }
-    #[doc = "Checks if the value of the field is `LOCKED`"]
-    #[inline(always)]
-    pub fn is_locked(&self) -> bool {
-        *self == MUTEX_A::LOCKED
-    }
-}
-#[doc = "Field `MUTEX` writer - Mutex register n"]
-pub type MUTEX_W<'a, const O: u8> = crate::BitWriter<'a, u32, MUTEX_SPEC, MUTEX_A, O>;
-impl<'a, const O: u8> MUTEX_W<'a, O> {
     #[doc = "Mutex n is in unlocked state"]
     #[inline(always)]
-    pub fn unlocked(self) -> &'a mut W {
-        self.variant(MUTEX_A::UNLOCKED)
+    pub fn is_unlocked(&self) -> bool {
+        *self == Mutex::Unlocked
     }
     #[doc = "Mutex n is in locked state"]
     #[inline(always)]
-    pub fn locked(self) -> &'a mut W {
-        self.variant(MUTEX_A::LOCKED)
+    pub fn is_locked(&self) -> bool {
+        *self == Mutex::Locked
+    }
+}
+#[doc = "Field `MUTEX` writer - Mutex register n"]
+pub type MutexW<'a, REG> = crate::BitWriter<'a, REG, Mutex>;
+impl<'a, REG> MutexW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Mutex n is in unlocked state"]
+    #[inline(always)]
+    pub fn unlocked(self) -> &'a mut crate::W<REG> {
+        self.variant(Mutex::Unlocked)
+    }
+    #[doc = "Mutex n is in locked state"]
+    #[inline(always)]
+    pub fn locked(self) -> &'a mut crate::W<REG> {
+        self.variant(Mutex::Locked)
     }
 }
 impl R {
     #[doc = "Bit 0 - Mutex register n"]
     #[inline(always)]
-    pub fn mutex(&self) -> MUTEX_R {
-        MUTEX_R::new((self.bits & 1) != 0)
+    pub fn mutex(&self) -> MutexR {
+        MutexR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Mutex register n"]
     #[inline(always)]
-    pub fn mutex(&mut self) -> MUTEX_W<0> {
-        MUTEX_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn mutex(&mut self) -> MutexW<'_, MutexSpec> {
+        MutexW::new(self, 0)
     }
 }
-#[doc = "Description collection: Mutex register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mutex](index.html) module"]
-pub struct MUTEX_SPEC;
-impl crate::RegisterSpec for MUTEX_SPEC {
+#[doc = "Description collection: Mutex register\n\nYou can [`read`](crate::Reg::read) this register and get [`mutex::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mutex::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct MutexSpec;
+impl crate::RegisterSpec for MutexSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mutex::R](R) reader structure"]
-impl crate::Readable for MUTEX_SPEC {
-    type Reader = R;
+#[doc = "`read()` method returns [`mutex::R`](R) reader structure"]
+impl crate::Readable for MutexSpec {}
+#[doc = "`write(|w| ..)` method takes [`mutex::W`](W) writer structure"]
+impl crate::Writable for MutexSpec {
+    type Safety = crate::Unsafe;
 }
-#[doc = "`write(|w| ..)` method takes [mutex::W](W) writer structure"]
-impl crate::Writable for MUTEX_SPEC {
-    type Writer = W;
-}
-#[doc = "`reset()` method sets MUTEX[%s]
-to value 0"]
-impl crate::Resettable for MUTEX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+#[doc = "`reset()` method sets MUTEX[%s] to value 0"]
+impl crate::Resettable for MutexSpec {}

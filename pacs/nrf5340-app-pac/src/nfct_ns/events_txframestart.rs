@@ -1,127 +1,84 @@
 #[doc = "Register `EVENTS_TXFRAMESTART` reader"]
-pub struct R(crate::R<EVENTS_TXFRAMESTART_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_TXFRAMESTART_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_TXFRAMESTART_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_TXFRAMESTART_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsTxframestartSpec>;
 #[doc = "Register `EVENTS_TXFRAMESTART` writer"]
-pub struct W(crate::W<EVENTS_TXFRAMESTART_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_TXFRAMESTART_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVENTS_TXFRAMESTART_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVENTS_TXFRAMESTART_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `EVENTS_TXFRAMESTART` reader - Marks the start of the first symbol of a transmitted frame"]
-pub type EVENTS_TXFRAMESTART_R = crate::BitReader<EVENTS_TXFRAMESTART_A>;
+pub type W = crate::W<EventsTxframestartSpec>;
 #[doc = "Marks the start of the first symbol of a transmitted frame\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVENTS_TXFRAMESTART_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsTxframestart {
     #[doc = "0: Event not generated"]
-    NOT_GENERATED = 0,
+    NotGenerated = 0,
     #[doc = "1: Event generated"]
-    GENERATED = 1,
+    Generated = 1,
 }
-impl From<EVENTS_TXFRAMESTART_A> for bool {
+impl From<EventsTxframestart> for bool {
     #[inline(always)]
-    fn from(variant: EVENTS_TXFRAMESTART_A) -> Self {
+    fn from(variant: EventsTxframestart) -> Self {
         variant as u8 != 0
     }
 }
-impl EVENTS_TXFRAMESTART_R {
+#[doc = "Field `EVENTS_TXFRAMESTART` reader - Marks the start of the first symbol of a transmitted frame"]
+pub type EventsTxframestartR = crate::BitReader<EventsTxframestart>;
+impl EventsTxframestartR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVENTS_TXFRAMESTART_A {
+    pub const fn variant(&self) -> EventsTxframestart {
         match self.bits {
-            false => EVENTS_TXFRAMESTART_A::NOT_GENERATED,
-            true => EVENTS_TXFRAMESTART_A::GENERATED,
+            false => EventsTxframestart::NotGenerated,
+            true => EventsTxframestart::Generated,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
-    #[inline(always)]
-    pub fn is_not_generated(&self) -> bool {
-        *self == EVENTS_TXFRAMESTART_A::NOT_GENERATED
-    }
-    #[doc = "Checks if the value of the field is `GENERATED`"]
-    #[inline(always)]
-    pub fn is_generated(&self) -> bool {
-        *self == EVENTS_TXFRAMESTART_A::GENERATED
-    }
-}
-#[doc = "Field `EVENTS_TXFRAMESTART` writer - Marks the start of the first symbol of a transmitted frame"]
-pub type EVENTS_TXFRAMESTART_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_TXFRAMESTART_SPEC, EVENTS_TXFRAMESTART_A, O>;
-impl<'a, const O: u8> EVENTS_TXFRAMESTART_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_TXFRAMESTART_A::NOT_GENERATED)
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsTxframestart::NotGenerated
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut W {
-        self.variant(EVENTS_TXFRAMESTART_A::GENERATED)
+    pub fn is_generated(&self) -> bool {
+        *self == EventsTxframestart::Generated
+    }
+}
+#[doc = "Field `EVENTS_TXFRAMESTART` writer - Marks the start of the first symbol of a transmitted frame"]
+pub type EventsTxframestartW<'a, REG> = crate::BitWriter<'a, REG, EventsTxframestart>;
+impl<'a, REG> EventsTxframestartW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsTxframestart::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsTxframestart::Generated)
     }
 }
 impl R {
     #[doc = "Bit 0 - Marks the start of the first symbol of a transmitted frame"]
     #[inline(always)]
-    pub fn events_txframestart(&self) -> EVENTS_TXFRAMESTART_R {
-        EVENTS_TXFRAMESTART_R::new((self.bits & 1) != 0)
+    pub fn events_txframestart(&self) -> EventsTxframestartR {
+        EventsTxframestartR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Marks the start of the first symbol of a transmitted frame"]
     #[inline(always)]
-    pub fn events_txframestart(&mut self) -> EVENTS_TXFRAMESTART_W<0> {
-        EVENTS_TXFRAMESTART_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_txframestart(&mut self) -> EventsTxframestartW<'_, EventsTxframestartSpec> {
+        EventsTxframestartW::new(self, 0)
     }
 }
-#[doc = "Marks the start of the first symbol of a transmitted frame\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_txframestart](index.html) module"]
-pub struct EVENTS_TXFRAMESTART_SPEC;
-impl crate::RegisterSpec for EVENTS_TXFRAMESTART_SPEC {
+#[doc = "Marks the start of the first symbol of a transmitted frame\n\nYou can [`read`](crate::Reg::read) this register and get [`events_txframestart::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_txframestart::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsTxframestartSpec;
+impl crate::RegisterSpec for EventsTxframestartSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_txframestart::R](R) reader structure"]
-impl crate::Readable for EVENTS_TXFRAMESTART_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_txframestart::W](W) writer structure"]
-impl crate::Writable for EVENTS_TXFRAMESTART_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_txframestart::R`](R) reader structure"]
+impl crate::Readable for EventsTxframestartSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_txframestart::W`](W) writer structure"]
+impl crate::Writable for EventsTxframestartSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_TXFRAMESTART to value 0"]
-impl crate::Resettable for EVENTS_TXFRAMESTART_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsTxframestartSpec {}

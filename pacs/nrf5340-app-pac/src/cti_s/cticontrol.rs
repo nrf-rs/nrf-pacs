@@ -1,126 +1,84 @@
 #[doc = "Register `CTICONTROL` reader"]
-pub struct R(crate::R<CTICONTROL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTICONTROL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTICONTROL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTICONTROL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CticontrolSpec>;
 #[doc = "Register `CTICONTROL` writer"]
-pub struct W(crate::W<CTICONTROL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTICONTROL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTICONTROL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTICONTROL_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `GLBEN` reader - Enables or disables the CTI."]
-pub type GLBEN_R = crate::BitReader<GLBEN_A>;
+pub type W = crate::W<CticontrolSpec>;
 #[doc = "Enables or disables the CTI.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GLBEN_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Glben {
     #[doc = "0: All cross-triggering mapping logic functionality is disabled."]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Cross-triggering mapping logic functionality is enabled."]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<GLBEN_A> for bool {
+impl From<Glben> for bool {
     #[inline(always)]
-    fn from(variant: GLBEN_A) -> Self {
+    fn from(variant: Glben) -> Self {
         variant as u8 != 0
     }
 }
-impl GLBEN_R {
+#[doc = "Field `GLBEN` reader - Enables or disables the CTI."]
+pub type GlbenR = crate::BitReader<Glben>;
+impl GlbenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GLBEN_A {
+    pub const fn variant(&self) -> Glben {
         match self.bits {
-            false => GLBEN_A::DISABLED,
-            true => GLBEN_A::ENABLED,
+            false => Glben::Disabled,
+            true => Glben::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == GLBEN_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == GLBEN_A::ENABLED
-    }
-}
-#[doc = "Field `GLBEN` writer - Enables or disables the CTI."]
-pub type GLBEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTICONTROL_SPEC, GLBEN_A, O>;
-impl<'a, const O: u8> GLBEN_W<'a, O> {
     #[doc = "All cross-triggering mapping logic functionality is disabled."]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(GLBEN_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Glben::Disabled
     }
     #[doc = "Cross-triggering mapping logic functionality is enabled."]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(GLBEN_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Glben::Enabled
+    }
+}
+#[doc = "Field `GLBEN` writer - Enables or disables the CTI."]
+pub type GlbenW<'a, REG> = crate::BitWriter<'a, REG, Glben>;
+impl<'a, REG> GlbenW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "All cross-triggering mapping logic functionality is disabled."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Glben::Disabled)
+    }
+    #[doc = "Cross-triggering mapping logic functionality is enabled."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Glben::Enabled)
     }
 }
 impl R {
     #[doc = "Bit 0 - Enables or disables the CTI."]
     #[inline(always)]
-    pub fn glben(&self) -> GLBEN_R {
-        GLBEN_R::new((self.bits & 1) != 0)
+    pub fn glben(&self) -> GlbenR {
+        GlbenR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enables or disables the CTI."]
     #[inline(always)]
-    pub fn glben(&mut self) -> GLBEN_W<0> {
-        GLBEN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn glben(&mut self) -> GlbenW<'_, CticontrolSpec> {
+        GlbenW::new(self, 0)
     }
 }
-#[doc = "CTI Control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cticontrol](index.html) module"]
-pub struct CTICONTROL_SPEC;
-impl crate::RegisterSpec for CTICONTROL_SPEC {
+#[doc = "CTI Control register\n\nYou can [`read`](crate::Reg::read) this register and get [`cticontrol::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cticontrol::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CticontrolSpec;
+impl crate::RegisterSpec for CticontrolSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cticontrol::R](R) reader structure"]
-impl crate::Readable for CTICONTROL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cticontrol::W](W) writer structure"]
-impl crate::Writable for CTICONTROL_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`cticontrol::R`](R) reader structure"]
+impl crate::Readable for CticontrolSpec {}
+#[doc = "`write(|w| ..)` method takes [`cticontrol::W`](W) writer structure"]
+impl crate::Writable for CticontrolSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CTICONTROL to value 0"]
-impl crate::Resettable for CTICONTROL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for CticontrolSpec {}

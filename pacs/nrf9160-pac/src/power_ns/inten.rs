@@ -1,246 +1,210 @@
 #[doc = "Register `INTEN` reader"]
-pub struct R(crate::R<INTEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IntenSpec>;
 #[doc = "Register `INTEN` writer"]
-pub struct W(crate::W<INTEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INTEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<IntenSpec>;
+#[doc = "Enable or disable interrupt for event POFWARN\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pofwarn {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Pofwarn> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INTEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INTEN_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Pofwarn) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `POFWARN` reader - Enable or disable interrupt for event POFWARN"]
-pub type POFWARN_R = crate::BitReader<POFWARN_A>;
-#[doc = "Enable or disable interrupt for event POFWARN\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum POFWARN_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<POFWARN_A> for bool {
-    #[inline(always)]
-    fn from(variant: POFWARN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl POFWARN_R {
+pub type PofwarnR = crate::BitReader<Pofwarn>;
+impl PofwarnR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> POFWARN_A {
+    pub const fn variant(&self) -> Pofwarn {
         match self.bits {
-            false => POFWARN_A::DISABLED,
-            true => POFWARN_A::ENABLED,
+            false => Pofwarn::Disabled,
+            true => Pofwarn::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == POFWARN_A::DISABLED
+        *self == Pofwarn::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == POFWARN_A::ENABLED
+        *self == Pofwarn::Enabled
     }
 }
 #[doc = "Field `POFWARN` writer - Enable or disable interrupt for event POFWARN"]
-pub type POFWARN_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, POFWARN_A, O>;
-impl<'a, const O: u8> POFWARN_W<'a, O> {
+pub type PofwarnW<'a, REG> = crate::BitWriter<'a, REG, Pofwarn>;
+impl<'a, REG> PofwarnW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(POFWARN_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Pofwarn::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(POFWARN_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Pofwarn::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event SLEEPENTER\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sleepenter {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Sleepenter> for bool {
+    #[inline(always)]
+    fn from(variant: Sleepenter) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SLEEPENTER` reader - Enable or disable interrupt for event SLEEPENTER"]
-pub type SLEEPENTER_R = crate::BitReader<SLEEPENTER_A>;
-#[doc = "Enable or disable interrupt for event SLEEPENTER\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SLEEPENTER_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<SLEEPENTER_A> for bool {
-    #[inline(always)]
-    fn from(variant: SLEEPENTER_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SLEEPENTER_R {
+pub type SleepenterR = crate::BitReader<Sleepenter>;
+impl SleepenterR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SLEEPENTER_A {
+    pub const fn variant(&self) -> Sleepenter {
         match self.bits {
-            false => SLEEPENTER_A::DISABLED,
-            true => SLEEPENTER_A::ENABLED,
+            false => Sleepenter::Disabled,
+            true => Sleepenter::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == SLEEPENTER_A::DISABLED
+        *self == Sleepenter::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == SLEEPENTER_A::ENABLED
+        *self == Sleepenter::Enabled
     }
 }
 #[doc = "Field `SLEEPENTER` writer - Enable or disable interrupt for event SLEEPENTER"]
-pub type SLEEPENTER_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, SLEEPENTER_A, O>;
-impl<'a, const O: u8> SLEEPENTER_W<'a, O> {
+pub type SleepenterW<'a, REG> = crate::BitWriter<'a, REG, Sleepenter>;
+impl<'a, REG> SleepenterW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(SLEEPENTER_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Sleepenter::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(SLEEPENTER_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Sleepenter::Enabled)
     }
 }
-#[doc = "Field `SLEEPEXIT` reader - Enable or disable interrupt for event SLEEPEXIT"]
-pub type SLEEPEXIT_R = crate::BitReader<SLEEPEXIT_A>;
 #[doc = "Enable or disable interrupt for event SLEEPEXIT\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SLEEPEXIT_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sleepexit {
     #[doc = "0: Disable"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Enable"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<SLEEPEXIT_A> for bool {
+impl From<Sleepexit> for bool {
     #[inline(always)]
-    fn from(variant: SLEEPEXIT_A) -> Self {
+    fn from(variant: Sleepexit) -> Self {
         variant as u8 != 0
     }
 }
-impl SLEEPEXIT_R {
+#[doc = "Field `SLEEPEXIT` reader - Enable or disable interrupt for event SLEEPEXIT"]
+pub type SleepexitR = crate::BitReader<Sleepexit>;
+impl SleepexitR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SLEEPEXIT_A {
+    pub const fn variant(&self) -> Sleepexit {
         match self.bits {
-            false => SLEEPEXIT_A::DISABLED,
-            true => SLEEPEXIT_A::ENABLED,
+            false => Sleepexit::Disabled,
+            true => Sleepexit::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == SLEEPEXIT_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == SLEEPEXIT_A::ENABLED
-    }
-}
-#[doc = "Field `SLEEPEXIT` writer - Enable or disable interrupt for event SLEEPEXIT"]
-pub type SLEEPEXIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, SLEEPEXIT_A, O>;
-impl<'a, const O: u8> SLEEPEXIT_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(SLEEPEXIT_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Sleepexit::Disabled
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(SLEEPEXIT_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Sleepexit::Enabled
+    }
+}
+#[doc = "Field `SLEEPEXIT` writer - Enable or disable interrupt for event SLEEPEXIT"]
+pub type SleepexitW<'a, REG> = crate::BitWriter<'a, REG, Sleepexit>;
+impl<'a, REG> SleepexitW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Sleepexit::Disabled)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Sleepexit::Enabled)
     }
 }
 impl R {
     #[doc = "Bit 2 - Enable or disable interrupt for event POFWARN"]
     #[inline(always)]
-    pub fn pofwarn(&self) -> POFWARN_R {
-        POFWARN_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn pofwarn(&self) -> PofwarnR {
+        PofwarnR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable or disable interrupt for event SLEEPENTER"]
     #[inline(always)]
-    pub fn sleepenter(&self) -> SLEEPENTER_R {
-        SLEEPENTER_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn sleepenter(&self) -> SleepenterR {
+        SleepenterR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable or disable interrupt for event SLEEPEXIT"]
     #[inline(always)]
-    pub fn sleepexit(&self) -> SLEEPEXIT_R {
-        SLEEPEXIT_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn sleepexit(&self) -> SleepexitR {
+        SleepexitR::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 2 - Enable or disable interrupt for event POFWARN"]
     #[inline(always)]
-    pub fn pofwarn(&mut self) -> POFWARN_W<2> {
-        POFWARN_W::new(self)
+    pub fn pofwarn(&mut self) -> PofwarnW<'_, IntenSpec> {
+        PofwarnW::new(self, 2)
     }
     #[doc = "Bit 5 - Enable or disable interrupt for event SLEEPENTER"]
     #[inline(always)]
-    pub fn sleepenter(&mut self) -> SLEEPENTER_W<5> {
-        SLEEPENTER_W::new(self)
+    pub fn sleepenter(&mut self) -> SleepenterW<'_, IntenSpec> {
+        SleepenterW::new(self, 5)
     }
     #[doc = "Bit 6 - Enable or disable interrupt for event SLEEPEXIT"]
     #[inline(always)]
-    pub fn sleepexit(&mut self) -> SLEEPEXIT_W<6> {
-        SLEEPEXIT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn sleepexit(&mut self) -> SleepexitW<'_, IntenSpec> {
+        SleepexitW::new(self, 6)
     }
 }
-#[doc = "Enable or disable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [inten](index.html) module"]
-pub struct INTEN_SPEC;
-impl crate::RegisterSpec for INTEN_SPEC {
+#[doc = "Enable or disable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`inten::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`inten::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct IntenSpec;
+impl crate::RegisterSpec for IntenSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [inten::R](R) reader structure"]
-impl crate::Readable for INTEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [inten::W](W) writer structure"]
-impl crate::Writable for INTEN_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`inten::R`](R) reader structure"]
+impl crate::Readable for IntenSpec {}
+#[doc = "`write(|w| ..)` method takes [`inten::W`](W) writer structure"]
+impl crate::Writable for IntenSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets INTEN to value 0"]
-impl crate::Resettable for INTEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for IntenSpec {}

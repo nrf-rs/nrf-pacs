@@ -1,127 +1,84 @@
 #[doc = "Register `LFXODEBOUNCE` reader"]
-pub struct R(crate::R<LFXODEBOUNCE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LFXODEBOUNCE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LFXODEBOUNCE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LFXODEBOUNCE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LfxodebounceSpec>;
 #[doc = "Register `LFXODEBOUNCE` writer"]
-pub struct W(crate::W<LFXODEBOUNCE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LFXODEBOUNCE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LFXODEBOUNCE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LFXODEBOUNCE_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `LFXODEBOUNCE` reader - LFXO debounce time."]
-pub type LFXODEBOUNCE_R = crate::BitReader<LFXODEBOUNCE_A>;
+pub type W = crate::W<LfxodebounceSpec>;
 #[doc = "LFXO debounce time.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LFXODEBOUNCE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Lfxodebounce {
     #[doc = "0: 8192 32.768 kHz periods, or 0.25 s. Recommended for normal Operating Temperature conditions."]
-    NORMAL = 0,
+    Normal = 0,
     #[doc = "1: 16384 32.768 kHz periods, or 0.5 s. Recommended for Extended Operating Temperature conditions."]
-    EXTENDED = 1,
+    Extended = 1,
 }
-impl From<LFXODEBOUNCE_A> for bool {
+impl From<Lfxodebounce> for bool {
     #[inline(always)]
-    fn from(variant: LFXODEBOUNCE_A) -> Self {
+    fn from(variant: Lfxodebounce) -> Self {
         variant as u8 != 0
     }
 }
-impl LFXODEBOUNCE_R {
+#[doc = "Field `LFXODEBOUNCE` reader - LFXO debounce time."]
+pub type LfxodebounceR = crate::BitReader<Lfxodebounce>;
+impl LfxodebounceR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LFXODEBOUNCE_A {
+    pub const fn variant(&self) -> Lfxodebounce {
         match self.bits {
-            false => LFXODEBOUNCE_A::NORMAL,
-            true => LFXODEBOUNCE_A::EXTENDED,
+            false => Lfxodebounce::Normal,
+            true => Lfxodebounce::Extended,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
-    #[inline(always)]
-    pub fn is_normal(&self) -> bool {
-        *self == LFXODEBOUNCE_A::NORMAL
-    }
-    #[doc = "Checks if the value of the field is `EXTENDED`"]
-    #[inline(always)]
-    pub fn is_extended(&self) -> bool {
-        *self == LFXODEBOUNCE_A::EXTENDED
-    }
-}
-#[doc = "Field `LFXODEBOUNCE` writer - LFXO debounce time."]
-pub type LFXODEBOUNCE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, LFXODEBOUNCE_SPEC, LFXODEBOUNCE_A, O>;
-impl<'a, const O: u8> LFXODEBOUNCE_W<'a, O> {
     #[doc = "8192 32.768 kHz periods, or 0.25 s. Recommended for normal Operating Temperature conditions."]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
-        self.variant(LFXODEBOUNCE_A::NORMAL)
+    pub fn is_normal(&self) -> bool {
+        *self == Lfxodebounce::Normal
     }
     #[doc = "16384 32.768 kHz periods, or 0.5 s. Recommended for Extended Operating Temperature conditions."]
     #[inline(always)]
-    pub fn extended(self) -> &'a mut W {
-        self.variant(LFXODEBOUNCE_A::EXTENDED)
+    pub fn is_extended(&self) -> bool {
+        *self == Lfxodebounce::Extended
+    }
+}
+#[doc = "Field `LFXODEBOUNCE` writer - LFXO debounce time."]
+pub type LfxodebounceW<'a, REG> = crate::BitWriter<'a, REG, Lfxodebounce>;
+impl<'a, REG> LfxodebounceW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "8192 32.768 kHz periods, or 0.25 s. Recommended for normal Operating Temperature conditions."]
+    #[inline(always)]
+    pub fn normal(self) -> &'a mut crate::W<REG> {
+        self.variant(Lfxodebounce::Normal)
+    }
+    #[doc = "16384 32.768 kHz periods, or 0.5 s. Recommended for Extended Operating Temperature conditions."]
+    #[inline(always)]
+    pub fn extended(self) -> &'a mut crate::W<REG> {
+        self.variant(Lfxodebounce::Extended)
     }
 }
 impl R {
     #[doc = "Bit 0 - LFXO debounce time."]
     #[inline(always)]
-    pub fn lfxodebounce(&self) -> LFXODEBOUNCE_R {
-        LFXODEBOUNCE_R::new((self.bits & 1) != 0)
+    pub fn lfxodebounce(&self) -> LfxodebounceR {
+        LfxodebounceR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - LFXO debounce time."]
     #[inline(always)]
-    pub fn lfxodebounce(&mut self) -> LFXODEBOUNCE_W<0> {
-        LFXODEBOUNCE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn lfxodebounce(&mut self) -> LfxodebounceW<'_, LfxodebounceSpec> {
+        LfxodebounceW::new(self, 0)
     }
 }
-#[doc = "LFXO debounce time. The LFXO is started by triggering the TASKS_LFCLKSTART task when the LFCLKSRC register is configured for Xtal.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lfxodebounce](index.html) module"]
-pub struct LFXODEBOUNCE_SPEC;
-impl crate::RegisterSpec for LFXODEBOUNCE_SPEC {
+#[doc = "LFXO debounce time. The LFXO is started by triggering the TASKS_LFCLKSTART task when the LFCLKSRC register is configured for Xtal.\n\nYou can [`read`](crate::Reg::read) this register and get [`lfxodebounce::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lfxodebounce::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct LfxodebounceSpec;
+impl crate::RegisterSpec for LfxodebounceSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lfxodebounce::R](R) reader structure"]
-impl crate::Readable for LFXODEBOUNCE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [lfxodebounce::W](W) writer structure"]
-impl crate::Writable for LFXODEBOUNCE_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`lfxodebounce::R`](R) reader structure"]
+impl crate::Readable for LfxodebounceSpec {}
+#[doc = "`write(|w| ..)` method takes [`lfxodebounce::W`](W) writer structure"]
+impl crate::Writable for LfxodebounceSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets LFXODEBOUNCE to value 0"]
-impl crate::Resettable for LFXODEBOUNCE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for LfxodebounceSpec {}

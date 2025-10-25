@@ -1,80 +1,35 @@
 #[doc = "Register `MAXLEN` reader"]
-pub struct R(crate::R<MAXLEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MAXLEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MAXLEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MAXLEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MaxlenSpec>;
 #[doc = "Register `MAXLEN` writer"]
-pub struct W(crate::W<MAXLEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MAXLEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MAXLEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MAXLEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MaxlenSpec>;
 #[doc = "Field `MAXLEN` reader - Size of the RAM buffer allocated to TXD and RXD data storage each"]
-pub type MAXLEN_R = crate::FieldReader<u16, u16>;
+pub type MaxlenR = crate::FieldReader<u16>;
 #[doc = "Field `MAXLEN` writer - Size of the RAM buffer allocated to TXD and RXD data storage each"]
-pub type MAXLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAXLEN_SPEC, u16, u16, 9, O>;
+pub type MaxlenW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 impl R {
     #[doc = "Bits 0:8 - Size of the RAM buffer allocated to TXD and RXD data storage each"]
     #[inline(always)]
-    pub fn maxlen(&self) -> MAXLEN_R {
-        MAXLEN_R::new((self.bits & 0x01ff) as u16)
+    pub fn maxlen(&self) -> MaxlenR {
+        MaxlenR::new((self.bits & 0x01ff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:8 - Size of the RAM buffer allocated to TXD and RXD data storage each"]
     #[inline(always)]
-    pub fn maxlen(&mut self) -> MAXLEN_W<0> {
-        MAXLEN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn maxlen(&mut self) -> MaxlenW<'_, MaxlenSpec> {
+        MaxlenW::new(self, 0)
     }
 }
-#[doc = "Size of the RAM buffer allocated to TXD and RXD data storage each\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [maxlen](index.html) module"]
-pub struct MAXLEN_SPEC;
-impl crate::RegisterSpec for MAXLEN_SPEC {
+#[doc = "Size of the RAM buffer allocated to TXD and RXD data storage each\n\nYou can [`read`](crate::Reg::read) this register and get [`maxlen::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`maxlen::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct MaxlenSpec;
+impl crate::RegisterSpec for MaxlenSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [maxlen::R](R) reader structure"]
-impl crate::Readable for MAXLEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [maxlen::W](W) writer structure"]
-impl crate::Writable for MAXLEN_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`maxlen::R`](R) reader structure"]
+impl crate::Readable for MaxlenSpec {}
+#[doc = "`write(|w| ..)` method takes [`maxlen::W`](W) writer structure"]
+impl crate::Writable for MaxlenSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets MAXLEN to value 0"]
-impl crate::Resettable for MAXLEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for MaxlenSpec {}

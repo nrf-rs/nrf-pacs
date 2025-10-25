@@ -1,128 +1,91 @@
 #[doc = "Register `LIST` reader"]
-pub struct R(crate::R<LIST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LIST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LIST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LIST_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ListSpec>;
 #[doc = "Register `LIST` writer"]
-pub struct W(crate::W<LIST_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LIST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LIST_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LIST_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `LIST` reader - List type"]
-pub type LIST_R = crate::FieldReader<u8, LIST_A>;
+pub type W = crate::W<ListSpec>;
 #[doc = "List type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum LIST_A {
+pub enum List {
     #[doc = "0: Disable EasyDMA list"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Use array list"]
-    ARRAY_LIST = 1,
+    ArrayList = 1,
 }
-impl From<LIST_A> for u8 {
+impl From<List> for u8 {
     #[inline(always)]
-    fn from(variant: LIST_A) -> Self {
+    fn from(variant: List) -> Self {
         variant as _
     }
 }
-impl LIST_R {
+impl crate::FieldSpec for List {
+    type Ux = u8;
+}
+impl crate::IsEnum for List {}
+#[doc = "Field `LIST` reader - List type"]
+pub type ListR = crate::FieldReader<List>;
+impl ListR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LIST_A> {
+    pub const fn variant(&self) -> Option<List> {
         match self.bits {
-            0 => Some(LIST_A::DISABLED),
-            1 => Some(LIST_A::ARRAY_LIST),
+            0 => Some(List::Disabled),
+            1 => Some(List::ArrayList),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == LIST_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ARRAY_LIST`"]
-    #[inline(always)]
-    pub fn is_array_list(&self) -> bool {
-        *self == LIST_A::ARRAY_LIST
-    }
-}
-#[doc = "Field `LIST` writer - List type"]
-pub type LIST_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LIST_SPEC, u8, LIST_A, 3, O>;
-impl<'a, const O: u8> LIST_W<'a, O> {
     #[doc = "Disable EasyDMA list"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(LIST_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == List::Disabled
     }
     #[doc = "Use array list"]
     #[inline(always)]
-    pub fn array_list(self) -> &'a mut W {
-        self.variant(LIST_A::ARRAY_LIST)
+    pub fn is_array_list(&self) -> bool {
+        *self == List::ArrayList
+    }
+}
+#[doc = "Field `LIST` writer - List type"]
+pub type ListW<'a, REG> = crate::FieldWriter<'a, REG, 3, List>;
+impl<'a, REG> ListW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Disable EasyDMA list"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(List::Disabled)
+    }
+    #[doc = "Use array list"]
+    #[inline(always)]
+    pub fn array_list(self) -> &'a mut crate::W<REG> {
+        self.variant(List::ArrayList)
     }
 }
 impl R {
     #[doc = "Bits 0:2 - List type"]
     #[inline(always)]
-    pub fn list(&self) -> LIST_R {
-        LIST_R::new((self.bits & 7) as u8)
+    pub fn list(&self) -> ListR {
+        ListR::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - List type"]
     #[inline(always)]
-    pub fn list(&mut self) -> LIST_W<0> {
-        LIST_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn list(&mut self) -> ListW<'_, ListSpec> {
+        ListW::new(self, 0)
     }
 }
-#[doc = "EasyDMA list type\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [list](index.html) module"]
-pub struct LIST_SPEC;
-impl crate::RegisterSpec for LIST_SPEC {
+#[doc = "EasyDMA list type\n\nYou can [`read`](crate::Reg::read) this register and get [`list::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`list::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ListSpec;
+impl crate::RegisterSpec for ListSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [list::R](R) reader structure"]
-impl crate::Readable for LIST_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [list::W](W) writer structure"]
-impl crate::Writable for LIST_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`list::R`](R) reader structure"]
+impl crate::Readable for ListSpec {}
+#[doc = "`write(|w| ..)` method takes [`list::W`](W) writer structure"]
+impl crate::Writable for ListSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets LIST to value 0"]
-impl crate::Resettable for LIST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for ListSpec {}

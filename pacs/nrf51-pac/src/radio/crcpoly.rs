@@ -1,80 +1,35 @@
 #[doc = "Register `CRCPOLY` reader"]
-pub struct R(crate::R<CRCPOLY_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CRCPOLY_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CRCPOLY_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CRCPOLY_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CrcpolySpec>;
 #[doc = "Register `CRCPOLY` writer"]
-pub struct W(crate::W<CRCPOLY_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CRCPOLY_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CRCPOLY_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CRCPOLY_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CrcpolySpec>;
 #[doc = "Field `CRCPOLY` reader - CRC polynomial. Decision point: START task."]
-pub type CRCPOLY_R = crate::FieldReader<u32, u32>;
+pub type CrcpolyR = crate::FieldReader<u32>;
 #[doc = "Field `CRCPOLY` writer - CRC polynomial. Decision point: START task."]
-pub type CRCPOLY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CRCPOLY_SPEC, u32, u32, 24, O>;
+pub type CrcpolyW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bits 0:23 - CRC polynomial. Decision point: START task."]
     #[inline(always)]
-    pub fn crcpoly(&self) -> CRCPOLY_R {
-        CRCPOLY_R::new((self.bits & 0x00ff_ffff) as u32)
+    pub fn crcpoly(&self) -> CrcpolyR {
+        CrcpolyR::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - CRC polynomial. Decision point: START task."]
     #[inline(always)]
-    pub fn crcpoly(&mut self) -> CRCPOLY_W<0> {
-        CRCPOLY_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn crcpoly(&mut self) -> CrcpolyW<'_, CrcpolySpec> {
+        CrcpolyW::new(self, 0)
     }
 }
-#[doc = "CRC polynomial.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [crcpoly](index.html) module"]
-pub struct CRCPOLY_SPEC;
-impl crate::RegisterSpec for CRCPOLY_SPEC {
+#[doc = "CRC polynomial.\n\nYou can [`read`](crate::Reg::read) this register and get [`crcpoly::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`crcpoly::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CrcpolySpec;
+impl crate::RegisterSpec for CrcpolySpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [crcpoly::R](R) reader structure"]
-impl crate::Readable for CRCPOLY_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [crcpoly::W](W) writer structure"]
-impl crate::Writable for CRCPOLY_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`crcpoly::R`](R) reader structure"]
+impl crate::Readable for CrcpolySpec {}
+#[doc = "`write(|w| ..)` method takes [`crcpoly::W`](W) writer structure"]
+impl crate::Writable for CrcpolySpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CRCPOLY to value 0"]
-impl crate::Resettable for CRCPOLY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for CrcpolySpec {}

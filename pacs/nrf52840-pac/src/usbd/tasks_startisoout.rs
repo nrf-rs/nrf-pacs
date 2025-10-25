@@ -1,53 +1,44 @@
 #[doc = "Register `TASKS_STARTISOOUT` writer"]
-pub struct W(crate::W<TASKS_STARTISOOUT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TASKS_STARTISOOUT_SPEC>;
+pub type W = crate::W<TasksStartisooutSpec>;
+#[doc = "Captures the ISOOUT.PTR and ISOOUT.MAXCNT registers values, and enables receiving of data on ISO endpoint\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TasksStartisoout {
+    #[doc = "1: Trigger task"]
+    Trigger = 1,
+}
+impl From<TasksStartisoout> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: TasksStartisoout) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `TASKS_STARTISOOUT` writer - Captures the ISOOUT.PTR and ISOOUT.MAXCNT registers values, and enables receiving of data on ISO endpoint"]
+pub type TasksStartisooutW<'a, REG> = crate::BitWriter<'a, REG, TasksStartisoout>;
+impl<'a, REG> TasksStartisooutW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Trigger task"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn trigger(self) -> &'a mut crate::W<REG> {
+        self.variant(TasksStartisoout::Trigger)
     }
 }
-impl From<crate::W<TASKS_STARTISOOUT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TASKS_STARTISOOUT_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `TASKS_STARTISOOUT` writer - "]
-pub type TASKS_STARTISOOUT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TASKS_STARTISOOUT_SPEC, bool, O>;
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Captures the ISOOUT.PTR and ISOOUT.MAXCNT registers values, and enables receiving of data on ISO endpoint"]
     #[inline(always)]
-    pub fn tasks_startisoout(&mut self) -> TASKS_STARTISOOUT_W<0> {
-        TASKS_STARTISOOUT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn tasks_startisoout(&mut self) -> TasksStartisooutW<'_, TasksStartisooutSpec> {
+        TasksStartisooutW::new(self, 0)
     }
 }
-#[doc = "Captures the ISOOUT.PTR and ISOOUT.MAXCNT registers values, and enables receiving of data on ISO endpoint\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_startisoout](index.html) module"]
-pub struct TASKS_STARTISOOUT_SPEC;
-impl crate::RegisterSpec for TASKS_STARTISOOUT_SPEC {
+#[doc = "Captures the ISOOUT.PTR and ISOOUT.MAXCNT registers values, and enables receiving of data on ISO endpoint\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_startisoout::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TasksStartisooutSpec;
+impl crate::RegisterSpec for TasksStartisooutSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [tasks_startisoout::W](W) writer structure"]
-impl crate::Writable for TASKS_STARTISOOUT_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`tasks_startisoout::W`](W) writer structure"]
+impl crate::Writable for TasksStartisooutSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TASKS_STARTISOOUT to value 0"]
-impl crate::Resettable for TASKS_STARTISOOUT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for TasksStartisooutSpec {}

@@ -1,24 +1,9 @@
 #[doc = "Register `FLASH` reader"]
-pub struct R(crate::R<FLASH_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FLASH_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FLASH_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FLASH_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `FLASH` reader - Flash variant"]
-pub type FLASH_R = crate::FieldReader<u32, FLASH_A>;
+pub type R = crate::R<FlashSpec>;
 #[doc = "Flash variant\n\nValue on reset: 512"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
-pub enum FLASH_A {
+pub enum Flash {
     #[doc = "128: 128 kByte FLASH"]
     K128 = 128,
     #[doc = "256: 256 kByte FLASH"]
@@ -26,67 +11,68 @@ pub enum FLASH_A {
     #[doc = "512: 512 kByte FLASH"]
     K512 = 512,
     #[doc = "4294967295: Unspecified"]
-    UNSPECIFIED = 4294967295,
+    Unspecified = 4294967295,
 }
-impl From<FLASH_A> for u32 {
+impl From<Flash> for u32 {
     #[inline(always)]
-    fn from(variant: FLASH_A) -> Self {
+    fn from(variant: Flash) -> Self {
         variant as _
     }
 }
-impl FLASH_R {
+impl crate::FieldSpec for Flash {
+    type Ux = u32;
+}
+impl crate::IsEnum for Flash {}
+#[doc = "Field `FLASH` reader - Flash variant"]
+pub type FlashR = crate::FieldReader<Flash>;
+impl FlashR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FLASH_A> {
+    pub const fn variant(&self) -> Option<Flash> {
         match self.bits {
-            128 => Some(FLASH_A::K128),
-            256 => Some(FLASH_A::K256),
-            512 => Some(FLASH_A::K512),
-            4294967295 => Some(FLASH_A::UNSPECIFIED),
+            128 => Some(Flash::K128),
+            256 => Some(Flash::K256),
+            512 => Some(Flash::K512),
+            4294967295 => Some(Flash::Unspecified),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `K128`"]
+    #[doc = "128 kByte FLASH"]
     #[inline(always)]
     pub fn is_k128(&self) -> bool {
-        *self == FLASH_A::K128
+        *self == Flash::K128
     }
-    #[doc = "Checks if the value of the field is `K256`"]
+    #[doc = "256 kByte FLASH"]
     #[inline(always)]
     pub fn is_k256(&self) -> bool {
-        *self == FLASH_A::K256
+        *self == Flash::K256
     }
-    #[doc = "Checks if the value of the field is `K512`"]
+    #[doc = "512 kByte FLASH"]
     #[inline(always)]
     pub fn is_k512(&self) -> bool {
-        *self == FLASH_A::K512
+        *self == Flash::K512
     }
-    #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
+    #[doc = "Unspecified"]
     #[inline(always)]
     pub fn is_unspecified(&self) -> bool {
-        *self == FLASH_A::UNSPECIFIED
+        *self == Flash::Unspecified
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Flash variant"]
     #[inline(always)]
-    pub fn flash(&self) -> FLASH_R {
-        FLASH_R::new(self.bits)
+    pub fn flash(&self) -> FlashR {
+        FlashR::new(self.bits)
     }
 }
-#[doc = "Flash variant\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flash](index.html) module"]
-pub struct FLASH_SPEC;
-impl crate::RegisterSpec for FLASH_SPEC {
+#[doc = "Flash variant\n\nYou can [`read`](crate::Reg::read) this register and get [`flash::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct FlashSpec;
+impl crate::RegisterSpec for FlashSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [flash::R](R) reader structure"]
-impl crate::Readable for FLASH_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`flash::R`](R) reader structure"]
+impl crate::Readable for FlashSpec {}
 #[doc = "`reset()` method sets FLASH to value 0x0200"]
-impl crate::Resettable for FLASH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0200
-    }
+impl crate::Resettable for FlashSpec {
+    const RESET_VALUE: u32 = 0x0200;
 }

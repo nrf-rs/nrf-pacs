@@ -1,129 +1,93 @@
 #[doc = "Register `XTALFREQ` reader"]
-pub struct R(crate::R<XTALFREQ_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<XTALFREQ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<XTALFREQ_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<XTALFREQ_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<XtalfreqSpec>;
 #[doc = "Register `XTALFREQ` writer"]
-pub struct W(crate::W<XTALFREQ_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<XTALFREQ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<XTALFREQ_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<XTALFREQ_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `XTALFREQ` reader - Reset value for CLOCK XTALFREQ register."]
-pub type XTALFREQ_R = crate::FieldReader<u8, XTALFREQ_A>;
+pub type W = crate::W<XtalfreqSpec>;
 #[doc = "Reset value for CLOCK XTALFREQ register.\n\nValue on reset: 255"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum XTALFREQ_A {
+pub enum Xtalfreq {
     #[doc = "255: 16MHz Xtal is used."]
-    _16MHZ = 255,
+    _16mhz = 255,
     #[doc = "0: 32MHz Xtal is used."]
-    _32MHZ = 0,
+    _32mhz = 0,
 }
-impl From<XTALFREQ_A> for u8 {
+impl From<Xtalfreq> for u8 {
     #[inline(always)]
-    fn from(variant: XTALFREQ_A) -> Self {
+    fn from(variant: Xtalfreq) -> Self {
         variant as _
     }
 }
-impl XTALFREQ_R {
+impl crate::FieldSpec for Xtalfreq {
+    type Ux = u8;
+}
+impl crate::IsEnum for Xtalfreq {}
+#[doc = "Field `XTALFREQ` reader - Reset value for CLOCK XTALFREQ register."]
+pub type XtalfreqR = crate::FieldReader<Xtalfreq>;
+impl XtalfreqR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<XTALFREQ_A> {
+    pub const fn variant(&self) -> Option<Xtalfreq> {
         match self.bits {
-            255 => Some(XTALFREQ_A::_16MHZ),
-            0 => Some(XTALFREQ_A::_32MHZ),
+            255 => Some(Xtalfreq::_16mhz),
+            0 => Some(Xtalfreq::_32mhz),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_16MHZ`"]
-    #[inline(always)]
-    pub fn is_16mhz(&self) -> bool {
-        *self == XTALFREQ_A::_16MHZ
-    }
-    #[doc = "Checks if the value of the field is `_32MHZ`"]
-    #[inline(always)]
-    pub fn is_32mhz(&self) -> bool {
-        *self == XTALFREQ_A::_32MHZ
-    }
-}
-#[doc = "Field `XTALFREQ` writer - Reset value for CLOCK XTALFREQ register."]
-pub type XTALFREQ_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, XTALFREQ_SPEC, u8, XTALFREQ_A, 8, O>;
-impl<'a, const O: u8> XTALFREQ_W<'a, O> {
     #[doc = "16MHz Xtal is used."]
     #[inline(always)]
-    pub fn _16mhz(self) -> &'a mut W {
-        self.variant(XTALFREQ_A::_16MHZ)
+    pub fn is_16mhz(&self) -> bool {
+        *self == Xtalfreq::_16mhz
     }
     #[doc = "32MHz Xtal is used."]
     #[inline(always)]
-    pub fn _32mhz(self) -> &'a mut W {
-        self.variant(XTALFREQ_A::_32MHZ)
+    pub fn is_32mhz(&self) -> bool {
+        *self == Xtalfreq::_32mhz
+    }
+}
+#[doc = "Field `XTALFREQ` writer - Reset value for CLOCK XTALFREQ register."]
+pub type XtalfreqW<'a, REG> = crate::FieldWriter<'a, REG, 8, Xtalfreq>;
+impl<'a, REG> XtalfreqW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "16MHz Xtal is used."]
+    #[inline(always)]
+    pub fn _16mhz(self) -> &'a mut crate::W<REG> {
+        self.variant(Xtalfreq::_16mhz)
+    }
+    #[doc = "32MHz Xtal is used."]
+    #[inline(always)]
+    pub fn _32mhz(self) -> &'a mut crate::W<REG> {
+        self.variant(Xtalfreq::_32mhz)
     }
 }
 impl R {
     #[doc = "Bits 0:7 - Reset value for CLOCK XTALFREQ register."]
     #[inline(always)]
-    pub fn xtalfreq(&self) -> XTALFREQ_R {
-        XTALFREQ_R::new((self.bits & 0xff) as u8)
+    pub fn xtalfreq(&self) -> XtalfreqR {
+        XtalfreqR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Reset value for CLOCK XTALFREQ register."]
     #[inline(always)]
-    pub fn xtalfreq(&mut self) -> XTALFREQ_W<0> {
-        XTALFREQ_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn xtalfreq(&mut self) -> XtalfreqW<'_, XtalfreqSpec> {
+        XtalfreqW::new(self, 0)
     }
 }
-#[doc = "Reset value for CLOCK XTALFREQ register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [xtalfreq](index.html) module"]
-pub struct XTALFREQ_SPEC;
-impl crate::RegisterSpec for XTALFREQ_SPEC {
+#[doc = "Reset value for CLOCK XTALFREQ register.\n\nYou can [`read`](crate::Reg::read) this register and get [`xtalfreq::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`xtalfreq::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct XtalfreqSpec;
+impl crate::RegisterSpec for XtalfreqSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [xtalfreq::R](R) reader structure"]
-impl crate::Readable for XTALFREQ_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [xtalfreq::W](W) writer structure"]
-impl crate::Writable for XTALFREQ_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`xtalfreq::R`](R) reader structure"]
+impl crate::Readable for XtalfreqSpec {}
+#[doc = "`write(|w| ..)` method takes [`xtalfreq::W`](W) writer structure"]
+impl crate::Writable for XtalfreqSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets XTALFREQ to value 0xffff_ffff"]
-impl crate::Resettable for XTALFREQ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for XtalfreqSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

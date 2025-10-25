@@ -1,1986 +1,2037 @@
 #[doc = "Register `CONFIG2` reader"]
-pub struct R(crate::R<CONFIG2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CONFIG2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CONFIG2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CONFIG2_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Config2Spec>;
 #[doc = "Register `CONFIG2` writer"]
-pub struct W(crate::W<CONFIG2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CONFIG2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<Config2Spec>;
+#[doc = "Enable protection for region 64. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region64 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Region64> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CONFIG2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CONFIG2_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Region64) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION64` reader - Enable protection for region 64. Write '0' has no effect."]
-pub type REGION64_R = crate::BitReader<REGION64_A>;
-#[doc = "Enable protection for region 64. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION64_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION64_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION64_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION64_R {
+pub type Region64R = crate::BitReader<Region64>;
+impl Region64R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION64_A {
+    pub const fn variant(&self) -> Region64 {
         match self.bits {
-            false => REGION64_A::DISABLED,
-            true => REGION64_A::ENABLED,
+            false => Region64::Disabled,
+            true => Region64::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION64_A::DISABLED
+        *self == Region64::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION64_A::ENABLED
+        *self == Region64::Enabled
     }
 }
 #[doc = "Field `REGION64` writer - Enable protection for region 64. Write '0' has no effect."]
-pub type REGION64_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION64_A, O>;
-impl<'a, const O: u8> REGION64_W<'a, O> {
+pub type Region64W<'a, REG> = crate::BitWriter<'a, REG, Region64>;
+impl<'a, REG> Region64W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION64_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region64::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION64_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region64::Enabled)
+    }
+}
+#[doc = "Enable protection for region 65. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region65 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region65> for bool {
+    #[inline(always)]
+    fn from(variant: Region65) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION65` reader - Enable protection for region 65. Write '0' has no effect."]
-pub type REGION65_R = crate::BitReader<REGION65_A>;
-#[doc = "Enable protection for region 65. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION65_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION65_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION65_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION65_R {
+pub type Region65R = crate::BitReader<Region65>;
+impl Region65R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION65_A {
+    pub const fn variant(&self) -> Region65 {
         match self.bits {
-            false => REGION65_A::DISABLED,
-            true => REGION65_A::ENABLED,
+            false => Region65::Disabled,
+            true => Region65::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION65_A::DISABLED
+        *self == Region65::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION65_A::ENABLED
+        *self == Region65::Enabled
     }
 }
 #[doc = "Field `REGION65` writer - Enable protection for region 65. Write '0' has no effect."]
-pub type REGION65_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION65_A, O>;
-impl<'a, const O: u8> REGION65_W<'a, O> {
+pub type Region65W<'a, REG> = crate::BitWriter<'a, REG, Region65>;
+impl<'a, REG> Region65W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION65_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region65::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION65_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region65::Enabled)
+    }
+}
+#[doc = "Enable protection for region 66. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region66 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region66> for bool {
+    #[inline(always)]
+    fn from(variant: Region66) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION66` reader - Enable protection for region 66. Write '0' has no effect."]
-pub type REGION66_R = crate::BitReader<REGION66_A>;
-#[doc = "Enable protection for region 66. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION66_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION66_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION66_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION66_R {
+pub type Region66R = crate::BitReader<Region66>;
+impl Region66R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION66_A {
+    pub const fn variant(&self) -> Region66 {
         match self.bits {
-            false => REGION66_A::DISABLED,
-            true => REGION66_A::ENABLED,
+            false => Region66::Disabled,
+            true => Region66::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION66_A::DISABLED
+        *self == Region66::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION66_A::ENABLED
+        *self == Region66::Enabled
     }
 }
 #[doc = "Field `REGION66` writer - Enable protection for region 66. Write '0' has no effect."]
-pub type REGION66_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION66_A, O>;
-impl<'a, const O: u8> REGION66_W<'a, O> {
+pub type Region66W<'a, REG> = crate::BitWriter<'a, REG, Region66>;
+impl<'a, REG> Region66W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION66_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region66::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION66_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region66::Enabled)
+    }
+}
+#[doc = "Enable protection for region 67. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region67 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region67> for bool {
+    #[inline(always)]
+    fn from(variant: Region67) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION67` reader - Enable protection for region 67. Write '0' has no effect."]
-pub type REGION67_R = crate::BitReader<REGION67_A>;
-#[doc = "Enable protection for region 67. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION67_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION67_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION67_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION67_R {
+pub type Region67R = crate::BitReader<Region67>;
+impl Region67R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION67_A {
+    pub const fn variant(&self) -> Region67 {
         match self.bits {
-            false => REGION67_A::DISABLED,
-            true => REGION67_A::ENABLED,
+            false => Region67::Disabled,
+            true => Region67::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION67_A::DISABLED
+        *self == Region67::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION67_A::ENABLED
+        *self == Region67::Enabled
     }
 }
 #[doc = "Field `REGION67` writer - Enable protection for region 67. Write '0' has no effect."]
-pub type REGION67_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION67_A, O>;
-impl<'a, const O: u8> REGION67_W<'a, O> {
+pub type Region67W<'a, REG> = crate::BitWriter<'a, REG, Region67>;
+impl<'a, REG> Region67W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION67_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region67::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION67_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region67::Enabled)
+    }
+}
+#[doc = "Enable protection for region 68. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region68 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region68> for bool {
+    #[inline(always)]
+    fn from(variant: Region68) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION68` reader - Enable protection for region 68. Write '0' has no effect."]
-pub type REGION68_R = crate::BitReader<REGION68_A>;
-#[doc = "Enable protection for region 68. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION68_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION68_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION68_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION68_R {
+pub type Region68R = crate::BitReader<Region68>;
+impl Region68R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION68_A {
+    pub const fn variant(&self) -> Region68 {
         match self.bits {
-            false => REGION68_A::DISABLED,
-            true => REGION68_A::ENABLED,
+            false => Region68::Disabled,
+            true => Region68::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION68_A::DISABLED
+        *self == Region68::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION68_A::ENABLED
+        *self == Region68::Enabled
     }
 }
 #[doc = "Field `REGION68` writer - Enable protection for region 68. Write '0' has no effect."]
-pub type REGION68_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION68_A, O>;
-impl<'a, const O: u8> REGION68_W<'a, O> {
+pub type Region68W<'a, REG> = crate::BitWriter<'a, REG, Region68>;
+impl<'a, REG> Region68W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION68_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region68::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION68_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region68::Enabled)
+    }
+}
+#[doc = "Enable protection for region 69. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region69 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region69> for bool {
+    #[inline(always)]
+    fn from(variant: Region69) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION69` reader - Enable protection for region 69. Write '0' has no effect."]
-pub type REGION69_R = crate::BitReader<REGION69_A>;
-#[doc = "Enable protection for region 69. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION69_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION69_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION69_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION69_R {
+pub type Region69R = crate::BitReader<Region69>;
+impl Region69R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION69_A {
+    pub const fn variant(&self) -> Region69 {
         match self.bits {
-            false => REGION69_A::DISABLED,
-            true => REGION69_A::ENABLED,
+            false => Region69::Disabled,
+            true => Region69::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION69_A::DISABLED
+        *self == Region69::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION69_A::ENABLED
+        *self == Region69::Enabled
     }
 }
 #[doc = "Field `REGION69` writer - Enable protection for region 69. Write '0' has no effect."]
-pub type REGION69_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION69_A, O>;
-impl<'a, const O: u8> REGION69_W<'a, O> {
+pub type Region69W<'a, REG> = crate::BitWriter<'a, REG, Region69>;
+impl<'a, REG> Region69W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION69_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region69::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION69_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region69::Enabled)
+    }
+}
+#[doc = "Enable protection for region 70. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region70 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region70> for bool {
+    #[inline(always)]
+    fn from(variant: Region70) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION70` reader - Enable protection for region 70. Write '0' has no effect."]
-pub type REGION70_R = crate::BitReader<REGION70_A>;
-#[doc = "Enable protection for region 70. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION70_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION70_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION70_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION70_R {
+pub type Region70R = crate::BitReader<Region70>;
+impl Region70R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION70_A {
+    pub const fn variant(&self) -> Region70 {
         match self.bits {
-            false => REGION70_A::DISABLED,
-            true => REGION70_A::ENABLED,
+            false => Region70::Disabled,
+            true => Region70::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION70_A::DISABLED
+        *self == Region70::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION70_A::ENABLED
+        *self == Region70::Enabled
     }
 }
 #[doc = "Field `REGION70` writer - Enable protection for region 70. Write '0' has no effect."]
-pub type REGION70_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION70_A, O>;
-impl<'a, const O: u8> REGION70_W<'a, O> {
+pub type Region70W<'a, REG> = crate::BitWriter<'a, REG, Region70>;
+impl<'a, REG> Region70W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION70_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region70::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION70_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region70::Enabled)
+    }
+}
+#[doc = "Enable protection for region 71. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region71 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region71> for bool {
+    #[inline(always)]
+    fn from(variant: Region71) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION71` reader - Enable protection for region 71. Write '0' has no effect."]
-pub type REGION71_R = crate::BitReader<REGION71_A>;
-#[doc = "Enable protection for region 71. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION71_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION71_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION71_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION71_R {
+pub type Region71R = crate::BitReader<Region71>;
+impl Region71R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION71_A {
+    pub const fn variant(&self) -> Region71 {
         match self.bits {
-            false => REGION71_A::DISABLED,
-            true => REGION71_A::ENABLED,
+            false => Region71::Disabled,
+            true => Region71::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION71_A::DISABLED
+        *self == Region71::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION71_A::ENABLED
+        *self == Region71::Enabled
     }
 }
 #[doc = "Field `REGION71` writer - Enable protection for region 71. Write '0' has no effect."]
-pub type REGION71_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION71_A, O>;
-impl<'a, const O: u8> REGION71_W<'a, O> {
+pub type Region71W<'a, REG> = crate::BitWriter<'a, REG, Region71>;
+impl<'a, REG> Region71W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION71_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region71::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION71_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region71::Enabled)
+    }
+}
+#[doc = "Enable protection for region 72. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region72 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region72> for bool {
+    #[inline(always)]
+    fn from(variant: Region72) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION72` reader - Enable protection for region 72. Write '0' has no effect."]
-pub type REGION72_R = crate::BitReader<REGION72_A>;
-#[doc = "Enable protection for region 72. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION72_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION72_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION72_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION72_R {
+pub type Region72R = crate::BitReader<Region72>;
+impl Region72R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION72_A {
+    pub const fn variant(&self) -> Region72 {
         match self.bits {
-            false => REGION72_A::DISABLED,
-            true => REGION72_A::ENABLED,
+            false => Region72::Disabled,
+            true => Region72::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION72_A::DISABLED
+        *self == Region72::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION72_A::ENABLED
+        *self == Region72::Enabled
     }
 }
 #[doc = "Field `REGION72` writer - Enable protection for region 72. Write '0' has no effect."]
-pub type REGION72_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION72_A, O>;
-impl<'a, const O: u8> REGION72_W<'a, O> {
+pub type Region72W<'a, REG> = crate::BitWriter<'a, REG, Region72>;
+impl<'a, REG> Region72W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION72_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region72::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION72_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region72::Enabled)
+    }
+}
+#[doc = "Enable protection for region 73. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region73 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region73> for bool {
+    #[inline(always)]
+    fn from(variant: Region73) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION73` reader - Enable protection for region 73. Write '0' has no effect."]
-pub type REGION73_R = crate::BitReader<REGION73_A>;
-#[doc = "Enable protection for region 73. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION73_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION73_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION73_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION73_R {
+pub type Region73R = crate::BitReader<Region73>;
+impl Region73R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION73_A {
+    pub const fn variant(&self) -> Region73 {
         match self.bits {
-            false => REGION73_A::DISABLED,
-            true => REGION73_A::ENABLED,
+            false => Region73::Disabled,
+            true => Region73::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION73_A::DISABLED
+        *self == Region73::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION73_A::ENABLED
+        *self == Region73::Enabled
     }
 }
 #[doc = "Field `REGION73` writer - Enable protection for region 73. Write '0' has no effect."]
-pub type REGION73_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION73_A, O>;
-impl<'a, const O: u8> REGION73_W<'a, O> {
+pub type Region73W<'a, REG> = crate::BitWriter<'a, REG, Region73>;
+impl<'a, REG> Region73W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION73_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region73::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION73_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region73::Enabled)
+    }
+}
+#[doc = "Enable protection for region 74. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region74 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region74> for bool {
+    #[inline(always)]
+    fn from(variant: Region74) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION74` reader - Enable protection for region 74. Write '0' has no effect."]
-pub type REGION74_R = crate::BitReader<REGION74_A>;
-#[doc = "Enable protection for region 74. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION74_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION74_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION74_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION74_R {
+pub type Region74R = crate::BitReader<Region74>;
+impl Region74R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION74_A {
+    pub const fn variant(&self) -> Region74 {
         match self.bits {
-            false => REGION74_A::DISABLED,
-            true => REGION74_A::ENABLED,
+            false => Region74::Disabled,
+            true => Region74::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION74_A::DISABLED
+        *self == Region74::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION74_A::ENABLED
+        *self == Region74::Enabled
     }
 }
 #[doc = "Field `REGION74` writer - Enable protection for region 74. Write '0' has no effect."]
-pub type REGION74_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION74_A, O>;
-impl<'a, const O: u8> REGION74_W<'a, O> {
+pub type Region74W<'a, REG> = crate::BitWriter<'a, REG, Region74>;
+impl<'a, REG> Region74W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION74_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region74::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION74_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region74::Enabled)
+    }
+}
+#[doc = "Enable protection for region 75. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region75 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region75> for bool {
+    #[inline(always)]
+    fn from(variant: Region75) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION75` reader - Enable protection for region 75. Write '0' has no effect."]
-pub type REGION75_R = crate::BitReader<REGION75_A>;
-#[doc = "Enable protection for region 75. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION75_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION75_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION75_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION75_R {
+pub type Region75R = crate::BitReader<Region75>;
+impl Region75R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION75_A {
+    pub const fn variant(&self) -> Region75 {
         match self.bits {
-            false => REGION75_A::DISABLED,
-            true => REGION75_A::ENABLED,
+            false => Region75::Disabled,
+            true => Region75::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION75_A::DISABLED
+        *self == Region75::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION75_A::ENABLED
+        *self == Region75::Enabled
     }
 }
 #[doc = "Field `REGION75` writer - Enable protection for region 75. Write '0' has no effect."]
-pub type REGION75_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION75_A, O>;
-impl<'a, const O: u8> REGION75_W<'a, O> {
+pub type Region75W<'a, REG> = crate::BitWriter<'a, REG, Region75>;
+impl<'a, REG> Region75W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION75_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region75::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION75_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region75::Enabled)
+    }
+}
+#[doc = "Enable protection for region 76. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region76 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region76> for bool {
+    #[inline(always)]
+    fn from(variant: Region76) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION76` reader - Enable protection for region 76. Write '0' has no effect."]
-pub type REGION76_R = crate::BitReader<REGION76_A>;
-#[doc = "Enable protection for region 76. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION76_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION76_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION76_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION76_R {
+pub type Region76R = crate::BitReader<Region76>;
+impl Region76R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION76_A {
+    pub const fn variant(&self) -> Region76 {
         match self.bits {
-            false => REGION76_A::DISABLED,
-            true => REGION76_A::ENABLED,
+            false => Region76::Disabled,
+            true => Region76::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION76_A::DISABLED
+        *self == Region76::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION76_A::ENABLED
+        *self == Region76::Enabled
     }
 }
 #[doc = "Field `REGION76` writer - Enable protection for region 76. Write '0' has no effect."]
-pub type REGION76_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION76_A, O>;
-impl<'a, const O: u8> REGION76_W<'a, O> {
+pub type Region76W<'a, REG> = crate::BitWriter<'a, REG, Region76>;
+impl<'a, REG> Region76W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION76_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region76::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION76_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region76::Enabled)
+    }
+}
+#[doc = "Enable protection for region 77. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region77 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region77> for bool {
+    #[inline(always)]
+    fn from(variant: Region77) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION77` reader - Enable protection for region 77. Write '0' has no effect."]
-pub type REGION77_R = crate::BitReader<REGION77_A>;
-#[doc = "Enable protection for region 77. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION77_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION77_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION77_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION77_R {
+pub type Region77R = crate::BitReader<Region77>;
+impl Region77R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION77_A {
+    pub const fn variant(&self) -> Region77 {
         match self.bits {
-            false => REGION77_A::DISABLED,
-            true => REGION77_A::ENABLED,
+            false => Region77::Disabled,
+            true => Region77::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION77_A::DISABLED
+        *self == Region77::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION77_A::ENABLED
+        *self == Region77::Enabled
     }
 }
 #[doc = "Field `REGION77` writer - Enable protection for region 77. Write '0' has no effect."]
-pub type REGION77_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION77_A, O>;
-impl<'a, const O: u8> REGION77_W<'a, O> {
+pub type Region77W<'a, REG> = crate::BitWriter<'a, REG, Region77>;
+impl<'a, REG> Region77W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION77_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region77::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION77_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region77::Enabled)
+    }
+}
+#[doc = "Enable protection for region 78. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region78 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region78> for bool {
+    #[inline(always)]
+    fn from(variant: Region78) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION78` reader - Enable protection for region 78. Write '0' has no effect."]
-pub type REGION78_R = crate::BitReader<REGION78_A>;
-#[doc = "Enable protection for region 78. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION78_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION78_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION78_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION78_R {
+pub type Region78R = crate::BitReader<Region78>;
+impl Region78R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION78_A {
+    pub const fn variant(&self) -> Region78 {
         match self.bits {
-            false => REGION78_A::DISABLED,
-            true => REGION78_A::ENABLED,
+            false => Region78::Disabled,
+            true => Region78::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION78_A::DISABLED
+        *self == Region78::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION78_A::ENABLED
+        *self == Region78::Enabled
     }
 }
 #[doc = "Field `REGION78` writer - Enable protection for region 78. Write '0' has no effect."]
-pub type REGION78_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION78_A, O>;
-impl<'a, const O: u8> REGION78_W<'a, O> {
+pub type Region78W<'a, REG> = crate::BitWriter<'a, REG, Region78>;
+impl<'a, REG> Region78W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION78_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region78::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION78_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region78::Enabled)
+    }
+}
+#[doc = "Enable protection for region 79. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region79 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region79> for bool {
+    #[inline(always)]
+    fn from(variant: Region79) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION79` reader - Enable protection for region 79. Write '0' has no effect."]
-pub type REGION79_R = crate::BitReader<REGION79_A>;
-#[doc = "Enable protection for region 79. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION79_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION79_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION79_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION79_R {
+pub type Region79R = crate::BitReader<Region79>;
+impl Region79R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION79_A {
+    pub const fn variant(&self) -> Region79 {
         match self.bits {
-            false => REGION79_A::DISABLED,
-            true => REGION79_A::ENABLED,
+            false => Region79::Disabled,
+            true => Region79::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION79_A::DISABLED
+        *self == Region79::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION79_A::ENABLED
+        *self == Region79::Enabled
     }
 }
 #[doc = "Field `REGION79` writer - Enable protection for region 79. Write '0' has no effect."]
-pub type REGION79_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION79_A, O>;
-impl<'a, const O: u8> REGION79_W<'a, O> {
+pub type Region79W<'a, REG> = crate::BitWriter<'a, REG, Region79>;
+impl<'a, REG> Region79W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION79_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region79::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION79_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region79::Enabled)
+    }
+}
+#[doc = "Enable protection for region 80. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region80 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region80> for bool {
+    #[inline(always)]
+    fn from(variant: Region80) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION80` reader - Enable protection for region 80. Write '0' has no effect."]
-pub type REGION80_R = crate::BitReader<REGION80_A>;
-#[doc = "Enable protection for region 80. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION80_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION80_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION80_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION80_R {
+pub type Region80R = crate::BitReader<Region80>;
+impl Region80R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION80_A {
+    pub const fn variant(&self) -> Region80 {
         match self.bits {
-            false => REGION80_A::DISABLED,
-            true => REGION80_A::ENABLED,
+            false => Region80::Disabled,
+            true => Region80::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION80_A::DISABLED
+        *self == Region80::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION80_A::ENABLED
+        *self == Region80::Enabled
     }
 }
 #[doc = "Field `REGION80` writer - Enable protection for region 80. Write '0' has no effect."]
-pub type REGION80_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION80_A, O>;
-impl<'a, const O: u8> REGION80_W<'a, O> {
+pub type Region80W<'a, REG> = crate::BitWriter<'a, REG, Region80>;
+impl<'a, REG> Region80W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION80_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region80::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION80_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region80::Enabled)
+    }
+}
+#[doc = "Enable protection for region 81. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region81 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region81> for bool {
+    #[inline(always)]
+    fn from(variant: Region81) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION81` reader - Enable protection for region 81. Write '0' has no effect."]
-pub type REGION81_R = crate::BitReader<REGION81_A>;
-#[doc = "Enable protection for region 81. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION81_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION81_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION81_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION81_R {
+pub type Region81R = crate::BitReader<Region81>;
+impl Region81R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION81_A {
+    pub const fn variant(&self) -> Region81 {
         match self.bits {
-            false => REGION81_A::DISABLED,
-            true => REGION81_A::ENABLED,
+            false => Region81::Disabled,
+            true => Region81::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION81_A::DISABLED
+        *self == Region81::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION81_A::ENABLED
+        *self == Region81::Enabled
     }
 }
 #[doc = "Field `REGION81` writer - Enable protection for region 81. Write '0' has no effect."]
-pub type REGION81_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION81_A, O>;
-impl<'a, const O: u8> REGION81_W<'a, O> {
+pub type Region81W<'a, REG> = crate::BitWriter<'a, REG, Region81>;
+impl<'a, REG> Region81W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION81_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region81::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION81_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region81::Enabled)
+    }
+}
+#[doc = "Enable protection for region 82. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region82 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region82> for bool {
+    #[inline(always)]
+    fn from(variant: Region82) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION82` reader - Enable protection for region 82. Write '0' has no effect."]
-pub type REGION82_R = crate::BitReader<REGION82_A>;
-#[doc = "Enable protection for region 82. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION82_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION82_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION82_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION82_R {
+pub type Region82R = crate::BitReader<Region82>;
+impl Region82R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION82_A {
+    pub const fn variant(&self) -> Region82 {
         match self.bits {
-            false => REGION82_A::DISABLED,
-            true => REGION82_A::ENABLED,
+            false => Region82::Disabled,
+            true => Region82::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION82_A::DISABLED
+        *self == Region82::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION82_A::ENABLED
+        *self == Region82::Enabled
     }
 }
 #[doc = "Field `REGION82` writer - Enable protection for region 82. Write '0' has no effect."]
-pub type REGION82_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION82_A, O>;
-impl<'a, const O: u8> REGION82_W<'a, O> {
+pub type Region82W<'a, REG> = crate::BitWriter<'a, REG, Region82>;
+impl<'a, REG> Region82W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION82_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region82::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION82_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region82::Enabled)
+    }
+}
+#[doc = "Enable protection for region 83. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region83 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region83> for bool {
+    #[inline(always)]
+    fn from(variant: Region83) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION83` reader - Enable protection for region 83. Write '0' has no effect."]
-pub type REGION83_R = crate::BitReader<REGION83_A>;
-#[doc = "Enable protection for region 83. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION83_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION83_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION83_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION83_R {
+pub type Region83R = crate::BitReader<Region83>;
+impl Region83R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION83_A {
+    pub const fn variant(&self) -> Region83 {
         match self.bits {
-            false => REGION83_A::DISABLED,
-            true => REGION83_A::ENABLED,
+            false => Region83::Disabled,
+            true => Region83::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION83_A::DISABLED
+        *self == Region83::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION83_A::ENABLED
+        *self == Region83::Enabled
     }
 }
 #[doc = "Field `REGION83` writer - Enable protection for region 83. Write '0' has no effect."]
-pub type REGION83_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION83_A, O>;
-impl<'a, const O: u8> REGION83_W<'a, O> {
+pub type Region83W<'a, REG> = crate::BitWriter<'a, REG, Region83>;
+impl<'a, REG> Region83W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION83_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region83::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION83_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region83::Enabled)
+    }
+}
+#[doc = "Enable protection for region 84. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region84 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region84> for bool {
+    #[inline(always)]
+    fn from(variant: Region84) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION84` reader - Enable protection for region 84. Write '0' has no effect."]
-pub type REGION84_R = crate::BitReader<REGION84_A>;
-#[doc = "Enable protection for region 84. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION84_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION84_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION84_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION84_R {
+pub type Region84R = crate::BitReader<Region84>;
+impl Region84R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION84_A {
+    pub const fn variant(&self) -> Region84 {
         match self.bits {
-            false => REGION84_A::DISABLED,
-            true => REGION84_A::ENABLED,
+            false => Region84::Disabled,
+            true => Region84::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION84_A::DISABLED
+        *self == Region84::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION84_A::ENABLED
+        *self == Region84::Enabled
     }
 }
 #[doc = "Field `REGION84` writer - Enable protection for region 84. Write '0' has no effect."]
-pub type REGION84_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION84_A, O>;
-impl<'a, const O: u8> REGION84_W<'a, O> {
+pub type Region84W<'a, REG> = crate::BitWriter<'a, REG, Region84>;
+impl<'a, REG> Region84W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION84_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region84::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION84_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region84::Enabled)
+    }
+}
+#[doc = "Enable protection for region 85. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region85 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region85> for bool {
+    #[inline(always)]
+    fn from(variant: Region85) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION85` reader - Enable protection for region 85. Write '0' has no effect."]
-pub type REGION85_R = crate::BitReader<REGION85_A>;
-#[doc = "Enable protection for region 85. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION85_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION85_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION85_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION85_R {
+pub type Region85R = crate::BitReader<Region85>;
+impl Region85R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION85_A {
+    pub const fn variant(&self) -> Region85 {
         match self.bits {
-            false => REGION85_A::DISABLED,
-            true => REGION85_A::ENABLED,
+            false => Region85::Disabled,
+            true => Region85::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION85_A::DISABLED
+        *self == Region85::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION85_A::ENABLED
+        *self == Region85::Enabled
     }
 }
 #[doc = "Field `REGION85` writer - Enable protection for region 85. Write '0' has no effect."]
-pub type REGION85_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION85_A, O>;
-impl<'a, const O: u8> REGION85_W<'a, O> {
+pub type Region85W<'a, REG> = crate::BitWriter<'a, REG, Region85>;
+impl<'a, REG> Region85W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION85_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region85::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION85_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region85::Enabled)
+    }
+}
+#[doc = "Enable protection for region 86. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region86 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region86> for bool {
+    #[inline(always)]
+    fn from(variant: Region86) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION86` reader - Enable protection for region 86. Write '0' has no effect."]
-pub type REGION86_R = crate::BitReader<REGION86_A>;
-#[doc = "Enable protection for region 86. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION86_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION86_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION86_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION86_R {
+pub type Region86R = crate::BitReader<Region86>;
+impl Region86R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION86_A {
+    pub const fn variant(&self) -> Region86 {
         match self.bits {
-            false => REGION86_A::DISABLED,
-            true => REGION86_A::ENABLED,
+            false => Region86::Disabled,
+            true => Region86::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION86_A::DISABLED
+        *self == Region86::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION86_A::ENABLED
+        *self == Region86::Enabled
     }
 }
 #[doc = "Field `REGION86` writer - Enable protection for region 86. Write '0' has no effect."]
-pub type REGION86_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION86_A, O>;
-impl<'a, const O: u8> REGION86_W<'a, O> {
+pub type Region86W<'a, REG> = crate::BitWriter<'a, REG, Region86>;
+impl<'a, REG> Region86W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION86_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region86::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION86_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region86::Enabled)
+    }
+}
+#[doc = "Enable protection for region 87. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region87 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region87> for bool {
+    #[inline(always)]
+    fn from(variant: Region87) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION87` reader - Enable protection for region 87. Write '0' has no effect."]
-pub type REGION87_R = crate::BitReader<REGION87_A>;
-#[doc = "Enable protection for region 87. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION87_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION87_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION87_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION87_R {
+pub type Region87R = crate::BitReader<Region87>;
+impl Region87R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION87_A {
+    pub const fn variant(&self) -> Region87 {
         match self.bits {
-            false => REGION87_A::DISABLED,
-            true => REGION87_A::ENABLED,
+            false => Region87::Disabled,
+            true => Region87::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION87_A::DISABLED
+        *self == Region87::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION87_A::ENABLED
+        *self == Region87::Enabled
     }
 }
 #[doc = "Field `REGION87` writer - Enable protection for region 87. Write '0' has no effect."]
-pub type REGION87_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION87_A, O>;
-impl<'a, const O: u8> REGION87_W<'a, O> {
+pub type Region87W<'a, REG> = crate::BitWriter<'a, REG, Region87>;
+impl<'a, REG> Region87W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION87_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region87::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION87_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region87::Enabled)
+    }
+}
+#[doc = "Enable protection for region 88. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region88 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region88> for bool {
+    #[inline(always)]
+    fn from(variant: Region88) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION88` reader - Enable protection for region 88. Write '0' has no effect."]
-pub type REGION88_R = crate::BitReader<REGION88_A>;
-#[doc = "Enable protection for region 88. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION88_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION88_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION88_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION88_R {
+pub type Region88R = crate::BitReader<Region88>;
+impl Region88R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION88_A {
+    pub const fn variant(&self) -> Region88 {
         match self.bits {
-            false => REGION88_A::DISABLED,
-            true => REGION88_A::ENABLED,
+            false => Region88::Disabled,
+            true => Region88::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION88_A::DISABLED
+        *self == Region88::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION88_A::ENABLED
+        *self == Region88::Enabled
     }
 }
 #[doc = "Field `REGION88` writer - Enable protection for region 88. Write '0' has no effect."]
-pub type REGION88_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION88_A, O>;
-impl<'a, const O: u8> REGION88_W<'a, O> {
+pub type Region88W<'a, REG> = crate::BitWriter<'a, REG, Region88>;
+impl<'a, REG> Region88W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION88_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region88::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION88_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region88::Enabled)
+    }
+}
+#[doc = "Enable protection for region 89. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region89 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region89> for bool {
+    #[inline(always)]
+    fn from(variant: Region89) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION89` reader - Enable protection for region 89. Write '0' has no effect."]
-pub type REGION89_R = crate::BitReader<REGION89_A>;
-#[doc = "Enable protection for region 89. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION89_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION89_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION89_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION89_R {
+pub type Region89R = crate::BitReader<Region89>;
+impl Region89R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION89_A {
+    pub const fn variant(&self) -> Region89 {
         match self.bits {
-            false => REGION89_A::DISABLED,
-            true => REGION89_A::ENABLED,
+            false => Region89::Disabled,
+            true => Region89::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION89_A::DISABLED
+        *self == Region89::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION89_A::ENABLED
+        *self == Region89::Enabled
     }
 }
 #[doc = "Field `REGION89` writer - Enable protection for region 89. Write '0' has no effect."]
-pub type REGION89_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION89_A, O>;
-impl<'a, const O: u8> REGION89_W<'a, O> {
+pub type Region89W<'a, REG> = crate::BitWriter<'a, REG, Region89>;
+impl<'a, REG> Region89W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION89_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region89::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION89_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region89::Enabled)
+    }
+}
+#[doc = "Enable protection for region 90. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region90 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region90> for bool {
+    #[inline(always)]
+    fn from(variant: Region90) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION90` reader - Enable protection for region 90. Write '0' has no effect."]
-pub type REGION90_R = crate::BitReader<REGION90_A>;
-#[doc = "Enable protection for region 90. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION90_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION90_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION90_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION90_R {
+pub type Region90R = crate::BitReader<Region90>;
+impl Region90R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION90_A {
+    pub const fn variant(&self) -> Region90 {
         match self.bits {
-            false => REGION90_A::DISABLED,
-            true => REGION90_A::ENABLED,
+            false => Region90::Disabled,
+            true => Region90::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION90_A::DISABLED
+        *self == Region90::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION90_A::ENABLED
+        *self == Region90::Enabled
     }
 }
 #[doc = "Field `REGION90` writer - Enable protection for region 90. Write '0' has no effect."]
-pub type REGION90_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION90_A, O>;
-impl<'a, const O: u8> REGION90_W<'a, O> {
+pub type Region90W<'a, REG> = crate::BitWriter<'a, REG, Region90>;
+impl<'a, REG> Region90W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION90_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region90::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION90_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region90::Enabled)
+    }
+}
+#[doc = "Enable protection for region 91. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region91 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region91> for bool {
+    #[inline(always)]
+    fn from(variant: Region91) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION91` reader - Enable protection for region 91. Write '0' has no effect."]
-pub type REGION91_R = crate::BitReader<REGION91_A>;
-#[doc = "Enable protection for region 91. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION91_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION91_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION91_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION91_R {
+pub type Region91R = crate::BitReader<Region91>;
+impl Region91R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION91_A {
+    pub const fn variant(&self) -> Region91 {
         match self.bits {
-            false => REGION91_A::DISABLED,
-            true => REGION91_A::ENABLED,
+            false => Region91::Disabled,
+            true => Region91::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION91_A::DISABLED
+        *self == Region91::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION91_A::ENABLED
+        *self == Region91::Enabled
     }
 }
 #[doc = "Field `REGION91` writer - Enable protection for region 91. Write '0' has no effect."]
-pub type REGION91_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION91_A, O>;
-impl<'a, const O: u8> REGION91_W<'a, O> {
+pub type Region91W<'a, REG> = crate::BitWriter<'a, REG, Region91>;
+impl<'a, REG> Region91W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION91_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region91::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION91_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region91::Enabled)
+    }
+}
+#[doc = "Enable protection for region 92. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region92 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region92> for bool {
+    #[inline(always)]
+    fn from(variant: Region92) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION92` reader - Enable protection for region 92. Write '0' has no effect."]
-pub type REGION92_R = crate::BitReader<REGION92_A>;
-#[doc = "Enable protection for region 92. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION92_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION92_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION92_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION92_R {
+pub type Region92R = crate::BitReader<Region92>;
+impl Region92R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION92_A {
+    pub const fn variant(&self) -> Region92 {
         match self.bits {
-            false => REGION92_A::DISABLED,
-            true => REGION92_A::ENABLED,
+            false => Region92::Disabled,
+            true => Region92::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION92_A::DISABLED
+        *self == Region92::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION92_A::ENABLED
+        *self == Region92::Enabled
     }
 }
 #[doc = "Field `REGION92` writer - Enable protection for region 92. Write '0' has no effect."]
-pub type REGION92_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION92_A, O>;
-impl<'a, const O: u8> REGION92_W<'a, O> {
+pub type Region92W<'a, REG> = crate::BitWriter<'a, REG, Region92>;
+impl<'a, REG> Region92W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION92_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region92::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION92_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region92::Enabled)
+    }
+}
+#[doc = "Enable protection for region 93. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region93 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region93> for bool {
+    #[inline(always)]
+    fn from(variant: Region93) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION93` reader - Enable protection for region 93. Write '0' has no effect."]
-pub type REGION93_R = crate::BitReader<REGION93_A>;
-#[doc = "Enable protection for region 93. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION93_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION93_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION93_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION93_R {
+pub type Region93R = crate::BitReader<Region93>;
+impl Region93R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION93_A {
+    pub const fn variant(&self) -> Region93 {
         match self.bits {
-            false => REGION93_A::DISABLED,
-            true => REGION93_A::ENABLED,
+            false => Region93::Disabled,
+            true => Region93::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION93_A::DISABLED
+        *self == Region93::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION93_A::ENABLED
+        *self == Region93::Enabled
     }
 }
 #[doc = "Field `REGION93` writer - Enable protection for region 93. Write '0' has no effect."]
-pub type REGION93_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION93_A, O>;
-impl<'a, const O: u8> REGION93_W<'a, O> {
+pub type Region93W<'a, REG> = crate::BitWriter<'a, REG, Region93>;
+impl<'a, REG> Region93W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION93_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region93::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION93_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region93::Enabled)
+    }
+}
+#[doc = "Enable protection for region 94. Write '0' has no effect.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region94 {
+    #[doc = "0: Protection disabled"]
+    Disabled = 0,
+    #[doc = "1: Protection enabled"]
+    Enabled = 1,
+}
+impl From<Region94> for bool {
+    #[inline(always)]
+    fn from(variant: Region94) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `REGION94` reader - Enable protection for region 94. Write '0' has no effect."]
-pub type REGION94_R = crate::BitReader<REGION94_A>;
-#[doc = "Enable protection for region 94. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION94_A {
-    #[doc = "0: Protection disabled"]
-    DISABLED = 0,
-    #[doc = "1: Protection enabled"]
-    ENABLED = 1,
-}
-impl From<REGION94_A> for bool {
-    #[inline(always)]
-    fn from(variant: REGION94_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl REGION94_R {
+pub type Region94R = crate::BitReader<Region94>;
+impl Region94R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION94_A {
+    pub const fn variant(&self) -> Region94 {
         match self.bits {
-            false => REGION94_A::DISABLED,
-            true => REGION94_A::ENABLED,
+            false => Region94::Disabled,
+            true => Region94::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Protection disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION94_A::DISABLED
+        *self == Region94::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Protection enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION94_A::ENABLED
+        *self == Region94::Enabled
     }
 }
 #[doc = "Field `REGION94` writer - Enable protection for region 94. Write '0' has no effect."]
-pub type REGION94_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION94_A, O>;
-impl<'a, const O: u8> REGION94_W<'a, O> {
+pub type Region94W<'a, REG> = crate::BitWriter<'a, REG, Region94>;
+impl<'a, REG> Region94W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION94_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region94::Disabled)
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION94_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region94::Enabled)
     }
 }
-#[doc = "Field `REGION95` reader - Enable protection for region 95. Write '0' has no effect."]
-pub type REGION95_R = crate::BitReader<REGION95_A>;
 #[doc = "Enable protection for region 95. Write '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION95_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Region95 {
     #[doc = "0: Protection disabled"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Protection enabled"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<REGION95_A> for bool {
+impl From<Region95> for bool {
     #[inline(always)]
-    fn from(variant: REGION95_A) -> Self {
+    fn from(variant: Region95) -> Self {
         variant as u8 != 0
     }
 }
-impl REGION95_R {
+#[doc = "Field `REGION95` reader - Enable protection for region 95. Write '0' has no effect."]
+pub type Region95R = crate::BitReader<Region95>;
+impl Region95R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGION95_A {
+    pub const fn variant(&self) -> Region95 {
         match self.bits {
-            false => REGION95_A::DISABLED,
-            true => REGION95_A::ENABLED,
+            false => Region95::Disabled,
+            true => Region95::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == REGION95_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == REGION95_A::ENABLED
-    }
-}
-#[doc = "Field `REGION95` writer - Enable protection for region 95. Write '0' has no effect."]
-pub type REGION95_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG2_SPEC, REGION95_A, O>;
-impl<'a, const O: u8> REGION95_W<'a, O> {
     #[doc = "Protection disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION95_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Region95::Disabled
     }
     #[doc = "Protection enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION95_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Region95::Enabled
+    }
+}
+#[doc = "Field `REGION95` writer - Enable protection for region 95. Write '0' has no effect."]
+pub type Region95W<'a, REG> = crate::BitWriter<'a, REG, Region95>;
+impl<'a, REG> Region95W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Protection disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region95::Disabled)
+    }
+    #[doc = "Protection enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Region95::Enabled)
     }
 }
 impl R {
     #[doc = "Bit 0 - Enable protection for region 64. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region64(&self) -> REGION64_R {
-        REGION64_R::new((self.bits & 1) != 0)
+    pub fn region64(&self) -> Region64R {
+        Region64R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable protection for region 65. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region65(&self) -> REGION65_R {
-        REGION65_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn region65(&self) -> Region65R {
+        Region65R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable protection for region 66. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region66(&self) -> REGION66_R {
-        REGION66_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn region66(&self) -> Region66R {
+        Region66R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable protection for region 67. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region67(&self) -> REGION67_R {
-        REGION67_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn region67(&self) -> Region67R {
+        Region67R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable protection for region 68. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region68(&self) -> REGION68_R {
-        REGION68_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn region68(&self) -> Region68R {
+        Region68R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable protection for region 69. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region69(&self) -> REGION69_R {
-        REGION69_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn region69(&self) -> Region69R {
+        Region69R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable protection for region 70. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region70(&self) -> REGION70_R {
-        REGION70_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn region70(&self) -> Region70R {
+        Region70R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable protection for region 71. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region71(&self) -> REGION71_R {
-        REGION71_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn region71(&self) -> Region71R {
+        Region71R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Enable protection for region 72. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region72(&self) -> REGION72_R {
-        REGION72_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn region72(&self) -> Region72R {
+        Region72R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Enable protection for region 73. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region73(&self) -> REGION73_R {
-        REGION73_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn region73(&self) -> Region73R {
+        Region73R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Enable protection for region 74. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region74(&self) -> REGION74_R {
-        REGION74_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn region74(&self) -> Region74R {
+        Region74R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Enable protection for region 75. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region75(&self) -> REGION75_R {
-        REGION75_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn region75(&self) -> Region75R {
+        Region75R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Enable protection for region 76. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region76(&self) -> REGION76_R {
-        REGION76_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn region76(&self) -> Region76R {
+        Region76R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Enable protection for region 77. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region77(&self) -> REGION77_R {
-        REGION77_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn region77(&self) -> Region77R {
+        Region77R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Enable protection for region 78. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region78(&self) -> REGION78_R {
-        REGION78_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn region78(&self) -> Region78R {
+        Region78R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Enable protection for region 79. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region79(&self) -> REGION79_R {
-        REGION79_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn region79(&self) -> Region79R {
+        Region79R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Enable protection for region 80. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region80(&self) -> REGION80_R {
-        REGION80_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn region80(&self) -> Region80R {
+        Region80R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Enable protection for region 81. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region81(&self) -> REGION81_R {
-        REGION81_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn region81(&self) -> Region81R {
+        Region81R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Enable protection for region 82. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region82(&self) -> REGION82_R {
-        REGION82_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn region82(&self) -> Region82R {
+        Region82R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Enable protection for region 83. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region83(&self) -> REGION83_R {
-        REGION83_R::new(((self.bits >> 19) & 1) != 0)
+    pub fn region83(&self) -> Region83R {
+        Region83R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Enable protection for region 84. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region84(&self) -> REGION84_R {
-        REGION84_R::new(((self.bits >> 20) & 1) != 0)
+    pub fn region84(&self) -> Region84R {
+        Region84R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Enable protection for region 85. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region85(&self) -> REGION85_R {
-        REGION85_R::new(((self.bits >> 21) & 1) != 0)
+    pub fn region85(&self) -> Region85R {
+        Region85R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Enable protection for region 86. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region86(&self) -> REGION86_R {
-        REGION86_R::new(((self.bits >> 22) & 1) != 0)
+    pub fn region86(&self) -> Region86R {
+        Region86R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - Enable protection for region 87. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region87(&self) -> REGION87_R {
-        REGION87_R::new(((self.bits >> 23) & 1) != 0)
+    pub fn region87(&self) -> Region87R {
+        Region87R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - Enable protection for region 88. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region88(&self) -> REGION88_R {
-        REGION88_R::new(((self.bits >> 24) & 1) != 0)
+    pub fn region88(&self) -> Region88R {
+        Region88R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Enable protection for region 89. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region89(&self) -> REGION89_R {
-        REGION89_R::new(((self.bits >> 25) & 1) != 0)
+    pub fn region89(&self) -> Region89R {
+        Region89R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Enable protection for region 90. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region90(&self) -> REGION90_R {
-        REGION90_R::new(((self.bits >> 26) & 1) != 0)
+    pub fn region90(&self) -> Region90R {
+        Region90R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - Enable protection for region 91. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region91(&self) -> REGION91_R {
-        REGION91_R::new(((self.bits >> 27) & 1) != 0)
+    pub fn region91(&self) -> Region91R {
+        Region91R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 28 - Enable protection for region 92. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region92(&self) -> REGION92_R {
-        REGION92_R::new(((self.bits >> 28) & 1) != 0)
+    pub fn region92(&self) -> Region92R {
+        Region92R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - Enable protection for region 93. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region93(&self) -> REGION93_R {
-        REGION93_R::new(((self.bits >> 29) & 1) != 0)
+    pub fn region93(&self) -> Region93R {
+        Region93R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - Enable protection for region 94. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region94(&self) -> REGION94_R {
-        REGION94_R::new(((self.bits >> 30) & 1) != 0)
+    pub fn region94(&self) -> Region94R {
+        Region94R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Enable protection for region 95. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region95(&self) -> REGION95_R {
-        REGION95_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn region95(&self) -> Region95R {
+        Region95R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable protection for region 64. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region64(&mut self) -> REGION64_W<0> {
-        REGION64_W::new(self)
+    pub fn region64(&mut self) -> Region64W<'_, Config2Spec> {
+        Region64W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable protection for region 65. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region65(&mut self) -> REGION65_W<1> {
-        REGION65_W::new(self)
+    pub fn region65(&mut self) -> Region65W<'_, Config2Spec> {
+        Region65W::new(self, 1)
     }
     #[doc = "Bit 2 - Enable protection for region 66. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region66(&mut self) -> REGION66_W<2> {
-        REGION66_W::new(self)
+    pub fn region66(&mut self) -> Region66W<'_, Config2Spec> {
+        Region66W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable protection for region 67. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region67(&mut self) -> REGION67_W<3> {
-        REGION67_W::new(self)
+    pub fn region67(&mut self) -> Region67W<'_, Config2Spec> {
+        Region67W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable protection for region 68. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region68(&mut self) -> REGION68_W<4> {
-        REGION68_W::new(self)
+    pub fn region68(&mut self) -> Region68W<'_, Config2Spec> {
+        Region68W::new(self, 4)
     }
     #[doc = "Bit 5 - Enable protection for region 69. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region69(&mut self) -> REGION69_W<5> {
-        REGION69_W::new(self)
+    pub fn region69(&mut self) -> Region69W<'_, Config2Spec> {
+        Region69W::new(self, 5)
     }
     #[doc = "Bit 6 - Enable protection for region 70. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region70(&mut self) -> REGION70_W<6> {
-        REGION70_W::new(self)
+    pub fn region70(&mut self) -> Region70W<'_, Config2Spec> {
+        Region70W::new(self, 6)
     }
     #[doc = "Bit 7 - Enable protection for region 71. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region71(&mut self) -> REGION71_W<7> {
-        REGION71_W::new(self)
+    pub fn region71(&mut self) -> Region71W<'_, Config2Spec> {
+        Region71W::new(self, 7)
     }
     #[doc = "Bit 8 - Enable protection for region 72. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region72(&mut self) -> REGION72_W<8> {
-        REGION72_W::new(self)
+    pub fn region72(&mut self) -> Region72W<'_, Config2Spec> {
+        Region72W::new(self, 8)
     }
     #[doc = "Bit 9 - Enable protection for region 73. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region73(&mut self) -> REGION73_W<9> {
-        REGION73_W::new(self)
+    pub fn region73(&mut self) -> Region73W<'_, Config2Spec> {
+        Region73W::new(self, 9)
     }
     #[doc = "Bit 10 - Enable protection for region 74. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region74(&mut self) -> REGION74_W<10> {
-        REGION74_W::new(self)
+    pub fn region74(&mut self) -> Region74W<'_, Config2Spec> {
+        Region74W::new(self, 10)
     }
     #[doc = "Bit 11 - Enable protection for region 75. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region75(&mut self) -> REGION75_W<11> {
-        REGION75_W::new(self)
+    pub fn region75(&mut self) -> Region75W<'_, Config2Spec> {
+        Region75W::new(self, 11)
     }
     #[doc = "Bit 12 - Enable protection for region 76. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region76(&mut self) -> REGION76_W<12> {
-        REGION76_W::new(self)
+    pub fn region76(&mut self) -> Region76W<'_, Config2Spec> {
+        Region76W::new(self, 12)
     }
     #[doc = "Bit 13 - Enable protection for region 77. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region77(&mut self) -> REGION77_W<13> {
-        REGION77_W::new(self)
+    pub fn region77(&mut self) -> Region77W<'_, Config2Spec> {
+        Region77W::new(self, 13)
     }
     #[doc = "Bit 14 - Enable protection for region 78. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region78(&mut self) -> REGION78_W<14> {
-        REGION78_W::new(self)
+    pub fn region78(&mut self) -> Region78W<'_, Config2Spec> {
+        Region78W::new(self, 14)
     }
     #[doc = "Bit 15 - Enable protection for region 79. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region79(&mut self) -> REGION79_W<15> {
-        REGION79_W::new(self)
+    pub fn region79(&mut self) -> Region79W<'_, Config2Spec> {
+        Region79W::new(self, 15)
     }
     #[doc = "Bit 16 - Enable protection for region 80. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region80(&mut self) -> REGION80_W<16> {
-        REGION80_W::new(self)
+    pub fn region80(&mut self) -> Region80W<'_, Config2Spec> {
+        Region80W::new(self, 16)
     }
     #[doc = "Bit 17 - Enable protection for region 81. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region81(&mut self) -> REGION81_W<17> {
-        REGION81_W::new(self)
+    pub fn region81(&mut self) -> Region81W<'_, Config2Spec> {
+        Region81W::new(self, 17)
     }
     #[doc = "Bit 18 - Enable protection for region 82. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region82(&mut self) -> REGION82_W<18> {
-        REGION82_W::new(self)
+    pub fn region82(&mut self) -> Region82W<'_, Config2Spec> {
+        Region82W::new(self, 18)
     }
     #[doc = "Bit 19 - Enable protection for region 83. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region83(&mut self) -> REGION83_W<19> {
-        REGION83_W::new(self)
+    pub fn region83(&mut self) -> Region83W<'_, Config2Spec> {
+        Region83W::new(self, 19)
     }
     #[doc = "Bit 20 - Enable protection for region 84. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region84(&mut self) -> REGION84_W<20> {
-        REGION84_W::new(self)
+    pub fn region84(&mut self) -> Region84W<'_, Config2Spec> {
+        Region84W::new(self, 20)
     }
     #[doc = "Bit 21 - Enable protection for region 85. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region85(&mut self) -> REGION85_W<21> {
-        REGION85_W::new(self)
+    pub fn region85(&mut self) -> Region85W<'_, Config2Spec> {
+        Region85W::new(self, 21)
     }
     #[doc = "Bit 22 - Enable protection for region 86. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region86(&mut self) -> REGION86_W<22> {
-        REGION86_W::new(self)
+    pub fn region86(&mut self) -> Region86W<'_, Config2Spec> {
+        Region86W::new(self, 22)
     }
     #[doc = "Bit 23 - Enable protection for region 87. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region87(&mut self) -> REGION87_W<23> {
-        REGION87_W::new(self)
+    pub fn region87(&mut self) -> Region87W<'_, Config2Spec> {
+        Region87W::new(self, 23)
     }
     #[doc = "Bit 24 - Enable protection for region 88. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region88(&mut self) -> REGION88_W<24> {
-        REGION88_W::new(self)
+    pub fn region88(&mut self) -> Region88W<'_, Config2Spec> {
+        Region88W::new(self, 24)
     }
     #[doc = "Bit 25 - Enable protection for region 89. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region89(&mut self) -> REGION89_W<25> {
-        REGION89_W::new(self)
+    pub fn region89(&mut self) -> Region89W<'_, Config2Spec> {
+        Region89W::new(self, 25)
     }
     #[doc = "Bit 26 - Enable protection for region 90. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region90(&mut self) -> REGION90_W<26> {
-        REGION90_W::new(self)
+    pub fn region90(&mut self) -> Region90W<'_, Config2Spec> {
+        Region90W::new(self, 26)
     }
     #[doc = "Bit 27 - Enable protection for region 91. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region91(&mut self) -> REGION91_W<27> {
-        REGION91_W::new(self)
+    pub fn region91(&mut self) -> Region91W<'_, Config2Spec> {
+        Region91W::new(self, 27)
     }
     #[doc = "Bit 28 - Enable protection for region 92. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region92(&mut self) -> REGION92_W<28> {
-        REGION92_W::new(self)
+    pub fn region92(&mut self) -> Region92W<'_, Config2Spec> {
+        Region92W::new(self, 28)
     }
     #[doc = "Bit 29 - Enable protection for region 93. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region93(&mut self) -> REGION93_W<29> {
-        REGION93_W::new(self)
+    pub fn region93(&mut self) -> Region93W<'_, Config2Spec> {
+        Region93W::new(self, 29)
     }
     #[doc = "Bit 30 - Enable protection for region 94. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region94(&mut self) -> REGION94_W<30> {
-        REGION94_W::new(self)
+    pub fn region94(&mut self) -> Region94W<'_, Config2Spec> {
+        Region94W::new(self, 30)
     }
     #[doc = "Bit 31 - Enable protection for region 95. Write '0' has no effect."]
     #[inline(always)]
-    pub fn region95(&mut self) -> REGION95_W<31> {
-        REGION95_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn region95(&mut self) -> Region95W<'_, Config2Spec> {
+        Region95W::new(self, 31)
     }
 }
-#[doc = "Block protect configuration register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config2](index.html) module"]
-pub struct CONFIG2_SPEC;
-impl crate::RegisterSpec for CONFIG2_SPEC {
+#[doc = "Block protect configuration register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`config2::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`config2::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Config2Spec;
+impl crate::RegisterSpec for Config2Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [config2::R](R) reader structure"]
-impl crate::Readable for CONFIG2_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [config2::W](W) writer structure"]
-impl crate::Writable for CONFIG2_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`config2::R`](R) reader structure"]
+impl crate::Readable for Config2Spec {}
+#[doc = "`write(|w| ..)` method takes [`config2::W`](W) writer structure"]
+impl crate::Writable for Config2Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CONFIG2 to value 0"]
-impl crate::Resettable for CONFIG2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Config2Spec {}

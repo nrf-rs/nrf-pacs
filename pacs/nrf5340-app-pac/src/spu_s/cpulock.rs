@@ -1,367 +1,337 @@
 #[doc = "Register `CPULOCK` reader"]
-pub struct R(crate::R<CPULOCK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CPULOCK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CPULOCK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CPULOCK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CpulockSpec>;
 #[doc = "Register `CPULOCK` writer"]
-pub struct W(crate::W<CPULOCK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CPULOCK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<CpulockSpec>;
+#[doc = "Write '1' to prevent updating the secure interrupt configuration until the next reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Locksvtaircr {
+    #[doc = "1: Disables writes to the VTOR_S, AIRCR.PRIS, and AIRCR.BFHFNMINS registers"]
+    Locked = 1,
+    #[doc = "0: These registers can be updated"]
+    Unlocked = 0,
 }
-impl core::ops::DerefMut for W {
+impl From<Locksvtaircr> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CPULOCK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CPULOCK_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Locksvtaircr) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `LOCKSVTAIRCR` reader - Write '1' to prevent updating the secure interrupt configuration until the next reset"]
-pub type LOCKSVTAIRCR_R = crate::BitReader<LOCKSVTAIRCR_A>;
-#[doc = "Write '1' to prevent updating the secure interrupt configuration until the next reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKSVTAIRCR_A {
-    #[doc = "1: Disables writes to the VTOR_S, AIRCR.PRIS, and AIRCR.BFHFNMINS registers"]
-    LOCKED = 1,
-    #[doc = "0: These registers can be updated"]
-    UNLOCKED = 0,
-}
-impl From<LOCKSVTAIRCR_A> for bool {
-    #[inline(always)]
-    fn from(variant: LOCKSVTAIRCR_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl LOCKSVTAIRCR_R {
+pub type LocksvtaircrR = crate::BitReader<Locksvtaircr>;
+impl LocksvtaircrR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCKSVTAIRCR_A {
+    pub const fn variant(&self) -> Locksvtaircr {
         match self.bits {
-            true => LOCKSVTAIRCR_A::LOCKED,
-            false => LOCKSVTAIRCR_A::UNLOCKED,
+            true => Locksvtaircr::Locked,
+            false => Locksvtaircr::Unlocked,
         }
     }
-    #[doc = "Checks if the value of the field is `LOCKED`"]
+    #[doc = "Disables writes to the VTOR_S, AIRCR.PRIS, and AIRCR.BFHFNMINS registers"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        *self == LOCKSVTAIRCR_A::LOCKED
+        *self == Locksvtaircr::Locked
     }
-    #[doc = "Checks if the value of the field is `UNLOCKED`"]
+    #[doc = "These registers can be updated"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        *self == LOCKSVTAIRCR_A::UNLOCKED
+        *self == Locksvtaircr::Unlocked
     }
 }
 #[doc = "Field `LOCKSVTAIRCR` writer - Write '1' to prevent updating the secure interrupt configuration until the next reset"]
-pub type LOCKSVTAIRCR_W<'a, const O: u8> =
-    crate::BitWriter1S<'a, u32, CPULOCK_SPEC, LOCKSVTAIRCR_A, O>;
-impl<'a, const O: u8> LOCKSVTAIRCR_W<'a, O> {
+pub type LocksvtaircrW<'a, REG> = crate::BitWriter1S<'a, REG, Locksvtaircr>;
+impl<'a, REG> LocksvtaircrW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables writes to the VTOR_S, AIRCR.PRIS, and AIRCR.BFHFNMINS registers"]
     #[inline(always)]
-    pub fn locked(self) -> &'a mut W {
-        self.variant(LOCKSVTAIRCR_A::LOCKED)
+    pub fn locked(self) -> &'a mut crate::W<REG> {
+        self.variant(Locksvtaircr::Locked)
     }
     #[doc = "These registers can be updated"]
     #[inline(always)]
-    pub fn unlocked(self) -> &'a mut W {
-        self.variant(LOCKSVTAIRCR_A::UNLOCKED)
+    pub fn unlocked(self) -> &'a mut crate::W<REG> {
+        self.variant(Locksvtaircr::Unlocked)
+    }
+}
+#[doc = "Write '1' to prevent updating the non-secure vector table base address until the next reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Locknsvtor {
+    #[doc = "1: The address of the non-secure vector table is locked"]
+    Locked = 1,
+    #[doc = "0: The address of the non-secure vector table can be updated"]
+    Unlocked = 0,
+}
+impl From<Locknsvtor> for bool {
+    #[inline(always)]
+    fn from(variant: Locknsvtor) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `LOCKNSVTOR` reader - Write '1' to prevent updating the non-secure vector table base address until the next reset"]
-pub type LOCKNSVTOR_R = crate::BitReader<LOCKNSVTOR_A>;
-#[doc = "Write '1' to prevent updating the non-secure vector table base address until the next reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKNSVTOR_A {
-    #[doc = "1: The address of the non-secure vector table is locked"]
-    LOCKED = 1,
-    #[doc = "0: The address of the non-secure vector table can be updated"]
-    UNLOCKED = 0,
-}
-impl From<LOCKNSVTOR_A> for bool {
-    #[inline(always)]
-    fn from(variant: LOCKNSVTOR_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl LOCKNSVTOR_R {
+pub type LocknsvtorR = crate::BitReader<Locknsvtor>;
+impl LocknsvtorR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCKNSVTOR_A {
+    pub const fn variant(&self) -> Locknsvtor {
         match self.bits {
-            true => LOCKNSVTOR_A::LOCKED,
-            false => LOCKNSVTOR_A::UNLOCKED,
+            true => Locknsvtor::Locked,
+            false => Locknsvtor::Unlocked,
         }
     }
-    #[doc = "Checks if the value of the field is `LOCKED`"]
-    #[inline(always)]
-    pub fn is_locked(&self) -> bool {
-        *self == LOCKNSVTOR_A::LOCKED
-    }
-    #[doc = "Checks if the value of the field is `UNLOCKED`"]
-    #[inline(always)]
-    pub fn is_unlocked(&self) -> bool {
-        *self == LOCKNSVTOR_A::UNLOCKED
-    }
-}
-#[doc = "Field `LOCKNSVTOR` writer - Write '1' to prevent updating the non-secure vector table base address until the next reset"]
-pub type LOCKNSVTOR_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CPULOCK_SPEC, LOCKNSVTOR_A, O>;
-impl<'a, const O: u8> LOCKNSVTOR_W<'a, O> {
     #[doc = "The address of the non-secure vector table is locked"]
     #[inline(always)]
-    pub fn locked(self) -> &'a mut W {
-        self.variant(LOCKNSVTOR_A::LOCKED)
+    pub fn is_locked(&self) -> bool {
+        *self == Locknsvtor::Locked
     }
     #[doc = "The address of the non-secure vector table can be updated"]
     #[inline(always)]
-    pub fn unlocked(self) -> &'a mut W {
-        self.variant(LOCKNSVTOR_A::UNLOCKED)
+    pub fn is_unlocked(&self) -> bool {
+        *self == Locknsvtor::Unlocked
+    }
+}
+#[doc = "Field `LOCKNSVTOR` writer - Write '1' to prevent updating the non-secure vector table base address until the next reset"]
+pub type LocknsvtorW<'a, REG> = crate::BitWriter1S<'a, REG, Locknsvtor>;
+impl<'a, REG> LocknsvtorW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "The address of the non-secure vector table is locked"]
+    #[inline(always)]
+    pub fn locked(self) -> &'a mut crate::W<REG> {
+        self.variant(Locknsvtor::Locked)
+    }
+    #[doc = "The address of the non-secure vector table can be updated"]
+    #[inline(always)]
+    pub fn unlocked(self) -> &'a mut crate::W<REG> {
+        self.variant(Locknsvtor::Unlocked)
+    }
+}
+#[doc = "Write '1' to prevent updating the secure MPU regions until the next reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Locksmpu {
+    #[doc = "1: Disables writes to the MPU_CTRL, MPU_RNR, MPU_RBAR, MPU_RLAR, MPU_RBAR_An and MPU_RLAR_An from software or from a debug agent connected to the processor in Secure state"]
+    Locked = 1,
+    #[doc = "0: These registers can be updated"]
+    Unlocked = 0,
+}
+impl From<Locksmpu> for bool {
+    #[inline(always)]
+    fn from(variant: Locksmpu) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `LOCKSMPU` reader - Write '1' to prevent updating the secure MPU regions until the next reset"]
-pub type LOCKSMPU_R = crate::BitReader<LOCKSMPU_A>;
-#[doc = "Write '1' to prevent updating the secure MPU regions until the next reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKSMPU_A {
-    #[doc = "1: Disables writes to the MPU_CTRL, MPU_RNR, MPU_RBAR, MPU_RLAR, MPU_RBAR_An and MPU_RLAR_An from software or from a debug agent connected to the processor in Secure state"]
-    LOCKED = 1,
-    #[doc = "0: These registers can be updated"]
-    UNLOCKED = 0,
-}
-impl From<LOCKSMPU_A> for bool {
-    #[inline(always)]
-    fn from(variant: LOCKSMPU_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl LOCKSMPU_R {
+pub type LocksmpuR = crate::BitReader<Locksmpu>;
+impl LocksmpuR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCKSMPU_A {
+    pub const fn variant(&self) -> Locksmpu {
         match self.bits {
-            true => LOCKSMPU_A::LOCKED,
-            false => LOCKSMPU_A::UNLOCKED,
+            true => Locksmpu::Locked,
+            false => Locksmpu::Unlocked,
         }
     }
-    #[doc = "Checks if the value of the field is `LOCKED`"]
+    #[doc = "Disables writes to the MPU_CTRL, MPU_RNR, MPU_RBAR, MPU_RLAR, MPU_RBAR_An and MPU_RLAR_An from software or from a debug agent connected to the processor in Secure state"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        *self == LOCKSMPU_A::LOCKED
+        *self == Locksmpu::Locked
     }
-    #[doc = "Checks if the value of the field is `UNLOCKED`"]
+    #[doc = "These registers can be updated"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        *self == LOCKSMPU_A::UNLOCKED
+        *self == Locksmpu::Unlocked
     }
 }
 #[doc = "Field `LOCKSMPU` writer - Write '1' to prevent updating the secure MPU regions until the next reset"]
-pub type LOCKSMPU_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CPULOCK_SPEC, LOCKSMPU_A, O>;
-impl<'a, const O: u8> LOCKSMPU_W<'a, O> {
+pub type LocksmpuW<'a, REG> = crate::BitWriter1S<'a, REG, Locksmpu>;
+impl<'a, REG> LocksmpuW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables writes to the MPU_CTRL, MPU_RNR, MPU_RBAR, MPU_RLAR, MPU_RBAR_An and MPU_RLAR_An from software or from a debug agent connected to the processor in Secure state"]
     #[inline(always)]
-    pub fn locked(self) -> &'a mut W {
-        self.variant(LOCKSMPU_A::LOCKED)
+    pub fn locked(self) -> &'a mut crate::W<REG> {
+        self.variant(Locksmpu::Locked)
     }
     #[doc = "These registers can be updated"]
     #[inline(always)]
-    pub fn unlocked(self) -> &'a mut W {
-        self.variant(LOCKSMPU_A::UNLOCKED)
+    pub fn unlocked(self) -> &'a mut crate::W<REG> {
+        self.variant(Locksmpu::Unlocked)
+    }
+}
+#[doc = "Write '1' to prevent updating the Non-secure MPU regions until the next reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Locknsmpu {
+    #[doc = "1: Disables writes to the MPU_CTRL_NS, MPU_RNR_NS, MPU_RBAR_NS, MPU_RLAR_NS, MPU_RBAR_A_NSn and MPU_RLAR_A_NSn from software or from a debug agent connected to the processor"]
+    Locked = 1,
+    #[doc = "0: These registers can be updated"]
+    Unlocked = 0,
+}
+impl From<Locknsmpu> for bool {
+    #[inline(always)]
+    fn from(variant: Locknsmpu) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `LOCKNSMPU` reader - Write '1' to prevent updating the Non-secure MPU regions until the next reset"]
-pub type LOCKNSMPU_R = crate::BitReader<LOCKNSMPU_A>;
-#[doc = "Write '1' to prevent updating the Non-secure MPU regions until the next reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKNSMPU_A {
-    #[doc = "1: Disables writes to the MPU_CTRL_NS, MPU_RNR_NS, MPU_RBAR_NS, MPU_RLAR_NS, MPU_RBAR_A_NSn and MPU_RLAR_A_NSn from software or from a debug agent connected to the processor"]
-    LOCKED = 1,
-    #[doc = "0: These registers can be updated"]
-    UNLOCKED = 0,
-}
-impl From<LOCKNSMPU_A> for bool {
-    #[inline(always)]
-    fn from(variant: LOCKNSMPU_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl LOCKNSMPU_R {
+pub type LocknsmpuR = crate::BitReader<Locknsmpu>;
+impl LocknsmpuR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCKNSMPU_A {
+    pub const fn variant(&self) -> Locknsmpu {
         match self.bits {
-            true => LOCKNSMPU_A::LOCKED,
-            false => LOCKNSMPU_A::UNLOCKED,
+            true => Locknsmpu::Locked,
+            false => Locknsmpu::Unlocked,
         }
     }
-    #[doc = "Checks if the value of the field is `LOCKED`"]
+    #[doc = "Disables writes to the MPU_CTRL_NS, MPU_RNR_NS, MPU_RBAR_NS, MPU_RLAR_NS, MPU_RBAR_A_NSn and MPU_RLAR_A_NSn from software or from a debug agent connected to the processor"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        *self == LOCKNSMPU_A::LOCKED
+        *self == Locknsmpu::Locked
     }
-    #[doc = "Checks if the value of the field is `UNLOCKED`"]
+    #[doc = "These registers can be updated"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
-        *self == LOCKNSMPU_A::UNLOCKED
+        *self == Locknsmpu::Unlocked
     }
 }
 #[doc = "Field `LOCKNSMPU` writer - Write '1' to prevent updating the Non-secure MPU regions until the next reset"]
-pub type LOCKNSMPU_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CPULOCK_SPEC, LOCKNSMPU_A, O>;
-impl<'a, const O: u8> LOCKNSMPU_W<'a, O> {
+pub type LocknsmpuW<'a, REG> = crate::BitWriter1S<'a, REG, Locknsmpu>;
+impl<'a, REG> LocknsmpuW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables writes to the MPU_CTRL_NS, MPU_RNR_NS, MPU_RBAR_NS, MPU_RLAR_NS, MPU_RBAR_A_NSn and MPU_RLAR_A_NSn from software or from a debug agent connected to the processor"]
     #[inline(always)]
-    pub fn locked(self) -> &'a mut W {
-        self.variant(LOCKNSMPU_A::LOCKED)
+    pub fn locked(self) -> &'a mut crate::W<REG> {
+        self.variant(Locknsmpu::Locked)
     }
     #[doc = "These registers can be updated"]
     #[inline(always)]
-    pub fn unlocked(self) -> &'a mut W {
-        self.variant(LOCKNSMPU_A::UNLOCKED)
+    pub fn unlocked(self) -> &'a mut crate::W<REG> {
+        self.variant(Locknsmpu::Unlocked)
     }
 }
-#[doc = "Field `LOCKSAU` reader - Write '1' to prevent updating the secure SAU regions until the next reset"]
-pub type LOCKSAU_R = crate::BitReader<LOCKSAU_A>;
 #[doc = "Write '1' to prevent updating the secure SAU regions until the next reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKSAU_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Locksau {
     #[doc = "1: Disables writes to the SAU_CTRL, SAU_RNR, SAU_RBAR and SAU_RLAR registers from software or from a debug agent connected to the processor"]
-    LOCKED = 1,
+    Locked = 1,
     #[doc = "0: These registers can be updated"]
-    UNLOCKED = 0,
+    Unlocked = 0,
 }
-impl From<LOCKSAU_A> for bool {
+impl From<Locksau> for bool {
     #[inline(always)]
-    fn from(variant: LOCKSAU_A) -> Self {
+    fn from(variant: Locksau) -> Self {
         variant as u8 != 0
     }
 }
-impl LOCKSAU_R {
+#[doc = "Field `LOCKSAU` reader - Write '1' to prevent updating the secure SAU regions until the next reset"]
+pub type LocksauR = crate::BitReader<Locksau>;
+impl LocksauR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCKSAU_A {
+    pub const fn variant(&self) -> Locksau {
         match self.bits {
-            true => LOCKSAU_A::LOCKED,
-            false => LOCKSAU_A::UNLOCKED,
+            true => Locksau::Locked,
+            false => Locksau::Unlocked,
         }
     }
-    #[doc = "Checks if the value of the field is `LOCKED`"]
-    #[inline(always)]
-    pub fn is_locked(&self) -> bool {
-        *self == LOCKSAU_A::LOCKED
-    }
-    #[doc = "Checks if the value of the field is `UNLOCKED`"]
-    #[inline(always)]
-    pub fn is_unlocked(&self) -> bool {
-        *self == LOCKSAU_A::UNLOCKED
-    }
-}
-#[doc = "Field `LOCKSAU` writer - Write '1' to prevent updating the secure SAU regions until the next reset"]
-pub type LOCKSAU_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, CPULOCK_SPEC, LOCKSAU_A, O>;
-impl<'a, const O: u8> LOCKSAU_W<'a, O> {
     #[doc = "Disables writes to the SAU_CTRL, SAU_RNR, SAU_RBAR and SAU_RLAR registers from software or from a debug agent connected to the processor"]
     #[inline(always)]
-    pub fn locked(self) -> &'a mut W {
-        self.variant(LOCKSAU_A::LOCKED)
+    pub fn is_locked(&self) -> bool {
+        *self == Locksau::Locked
     }
     #[doc = "These registers can be updated"]
     #[inline(always)]
-    pub fn unlocked(self) -> &'a mut W {
-        self.variant(LOCKSAU_A::UNLOCKED)
+    pub fn is_unlocked(&self) -> bool {
+        *self == Locksau::Unlocked
+    }
+}
+#[doc = "Field `LOCKSAU` writer - Write '1' to prevent updating the secure SAU regions until the next reset"]
+pub type LocksauW<'a, REG> = crate::BitWriter1S<'a, REG, Locksau>;
+impl<'a, REG> LocksauW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disables writes to the SAU_CTRL, SAU_RNR, SAU_RBAR and SAU_RLAR registers from software or from a debug agent connected to the processor"]
+    #[inline(always)]
+    pub fn locked(self) -> &'a mut crate::W<REG> {
+        self.variant(Locksau::Locked)
+    }
+    #[doc = "These registers can be updated"]
+    #[inline(always)]
+    pub fn unlocked(self) -> &'a mut crate::W<REG> {
+        self.variant(Locksau::Unlocked)
     }
 }
 impl R {
     #[doc = "Bit 0 - Write '1' to prevent updating the secure interrupt configuration until the next reset"]
     #[inline(always)]
-    pub fn locksvtaircr(&self) -> LOCKSVTAIRCR_R {
-        LOCKSVTAIRCR_R::new((self.bits & 1) != 0)
+    pub fn locksvtaircr(&self) -> LocksvtaircrR {
+        LocksvtaircrR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Write '1' to prevent updating the non-secure vector table base address until the next reset"]
     #[inline(always)]
-    pub fn locknsvtor(&self) -> LOCKNSVTOR_R {
-        LOCKNSVTOR_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn locknsvtor(&self) -> LocknsvtorR {
+        LocknsvtorR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Write '1' to prevent updating the secure MPU regions until the next reset"]
     #[inline(always)]
-    pub fn locksmpu(&self) -> LOCKSMPU_R {
-        LOCKSMPU_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn locksmpu(&self) -> LocksmpuR {
+        LocksmpuR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Write '1' to prevent updating the Non-secure MPU regions until the next reset"]
     #[inline(always)]
-    pub fn locknsmpu(&self) -> LOCKNSMPU_R {
-        LOCKNSMPU_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn locknsmpu(&self) -> LocknsmpuR {
+        LocknsmpuR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Write '1' to prevent updating the secure SAU regions until the next reset"]
     #[inline(always)]
-    pub fn locksau(&self) -> LOCKSAU_R {
-        LOCKSAU_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn locksau(&self) -> LocksauR {
+        LocksauR::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write '1' to prevent updating the secure interrupt configuration until the next reset"]
     #[inline(always)]
-    pub fn locksvtaircr(&mut self) -> LOCKSVTAIRCR_W<0> {
-        LOCKSVTAIRCR_W::new(self)
+    pub fn locksvtaircr(&mut self) -> LocksvtaircrW<'_, CpulockSpec> {
+        LocksvtaircrW::new(self, 0)
     }
     #[doc = "Bit 1 - Write '1' to prevent updating the non-secure vector table base address until the next reset"]
     #[inline(always)]
-    pub fn locknsvtor(&mut self) -> LOCKNSVTOR_W<1> {
-        LOCKNSVTOR_W::new(self)
+    pub fn locknsvtor(&mut self) -> LocknsvtorW<'_, CpulockSpec> {
+        LocknsvtorW::new(self, 1)
     }
     #[doc = "Bit 2 - Write '1' to prevent updating the secure MPU regions until the next reset"]
     #[inline(always)]
-    pub fn locksmpu(&mut self) -> LOCKSMPU_W<2> {
-        LOCKSMPU_W::new(self)
+    pub fn locksmpu(&mut self) -> LocksmpuW<'_, CpulockSpec> {
+        LocksmpuW::new(self, 2)
     }
     #[doc = "Bit 3 - Write '1' to prevent updating the Non-secure MPU regions until the next reset"]
     #[inline(always)]
-    pub fn locknsmpu(&mut self) -> LOCKNSMPU_W<3> {
-        LOCKNSMPU_W::new(self)
+    pub fn locknsmpu(&mut self) -> LocknsmpuW<'_, CpulockSpec> {
+        LocknsmpuW::new(self, 3)
     }
     #[doc = "Bit 4 - Write '1' to prevent updating the secure SAU regions until the next reset"]
     #[inline(always)]
-    pub fn locksau(&mut self) -> LOCKSAU_W<4> {
-        LOCKSAU_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn locksau(&mut self) -> LocksauW<'_, CpulockSpec> {
+        LocksauW::new(self, 4)
     }
 }
-#[doc = "Configure bits to lock down CPU features at runtime\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpulock](index.html) module"]
-pub struct CPULOCK_SPEC;
-impl crate::RegisterSpec for CPULOCK_SPEC {
+#[doc = "Configure bits to lock down CPU features at runtime\n\nYou can [`read`](crate::Reg::read) this register and get [`cpulock::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cpulock::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CpulockSpec;
+impl crate::RegisterSpec for CpulockSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cpulock::R](R) reader structure"]
-impl crate::Readable for CPULOCK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cpulock::W](W) writer structure"]
-impl crate::Writable for CPULOCK_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`cpulock::R`](R) reader structure"]
+impl crate::Readable for CpulockSpec {}
+#[doc = "`write(|w| ..)` method takes [`cpulock::W`](W) writer structure"]
+impl crate::Writable for CpulockSpec {
+    type Safety = crate::Unsafe;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x1f;
 }
 #[doc = "`reset()` method sets CPULOCK to value 0"]
-impl crate::Resettable for CPULOCK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for CpulockSpec {}

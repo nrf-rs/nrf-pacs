@@ -1,28 +1,51 @@
-#[doc = r"Register block"]
 #[repr(C)]
-pub struct CH {
-    #[doc = "0x00 - Description cluster\\[n\\]: Input positive pin selection for CH\\[n\\]"]
-    pub pselp: PSELP,
-    #[doc = "0x04 - Description cluster\\[n\\]: Input negative pin selection for CH\\[n\\]"]
-    pub pseln: PSELN,
-    #[doc = "0x08 - Description cluster\\[n\\]: Input configuration for CH\\[n\\]"]
-    pub config: CONFIG,
-    #[doc = "0x0c - Description cluster\\[n\\]: High/low limits for event monitoring of a channel"]
-    pub limit: LIMIT,
+#[doc = "Unspecified"]
+#[doc(alias = "CH")]
+pub struct Ch {
+    pselp: Pselp,
+    pseln: Pseln,
+    config: Config,
+    limit: Limit,
 }
-#[doc = "PSELP (rw) register accessor: an alias for `Reg<PSELP_SPEC>`"]
-pub type PSELP = crate::Reg<pselp::PSELP_SPEC>;
-#[doc = "Description cluster\\[n\\]: Input positive pin selection for CH\\[n\\]"]
+impl Ch {
+    #[doc = "0x00 - Description cluster: Input positive pin selection for CH\\[n\\]"]
+    #[inline(always)]
+    pub const fn pselp(&self) -> &Pselp {
+        &self.pselp
+    }
+    #[doc = "0x04 - Description cluster: Input negative pin selection for CH\\[n\\]"]
+    #[inline(always)]
+    pub const fn pseln(&self) -> &Pseln {
+        &self.pseln
+    }
+    #[doc = "0x08 - Description cluster: Input configuration for CH\\[n\\]"]
+    #[inline(always)]
+    pub const fn config(&self) -> &Config {
+        &self.config
+    }
+    #[doc = "0x0c - Description cluster: High/low limits for event monitoring of a channel"]
+    #[inline(always)]
+    pub const fn limit(&self) -> &Limit {
+        &self.limit
+    }
+}
+#[doc = "PSELP (rw) register accessor: Description cluster: Input positive pin selection for CH\\[n\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`pselp::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pselp::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pselp`] module"]
+#[doc(alias = "PSELP")]
+pub type Pselp = crate::Reg<pselp::PselpSpec>;
+#[doc = "Description cluster: Input positive pin selection for CH\\[n\\]"]
 pub mod pselp;
-#[doc = "PSELN (rw) register accessor: an alias for `Reg<PSELN_SPEC>`"]
-pub type PSELN = crate::Reg<pseln::PSELN_SPEC>;
-#[doc = "Description cluster\\[n\\]: Input negative pin selection for CH\\[n\\]"]
+#[doc = "PSELN (rw) register accessor: Description cluster: Input negative pin selection for CH\\[n\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`pseln::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pseln::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pseln`] module"]
+#[doc(alias = "PSELN")]
+pub type Pseln = crate::Reg<pseln::PselnSpec>;
+#[doc = "Description cluster: Input negative pin selection for CH\\[n\\]"]
 pub mod pseln;
-#[doc = "CONFIG (rw) register accessor: an alias for `Reg<CONFIG_SPEC>`"]
-pub type CONFIG = crate::Reg<config::CONFIG_SPEC>;
-#[doc = "Description cluster\\[n\\]: Input configuration for CH\\[n\\]"]
+#[doc = "CONFIG (rw) register accessor: Description cluster: Input configuration for CH\\[n\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`config::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`config::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@config`] module"]
+#[doc(alias = "CONFIG")]
+pub type Config = crate::Reg<config::ConfigSpec>;
+#[doc = "Description cluster: Input configuration for CH\\[n\\]"]
 pub mod config;
-#[doc = "LIMIT (rw) register accessor: an alias for `Reg<LIMIT_SPEC>`"]
-pub type LIMIT = crate::Reg<limit::LIMIT_SPEC>;
-#[doc = "Description cluster\\[n\\]: High/low limits for event monitoring of a channel"]
+#[doc = "LIMIT (rw) register accessor: Description cluster: High/low limits for event monitoring of a channel\n\nYou can [`read`](crate::Reg::read) this register and get [`limit::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`limit::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@limit`] module"]
+#[doc(alias = "LIMIT")]
+pub type Limit = crate::Reg<limit::LimitSpec>;
+#[doc = "Description cluster: High/low limits for event monitoring of a channel"]
 pub mod limit;

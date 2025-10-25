@@ -1,560 +1,555 @@
 #[doc = "Register `CONFIG` reader"]
-pub struct R(crate::R<CONFIG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CONFIG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CONFIG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ConfigSpec>;
 #[doc = "Register `CONFIG` writer"]
-pub struct W(crate::W<CONFIG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CONFIG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CONFIG_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `RES` reader - ADC resolution."]
-pub type RES_R = crate::FieldReader<u8, RES_A>;
+pub type W = crate::W<ConfigSpec>;
 #[doc = "ADC resolution.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RES_A {
+pub enum Res {
     #[doc = "0: 8bit ADC resolution."]
-    _8BIT = 0,
+    _8bit = 0,
     #[doc = "1: 9bit ADC resolution."]
-    _9BIT = 1,
+    _9bit = 1,
     #[doc = "2: 10bit ADC resolution."]
-    _10BIT = 2,
+    _10bit = 2,
 }
-impl From<RES_A> for u8 {
+impl From<Res> for u8 {
     #[inline(always)]
-    fn from(variant: RES_A) -> Self {
+    fn from(variant: Res) -> Self {
         variant as _
     }
 }
-impl RES_R {
+impl crate::FieldSpec for Res {
+    type Ux = u8;
+}
+impl crate::IsEnum for Res {}
+#[doc = "Field `RES` reader - ADC resolution."]
+pub type ResR = crate::FieldReader<Res>;
+impl ResR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RES_A> {
+    pub const fn variant(&self) -> Option<Res> {
         match self.bits {
-            0 => Some(RES_A::_8BIT),
-            1 => Some(RES_A::_9BIT),
-            2 => Some(RES_A::_10BIT),
+            0 => Some(Res::_8bit),
+            1 => Some(Res::_9bit),
+            2 => Some(Res::_10bit),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_8BIT`"]
-    #[inline(always)]
-    pub fn is_8bit(&self) -> bool {
-        *self == RES_A::_8BIT
-    }
-    #[doc = "Checks if the value of the field is `_9BIT`"]
-    #[inline(always)]
-    pub fn is_9bit(&self) -> bool {
-        *self == RES_A::_9BIT
-    }
-    #[doc = "Checks if the value of the field is `_10BIT`"]
-    #[inline(always)]
-    pub fn is_10bit(&self) -> bool {
-        *self == RES_A::_10BIT
-    }
-}
-#[doc = "Field `RES` writer - ADC resolution."]
-pub type RES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONFIG_SPEC, u8, RES_A, 2, O>;
-impl<'a, const O: u8> RES_W<'a, O> {
     #[doc = "8bit ADC resolution."]
     #[inline(always)]
-    pub fn _8bit(self) -> &'a mut W {
-        self.variant(RES_A::_8BIT)
+    pub fn is_8bit(&self) -> bool {
+        *self == Res::_8bit
     }
     #[doc = "9bit ADC resolution."]
     #[inline(always)]
-    pub fn _9bit(self) -> &'a mut W {
-        self.variant(RES_A::_9BIT)
+    pub fn is_9bit(&self) -> bool {
+        *self == Res::_9bit
     }
     #[doc = "10bit ADC resolution."]
     #[inline(always)]
-    pub fn _10bit(self) -> &'a mut W {
-        self.variant(RES_A::_10BIT)
+    pub fn is_10bit(&self) -> bool {
+        *self == Res::_10bit
     }
 }
-#[doc = "Field `INPSEL` reader - ADC input selection."]
-pub type INPSEL_R = crate::FieldReader<u8, INPSEL_A>;
-#[doc = "ADC input selection.\n\nValue on reset: 6"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum INPSEL_A {
-    #[doc = "0: Analog input specified by PSEL with no prescaling used as input for the conversion."]
-    ANALOG_INPUT_NO_PRESCALING = 0,
-    #[doc = "1: Analog input specified by PSEL with 2/3 prescaling used as input for the conversion."]
-    ANALOG_INPUT_TWO_THIRDS_PRESCALING = 1,
-    #[doc = "2: Analog input specified by PSEL with 1/3 prescaling used as input for the conversion."]
-    ANALOG_INPUT_ONE_THIRD_PRESCALING = 2,
-    #[doc = "5: Supply voltage with 2/3 prescaling used as input for the conversion."]
-    SUPPLY_TWO_THIRDS_PRESCALING = 5,
-    #[doc = "6: Supply voltage with 1/3 prescaling used as input for the conversion."]
-    SUPPLY_ONE_THIRD_PRESCALING = 6,
-}
-impl From<INPSEL_A> for u8 {
+#[doc = "Field `RES` writer - ADC resolution."]
+pub type ResW<'a, REG> = crate::FieldWriter<'a, REG, 2, Res>;
+impl<'a, REG> ResW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "8bit ADC resolution."]
     #[inline(always)]
-    fn from(variant: INPSEL_A) -> Self {
+    pub fn _8bit(self) -> &'a mut crate::W<REG> {
+        self.variant(Res::_8bit)
+    }
+    #[doc = "9bit ADC resolution."]
+    #[inline(always)]
+    pub fn _9bit(self) -> &'a mut crate::W<REG> {
+        self.variant(Res::_9bit)
+    }
+    #[doc = "10bit ADC resolution."]
+    #[inline(always)]
+    pub fn _10bit(self) -> &'a mut crate::W<REG> {
+        self.variant(Res::_10bit)
+    }
+}
+#[doc = "ADC input selection.\n\nValue on reset: 6"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Inpsel {
+    #[doc = "0: Analog input specified by PSEL with no prescaling used as input for the conversion."]
+    AnalogInputNoPrescaling = 0,
+    #[doc = "1: Analog input specified by PSEL with 2/3 prescaling used as input for the conversion."]
+    AnalogInputTwoThirdsPrescaling = 1,
+    #[doc = "2: Analog input specified by PSEL with 1/3 prescaling used as input for the conversion."]
+    AnalogInputOneThirdPrescaling = 2,
+    #[doc = "5: Supply voltage with 2/3 prescaling used as input for the conversion."]
+    SupplyTwoThirdsPrescaling = 5,
+    #[doc = "6: Supply voltage with 1/3 prescaling used as input for the conversion."]
+    SupplyOneThirdPrescaling = 6,
+}
+impl From<Inpsel> for u8 {
+    #[inline(always)]
+    fn from(variant: Inpsel) -> Self {
         variant as _
     }
 }
-impl INPSEL_R {
+impl crate::FieldSpec for Inpsel {
+    type Ux = u8;
+}
+impl crate::IsEnum for Inpsel {}
+#[doc = "Field `INPSEL` reader - ADC input selection."]
+pub type InpselR = crate::FieldReader<Inpsel>;
+impl InpselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<INPSEL_A> {
+    pub const fn variant(&self) -> Option<Inpsel> {
         match self.bits {
-            0 => Some(INPSEL_A::ANALOG_INPUT_NO_PRESCALING),
-            1 => Some(INPSEL_A::ANALOG_INPUT_TWO_THIRDS_PRESCALING),
-            2 => Some(INPSEL_A::ANALOG_INPUT_ONE_THIRD_PRESCALING),
-            5 => Some(INPSEL_A::SUPPLY_TWO_THIRDS_PRESCALING),
-            6 => Some(INPSEL_A::SUPPLY_ONE_THIRD_PRESCALING),
+            0 => Some(Inpsel::AnalogInputNoPrescaling),
+            1 => Some(Inpsel::AnalogInputTwoThirdsPrescaling),
+            2 => Some(Inpsel::AnalogInputOneThirdPrescaling),
+            5 => Some(Inpsel::SupplyTwoThirdsPrescaling),
+            6 => Some(Inpsel::SupplyOneThirdPrescaling),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ANALOG_INPUT_NO_PRESCALING`"]
-    #[inline(always)]
-    pub fn is_analog_input_no_prescaling(&self) -> bool {
-        *self == INPSEL_A::ANALOG_INPUT_NO_PRESCALING
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_INPUT_TWO_THIRDS_PRESCALING`"]
-    #[inline(always)]
-    pub fn is_analog_input_two_thirds_prescaling(&self) -> bool {
-        *self == INPSEL_A::ANALOG_INPUT_TWO_THIRDS_PRESCALING
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_INPUT_ONE_THIRD_PRESCALING`"]
-    #[inline(always)]
-    pub fn is_analog_input_one_third_prescaling(&self) -> bool {
-        *self == INPSEL_A::ANALOG_INPUT_ONE_THIRD_PRESCALING
-    }
-    #[doc = "Checks if the value of the field is `SUPPLY_TWO_THIRDS_PRESCALING`"]
-    #[inline(always)]
-    pub fn is_supply_two_thirds_prescaling(&self) -> bool {
-        *self == INPSEL_A::SUPPLY_TWO_THIRDS_PRESCALING
-    }
-    #[doc = "Checks if the value of the field is `SUPPLY_ONE_THIRD_PRESCALING`"]
-    #[inline(always)]
-    pub fn is_supply_one_third_prescaling(&self) -> bool {
-        *self == INPSEL_A::SUPPLY_ONE_THIRD_PRESCALING
-    }
-}
-#[doc = "Field `INPSEL` writer - ADC input selection."]
-pub type INPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONFIG_SPEC, u8, INPSEL_A, 3, O>;
-impl<'a, const O: u8> INPSEL_W<'a, O> {
     #[doc = "Analog input specified by PSEL with no prescaling used as input for the conversion."]
     #[inline(always)]
-    pub fn analog_input_no_prescaling(self) -> &'a mut W {
-        self.variant(INPSEL_A::ANALOG_INPUT_NO_PRESCALING)
+    pub fn is_analog_input_no_prescaling(&self) -> bool {
+        *self == Inpsel::AnalogInputNoPrescaling
     }
     #[doc = "Analog input specified by PSEL with 2/3 prescaling used as input for the conversion."]
     #[inline(always)]
-    pub fn analog_input_two_thirds_prescaling(self) -> &'a mut W {
-        self.variant(INPSEL_A::ANALOG_INPUT_TWO_THIRDS_PRESCALING)
+    pub fn is_analog_input_two_thirds_prescaling(&self) -> bool {
+        *self == Inpsel::AnalogInputTwoThirdsPrescaling
     }
     #[doc = "Analog input specified by PSEL with 1/3 prescaling used as input for the conversion."]
     #[inline(always)]
-    pub fn analog_input_one_third_prescaling(self) -> &'a mut W {
-        self.variant(INPSEL_A::ANALOG_INPUT_ONE_THIRD_PRESCALING)
+    pub fn is_analog_input_one_third_prescaling(&self) -> bool {
+        *self == Inpsel::AnalogInputOneThirdPrescaling
     }
     #[doc = "Supply voltage with 2/3 prescaling used as input for the conversion."]
     #[inline(always)]
-    pub fn supply_two_thirds_prescaling(self) -> &'a mut W {
-        self.variant(INPSEL_A::SUPPLY_TWO_THIRDS_PRESCALING)
+    pub fn is_supply_two_thirds_prescaling(&self) -> bool {
+        *self == Inpsel::SupplyTwoThirdsPrescaling
     }
     #[doc = "Supply voltage with 1/3 prescaling used as input for the conversion."]
     #[inline(always)]
-    pub fn supply_one_third_prescaling(self) -> &'a mut W {
-        self.variant(INPSEL_A::SUPPLY_ONE_THIRD_PRESCALING)
+    pub fn is_supply_one_third_prescaling(&self) -> bool {
+        *self == Inpsel::SupplyOneThirdPrescaling
     }
 }
-#[doc = "Field `REFSEL` reader - ADC reference selection."]
-pub type REFSEL_R = crate::FieldReader<u8, REFSEL_A>;
-#[doc = "ADC reference selection.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum REFSEL_A {
-    #[doc = "0: Use internal 1.2V bandgap voltage as reference for conversion."]
-    VBG = 0,
-    #[doc = "1: Use external source configured by EXTREFSEL as reference for conversion."]
-    EXTERNAL = 1,
-    #[doc = "2: Use supply voltage with 1/2 prescaling as reference for conversion. Only usable when supply voltage is between 1.7V and 2.6V."]
-    SUPPLY_ONE_HALF_PRESCALING = 2,
-    #[doc = "3: Use supply voltage with 1/3 prescaling as reference for conversion. Only usable when supply voltage is between 2.5V and 3.6V."]
-    SUPPLY_ONE_THIRD_PRESCALING = 3,
-}
-impl From<REFSEL_A> for u8 {
+#[doc = "Field `INPSEL` writer - ADC input selection."]
+pub type InpselW<'a, REG> = crate::FieldWriter<'a, REG, 3, Inpsel>;
+impl<'a, REG> InpselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Analog input specified by PSEL with no prescaling used as input for the conversion."]
     #[inline(always)]
-    fn from(variant: REFSEL_A) -> Self {
+    pub fn analog_input_no_prescaling(self) -> &'a mut crate::W<REG> {
+        self.variant(Inpsel::AnalogInputNoPrescaling)
+    }
+    #[doc = "Analog input specified by PSEL with 2/3 prescaling used as input for the conversion."]
+    #[inline(always)]
+    pub fn analog_input_two_thirds_prescaling(self) -> &'a mut crate::W<REG> {
+        self.variant(Inpsel::AnalogInputTwoThirdsPrescaling)
+    }
+    #[doc = "Analog input specified by PSEL with 1/3 prescaling used as input for the conversion."]
+    #[inline(always)]
+    pub fn analog_input_one_third_prescaling(self) -> &'a mut crate::W<REG> {
+        self.variant(Inpsel::AnalogInputOneThirdPrescaling)
+    }
+    #[doc = "Supply voltage with 2/3 prescaling used as input for the conversion."]
+    #[inline(always)]
+    pub fn supply_two_thirds_prescaling(self) -> &'a mut crate::W<REG> {
+        self.variant(Inpsel::SupplyTwoThirdsPrescaling)
+    }
+    #[doc = "Supply voltage with 1/3 prescaling used as input for the conversion."]
+    #[inline(always)]
+    pub fn supply_one_third_prescaling(self) -> &'a mut crate::W<REG> {
+        self.variant(Inpsel::SupplyOneThirdPrescaling)
+    }
+}
+#[doc = "ADC reference selection.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Refsel {
+    #[doc = "0: Use internal 1.2V bandgap voltage as reference for conversion."]
+    Vbg = 0,
+    #[doc = "1: Use external source configured by EXTREFSEL as reference for conversion."]
+    External = 1,
+    #[doc = "2: Use supply voltage with 1/2 prescaling as reference for conversion. Only usable when supply voltage is between 1.7V and 2.6V."]
+    SupplyOneHalfPrescaling = 2,
+    #[doc = "3: Use supply voltage with 1/3 prescaling as reference for conversion. Only usable when supply voltage is between 2.5V and 3.6V."]
+    SupplyOneThirdPrescaling = 3,
+}
+impl From<Refsel> for u8 {
+    #[inline(always)]
+    fn from(variant: Refsel) -> Self {
         variant as _
     }
 }
-impl REFSEL_R {
+impl crate::FieldSpec for Refsel {
+    type Ux = u8;
+}
+impl crate::IsEnum for Refsel {}
+#[doc = "Field `REFSEL` reader - ADC reference selection."]
+pub type RefselR = crate::FieldReader<Refsel>;
+impl RefselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REFSEL_A {
+    pub const fn variant(&self) -> Refsel {
         match self.bits {
-            0 => REFSEL_A::VBG,
-            1 => REFSEL_A::EXTERNAL,
-            2 => REFSEL_A::SUPPLY_ONE_HALF_PRESCALING,
-            3 => REFSEL_A::SUPPLY_ONE_THIRD_PRESCALING,
+            0 => Refsel::Vbg,
+            1 => Refsel::External,
+            2 => Refsel::SupplyOneHalfPrescaling,
+            3 => Refsel::SupplyOneThirdPrescaling,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VBG`"]
-    #[inline(always)]
-    pub fn is_vbg(&self) -> bool {
-        *self == REFSEL_A::VBG
-    }
-    #[doc = "Checks if the value of the field is `EXTERNAL`"]
-    #[inline(always)]
-    pub fn is_external(&self) -> bool {
-        *self == REFSEL_A::EXTERNAL
-    }
-    #[doc = "Checks if the value of the field is `SUPPLY_ONE_HALF_PRESCALING`"]
-    #[inline(always)]
-    pub fn is_supply_one_half_prescaling(&self) -> bool {
-        *self == REFSEL_A::SUPPLY_ONE_HALF_PRESCALING
-    }
-    #[doc = "Checks if the value of the field is `SUPPLY_ONE_THIRD_PRESCALING`"]
-    #[inline(always)]
-    pub fn is_supply_one_third_prescaling(&self) -> bool {
-        *self == REFSEL_A::SUPPLY_ONE_THIRD_PRESCALING
-    }
-}
-#[doc = "Field `REFSEL` writer - ADC reference selection."]
-pub type REFSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CONFIG_SPEC, u8, REFSEL_A, 2, O>;
-impl<'a, const O: u8> REFSEL_W<'a, O> {
     #[doc = "Use internal 1.2V bandgap voltage as reference for conversion."]
     #[inline(always)]
-    pub fn vbg(self) -> &'a mut W {
-        self.variant(REFSEL_A::VBG)
+    pub fn is_vbg(&self) -> bool {
+        *self == Refsel::Vbg
     }
     #[doc = "Use external source configured by EXTREFSEL as reference for conversion."]
     #[inline(always)]
-    pub fn external(self) -> &'a mut W {
-        self.variant(REFSEL_A::EXTERNAL)
+    pub fn is_external(&self) -> bool {
+        *self == Refsel::External
     }
     #[doc = "Use supply voltage with 1/2 prescaling as reference for conversion. Only usable when supply voltage is between 1.7V and 2.6V."]
     #[inline(always)]
-    pub fn supply_one_half_prescaling(self) -> &'a mut W {
-        self.variant(REFSEL_A::SUPPLY_ONE_HALF_PRESCALING)
+    pub fn is_supply_one_half_prescaling(&self) -> bool {
+        *self == Refsel::SupplyOneHalfPrescaling
     }
     #[doc = "Use supply voltage with 1/3 prescaling as reference for conversion. Only usable when supply voltage is between 2.5V and 3.6V."]
     #[inline(always)]
-    pub fn supply_one_third_prescaling(self) -> &'a mut W {
-        self.variant(REFSEL_A::SUPPLY_ONE_THIRD_PRESCALING)
+    pub fn is_supply_one_third_prescaling(&self) -> bool {
+        *self == Refsel::SupplyOneThirdPrescaling
     }
 }
-#[doc = "Field `PSEL` reader - ADC analog pin selection."]
-pub type PSEL_R = crate::FieldReader<u8, PSEL_A>;
-#[doc = "ADC analog pin selection.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum PSEL_A {
-    #[doc = "0: Analog input pins disabled."]
-    DISABLED = 0,
-    #[doc = "1: Use analog input 0 as analog input."]
-    ANALOG_INPUT0 = 1,
-    #[doc = "2: Use analog input 1 as analog input."]
-    ANALOG_INPUT1 = 2,
-    #[doc = "4: Use analog input 2 as analog input."]
-    ANALOG_INPUT2 = 4,
-    #[doc = "8: Use analog input 3 as analog input."]
-    ANALOG_INPUT3 = 8,
-    #[doc = "16: Use analog input 4 as analog input."]
-    ANALOG_INPUT4 = 16,
-    #[doc = "32: Use analog input 5 as analog input."]
-    ANALOG_INPUT5 = 32,
-    #[doc = "64: Use analog input 6 as analog input."]
-    ANALOG_INPUT6 = 64,
-    #[doc = "128: Use analog input 7 as analog input."]
-    ANALOG_INPUT7 = 128,
-}
-impl From<PSEL_A> for u8 {
+#[doc = "Field `REFSEL` writer - ADC reference selection."]
+pub type RefselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Refsel, crate::Safe>;
+impl<'a, REG> RefselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Use internal 1.2V bandgap voltage as reference for conversion."]
     #[inline(always)]
-    fn from(variant: PSEL_A) -> Self {
+    pub fn vbg(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Vbg)
+    }
+    #[doc = "Use external source configured by EXTREFSEL as reference for conversion."]
+    #[inline(always)]
+    pub fn external(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::External)
+    }
+    #[doc = "Use supply voltage with 1/2 prescaling as reference for conversion. Only usable when supply voltage is between 1.7V and 2.6V."]
+    #[inline(always)]
+    pub fn supply_one_half_prescaling(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::SupplyOneHalfPrescaling)
+    }
+    #[doc = "Use supply voltage with 1/3 prescaling as reference for conversion. Only usable when supply voltage is between 2.5V and 3.6V."]
+    #[inline(always)]
+    pub fn supply_one_third_prescaling(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::SupplyOneThirdPrescaling)
+    }
+}
+#[doc = "ADC analog pin selection.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Psel {
+    #[doc = "0: Analog input pins disabled."]
+    Disabled = 0,
+    #[doc = "1: Use analog input 0 as analog input."]
+    AnalogInput0 = 1,
+    #[doc = "2: Use analog input 1 as analog input."]
+    AnalogInput1 = 2,
+    #[doc = "4: Use analog input 2 as analog input."]
+    AnalogInput2 = 4,
+    #[doc = "8: Use analog input 3 as analog input."]
+    AnalogInput3 = 8,
+    #[doc = "16: Use analog input 4 as analog input."]
+    AnalogInput4 = 16,
+    #[doc = "32: Use analog input 5 as analog input."]
+    AnalogInput5 = 32,
+    #[doc = "64: Use analog input 6 as analog input."]
+    AnalogInput6 = 64,
+    #[doc = "128: Use analog input 7 as analog input."]
+    AnalogInput7 = 128,
+}
+impl From<Psel> for u8 {
+    #[inline(always)]
+    fn from(variant: Psel) -> Self {
         variant as _
     }
 }
-impl PSEL_R {
+impl crate::FieldSpec for Psel {
+    type Ux = u8;
+}
+impl crate::IsEnum for Psel {}
+#[doc = "Field `PSEL` reader - ADC analog pin selection."]
+pub type PselR = crate::FieldReader<Psel>;
+impl PselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PSEL_A> {
+    pub const fn variant(&self) -> Option<Psel> {
         match self.bits {
-            0 => Some(PSEL_A::DISABLED),
-            1 => Some(PSEL_A::ANALOG_INPUT0),
-            2 => Some(PSEL_A::ANALOG_INPUT1),
-            4 => Some(PSEL_A::ANALOG_INPUT2),
-            8 => Some(PSEL_A::ANALOG_INPUT3),
-            16 => Some(PSEL_A::ANALOG_INPUT4),
-            32 => Some(PSEL_A::ANALOG_INPUT5),
-            64 => Some(PSEL_A::ANALOG_INPUT6),
-            128 => Some(PSEL_A::ANALOG_INPUT7),
+            0 => Some(Psel::Disabled),
+            1 => Some(Psel::AnalogInput0),
+            2 => Some(Psel::AnalogInput1),
+            4 => Some(Psel::AnalogInput2),
+            8 => Some(Psel::AnalogInput3),
+            16 => Some(Psel::AnalogInput4),
+            32 => Some(Psel::AnalogInput5),
+            64 => Some(Psel::AnalogInput6),
+            128 => Some(Psel::AnalogInput7),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == PSEL_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_INPUT0`"]
-    #[inline(always)]
-    pub fn is_analog_input0(&self) -> bool {
-        *self == PSEL_A::ANALOG_INPUT0
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_INPUT1`"]
-    #[inline(always)]
-    pub fn is_analog_input1(&self) -> bool {
-        *self == PSEL_A::ANALOG_INPUT1
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_INPUT2`"]
-    #[inline(always)]
-    pub fn is_analog_input2(&self) -> bool {
-        *self == PSEL_A::ANALOG_INPUT2
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_INPUT3`"]
-    #[inline(always)]
-    pub fn is_analog_input3(&self) -> bool {
-        *self == PSEL_A::ANALOG_INPUT3
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_INPUT4`"]
-    #[inline(always)]
-    pub fn is_analog_input4(&self) -> bool {
-        *self == PSEL_A::ANALOG_INPUT4
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_INPUT5`"]
-    #[inline(always)]
-    pub fn is_analog_input5(&self) -> bool {
-        *self == PSEL_A::ANALOG_INPUT5
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_INPUT6`"]
-    #[inline(always)]
-    pub fn is_analog_input6(&self) -> bool {
-        *self == PSEL_A::ANALOG_INPUT6
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_INPUT7`"]
-    #[inline(always)]
-    pub fn is_analog_input7(&self) -> bool {
-        *self == PSEL_A::ANALOG_INPUT7
-    }
-}
-#[doc = "Field `PSEL` writer - ADC analog pin selection."]
-pub type PSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONFIG_SPEC, u8, PSEL_A, 8, O>;
-impl<'a, const O: u8> PSEL_W<'a, O> {
     #[doc = "Analog input pins disabled."]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PSEL_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Psel::Disabled
     }
     #[doc = "Use analog input 0 as analog input."]
     #[inline(always)]
-    pub fn analog_input0(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOG_INPUT0)
+    pub fn is_analog_input0(&self) -> bool {
+        *self == Psel::AnalogInput0
     }
     #[doc = "Use analog input 1 as analog input."]
     #[inline(always)]
-    pub fn analog_input1(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOG_INPUT1)
+    pub fn is_analog_input1(&self) -> bool {
+        *self == Psel::AnalogInput1
     }
     #[doc = "Use analog input 2 as analog input."]
     #[inline(always)]
-    pub fn analog_input2(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOG_INPUT2)
+    pub fn is_analog_input2(&self) -> bool {
+        *self == Psel::AnalogInput2
     }
     #[doc = "Use analog input 3 as analog input."]
     #[inline(always)]
-    pub fn analog_input3(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOG_INPUT3)
+    pub fn is_analog_input3(&self) -> bool {
+        *self == Psel::AnalogInput3
     }
     #[doc = "Use analog input 4 as analog input."]
     #[inline(always)]
-    pub fn analog_input4(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOG_INPUT4)
+    pub fn is_analog_input4(&self) -> bool {
+        *self == Psel::AnalogInput4
     }
     #[doc = "Use analog input 5 as analog input."]
     #[inline(always)]
-    pub fn analog_input5(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOG_INPUT5)
+    pub fn is_analog_input5(&self) -> bool {
+        *self == Psel::AnalogInput5
     }
     #[doc = "Use analog input 6 as analog input."]
     #[inline(always)]
-    pub fn analog_input6(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOG_INPUT6)
+    pub fn is_analog_input6(&self) -> bool {
+        *self == Psel::AnalogInput6
     }
     #[doc = "Use analog input 7 as analog input."]
     #[inline(always)]
-    pub fn analog_input7(self) -> &'a mut W {
-        self.variant(PSEL_A::ANALOG_INPUT7)
+    pub fn is_analog_input7(&self) -> bool {
+        *self == Psel::AnalogInput7
     }
 }
-#[doc = "Field `EXTREFSEL` reader - ADC external reference pin selection."]
-pub type EXTREFSEL_R = crate::FieldReader<u8, EXTREFSEL_A>;
-#[doc = "ADC external reference pin selection.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum EXTREFSEL_A {
-    #[doc = "0: Analog external reference inputs disabled."]
-    NONE = 0,
-    #[doc = "1: Use analog reference 0 as reference."]
-    ANALOG_REFERENCE0 = 1,
-    #[doc = "2: Use analog reference 1 as reference."]
-    ANALOG_REFERENCE1 = 2,
-}
-impl From<EXTREFSEL_A> for u8 {
+#[doc = "Field `PSEL` writer - ADC analog pin selection."]
+pub type PselW<'a, REG> = crate::FieldWriter<'a, REG, 8, Psel>;
+impl<'a, REG> PselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Analog input pins disabled."]
     #[inline(always)]
-    fn from(variant: EXTREFSEL_A) -> Self {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Psel::Disabled)
+    }
+    #[doc = "Use analog input 0 as analog input."]
+    #[inline(always)]
+    pub fn analog_input0(self) -> &'a mut crate::W<REG> {
+        self.variant(Psel::AnalogInput0)
+    }
+    #[doc = "Use analog input 1 as analog input."]
+    #[inline(always)]
+    pub fn analog_input1(self) -> &'a mut crate::W<REG> {
+        self.variant(Psel::AnalogInput1)
+    }
+    #[doc = "Use analog input 2 as analog input."]
+    #[inline(always)]
+    pub fn analog_input2(self) -> &'a mut crate::W<REG> {
+        self.variant(Psel::AnalogInput2)
+    }
+    #[doc = "Use analog input 3 as analog input."]
+    #[inline(always)]
+    pub fn analog_input3(self) -> &'a mut crate::W<REG> {
+        self.variant(Psel::AnalogInput3)
+    }
+    #[doc = "Use analog input 4 as analog input."]
+    #[inline(always)]
+    pub fn analog_input4(self) -> &'a mut crate::W<REG> {
+        self.variant(Psel::AnalogInput4)
+    }
+    #[doc = "Use analog input 5 as analog input."]
+    #[inline(always)]
+    pub fn analog_input5(self) -> &'a mut crate::W<REG> {
+        self.variant(Psel::AnalogInput5)
+    }
+    #[doc = "Use analog input 6 as analog input."]
+    #[inline(always)]
+    pub fn analog_input6(self) -> &'a mut crate::W<REG> {
+        self.variant(Psel::AnalogInput6)
+    }
+    #[doc = "Use analog input 7 as analog input."]
+    #[inline(always)]
+    pub fn analog_input7(self) -> &'a mut crate::W<REG> {
+        self.variant(Psel::AnalogInput7)
+    }
+}
+#[doc = "ADC external reference pin selection.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Extrefsel {
+    #[doc = "0: Analog external reference inputs disabled."]
+    None = 0,
+    #[doc = "1: Use analog reference 0 as reference."]
+    AnalogReference0 = 1,
+    #[doc = "2: Use analog reference 1 as reference."]
+    AnalogReference1 = 2,
+}
+impl From<Extrefsel> for u8 {
+    #[inline(always)]
+    fn from(variant: Extrefsel) -> Self {
         variant as _
     }
 }
-impl EXTREFSEL_R {
+impl crate::FieldSpec for Extrefsel {
+    type Ux = u8;
+}
+impl crate::IsEnum for Extrefsel {}
+#[doc = "Field `EXTREFSEL` reader - ADC external reference pin selection."]
+pub type ExtrefselR = crate::FieldReader<Extrefsel>;
+impl ExtrefselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<EXTREFSEL_A> {
+    pub const fn variant(&self) -> Option<Extrefsel> {
         match self.bits {
-            0 => Some(EXTREFSEL_A::NONE),
-            1 => Some(EXTREFSEL_A::ANALOG_REFERENCE0),
-            2 => Some(EXTREFSEL_A::ANALOG_REFERENCE1),
+            0 => Some(Extrefsel::None),
+            1 => Some(Extrefsel::AnalogReference0),
+            2 => Some(Extrefsel::AnalogReference1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
-    #[inline(always)]
-    pub fn is_none(&self) -> bool {
-        *self == EXTREFSEL_A::NONE
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_REFERENCE0`"]
-    #[inline(always)]
-    pub fn is_analog_reference0(&self) -> bool {
-        *self == EXTREFSEL_A::ANALOG_REFERENCE0
-    }
-    #[doc = "Checks if the value of the field is `ANALOG_REFERENCE1`"]
-    #[inline(always)]
-    pub fn is_analog_reference1(&self) -> bool {
-        *self == EXTREFSEL_A::ANALOG_REFERENCE1
-    }
-}
-#[doc = "Field `EXTREFSEL` writer - ADC external reference pin selection."]
-pub type EXTREFSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CONFIG_SPEC, u8, EXTREFSEL_A, 2, O>;
-impl<'a, const O: u8> EXTREFSEL_W<'a, O> {
     #[doc = "Analog external reference inputs disabled."]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
-        self.variant(EXTREFSEL_A::NONE)
+    pub fn is_none(&self) -> bool {
+        *self == Extrefsel::None
     }
     #[doc = "Use analog reference 0 as reference."]
     #[inline(always)]
-    pub fn analog_reference0(self) -> &'a mut W {
-        self.variant(EXTREFSEL_A::ANALOG_REFERENCE0)
+    pub fn is_analog_reference0(&self) -> bool {
+        *self == Extrefsel::AnalogReference0
     }
     #[doc = "Use analog reference 1 as reference."]
     #[inline(always)]
-    pub fn analog_reference1(self) -> &'a mut W {
-        self.variant(EXTREFSEL_A::ANALOG_REFERENCE1)
+    pub fn is_analog_reference1(&self) -> bool {
+        *self == Extrefsel::AnalogReference1
+    }
+}
+#[doc = "Field `EXTREFSEL` writer - ADC external reference pin selection."]
+pub type ExtrefselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Extrefsel>;
+impl<'a, REG> ExtrefselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Analog external reference inputs disabled."]
+    #[inline(always)]
+    pub fn none(self) -> &'a mut crate::W<REG> {
+        self.variant(Extrefsel::None)
+    }
+    #[doc = "Use analog reference 0 as reference."]
+    #[inline(always)]
+    pub fn analog_reference0(self) -> &'a mut crate::W<REG> {
+        self.variant(Extrefsel::AnalogReference0)
+    }
+    #[doc = "Use analog reference 1 as reference."]
+    #[inline(always)]
+    pub fn analog_reference1(self) -> &'a mut crate::W<REG> {
+        self.variant(Extrefsel::AnalogReference1)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - ADC resolution."]
     #[inline(always)]
-    pub fn res(&self) -> RES_R {
-        RES_R::new((self.bits & 3) as u8)
+    pub fn res(&self) -> ResR {
+        ResR::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:4 - ADC input selection."]
     #[inline(always)]
-    pub fn inpsel(&self) -> INPSEL_R {
-        INPSEL_R::new(((self.bits >> 2) & 7) as u8)
+    pub fn inpsel(&self) -> InpselR {
+        InpselR::new(((self.bits >> 2) & 7) as u8)
     }
     #[doc = "Bits 5:6 - ADC reference selection."]
     #[inline(always)]
-    pub fn refsel(&self) -> REFSEL_R {
-        REFSEL_R::new(((self.bits >> 5) & 3) as u8)
+    pub fn refsel(&self) -> RefselR {
+        RefselR::new(((self.bits >> 5) & 3) as u8)
     }
     #[doc = "Bits 8:15 - ADC analog pin selection."]
     #[inline(always)]
-    pub fn psel(&self) -> PSEL_R {
-        PSEL_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn psel(&self) -> PselR {
+        PselR::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:17 - ADC external reference pin selection."]
     #[inline(always)]
-    pub fn extrefsel(&self) -> EXTREFSEL_R {
-        EXTREFSEL_R::new(((self.bits >> 16) & 3) as u8)
+    pub fn extrefsel(&self) -> ExtrefselR {
+        ExtrefselR::new(((self.bits >> 16) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - ADC resolution."]
     #[inline(always)]
-    pub fn res(&mut self) -> RES_W<0> {
-        RES_W::new(self)
+    pub fn res(&mut self) -> ResW<'_, ConfigSpec> {
+        ResW::new(self, 0)
     }
     #[doc = "Bits 2:4 - ADC input selection."]
     #[inline(always)]
-    pub fn inpsel(&mut self) -> INPSEL_W<2> {
-        INPSEL_W::new(self)
+    pub fn inpsel(&mut self) -> InpselW<'_, ConfigSpec> {
+        InpselW::new(self, 2)
     }
     #[doc = "Bits 5:6 - ADC reference selection."]
     #[inline(always)]
-    pub fn refsel(&mut self) -> REFSEL_W<5> {
-        REFSEL_W::new(self)
+    pub fn refsel(&mut self) -> RefselW<'_, ConfigSpec> {
+        RefselW::new(self, 5)
     }
     #[doc = "Bits 8:15 - ADC analog pin selection."]
     #[inline(always)]
-    pub fn psel(&mut self) -> PSEL_W<8> {
-        PSEL_W::new(self)
+    pub fn psel(&mut self) -> PselW<'_, ConfigSpec> {
+        PselW::new(self, 8)
     }
     #[doc = "Bits 16:17 - ADC external reference pin selection."]
     #[inline(always)]
-    pub fn extrefsel(&mut self) -> EXTREFSEL_W<16> {
-        EXTREFSEL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn extrefsel(&mut self) -> ExtrefselW<'_, ConfigSpec> {
+        ExtrefselW::new(self, 16)
     }
 }
-#[doc = "ADC configuration register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config](index.html) module"]
-pub struct CONFIG_SPEC;
-impl crate::RegisterSpec for CONFIG_SPEC {
+#[doc = "ADC configuration register.\n\nYou can [`read`](crate::Reg::read) this register and get [`config::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`config::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ConfigSpec;
+impl crate::RegisterSpec for ConfigSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [config::R](R) reader structure"]
-impl crate::Readable for CONFIG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [config::W](W) writer structure"]
-impl crate::Writable for CONFIG_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`config::R`](R) reader structure"]
+impl crate::Readable for ConfigSpec {}
+#[doc = "`write(|w| ..)` method takes [`config::W`](W) writer structure"]
+impl crate::Writable for ConfigSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CONFIG to value 0x18"]
-impl crate::Resettable for CONFIG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x18
-    }
+impl crate::Resettable for ConfigSpec {
+    const RESET_VALUE: u32 = 0x18;
 }

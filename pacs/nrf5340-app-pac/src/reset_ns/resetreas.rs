@@ -1,726 +1,714 @@
 #[doc = "Register `RESETREAS` reader"]
-pub struct R(crate::R<RESETREAS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RESETREAS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RESETREAS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RESETREAS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ResetreasSpec>;
 #[doc = "Register `RESETREAS` writer"]
-pub struct W(crate::W<RESETREAS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RESETREAS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<ResetreasSpec>;
+#[doc = "Reset from pin reset detected\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Resetpin {
+    #[doc = "0: Not detected"]
+    NotDetected = 0,
+    #[doc = "1: Detected"]
+    Detected = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Resetpin> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RESETREAS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RESETREAS_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Resetpin) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RESETPIN` reader - Reset from pin reset detected"]
-pub type RESETPIN_R = crate::BitReader<RESETPIN_A>;
-#[doc = "Reset from pin reset detected\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RESETPIN_A {
-    #[doc = "0: Not detected"]
-    NOT_DETECTED = 0,
-    #[doc = "1: Detected"]
-    DETECTED = 1,
-}
-impl From<RESETPIN_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESETPIN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RESETPIN_R {
+pub type ResetpinR = crate::BitReader<Resetpin>;
+impl ResetpinR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RESETPIN_A {
+    pub const fn variant(&self) -> Resetpin {
         match self.bits {
-            false => RESETPIN_A::NOT_DETECTED,
-            true => RESETPIN_A::DETECTED,
+            false => Resetpin::NotDetected,
+            true => Resetpin::Detected,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[doc = "Not detected"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        *self == RESETPIN_A::NOT_DETECTED
+        *self == Resetpin::NotDetected
     }
-    #[doc = "Checks if the value of the field is `DETECTED`"]
+    #[doc = "Detected"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        *self == RESETPIN_A::DETECTED
+        *self == Resetpin::Detected
     }
 }
 #[doc = "Field `RESETPIN` writer - Reset from pin reset detected"]
-pub type RESETPIN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESETREAS_SPEC, RESETPIN_A, O>;
-impl<'a, const O: u8> RESETPIN_W<'a, O> {
+pub type ResetpinW<'a, REG> = crate::BitWriter<'a, REG, Resetpin>;
+impl<'a, REG> ResetpinW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not detected"]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(RESETPIN_A::NOT_DETECTED)
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Resetpin::NotDetected)
     }
     #[doc = "Detected"]
     #[inline(always)]
-    pub fn detected(self) -> &'a mut W {
-        self.variant(RESETPIN_A::DETECTED)
+    pub fn detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Resetpin::Detected)
+    }
+}
+#[doc = "Reset from application watchdog timer 0 detected\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Dog0 {
+    #[doc = "0: Not detected"]
+    NotDetected = 0,
+    #[doc = "1: Detected"]
+    Detected = 1,
+}
+impl From<Dog0> for bool {
+    #[inline(always)]
+    fn from(variant: Dog0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `DOG0` reader - Reset from application watchdog timer 0 detected"]
-pub type DOG0_R = crate::BitReader<DOG0_A>;
-#[doc = "Reset from application watchdog timer 0 detected\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DOG0_A {
-    #[doc = "0: Not detected"]
-    NOT_DETECTED = 0,
-    #[doc = "1: Detected"]
-    DETECTED = 1,
-}
-impl From<DOG0_A> for bool {
-    #[inline(always)]
-    fn from(variant: DOG0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl DOG0_R {
+pub type Dog0R = crate::BitReader<Dog0>;
+impl Dog0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DOG0_A {
+    pub const fn variant(&self) -> Dog0 {
         match self.bits {
-            false => DOG0_A::NOT_DETECTED,
-            true => DOG0_A::DETECTED,
+            false => Dog0::NotDetected,
+            true => Dog0::Detected,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[doc = "Not detected"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        *self == DOG0_A::NOT_DETECTED
+        *self == Dog0::NotDetected
     }
-    #[doc = "Checks if the value of the field is `DETECTED`"]
+    #[doc = "Detected"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        *self == DOG0_A::DETECTED
+        *self == Dog0::Detected
     }
 }
 #[doc = "Field `DOG0` writer - Reset from application watchdog timer 0 detected"]
-pub type DOG0_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESETREAS_SPEC, DOG0_A, O>;
-impl<'a, const O: u8> DOG0_W<'a, O> {
+pub type Dog0W<'a, REG> = crate::BitWriter<'a, REG, Dog0>;
+impl<'a, REG> Dog0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not detected"]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(DOG0_A::NOT_DETECTED)
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Dog0::NotDetected)
     }
     #[doc = "Detected"]
     #[inline(always)]
-    pub fn detected(self) -> &'a mut W {
-        self.variant(DOG0_A::DETECTED)
+    pub fn detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Dog0::Detected)
+    }
+}
+#[doc = "Reset from application CTRL-AP detected\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ctrlap {
+    #[doc = "0: Not detected"]
+    NotDetected = 0,
+    #[doc = "1: Detected"]
+    Detected = 1,
+}
+impl From<Ctrlap> for bool {
+    #[inline(always)]
+    fn from(variant: Ctrlap) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `CTRLAP` reader - Reset from application CTRL-AP detected"]
-pub type CTRLAP_R = crate::BitReader<CTRLAP_A>;
-#[doc = "Reset from application CTRL-AP detected\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CTRLAP_A {
-    #[doc = "0: Not detected"]
-    NOT_DETECTED = 0,
-    #[doc = "1: Detected"]
-    DETECTED = 1,
-}
-impl From<CTRLAP_A> for bool {
-    #[inline(always)]
-    fn from(variant: CTRLAP_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl CTRLAP_R {
+pub type CtrlapR = crate::BitReader<Ctrlap>;
+impl CtrlapR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CTRLAP_A {
+    pub const fn variant(&self) -> Ctrlap {
         match self.bits {
-            false => CTRLAP_A::NOT_DETECTED,
-            true => CTRLAP_A::DETECTED,
+            false => Ctrlap::NotDetected,
+            true => Ctrlap::Detected,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[doc = "Not detected"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        *self == CTRLAP_A::NOT_DETECTED
+        *self == Ctrlap::NotDetected
     }
-    #[doc = "Checks if the value of the field is `DETECTED`"]
+    #[doc = "Detected"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        *self == CTRLAP_A::DETECTED
+        *self == Ctrlap::Detected
     }
 }
 #[doc = "Field `CTRLAP` writer - Reset from application CTRL-AP detected"]
-pub type CTRLAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESETREAS_SPEC, CTRLAP_A, O>;
-impl<'a, const O: u8> CTRLAP_W<'a, O> {
+pub type CtrlapW<'a, REG> = crate::BitWriter<'a, REG, Ctrlap>;
+impl<'a, REG> CtrlapW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not detected"]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(CTRLAP_A::NOT_DETECTED)
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Ctrlap::NotDetected)
     }
     #[doc = "Detected"]
     #[inline(always)]
-    pub fn detected(self) -> &'a mut W {
-        self.variant(CTRLAP_A::DETECTED)
+    pub fn detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Ctrlap::Detected)
+    }
+}
+#[doc = "Reset from application soft reset detected\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sreq {
+    #[doc = "0: Not detected"]
+    NotDetected = 0,
+    #[doc = "1: Detected"]
+    Detected = 1,
+}
+impl From<Sreq> for bool {
+    #[inline(always)]
+    fn from(variant: Sreq) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SREQ` reader - Reset from application soft reset detected"]
-pub type SREQ_R = crate::BitReader<SREQ_A>;
-#[doc = "Reset from application soft reset detected\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SREQ_A {
-    #[doc = "0: Not detected"]
-    NOT_DETECTED = 0,
-    #[doc = "1: Detected"]
-    DETECTED = 1,
-}
-impl From<SREQ_A> for bool {
-    #[inline(always)]
-    fn from(variant: SREQ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SREQ_R {
+pub type SreqR = crate::BitReader<Sreq>;
+impl SreqR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SREQ_A {
+    pub const fn variant(&self) -> Sreq {
         match self.bits {
-            false => SREQ_A::NOT_DETECTED,
-            true => SREQ_A::DETECTED,
+            false => Sreq::NotDetected,
+            true => Sreq::Detected,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[doc = "Not detected"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        *self == SREQ_A::NOT_DETECTED
+        *self == Sreq::NotDetected
     }
-    #[doc = "Checks if the value of the field is `DETECTED`"]
+    #[doc = "Detected"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        *self == SREQ_A::DETECTED
+        *self == Sreq::Detected
     }
 }
 #[doc = "Field `SREQ` writer - Reset from application soft reset detected"]
-pub type SREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESETREAS_SPEC, SREQ_A, O>;
-impl<'a, const O: u8> SREQ_W<'a, O> {
+pub type SreqW<'a, REG> = crate::BitWriter<'a, REG, Sreq>;
+impl<'a, REG> SreqW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not detected"]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(SREQ_A::NOT_DETECTED)
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Sreq::NotDetected)
     }
     #[doc = "Detected"]
     #[inline(always)]
-    pub fn detected(self) -> &'a mut W {
-        self.variant(SREQ_A::DETECTED)
+    pub fn detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Sreq::Detected)
+    }
+}
+#[doc = "Reset from application CPU lockup detected\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Lockup {
+    #[doc = "0: Not detected"]
+    NotDetected = 0,
+    #[doc = "1: Detected"]
+    Detected = 1,
+}
+impl From<Lockup> for bool {
+    #[inline(always)]
+    fn from(variant: Lockup) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `LOCKUP` reader - Reset from application CPU lockup detected"]
-pub type LOCKUP_R = crate::BitReader<LOCKUP_A>;
-#[doc = "Reset from application CPU lockup detected\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKUP_A {
-    #[doc = "0: Not detected"]
-    NOT_DETECTED = 0,
-    #[doc = "1: Detected"]
-    DETECTED = 1,
-}
-impl From<LOCKUP_A> for bool {
-    #[inline(always)]
-    fn from(variant: LOCKUP_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl LOCKUP_R {
+pub type LockupR = crate::BitReader<Lockup>;
+impl LockupR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCKUP_A {
+    pub const fn variant(&self) -> Lockup {
         match self.bits {
-            false => LOCKUP_A::NOT_DETECTED,
-            true => LOCKUP_A::DETECTED,
+            false => Lockup::NotDetected,
+            true => Lockup::Detected,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[doc = "Not detected"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        *self == LOCKUP_A::NOT_DETECTED
+        *self == Lockup::NotDetected
     }
-    #[doc = "Checks if the value of the field is `DETECTED`"]
+    #[doc = "Detected"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        *self == LOCKUP_A::DETECTED
+        *self == Lockup::Detected
     }
 }
 #[doc = "Field `LOCKUP` writer - Reset from application CPU lockup detected"]
-pub type LOCKUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESETREAS_SPEC, LOCKUP_A, O>;
-impl<'a, const O: u8> LOCKUP_W<'a, O> {
+pub type LockupW<'a, REG> = crate::BitWriter<'a, REG, Lockup>;
+impl<'a, REG> LockupW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not detected"]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(LOCKUP_A::NOT_DETECTED)
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Lockup::NotDetected)
     }
     #[doc = "Detected"]
     #[inline(always)]
-    pub fn detected(self) -> &'a mut W {
-        self.variant(LOCKUP_A::DETECTED)
+    pub fn detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Lockup::Detected)
+    }
+}
+#[doc = "Reset due to wakeup from System OFF mode when wakeup is triggered by DETECT signal from GPIO\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Off {
+    #[doc = "0: Not detected"]
+    NotDetected = 0,
+    #[doc = "1: Detected"]
+    Detected = 1,
+}
+impl From<Off> for bool {
+    #[inline(always)]
+    fn from(variant: Off) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `OFF` reader - Reset due to wakeup from System OFF mode when wakeup is triggered by DETECT signal from GPIO"]
-pub type OFF_R = crate::BitReader<OFF_A>;
-#[doc = "Reset due to wakeup from System OFF mode when wakeup is triggered by DETECT signal from GPIO\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OFF_A {
-    #[doc = "0: Not detected"]
-    NOT_DETECTED = 0,
-    #[doc = "1: Detected"]
-    DETECTED = 1,
-}
-impl From<OFF_A> for bool {
-    #[inline(always)]
-    fn from(variant: OFF_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl OFF_R {
+pub type OffR = crate::BitReader<Off>;
+impl OffR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OFF_A {
+    pub const fn variant(&self) -> Off {
         match self.bits {
-            false => OFF_A::NOT_DETECTED,
-            true => OFF_A::DETECTED,
+            false => Off::NotDetected,
+            true => Off::Detected,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[doc = "Not detected"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        *self == OFF_A::NOT_DETECTED
+        *self == Off::NotDetected
     }
-    #[doc = "Checks if the value of the field is `DETECTED`"]
+    #[doc = "Detected"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        *self == OFF_A::DETECTED
+        *self == Off::Detected
     }
 }
 #[doc = "Field `OFF` writer - Reset due to wakeup from System OFF mode when wakeup is triggered by DETECT signal from GPIO"]
-pub type OFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESETREAS_SPEC, OFF_A, O>;
-impl<'a, const O: u8> OFF_W<'a, O> {
+pub type OffW<'a, REG> = crate::BitWriter<'a, REG, Off>;
+impl<'a, REG> OffW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not detected"]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(OFF_A::NOT_DETECTED)
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Off::NotDetected)
     }
     #[doc = "Detected"]
     #[inline(always)]
-    pub fn detected(self) -> &'a mut W {
-        self.variant(OFF_A::DETECTED)
+    pub fn detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Off::Detected)
+    }
+}
+#[doc = "Reset due to wakeup from System OFF mode when wakeup is triggered by ANADETECT signal from LPCOMP\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Lpcomp {
+    #[doc = "0: Not detected"]
+    NotDetected = 0,
+    #[doc = "1: Detected"]
+    Detected = 1,
+}
+impl From<Lpcomp> for bool {
+    #[inline(always)]
+    fn from(variant: Lpcomp) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `LPCOMP` reader - Reset due to wakeup from System OFF mode when wakeup is triggered by ANADETECT signal from LPCOMP"]
-pub type LPCOMP_R = crate::BitReader<LPCOMP_A>;
-#[doc = "Reset due to wakeup from System OFF mode when wakeup is triggered by ANADETECT signal from LPCOMP\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LPCOMP_A {
-    #[doc = "0: Not detected"]
-    NOT_DETECTED = 0,
-    #[doc = "1: Detected"]
-    DETECTED = 1,
-}
-impl From<LPCOMP_A> for bool {
-    #[inline(always)]
-    fn from(variant: LPCOMP_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl LPCOMP_R {
+pub type LpcompR = crate::BitReader<Lpcomp>;
+impl LpcompR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LPCOMP_A {
+    pub const fn variant(&self) -> Lpcomp {
         match self.bits {
-            false => LPCOMP_A::NOT_DETECTED,
-            true => LPCOMP_A::DETECTED,
+            false => Lpcomp::NotDetected,
+            true => Lpcomp::Detected,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[doc = "Not detected"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        *self == LPCOMP_A::NOT_DETECTED
+        *self == Lpcomp::NotDetected
     }
-    #[doc = "Checks if the value of the field is `DETECTED`"]
+    #[doc = "Detected"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        *self == LPCOMP_A::DETECTED
+        *self == Lpcomp::Detected
     }
 }
 #[doc = "Field `LPCOMP` writer - Reset due to wakeup from System OFF mode when wakeup is triggered by ANADETECT signal from LPCOMP"]
-pub type LPCOMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESETREAS_SPEC, LPCOMP_A, O>;
-impl<'a, const O: u8> LPCOMP_W<'a, O> {
+pub type LpcompW<'a, REG> = crate::BitWriter<'a, REG, Lpcomp>;
+impl<'a, REG> LpcompW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not detected"]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(LPCOMP_A::NOT_DETECTED)
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Lpcomp::NotDetected)
     }
     #[doc = "Detected"]
     #[inline(always)]
-    pub fn detected(self) -> &'a mut W {
-        self.variant(LPCOMP_A::DETECTED)
+    pub fn detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Lpcomp::Detected)
+    }
+}
+#[doc = "Reset due to wakeup from System OFF mode when wakeup is triggered by entering the Debug Interface mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Dif {
+    #[doc = "0: Not detected"]
+    NotDetected = 0,
+    #[doc = "1: Detected"]
+    Detected = 1,
+}
+impl From<Dif> for bool {
+    #[inline(always)]
+    fn from(variant: Dif) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `DIF` reader - Reset due to wakeup from System OFF mode when wakeup is triggered by entering the Debug Interface mode"]
-pub type DIF_R = crate::BitReader<DIF_A>;
-#[doc = "Reset due to wakeup from System OFF mode when wakeup is triggered by entering the Debug Interface mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIF_A {
-    #[doc = "0: Not detected"]
-    NOT_DETECTED = 0,
-    #[doc = "1: Detected"]
-    DETECTED = 1,
-}
-impl From<DIF_A> for bool {
-    #[inline(always)]
-    fn from(variant: DIF_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl DIF_R {
+pub type DifR = crate::BitReader<Dif>;
+impl DifR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIF_A {
+    pub const fn variant(&self) -> Dif {
         match self.bits {
-            false => DIF_A::NOT_DETECTED,
-            true => DIF_A::DETECTED,
+            false => Dif::NotDetected,
+            true => Dif::Detected,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[doc = "Not detected"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        *self == DIF_A::NOT_DETECTED
+        *self == Dif::NotDetected
     }
-    #[doc = "Checks if the value of the field is `DETECTED`"]
+    #[doc = "Detected"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        *self == DIF_A::DETECTED
+        *self == Dif::Detected
     }
 }
 #[doc = "Field `DIF` writer - Reset due to wakeup from System OFF mode when wakeup is triggered by entering the Debug Interface mode"]
-pub type DIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESETREAS_SPEC, DIF_A, O>;
-impl<'a, const O: u8> DIF_W<'a, O> {
+pub type DifW<'a, REG> = crate::BitWriter<'a, REG, Dif>;
+impl<'a, REG> DifW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not detected"]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(DIF_A::NOT_DETECTED)
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Dif::NotDetected)
     }
     #[doc = "Detected"]
     #[inline(always)]
-    pub fn detected(self) -> &'a mut W {
-        self.variant(DIF_A::DETECTED)
+    pub fn detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Dif::Detected)
+    }
+}
+#[doc = "Reset after wakeup from System OFF mode due to NFC field being detected\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Nfc {
+    #[doc = "0: Not detected"]
+    NotDetected = 0,
+    #[doc = "1: Detected"]
+    Detected = 1,
+}
+impl From<Nfc> for bool {
+    #[inline(always)]
+    fn from(variant: Nfc) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `NFC` reader - Reset after wakeup from System OFF mode due to NFC field being detected"]
-pub type NFC_R = crate::BitReader<NFC_A>;
-#[doc = "Reset after wakeup from System OFF mode due to NFC field being detected\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NFC_A {
-    #[doc = "0: Not detected"]
-    NOT_DETECTED = 0,
-    #[doc = "1: Detected"]
-    DETECTED = 1,
-}
-impl From<NFC_A> for bool {
-    #[inline(always)]
-    fn from(variant: NFC_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl NFC_R {
+pub type NfcR = crate::BitReader<Nfc>;
+impl NfcR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NFC_A {
+    pub const fn variant(&self) -> Nfc {
         match self.bits {
-            false => NFC_A::NOT_DETECTED,
-            true => NFC_A::DETECTED,
+            false => Nfc::NotDetected,
+            true => Nfc::Detected,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[doc = "Not detected"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        *self == NFC_A::NOT_DETECTED
+        *self == Nfc::NotDetected
     }
-    #[doc = "Checks if the value of the field is `DETECTED`"]
+    #[doc = "Detected"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        *self == NFC_A::DETECTED
+        *self == Nfc::Detected
     }
 }
 #[doc = "Field `NFC` writer - Reset after wakeup from System OFF mode due to NFC field being detected"]
-pub type NFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESETREAS_SPEC, NFC_A, O>;
-impl<'a, const O: u8> NFC_W<'a, O> {
+pub type NfcW<'a, REG> = crate::BitWriter<'a, REG, Nfc>;
+impl<'a, REG> NfcW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not detected"]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(NFC_A::NOT_DETECTED)
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Nfc::NotDetected)
     }
     #[doc = "Detected"]
     #[inline(always)]
-    pub fn detected(self) -> &'a mut W {
-        self.variant(NFC_A::DETECTED)
+    pub fn detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Nfc::Detected)
+    }
+}
+#[doc = "Reset from application watchdog timer 1 detected\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Dog1 {
+    #[doc = "0: Not detected"]
+    NotDetected = 0,
+    #[doc = "1: Detected"]
+    Detected = 1,
+}
+impl From<Dog1> for bool {
+    #[inline(always)]
+    fn from(variant: Dog1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `DOG1` reader - Reset from application watchdog timer 1 detected"]
-pub type DOG1_R = crate::BitReader<DOG1_A>;
-#[doc = "Reset from application watchdog timer 1 detected\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DOG1_A {
-    #[doc = "0: Not detected"]
-    NOT_DETECTED = 0,
-    #[doc = "1: Detected"]
-    DETECTED = 1,
-}
-impl From<DOG1_A> for bool {
-    #[inline(always)]
-    fn from(variant: DOG1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl DOG1_R {
+pub type Dog1R = crate::BitReader<Dog1>;
+impl Dog1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DOG1_A {
+    pub const fn variant(&self) -> Dog1 {
         match self.bits {
-            false => DOG1_A::NOT_DETECTED,
-            true => DOG1_A::DETECTED,
+            false => Dog1::NotDetected,
+            true => Dog1::Detected,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[doc = "Not detected"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        *self == DOG1_A::NOT_DETECTED
+        *self == Dog1::NotDetected
     }
-    #[doc = "Checks if the value of the field is `DETECTED`"]
+    #[doc = "Detected"]
     #[inline(always)]
     pub fn is_detected(&self) -> bool {
-        *self == DOG1_A::DETECTED
+        *self == Dog1::Detected
     }
 }
 #[doc = "Field `DOG1` writer - Reset from application watchdog timer 1 detected"]
-pub type DOG1_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESETREAS_SPEC, DOG1_A, O>;
-impl<'a, const O: u8> DOG1_W<'a, O> {
+pub type Dog1W<'a, REG> = crate::BitWriter<'a, REG, Dog1>;
+impl<'a, REG> Dog1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not detected"]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(DOG1_A::NOT_DETECTED)
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Dog1::NotDetected)
     }
     #[doc = "Detected"]
     #[inline(always)]
-    pub fn detected(self) -> &'a mut W {
-        self.variant(DOG1_A::DETECTED)
+    pub fn detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Dog1::Detected)
     }
 }
-#[doc = "Field `VBUS` reader - Reset after wakeup from System OFF mode due to VBUS rising into valid range"]
-pub type VBUS_R = crate::BitReader<VBUS_A>;
 #[doc = "Reset after wakeup from System OFF mode due to VBUS rising into valid range\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VBUS_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Vbus {
     #[doc = "0: Not detected"]
-    NOT_DETECTED = 0,
+    NotDetected = 0,
     #[doc = "1: Detected"]
-    DETECTED = 1,
+    Detected = 1,
 }
-impl From<VBUS_A> for bool {
+impl From<Vbus> for bool {
     #[inline(always)]
-    fn from(variant: VBUS_A) -> Self {
+    fn from(variant: Vbus) -> Self {
         variant as u8 != 0
     }
 }
-impl VBUS_R {
+#[doc = "Field `VBUS` reader - Reset after wakeup from System OFF mode due to VBUS rising into valid range"]
+pub type VbusR = crate::BitReader<Vbus>;
+impl VbusR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VBUS_A {
+    pub const fn variant(&self) -> Vbus {
         match self.bits {
-            false => VBUS_A::NOT_DETECTED,
-            true => VBUS_A::DETECTED,
+            false => Vbus::NotDetected,
+            true => Vbus::Detected,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
-    #[inline(always)]
-    pub fn is_not_detected(&self) -> bool {
-        *self == VBUS_A::NOT_DETECTED
-    }
-    #[doc = "Checks if the value of the field is `DETECTED`"]
-    #[inline(always)]
-    pub fn is_detected(&self) -> bool {
-        *self == VBUS_A::DETECTED
-    }
-}
-#[doc = "Field `VBUS` writer - Reset after wakeup from System OFF mode due to VBUS rising into valid range"]
-pub type VBUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESETREAS_SPEC, VBUS_A, O>;
-impl<'a, const O: u8> VBUS_W<'a, O> {
     #[doc = "Not detected"]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(VBUS_A::NOT_DETECTED)
+    pub fn is_not_detected(&self) -> bool {
+        *self == Vbus::NotDetected
     }
     #[doc = "Detected"]
     #[inline(always)]
-    pub fn detected(self) -> &'a mut W {
-        self.variant(VBUS_A::DETECTED)
+    pub fn is_detected(&self) -> bool {
+        *self == Vbus::Detected
+    }
+}
+#[doc = "Field `VBUS` writer - Reset after wakeup from System OFF mode due to VBUS rising into valid range"]
+pub type VbusW<'a, REG> = crate::BitWriter<'a, REG, Vbus>;
+impl<'a, REG> VbusW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Not detected"]
+    #[inline(always)]
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Vbus::NotDetected)
+    }
+    #[doc = "Detected"]
+    #[inline(always)]
+    pub fn detected(self) -> &'a mut crate::W<REG> {
+        self.variant(Vbus::Detected)
     }
 }
 impl R {
     #[doc = "Bit 0 - Reset from pin reset detected"]
     #[inline(always)]
-    pub fn resetpin(&self) -> RESETPIN_R {
-        RESETPIN_R::new((self.bits & 1) != 0)
+    pub fn resetpin(&self) -> ResetpinR {
+        ResetpinR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Reset from application watchdog timer 0 detected"]
     #[inline(always)]
-    pub fn dog0(&self) -> DOG0_R {
-        DOG0_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn dog0(&self) -> Dog0R {
+        Dog0R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Reset from application CTRL-AP detected"]
     #[inline(always)]
-    pub fn ctrlap(&self) -> CTRLAP_R {
-        CTRLAP_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn ctrlap(&self) -> CtrlapR {
+        CtrlapR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Reset from application soft reset detected"]
     #[inline(always)]
-    pub fn sreq(&self) -> SREQ_R {
-        SREQ_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn sreq(&self) -> SreqR {
+        SreqR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Reset from application CPU lockup detected"]
     #[inline(always)]
-    pub fn lockup(&self) -> LOCKUP_R {
-        LOCKUP_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn lockup(&self) -> LockupR {
+        LockupR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Reset due to wakeup from System OFF mode when wakeup is triggered by DETECT signal from GPIO"]
     #[inline(always)]
-    pub fn off(&self) -> OFF_R {
-        OFF_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn off(&self) -> OffR {
+        OffR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Reset due to wakeup from System OFF mode when wakeup is triggered by ANADETECT signal from LPCOMP"]
     #[inline(always)]
-    pub fn lpcomp(&self) -> LPCOMP_R {
-        LPCOMP_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn lpcomp(&self) -> LpcompR {
+        LpcompR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Reset due to wakeup from System OFF mode when wakeup is triggered by entering the Debug Interface mode"]
     #[inline(always)]
-    pub fn dif(&self) -> DIF_R {
-        DIF_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn dif(&self) -> DifR {
+        DifR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 24 - Reset after wakeup from System OFF mode due to NFC field being detected"]
     #[inline(always)]
-    pub fn nfc(&self) -> NFC_R {
-        NFC_R::new(((self.bits >> 24) & 1) != 0)
+    pub fn nfc(&self) -> NfcR {
+        NfcR::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Reset from application watchdog timer 1 detected"]
     #[inline(always)]
-    pub fn dog1(&self) -> DOG1_R {
-        DOG1_R::new(((self.bits >> 25) & 1) != 0)
+    pub fn dog1(&self) -> Dog1R {
+        Dog1R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Reset after wakeup from System OFF mode due to VBUS rising into valid range"]
     #[inline(always)]
-    pub fn vbus(&self) -> VBUS_R {
-        VBUS_R::new(((self.bits >> 26) & 1) != 0)
+    pub fn vbus(&self) -> VbusR {
+        VbusR::new(((self.bits >> 26) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Reset from pin reset detected"]
     #[inline(always)]
-    pub fn resetpin(&mut self) -> RESETPIN_W<0> {
-        RESETPIN_W::new(self)
+    pub fn resetpin(&mut self) -> ResetpinW<'_, ResetreasSpec> {
+        ResetpinW::new(self, 0)
     }
     #[doc = "Bit 1 - Reset from application watchdog timer 0 detected"]
     #[inline(always)]
-    pub fn dog0(&mut self) -> DOG0_W<1> {
-        DOG0_W::new(self)
+    pub fn dog0(&mut self) -> Dog0W<'_, ResetreasSpec> {
+        Dog0W::new(self, 1)
     }
     #[doc = "Bit 2 - Reset from application CTRL-AP detected"]
     #[inline(always)]
-    pub fn ctrlap(&mut self) -> CTRLAP_W<2> {
-        CTRLAP_W::new(self)
+    pub fn ctrlap(&mut self) -> CtrlapW<'_, ResetreasSpec> {
+        CtrlapW::new(self, 2)
     }
     #[doc = "Bit 3 - Reset from application soft reset detected"]
     #[inline(always)]
-    pub fn sreq(&mut self) -> SREQ_W<3> {
-        SREQ_W::new(self)
+    pub fn sreq(&mut self) -> SreqW<'_, ResetreasSpec> {
+        SreqW::new(self, 3)
     }
     #[doc = "Bit 4 - Reset from application CPU lockup detected"]
     #[inline(always)]
-    pub fn lockup(&mut self) -> LOCKUP_W<4> {
-        LOCKUP_W::new(self)
+    pub fn lockup(&mut self) -> LockupW<'_, ResetreasSpec> {
+        LockupW::new(self, 4)
     }
     #[doc = "Bit 5 - Reset due to wakeup from System OFF mode when wakeup is triggered by DETECT signal from GPIO"]
     #[inline(always)]
-    pub fn off(&mut self) -> OFF_W<5> {
-        OFF_W::new(self)
+    pub fn off(&mut self) -> OffW<'_, ResetreasSpec> {
+        OffW::new(self, 5)
     }
     #[doc = "Bit 6 - Reset due to wakeup from System OFF mode when wakeup is triggered by ANADETECT signal from LPCOMP"]
     #[inline(always)]
-    pub fn lpcomp(&mut self) -> LPCOMP_W<6> {
-        LPCOMP_W::new(self)
+    pub fn lpcomp(&mut self) -> LpcompW<'_, ResetreasSpec> {
+        LpcompW::new(self, 6)
     }
     #[doc = "Bit 7 - Reset due to wakeup from System OFF mode when wakeup is triggered by entering the Debug Interface mode"]
     #[inline(always)]
-    pub fn dif(&mut self) -> DIF_W<7> {
-        DIF_W::new(self)
+    pub fn dif(&mut self) -> DifW<'_, ResetreasSpec> {
+        DifW::new(self, 7)
     }
     #[doc = "Bit 24 - Reset after wakeup from System OFF mode due to NFC field being detected"]
     #[inline(always)]
-    pub fn nfc(&mut self) -> NFC_W<24> {
-        NFC_W::new(self)
+    pub fn nfc(&mut self) -> NfcW<'_, ResetreasSpec> {
+        NfcW::new(self, 24)
     }
     #[doc = "Bit 25 - Reset from application watchdog timer 1 detected"]
     #[inline(always)]
-    pub fn dog1(&mut self) -> DOG1_W<25> {
-        DOG1_W::new(self)
+    pub fn dog1(&mut self) -> Dog1W<'_, ResetreasSpec> {
+        Dog1W::new(self, 25)
     }
     #[doc = "Bit 26 - Reset after wakeup from System OFF mode due to VBUS rising into valid range"]
     #[inline(always)]
-    pub fn vbus(&mut self) -> VBUS_W<26> {
-        VBUS_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn vbus(&mut self) -> VbusW<'_, ResetreasSpec> {
+        VbusW::new(self, 26)
     }
 }
-#[doc = "Reset reason\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [resetreas](index.html) module"]
-pub struct RESETREAS_SPEC;
-impl crate::RegisterSpec for RESETREAS_SPEC {
+#[doc = "Reset reason\n\nYou can [`read`](crate::Reg::read) this register and get [`resetreas::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`resetreas::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ResetreasSpec;
+impl crate::RegisterSpec for ResetreasSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [resetreas::R](R) reader structure"]
-impl crate::Readable for RESETREAS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [resetreas::W](W) writer structure"]
-impl crate::Writable for RESETREAS_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`resetreas::R`](R) reader structure"]
+impl crate::Readable for ResetreasSpec {}
+#[doc = "`write(|w| ..)` method takes [`resetreas::W`](W) writer structure"]
+impl crate::Writable for ResetreasSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets RESETREAS to value 0"]
-impl crate::Resettable for RESETREAS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for ResetreasSpec {}

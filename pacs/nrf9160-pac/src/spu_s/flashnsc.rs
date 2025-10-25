@@ -1,16 +1,29 @@
-#[doc = r"Register block"]
 #[repr(C)]
-pub struct FLASHNSC {
-    #[doc = "0x00 - Description cluster: Define which flash region can contain the non-secure callable (NSC) region n"]
-    pub region: REGION,
-    #[doc = "0x04 - Description cluster: Define the size of the non-secure callable (NSC) region n"]
-    pub size: SIZE,
+#[doc = "Unspecified"]
+#[doc(alias = "FLASHNSC")]
+pub struct Flashnsc {
+    region: Region,
+    size: Size,
 }
-#[doc = "REGION (rw) register accessor: an alias for `Reg<REGION_SPEC>`"]
-pub type REGION = crate::Reg<region::REGION_SPEC>;
+impl Flashnsc {
+    #[doc = "0x00 - Description cluster: Define which flash region can contain the non-secure callable (NSC) region n"]
+    #[inline(always)]
+    pub const fn region(&self) -> &Region {
+        &self.region
+    }
+    #[doc = "0x04 - Description cluster: Define the size of the non-secure callable (NSC) region n"]
+    #[inline(always)]
+    pub const fn size(&self) -> &Size {
+        &self.size
+    }
+}
+#[doc = "REGION (rw) register accessor: Description cluster: Define which flash region can contain the non-secure callable (NSC) region n\n\nYou can [`read`](crate::Reg::read) this register and get [`region::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`region::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@region`] module"]
+#[doc(alias = "REGION")]
+pub type Region = crate::Reg<region::RegionSpec>;
 #[doc = "Description cluster: Define which flash region can contain the non-secure callable (NSC) region n"]
 pub mod region;
-#[doc = "SIZE (rw) register accessor: an alias for `Reg<SIZE_SPEC>`"]
-pub type SIZE = crate::Reg<size::SIZE_SPEC>;
+#[doc = "SIZE (rw) register accessor: Description cluster: Define the size of the non-secure callable (NSC) region n\n\nYou can [`read`](crate::Reg::read) this register and get [`size::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`size::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@size`] module"]
+#[doc(alias = "SIZE")]
+pub type Size = crate::Reg<size::SizeSpec>;
 #[doc = "Description cluster: Define the size of the non-secure callable (NSC) region n"]
 pub mod size;

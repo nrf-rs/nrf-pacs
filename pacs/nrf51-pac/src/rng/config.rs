@@ -1,126 +1,84 @@
 #[doc = "Register `CONFIG` reader"]
-pub struct R(crate::R<CONFIG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CONFIG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CONFIG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ConfigSpec>;
 #[doc = "Register `CONFIG` writer"]
-pub struct W(crate::W<CONFIG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CONFIG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CONFIG_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `DERCEN` reader - Digital error correction enable."]
-pub type DERCEN_R = crate::BitReader<DERCEN_A>;
+pub type W = crate::W<ConfigSpec>;
 #[doc = "Digital error correction enable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DERCEN_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Dercen {
     #[doc = "0: Digital error correction disabled."]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Digital error correction enabled."]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<DERCEN_A> for bool {
+impl From<Dercen> for bool {
     #[inline(always)]
-    fn from(variant: DERCEN_A) -> Self {
+    fn from(variant: Dercen) -> Self {
         variant as u8 != 0
     }
 }
-impl DERCEN_R {
+#[doc = "Field `DERCEN` reader - Digital error correction enable."]
+pub type DercenR = crate::BitReader<Dercen>;
+impl DercenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DERCEN_A {
+    pub const fn variant(&self) -> Dercen {
         match self.bits {
-            false => DERCEN_A::DISABLED,
-            true => DERCEN_A::ENABLED,
+            false => Dercen::Disabled,
+            true => Dercen::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == DERCEN_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == DERCEN_A::ENABLED
-    }
-}
-#[doc = "Field `DERCEN` writer - Digital error correction enable."]
-pub type DERCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, DERCEN_A, O>;
-impl<'a, const O: u8> DERCEN_W<'a, O> {
     #[doc = "Digital error correction disabled."]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(DERCEN_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Dercen::Disabled
     }
     #[doc = "Digital error correction enabled."]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(DERCEN_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Dercen::Enabled
+    }
+}
+#[doc = "Field `DERCEN` writer - Digital error correction enable."]
+pub type DercenW<'a, REG> = crate::BitWriter<'a, REG, Dercen>;
+impl<'a, REG> DercenW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Digital error correction disabled."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Dercen::Disabled)
+    }
+    #[doc = "Digital error correction enabled."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Dercen::Enabled)
     }
 }
 impl R {
     #[doc = "Bit 0 - Digital error correction enable."]
     #[inline(always)]
-    pub fn dercen(&self) -> DERCEN_R {
-        DERCEN_R::new((self.bits & 1) != 0)
+    pub fn dercen(&self) -> DercenR {
+        DercenR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Digital error correction enable."]
     #[inline(always)]
-    pub fn dercen(&mut self) -> DERCEN_W<0> {
-        DERCEN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn dercen(&mut self) -> DercenW<'_, ConfigSpec> {
+        DercenW::new(self, 0)
     }
 }
-#[doc = "Configuration register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config](index.html) module"]
-pub struct CONFIG_SPEC;
-impl crate::RegisterSpec for CONFIG_SPEC {
+#[doc = "Configuration register.\n\nYou can [`read`](crate::Reg::read) this register and get [`config::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`config::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ConfigSpec;
+impl crate::RegisterSpec for ConfigSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [config::R](R) reader structure"]
-impl crate::Readable for CONFIG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [config::W](W) writer structure"]
-impl crate::Writable for CONFIG_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`config::R`](R) reader structure"]
+impl crate::Readable for ConfigSpec {}
+#[doc = "`write(|w| ..)` method takes [`config::W`](W) writer structure"]
+impl crate::Writable for ConfigSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CONFIG to value 0"]
-impl crate::Resettable for CONFIG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for ConfigSpec {}

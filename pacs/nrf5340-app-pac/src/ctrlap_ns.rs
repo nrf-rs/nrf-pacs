@@ -1,42 +1,65 @@
-#[doc = r"Register block"]
 #[repr(C)]
+#[doc = "Register block"]
 pub struct RegisterBlock {
     _reserved0: [u8; 0x0400],
-    #[doc = "0x400..0x488 - Unspecified"]
-    pub mailbox: MAILBOX,
+    mailbox: Mailbox,
     _reserved1: [u8; 0x78],
-    #[doc = "0x500..0x508 - Unspecified"]
-    pub eraseprotect: ERASEPROTECT,
+    eraseprotect: Eraseprotect,
     _reserved2: [u8; 0x38],
-    #[doc = "0x540..0x548 - Unspecified"]
-    pub approtect: APPROTECT,
-    #[doc = "0x548..0x550 - Unspecified"]
-    pub secureapprotect: SECUREAPPROTECT,
+    approtect: Approtect,
+    secureapprotect: Secureapprotect,
     _reserved4: [u8; 0xb0],
+    status: Status,
+}
+impl RegisterBlock {
+    #[doc = "0x400..0x488 - Unspecified"]
+    #[inline(always)]
+    pub const fn mailbox(&self) -> &Mailbox {
+        &self.mailbox
+    }
+    #[doc = "0x500..0x508 - Unspecified"]
+    #[inline(always)]
+    pub const fn eraseprotect(&self) -> &Eraseprotect {
+        &self.eraseprotect
+    }
+    #[doc = "0x540..0x548 - Unspecified"]
+    #[inline(always)]
+    pub const fn approtect(&self) -> &Approtect {
+        &self.approtect
+    }
+    #[doc = "0x548..0x550 - Unspecified"]
+    #[inline(always)]
+    pub const fn secureapprotect(&self) -> &Secureapprotect {
+        &self.secureapprotect
+    }
     #[doc = "0x600 - Status bits for CTRL-AP peripheral."]
-    pub status: STATUS,
+    #[inline(always)]
+    pub const fn status(&self) -> &Status {
+        &self.status
+    }
 }
 #[doc = "Unspecified"]
-pub use mailbox::MAILBOX;
+pub use self::mailbox::Mailbox;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod mailbox;
 #[doc = "Unspecified"]
-pub use eraseprotect::ERASEPROTECT;
+pub use self::eraseprotect::Eraseprotect;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod eraseprotect;
 #[doc = "Unspecified"]
-pub use approtect::APPROTECT;
+pub use self::approtect::Approtect;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod approtect;
 #[doc = "Unspecified"]
-pub use secureapprotect::SECUREAPPROTECT;
+pub use self::secureapprotect::Secureapprotect;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod secureapprotect;
-#[doc = "STATUS (r) register accessor: an alias for `Reg<STATUS_SPEC>`"]
-pub type STATUS = crate::Reg<status::STATUS_SPEC>;
+#[doc = "STATUS (r) register accessor: Status bits for CTRL-AP peripheral.\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@status`] module"]
+#[doc(alias = "STATUS")]
+pub type Status = crate::Reg<status::StatusSpec>;
 #[doc = "Status bits for CTRL-AP peripheral."]
 pub mod status;

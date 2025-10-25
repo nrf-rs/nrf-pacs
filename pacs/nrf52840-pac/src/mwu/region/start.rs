@@ -1,80 +1,35 @@
 #[doc = "Register `START` reader"]
-pub struct R(crate::R<START_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<START_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<START_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<START_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<StartSpec>;
 #[doc = "Register `START` writer"]
-pub struct W(crate::W<START_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<START_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<START_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<START_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<StartSpec>;
 #[doc = "Field `START` reader - Start address for region"]
-pub type START_R = crate::FieldReader<u32, u32>;
+pub type StartR = crate::FieldReader<u32>;
 #[doc = "Field `START` writer - Start address for region"]
-pub type START_W<'a, const O: u8> = crate::FieldWriter<'a, u32, START_SPEC, u32, u32, 32, O>;
+pub type StartW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Start address for region"]
     #[inline(always)]
-    pub fn start(&self) -> START_R {
-        START_R::new(self.bits)
+    pub fn start(&self) -> StartR {
+        StartR::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Start address for region"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W<0> {
-        START_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn start(&mut self) -> StartW<'_, StartSpec> {
+        StartW::new(self, 0)
     }
 }
-#[doc = "Description cluster\\[n\\]: Start address for region n\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [start](index.html) module"]
-pub struct START_SPEC;
-impl crate::RegisterSpec for START_SPEC {
+#[doc = "Description cluster: Start address for region n\n\nYou can [`read`](crate::Reg::read) this register and get [`start::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`start::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct StartSpec;
+impl crate::RegisterSpec for StartSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [start::R](R) reader structure"]
-impl crate::Readable for START_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [start::W](W) writer structure"]
-impl crate::Writable for START_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`start::R`](R) reader structure"]
+impl crate::Readable for StartSpec {}
+#[doc = "`write(|w| ..)` method takes [`start::W`](W) writer structure"]
+impl crate::Writable for StartSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets START to value 0"]
-impl crate::Resettable for START_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for StartSpec {}

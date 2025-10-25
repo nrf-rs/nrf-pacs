@@ -1,141 +1,104 @@
 #[doc = "Register `MODE` reader"]
-pub struct R(crate::R<MODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ModeSpec>;
 #[doc = "Register `MODE` writer"]
-pub struct W(crate::W<MODE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MODE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MODE_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `MODE` reader - Timer mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type W = crate::W<ModeSpec>;
 #[doc = "Timer mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum MODE_A {
+pub enum Mode {
     #[doc = "0: Select Timer mode"]
-    TIMER = 0,
+    Timer = 0,
     #[doc = "1: Deprecated enumerator - Select Counter mode"]
-    COUNTER = 1,
+    Counter = 1,
     #[doc = "2: Select Low Power Counter mode"]
-    LOW_POWER_COUNTER = 2,
+    LowPowerCounter = 2,
 }
-impl From<MODE_A> for u8 {
+impl From<Mode> for u8 {
     #[inline(always)]
-    fn from(variant: MODE_A) -> Self {
+    fn from(variant: Mode) -> Self {
         variant as _
     }
 }
-impl MODE_R {
+impl crate::FieldSpec for Mode {
+    type Ux = u8;
+}
+impl crate::IsEnum for Mode {}
+#[doc = "Field `MODE` reader - Timer mode"]
+pub type ModeR = crate::FieldReader<Mode>;
+impl ModeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MODE_A> {
+    pub const fn variant(&self) -> Option<Mode> {
         match self.bits {
-            0 => Some(MODE_A::TIMER),
-            1 => Some(MODE_A::COUNTER),
-            2 => Some(MODE_A::LOW_POWER_COUNTER),
+            0 => Some(Mode::Timer),
+            1 => Some(Mode::Counter),
+            2 => Some(Mode::LowPowerCounter),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `TIMER`"]
-    #[inline(always)]
-    pub fn is_timer(&self) -> bool {
-        *self == MODE_A::TIMER
-    }
-    #[doc = "Checks if the value of the field is `COUNTER`"]
-    #[inline(always)]
-    pub fn is_counter(&self) -> bool {
-        *self == MODE_A::COUNTER
-    }
-    #[doc = "Checks if the value of the field is `LOW_POWER_COUNTER`"]
-    #[inline(always)]
-    pub fn is_low_power_counter(&self) -> bool {
-        *self == MODE_A::LOW_POWER_COUNTER
-    }
-}
-#[doc = "Field `MODE` writer - Timer mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODE_SPEC, u8, MODE_A, 2, O>;
-impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Select Timer mode"]
     #[inline(always)]
-    pub fn timer(self) -> &'a mut W {
-        self.variant(MODE_A::TIMER)
+    pub fn is_timer(&self) -> bool {
+        *self == Mode::Timer
     }
     #[doc = "Deprecated enumerator - Select Counter mode"]
     #[inline(always)]
-    pub fn counter(self) -> &'a mut W {
-        self.variant(MODE_A::COUNTER)
+    pub fn is_counter(&self) -> bool {
+        *self == Mode::Counter
     }
     #[doc = "Select Low Power Counter mode"]
     #[inline(always)]
-    pub fn low_power_counter(self) -> &'a mut W {
-        self.variant(MODE_A::LOW_POWER_COUNTER)
+    pub fn is_low_power_counter(&self) -> bool {
+        *self == Mode::LowPowerCounter
+    }
+}
+#[doc = "Field `MODE` writer - Timer mode"]
+pub type ModeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Mode>;
+impl<'a, REG> ModeW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Select Timer mode"]
+    #[inline(always)]
+    pub fn timer(self) -> &'a mut crate::W<REG> {
+        self.variant(Mode::Timer)
+    }
+    #[doc = "Deprecated enumerator - Select Counter mode"]
+    #[inline(always)]
+    pub fn counter(self) -> &'a mut crate::W<REG> {
+        self.variant(Mode::Counter)
+    }
+    #[doc = "Select Low Power Counter mode"]
+    #[inline(always)]
+    pub fn low_power_counter(self) -> &'a mut crate::W<REG> {
+        self.variant(Mode::LowPowerCounter)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Timer mode"]
     #[inline(always)]
-    pub fn mode(&self) -> MODE_R {
-        MODE_R::new((self.bits & 3) as u8)
+    pub fn mode(&self) -> ModeR {
+        ModeR::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Timer mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W<0> {
-        MODE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn mode(&mut self) -> ModeW<'_, ModeSpec> {
+        ModeW::new(self, 0)
     }
 }
-#[doc = "Timer mode selection\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mode](index.html) module"]
-pub struct MODE_SPEC;
-impl crate::RegisterSpec for MODE_SPEC {
+#[doc = "Timer mode selection\n\nYou can [`read`](crate::Reg::read) this register and get [`mode::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mode::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ModeSpec;
+impl crate::RegisterSpec for ModeSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mode::R](R) reader structure"]
-impl crate::Readable for MODE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mode::W](W) writer structure"]
-impl crate::Writable for MODE_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`mode::R`](R) reader structure"]
+impl crate::Readable for ModeSpec {}
+#[doc = "`write(|w| ..)` method takes [`mode::W`](W) writer structure"]
+impl crate::Writable for ModeSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets MODE to value 0"]
-impl crate::Resettable for MODE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for ModeSpec {}

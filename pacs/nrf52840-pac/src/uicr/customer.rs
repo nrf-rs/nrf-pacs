@@ -1,81 +1,37 @@
 #[doc = "Register `CUSTOMER[%s]` reader"]
-pub struct R(crate::R<CUSTOMER_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CUSTOMER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CUSTOMER_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CUSTOMER_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CustomerSpec>;
 #[doc = "Register `CUSTOMER[%s]` writer"]
-pub struct W(crate::W<CUSTOMER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CUSTOMER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CUSTOMER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CUSTOMER_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CustomerSpec>;
 #[doc = "Field `CUSTOMER` reader - Reserved for customer"]
-pub type CUSTOMER_R = crate::FieldReader<u32, u32>;
+pub type CustomerR = crate::FieldReader<u32>;
 #[doc = "Field `CUSTOMER` writer - Reserved for customer"]
-pub type CUSTOMER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CUSTOMER_SPEC, u32, u32, 32, O>;
+pub type CustomerW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Reserved for customer"]
     #[inline(always)]
-    pub fn customer(&self) -> CUSTOMER_R {
-        CUSTOMER_R::new(self.bits)
+    pub fn customer(&self) -> CustomerR {
+        CustomerR::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Reserved for customer"]
     #[inline(always)]
-    pub fn customer(&mut self) -> CUSTOMER_W<0> {
-        CUSTOMER_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn customer(&mut self) -> CustomerW<'_, CustomerSpec> {
+        CustomerW::new(self, 0)
     }
 }
-#[doc = "Description collection\\[n\\]: Reserved for customer\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [customer](index.html) module"]
-pub struct CUSTOMER_SPEC;
-impl crate::RegisterSpec for CUSTOMER_SPEC {
+#[doc = "Description collection: Reserved for customer\n\nYou can [`read`](crate::Reg::read) this register and get [`customer::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`customer::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CustomerSpec;
+impl crate::RegisterSpec for CustomerSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [customer::R](R) reader structure"]
-impl crate::Readable for CUSTOMER_SPEC {
-    type Reader = R;
+#[doc = "`read()` method returns [`customer::R`](R) reader structure"]
+impl crate::Readable for CustomerSpec {}
+#[doc = "`write(|w| ..)` method takes [`customer::W`](W) writer structure"]
+impl crate::Writable for CustomerSpec {
+    type Safety = crate::Unsafe;
 }
-#[doc = "`write(|w| ..)` method takes [customer::W](W) writer structure"]
-impl crate::Writable for CUSTOMER_SPEC {
-    type Writer = W;
-}
-#[doc = "`reset()` method sets CUSTOMER[%s]
-to value 0xffff_ffff"]
-impl crate::Resettable for CUSTOMER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+#[doc = "`reset()` method sets CUSTOMER[%s] to value 0xffff_ffff"]
+impl crate::Resettable for CustomerSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

@@ -1,115 +1,73 @@
 #[doc = "Register `CLEARPATTERN` reader"]
-pub struct R(crate::R<CLEARPATTERN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CLEARPATTERN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CLEARPATTERN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CLEARPATTERN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ClearpatternSpec>;
 #[doc = "Register `CLEARPATTERN` writer"]
-pub struct W(crate::W<CLEARPATTERN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CLEARPATTERN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CLEARPATTERN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CLEARPATTERN_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `CLEARPATTERN` reader - Clears GPIO pattern array for antenna control"]
-pub type CLEARPATTERN_R = crate::BitReader<CLEARPATTERN_A>;
+pub type W = crate::W<ClearpatternSpec>;
 #[doc = "Clears GPIO pattern array for antenna control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLEARPATTERN_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Clearpattern {
     #[doc = "1: Clear the GPIO pattern"]
-    CLEAR = 1,
+    Clear = 1,
 }
-impl From<CLEARPATTERN_A> for bool {
+impl From<Clearpattern> for bool {
     #[inline(always)]
-    fn from(variant: CLEARPATTERN_A) -> Self {
+    fn from(variant: Clearpattern) -> Self {
         variant as u8 != 0
     }
 }
-impl CLEARPATTERN_R {
+#[doc = "Field `CLEARPATTERN` reader - Clears GPIO pattern array for antenna control"]
+pub type ClearpatternR = crate::BitReader<Clearpattern>;
+impl ClearpatternR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLEARPATTERN_A> {
+    pub const fn variant(&self) -> Option<Clearpattern> {
         match self.bits {
-            true => Some(CLEARPATTERN_A::CLEAR),
+            true => Some(Clearpattern::Clear),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[doc = "Clear the GPIO pattern"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == CLEARPATTERN_A::CLEAR
+        *self == Clearpattern::Clear
     }
 }
 #[doc = "Field `CLEARPATTERN` writer - Clears GPIO pattern array for antenna control"]
-pub type CLEARPATTERN_W<'a, const O: u8> =
-    crate::BitWriter1C<'a, u32, CLEARPATTERN_SPEC, CLEARPATTERN_A, O>;
-impl<'a, const O: u8> CLEARPATTERN_W<'a, O> {
+pub type ClearpatternW<'a, REG> = crate::BitWriter1C<'a, REG, Clearpattern>;
+impl<'a, REG> ClearpatternW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Clear the GPIO pattern"]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CLEARPATTERN_A::CLEAR)
+    pub fn clear(self) -> &'a mut crate::W<REG> {
+        self.variant(Clearpattern::Clear)
     }
 }
 impl R {
     #[doc = "Bit 0 - Clears GPIO pattern array for antenna control"]
     #[inline(always)]
-    pub fn clearpattern(&self) -> CLEARPATTERN_R {
-        CLEARPATTERN_R::new((self.bits & 1) != 0)
+    pub fn clearpattern(&self) -> ClearpatternR {
+        ClearpatternR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Clears GPIO pattern array for antenna control"]
     #[inline(always)]
-    pub fn clearpattern(&mut self) -> CLEARPATTERN_W<0> {
-        CLEARPATTERN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn clearpattern(&mut self) -> ClearpatternW<'_, ClearpatternSpec> {
+        ClearpatternW::new(self, 0)
     }
 }
-#[doc = "Clear the GPIO pattern array for antenna control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clearpattern](index.html) module"]
-pub struct CLEARPATTERN_SPEC;
-impl crate::RegisterSpec for CLEARPATTERN_SPEC {
+#[doc = "Clear the GPIO pattern array for antenna control\n\nYou can [`read`](crate::Reg::read) this register and get [`clearpattern::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clearpattern::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ClearpatternSpec;
+impl crate::RegisterSpec for ClearpatternSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clearpattern::R](R) reader structure"]
-impl crate::Readable for CLEARPATTERN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [clearpattern::W](W) writer structure"]
-impl crate::Writable for CLEARPATTERN_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`clearpattern::R`](R) reader structure"]
+impl crate::Readable for ClearpatternSpec {}
+#[doc = "`write(|w| ..)` method takes [`clearpattern::W`](W) writer structure"]
+impl crate::Writable for ClearpatternSpec {
+    type Safety = crate::Unsafe;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x01;
 }
 #[doc = "`reset()` method sets CLEARPATTERN to value 0"]
-impl crate::Resettable for CLEARPATTERN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for ClearpatternSpec {}

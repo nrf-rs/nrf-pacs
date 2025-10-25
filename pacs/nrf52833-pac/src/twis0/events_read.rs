@@ -1,127 +1,84 @@
 #[doc = "Register `EVENTS_READ` reader"]
-pub struct R(crate::R<EVENTS_READ_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_READ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_READ_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_READ_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsReadSpec>;
 #[doc = "Register `EVENTS_READ` writer"]
-pub struct W(crate::W<EVENTS_READ_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_READ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVENTS_READ_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVENTS_READ_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `EVENTS_READ` reader - Read command received"]
-pub type EVENTS_READ_R = crate::BitReader<EVENTS_READ_A>;
+pub type W = crate::W<EventsReadSpec>;
 #[doc = "Read command received\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVENTS_READ_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsRead {
     #[doc = "0: Event not generated"]
-    NOT_GENERATED = 0,
+    NotGenerated = 0,
     #[doc = "1: Event generated"]
-    GENERATED = 1,
+    Generated = 1,
 }
-impl From<EVENTS_READ_A> for bool {
+impl From<EventsRead> for bool {
     #[inline(always)]
-    fn from(variant: EVENTS_READ_A) -> Self {
+    fn from(variant: EventsRead) -> Self {
         variant as u8 != 0
     }
 }
-impl EVENTS_READ_R {
+#[doc = "Field `EVENTS_READ` reader - Read command received"]
+pub type EventsReadR = crate::BitReader<EventsRead>;
+impl EventsReadR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVENTS_READ_A {
+    pub const fn variant(&self) -> EventsRead {
         match self.bits {
-            false => EVENTS_READ_A::NOT_GENERATED,
-            true => EVENTS_READ_A::GENERATED,
+            false => EventsRead::NotGenerated,
+            true => EventsRead::Generated,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
-    #[inline(always)]
-    pub fn is_not_generated(&self) -> bool {
-        *self == EVENTS_READ_A::NOT_GENERATED
-    }
-    #[doc = "Checks if the value of the field is `GENERATED`"]
-    #[inline(always)]
-    pub fn is_generated(&self) -> bool {
-        *self == EVENTS_READ_A::GENERATED
-    }
-}
-#[doc = "Field `EVENTS_READ` writer - Read command received"]
-pub type EVENTS_READ_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_READ_SPEC, EVENTS_READ_A, O>;
-impl<'a, const O: u8> EVENTS_READ_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_READ_A::NOT_GENERATED)
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsRead::NotGenerated
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut W {
-        self.variant(EVENTS_READ_A::GENERATED)
+    pub fn is_generated(&self) -> bool {
+        *self == EventsRead::Generated
+    }
+}
+#[doc = "Field `EVENTS_READ` writer - Read command received"]
+pub type EventsReadW<'a, REG> = crate::BitWriter<'a, REG, EventsRead>;
+impl<'a, REG> EventsReadW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsRead::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsRead::Generated)
     }
 }
 impl R {
     #[doc = "Bit 0 - Read command received"]
     #[inline(always)]
-    pub fn events_read(&self) -> EVENTS_READ_R {
-        EVENTS_READ_R::new((self.bits & 1) != 0)
+    pub fn events_read(&self) -> EventsReadR {
+        EventsReadR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Read command received"]
     #[inline(always)]
-    pub fn events_read(&mut self) -> EVENTS_READ_W<0> {
-        EVENTS_READ_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_read(&mut self) -> EventsReadW<'_, EventsReadSpec> {
+        EventsReadW::new(self, 0)
     }
 }
-#[doc = "Read command received\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_read](index.html) module"]
-pub struct EVENTS_READ_SPEC;
-impl crate::RegisterSpec for EVENTS_READ_SPEC {
+#[doc = "Read command received\n\nYou can [`read`](crate::Reg::read) this register and get [`events_read::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_read::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsReadSpec;
+impl crate::RegisterSpec for EventsReadSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_read::R](R) reader structure"]
-impl crate::Readable for EVENTS_READ_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_read::W](W) writer structure"]
-impl crate::Writable for EVENTS_READ_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_read::R`](R) reader structure"]
+impl crate::Readable for EventsReadSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_read::W`](W) writer structure"]
+impl crate::Writable for EventsReadSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_READ to value 0"]
-impl crate::Resettable for EVENTS_READ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsReadSpec {}

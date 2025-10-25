@@ -8,7 +8,9 @@
   <version>1</version>
   <description>nRF52810 reference description for radio MCU with ARM 32-bit Cortex-M4 Microcontroller </description>
   <licenseText>
-Copyright (c) 2010 - 2018, Nordic Semiconductor ASA All rights reserved.\n
+Copyright (c) 2010 - 2025, Nordic Semiconductor ASA All rights reserved.\n
+\n
+SPDX-License-Identifier: BSD-3-Clause\n
 \n
 Redistribution and use in source and binary forms, with or without\n
 modification, are permitted provided that the following conditions are met:\n
@@ -50,7 +52,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
     <nvicPrioBits>3</nvicPrioBits>
     <vendorSystickConfig>0</vendorSystickConfig>
   </cpu>
-  <headerSystemFilename>system_nrf52810</headerSystemFilename>
+  <headerSystemFilename>system_nrf52</headerSystemFilename>
   <headerDefinitionsPrefix>NRF_</headerDefinitionsPrefix>
   <vendorExtensions>
     <ExampleStackSize>2048</ExampleStackSize>
@@ -101,7 +103,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>2</dim>
+          <dim>0x2</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>DEVICEID[%s]</name>
           <description>Description collection: Device identifier</description>
@@ -118,7 +120,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>4</dim>
+          <dim>0x4</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>ER[%s]</name>
           <description>Description collection: Encryption root, word n</description>
@@ -135,7 +137,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>4</dim>
+          <dim>0x4</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>IR[%s]</name>
           <description>Description collection: Identity root, word n</description>
@@ -179,7 +181,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>2</dim>
+          <dim>0x2</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>DEVICEADDR[%s]</name>
           <description>Description collection: Device address n</description>
@@ -218,6 +220,16 @@ POSSIBILITY OF SUCH DAMAGE.\n
                     <name>N52810</name>
                     <description>nRF52810</description>
                     <value>0x52810</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>N52811</name>
+                    <description>nRF52811</description>
+                    <value>0x52811</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>N52832</name>
+                    <description>nRF52832</description>
+                    <value>0x52832</value>
                   </enumeratedValue>
                   <enumeratedValue>
                     <name>Unspecified</name>
@@ -312,6 +324,11 @@ POSSIBILITY OF SUCH DAMAGE.\n
                     <name>QC</name>
                     <description>QCxx - 32-pin QFN</description>
                     <value>0x2003</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>CA</name>
+                    <description>CAxx - WLCSP</description>
+                    <value>0x2004</value>
                   </enumeratedValue>
                   <enumeratedValue>
                     <name>Unspecified</name>
@@ -654,7 +671,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
       <size>0x20</size>
       <registers>
         <register>
-          <dim>15</dim>
+          <dim>0xD</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>NRFFW[%s]</name>
           <description>Description collection: Reserved for Nordic firmware design</description>
@@ -671,7 +688,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>12</dim>
+          <dim>0xC</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>NRFHW[%s]</name>
           <description>Description collection: Reserved for Nordic hardware design</description>
@@ -688,7 +705,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>32</dim>
+          <dim>0x20</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>CUSTOMER[%s]</name>
           <description>Description collection: Reserved for customer</description>
@@ -705,7 +722,24 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>2</dim>
+          <dim>0x8</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>NRFMDK[%s]</name>
+          <description>Description collection: Reserved for Nordic MDK</description>
+          <addressOffset>0x100</addressOffset>
+          <access>read-write</access>
+          <resetValue>0xFFFFFFFF</resetValue>
+          <fields>
+            <field>
+              <name>NRFMDK</name>
+              <description>Reserved for Nordic MDK</description>
+              <lsb>0</lsb>
+              <msb>31</msb>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>0x2</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>PSELRESET[%s]</name>
           <description>Description collection: Mapping of the nRESET function (see POWER chapter for details)</description>
@@ -754,8 +788,13 @@ POSSIBILITY OF SUCH DAMAGE.\n
               <enumeratedValues>
                 <enumeratedValue>
                   <name>Disabled</name>
-                  <description>Disable</description>
+                  <description>Hardware disable of access port protection for devices where access port protection is controlled by hardware</description>
                   <value>0xFF</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HwDisabled</name>
+                  <description>Hardware disable of access port protection for devices where access port protection is controlled by hardware and software</description>
+                  <value>0x5A</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>Enabled</name>
@@ -1690,6 +1729,66 @@ POSSIBILITY OF SUCH DAMAGE.\n
       </registers>
     </peripheral>
     <peripheral>
+      <name>APPROTECT</name>
+      <description>Only for emulation on devices that support hardened AP-PROTECT.</description>
+      <baseAddress>0x40000000</baseAddress>
+      <alternatePeripheral>BPROT</alternatePeripheral>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <groupName>APPROTECT</groupName>
+      <size>0x20</size>
+      <registers>
+        <register>
+          <name>FORCEPROTECT</name>
+          <description>Software force enable APPROTECT mechanism until next reset.</description>
+          <addressOffset>0x550</addressOffset>
+          <access>read-writeOnce</access>
+          <resetValue>0xFFFFFFFF</resetValue>
+          <fields>
+            <field>
+              <name>FORCEPROTECT</name>
+              <description>Write 0x0 to force enable APPROTECT mechanism</description>
+              <lsb>0</lsb>
+              <msb>7</msb>
+              <enumeratedValues>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>Force</name>
+                  <description>Software force enable APPROTECT mechanism</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DISABLE</name>
+          <description>Software disable APPROTECT mechanism</description>
+          <addressOffset>0x558</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DISABLE</name>
+              <description>Software disable APPROTECT mechanism</description>
+              <lsb>0</lsb>
+              <msb>7</msb>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SwDisable</name>
+                  <description>Software disable APPROTECT mechanism</description>
+                  <value>0x5A</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
       <name>CLOCK</name>
       <description>Clock control</description>
       <baseAddress>0x40000000</baseAddress>
@@ -2467,13 +2566,13 @@ POSSIBILITY OF SUCH DAMAGE.\n
       <registers>
         <register>
           <name>TASKS_CONSTLAT</name>
-          <description>Enable constant latency mode</description>
+          <description>Enable Constant Latency mode</description>
           <addressOffset>0x078</addressOffset>
           <access>write-only</access>
           <fields>
             <field>
               <name>TASKS_CONSTLAT</name>
-              <description>Enable constant latency mode</description>
+              <description>Enable Constant Latency mode</description>
               <lsb>0</lsb>
               <msb>0</msb>
               <enumeratedValues>
@@ -2488,13 +2587,13 @@ POSSIBILITY OF SUCH DAMAGE.\n
         </register>
         <register>
           <name>TASKS_LOWPWR</name>
-          <description>Enable low power mode (variable latency)</description>
+          <description>Enable Low-power mode (variable latency)</description>
           <addressOffset>0x07C</addressOffset>
           <access>write-only</access>
           <fields>
             <field>
               <name>TASKS_LOWPWR</name>
-              <description>Enable low power mode (variable latency)</description>
+              <description>Enable Low-power mode (variable latency)</description>
               <lsb>0</lsb>
               <msb>0</msb>
               <enumeratedValues>
@@ -9130,7 +9229,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>32</dim>
+          <dim>0x20</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>PIN_CNF[%s]</name>
           <description>Description collection: Configuration of GPIO pins</description>
@@ -11326,7 +11425,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>8</dim>
+          <dim>0x8</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>DAB[%s]</name>
           <description>Description collection: Device address base segment n</description>
@@ -11342,7 +11441,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>8</dim>
+          <dim>0x8</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>DAP[%s]</name>
           <description>Description collection: Device address prefix n</description>
@@ -17855,7 +17954,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </register>
         </cluster>
         <register>
-          <dim>2</dim>
+          <dim>0x2</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>ADDRESS[%s]</name>
           <description>Description collection: TWI slave address n</description>
@@ -20142,7 +20241,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
       <size>0x20</size>
       <registers>
         <register>
-          <dim>8</dim>
+          <dim>0x8</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>TASKS_OUT[%s]</name>
           <description>Description collection: Task for writing to pin specified in CONFIG[n].PSEL. Action on pin is configured in CONFIG[n].POLARITY.</description>
@@ -20165,7 +20264,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>8</dim>
+          <dim>0x8</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>TASKS_SET[%s]</name>
           <description>Description collection: Task for writing to pin specified in CONFIG[n].PSEL. Action on pin is to set it high.</description>
@@ -20188,7 +20287,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>8</dim>
+          <dim>0x8</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>TASKS_CLR[%s]</name>
           <description>Description collection: Task for writing to pin specified in CONFIG[n].PSEL. Action on pin is to set it low.</description>
@@ -20211,7 +20310,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>8</dim>
+          <dim>0x8</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>EVENTS_IN[%s]</name>
           <description>Description collection: Event generated from pin specified in CONFIG[n].PSEL</description>
@@ -20767,7 +20866,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>8</dim>
+          <dim>0x8</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>CONFIG[%s]</name>
           <description>Description collection: Configuration for OUT[n], SET[n] and CLR[n] tasks and IN[n] event</description>
@@ -23503,7 +23602,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>4</dim>
+          <dim>0x6</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>TASKS_CAPTURE[%s]</name>
           <description>Description collection: Capture Timer value to CC[n] register</description>
@@ -23526,7 +23625,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>4</dim>
+          <dim>0x6</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>EVENTS_COMPARE[%s]</name>
           <description>Description collection: Compare event on CC[n] match</description>
@@ -23632,6 +23731,42 @@ POSSIBILITY OF SUCH DAMAGE.\n
               </enumeratedValues>
             </field>
             <field>
+              <name>COMPARE4_CLEAR</name>
+              <description>Shortcut between event COMPARE[4] and task CLEAR</description>
+              <lsb>4</lsb>
+              <msb>4</msb>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Disable shortcut</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Enable shortcut</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>COMPARE5_CLEAR</name>
+              <description>Shortcut between event COMPARE[5] and task CLEAR</description>
+              <lsb>5</lsb>
+              <msb>5</msb>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Disable shortcut</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Enable shortcut</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
               <name>COMPARE0_STOP</name>
               <description>Shortcut between event COMPARE[0] and task STOP</description>
               <lsb>8</lsb>
@@ -23690,6 +23825,42 @@ POSSIBILITY OF SUCH DAMAGE.\n
               <description>Shortcut between event COMPARE[3] and task STOP</description>
               <lsb>11</lsb>
               <msb>11</msb>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Disable shortcut</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Enable shortcut</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>COMPARE4_STOP</name>
+              <description>Shortcut between event COMPARE[4] and task STOP</description>
+              <lsb>12</lsb>
+              <msb>12</msb>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Disable shortcut</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Enable shortcut</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>COMPARE5_STOP</name>
+              <description>Shortcut between event COMPARE[5] and task STOP</description>
+              <lsb>13</lsb>
+              <msb>13</msb>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>Disabled</name>
@@ -23989,6 +24160,60 @@ POSSIBILITY OF SUCH DAMAGE.\n
                 </enumeratedValue>
               </enumeratedValues>
             </field>
+            <field>
+              <name>COMPARE4</name>
+              <description>Write '1' to disable interrupt for event COMPARE[4]</description>
+              <lsb>20</lsb>
+              <msb>20</msb>
+              <enumeratedValues>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Read: Disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Read: Enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>Clear</name>
+                  <description>Disable</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>COMPARE5</name>
+              <description>Write '1' to disable interrupt for event COMPARE[5]</description>
+              <lsb>21</lsb>
+              <msb>21</msb>
+              <enumeratedValues>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Read: Disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Read: Enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>Clear</name>
+                  <description>Disable</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
           </fields>
         </register>
         <register>
@@ -24074,7 +24299,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>4</dim>
+          <dim>0x6</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>CC[%s]</name>
           <description>Description collection: Capture/Compare register n</description>
@@ -24263,7 +24488,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>4</dim>
+          <dim>0x4</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>EVENTS_COMPARE[%s]</name>
           <description>Description collection: Compare event on CC[n] match</description>
@@ -25115,7 +25340,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>4</dim>
+          <dim>0x4</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>CC[%s]</name>
           <description>Description collection: Compare register n</description>
@@ -27588,7 +27813,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>8</dim>
+          <dim>0x8</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>RR[%s]</name>
           <description>Description collection: Reload request n</description>
@@ -29613,7 +29838,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
       <size>0x20</size>
       <registers>
         <register>
-          <dim>16</dim>
+          <dim>0x10</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>TASKS_TRIGGER[%s]</name>
           <description>Description collection: Trigger n for triggering the corresponding TRIGGERED[n] event</description>
@@ -29636,7 +29861,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>16</dim>
+          <dim>0x10</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>EVENTS_TRIGGERED[%s]</name>
           <description>Description collection: Event number n generated by triggering the corresponding TRIGGER[n] task</description>
@@ -30962,7 +31187,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>2</dim>
+          <dim>0x2</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>TASKS_SEQSTART[%s]</name>
           <description>Description collection: Loads the first PWM value on all enabled channels from sequence n, and starts playing that sequence at the rate defined in SEQ[n]REFRESH and/or DECODER.MODE. Causes PWM generation to start if not running.</description>
@@ -31032,7 +31257,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>2</dim>
+          <dim>0x2</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>EVENTS_SEQSTARTED[%s]</name>
           <description>Description collection: First PWM period started on sequence n</description>
@@ -31060,7 +31285,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </fields>
         </register>
         <register>
-          <dim>2</dim>
+          <dim>0x2</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>EVENTS_SEQEND[%s]</name>
           <description>Description collection: Emitted at end of every sequence n, when last value from RAM has been applied to wave counter</description>
@@ -32058,7 +32283,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           <access>read-write</access>
           <addressOffset>0x560</addressOffset>
           <register>
-            <dim>4</dim>
+            <dim>0x4</dim>
             <dimIncrement>0x4</dimIncrement>
             <name>OUT[%s]</name>
             <description>Description collection: Output pin select for PWM channel n</description>
@@ -35376,7 +35601,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
           </register>
         </cluster>
         <register>
-          <dim>6</dim>
+          <dim>0x6</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>CHG[%s]</name>
           <description>Description collection: Channel group n</description>

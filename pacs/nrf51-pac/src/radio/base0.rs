@@ -1,64 +1,23 @@
 #[doc = "Register `BASE0` reader"]
-pub struct R(crate::R<BASE0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BASE0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BASE0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BASE0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Base0Spec>;
 #[doc = "Register `BASE0` writer"]
-pub struct W(crate::W<BASE0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BASE0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type W = crate::W<Base0Spec>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BASE0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BASE0_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "Radio base address 0. Decision point: START task.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [base0](index.html) module"]
-pub struct BASE0_SPEC;
-impl crate::RegisterSpec for BASE0_SPEC {
+impl W {}
+#[doc = "Radio base address 0. Decision point: START task.\n\nYou can [`read`](crate::Reg::read) this register and get [`base0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`base0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Base0Spec;
+impl crate::RegisterSpec for Base0Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [base0::R](R) reader structure"]
-impl crate::Readable for BASE0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [base0::W](W) writer structure"]
-impl crate::Writable for BASE0_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`base0::R`](R) reader structure"]
+impl crate::Readable for Base0Spec {}
+#[doc = "`write(|w| ..)` method takes [`base0::W`](W) writer structure"]
+impl crate::Writable for Base0Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets BASE0 to value 0"]
-impl crate::Resettable for BASE0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Base0Spec {}

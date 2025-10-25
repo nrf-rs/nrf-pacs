@@ -1,64 +1,23 @@
 #[doc = "Register `RXDPTR` reader"]
-pub struct R(crate::R<RXDPTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RXDPTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RXDPTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RXDPTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RxdptrSpec>;
 #[doc = "Register `RXDPTR` writer"]
-pub struct W(crate::W<RXDPTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RXDPTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type W = crate::W<RxdptrSpec>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RXDPTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RXDPTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "RX data pointer.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdptr](index.html) module"]
-pub struct RXDPTR_SPEC;
-impl crate::RegisterSpec for RXDPTR_SPEC {
+impl W {}
+#[doc = "RX data pointer.\n\nYou can [`read`](crate::Reg::read) this register and get [`rxdptr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rxdptr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct RxdptrSpec;
+impl crate::RegisterSpec for RxdptrSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rxdptr::R](R) reader structure"]
-impl crate::Readable for RXDPTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [rxdptr::W](W) writer structure"]
-impl crate::Writable for RXDPTR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`rxdptr::R`](R) reader structure"]
+impl crate::Readable for RxdptrSpec {}
+#[doc = "`write(|w| ..)` method takes [`rxdptr::W`](W) writer structure"]
+impl crate::Writable for RxdptrSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets RXDPTR to value 0"]
-impl crate::Resettable for RXDPTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for RxdptrSpec {}

@@ -1,81 +1,84 @@
 #[doc = "Register `EVENTS_ENDISOOUT` reader"]
-pub struct R(crate::R<EVENTS_ENDISOOUT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_ENDISOOUT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_ENDISOOUT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_ENDISOOUT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsEndisooutSpec>;
 #[doc = "Register `EVENTS_ENDISOOUT` writer"]
-pub struct W(crate::W<EVENTS_ENDISOOUT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_ENDISOOUT_SPEC>;
+pub type W = crate::W<EventsEndisooutSpec>;
+#[doc = "The whole ISOOUT buffer has been consumed. The buffer can be accessed safely by software.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsEndisoout {
+    #[doc = "0: Event not generated"]
+    NotGenerated = 0,
+    #[doc = "1: Event generated"]
+    Generated = 1,
+}
+impl From<EventsEndisoout> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: EventsEndisoout) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `EVENTS_ENDISOOUT` reader - The whole ISOOUT buffer has been consumed. The buffer can be accessed safely by software."]
+pub type EventsEndisooutR = crate::BitReader<EventsEndisoout>;
+impl EventsEndisooutR {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub const fn variant(&self) -> EventsEndisoout {
+        match self.bits {
+            false => EventsEndisoout::NotGenerated,
+            true => EventsEndisoout::Generated,
+        }
+    }
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsEndisoout::NotGenerated
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn is_generated(&self) -> bool {
+        *self == EventsEndisoout::Generated
     }
 }
-impl From<crate::W<EVENTS_ENDISOOUT_SPEC>> for W {
+#[doc = "Field `EVENTS_ENDISOOUT` writer - The whole ISOOUT buffer has been consumed. The buffer can be accessed safely by software."]
+pub type EventsEndisooutW<'a, REG> = crate::BitWriter<'a, REG, EventsEndisoout>;
+impl<'a, REG> EventsEndisooutW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
     #[inline(always)]
-    fn from(writer: crate::W<EVENTS_ENDISOOUT_SPEC>) -> Self {
-        W(writer)
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsEndisoout::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsEndisoout::Generated)
     }
 }
-#[doc = "Field `EVENTS_ENDISOOUT` reader - "]
-pub type EVENTS_ENDISOOUT_R = crate::BitReader<bool>;
-#[doc = "Field `EVENTS_ENDISOOUT` writer - "]
-pub type EVENTS_ENDISOOUT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_ENDISOOUT_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - The whole ISOOUT buffer has been consumed. The buffer can be accessed safely by software."]
     #[inline(always)]
-    pub fn events_endisoout(&self) -> EVENTS_ENDISOOUT_R {
-        EVENTS_ENDISOOUT_R::new((self.bits & 1) != 0)
+    pub fn events_endisoout(&self) -> EventsEndisooutR {
+        EventsEndisooutR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - The whole ISOOUT buffer has been consumed. The buffer can be accessed safely by software."]
     #[inline(always)]
-    pub fn events_endisoout(&mut self) -> EVENTS_ENDISOOUT_W<0> {
-        EVENTS_ENDISOOUT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_endisoout(&mut self) -> EventsEndisooutW<'_, EventsEndisooutSpec> {
+        EventsEndisooutW::new(self, 0)
     }
 }
-#[doc = "The whole ISOOUT buffer has been consumed. The RAM buffer can be accessed safely by software.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_endisoout](index.html) module"]
-pub struct EVENTS_ENDISOOUT_SPEC;
-impl crate::RegisterSpec for EVENTS_ENDISOOUT_SPEC {
+#[doc = "The whole ISOOUT buffer has been consumed. The buffer can be accessed safely by software.\n\nYou can [`read`](crate::Reg::read) this register and get [`events_endisoout::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_endisoout::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsEndisooutSpec;
+impl crate::RegisterSpec for EventsEndisooutSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_endisoout::R](R) reader structure"]
-impl crate::Readable for EVENTS_ENDISOOUT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_endisoout::W](W) writer structure"]
-impl crate::Writable for EVENTS_ENDISOOUT_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_endisoout::R`](R) reader structure"]
+impl crate::Readable for EventsEndisooutSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_endisoout::W`](W) writer structure"]
+impl crate::Writable for EventsEndisooutSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_ENDISOOUT to value 0"]
-impl crate::Resettable for EVENTS_ENDISOOUT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsEndisooutSpec {}

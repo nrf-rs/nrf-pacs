@@ -1,42 +1,20 @@
 #[doc = "Register `DAI` reader"]
-pub struct R(crate::R<DAI_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DAI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DAI_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DAI_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `DAI` reader - Index (n) of device address (see DAB\\[n\\]
-and DAP\\[n\\]) that obtained an address match."]
-pub type DAI_R = crate::FieldReader<u8, u8>;
+pub type R = crate::R<DaiSpec>;
+#[doc = "Field `DAI` reader - Index (n) of device address (see DAB\\[n\\] and DAP\\[n\\]) that obtained an address match."]
+pub type DaiR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:2 - Index (n) of device address (see DAB\\[n\\]
-and DAP\\[n\\]) that obtained an address match."]
+    #[doc = "Bits 0:2 - Index (n) of device address (see DAB\\[n\\] and DAP\\[n\\]) that obtained an address match."]
     #[inline(always)]
-    pub fn dai(&self) -> DAI_R {
-        DAI_R::new((self.bits & 7) as u8)
+    pub fn dai(&self) -> DaiR {
+        DaiR::new((self.bits & 7) as u8)
     }
 }
-#[doc = "Device address match index.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dai](index.html) module"]
-pub struct DAI_SPEC;
-impl crate::RegisterSpec for DAI_SPEC {
+#[doc = "Device address match index.\n\nYou can [`read`](crate::Reg::read) this register and get [`dai::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct DaiSpec;
+impl crate::RegisterSpec for DaiSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dai::R](R) reader structure"]
-impl crate::Readable for DAI_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dai::R`](R) reader structure"]
+impl crate::Readable for DaiSpec {}
 #[doc = "`reset()` method sets DAI to value 0"]
-impl crate::Resettable for DAI_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for DaiSpec {}

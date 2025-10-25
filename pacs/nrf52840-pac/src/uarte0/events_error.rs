@@ -1,80 +1,84 @@
 #[doc = "Register `EVENTS_ERROR` reader"]
-pub struct R(crate::R<EVENTS_ERROR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_ERROR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_ERROR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_ERROR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsErrorSpec>;
 #[doc = "Register `EVENTS_ERROR` writer"]
-pub struct W(crate::W<EVENTS_ERROR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_ERROR_SPEC>;
+pub type W = crate::W<EventsErrorSpec>;
+#[doc = "Error detected\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsError {
+    #[doc = "0: Event not generated"]
+    NotGenerated = 0,
+    #[doc = "1: Event generated"]
+    Generated = 1,
+}
+impl From<EventsError> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: EventsError) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `EVENTS_ERROR` reader - Error detected"]
+pub type EventsErrorR = crate::BitReader<EventsError>;
+impl EventsErrorR {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub const fn variant(&self) -> EventsError {
+        match self.bits {
+            false => EventsError::NotGenerated,
+            true => EventsError::Generated,
+        }
+    }
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsError::NotGenerated
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn is_generated(&self) -> bool {
+        *self == EventsError::Generated
     }
 }
-impl From<crate::W<EVENTS_ERROR_SPEC>> for W {
+#[doc = "Field `EVENTS_ERROR` writer - Error detected"]
+pub type EventsErrorW<'a, REG> = crate::BitWriter<'a, REG, EventsError>;
+impl<'a, REG> EventsErrorW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
     #[inline(always)]
-    fn from(writer: crate::W<EVENTS_ERROR_SPEC>) -> Self {
-        W(writer)
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsError::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsError::Generated)
     }
 }
-#[doc = "Field `EVENTS_ERROR` reader - "]
-pub type EVENTS_ERROR_R = crate::BitReader<bool>;
-#[doc = "Field `EVENTS_ERROR` writer - "]
-pub type EVENTS_ERROR_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVENTS_ERROR_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Error detected"]
     #[inline(always)]
-    pub fn events_error(&self) -> EVENTS_ERROR_R {
-        EVENTS_ERROR_R::new((self.bits & 1) != 0)
+    pub fn events_error(&self) -> EventsErrorR {
+        EventsErrorR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Error detected"]
     #[inline(always)]
-    pub fn events_error(&mut self) -> EVENTS_ERROR_W<0> {
-        EVENTS_ERROR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_error(&mut self) -> EventsErrorW<'_, EventsErrorSpec> {
+        EventsErrorW::new(self, 0)
     }
 }
-#[doc = "Error detected\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_error](index.html) module"]
-pub struct EVENTS_ERROR_SPEC;
-impl crate::RegisterSpec for EVENTS_ERROR_SPEC {
+#[doc = "Error detected\n\nYou can [`read`](crate::Reg::read) this register and get [`events_error::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_error::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsErrorSpec;
+impl crate::RegisterSpec for EventsErrorSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_error::R](R) reader structure"]
-impl crate::Readable for EVENTS_ERROR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_error::W](W) writer structure"]
-impl crate::Writable for EVENTS_ERROR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_error::R`](R) reader structure"]
+impl crate::Readable for EventsErrorSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_error::W`](W) writer structure"]
+impl crate::Writable for EventsErrorSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_ERROR to value 0"]
-impl crate::Resettable for EVENTS_ERROR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsErrorSpec {}

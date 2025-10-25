@@ -1,10 +1,18 @@
-#[doc = r"Register block"]
 #[repr(C)]
-pub struct FORK {
-    #[doc = "0x00 - Description cluster\\[0\\]: Channel 0 task end-point"]
-    pub tep: TEP,
+#[doc = "Fork"]
+#[doc(alias = "FORK")]
+pub struct Fork {
+    tep: Tep,
 }
-#[doc = "TEP (rw) register accessor: an alias for `Reg<TEP_SPEC>`"]
-pub type TEP = crate::Reg<tep::TEP_SPEC>;
+impl Fork {
+    #[doc = "0x00 - Description cluster\\[0\\]: Channel 0 task end-point"]
+    #[inline(always)]
+    pub const fn tep(&self) -> &Tep {
+        &self.tep
+    }
+}
+#[doc = "TEP (rw) register accessor: Description cluster\\[0\\]: Channel 0 task end-point\n\nYou can [`read`](crate::Reg::read) this register and get [`tep::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tep::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tep`] module"]
+#[doc(alias = "TEP")]
+pub type Tep = crate::Reg<tep::TepSpec>;
 #[doc = "Description cluster\\[0\\]: Channel 0 task end-point"]
 pub mod tep;

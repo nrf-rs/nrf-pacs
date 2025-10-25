@@ -1,140 +1,98 @@
 #[doc = "Register `REGION` reader"]
-pub struct R(crate::R<REGION_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<REGION_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<REGION_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<REGION_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RegionSpec>;
 #[doc = "Register `REGION` writer"]
-pub struct W(crate::W<REGION_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<REGION_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<REGION_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<REGION_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<RegionSpec>;
 #[doc = "Field `REGION` reader - Region number"]
-pub type REGION_R = crate::FieldReader<u8, u8>;
+pub type RegionR = crate::FieldReader;
 #[doc = "Field `REGION` writer - Region number"]
-pub type REGION_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REGION_SPEC, u8, u8, 5, O>;
-#[doc = "Field `LOCK` reader - "]
-pub type LOCK_R = crate::BitReader<LOCK_A>;
+pub type RegionW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Lock {
     #[doc = "0: This register can be updated"]
-    UNLOCKED = 0,
+    Unlocked = 0,
     #[doc = "1: The content of this register can't be changed until the next reset"]
-    LOCKED = 1,
+    Locked = 1,
 }
-impl From<LOCK_A> for bool {
+impl From<Lock> for bool {
     #[inline(always)]
-    fn from(variant: LOCK_A) -> Self {
+    fn from(variant: Lock) -> Self {
         variant as u8 != 0
     }
 }
-impl LOCK_R {
+#[doc = "Field `LOCK` reader - "]
+pub type LockR = crate::BitReader<Lock>;
+impl LockR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCK_A {
+    pub const fn variant(&self) -> Lock {
         match self.bits {
-            false => LOCK_A::UNLOCKED,
-            true => LOCK_A::LOCKED,
+            false => Lock::Unlocked,
+            true => Lock::Locked,
         }
     }
-    #[doc = "Checks if the value of the field is `UNLOCKED`"]
-    #[inline(always)]
-    pub fn is_unlocked(&self) -> bool {
-        *self == LOCK_A::UNLOCKED
-    }
-    #[doc = "Checks if the value of the field is `LOCKED`"]
-    #[inline(always)]
-    pub fn is_locked(&self) -> bool {
-        *self == LOCK_A::LOCKED
-    }
-}
-#[doc = "Field `LOCK` writer - "]
-pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, REGION_SPEC, LOCK_A, O>;
-impl<'a, const O: u8> LOCK_W<'a, O> {
     #[doc = "This register can be updated"]
     #[inline(always)]
-    pub fn unlocked(self) -> &'a mut W {
-        self.variant(LOCK_A::UNLOCKED)
+    pub fn is_unlocked(&self) -> bool {
+        *self == Lock::Unlocked
     }
     #[doc = "The content of this register can't be changed until the next reset"]
     #[inline(always)]
-    pub fn locked(self) -> &'a mut W {
-        self.variant(LOCK_A::LOCKED)
+    pub fn is_locked(&self) -> bool {
+        *self == Lock::Locked
+    }
+}
+#[doc = "Field `LOCK` writer - "]
+pub type LockW<'a, REG> = crate::BitWriter<'a, REG, Lock>;
+impl<'a, REG> LockW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "This register can be updated"]
+    #[inline(always)]
+    pub fn unlocked(self) -> &'a mut crate::W<REG> {
+        self.variant(Lock::Unlocked)
+    }
+    #[doc = "The content of this register can't be changed until the next reset"]
+    #[inline(always)]
+    pub fn locked(self) -> &'a mut crate::W<REG> {
+        self.variant(Lock::Locked)
     }
 }
 impl R {
     #[doc = "Bits 0:4 - Region number"]
     #[inline(always)]
-    pub fn region(&self) -> REGION_R {
-        REGION_R::new((self.bits & 0x1f) as u8)
+    pub fn region(&self) -> RegionR {
+        RegionR::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    pub fn lock(&self) -> LOCK_R {
-        LOCK_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn lock(&self) -> LockR {
+        LockR::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Region number"]
     #[inline(always)]
-    pub fn region(&mut self) -> REGION_W<0> {
-        REGION_W::new(self)
+    pub fn region(&mut self) -> RegionW<'_, RegionSpec> {
+        RegionW::new(self, 0)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LOCK_W<8> {
-        LOCK_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn lock(&mut self) -> LockW<'_, RegionSpec> {
+        LockW::new(self, 8)
     }
 }
-#[doc = "Description cluster: Define which RAM region can contain the non-secure callable (NSC) region n\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [region](index.html) module"]
-pub struct REGION_SPEC;
-impl crate::RegisterSpec for REGION_SPEC {
+#[doc = "Description cluster: Define which RAM region can contain the non-secure callable (NSC) region n\n\nYou can [`read`](crate::Reg::read) this register and get [`region::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`region::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct RegionSpec;
+impl crate::RegisterSpec for RegionSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [region::R](R) reader structure"]
-impl crate::Readable for REGION_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [region::W](W) writer structure"]
-impl crate::Writable for REGION_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`region::R`](R) reader structure"]
+impl crate::Readable for RegionSpec {}
+#[doc = "`write(|w| ..)` method takes [`region::W`](W) writer structure"]
+impl crate::Writable for RegionSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets REGION to value 0"]
-impl crate::Resettable for REGION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for RegionSpec {}

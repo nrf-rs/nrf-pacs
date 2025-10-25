@@ -1,126 +1,84 @@
 #[doc = "Register `ENABLE` reader"]
-pub struct R(crate::R<ENABLE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ENABLE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ENABLE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ENABLE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EnableSpec>;
 #[doc = "Register `ENABLE` writer"]
-pub struct W(crate::W<ENABLE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ENABLE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ENABLE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ENABLE_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `ENABLE` reader - Enable USB"]
-pub type ENABLE_R = crate::BitReader<ENABLE_A>;
+pub type W = crate::W<EnableSpec>;
 #[doc = "Enable USB\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENABLE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Enable {
     #[doc = "0: USB peripheral is disabled"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: USB peripheral is enabled"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<ENABLE_A> for bool {
+impl From<Enable> for bool {
     #[inline(always)]
-    fn from(variant: ENABLE_A) -> Self {
+    fn from(variant: Enable) -> Self {
         variant as u8 != 0
     }
 }
-impl ENABLE_R {
+#[doc = "Field `ENABLE` reader - Enable USB"]
+pub type EnableR = crate::BitReader<Enable>;
+impl EnableR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENABLE_A {
+    pub const fn variant(&self) -> Enable {
         match self.bits {
-            false => ENABLE_A::DISABLED,
-            true => ENABLE_A::ENABLED,
+            false => Enable::Disabled,
+            true => Enable::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == ENABLE_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == ENABLE_A::ENABLED
-    }
-}
-#[doc = "Field `ENABLE` writer - Enable USB"]
-pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ENABLE_SPEC, ENABLE_A, O>;
-impl<'a, const O: u8> ENABLE_W<'a, O> {
     #[doc = "USB peripheral is disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENABLE_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Enable::Disabled
     }
     #[doc = "USB peripheral is enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENABLE_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Enable::Enabled
+    }
+}
+#[doc = "Field `ENABLE` writer - Enable USB"]
+pub type EnableW<'a, REG> = crate::BitWriter<'a, REG, Enable>;
+impl<'a, REG> EnableW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "USB peripheral is disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Enable::Disabled)
+    }
+    #[doc = "USB peripheral is enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Enable::Enabled)
     }
 }
 impl R {
     #[doc = "Bit 0 - Enable USB"]
     #[inline(always)]
-    pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new((self.bits & 1) != 0)
+    pub fn enable(&self) -> EnableR {
+        EnableR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable USB"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W<0> {
-        ENABLE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn enable(&mut self) -> EnableW<'_, EnableSpec> {
+        EnableW::new(self, 0)
     }
 }
-#[doc = "Enable USB\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [enable](index.html) module"]
-pub struct ENABLE_SPEC;
-impl crate::RegisterSpec for ENABLE_SPEC {
+#[doc = "Enable USB\n\nYou can [`read`](crate::Reg::read) this register and get [`enable::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`enable::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EnableSpec;
+impl crate::RegisterSpec for EnableSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [enable::R](R) reader structure"]
-impl crate::Readable for ENABLE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [enable::W](W) writer structure"]
-impl crate::Writable for ENABLE_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`enable::R`](R) reader structure"]
+impl crate::Readable for EnableSpec {}
+#[doc = "`write(|w| ..)` method takes [`enable::W`](W) writer structure"]
+impl crate::Writable for EnableSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets ENABLE to value 0"]
-impl crate::Resettable for ENABLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EnableSpec {}

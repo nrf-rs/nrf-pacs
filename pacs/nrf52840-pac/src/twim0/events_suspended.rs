@@ -1,81 +1,84 @@
 #[doc = "Register `EVENTS_SUSPENDED` reader"]
-pub struct R(crate::R<EVENTS_SUSPENDED_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_SUSPENDED_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_SUSPENDED_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_SUSPENDED_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsSuspendedSpec>;
 #[doc = "Register `EVENTS_SUSPENDED` writer"]
-pub struct W(crate::W<EVENTS_SUSPENDED_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_SUSPENDED_SPEC>;
+pub type W = crate::W<EventsSuspendedSpec>;
+#[doc = "SUSPEND task has been issued, TWI traffic is now suspended.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsSuspended {
+    #[doc = "0: Event not generated"]
+    NotGenerated = 0,
+    #[doc = "1: Event generated"]
+    Generated = 1,
+}
+impl From<EventsSuspended> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: EventsSuspended) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `EVENTS_SUSPENDED` reader - SUSPEND task has been issued, TWI traffic is now suspended."]
+pub type EventsSuspendedR = crate::BitReader<EventsSuspended>;
+impl EventsSuspendedR {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub const fn variant(&self) -> EventsSuspended {
+        match self.bits {
+            false => EventsSuspended::NotGenerated,
+            true => EventsSuspended::Generated,
+        }
+    }
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsSuspended::NotGenerated
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn is_generated(&self) -> bool {
+        *self == EventsSuspended::Generated
     }
 }
-impl From<crate::W<EVENTS_SUSPENDED_SPEC>> for W {
+#[doc = "Field `EVENTS_SUSPENDED` writer - SUSPEND task has been issued, TWI traffic is now suspended."]
+pub type EventsSuspendedW<'a, REG> = crate::BitWriter<'a, REG, EventsSuspended>;
+impl<'a, REG> EventsSuspendedW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
     #[inline(always)]
-    fn from(writer: crate::W<EVENTS_SUSPENDED_SPEC>) -> Self {
-        W(writer)
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsSuspended::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsSuspended::Generated)
     }
 }
-#[doc = "Field `EVENTS_SUSPENDED` reader - "]
-pub type EVENTS_SUSPENDED_R = crate::BitReader<bool>;
-#[doc = "Field `EVENTS_SUSPENDED` writer - "]
-pub type EVENTS_SUSPENDED_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_SUSPENDED_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - SUSPEND task has been issued, TWI traffic is now suspended."]
     #[inline(always)]
-    pub fn events_suspended(&self) -> EVENTS_SUSPENDED_R {
-        EVENTS_SUSPENDED_R::new((self.bits & 1) != 0)
+    pub fn events_suspended(&self) -> EventsSuspendedR {
+        EventsSuspendedR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - SUSPEND task has been issued, TWI traffic is now suspended."]
     #[inline(always)]
-    pub fn events_suspended(&mut self) -> EVENTS_SUSPENDED_W<0> {
-        EVENTS_SUSPENDED_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_suspended(&mut self) -> EventsSuspendedW<'_, EventsSuspendedSpec> {
+        EventsSuspendedW::new(self, 0)
     }
 }
-#[doc = "Last byte has been sent out after the SUSPEND task has been issued, TWI traffic is now suspended.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_suspended](index.html) module"]
-pub struct EVENTS_SUSPENDED_SPEC;
-impl crate::RegisterSpec for EVENTS_SUSPENDED_SPEC {
+#[doc = "SUSPEND task has been issued, TWI traffic is now suspended.\n\nYou can [`read`](crate::Reg::read) this register and get [`events_suspended::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_suspended::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsSuspendedSpec;
+impl crate::RegisterSpec for EventsSuspendedSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_suspended::R](R) reader structure"]
-impl crate::Readable for EVENTS_SUSPENDED_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_suspended::W](W) writer structure"]
-impl crate::Writable for EVENTS_SUSPENDED_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_suspended::R`](R) reader structure"]
+impl crate::Readable for EventsSuspendedSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_suspended::W`](W) writer structure"]
+impl crate::Writable for EventsSuspendedSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_SUSPENDED to value 0"]
-impl crate::Resettable for EVENTS_SUSPENDED_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsSuspendedSpec {}

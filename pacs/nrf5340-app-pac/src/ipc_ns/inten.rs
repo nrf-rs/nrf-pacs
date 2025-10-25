@@ -1,1026 +1,1029 @@
 #[doc = "Register `INTEN` reader"]
-pub struct R(crate::R<INTEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IntenSpec>;
 #[doc = "Register `INTEN` writer"]
-pub struct W(crate::W<INTEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INTEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<IntenSpec>;
+#[doc = "Enable or disable interrupt for event RECEIVE\\[0\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive0 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Receive0> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INTEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INTEN_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Receive0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE0` reader - Enable or disable interrupt for event RECEIVE\\[0\\]"]
-pub type RECEIVE0_R = crate::BitReader<RECEIVE0_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[0\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE0_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE0_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE0_R {
+pub type Receive0R = crate::BitReader<Receive0>;
+impl Receive0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE0_A {
+    pub const fn variant(&self) -> Receive0 {
         match self.bits {
-            false => RECEIVE0_A::DISABLED,
-            true => RECEIVE0_A::ENABLED,
+            false => Receive0::Disabled,
+            true => Receive0::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE0_A::DISABLED
+        *self == Receive0::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE0_A::ENABLED
+        *self == Receive0::Enabled
     }
 }
 #[doc = "Field `RECEIVE0` writer - Enable or disable interrupt for event RECEIVE\\[0\\]"]
-pub type RECEIVE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE0_A, O>;
-impl<'a, const O: u8> RECEIVE0_W<'a, O> {
+pub type Receive0W<'a, REG> = crate::BitWriter<'a, REG, Receive0>;
+impl<'a, REG> Receive0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE0_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive0::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE0_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive0::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[1\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive1 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive1> for bool {
+    #[inline(always)]
+    fn from(variant: Receive1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE1` reader - Enable or disable interrupt for event RECEIVE\\[1\\]"]
-pub type RECEIVE1_R = crate::BitReader<RECEIVE1_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[1\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE1_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE1_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE1_R {
+pub type Receive1R = crate::BitReader<Receive1>;
+impl Receive1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE1_A {
+    pub const fn variant(&self) -> Receive1 {
         match self.bits {
-            false => RECEIVE1_A::DISABLED,
-            true => RECEIVE1_A::ENABLED,
+            false => Receive1::Disabled,
+            true => Receive1::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE1_A::DISABLED
+        *self == Receive1::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE1_A::ENABLED
+        *self == Receive1::Enabled
     }
 }
 #[doc = "Field `RECEIVE1` writer - Enable or disable interrupt for event RECEIVE\\[1\\]"]
-pub type RECEIVE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE1_A, O>;
-impl<'a, const O: u8> RECEIVE1_W<'a, O> {
+pub type Receive1W<'a, REG> = crate::BitWriter<'a, REG, Receive1>;
+impl<'a, REG> Receive1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE1_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive1::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE1_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive1::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[2\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive2 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive2> for bool {
+    #[inline(always)]
+    fn from(variant: Receive2) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE2` reader - Enable or disable interrupt for event RECEIVE\\[2\\]"]
-pub type RECEIVE2_R = crate::BitReader<RECEIVE2_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[2\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE2_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE2_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE2_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE2_R {
+pub type Receive2R = crate::BitReader<Receive2>;
+impl Receive2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE2_A {
+    pub const fn variant(&self) -> Receive2 {
         match self.bits {
-            false => RECEIVE2_A::DISABLED,
-            true => RECEIVE2_A::ENABLED,
+            false => Receive2::Disabled,
+            true => Receive2::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE2_A::DISABLED
+        *self == Receive2::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE2_A::ENABLED
+        *self == Receive2::Enabled
     }
 }
 #[doc = "Field `RECEIVE2` writer - Enable or disable interrupt for event RECEIVE\\[2\\]"]
-pub type RECEIVE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE2_A, O>;
-impl<'a, const O: u8> RECEIVE2_W<'a, O> {
+pub type Receive2W<'a, REG> = crate::BitWriter<'a, REG, Receive2>;
+impl<'a, REG> Receive2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE2_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive2::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE2_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive2::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[3\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive3 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive3> for bool {
+    #[inline(always)]
+    fn from(variant: Receive3) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE3` reader - Enable or disable interrupt for event RECEIVE\\[3\\]"]
-pub type RECEIVE3_R = crate::BitReader<RECEIVE3_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[3\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE3_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE3_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE3_R {
+pub type Receive3R = crate::BitReader<Receive3>;
+impl Receive3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE3_A {
+    pub const fn variant(&self) -> Receive3 {
         match self.bits {
-            false => RECEIVE3_A::DISABLED,
-            true => RECEIVE3_A::ENABLED,
+            false => Receive3::Disabled,
+            true => Receive3::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE3_A::DISABLED
+        *self == Receive3::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE3_A::ENABLED
+        *self == Receive3::Enabled
     }
 }
 #[doc = "Field `RECEIVE3` writer - Enable or disable interrupt for event RECEIVE\\[3\\]"]
-pub type RECEIVE3_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE3_A, O>;
-impl<'a, const O: u8> RECEIVE3_W<'a, O> {
+pub type Receive3W<'a, REG> = crate::BitWriter<'a, REG, Receive3>;
+impl<'a, REG> Receive3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE3_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive3::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE3_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive3::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[4\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive4 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive4> for bool {
+    #[inline(always)]
+    fn from(variant: Receive4) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE4` reader - Enable or disable interrupt for event RECEIVE\\[4\\]"]
-pub type RECEIVE4_R = crate::BitReader<RECEIVE4_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[4\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE4_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE4_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE4_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE4_R {
+pub type Receive4R = crate::BitReader<Receive4>;
+impl Receive4R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE4_A {
+    pub const fn variant(&self) -> Receive4 {
         match self.bits {
-            false => RECEIVE4_A::DISABLED,
-            true => RECEIVE4_A::ENABLED,
+            false => Receive4::Disabled,
+            true => Receive4::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE4_A::DISABLED
+        *self == Receive4::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE4_A::ENABLED
+        *self == Receive4::Enabled
     }
 }
 #[doc = "Field `RECEIVE4` writer - Enable or disable interrupt for event RECEIVE\\[4\\]"]
-pub type RECEIVE4_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE4_A, O>;
-impl<'a, const O: u8> RECEIVE4_W<'a, O> {
+pub type Receive4W<'a, REG> = crate::BitWriter<'a, REG, Receive4>;
+impl<'a, REG> Receive4W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE4_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive4::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE4_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive4::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[5\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive5 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive5> for bool {
+    #[inline(always)]
+    fn from(variant: Receive5) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE5` reader - Enable or disable interrupt for event RECEIVE\\[5\\]"]
-pub type RECEIVE5_R = crate::BitReader<RECEIVE5_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[5\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE5_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE5_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE5_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE5_R {
+pub type Receive5R = crate::BitReader<Receive5>;
+impl Receive5R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE5_A {
+    pub const fn variant(&self) -> Receive5 {
         match self.bits {
-            false => RECEIVE5_A::DISABLED,
-            true => RECEIVE5_A::ENABLED,
+            false => Receive5::Disabled,
+            true => Receive5::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE5_A::DISABLED
+        *self == Receive5::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE5_A::ENABLED
+        *self == Receive5::Enabled
     }
 }
 #[doc = "Field `RECEIVE5` writer - Enable or disable interrupt for event RECEIVE\\[5\\]"]
-pub type RECEIVE5_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE5_A, O>;
-impl<'a, const O: u8> RECEIVE5_W<'a, O> {
+pub type Receive5W<'a, REG> = crate::BitWriter<'a, REG, Receive5>;
+impl<'a, REG> Receive5W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE5_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive5::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE5_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive5::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[6\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive6 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive6> for bool {
+    #[inline(always)]
+    fn from(variant: Receive6) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE6` reader - Enable or disable interrupt for event RECEIVE\\[6\\]"]
-pub type RECEIVE6_R = crate::BitReader<RECEIVE6_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[6\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE6_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE6_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE6_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE6_R {
+pub type Receive6R = crate::BitReader<Receive6>;
+impl Receive6R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE6_A {
+    pub const fn variant(&self) -> Receive6 {
         match self.bits {
-            false => RECEIVE6_A::DISABLED,
-            true => RECEIVE6_A::ENABLED,
+            false => Receive6::Disabled,
+            true => Receive6::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE6_A::DISABLED
+        *self == Receive6::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE6_A::ENABLED
+        *self == Receive6::Enabled
     }
 }
 #[doc = "Field `RECEIVE6` writer - Enable or disable interrupt for event RECEIVE\\[6\\]"]
-pub type RECEIVE6_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE6_A, O>;
-impl<'a, const O: u8> RECEIVE6_W<'a, O> {
+pub type Receive6W<'a, REG> = crate::BitWriter<'a, REG, Receive6>;
+impl<'a, REG> Receive6W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE6_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive6::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE6_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive6::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[7\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive7 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive7> for bool {
+    #[inline(always)]
+    fn from(variant: Receive7) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE7` reader - Enable or disable interrupt for event RECEIVE\\[7\\]"]
-pub type RECEIVE7_R = crate::BitReader<RECEIVE7_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[7\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE7_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE7_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE7_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE7_R {
+pub type Receive7R = crate::BitReader<Receive7>;
+impl Receive7R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE7_A {
+    pub const fn variant(&self) -> Receive7 {
         match self.bits {
-            false => RECEIVE7_A::DISABLED,
-            true => RECEIVE7_A::ENABLED,
+            false => Receive7::Disabled,
+            true => Receive7::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE7_A::DISABLED
+        *self == Receive7::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE7_A::ENABLED
+        *self == Receive7::Enabled
     }
 }
 #[doc = "Field `RECEIVE7` writer - Enable or disable interrupt for event RECEIVE\\[7\\]"]
-pub type RECEIVE7_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE7_A, O>;
-impl<'a, const O: u8> RECEIVE7_W<'a, O> {
+pub type Receive7W<'a, REG> = crate::BitWriter<'a, REG, Receive7>;
+impl<'a, REG> Receive7W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE7_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive7::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE7_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive7::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[8\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive8 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive8> for bool {
+    #[inline(always)]
+    fn from(variant: Receive8) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE8` reader - Enable or disable interrupt for event RECEIVE\\[8\\]"]
-pub type RECEIVE8_R = crate::BitReader<RECEIVE8_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[8\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE8_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE8_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE8_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE8_R {
+pub type Receive8R = crate::BitReader<Receive8>;
+impl Receive8R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE8_A {
+    pub const fn variant(&self) -> Receive8 {
         match self.bits {
-            false => RECEIVE8_A::DISABLED,
-            true => RECEIVE8_A::ENABLED,
+            false => Receive8::Disabled,
+            true => Receive8::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE8_A::DISABLED
+        *self == Receive8::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE8_A::ENABLED
+        *self == Receive8::Enabled
     }
 }
 #[doc = "Field `RECEIVE8` writer - Enable or disable interrupt for event RECEIVE\\[8\\]"]
-pub type RECEIVE8_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE8_A, O>;
-impl<'a, const O: u8> RECEIVE8_W<'a, O> {
+pub type Receive8W<'a, REG> = crate::BitWriter<'a, REG, Receive8>;
+impl<'a, REG> Receive8W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE8_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive8::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE8_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive8::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[9\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive9 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive9> for bool {
+    #[inline(always)]
+    fn from(variant: Receive9) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE9` reader - Enable or disable interrupt for event RECEIVE\\[9\\]"]
-pub type RECEIVE9_R = crate::BitReader<RECEIVE9_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[9\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE9_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE9_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE9_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE9_R {
+pub type Receive9R = crate::BitReader<Receive9>;
+impl Receive9R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE9_A {
+    pub const fn variant(&self) -> Receive9 {
         match self.bits {
-            false => RECEIVE9_A::DISABLED,
-            true => RECEIVE9_A::ENABLED,
+            false => Receive9::Disabled,
+            true => Receive9::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE9_A::DISABLED
+        *self == Receive9::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE9_A::ENABLED
+        *self == Receive9::Enabled
     }
 }
 #[doc = "Field `RECEIVE9` writer - Enable or disable interrupt for event RECEIVE\\[9\\]"]
-pub type RECEIVE9_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE9_A, O>;
-impl<'a, const O: u8> RECEIVE9_W<'a, O> {
+pub type Receive9W<'a, REG> = crate::BitWriter<'a, REG, Receive9>;
+impl<'a, REG> Receive9W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE9_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive9::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE9_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive9::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[10\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive10 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive10> for bool {
+    #[inline(always)]
+    fn from(variant: Receive10) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE10` reader - Enable or disable interrupt for event RECEIVE\\[10\\]"]
-pub type RECEIVE10_R = crate::BitReader<RECEIVE10_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[10\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE10_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE10_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE10_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE10_R {
+pub type Receive10R = crate::BitReader<Receive10>;
+impl Receive10R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE10_A {
+    pub const fn variant(&self) -> Receive10 {
         match self.bits {
-            false => RECEIVE10_A::DISABLED,
-            true => RECEIVE10_A::ENABLED,
+            false => Receive10::Disabled,
+            true => Receive10::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE10_A::DISABLED
+        *self == Receive10::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE10_A::ENABLED
+        *self == Receive10::Enabled
     }
 }
 #[doc = "Field `RECEIVE10` writer - Enable or disable interrupt for event RECEIVE\\[10\\]"]
-pub type RECEIVE10_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE10_A, O>;
-impl<'a, const O: u8> RECEIVE10_W<'a, O> {
+pub type Receive10W<'a, REG> = crate::BitWriter<'a, REG, Receive10>;
+impl<'a, REG> Receive10W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE10_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive10::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE10_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive10::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[11\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive11 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive11> for bool {
+    #[inline(always)]
+    fn from(variant: Receive11) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE11` reader - Enable or disable interrupt for event RECEIVE\\[11\\]"]
-pub type RECEIVE11_R = crate::BitReader<RECEIVE11_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[11\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE11_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE11_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE11_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE11_R {
+pub type Receive11R = crate::BitReader<Receive11>;
+impl Receive11R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE11_A {
+    pub const fn variant(&self) -> Receive11 {
         match self.bits {
-            false => RECEIVE11_A::DISABLED,
-            true => RECEIVE11_A::ENABLED,
+            false => Receive11::Disabled,
+            true => Receive11::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE11_A::DISABLED
+        *self == Receive11::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE11_A::ENABLED
+        *self == Receive11::Enabled
     }
 }
 #[doc = "Field `RECEIVE11` writer - Enable or disable interrupt for event RECEIVE\\[11\\]"]
-pub type RECEIVE11_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE11_A, O>;
-impl<'a, const O: u8> RECEIVE11_W<'a, O> {
+pub type Receive11W<'a, REG> = crate::BitWriter<'a, REG, Receive11>;
+impl<'a, REG> Receive11W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE11_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive11::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE11_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive11::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[12\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive12 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive12> for bool {
+    #[inline(always)]
+    fn from(variant: Receive12) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE12` reader - Enable or disable interrupt for event RECEIVE\\[12\\]"]
-pub type RECEIVE12_R = crate::BitReader<RECEIVE12_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[12\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE12_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE12_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE12_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE12_R {
+pub type Receive12R = crate::BitReader<Receive12>;
+impl Receive12R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE12_A {
+    pub const fn variant(&self) -> Receive12 {
         match self.bits {
-            false => RECEIVE12_A::DISABLED,
-            true => RECEIVE12_A::ENABLED,
+            false => Receive12::Disabled,
+            true => Receive12::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE12_A::DISABLED
+        *self == Receive12::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE12_A::ENABLED
+        *self == Receive12::Enabled
     }
 }
 #[doc = "Field `RECEIVE12` writer - Enable or disable interrupt for event RECEIVE\\[12\\]"]
-pub type RECEIVE12_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE12_A, O>;
-impl<'a, const O: u8> RECEIVE12_W<'a, O> {
+pub type Receive12W<'a, REG> = crate::BitWriter<'a, REG, Receive12>;
+impl<'a, REG> Receive12W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE12_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive12::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE12_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive12::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[13\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive13 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive13> for bool {
+    #[inline(always)]
+    fn from(variant: Receive13) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE13` reader - Enable or disable interrupt for event RECEIVE\\[13\\]"]
-pub type RECEIVE13_R = crate::BitReader<RECEIVE13_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[13\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE13_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE13_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE13_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE13_R {
+pub type Receive13R = crate::BitReader<Receive13>;
+impl Receive13R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE13_A {
+    pub const fn variant(&self) -> Receive13 {
         match self.bits {
-            false => RECEIVE13_A::DISABLED,
-            true => RECEIVE13_A::ENABLED,
+            false => Receive13::Disabled,
+            true => Receive13::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE13_A::DISABLED
+        *self == Receive13::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE13_A::ENABLED
+        *self == Receive13::Enabled
     }
 }
 #[doc = "Field `RECEIVE13` writer - Enable or disable interrupt for event RECEIVE\\[13\\]"]
-pub type RECEIVE13_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE13_A, O>;
-impl<'a, const O: u8> RECEIVE13_W<'a, O> {
+pub type Receive13W<'a, REG> = crate::BitWriter<'a, REG, Receive13>;
+impl<'a, REG> Receive13W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE13_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive13::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE13_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive13::Enabled)
+    }
+}
+#[doc = "Enable or disable interrupt for event RECEIVE\\[14\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive14 {
+    #[doc = "0: Disable"]
+    Disabled = 0,
+    #[doc = "1: Enable"]
+    Enabled = 1,
+}
+impl From<Receive14> for bool {
+    #[inline(always)]
+    fn from(variant: Receive14) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `RECEIVE14` reader - Enable or disable interrupt for event RECEIVE\\[14\\]"]
-pub type RECEIVE14_R = crate::BitReader<RECEIVE14_A>;
-#[doc = "Enable or disable interrupt for event RECEIVE\\[14\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE14_A {
-    #[doc = "0: Disable"]
-    DISABLED = 0,
-    #[doc = "1: Enable"]
-    ENABLED = 1,
-}
-impl From<RECEIVE14_A> for bool {
-    #[inline(always)]
-    fn from(variant: RECEIVE14_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RECEIVE14_R {
+pub type Receive14R = crate::BitReader<Receive14>;
+impl Receive14R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE14_A {
+    pub const fn variant(&self) -> Receive14 {
         match self.bits {
-            false => RECEIVE14_A::DISABLED,
-            true => RECEIVE14_A::ENABLED,
+            false => Receive14::Disabled,
+            true => Receive14::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE14_A::DISABLED
+        *self == Receive14::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE14_A::ENABLED
+        *self == Receive14::Enabled
     }
 }
 #[doc = "Field `RECEIVE14` writer - Enable or disable interrupt for event RECEIVE\\[14\\]"]
-pub type RECEIVE14_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE14_A, O>;
-impl<'a, const O: u8> RECEIVE14_W<'a, O> {
+pub type Receive14W<'a, REG> = crate::BitWriter<'a, REG, Receive14>;
+impl<'a, REG> Receive14W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE14_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive14::Disabled)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE14_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive14::Enabled)
     }
 }
-#[doc = "Field `RECEIVE15` reader - Enable or disable interrupt for event RECEIVE\\[15\\]"]
-pub type RECEIVE15_R = crate::BitReader<RECEIVE15_A>;
 #[doc = "Enable or disable interrupt for event RECEIVE\\[15\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RECEIVE15_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Receive15 {
     #[doc = "0: Disable"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Enable"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<RECEIVE15_A> for bool {
+impl From<Receive15> for bool {
     #[inline(always)]
-    fn from(variant: RECEIVE15_A) -> Self {
+    fn from(variant: Receive15) -> Self {
         variant as u8 != 0
     }
 }
-impl RECEIVE15_R {
+#[doc = "Field `RECEIVE15` reader - Enable or disable interrupt for event RECEIVE\\[15\\]"]
+pub type Receive15R = crate::BitReader<Receive15>;
+impl Receive15R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RECEIVE15_A {
+    pub const fn variant(&self) -> Receive15 {
         match self.bits {
-            false => RECEIVE15_A::DISABLED,
-            true => RECEIVE15_A::ENABLED,
+            false => Receive15::Disabled,
+            true => Receive15::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == RECEIVE15_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == RECEIVE15_A::ENABLED
-    }
-}
-#[doc = "Field `RECEIVE15` writer - Enable or disable interrupt for event RECEIVE\\[15\\]"]
-pub type RECEIVE15_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTEN_SPEC, RECEIVE15_A, O>;
-impl<'a, const O: u8> RECEIVE15_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RECEIVE15_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Receive15::Disabled
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RECEIVE15_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Receive15::Enabled
+    }
+}
+#[doc = "Field `RECEIVE15` writer - Enable or disable interrupt for event RECEIVE\\[15\\]"]
+pub type Receive15W<'a, REG> = crate::BitWriter<'a, REG, Receive15>;
+impl<'a, REG> Receive15W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive15::Disabled)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Receive15::Enabled)
     }
 }
 impl R {
     #[doc = "Bit 0 - Enable or disable interrupt for event RECEIVE\\[0\\]"]
     #[inline(always)]
-    pub fn receive0(&self) -> RECEIVE0_R {
-        RECEIVE0_R::new((self.bits & 1) != 0)
+    pub fn receive0(&self) -> Receive0R {
+        Receive0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable or disable interrupt for event RECEIVE\\[1\\]"]
     #[inline(always)]
-    pub fn receive1(&self) -> RECEIVE1_R {
-        RECEIVE1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn receive1(&self) -> Receive1R {
+        Receive1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable or disable interrupt for event RECEIVE\\[2\\]"]
     #[inline(always)]
-    pub fn receive2(&self) -> RECEIVE2_R {
-        RECEIVE2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn receive2(&self) -> Receive2R {
+        Receive2R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable or disable interrupt for event RECEIVE\\[3\\]"]
     #[inline(always)]
-    pub fn receive3(&self) -> RECEIVE3_R {
-        RECEIVE3_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn receive3(&self) -> Receive3R {
+        Receive3R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable or disable interrupt for event RECEIVE\\[4\\]"]
     #[inline(always)]
-    pub fn receive4(&self) -> RECEIVE4_R {
-        RECEIVE4_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn receive4(&self) -> Receive4R {
+        Receive4R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable or disable interrupt for event RECEIVE\\[5\\]"]
     #[inline(always)]
-    pub fn receive5(&self) -> RECEIVE5_R {
-        RECEIVE5_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn receive5(&self) -> Receive5R {
+        Receive5R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable or disable interrupt for event RECEIVE\\[6\\]"]
     #[inline(always)]
-    pub fn receive6(&self) -> RECEIVE6_R {
-        RECEIVE6_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn receive6(&self) -> Receive6R {
+        Receive6R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable or disable interrupt for event RECEIVE\\[7\\]"]
     #[inline(always)]
-    pub fn receive7(&self) -> RECEIVE7_R {
-        RECEIVE7_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn receive7(&self) -> Receive7R {
+        Receive7R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Enable or disable interrupt for event RECEIVE\\[8\\]"]
     #[inline(always)]
-    pub fn receive8(&self) -> RECEIVE8_R {
-        RECEIVE8_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn receive8(&self) -> Receive8R {
+        Receive8R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Enable or disable interrupt for event RECEIVE\\[9\\]"]
     #[inline(always)]
-    pub fn receive9(&self) -> RECEIVE9_R {
-        RECEIVE9_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn receive9(&self) -> Receive9R {
+        Receive9R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Enable or disable interrupt for event RECEIVE\\[10\\]"]
     #[inline(always)]
-    pub fn receive10(&self) -> RECEIVE10_R {
-        RECEIVE10_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn receive10(&self) -> Receive10R {
+        Receive10R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Enable or disable interrupt for event RECEIVE\\[11\\]"]
     #[inline(always)]
-    pub fn receive11(&self) -> RECEIVE11_R {
-        RECEIVE11_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn receive11(&self) -> Receive11R {
+        Receive11R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Enable or disable interrupt for event RECEIVE\\[12\\]"]
     #[inline(always)]
-    pub fn receive12(&self) -> RECEIVE12_R {
-        RECEIVE12_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn receive12(&self) -> Receive12R {
+        Receive12R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Enable or disable interrupt for event RECEIVE\\[13\\]"]
     #[inline(always)]
-    pub fn receive13(&self) -> RECEIVE13_R {
-        RECEIVE13_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn receive13(&self) -> Receive13R {
+        Receive13R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Enable or disable interrupt for event RECEIVE\\[14\\]"]
     #[inline(always)]
-    pub fn receive14(&self) -> RECEIVE14_R {
-        RECEIVE14_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn receive14(&self) -> Receive14R {
+        Receive14R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Enable or disable interrupt for event RECEIVE\\[15\\]"]
     #[inline(always)]
-    pub fn receive15(&self) -> RECEIVE15_R {
-        RECEIVE15_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn receive15(&self) -> Receive15R {
+        Receive15R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable or disable interrupt for event RECEIVE\\[0\\]"]
     #[inline(always)]
-    pub fn receive0(&mut self) -> RECEIVE0_W<0> {
-        RECEIVE0_W::new(self)
+    pub fn receive0(&mut self) -> Receive0W<'_, IntenSpec> {
+        Receive0W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable or disable interrupt for event RECEIVE\\[1\\]"]
     #[inline(always)]
-    pub fn receive1(&mut self) -> RECEIVE1_W<1> {
-        RECEIVE1_W::new(self)
+    pub fn receive1(&mut self) -> Receive1W<'_, IntenSpec> {
+        Receive1W::new(self, 1)
     }
     #[doc = "Bit 2 - Enable or disable interrupt for event RECEIVE\\[2\\]"]
     #[inline(always)]
-    pub fn receive2(&mut self) -> RECEIVE2_W<2> {
-        RECEIVE2_W::new(self)
+    pub fn receive2(&mut self) -> Receive2W<'_, IntenSpec> {
+        Receive2W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable or disable interrupt for event RECEIVE\\[3\\]"]
     #[inline(always)]
-    pub fn receive3(&mut self) -> RECEIVE3_W<3> {
-        RECEIVE3_W::new(self)
+    pub fn receive3(&mut self) -> Receive3W<'_, IntenSpec> {
+        Receive3W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable or disable interrupt for event RECEIVE\\[4\\]"]
     #[inline(always)]
-    pub fn receive4(&mut self) -> RECEIVE4_W<4> {
-        RECEIVE4_W::new(self)
+    pub fn receive4(&mut self) -> Receive4W<'_, IntenSpec> {
+        Receive4W::new(self, 4)
     }
     #[doc = "Bit 5 - Enable or disable interrupt for event RECEIVE\\[5\\]"]
     #[inline(always)]
-    pub fn receive5(&mut self) -> RECEIVE5_W<5> {
-        RECEIVE5_W::new(self)
+    pub fn receive5(&mut self) -> Receive5W<'_, IntenSpec> {
+        Receive5W::new(self, 5)
     }
     #[doc = "Bit 6 - Enable or disable interrupt for event RECEIVE\\[6\\]"]
     #[inline(always)]
-    pub fn receive6(&mut self) -> RECEIVE6_W<6> {
-        RECEIVE6_W::new(self)
+    pub fn receive6(&mut self) -> Receive6W<'_, IntenSpec> {
+        Receive6W::new(self, 6)
     }
     #[doc = "Bit 7 - Enable or disable interrupt for event RECEIVE\\[7\\]"]
     #[inline(always)]
-    pub fn receive7(&mut self) -> RECEIVE7_W<7> {
-        RECEIVE7_W::new(self)
+    pub fn receive7(&mut self) -> Receive7W<'_, IntenSpec> {
+        Receive7W::new(self, 7)
     }
     #[doc = "Bit 8 - Enable or disable interrupt for event RECEIVE\\[8\\]"]
     #[inline(always)]
-    pub fn receive8(&mut self) -> RECEIVE8_W<8> {
-        RECEIVE8_W::new(self)
+    pub fn receive8(&mut self) -> Receive8W<'_, IntenSpec> {
+        Receive8W::new(self, 8)
     }
     #[doc = "Bit 9 - Enable or disable interrupt for event RECEIVE\\[9\\]"]
     #[inline(always)]
-    pub fn receive9(&mut self) -> RECEIVE9_W<9> {
-        RECEIVE9_W::new(self)
+    pub fn receive9(&mut self) -> Receive9W<'_, IntenSpec> {
+        Receive9W::new(self, 9)
     }
     #[doc = "Bit 10 - Enable or disable interrupt for event RECEIVE\\[10\\]"]
     #[inline(always)]
-    pub fn receive10(&mut self) -> RECEIVE10_W<10> {
-        RECEIVE10_W::new(self)
+    pub fn receive10(&mut self) -> Receive10W<'_, IntenSpec> {
+        Receive10W::new(self, 10)
     }
     #[doc = "Bit 11 - Enable or disable interrupt for event RECEIVE\\[11\\]"]
     #[inline(always)]
-    pub fn receive11(&mut self) -> RECEIVE11_W<11> {
-        RECEIVE11_W::new(self)
+    pub fn receive11(&mut self) -> Receive11W<'_, IntenSpec> {
+        Receive11W::new(self, 11)
     }
     #[doc = "Bit 12 - Enable or disable interrupt for event RECEIVE\\[12\\]"]
     #[inline(always)]
-    pub fn receive12(&mut self) -> RECEIVE12_W<12> {
-        RECEIVE12_W::new(self)
+    pub fn receive12(&mut self) -> Receive12W<'_, IntenSpec> {
+        Receive12W::new(self, 12)
     }
     #[doc = "Bit 13 - Enable or disable interrupt for event RECEIVE\\[13\\]"]
     #[inline(always)]
-    pub fn receive13(&mut self) -> RECEIVE13_W<13> {
-        RECEIVE13_W::new(self)
+    pub fn receive13(&mut self) -> Receive13W<'_, IntenSpec> {
+        Receive13W::new(self, 13)
     }
     #[doc = "Bit 14 - Enable or disable interrupt for event RECEIVE\\[14\\]"]
     #[inline(always)]
-    pub fn receive14(&mut self) -> RECEIVE14_W<14> {
-        RECEIVE14_W::new(self)
+    pub fn receive14(&mut self) -> Receive14W<'_, IntenSpec> {
+        Receive14W::new(self, 14)
     }
     #[doc = "Bit 15 - Enable or disable interrupt for event RECEIVE\\[15\\]"]
     #[inline(always)]
-    pub fn receive15(&mut self) -> RECEIVE15_W<15> {
-        RECEIVE15_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn receive15(&mut self) -> Receive15W<'_, IntenSpec> {
+        Receive15W::new(self, 15)
     }
 }
-#[doc = "Enable or disable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [inten](index.html) module"]
-pub struct INTEN_SPEC;
-impl crate::RegisterSpec for INTEN_SPEC {
+#[doc = "Enable or disable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`inten::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`inten::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct IntenSpec;
+impl crate::RegisterSpec for IntenSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [inten::R](R) reader structure"]
-impl crate::Readable for INTEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [inten::W](W) writer structure"]
-impl crate::Writable for INTEN_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`inten::R`](R) reader structure"]
+impl crate::Readable for IntenSpec {}
+#[doc = "`write(|w| ..)` method takes [`inten::W`](W) writer structure"]
+impl crate::Writable for IntenSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets INTEN to value 0"]
-impl crate::Resettable for INTEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for IntenSpec {}

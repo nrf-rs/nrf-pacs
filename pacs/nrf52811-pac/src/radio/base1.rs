@@ -1,80 +1,35 @@
 #[doc = "Register `BASE1` reader"]
-pub struct R(crate::R<BASE1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BASE1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BASE1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BASE1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Base1Spec>;
 #[doc = "Register `BASE1` writer"]
-pub struct W(crate::W<BASE1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BASE1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BASE1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BASE1_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Base1Spec>;
 #[doc = "Field `BASE1` reader - Base address 1"]
-pub type BASE1_R = crate::FieldReader<u32, u32>;
+pub type Base1R = crate::FieldReader<u32>;
 #[doc = "Field `BASE1` writer - Base address 1"]
-pub type BASE1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BASE1_SPEC, u32, u32, 32, O>;
+pub type Base1W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Base address 1"]
     #[inline(always)]
-    pub fn base1(&self) -> BASE1_R {
-        BASE1_R::new(self.bits)
+    pub fn base1(&self) -> Base1R {
+        Base1R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Base address 1"]
     #[inline(always)]
-    pub fn base1(&mut self) -> BASE1_W<0> {
-        BASE1_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn base1(&mut self) -> Base1W<'_, Base1Spec> {
+        Base1W::new(self, 0)
     }
 }
-#[doc = "Base address 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [base1](index.html) module"]
-pub struct BASE1_SPEC;
-impl crate::RegisterSpec for BASE1_SPEC {
+#[doc = "Base address 1\n\nYou can [`read`](crate::Reg::read) this register and get [`base1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`base1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Base1Spec;
+impl crate::RegisterSpec for Base1Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [base1::R](R) reader structure"]
-impl crate::Readable for BASE1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [base1::W](W) writer structure"]
-impl crate::Writable for BASE1_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`base1::R`](R) reader structure"]
+impl crate::Readable for Base1Spec {}
+#[doc = "`write(|w| ..)` method takes [`base1::W`](W) writer structure"]
+impl crate::Writable for Base1Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets BASE1 to value 0"]
-impl crate::Resettable for BASE1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Base1Spec {}

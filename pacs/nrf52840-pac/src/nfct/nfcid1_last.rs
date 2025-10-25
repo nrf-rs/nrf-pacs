@@ -1,122 +1,79 @@
 #[doc = "Register `NFCID1_LAST` reader"]
-pub struct R(crate::R<NFCID1_LAST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NFCID1_LAST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NFCID1_LAST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NFCID1_LAST_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Nfcid1LastSpec>;
 #[doc = "Register `NFCID1_LAST` writer"]
-pub struct W(crate::W<NFCID1_LAST_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NFCID1_LAST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NFCID1_LAST_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NFCID1_LAST_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Nfcid1LastSpec>;
 #[doc = "Field `NFCID1_Z` reader - NFCID1 byte Z (very last byte sent)"]
-pub type NFCID1_Z_R = crate::FieldReader<u8, u8>;
+pub type Nfcid1ZR = crate::FieldReader;
 #[doc = "Field `NFCID1_Z` writer - NFCID1 byte Z (very last byte sent)"]
-pub type NFCID1_Z_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NFCID1_LAST_SPEC, u8, u8, 8, O>;
+pub type Nfcid1ZW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `NFCID1_Y` reader - NFCID1 byte Y"]
-pub type NFCID1_Y_R = crate::FieldReader<u8, u8>;
+pub type Nfcid1YR = crate::FieldReader;
 #[doc = "Field `NFCID1_Y` writer - NFCID1 byte Y"]
-pub type NFCID1_Y_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NFCID1_LAST_SPEC, u8, u8, 8, O>;
+pub type Nfcid1YW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `NFCID1_X` reader - NFCID1 byte X"]
-pub type NFCID1_X_R = crate::FieldReader<u8, u8>;
+pub type Nfcid1XR = crate::FieldReader;
 #[doc = "Field `NFCID1_X` writer - NFCID1 byte X"]
-pub type NFCID1_X_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NFCID1_LAST_SPEC, u8, u8, 8, O>;
+pub type Nfcid1XW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `NFCID1_W` reader - NFCID1 byte W"]
-pub type NFCID1_W_R = crate::FieldReader<u8, u8>;
+pub type Nfcid1WR = crate::FieldReader;
 #[doc = "Field `NFCID1_W` writer - NFCID1 byte W"]
-pub type NFCID1_W_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NFCID1_LAST_SPEC, u8, u8, 8, O>;
+pub type Nfcid1WW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - NFCID1 byte Z (very last byte sent)"]
     #[inline(always)]
-    pub fn nfcid1_z(&self) -> NFCID1_Z_R {
-        NFCID1_Z_R::new((self.bits & 0xff) as u8)
+    pub fn nfcid1_z(&self) -> Nfcid1ZR {
+        Nfcid1ZR::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - NFCID1 byte Y"]
     #[inline(always)]
-    pub fn nfcid1_y(&self) -> NFCID1_Y_R {
-        NFCID1_Y_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn nfcid1_y(&self) -> Nfcid1YR {
+        Nfcid1YR::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - NFCID1 byte X"]
     #[inline(always)]
-    pub fn nfcid1_x(&self) -> NFCID1_X_R {
-        NFCID1_X_R::new(((self.bits >> 16) & 0xff) as u8)
+    pub fn nfcid1_x(&self) -> Nfcid1XR {
+        Nfcid1XR::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - NFCID1 byte W"]
     #[inline(always)]
-    pub fn nfcid1_w(&self) -> NFCID1_W_R {
-        NFCID1_W_R::new(((self.bits >> 24) & 0xff) as u8)
+    pub fn nfcid1_w(&self) -> Nfcid1WR {
+        Nfcid1WR::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - NFCID1 byte Z (very last byte sent)"]
     #[inline(always)]
-    pub fn nfcid1_z(&mut self) -> NFCID1_Z_W<0> {
-        NFCID1_Z_W::new(self)
+    pub fn nfcid1_z(&mut self) -> Nfcid1ZW<'_, Nfcid1LastSpec> {
+        Nfcid1ZW::new(self, 0)
     }
     #[doc = "Bits 8:15 - NFCID1 byte Y"]
     #[inline(always)]
-    pub fn nfcid1_y(&mut self) -> NFCID1_Y_W<8> {
-        NFCID1_Y_W::new(self)
+    pub fn nfcid1_y(&mut self) -> Nfcid1YW<'_, Nfcid1LastSpec> {
+        Nfcid1YW::new(self, 8)
     }
     #[doc = "Bits 16:23 - NFCID1 byte X"]
     #[inline(always)]
-    pub fn nfcid1_x(&mut self) -> NFCID1_X_W<16> {
-        NFCID1_X_W::new(self)
+    pub fn nfcid1_x(&mut self) -> Nfcid1XW<'_, Nfcid1LastSpec> {
+        Nfcid1XW::new(self, 16)
     }
     #[doc = "Bits 24:31 - NFCID1 byte W"]
     #[inline(always)]
-    pub fn nfcid1_w(&mut self) -> NFCID1_W_W<24> {
-        NFCID1_W_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn nfcid1_w(&mut self) -> Nfcid1WW<'_, Nfcid1LastSpec> {
+        Nfcid1WW::new(self, 24)
     }
 }
-#[doc = "Last NFCID1 part (4, 7 or 10 bytes ID)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nfcid1_last](index.html) module"]
-pub struct NFCID1_LAST_SPEC;
-impl crate::RegisterSpec for NFCID1_LAST_SPEC {
+#[doc = "Last NFCID1 part (4, 7 or 10 bytes ID)\n\nYou can [`read`](crate::Reg::read) this register and get [`nfcid1_last::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`nfcid1_last::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Nfcid1LastSpec;
+impl crate::RegisterSpec for Nfcid1LastSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [nfcid1_last::R](R) reader structure"]
-impl crate::Readable for NFCID1_LAST_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [nfcid1_last::W](W) writer structure"]
-impl crate::Writable for NFCID1_LAST_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`nfcid1_last::R`](R) reader structure"]
+impl crate::Readable for Nfcid1LastSpec {}
+#[doc = "`write(|w| ..)` method takes [`nfcid1_last::W`](W) writer structure"]
+impl crate::Writable for Nfcid1LastSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets NFCID1_LAST to value 0x6363"]
-impl crate::Resettable for NFCID1_LAST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x6363
-    }
+impl crate::Resettable for Nfcid1LastSpec {
+    const RESET_VALUE: u32 = 0x6363;
 }

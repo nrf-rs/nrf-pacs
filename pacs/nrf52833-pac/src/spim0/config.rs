@@ -1,246 +1,210 @@
 #[doc = "Register `CONFIG` reader"]
-pub struct R(crate::R<CONFIG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CONFIG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CONFIG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ConfigSpec>;
 #[doc = "Register `CONFIG` writer"]
-pub struct W(crate::W<CONFIG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<ConfigSpec>;
+#[doc = "Bit order\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Order {
+    #[doc = "0: Most significant bit shifted out first"]
+    MsbFirst = 0,
+    #[doc = "1: Least significant bit shifted out first"]
+    LsbFirst = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Order> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CONFIG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CONFIG_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Order) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ORDER` reader - Bit order"]
-pub type ORDER_R = crate::BitReader<ORDER_A>;
-#[doc = "Bit order\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ORDER_A {
-    #[doc = "0: Most significant bit shifted out first"]
-    MSB_FIRST = 0,
-    #[doc = "1: Least significant bit shifted out first"]
-    LSB_FIRST = 1,
-}
-impl From<ORDER_A> for bool {
-    #[inline(always)]
-    fn from(variant: ORDER_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ORDER_R {
+pub type OrderR = crate::BitReader<Order>;
+impl OrderR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ORDER_A {
+    pub const fn variant(&self) -> Order {
         match self.bits {
-            false => ORDER_A::MSB_FIRST,
-            true => ORDER_A::LSB_FIRST,
+            false => Order::MsbFirst,
+            true => Order::LsbFirst,
         }
     }
-    #[doc = "Checks if the value of the field is `MSB_FIRST`"]
-    #[inline(always)]
-    pub fn is_msb_first(&self) -> bool {
-        *self == ORDER_A::MSB_FIRST
-    }
-    #[doc = "Checks if the value of the field is `LSB_FIRST`"]
-    #[inline(always)]
-    pub fn is_lsb_first(&self) -> bool {
-        *self == ORDER_A::LSB_FIRST
-    }
-}
-#[doc = "Field `ORDER` writer - Bit order"]
-pub type ORDER_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, ORDER_A, O>;
-impl<'a, const O: u8> ORDER_W<'a, O> {
     #[doc = "Most significant bit shifted out first"]
     #[inline(always)]
-    pub fn msb_first(self) -> &'a mut W {
-        self.variant(ORDER_A::MSB_FIRST)
+    pub fn is_msb_first(&self) -> bool {
+        *self == Order::MsbFirst
     }
     #[doc = "Least significant bit shifted out first"]
     #[inline(always)]
-    pub fn lsb_first(self) -> &'a mut W {
-        self.variant(ORDER_A::LSB_FIRST)
+    pub fn is_lsb_first(&self) -> bool {
+        *self == Order::LsbFirst
+    }
+}
+#[doc = "Field `ORDER` writer - Bit order"]
+pub type OrderW<'a, REG> = crate::BitWriter<'a, REG, Order>;
+impl<'a, REG> OrderW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Most significant bit shifted out first"]
+    #[inline(always)]
+    pub fn msb_first(self) -> &'a mut crate::W<REG> {
+        self.variant(Order::MsbFirst)
+    }
+    #[doc = "Least significant bit shifted out first"]
+    #[inline(always)]
+    pub fn lsb_first(self) -> &'a mut crate::W<REG> {
+        self.variant(Order::LsbFirst)
+    }
+}
+#[doc = "Serial clock (SCK) phase\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Cpha {
+    #[doc = "0: Sample on leading edge of clock, shift serial data on trailing edge"]
+    Leading = 0,
+    #[doc = "1: Sample on trailing edge of clock, shift serial data on leading edge"]
+    Trailing = 1,
+}
+impl From<Cpha> for bool {
+    #[inline(always)]
+    fn from(variant: Cpha) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `CPHA` reader - Serial clock (SCK) phase"]
-pub type CPHA_R = crate::BitReader<CPHA_A>;
-#[doc = "Serial clock (SCK) phase\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPHA_A {
-    #[doc = "0: Sample on leading edge of clock, shift serial data on trailing edge"]
-    LEADING = 0,
-    #[doc = "1: Sample on trailing edge of clock, shift serial data on leading edge"]
-    TRAILING = 1,
-}
-impl From<CPHA_A> for bool {
-    #[inline(always)]
-    fn from(variant: CPHA_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl CPHA_R {
+pub type CphaR = crate::BitReader<Cpha>;
+impl CphaR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CPHA_A {
+    pub const fn variant(&self) -> Cpha {
         match self.bits {
-            false => CPHA_A::LEADING,
-            true => CPHA_A::TRAILING,
+            false => Cpha::Leading,
+            true => Cpha::Trailing,
         }
     }
-    #[doc = "Checks if the value of the field is `LEADING`"]
-    #[inline(always)]
-    pub fn is_leading(&self) -> bool {
-        *self == CPHA_A::LEADING
-    }
-    #[doc = "Checks if the value of the field is `TRAILING`"]
-    #[inline(always)]
-    pub fn is_trailing(&self) -> bool {
-        *self == CPHA_A::TRAILING
-    }
-}
-#[doc = "Field `CPHA` writer - Serial clock (SCK) phase"]
-pub type CPHA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, CPHA_A, O>;
-impl<'a, const O: u8> CPHA_W<'a, O> {
     #[doc = "Sample on leading edge of clock, shift serial data on trailing edge"]
     #[inline(always)]
-    pub fn leading(self) -> &'a mut W {
-        self.variant(CPHA_A::LEADING)
+    pub fn is_leading(&self) -> bool {
+        *self == Cpha::Leading
     }
     #[doc = "Sample on trailing edge of clock, shift serial data on leading edge"]
     #[inline(always)]
-    pub fn trailing(self) -> &'a mut W {
-        self.variant(CPHA_A::TRAILING)
+    pub fn is_trailing(&self) -> bool {
+        *self == Cpha::Trailing
     }
 }
-#[doc = "Field `CPOL` reader - Serial clock (SCK) polarity"]
-pub type CPOL_R = crate::BitReader<CPOL_A>;
-#[doc = "Serial clock (SCK) polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPOL_A {
-    #[doc = "0: Active high"]
-    ACTIVE_HIGH = 0,
-    #[doc = "1: Active low"]
-    ACTIVE_LOW = 1,
-}
-impl From<CPOL_A> for bool {
+#[doc = "Field `CPHA` writer - Serial clock (SCK) phase"]
+pub type CphaW<'a, REG> = crate::BitWriter<'a, REG, Cpha>;
+impl<'a, REG> CphaW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Sample on leading edge of clock, shift serial data on trailing edge"]
     #[inline(always)]
-    fn from(variant: CPOL_A) -> Self {
+    pub fn leading(self) -> &'a mut crate::W<REG> {
+        self.variant(Cpha::Leading)
+    }
+    #[doc = "Sample on trailing edge of clock, shift serial data on leading edge"]
+    #[inline(always)]
+    pub fn trailing(self) -> &'a mut crate::W<REG> {
+        self.variant(Cpha::Trailing)
+    }
+}
+#[doc = "Serial clock (SCK) polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Cpol {
+    #[doc = "0: Active high"]
+    ActiveHigh = 0,
+    #[doc = "1: Active low"]
+    ActiveLow = 1,
+}
+impl From<Cpol> for bool {
+    #[inline(always)]
+    fn from(variant: Cpol) -> Self {
         variant as u8 != 0
     }
 }
-impl CPOL_R {
+#[doc = "Field `CPOL` reader - Serial clock (SCK) polarity"]
+pub type CpolR = crate::BitReader<Cpol>;
+impl CpolR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CPOL_A {
+    pub const fn variant(&self) -> Cpol {
         match self.bits {
-            false => CPOL_A::ACTIVE_HIGH,
-            true => CPOL_A::ACTIVE_LOW,
+            false => Cpol::ActiveHigh,
+            true => Cpol::ActiveLow,
         }
     }
-    #[doc = "Checks if the value of the field is `ACTIVE_HIGH`"]
-    #[inline(always)]
-    pub fn is_active_high(&self) -> bool {
-        *self == CPOL_A::ACTIVE_HIGH
-    }
-    #[doc = "Checks if the value of the field is `ACTIVE_LOW`"]
-    #[inline(always)]
-    pub fn is_active_low(&self) -> bool {
-        *self == CPOL_A::ACTIVE_LOW
-    }
-}
-#[doc = "Field `CPOL` writer - Serial clock (SCK) polarity"]
-pub type CPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, CPOL_A, O>;
-impl<'a, const O: u8> CPOL_W<'a, O> {
     #[doc = "Active high"]
     #[inline(always)]
-    pub fn active_high(self) -> &'a mut W {
-        self.variant(CPOL_A::ACTIVE_HIGH)
+    pub fn is_active_high(&self) -> bool {
+        *self == Cpol::ActiveHigh
     }
     #[doc = "Active low"]
     #[inline(always)]
-    pub fn active_low(self) -> &'a mut W {
-        self.variant(CPOL_A::ACTIVE_LOW)
+    pub fn is_active_low(&self) -> bool {
+        *self == Cpol::ActiveLow
+    }
+}
+#[doc = "Field `CPOL` writer - Serial clock (SCK) polarity"]
+pub type CpolW<'a, REG> = crate::BitWriter<'a, REG, Cpol>;
+impl<'a, REG> CpolW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Active high"]
+    #[inline(always)]
+    pub fn active_high(self) -> &'a mut crate::W<REG> {
+        self.variant(Cpol::ActiveHigh)
+    }
+    #[doc = "Active low"]
+    #[inline(always)]
+    pub fn active_low(self) -> &'a mut crate::W<REG> {
+        self.variant(Cpol::ActiveLow)
     }
 }
 impl R {
     #[doc = "Bit 0 - Bit order"]
     #[inline(always)]
-    pub fn order(&self) -> ORDER_R {
-        ORDER_R::new((self.bits & 1) != 0)
+    pub fn order(&self) -> OrderR {
+        OrderR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Serial clock (SCK) phase"]
     #[inline(always)]
-    pub fn cpha(&self) -> CPHA_R {
-        CPHA_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn cpha(&self) -> CphaR {
+        CphaR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Serial clock (SCK) polarity"]
     #[inline(always)]
-    pub fn cpol(&self) -> CPOL_R {
-        CPOL_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn cpol(&self) -> CpolR {
+        CpolR::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Bit order"]
     #[inline(always)]
-    pub fn order(&mut self) -> ORDER_W<0> {
-        ORDER_W::new(self)
+    pub fn order(&mut self) -> OrderW<'_, ConfigSpec> {
+        OrderW::new(self, 0)
     }
     #[doc = "Bit 1 - Serial clock (SCK) phase"]
     #[inline(always)]
-    pub fn cpha(&mut self) -> CPHA_W<1> {
-        CPHA_W::new(self)
+    pub fn cpha(&mut self) -> CphaW<'_, ConfigSpec> {
+        CphaW::new(self, 1)
     }
     #[doc = "Bit 2 - Serial clock (SCK) polarity"]
     #[inline(always)]
-    pub fn cpol(&mut self) -> CPOL_W<2> {
-        CPOL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn cpol(&mut self) -> CpolW<'_, ConfigSpec> {
+        CpolW::new(self, 2)
     }
 }
-#[doc = "Configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config](index.html) module"]
-pub struct CONFIG_SPEC;
-impl crate::RegisterSpec for CONFIG_SPEC {
+#[doc = "Configuration register\n\nYou can [`read`](crate::Reg::read) this register and get [`config::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`config::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ConfigSpec;
+impl crate::RegisterSpec for ConfigSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [config::R](R) reader structure"]
-impl crate::Readable for CONFIG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [config::W](W) writer structure"]
-impl crate::Writable for CONFIG_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`config::R`](R) reader structure"]
+impl crate::Readable for ConfigSpec {}
+#[doc = "`write(|w| ..)` method takes [`config::W`](W) writer structure"]
+impl crate::Writable for ConfigSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CONFIG to value 0"]
-impl crate::Resettable for CONFIG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for ConfigSpec {}

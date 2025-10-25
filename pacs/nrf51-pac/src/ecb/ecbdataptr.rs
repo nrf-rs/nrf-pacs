@@ -1,64 +1,23 @@
 #[doc = "Register `ECBDATAPTR` reader"]
-pub struct R(crate::R<ECBDATAPTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ECBDATAPTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ECBDATAPTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ECBDATAPTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EcbdataptrSpec>;
 #[doc = "Register `ECBDATAPTR` writer"]
-pub struct W(crate::W<ECBDATAPTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ECBDATAPTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type W = crate::W<EcbdataptrSpec>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ECBDATAPTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ECBDATAPTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "ECB block encrypt memory pointer.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ecbdataptr](index.html) module"]
-pub struct ECBDATAPTR_SPEC;
-impl crate::RegisterSpec for ECBDATAPTR_SPEC {
+impl W {}
+#[doc = "ECB block encrypt memory pointer.\n\nYou can [`read`](crate::Reg::read) this register and get [`ecbdataptr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ecbdataptr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EcbdataptrSpec;
+impl crate::RegisterSpec for EcbdataptrSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ecbdataptr::R](R) reader structure"]
-impl crate::Readable for ECBDATAPTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ecbdataptr::W](W) writer structure"]
-impl crate::Writable for ECBDATAPTR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ecbdataptr::R`](R) reader structure"]
+impl crate::Readable for EcbdataptrSpec {}
+#[doc = "`write(|w| ..)` method takes [`ecbdataptr::W`](W) writer structure"]
+impl crate::Writable for EcbdataptrSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets ECBDATAPTR to value 0"]
-impl crate::Resettable for ECBDATAPTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EcbdataptrSpec {}

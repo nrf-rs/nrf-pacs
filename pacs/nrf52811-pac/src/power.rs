@@ -1,120 +1,190 @@
-#[doc = r"Register block"]
 #[repr(C)]
+#[doc = "Register block"]
 pub struct RegisterBlock {
     _reserved0: [u8; 0x78],
-    #[doc = "0x78 - Enable Constant Latency mode"]
-    pub tasks_constlat: TASKS_CONSTLAT,
-    #[doc = "0x7c - Enable Low-power mode (variable latency)"]
-    pub tasks_lowpwr: TASKS_LOWPWR,
+    tasks_constlat: TasksConstlat,
+    tasks_lowpwr: TasksLowpwr,
     _reserved2: [u8; 0x88],
-    #[doc = "0x108 - Power failure warning"]
-    pub events_pofwarn: EVENTS_POFWARN,
+    events_pofwarn: EventsPofwarn,
     _reserved3: [u8; 0x08],
-    #[doc = "0x114 - CPU entered WFI/WFE sleep"]
-    pub events_sleepenter: EVENTS_SLEEPENTER,
-    #[doc = "0x118 - CPU exited WFI/WFE sleep"]
-    pub events_sleepexit: EVENTS_SLEEPEXIT,
+    events_sleepenter: EventsSleepenter,
+    events_sleepexit: EventsSleepexit,
     _reserved5: [u8; 0x01e8],
-    #[doc = "0x304 - Enable interrupt"]
-    pub intenset: INTENSET,
-    #[doc = "0x308 - Disable interrupt"]
-    pub intenclr: INTENCLR,
+    intenset: Intenset,
+    intenclr: Intenclr,
     _reserved7: [u8; 0xf4],
-    #[doc = "0x400 - Reset reason"]
-    pub resetreas: RESETREAS,
+    resetreas: Resetreas,
     _reserved8: [u8; 0xfc],
-    #[doc = "0x500 - System OFF register"]
-    pub systemoff: SYSTEMOFF,
+    systemoff: Systemoff,
     _reserved9: [u8; 0x0c],
-    #[doc = "0x510 - Power failure comparator configuration"]
-    pub pofcon: POFCON,
+    pofcon: Pofcon,
     _reserved10: [u8; 0x08],
-    #[doc = "0x51c - General purpose retention register"]
-    pub gpregret: GPREGRET,
-    #[doc = "0x520 - General purpose retention register"]
-    pub gpregret2: GPREGRET2,
+    gpregret: Gpregret,
+    gpregret2: Gpregret2,
     _reserved12: [u8; 0x54],
-    #[doc = "0x578 - DC/DC enable register"]
-    pub dcdcen: DCDCEN,
+    dcdcen: Dcdcen,
     _reserved13: [u8; 0x0384],
-    #[doc = "0x900..0x90c - Unspecified"]
-    pub ram0: RAM,
-    _reserved14: [u8; 0x04],
-    #[doc = "0x910..0x91c - Unspecified"]
-    pub ram1: RAM,
-    _reserved15: [u8; 0x04],
-    #[doc = "0x920..0x92c - Unspecified"]
-    pub ram2: RAM,
-    _reserved16: [u8; 0x04],
-    #[doc = "0x930..0x93c - Unspecified"]
-    pub ram3: RAM,
-    _reserved17: [u8; 0x04],
-    #[doc = "0x940..0x94c - Unspecified"]
-    pub ram4: RAM,
-    _reserved18: [u8; 0x04],
-    #[doc = "0x950..0x95c - Unspecified"]
-    pub ram5: RAM,
-    _reserved19: [u8; 0x04],
-    #[doc = "0x960..0x96c - Unspecified"]
-    pub ram6: RAM,
-    _reserved20: [u8; 0x04],
-    #[doc = "0x970..0x97c - Unspecified"]
-    pub ram7: RAM,
+    ram: (),
 }
-#[doc = "TASKS_CONSTLAT (w) register accessor: an alias for `Reg<TASKS_CONSTLAT_SPEC>`"]
-pub type TASKS_CONSTLAT = crate::Reg<tasks_constlat::TASKS_CONSTLAT_SPEC>;
+impl RegisterBlock {
+    #[doc = "0x78 - Enable Constant Latency mode"]
+    #[inline(always)]
+    pub const fn tasks_constlat(&self) -> &TasksConstlat {
+        &self.tasks_constlat
+    }
+    #[doc = "0x7c - Enable Low-power mode (variable latency)"]
+    #[inline(always)]
+    pub const fn tasks_lowpwr(&self) -> &TasksLowpwr {
+        &self.tasks_lowpwr
+    }
+    #[doc = "0x108 - Power failure warning"]
+    #[inline(always)]
+    pub const fn events_pofwarn(&self) -> &EventsPofwarn {
+        &self.events_pofwarn
+    }
+    #[doc = "0x114 - CPU entered WFI/WFE sleep"]
+    #[inline(always)]
+    pub const fn events_sleepenter(&self) -> &EventsSleepenter {
+        &self.events_sleepenter
+    }
+    #[doc = "0x118 - CPU exited WFI/WFE sleep"]
+    #[inline(always)]
+    pub const fn events_sleepexit(&self) -> &EventsSleepexit {
+        &self.events_sleepexit
+    }
+    #[doc = "0x304 - Enable interrupt"]
+    #[inline(always)]
+    pub const fn intenset(&self) -> &Intenset {
+        &self.intenset
+    }
+    #[doc = "0x308 - Disable interrupt"]
+    #[inline(always)]
+    pub const fn intenclr(&self) -> &Intenclr {
+        &self.intenclr
+    }
+    #[doc = "0x400 - Reset reason"]
+    #[inline(always)]
+    pub const fn resetreas(&self) -> &Resetreas {
+        &self.resetreas
+    }
+    #[doc = "0x500 - System OFF register"]
+    #[inline(always)]
+    pub const fn systemoff(&self) -> &Systemoff {
+        &self.systemoff
+    }
+    #[doc = "0x510 - Power failure comparator configuration"]
+    #[inline(always)]
+    pub const fn pofcon(&self) -> &Pofcon {
+        &self.pofcon
+    }
+    #[doc = "0x51c - General purpose retention register"]
+    #[inline(always)]
+    pub const fn gpregret(&self) -> &Gpregret {
+        &self.gpregret
+    }
+    #[doc = "0x520 - General purpose retention register"]
+    #[inline(always)]
+    pub const fn gpregret2(&self) -> &Gpregret2 {
+        &self.gpregret2
+    }
+    #[doc = "0x578 - DC/DC enable register"]
+    #[inline(always)]
+    pub const fn dcdcen(&self) -> &Dcdcen {
+        &self.dcdcen
+    }
+    #[doc = "0x900..0x960 - Unspecified"]
+    #[inline(always)]
+    pub const fn ram(&self, n: usize) -> &Ram {
+        #[allow(clippy::no_effect)]
+        [(); 8][n];
+        unsafe {
+            &*core::ptr::from_ref(self)
+                .cast::<u8>()
+                .add(2304)
+                .add(16 * n)
+                .cast()
+        }
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x900..0x960 - Unspecified"]
+    #[inline(always)]
+    pub fn ram_iter(&self) -> impl Iterator<Item = &Ram> {
+        (0..8).map(move |n| unsafe {
+            &*core::ptr::from_ref(self)
+                .cast::<u8>()
+                .add(2304)
+                .add(16 * n)
+                .cast()
+        })
+    }
+}
+#[doc = "TASKS_CONSTLAT (w) register accessor: Enable Constant Latency mode\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_constlat::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_constlat`] module"]
+#[doc(alias = "TASKS_CONSTLAT")]
+pub type TasksConstlat = crate::Reg<tasks_constlat::TasksConstlatSpec>;
 #[doc = "Enable Constant Latency mode"]
 pub mod tasks_constlat;
-#[doc = "TASKS_LOWPWR (w) register accessor: an alias for `Reg<TASKS_LOWPWR_SPEC>`"]
-pub type TASKS_LOWPWR = crate::Reg<tasks_lowpwr::TASKS_LOWPWR_SPEC>;
+#[doc = "TASKS_LOWPWR (w) register accessor: Enable Low-power mode (variable latency)\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_lowpwr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_lowpwr`] module"]
+#[doc(alias = "TASKS_LOWPWR")]
+pub type TasksLowpwr = crate::Reg<tasks_lowpwr::TasksLowpwrSpec>;
 #[doc = "Enable Low-power mode (variable latency)"]
 pub mod tasks_lowpwr;
-#[doc = "EVENTS_POFWARN (rw) register accessor: an alias for `Reg<EVENTS_POFWARN_SPEC>`"]
-pub type EVENTS_POFWARN = crate::Reg<events_pofwarn::EVENTS_POFWARN_SPEC>;
+#[doc = "EVENTS_POFWARN (rw) register accessor: Power failure warning\n\nYou can [`read`](crate::Reg::read) this register and get [`events_pofwarn::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_pofwarn::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_pofwarn`] module"]
+#[doc(alias = "EVENTS_POFWARN")]
+pub type EventsPofwarn = crate::Reg<events_pofwarn::EventsPofwarnSpec>;
 #[doc = "Power failure warning"]
 pub mod events_pofwarn;
-#[doc = "EVENTS_SLEEPENTER (rw) register accessor: an alias for `Reg<EVENTS_SLEEPENTER_SPEC>`"]
-pub type EVENTS_SLEEPENTER = crate::Reg<events_sleepenter::EVENTS_SLEEPENTER_SPEC>;
+#[doc = "EVENTS_SLEEPENTER (rw) register accessor: CPU entered WFI/WFE sleep\n\nYou can [`read`](crate::Reg::read) this register and get [`events_sleepenter::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_sleepenter::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_sleepenter`] module"]
+#[doc(alias = "EVENTS_SLEEPENTER")]
+pub type EventsSleepenter = crate::Reg<events_sleepenter::EventsSleepenterSpec>;
 #[doc = "CPU entered WFI/WFE sleep"]
 pub mod events_sleepenter;
-#[doc = "EVENTS_SLEEPEXIT (rw) register accessor: an alias for `Reg<EVENTS_SLEEPEXIT_SPEC>`"]
-pub type EVENTS_SLEEPEXIT = crate::Reg<events_sleepexit::EVENTS_SLEEPEXIT_SPEC>;
+#[doc = "EVENTS_SLEEPEXIT (rw) register accessor: CPU exited WFI/WFE sleep\n\nYou can [`read`](crate::Reg::read) this register and get [`events_sleepexit::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_sleepexit::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_sleepexit`] module"]
+#[doc(alias = "EVENTS_SLEEPEXIT")]
+pub type EventsSleepexit = crate::Reg<events_sleepexit::EventsSleepexitSpec>;
 #[doc = "CPU exited WFI/WFE sleep"]
 pub mod events_sleepexit;
-#[doc = "INTENSET (rw) register accessor: an alias for `Reg<INTENSET_SPEC>`"]
-pub type INTENSET = crate::Reg<intenset::INTENSET_SPEC>;
+#[doc = "INTENSET (rw) register accessor: Enable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`intenset::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenset::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenset`] module"]
+#[doc(alias = "INTENSET")]
+pub type Intenset = crate::Reg<intenset::IntensetSpec>;
 #[doc = "Enable interrupt"]
 pub mod intenset;
-#[doc = "INTENCLR (rw) register accessor: an alias for `Reg<INTENCLR_SPEC>`"]
-pub type INTENCLR = crate::Reg<intenclr::INTENCLR_SPEC>;
+#[doc = "INTENCLR (rw) register accessor: Disable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`intenclr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenclr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenclr`] module"]
+#[doc(alias = "INTENCLR")]
+pub type Intenclr = crate::Reg<intenclr::IntenclrSpec>;
 #[doc = "Disable interrupt"]
 pub mod intenclr;
-#[doc = "RESETREAS (rw) register accessor: an alias for `Reg<RESETREAS_SPEC>`"]
-pub type RESETREAS = crate::Reg<resetreas::RESETREAS_SPEC>;
+#[doc = "RESETREAS (rw) register accessor: Reset reason\n\nYou can [`read`](crate::Reg::read) this register and get [`resetreas::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`resetreas::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@resetreas`] module"]
+#[doc(alias = "RESETREAS")]
+pub type Resetreas = crate::Reg<resetreas::ResetreasSpec>;
 #[doc = "Reset reason"]
 pub mod resetreas;
-#[doc = "SYSTEMOFF (w) register accessor: an alias for `Reg<SYSTEMOFF_SPEC>`"]
-pub type SYSTEMOFF = crate::Reg<systemoff::SYSTEMOFF_SPEC>;
+#[doc = "SYSTEMOFF (w) register accessor: System OFF register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`systemoff::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@systemoff`] module"]
+#[doc(alias = "SYSTEMOFF")]
+pub type Systemoff = crate::Reg<systemoff::SystemoffSpec>;
 #[doc = "System OFF register"]
 pub mod systemoff;
-#[doc = "POFCON (rw) register accessor: an alias for `Reg<POFCON_SPEC>`"]
-pub type POFCON = crate::Reg<pofcon::POFCON_SPEC>;
+#[doc = "POFCON (rw) register accessor: Power failure comparator configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`pofcon::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pofcon::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pofcon`] module"]
+#[doc(alias = "POFCON")]
+pub type Pofcon = crate::Reg<pofcon::PofconSpec>;
 #[doc = "Power failure comparator configuration"]
 pub mod pofcon;
-#[doc = "GPREGRET (rw) register accessor: an alias for `Reg<GPREGRET_SPEC>`"]
-pub type GPREGRET = crate::Reg<gpregret::GPREGRET_SPEC>;
+#[doc = "GPREGRET (rw) register accessor: General purpose retention register\n\nYou can [`read`](crate::Reg::read) this register and get [`gpregret::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gpregret::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpregret`] module"]
+#[doc(alias = "GPREGRET")]
+pub type Gpregret = crate::Reg<gpregret::GpregretSpec>;
 #[doc = "General purpose retention register"]
 pub mod gpregret;
-#[doc = "GPREGRET2 (rw) register accessor: an alias for `Reg<GPREGRET2_SPEC>`"]
-pub type GPREGRET2 = crate::Reg<gpregret2::GPREGRET2_SPEC>;
+#[doc = "GPREGRET2 (rw) register accessor: General purpose retention register\n\nYou can [`read`](crate::Reg::read) this register and get [`gpregret2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gpregret2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpregret2`] module"]
+#[doc(alias = "GPREGRET2")]
+pub type Gpregret2 = crate::Reg<gpregret2::Gpregret2Spec>;
 #[doc = "General purpose retention register"]
 pub mod gpregret2;
-#[doc = "DCDCEN (rw) register accessor: an alias for `Reg<DCDCEN_SPEC>`"]
-pub type DCDCEN = crate::Reg<dcdcen::DCDCEN_SPEC>;
+#[doc = "DCDCEN (rw) register accessor: DC/DC enable register\n\nYou can [`read`](crate::Reg::read) this register and get [`dcdcen::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dcdcen::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dcdcen`] module"]
+#[doc(alias = "DCDCEN")]
+pub type Dcdcen = crate::Reg<dcdcen::DcdcenSpec>;
 #[doc = "DC/DC enable register"]
 pub mod dcdcen;
 #[doc = "Unspecified"]
-pub use ram::RAM;
+pub use self::ram::Ram;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod ram;

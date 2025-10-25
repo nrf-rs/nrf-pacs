@@ -1,142 +1,104 @@
 #[doc = "Register `HOST_CRYPTOKEY_SEL` reader"]
-pub struct R(crate::R<HOST_CRYPTOKEY_SEL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HOST_CRYPTOKEY_SEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HOST_CRYPTOKEY_SEL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HOST_CRYPTOKEY_SEL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HostCryptokeySelSpec>;
 #[doc = "Register `HOST_CRYPTOKEY_SEL` writer"]
-pub struct W(crate::W<HOST_CRYPTOKEY_SEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HOST_CRYPTOKEY_SEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HOST_CRYPTOKEY_SEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HOST_CRYPTOKEY_SEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `HOST_CRYPTOKEY_SEL` reader - Select the source of the HW key that is used by the AES engine"]
-pub type HOST_CRYPTOKEY_SEL_R = crate::FieldReader<u8, HOST_CRYPTOKEY_SEL_A>;
+pub type W = crate::W<HostCryptokeySelSpec>;
 #[doc = "Select the source of the HW key that is used by the AES engine\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum HOST_CRYPTOKEY_SEL_A {
+pub enum HostCryptokeySel {
     #[doc = "0: Use device root key K_DR from CRYPTOCELL AO power domain"]
-    K_DR = 0,
+    KDr = 0,
     #[doc = "1: Use hard-coded RTL key K_PRTL"]
-    K_PRTL = 1,
+    KPrtl = 1,
     #[doc = "2: Use provided session key"]
-    SESSION = 2,
+    Session = 2,
 }
-impl From<HOST_CRYPTOKEY_SEL_A> for u8 {
+impl From<HostCryptokeySel> for u8 {
     #[inline(always)]
-    fn from(variant: HOST_CRYPTOKEY_SEL_A) -> Self {
+    fn from(variant: HostCryptokeySel) -> Self {
         variant as _
     }
 }
-impl HOST_CRYPTOKEY_SEL_R {
+impl crate::FieldSpec for HostCryptokeySel {
+    type Ux = u8;
+}
+impl crate::IsEnum for HostCryptokeySel {}
+#[doc = "Field `HOST_CRYPTOKEY_SEL` reader - Select the source of the HW key that is used by the AES engine"]
+pub type HostCryptokeySelR = crate::FieldReader<HostCryptokeySel>;
+impl HostCryptokeySelR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HOST_CRYPTOKEY_SEL_A> {
+    pub const fn variant(&self) -> Option<HostCryptokeySel> {
         match self.bits {
-            0 => Some(HOST_CRYPTOKEY_SEL_A::K_DR),
-            1 => Some(HOST_CRYPTOKEY_SEL_A::K_PRTL),
-            2 => Some(HOST_CRYPTOKEY_SEL_A::SESSION),
+            0 => Some(HostCryptokeySel::KDr),
+            1 => Some(HostCryptokeySel::KPrtl),
+            2 => Some(HostCryptokeySel::Session),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `K_DR`"]
-    #[inline(always)]
-    pub fn is_k_dr(&self) -> bool {
-        *self == HOST_CRYPTOKEY_SEL_A::K_DR
-    }
-    #[doc = "Checks if the value of the field is `K_PRTL`"]
-    #[inline(always)]
-    pub fn is_k_prtl(&self) -> bool {
-        *self == HOST_CRYPTOKEY_SEL_A::K_PRTL
-    }
-    #[doc = "Checks if the value of the field is `SESSION`"]
-    #[inline(always)]
-    pub fn is_session(&self) -> bool {
-        *self == HOST_CRYPTOKEY_SEL_A::SESSION
-    }
-}
-#[doc = "Field `HOST_CRYPTOKEY_SEL` writer - Select the source of the HW key that is used by the AES engine"]
-pub type HOST_CRYPTOKEY_SEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HOST_CRYPTOKEY_SEL_SPEC, u8, HOST_CRYPTOKEY_SEL_A, 2, O>;
-impl<'a, const O: u8> HOST_CRYPTOKEY_SEL_W<'a, O> {
     #[doc = "Use device root key K_DR from CRYPTOCELL AO power domain"]
     #[inline(always)]
-    pub fn k_dr(self) -> &'a mut W {
-        self.variant(HOST_CRYPTOKEY_SEL_A::K_DR)
+    pub fn is_k_dr(&self) -> bool {
+        *self == HostCryptokeySel::KDr
     }
     #[doc = "Use hard-coded RTL key K_PRTL"]
     #[inline(always)]
-    pub fn k_prtl(self) -> &'a mut W {
-        self.variant(HOST_CRYPTOKEY_SEL_A::K_PRTL)
+    pub fn is_k_prtl(&self) -> bool {
+        *self == HostCryptokeySel::KPrtl
     }
     #[doc = "Use provided session key"]
     #[inline(always)]
-    pub fn session(self) -> &'a mut W {
-        self.variant(HOST_CRYPTOKEY_SEL_A::SESSION)
+    pub fn is_session(&self) -> bool {
+        *self == HostCryptokeySel::Session
+    }
+}
+#[doc = "Field `HOST_CRYPTOKEY_SEL` writer - Select the source of the HW key that is used by the AES engine"]
+pub type HostCryptokeySelW<'a, REG> = crate::FieldWriter<'a, REG, 2, HostCryptokeySel>;
+impl<'a, REG> HostCryptokeySelW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Use device root key K_DR from CRYPTOCELL AO power domain"]
+    #[inline(always)]
+    pub fn k_dr(self) -> &'a mut crate::W<REG> {
+        self.variant(HostCryptokeySel::KDr)
+    }
+    #[doc = "Use hard-coded RTL key K_PRTL"]
+    #[inline(always)]
+    pub fn k_prtl(self) -> &'a mut crate::W<REG> {
+        self.variant(HostCryptokeySel::KPrtl)
+    }
+    #[doc = "Use provided session key"]
+    #[inline(always)]
+    pub fn session(self) -> &'a mut crate::W<REG> {
+        self.variant(HostCryptokeySel::Session)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Select the source of the HW key that is used by the AES engine"]
     #[inline(always)]
-    pub fn host_cryptokey_sel(&self) -> HOST_CRYPTOKEY_SEL_R {
-        HOST_CRYPTOKEY_SEL_R::new((self.bits & 3) as u8)
+    pub fn host_cryptokey_sel(&self) -> HostCryptokeySelR {
+        HostCryptokeySelR::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Select the source of the HW key that is used by the AES engine"]
     #[inline(always)]
-    pub fn host_cryptokey_sel(&mut self) -> HOST_CRYPTOKEY_SEL_W<0> {
-        HOST_CRYPTOKEY_SEL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn host_cryptokey_sel(&mut self) -> HostCryptokeySelW<'_, HostCryptokeySelSpec> {
+        HostCryptokeySelW::new(self, 0)
     }
 }
-#[doc = "AES hardware key select\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [host_cryptokey_sel](index.html) module"]
-pub struct HOST_CRYPTOKEY_SEL_SPEC;
-impl crate::RegisterSpec for HOST_CRYPTOKEY_SEL_SPEC {
+#[doc = "AES hardware key select.\n\nYou can [`read`](crate::Reg::read) this register and get [`host_cryptokey_sel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`host_cryptokey_sel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct HostCryptokeySelSpec;
+impl crate::RegisterSpec for HostCryptokeySelSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [host_cryptokey_sel::R](R) reader structure"]
-impl crate::Readable for HOST_CRYPTOKEY_SEL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [host_cryptokey_sel::W](W) writer structure"]
-impl crate::Writable for HOST_CRYPTOKEY_SEL_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`host_cryptokey_sel::R`](R) reader structure"]
+impl crate::Readable for HostCryptokeySelSpec {}
+#[doc = "`write(|w| ..)` method takes [`host_cryptokey_sel::W`](W) writer structure"]
+impl crate::Writable for HostCryptokeySelSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets HOST_CRYPTOKEY_SEL to value 0"]
-impl crate::Resettable for HOST_CRYPTOKEY_SEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for HostCryptokeySelSpec {}

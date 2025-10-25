@@ -1,126 +1,84 @@
 #[doc = "Register `LOCK` reader"]
-pub struct R(crate::R<LOCK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LOCK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LOCK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LOCK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LockSpec>;
 #[doc = "Register `LOCK` writer"]
-pub struct W(crate::W<LOCK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LOCK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LOCK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LOCK_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `LOCK` reader - Lock register ERASEPROTECT.DISABLE from being written until next reset"]
-pub type LOCK_R = crate::BitReader<LOCK_A>;
-#[doc = "Lock register ERASEPROTECT.DISABLE from being written until next reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_A {
+pub type W = crate::W<LockSpec>;
+#[doc = "Lock ERASEPROTECT.DISABLE register from being written until next reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Lock {
     #[doc = "0: Register ERASEPROTECT.DISABLE is writeable"]
-    UNLOCKED = 0,
+    Unlocked = 0,
     #[doc = "1: Register ERASEPROTECT.DISABLE is read-only"]
-    LOCKED = 1,
+    Locked = 1,
 }
-impl From<LOCK_A> for bool {
+impl From<Lock> for bool {
     #[inline(always)]
-    fn from(variant: LOCK_A) -> Self {
+    fn from(variant: Lock) -> Self {
         variant as u8 != 0
     }
 }
-impl LOCK_R {
+#[doc = "Field `LOCK` reader - Lock ERASEPROTECT.DISABLE register from being written until next reset"]
+pub type LockR = crate::BitReader<Lock>;
+impl LockR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCK_A {
+    pub const fn variant(&self) -> Lock {
         match self.bits {
-            false => LOCK_A::UNLOCKED,
-            true => LOCK_A::LOCKED,
+            false => Lock::Unlocked,
+            true => Lock::Locked,
         }
     }
-    #[doc = "Checks if the value of the field is `UNLOCKED`"]
-    #[inline(always)]
-    pub fn is_unlocked(&self) -> bool {
-        *self == LOCK_A::UNLOCKED
-    }
-    #[doc = "Checks if the value of the field is `LOCKED`"]
-    #[inline(always)]
-    pub fn is_locked(&self) -> bool {
-        *self == LOCK_A::LOCKED
-    }
-}
-#[doc = "Field `LOCK` writer - Lock register ERASEPROTECT.DISABLE from being written until next reset"]
-pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, LOCK_SPEC, LOCK_A, O>;
-impl<'a, const O: u8> LOCK_W<'a, O> {
     #[doc = "Register ERASEPROTECT.DISABLE is writeable"]
     #[inline(always)]
-    pub fn unlocked(self) -> &'a mut W {
-        self.variant(LOCK_A::UNLOCKED)
+    pub fn is_unlocked(&self) -> bool {
+        *self == Lock::Unlocked
     }
     #[doc = "Register ERASEPROTECT.DISABLE is read-only"]
     #[inline(always)]
-    pub fn locked(self) -> &'a mut W {
-        self.variant(LOCK_A::LOCKED)
+    pub fn is_locked(&self) -> bool {
+        *self == Lock::Locked
+    }
+}
+#[doc = "Field `LOCK` writer - Lock ERASEPROTECT.DISABLE register from being written until next reset"]
+pub type LockW<'a, REG> = crate::BitWriter<'a, REG, Lock>;
+impl<'a, REG> LockW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Register ERASEPROTECT.DISABLE is writeable"]
+    #[inline(always)]
+    pub fn unlocked(self) -> &'a mut crate::W<REG> {
+        self.variant(Lock::Unlocked)
+    }
+    #[doc = "Register ERASEPROTECT.DISABLE is read-only"]
+    #[inline(always)]
+    pub fn locked(self) -> &'a mut crate::W<REG> {
+        self.variant(Lock::Locked)
     }
 }
 impl R {
-    #[doc = "Bit 0 - Lock register ERASEPROTECT.DISABLE from being written until next reset"]
+    #[doc = "Bit 0 - Lock ERASEPROTECT.DISABLE register from being written until next reset"]
     #[inline(always)]
-    pub fn lock(&self) -> LOCK_R {
-        LOCK_R::new((self.bits & 1) != 0)
+    pub fn lock(&self) -> LockR {
+        LockR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Lock register ERASEPROTECT.DISABLE from being written until next reset"]
+    #[doc = "Bit 0 - Lock ERASEPROTECT.DISABLE register from being written until next reset"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LOCK_W<0> {
-        LOCK_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn lock(&mut self) -> LockW<'_, LockSpec> {
+        LockW::new(self, 0)
     }
 }
-#[doc = "Lock register ERASEPROTECT.DISABLE from being written until next reset\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lock](index.html) module"]
-pub struct LOCK_SPEC;
-impl crate::RegisterSpec for LOCK_SPEC {
+#[doc = "This register locks the ERASEPROTECT.DISABLE register from being written until next reset.\n\nYou can [`read`](crate::Reg::read) this register and get [`lock::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lock::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct LockSpec;
+impl crate::RegisterSpec for LockSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lock::R](R) reader structure"]
-impl crate::Readable for LOCK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [lock::W](W) writer structure"]
-impl crate::Writable for LOCK_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`lock::R`](R) reader structure"]
+impl crate::Readable for LockSpec {}
+#[doc = "`write(|w| ..)` method takes [`lock::W`](W) writer structure"]
+impl crate::Writable for LockSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets LOCK to value 0"]
-impl crate::Resettable for LOCK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for LockSpec {}

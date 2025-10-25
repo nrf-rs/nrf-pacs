@@ -1,41 +1,22 @@
 #[doc = "Register `IR[%s]` reader"]
-pub struct R(crate::R<IR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IrSpec>;
 #[doc = "Field `IR` reader - Identity Root, word n"]
-pub type IR_R = crate::FieldReader<u32, u32>;
+pub type IrR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Identity Root, word n"]
     #[inline(always)]
-    pub fn ir(&self) -> IR_R {
-        IR_R::new(self.bits)
+    pub fn ir(&self) -> IrR {
+        IrR::new(self.bits)
     }
 }
-#[doc = "Description collection\\[0\\]: Identity Root, word 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ir](index.html) module"]
-pub struct IR_SPEC;
-impl crate::RegisterSpec for IR_SPEC {
+#[doc = "Description collection\\[0\\]: Identity Root, word 0\n\nYou can [`read`](crate::Reg::read) this register and get [`ir::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct IrSpec;
+impl crate::RegisterSpec for IrSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ir::R](R) reader structure"]
-impl crate::Readable for IR_SPEC {
-    type Reader = R;
-}
-#[doc = "`reset()` method sets IR[%s]
-to value 0xffff_ffff"]
-impl crate::Resettable for IR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+#[doc = "`read()` method returns [`ir::R`](R) reader structure"]
+impl crate::Readable for IrSpec {}
+#[doc = "`reset()` method sets IR[%s] to value 0xffff_ffff"]
+impl crate::Resettable for IrSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

@@ -1,80 +1,84 @@
 #[doc = "Register `WA` reader"]
-pub struct R(crate::R<WA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<WA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<WA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<WA_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<WaSpec>;
 #[doc = "Register `WA` writer"]
-pub struct W(crate::W<WA_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<WA_SPEC>;
+pub type W = crate::W<WaSpec>;
+#[doc = "Write access to region n detected\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Wa {
+    #[doc = "0: Event not generated"]
+    NotGenerated = 0,
+    #[doc = "1: Event generated"]
+    Generated = 1,
+}
+impl From<Wa> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: Wa) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `WA` reader - Write access to region n detected"]
+pub type WaR = crate::BitReader<Wa>;
+impl WaR {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub const fn variant(&self) -> Wa {
+        match self.bits {
+            false => Wa::NotGenerated,
+            true => Wa::Generated,
+        }
+    }
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn is_not_generated(&self) -> bool {
+        *self == Wa::NotGenerated
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn is_generated(&self) -> bool {
+        *self == Wa::Generated
     }
 }
-impl From<crate::W<WA_SPEC>> for W {
+#[doc = "Field `WA` writer - Write access to region n detected"]
+pub type WaW<'a, REG> = crate::BitWriter<'a, REG, Wa>;
+impl<'a, REG> WaW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
     #[inline(always)]
-    fn from(writer: crate::W<WA_SPEC>) -> Self {
-        W(writer)
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(Wa::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(Wa::Generated)
     }
 }
-#[doc = "Field `WA` reader - "]
-pub type WA_R = crate::BitReader<bool>;
-#[doc = "Field `WA` writer - "]
-pub type WA_W<'a, const O: u8> = crate::BitWriter<'a, u32, WA_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Write access to region n detected"]
     #[inline(always)]
-    pub fn wa(&self) -> WA_R {
-        WA_R::new((self.bits & 1) != 0)
+    pub fn wa(&self) -> WaR {
+        WaR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Write access to region n detected"]
     #[inline(always)]
-    pub fn wa(&mut self) -> WA_W<0> {
-        WA_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn wa(&mut self) -> WaW<'_, WaSpec> {
+        WaW::new(self, 0)
     }
 }
-#[doc = "Description cluster\\[n\\]: Write access to region n detected\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wa](index.html) module"]
-pub struct WA_SPEC;
-impl crate::RegisterSpec for WA_SPEC {
+#[doc = "Description cluster: Write access to region n detected\n\nYou can [`read`](crate::Reg::read) this register and get [`wa::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wa::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct WaSpec;
+impl crate::RegisterSpec for WaSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [wa::R](R) reader structure"]
-impl crate::Readable for WA_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [wa::W](W) writer structure"]
-impl crate::Writable for WA_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`wa::R`](R) reader structure"]
+impl crate::Readable for WaSpec {}
+#[doc = "`write(|w| ..)` method takes [`wa::W`](W) writer structure"]
+impl crate::Writable for WaSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets WA to value 0"]
-impl crate::Resettable for WA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for WaSpec {}

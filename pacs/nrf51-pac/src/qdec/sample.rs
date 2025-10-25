@@ -1,40 +1,20 @@
 #[doc = "Register `SAMPLE` reader"]
-pub struct R(crate::R<SAMPLE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SAMPLE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SAMPLE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SAMPLE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SampleSpec>;
 #[doc = "Field `SAMPLE` reader - Last sample taken in compliment to 2."]
-pub type SAMPLE_R = crate::FieldReader<u32, u32>;
+pub type SampleR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Last sample taken in compliment to 2."]
     #[inline(always)]
-    pub fn sample(&self) -> SAMPLE_R {
-        SAMPLE_R::new(self.bits)
+    pub fn sample(&self) -> SampleR {
+        SampleR::new(self.bits)
     }
 }
-#[doc = "Motion sample value.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sample](index.html) module"]
-pub struct SAMPLE_SPEC;
-impl crate::RegisterSpec for SAMPLE_SPEC {
+#[doc = "Motion sample value.\n\nYou can [`read`](crate::Reg::read) this register and get [`sample::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct SampleSpec;
+impl crate::RegisterSpec for SampleSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sample::R](R) reader structure"]
-impl crate::Readable for SAMPLE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sample::R`](R) reader structure"]
+impl crate::Readable for SampleSpec {}
 #[doc = "`reset()` method sets SAMPLE to value 0"]
-impl crate::Resettable for SAMPLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for SampleSpec {}

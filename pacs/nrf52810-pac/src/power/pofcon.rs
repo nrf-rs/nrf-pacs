@@ -1,95 +1,64 @@
 #[doc = "Register `POFCON` reader"]
-pub struct R(crate::R<POFCON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<POFCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<POFCON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<POFCON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PofconSpec>;
 #[doc = "Register `POFCON` writer"]
-pub struct W(crate::W<POFCON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<POFCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<POFCON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<POFCON_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `POF` reader - Enable or disable power failure comparator"]
-pub type POF_R = crate::BitReader<POF_A>;
+pub type W = crate::W<PofconSpec>;
 #[doc = "Enable or disable power failure comparator\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum POF_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pof {
     #[doc = "0: Disable"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Enable"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<POF_A> for bool {
+impl From<Pof> for bool {
     #[inline(always)]
-    fn from(variant: POF_A) -> Self {
+    fn from(variant: Pof) -> Self {
         variant as u8 != 0
     }
 }
-impl POF_R {
+#[doc = "Field `POF` reader - Enable or disable power failure comparator"]
+pub type PofR = crate::BitReader<Pof>;
+impl PofR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> POF_A {
+    pub const fn variant(&self) -> Pof {
         match self.bits {
-            false => POF_A::DISABLED,
-            true => POF_A::ENABLED,
+            false => Pof::Disabled,
+            true => Pof::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == POF_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == POF_A::ENABLED
-    }
-}
-#[doc = "Field `POF` writer - Enable or disable power failure comparator"]
-pub type POF_W<'a, const O: u8> = crate::BitWriter<'a, u32, POFCON_SPEC, POF_A, O>;
-impl<'a, const O: u8> POF_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(POF_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Pof::Disabled
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(POF_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Pof::Enabled
     }
 }
-#[doc = "Field `THRESHOLD` reader - Power failure comparator threshold setting"]
-pub type THRESHOLD_R = crate::FieldReader<u8, THRESHOLD_A>;
+#[doc = "Field `POF` writer - Enable or disable power failure comparator"]
+pub type PofW<'a, REG> = crate::BitWriter<'a, REG, Pof>;
+impl<'a, REG> PofW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Pof::Disabled)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Pof::Enabled)
+    }
+}
 #[doc = "Power failure comparator threshold setting\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum THRESHOLD_A {
+pub enum Threshold {
     #[doc = "4: Set threshold to 1.7 V"]
     V17 = 4,
     #[doc = "5: Set threshold to 1.8 V"]
@@ -115,205 +84,201 @@ pub enum THRESHOLD_A {
     #[doc = "15: Set threshold to 2.8 V"]
     V28 = 15,
 }
-impl From<THRESHOLD_A> for u8 {
+impl From<Threshold> for u8 {
     #[inline(always)]
-    fn from(variant: THRESHOLD_A) -> Self {
+    fn from(variant: Threshold) -> Self {
         variant as _
     }
 }
-impl THRESHOLD_R {
+impl crate::FieldSpec for Threshold {
+    type Ux = u8;
+}
+impl crate::IsEnum for Threshold {}
+#[doc = "Field `THRESHOLD` reader - Power failure comparator threshold setting"]
+pub type ThresholdR = crate::FieldReader<Threshold>;
+impl ThresholdR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<THRESHOLD_A> {
+    pub const fn variant(&self) -> Option<Threshold> {
         match self.bits {
-            4 => Some(THRESHOLD_A::V17),
-            5 => Some(THRESHOLD_A::V18),
-            6 => Some(THRESHOLD_A::V19),
-            7 => Some(THRESHOLD_A::V20),
-            8 => Some(THRESHOLD_A::V21),
-            9 => Some(THRESHOLD_A::V22),
-            10 => Some(THRESHOLD_A::V23),
-            11 => Some(THRESHOLD_A::V24),
-            12 => Some(THRESHOLD_A::V25),
-            13 => Some(THRESHOLD_A::V26),
-            14 => Some(THRESHOLD_A::V27),
-            15 => Some(THRESHOLD_A::V28),
+            4 => Some(Threshold::V17),
+            5 => Some(Threshold::V18),
+            6 => Some(Threshold::V19),
+            7 => Some(Threshold::V20),
+            8 => Some(Threshold::V21),
+            9 => Some(Threshold::V22),
+            10 => Some(Threshold::V23),
+            11 => Some(Threshold::V24),
+            12 => Some(Threshold::V25),
+            13 => Some(Threshold::V26),
+            14 => Some(Threshold::V27),
+            15 => Some(Threshold::V28),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `V17`"]
-    #[inline(always)]
-    pub fn is_v17(&self) -> bool {
-        *self == THRESHOLD_A::V17
-    }
-    #[doc = "Checks if the value of the field is `V18`"]
-    #[inline(always)]
-    pub fn is_v18(&self) -> bool {
-        *self == THRESHOLD_A::V18
-    }
-    #[doc = "Checks if the value of the field is `V19`"]
-    #[inline(always)]
-    pub fn is_v19(&self) -> bool {
-        *self == THRESHOLD_A::V19
-    }
-    #[doc = "Checks if the value of the field is `V20`"]
-    #[inline(always)]
-    pub fn is_v20(&self) -> bool {
-        *self == THRESHOLD_A::V20
-    }
-    #[doc = "Checks if the value of the field is `V21`"]
-    #[inline(always)]
-    pub fn is_v21(&self) -> bool {
-        *self == THRESHOLD_A::V21
-    }
-    #[doc = "Checks if the value of the field is `V22`"]
-    #[inline(always)]
-    pub fn is_v22(&self) -> bool {
-        *self == THRESHOLD_A::V22
-    }
-    #[doc = "Checks if the value of the field is `V23`"]
-    #[inline(always)]
-    pub fn is_v23(&self) -> bool {
-        *self == THRESHOLD_A::V23
-    }
-    #[doc = "Checks if the value of the field is `V24`"]
-    #[inline(always)]
-    pub fn is_v24(&self) -> bool {
-        *self == THRESHOLD_A::V24
-    }
-    #[doc = "Checks if the value of the field is `V25`"]
-    #[inline(always)]
-    pub fn is_v25(&self) -> bool {
-        *self == THRESHOLD_A::V25
-    }
-    #[doc = "Checks if the value of the field is `V26`"]
-    #[inline(always)]
-    pub fn is_v26(&self) -> bool {
-        *self == THRESHOLD_A::V26
-    }
-    #[doc = "Checks if the value of the field is `V27`"]
-    #[inline(always)]
-    pub fn is_v27(&self) -> bool {
-        *self == THRESHOLD_A::V27
-    }
-    #[doc = "Checks if the value of the field is `V28`"]
-    #[inline(always)]
-    pub fn is_v28(&self) -> bool {
-        *self == THRESHOLD_A::V28
-    }
-}
-#[doc = "Field `THRESHOLD` writer - Power failure comparator threshold setting"]
-pub type THRESHOLD_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, POFCON_SPEC, u8, THRESHOLD_A, 4, O>;
-impl<'a, const O: u8> THRESHOLD_W<'a, O> {
     #[doc = "Set threshold to 1.7 V"]
     #[inline(always)]
-    pub fn v17(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V17)
+    pub fn is_v17(&self) -> bool {
+        *self == Threshold::V17
     }
     #[doc = "Set threshold to 1.8 V"]
     #[inline(always)]
-    pub fn v18(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V18)
+    pub fn is_v18(&self) -> bool {
+        *self == Threshold::V18
     }
     #[doc = "Set threshold to 1.9 V"]
     #[inline(always)]
-    pub fn v19(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V19)
+    pub fn is_v19(&self) -> bool {
+        *self == Threshold::V19
     }
     #[doc = "Set threshold to 2.0 V"]
     #[inline(always)]
-    pub fn v20(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V20)
+    pub fn is_v20(&self) -> bool {
+        *self == Threshold::V20
     }
     #[doc = "Set threshold to 2.1 V"]
     #[inline(always)]
-    pub fn v21(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V21)
+    pub fn is_v21(&self) -> bool {
+        *self == Threshold::V21
     }
     #[doc = "Set threshold to 2.2 V"]
     #[inline(always)]
-    pub fn v22(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V22)
+    pub fn is_v22(&self) -> bool {
+        *self == Threshold::V22
     }
     #[doc = "Set threshold to 2.3 V"]
     #[inline(always)]
-    pub fn v23(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V23)
+    pub fn is_v23(&self) -> bool {
+        *self == Threshold::V23
     }
     #[doc = "Set threshold to 2.4 V"]
     #[inline(always)]
-    pub fn v24(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V24)
+    pub fn is_v24(&self) -> bool {
+        *self == Threshold::V24
     }
     #[doc = "Set threshold to 2.5 V"]
     #[inline(always)]
-    pub fn v25(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V25)
+    pub fn is_v25(&self) -> bool {
+        *self == Threshold::V25
     }
     #[doc = "Set threshold to 2.6 V"]
     #[inline(always)]
-    pub fn v26(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V26)
+    pub fn is_v26(&self) -> bool {
+        *self == Threshold::V26
     }
     #[doc = "Set threshold to 2.7 V"]
     #[inline(always)]
-    pub fn v27(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V27)
+    pub fn is_v27(&self) -> bool {
+        *self == Threshold::V27
     }
     #[doc = "Set threshold to 2.8 V"]
     #[inline(always)]
-    pub fn v28(self) -> &'a mut W {
-        self.variant(THRESHOLD_A::V28)
+    pub fn is_v28(&self) -> bool {
+        *self == Threshold::V28
+    }
+}
+#[doc = "Field `THRESHOLD` writer - Power failure comparator threshold setting"]
+pub type ThresholdW<'a, REG> = crate::FieldWriter<'a, REG, 4, Threshold>;
+impl<'a, REG> ThresholdW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Set threshold to 1.7 V"]
+    #[inline(always)]
+    pub fn v17(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V17)
+    }
+    #[doc = "Set threshold to 1.8 V"]
+    #[inline(always)]
+    pub fn v18(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V18)
+    }
+    #[doc = "Set threshold to 1.9 V"]
+    #[inline(always)]
+    pub fn v19(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V19)
+    }
+    #[doc = "Set threshold to 2.0 V"]
+    #[inline(always)]
+    pub fn v20(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V20)
+    }
+    #[doc = "Set threshold to 2.1 V"]
+    #[inline(always)]
+    pub fn v21(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V21)
+    }
+    #[doc = "Set threshold to 2.2 V"]
+    #[inline(always)]
+    pub fn v22(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V22)
+    }
+    #[doc = "Set threshold to 2.3 V"]
+    #[inline(always)]
+    pub fn v23(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V23)
+    }
+    #[doc = "Set threshold to 2.4 V"]
+    #[inline(always)]
+    pub fn v24(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V24)
+    }
+    #[doc = "Set threshold to 2.5 V"]
+    #[inline(always)]
+    pub fn v25(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V25)
+    }
+    #[doc = "Set threshold to 2.6 V"]
+    #[inline(always)]
+    pub fn v26(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V26)
+    }
+    #[doc = "Set threshold to 2.7 V"]
+    #[inline(always)]
+    pub fn v27(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V27)
+    }
+    #[doc = "Set threshold to 2.8 V"]
+    #[inline(always)]
+    pub fn v28(self) -> &'a mut crate::W<REG> {
+        self.variant(Threshold::V28)
     }
 }
 impl R {
     #[doc = "Bit 0 - Enable or disable power failure comparator"]
     #[inline(always)]
-    pub fn pof(&self) -> POF_R {
-        POF_R::new((self.bits & 1) != 0)
+    pub fn pof(&self) -> PofR {
+        PofR::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:4 - Power failure comparator threshold setting"]
     #[inline(always)]
-    pub fn threshold(&self) -> THRESHOLD_R {
-        THRESHOLD_R::new(((self.bits >> 1) & 0x0f) as u8)
+    pub fn threshold(&self) -> ThresholdR {
+        ThresholdR::new(((self.bits >> 1) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable or disable power failure comparator"]
     #[inline(always)]
-    pub fn pof(&mut self) -> POF_W<0> {
-        POF_W::new(self)
+    pub fn pof(&mut self) -> PofW<'_, PofconSpec> {
+        PofW::new(self, 0)
     }
     #[doc = "Bits 1:4 - Power failure comparator threshold setting"]
     #[inline(always)]
-    pub fn threshold(&mut self) -> THRESHOLD_W<1> {
-        THRESHOLD_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn threshold(&mut self) -> ThresholdW<'_, PofconSpec> {
+        ThresholdW::new(self, 1)
     }
 }
-#[doc = "Power failure comparator configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pofcon](index.html) module"]
-pub struct POFCON_SPEC;
-impl crate::RegisterSpec for POFCON_SPEC {
+#[doc = "Power failure comparator configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`pofcon::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pofcon::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct PofconSpec;
+impl crate::RegisterSpec for PofconSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pofcon::R](R) reader structure"]
-impl crate::Readable for POFCON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pofcon::W](W) writer structure"]
-impl crate::Writable for POFCON_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`pofcon::R`](R) reader structure"]
+impl crate::Readable for PofconSpec {}
+#[doc = "`write(|w| ..)` method takes [`pofcon::W`](W) writer structure"]
+impl crate::Writable for PofconSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets POFCON to value 0"]
-impl crate::Resettable for POFCON_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for PofconSpec {}

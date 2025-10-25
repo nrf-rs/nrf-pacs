@@ -1,80 +1,35 @@
 #[doc = "Register `CRCINIT` reader"]
-pub struct R(crate::R<CRCINIT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CRCINIT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CRCINIT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CRCINIT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CrcinitSpec>;
 #[doc = "Register `CRCINIT` writer"]
-pub struct W(crate::W<CRCINIT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CRCINIT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CRCINIT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CRCINIT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CrcinitSpec>;
 #[doc = "Field `CRCINIT` reader - CRC initial value"]
-pub type CRCINIT_R = crate::FieldReader<u32, u32>;
+pub type CrcinitR = crate::FieldReader<u32>;
 #[doc = "Field `CRCINIT` writer - CRC initial value"]
-pub type CRCINIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CRCINIT_SPEC, u32, u32, 24, O>;
+pub type CrcinitW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bits 0:23 - CRC initial value"]
     #[inline(always)]
-    pub fn crcinit(&self) -> CRCINIT_R {
-        CRCINIT_R::new((self.bits & 0x00ff_ffff) as u32)
+    pub fn crcinit(&self) -> CrcinitR {
+        CrcinitR::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - CRC initial value"]
     #[inline(always)]
-    pub fn crcinit(&mut self) -> CRCINIT_W<0> {
-        CRCINIT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn crcinit(&mut self) -> CrcinitW<'_, CrcinitSpec> {
+        CrcinitW::new(self, 0)
     }
 }
-#[doc = "CRC initial value\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [crcinit](index.html) module"]
-pub struct CRCINIT_SPEC;
-impl crate::RegisterSpec for CRCINIT_SPEC {
+#[doc = "CRC initial value\n\nYou can [`read`](crate::Reg::read) this register and get [`crcinit::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`crcinit::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CrcinitSpec;
+impl crate::RegisterSpec for CrcinitSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [crcinit::R](R) reader structure"]
-impl crate::Readable for CRCINIT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [crcinit::W](W) writer structure"]
-impl crate::Writable for CRCINIT_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`crcinit::R`](R) reader structure"]
+impl crate::Readable for CrcinitSpec {}
+#[doc = "`write(|w| ..)` method takes [`crcinit::W`](W) writer structure"]
+impl crate::Writable for CrcinitSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CRCINIT to value 0"]
-impl crate::Resettable for CRCINIT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for CrcinitSpec {}

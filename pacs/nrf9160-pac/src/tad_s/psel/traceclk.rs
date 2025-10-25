@@ -1,140 +1,143 @@
 #[doc = "Register `TRACECLK` reader"]
-pub struct R(crate::R<TRACECLK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TRACECLK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TRACECLK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TRACECLK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TraceclkSpec>;
 #[doc = "Register `TRACECLK` writer"]
-pub struct W(crate::W<TRACECLK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TRACECLK_SPEC>;
+pub type W = crate::W<TraceclkSpec>;
+#[doc = "Pin number\n\nValue on reset: 31"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Pin {
+    #[doc = "21: TRACECLK pin"]
+    Traceclk = 21,
+}
+impl From<Pin> for u8 {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: Pin) -> Self {
+        variant as _
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
+impl crate::FieldSpec for Pin {
+    type Ux = u8;
 }
-impl From<crate::W<TRACECLK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TRACECLK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+impl crate::IsEnum for Pin {}
 #[doc = "Field `PIN` reader - Pin number"]
-pub type PIN_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `PIN` writer - Pin number"]
-pub type PIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TRACECLK_SPEC, u8, u8, 5, O>;
-#[doc = "Field `CONNECT` reader - Connection"]
-pub type CONNECT_R = crate::BitReader<CONNECT_A>;
-#[doc = "Connection\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CONNECT_A {
-    #[doc = "1: Disconnect"]
-    DISCONNECTED = 1,
-    #[doc = "0: Connect"]
-    CONNECTED = 0,
-}
-impl From<CONNECT_A> for bool {
+pub type PinR = crate::FieldReader<Pin>;
+impl PinR {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    fn from(variant: CONNECT_A) -> Self {
+    pub const fn variant(&self) -> Option<Pin> {
+        match self.bits {
+            21 => Some(Pin::Traceclk),
+            _ => None,
+        }
+    }
+    #[doc = "TRACECLK pin"]
+    #[inline(always)]
+    pub fn is_traceclk(&self) -> bool {
+        *self == Pin::Traceclk
+    }
+}
+#[doc = "Field `PIN` writer - Pin number"]
+pub type PinW<'a, REG> = crate::FieldWriter<'a, REG, 5, Pin>;
+impl<'a, REG> PinW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "TRACECLK pin"]
+    #[inline(always)]
+    pub fn traceclk(self) -> &'a mut crate::W<REG> {
+        self.variant(Pin::Traceclk)
+    }
+}
+#[doc = "Connection\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Connect {
+    #[doc = "1: Disconnect"]
+    Disconnected = 1,
+    #[doc = "0: Connect"]
+    Connected = 0,
+}
+impl From<Connect> for bool {
+    #[inline(always)]
+    fn from(variant: Connect) -> Self {
         variant as u8 != 0
     }
 }
-impl CONNECT_R {
+#[doc = "Field `CONNECT` reader - Connection"]
+pub type ConnectR = crate::BitReader<Connect>;
+impl ConnectR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CONNECT_A {
+    pub const fn variant(&self) -> Connect {
         match self.bits {
-            true => CONNECT_A::DISCONNECTED,
-            false => CONNECT_A::CONNECTED,
+            true => Connect::Disconnected,
+            false => Connect::Connected,
         }
     }
-    #[doc = "Checks if the value of the field is `DISCONNECTED`"]
-    #[inline(always)]
-    pub fn is_disconnected(&self) -> bool {
-        *self == CONNECT_A::DISCONNECTED
-    }
-    #[doc = "Checks if the value of the field is `CONNECTED`"]
-    #[inline(always)]
-    pub fn is_connected(&self) -> bool {
-        *self == CONNECT_A::CONNECTED
-    }
-}
-#[doc = "Field `CONNECT` writer - Connection"]
-pub type CONNECT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRACECLK_SPEC, CONNECT_A, O>;
-impl<'a, const O: u8> CONNECT_W<'a, O> {
     #[doc = "Disconnect"]
     #[inline(always)]
-    pub fn disconnected(self) -> &'a mut W {
-        self.variant(CONNECT_A::DISCONNECTED)
+    pub fn is_disconnected(&self) -> bool {
+        *self == Connect::Disconnected
     }
     #[doc = "Connect"]
     #[inline(always)]
-    pub fn connected(self) -> &'a mut W {
-        self.variant(CONNECT_A::CONNECTED)
+    pub fn is_connected(&self) -> bool {
+        *self == Connect::Connected
+    }
+}
+#[doc = "Field `CONNECT` writer - Connection"]
+pub type ConnectW<'a, REG> = crate::BitWriter<'a, REG, Connect>;
+impl<'a, REG> ConnectW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disconnect"]
+    #[inline(always)]
+    pub fn disconnected(self) -> &'a mut crate::W<REG> {
+        self.variant(Connect::Disconnected)
+    }
+    #[doc = "Connect"]
+    #[inline(always)]
+    pub fn connected(self) -> &'a mut crate::W<REG> {
+        self.variant(Connect::Connected)
     }
 }
 impl R {
     #[doc = "Bits 0:4 - Pin number"]
     #[inline(always)]
-    pub fn pin(&self) -> PIN_R {
-        PIN_R::new((self.bits & 0x1f) as u8)
+    pub fn pin(&self) -> PinR {
+        PinR::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bit 31 - Connection"]
     #[inline(always)]
-    pub fn connect(&self) -> CONNECT_R {
-        CONNECT_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn connect(&self) -> ConnectR {
+        ConnectR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Pin number"]
     #[inline(always)]
-    pub fn pin(&mut self) -> PIN_W<0> {
-        PIN_W::new(self)
+    pub fn pin(&mut self) -> PinW<'_, TraceclkSpec> {
+        PinW::new(self, 0)
     }
     #[doc = "Bit 31 - Connection"]
     #[inline(always)]
-    pub fn connect(&mut self) -> CONNECT_W<31> {
-        CONNECT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn connect(&mut self) -> ConnectW<'_, TraceclkSpec> {
+        ConnectW::new(self, 31)
     }
 }
-#[doc = "Pin number configuration for TRACECLK\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [traceclk](index.html) module"]
-pub struct TRACECLK_SPEC;
-impl crate::RegisterSpec for TRACECLK_SPEC {
+#[doc = "Pin configuration for TRACECLK\n\nYou can [`read`](crate::Reg::read) this register and get [`traceclk::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`traceclk::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TraceclkSpec;
+impl crate::RegisterSpec for TraceclkSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [traceclk::R](R) reader structure"]
-impl crate::Readable for TRACECLK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [traceclk::W](W) writer structure"]
-impl crate::Writable for TRACECLK_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`traceclk::R`](R) reader structure"]
+impl crate::Readable for TraceclkSpec {}
+#[doc = "`write(|w| ..)` method takes [`traceclk::W`](W) writer structure"]
+impl crate::Writable for TraceclkSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TRACECLK to value 0xffff_ffff"]
-impl crate::Resettable for TRACECLK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for TraceclkSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

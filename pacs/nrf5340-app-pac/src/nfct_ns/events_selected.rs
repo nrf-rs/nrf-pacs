@@ -1,127 +1,84 @@
 #[doc = "Register `EVENTS_SELECTED` reader"]
-pub struct R(crate::R<EVENTS_SELECTED_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_SELECTED_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_SELECTED_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_SELECTED_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsSelectedSpec>;
 #[doc = "Register `EVENTS_SELECTED` writer"]
-pub struct W(crate::W<EVENTS_SELECTED_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_SELECTED_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVENTS_SELECTED_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVENTS_SELECTED_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `EVENTS_SELECTED` reader - NFC auto collision resolution successfully completed"]
-pub type EVENTS_SELECTED_R = crate::BitReader<EVENTS_SELECTED_A>;
+pub type W = crate::W<EventsSelectedSpec>;
 #[doc = "NFC auto collision resolution successfully completed\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVENTS_SELECTED_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsSelected {
     #[doc = "0: Event not generated"]
-    NOT_GENERATED = 0,
+    NotGenerated = 0,
     #[doc = "1: Event generated"]
-    GENERATED = 1,
+    Generated = 1,
 }
-impl From<EVENTS_SELECTED_A> for bool {
+impl From<EventsSelected> for bool {
     #[inline(always)]
-    fn from(variant: EVENTS_SELECTED_A) -> Self {
+    fn from(variant: EventsSelected) -> Self {
         variant as u8 != 0
     }
 }
-impl EVENTS_SELECTED_R {
+#[doc = "Field `EVENTS_SELECTED` reader - NFC auto collision resolution successfully completed"]
+pub type EventsSelectedR = crate::BitReader<EventsSelected>;
+impl EventsSelectedR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVENTS_SELECTED_A {
+    pub const fn variant(&self) -> EventsSelected {
         match self.bits {
-            false => EVENTS_SELECTED_A::NOT_GENERATED,
-            true => EVENTS_SELECTED_A::GENERATED,
+            false => EventsSelected::NotGenerated,
+            true => EventsSelected::Generated,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
-    #[inline(always)]
-    pub fn is_not_generated(&self) -> bool {
-        *self == EVENTS_SELECTED_A::NOT_GENERATED
-    }
-    #[doc = "Checks if the value of the field is `GENERATED`"]
-    #[inline(always)]
-    pub fn is_generated(&self) -> bool {
-        *self == EVENTS_SELECTED_A::GENERATED
-    }
-}
-#[doc = "Field `EVENTS_SELECTED` writer - NFC auto collision resolution successfully completed"]
-pub type EVENTS_SELECTED_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_SELECTED_SPEC, EVENTS_SELECTED_A, O>;
-impl<'a, const O: u8> EVENTS_SELECTED_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_SELECTED_A::NOT_GENERATED)
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsSelected::NotGenerated
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut W {
-        self.variant(EVENTS_SELECTED_A::GENERATED)
+    pub fn is_generated(&self) -> bool {
+        *self == EventsSelected::Generated
+    }
+}
+#[doc = "Field `EVENTS_SELECTED` writer - NFC auto collision resolution successfully completed"]
+pub type EventsSelectedW<'a, REG> = crate::BitWriter<'a, REG, EventsSelected>;
+impl<'a, REG> EventsSelectedW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsSelected::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsSelected::Generated)
     }
 }
 impl R {
     #[doc = "Bit 0 - NFC auto collision resolution successfully completed"]
     #[inline(always)]
-    pub fn events_selected(&self) -> EVENTS_SELECTED_R {
-        EVENTS_SELECTED_R::new((self.bits & 1) != 0)
+    pub fn events_selected(&self) -> EventsSelectedR {
+        EventsSelectedR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - NFC auto collision resolution successfully completed"]
     #[inline(always)]
-    pub fn events_selected(&mut self) -> EVENTS_SELECTED_W<0> {
-        EVENTS_SELECTED_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_selected(&mut self) -> EventsSelectedW<'_, EventsSelectedSpec> {
+        EventsSelectedW::new(self, 0)
     }
 }
-#[doc = "NFC auto collision resolution successfully completed\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_selected](index.html) module"]
-pub struct EVENTS_SELECTED_SPEC;
-impl crate::RegisterSpec for EVENTS_SELECTED_SPEC {
+#[doc = "NFC auto collision resolution successfully completed\n\nYou can [`read`](crate::Reg::read) this register and get [`events_selected::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_selected::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsSelectedSpec;
+impl crate::RegisterSpec for EventsSelectedSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_selected::R](R) reader structure"]
-impl crate::Readable for EVENTS_SELECTED_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_selected::W](W) writer structure"]
-impl crate::Writable for EVENTS_SELECTED_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_selected::R`](R) reader structure"]
+impl crate::Readable for EventsSelectedSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_selected::W`](W) writer structure"]
+impl crate::Writable for EventsSelectedSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_SELECTED to value 0"]
-impl crate::Resettable for EVENTS_SELECTED_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsSelectedSpec {}

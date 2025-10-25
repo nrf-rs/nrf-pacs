@@ -1,200 +1,161 @@
 #[doc = "Register `STATUS` reader"]
-pub struct R(crate::R<STATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<StatusSpec>;
 #[doc = "Register `STATUS` writer"]
-pub struct W(crate::W<STATUS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<STATUS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<STATUS_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `OVERREAD` reader - TX buffer over-read detected, and prevented"]
-pub type OVERREAD_R = crate::BitReader<OVERREAD_A>;
+pub type W = crate::W<StatusSpec>;
 #[doc = "TX buffer over-read detected, and prevented\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVERREAD_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Overread {
     #[doc = "0: Read: error not present"]
-    NOT_PRESENT = 0,
+    NotPresent = 0,
     #[doc = "1: Read: error present"]
-    PRESENT = 1,
+    Present = 1,
 }
-impl From<OVERREAD_A> for bool {
+impl From<Overread> for bool {
     #[inline(always)]
-    fn from(variant: OVERREAD_A) -> Self {
+    fn from(variant: Overread) -> Self {
         variant as u8 != 0
     }
 }
-impl OVERREAD_R {
+#[doc = "Field `OVERREAD` reader - TX buffer over-read detected, and prevented"]
+pub type OverreadR = crate::BitReader<Overread>;
+impl OverreadR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OVERREAD_A {
+    pub const fn variant(&self) -> Overread {
         match self.bits {
-            false => OVERREAD_A::NOT_PRESENT,
-            true => OVERREAD_A::PRESENT,
+            false => Overread::NotPresent,
+            true => Overread::Present,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
+    #[doc = "Read: error not present"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        *self == OVERREAD_A::NOT_PRESENT
+        *self == Overread::NotPresent
     }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[doc = "Read: error present"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == OVERREAD_A::PRESENT
+        *self == Overread::Present
     }
 }
 #[doc = "TX buffer over-read detected, and prevented\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVERREAD_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum OverreadWO {
     #[doc = "1: Write: clear error on writing '1'"]
-    CLEAR = 1,
+    Clear = 1,
 }
-impl From<OVERREAD_AW> for bool {
+impl From<OverreadWO> for bool {
     #[inline(always)]
-    fn from(variant: OVERREAD_AW) -> Self {
+    fn from(variant: OverreadWO) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OVERREAD` writer - TX buffer over-read detected, and prevented"]
-pub type OVERREAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, STATUS_SPEC, OVERREAD_AW, O>;
-impl<'a, const O: u8> OVERREAD_W<'a, O> {
+pub type OverreadW<'a, REG> = crate::BitWriter<'a, REG, OverreadWO>;
+impl<'a, REG> OverreadW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Write: clear error on writing '1'"]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(OVERREAD_AW::CLEAR)
+    pub fn clear(self) -> &'a mut crate::W<REG> {
+        self.variant(OverreadWO::Clear)
     }
 }
-#[doc = "Field `OVERFLOW` reader - RX buffer overflow detected, and prevented"]
-pub type OVERFLOW_R = crate::BitReader<OVERFLOW_A>;
 #[doc = "RX buffer overflow detected, and prevented\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVERFLOW_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Overflow {
     #[doc = "0: Read: error not present"]
-    NOT_PRESENT = 0,
+    NotPresent = 0,
     #[doc = "1: Read: error present"]
-    PRESENT = 1,
+    Present = 1,
 }
-impl From<OVERFLOW_A> for bool {
+impl From<Overflow> for bool {
     #[inline(always)]
-    fn from(variant: OVERFLOW_A) -> Self {
+    fn from(variant: Overflow) -> Self {
         variant as u8 != 0
     }
 }
-impl OVERFLOW_R {
+#[doc = "Field `OVERFLOW` reader - RX buffer overflow detected, and prevented"]
+pub type OverflowR = crate::BitReader<Overflow>;
+impl OverflowR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OVERFLOW_A {
+    pub const fn variant(&self) -> Overflow {
         match self.bits {
-            false => OVERFLOW_A::NOT_PRESENT,
-            true => OVERFLOW_A::PRESENT,
+            false => Overflow::NotPresent,
+            true => Overflow::Present,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
+    #[doc = "Read: error not present"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        *self == OVERFLOW_A::NOT_PRESENT
+        *self == Overflow::NotPresent
     }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[doc = "Read: error present"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == OVERFLOW_A::PRESENT
+        *self == Overflow::Present
     }
 }
 #[doc = "RX buffer overflow detected, and prevented\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVERFLOW_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum OverflowWO {
     #[doc = "1: Write: clear error on writing '1'"]
-    CLEAR = 1,
+    Clear = 1,
 }
-impl From<OVERFLOW_AW> for bool {
+impl From<OverflowWO> for bool {
     #[inline(always)]
-    fn from(variant: OVERFLOW_AW) -> Self {
+    fn from(variant: OverflowWO) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OVERFLOW` writer - RX buffer overflow detected, and prevented"]
-pub type OVERFLOW_W<'a, const O: u8> = crate::BitWriter<'a, u32, STATUS_SPEC, OVERFLOW_AW, O>;
-impl<'a, const O: u8> OVERFLOW_W<'a, O> {
+pub type OverflowW<'a, REG> = crate::BitWriter<'a, REG, OverflowWO>;
+impl<'a, REG> OverflowW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Write: clear error on writing '1'"]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(OVERFLOW_AW::CLEAR)
+    pub fn clear(self) -> &'a mut crate::W<REG> {
+        self.variant(OverflowWO::Clear)
     }
 }
 impl R {
     #[doc = "Bit 0 - TX buffer over-read detected, and prevented"]
     #[inline(always)]
-    pub fn overread(&self) -> OVERREAD_R {
-        OVERREAD_R::new((self.bits & 1) != 0)
+    pub fn overread(&self) -> OverreadR {
+        OverreadR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - RX buffer overflow detected, and prevented"]
     #[inline(always)]
-    pub fn overflow(&self) -> OVERFLOW_R {
-        OVERFLOW_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn overflow(&self) -> OverflowR {
+        OverflowR::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - TX buffer over-read detected, and prevented"]
     #[inline(always)]
-    pub fn overread(&mut self) -> OVERREAD_W<0> {
-        OVERREAD_W::new(self)
+    pub fn overread(&mut self) -> OverreadW<'_, StatusSpec> {
+        OverreadW::new(self, 0)
     }
     #[doc = "Bit 1 - RX buffer overflow detected, and prevented"]
     #[inline(always)]
-    pub fn overflow(&mut self) -> OVERFLOW_W<1> {
-        OVERFLOW_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn overflow(&mut self) -> OverflowW<'_, StatusSpec> {
+        OverflowW::new(self, 1)
     }
 }
-#[doc = "Status from last transaction\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
-pub struct STATUS_SPEC;
-impl crate::RegisterSpec for STATUS_SPEC {
+#[doc = "Status from last transaction\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`status::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct StatusSpec;
+impl crate::RegisterSpec for StatusSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [status::R](R) reader structure"]
-impl crate::Readable for STATUS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [status::W](W) writer structure"]
-impl crate::Writable for STATUS_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`status::R`](R) reader structure"]
+impl crate::Readable for StatusSpec {}
+#[doc = "`write(|w| ..)` method takes [`status::W`](W) writer structure"]
+impl crate::Writable for StatusSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets STATUS to value 0"]
-impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for StatusSpec {}

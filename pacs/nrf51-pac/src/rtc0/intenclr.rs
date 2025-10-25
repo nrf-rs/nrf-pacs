@@ -1,492 +1,441 @@
 #[doc = "Register `INTENCLR` reader"]
-pub struct R(crate::R<INTENCLR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTENCLR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTENCLR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTENCLR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IntenclrSpec>;
 #[doc = "Register `INTENCLR` writer"]
-pub struct W(crate::W<INTENCLR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INTENCLR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INTENCLR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INTENCLR_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `TICK` reader - Disable interrupt on TICK event."]
-pub type TICK_R = crate::BitReader<TICK_A>;
+pub type W = crate::W<IntenclrSpec>;
 #[doc = "Disable interrupt on TICK event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TICK_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Tick {
     #[doc = "0: Interrupt disabled."]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Interrupt enabled."]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<TICK_A> for bool {
+impl From<Tick> for bool {
     #[inline(always)]
-    fn from(variant: TICK_A) -> Self {
+    fn from(variant: Tick) -> Self {
         variant as u8 != 0
     }
 }
-impl TICK_R {
+#[doc = "Field `TICK` reader - Disable interrupt on TICK event."]
+pub type TickR = crate::BitReader<Tick>;
+impl TickR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TICK_A {
+    pub const fn variant(&self) -> Tick {
         match self.bits {
-            false => TICK_A::DISABLED,
-            true => TICK_A::ENABLED,
+            false => Tick::Disabled,
+            true => Tick::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Interrupt disabled."]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == TICK_A::DISABLED
+        *self == Tick::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Interrupt enabled."]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == TICK_A::ENABLED
+        *self == Tick::Enabled
     }
 }
 #[doc = "Disable interrupt on TICK event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TICK_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TickWO {
     #[doc = "1: Disable interrupt on write."]
-    CLEAR = 1,
+    Clear = 1,
 }
-impl From<TICK_AW> for bool {
+impl From<TickWO> for bool {
     #[inline(always)]
-    fn from(variant: TICK_AW) -> Self {
+    fn from(variant: TickWO) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TICK` writer - Disable interrupt on TICK event."]
-pub type TICK_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, TICK_AW, O>;
-impl<'a, const O: u8> TICK_W<'a, O> {
+pub type TickW<'a, REG> = crate::BitWriter<'a, REG, TickWO>;
+impl<'a, REG> TickW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(TICK_AW::CLEAR)
+    pub fn clear(self) -> &'a mut crate::W<REG> {
+        self.variant(TickWO::Clear)
     }
 }
-#[doc = "Field `OVRFLW` reader - Disable interrupt on OVRFLW event."]
-pub type OVRFLW_R = crate::BitReader<OVRFLW_A>;
 #[doc = "Disable interrupt on OVRFLW event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVRFLW_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ovrflw {
     #[doc = "0: Interrupt disabled."]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Interrupt enabled."]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<OVRFLW_A> for bool {
+impl From<Ovrflw> for bool {
     #[inline(always)]
-    fn from(variant: OVRFLW_A) -> Self {
+    fn from(variant: Ovrflw) -> Self {
         variant as u8 != 0
     }
 }
-impl OVRFLW_R {
+#[doc = "Field `OVRFLW` reader - Disable interrupt on OVRFLW event."]
+pub type OvrflwR = crate::BitReader<Ovrflw>;
+impl OvrflwR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OVRFLW_A {
+    pub const fn variant(&self) -> Ovrflw {
         match self.bits {
-            false => OVRFLW_A::DISABLED,
-            true => OVRFLW_A::ENABLED,
+            false => Ovrflw::Disabled,
+            true => Ovrflw::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Interrupt disabled."]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == OVRFLW_A::DISABLED
+        *self == Ovrflw::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Interrupt enabled."]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == OVRFLW_A::ENABLED
+        *self == Ovrflw::Enabled
     }
 }
 #[doc = "Disable interrupt on OVRFLW event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVRFLW_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum OvrflwWO {
     #[doc = "1: Disable interrupt on write."]
-    CLEAR = 1,
+    Clear = 1,
 }
-impl From<OVRFLW_AW> for bool {
+impl From<OvrflwWO> for bool {
     #[inline(always)]
-    fn from(variant: OVRFLW_AW) -> Self {
+    fn from(variant: OvrflwWO) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OVRFLW` writer - Disable interrupt on OVRFLW event."]
-pub type OVRFLW_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, OVRFLW_AW, O>;
-impl<'a, const O: u8> OVRFLW_W<'a, O> {
+pub type OvrflwW<'a, REG> = crate::BitWriter<'a, REG, OvrflwWO>;
+impl<'a, REG> OvrflwW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(OVRFLW_AW::CLEAR)
+    pub fn clear(self) -> &'a mut crate::W<REG> {
+        self.variant(OvrflwWO::Clear)
     }
 }
-#[doc = "Field `COMPARE0` reader - Disable interrupt on COMPARE\\[0\\]
-event."]
-pub type COMPARE0_R = crate::BitReader<COMPARE0_A>;
-#[doc = "Disable interrupt on COMPARE\\[0\\]
-event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE0_A {
+#[doc = "Disable interrupt on COMPARE\\[0\\] event.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Compare0 {
     #[doc = "0: Interrupt disabled."]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Interrupt enabled."]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<COMPARE0_A> for bool {
+impl From<Compare0> for bool {
     #[inline(always)]
-    fn from(variant: COMPARE0_A) -> Self {
+    fn from(variant: Compare0) -> Self {
         variant as u8 != 0
     }
 }
-impl COMPARE0_R {
+#[doc = "Field `COMPARE0` reader - Disable interrupt on COMPARE\\[0\\] event."]
+pub type Compare0R = crate::BitReader<Compare0>;
+impl Compare0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> COMPARE0_A {
+    pub const fn variant(&self) -> Compare0 {
         match self.bits {
-            false => COMPARE0_A::DISABLED,
-            true => COMPARE0_A::ENABLED,
+            false => Compare0::Disabled,
+            true => Compare0::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Interrupt disabled."]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == COMPARE0_A::DISABLED
+        *self == Compare0::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Interrupt enabled."]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == COMPARE0_A::ENABLED
+        *self == Compare0::Enabled
     }
 }
-#[doc = "Disable interrupt on COMPARE\\[0\\]
-event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE0_AW {
+#[doc = "Disable interrupt on COMPARE\\[0\\] event.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Compare0WO {
     #[doc = "1: Disable interrupt on write."]
-    CLEAR = 1,
+    Clear = 1,
 }
-impl From<COMPARE0_AW> for bool {
+impl From<Compare0WO> for bool {
     #[inline(always)]
-    fn from(variant: COMPARE0_AW) -> Self {
+    fn from(variant: Compare0WO) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COMPARE0` writer - Disable interrupt on COMPARE\\[0\\]
-event."]
-pub type COMPARE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, COMPARE0_AW, O>;
-impl<'a, const O: u8> COMPARE0_W<'a, O> {
+#[doc = "Field `COMPARE0` writer - Disable interrupt on COMPARE\\[0\\] event."]
+pub type Compare0W<'a, REG> = crate::BitWriter<'a, REG, Compare0WO>;
+impl<'a, REG> Compare0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(COMPARE0_AW::CLEAR)
+    pub fn clear(self) -> &'a mut crate::W<REG> {
+        self.variant(Compare0WO::Clear)
     }
 }
-#[doc = "Field `COMPARE1` reader - Disable interrupt on COMPARE\\[1\\]
-event."]
-pub type COMPARE1_R = crate::BitReader<COMPARE1_A>;
-#[doc = "Disable interrupt on COMPARE\\[1\\]
-event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE1_A {
+#[doc = "Disable interrupt on COMPARE\\[1\\] event.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Compare1 {
     #[doc = "0: Interrupt disabled."]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Interrupt enabled."]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<COMPARE1_A> for bool {
+impl From<Compare1> for bool {
     #[inline(always)]
-    fn from(variant: COMPARE1_A) -> Self {
+    fn from(variant: Compare1) -> Self {
         variant as u8 != 0
     }
 }
-impl COMPARE1_R {
+#[doc = "Field `COMPARE1` reader - Disable interrupt on COMPARE\\[1\\] event."]
+pub type Compare1R = crate::BitReader<Compare1>;
+impl Compare1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> COMPARE1_A {
+    pub const fn variant(&self) -> Compare1 {
         match self.bits {
-            false => COMPARE1_A::DISABLED,
-            true => COMPARE1_A::ENABLED,
+            false => Compare1::Disabled,
+            true => Compare1::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Interrupt disabled."]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == COMPARE1_A::DISABLED
+        *self == Compare1::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Interrupt enabled."]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == COMPARE1_A::ENABLED
+        *self == Compare1::Enabled
     }
 }
-#[doc = "Disable interrupt on COMPARE\\[1\\]
-event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE1_AW {
+#[doc = "Disable interrupt on COMPARE\\[1\\] event.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Compare1WO {
     #[doc = "1: Disable interrupt on write."]
-    CLEAR = 1,
+    Clear = 1,
 }
-impl From<COMPARE1_AW> for bool {
+impl From<Compare1WO> for bool {
     #[inline(always)]
-    fn from(variant: COMPARE1_AW) -> Self {
+    fn from(variant: Compare1WO) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COMPARE1` writer - Disable interrupt on COMPARE\\[1\\]
-event."]
-pub type COMPARE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, COMPARE1_AW, O>;
-impl<'a, const O: u8> COMPARE1_W<'a, O> {
+#[doc = "Field `COMPARE1` writer - Disable interrupt on COMPARE\\[1\\] event."]
+pub type Compare1W<'a, REG> = crate::BitWriter<'a, REG, Compare1WO>;
+impl<'a, REG> Compare1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(COMPARE1_AW::CLEAR)
+    pub fn clear(self) -> &'a mut crate::W<REG> {
+        self.variant(Compare1WO::Clear)
     }
 }
-#[doc = "Field `COMPARE2` reader - Disable interrupt on COMPARE\\[2\\]
-event."]
-pub type COMPARE2_R = crate::BitReader<COMPARE2_A>;
-#[doc = "Disable interrupt on COMPARE\\[2\\]
-event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE2_A {
+#[doc = "Disable interrupt on COMPARE\\[2\\] event.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Compare2 {
     #[doc = "0: Interrupt disabled."]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Interrupt enabled."]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<COMPARE2_A> for bool {
+impl From<Compare2> for bool {
     #[inline(always)]
-    fn from(variant: COMPARE2_A) -> Self {
+    fn from(variant: Compare2) -> Self {
         variant as u8 != 0
     }
 }
-impl COMPARE2_R {
+#[doc = "Field `COMPARE2` reader - Disable interrupt on COMPARE\\[2\\] event."]
+pub type Compare2R = crate::BitReader<Compare2>;
+impl Compare2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> COMPARE2_A {
+    pub const fn variant(&self) -> Compare2 {
         match self.bits {
-            false => COMPARE2_A::DISABLED,
-            true => COMPARE2_A::ENABLED,
+            false => Compare2::Disabled,
+            true => Compare2::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Interrupt disabled."]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == COMPARE2_A::DISABLED
+        *self == Compare2::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Interrupt enabled."]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == COMPARE2_A::ENABLED
+        *self == Compare2::Enabled
     }
 }
-#[doc = "Disable interrupt on COMPARE\\[2\\]
-event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE2_AW {
+#[doc = "Disable interrupt on COMPARE\\[2\\] event.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Compare2WO {
     #[doc = "1: Disable interrupt on write."]
-    CLEAR = 1,
+    Clear = 1,
 }
-impl From<COMPARE2_AW> for bool {
+impl From<Compare2WO> for bool {
     #[inline(always)]
-    fn from(variant: COMPARE2_AW) -> Self {
+    fn from(variant: Compare2WO) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COMPARE2` writer - Disable interrupt on COMPARE\\[2\\]
-event."]
-pub type COMPARE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, COMPARE2_AW, O>;
-impl<'a, const O: u8> COMPARE2_W<'a, O> {
+#[doc = "Field `COMPARE2` writer - Disable interrupt on COMPARE\\[2\\] event."]
+pub type Compare2W<'a, REG> = crate::BitWriter<'a, REG, Compare2WO>;
+impl<'a, REG> Compare2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(COMPARE2_AW::CLEAR)
+    pub fn clear(self) -> &'a mut crate::W<REG> {
+        self.variant(Compare2WO::Clear)
     }
 }
-#[doc = "Field `COMPARE3` reader - Disable interrupt on COMPARE\\[3\\]
-event."]
-pub type COMPARE3_R = crate::BitReader<COMPARE3_A>;
-#[doc = "Disable interrupt on COMPARE\\[3\\]
-event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE3_A {
+#[doc = "Disable interrupt on COMPARE\\[3\\] event.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Compare3 {
     #[doc = "0: Interrupt disabled."]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Interrupt enabled."]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<COMPARE3_A> for bool {
+impl From<Compare3> for bool {
     #[inline(always)]
-    fn from(variant: COMPARE3_A) -> Self {
+    fn from(variant: Compare3) -> Self {
         variant as u8 != 0
     }
 }
-impl COMPARE3_R {
+#[doc = "Field `COMPARE3` reader - Disable interrupt on COMPARE\\[3\\] event."]
+pub type Compare3R = crate::BitReader<Compare3>;
+impl Compare3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> COMPARE3_A {
+    pub const fn variant(&self) -> Compare3 {
         match self.bits {
-            false => COMPARE3_A::DISABLED,
-            true => COMPARE3_A::ENABLED,
+            false => Compare3::Disabled,
+            true => Compare3::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Interrupt disabled."]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == COMPARE3_A::DISABLED
+        *self == Compare3::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Interrupt enabled."]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == COMPARE3_A::ENABLED
+        *self == Compare3::Enabled
     }
 }
-#[doc = "Disable interrupt on COMPARE\\[3\\]
-event.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE3_AW {
+#[doc = "Disable interrupt on COMPARE\\[3\\] event.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Compare3WO {
     #[doc = "1: Disable interrupt on write."]
-    CLEAR = 1,
+    Clear = 1,
 }
-impl From<COMPARE3_AW> for bool {
+impl From<Compare3WO> for bool {
     #[inline(always)]
-    fn from(variant: COMPARE3_AW) -> Self {
+    fn from(variant: Compare3WO) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COMPARE3` writer - Disable interrupt on COMPARE\\[3\\]
-event."]
-pub type COMPARE3_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, COMPARE3_AW, O>;
-impl<'a, const O: u8> COMPARE3_W<'a, O> {
+#[doc = "Field `COMPARE3` writer - Disable interrupt on COMPARE\\[3\\] event."]
+pub type Compare3W<'a, REG> = crate::BitWriter<'a, REG, Compare3WO>;
+impl<'a, REG> Compare3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable interrupt on write."]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(COMPARE3_AW::CLEAR)
+    pub fn clear(self) -> &'a mut crate::W<REG> {
+        self.variant(Compare3WO::Clear)
     }
 }
 impl R {
     #[doc = "Bit 0 - Disable interrupt on TICK event."]
     #[inline(always)]
-    pub fn tick(&self) -> TICK_R {
-        TICK_R::new((self.bits & 1) != 0)
+    pub fn tick(&self) -> TickR {
+        TickR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Disable interrupt on OVRFLW event."]
     #[inline(always)]
-    pub fn ovrflw(&self) -> OVRFLW_R {
-        OVRFLW_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn ovrflw(&self) -> OvrflwR {
+        OvrflwR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 16 - Disable interrupt on COMPARE\\[0\\]
-event."]
+    #[doc = "Bit 16 - Disable interrupt on COMPARE\\[0\\] event."]
     #[inline(always)]
-    pub fn compare0(&self) -> COMPARE0_R {
-        COMPARE0_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn compare0(&self) -> Compare0R {
+        Compare0R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 17 - Disable interrupt on COMPARE\\[1\\]
-event."]
+    #[doc = "Bit 17 - Disable interrupt on COMPARE\\[1\\] event."]
     #[inline(always)]
-    pub fn compare1(&self) -> COMPARE1_R {
-        COMPARE1_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn compare1(&self) -> Compare1R {
+        Compare1R::new(((self.bits >> 17) & 1) != 0)
     }
-    #[doc = "Bit 18 - Disable interrupt on COMPARE\\[2\\]
-event."]
+    #[doc = "Bit 18 - Disable interrupt on COMPARE\\[2\\] event."]
     #[inline(always)]
-    pub fn compare2(&self) -> COMPARE2_R {
-        COMPARE2_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn compare2(&self) -> Compare2R {
+        Compare2R::new(((self.bits >> 18) & 1) != 0)
     }
-    #[doc = "Bit 19 - Disable interrupt on COMPARE\\[3\\]
-event."]
+    #[doc = "Bit 19 - Disable interrupt on COMPARE\\[3\\] event."]
     #[inline(always)]
-    pub fn compare3(&self) -> COMPARE3_R {
-        COMPARE3_R::new(((self.bits >> 19) & 1) != 0)
+    pub fn compare3(&self) -> Compare3R {
+        Compare3R::new(((self.bits >> 19) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Disable interrupt on TICK event."]
     #[inline(always)]
-    pub fn tick(&mut self) -> TICK_W<0> {
-        TICK_W::new(self)
+    pub fn tick(&mut self) -> TickW<'_, IntenclrSpec> {
+        TickW::new(self, 0)
     }
     #[doc = "Bit 1 - Disable interrupt on OVRFLW event."]
     #[inline(always)]
-    pub fn ovrflw(&mut self) -> OVRFLW_W<1> {
-        OVRFLW_W::new(self)
+    pub fn ovrflw(&mut self) -> OvrflwW<'_, IntenclrSpec> {
+        OvrflwW::new(self, 1)
     }
-    #[doc = "Bit 16 - Disable interrupt on COMPARE\\[0\\]
-event."]
+    #[doc = "Bit 16 - Disable interrupt on COMPARE\\[0\\] event."]
     #[inline(always)]
-    pub fn compare0(&mut self) -> COMPARE0_W<16> {
-        COMPARE0_W::new(self)
+    pub fn compare0(&mut self) -> Compare0W<'_, IntenclrSpec> {
+        Compare0W::new(self, 16)
     }
-    #[doc = "Bit 17 - Disable interrupt on COMPARE\\[1\\]
-event."]
+    #[doc = "Bit 17 - Disable interrupt on COMPARE\\[1\\] event."]
     #[inline(always)]
-    pub fn compare1(&mut self) -> COMPARE1_W<17> {
-        COMPARE1_W::new(self)
+    pub fn compare1(&mut self) -> Compare1W<'_, IntenclrSpec> {
+        Compare1W::new(self, 17)
     }
-    #[doc = "Bit 18 - Disable interrupt on COMPARE\\[2\\]
-event."]
+    #[doc = "Bit 18 - Disable interrupt on COMPARE\\[2\\] event."]
     #[inline(always)]
-    pub fn compare2(&mut self) -> COMPARE2_W<18> {
-        COMPARE2_W::new(self)
+    pub fn compare2(&mut self) -> Compare2W<'_, IntenclrSpec> {
+        Compare2W::new(self, 18)
     }
-    #[doc = "Bit 19 - Disable interrupt on COMPARE\\[3\\]
-event."]
+    #[doc = "Bit 19 - Disable interrupt on COMPARE\\[3\\] event."]
     #[inline(always)]
-    pub fn compare3(&mut self) -> COMPARE3_W<19> {
-        COMPARE3_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn compare3(&mut self) -> Compare3W<'_, IntenclrSpec> {
+        Compare3W::new(self, 19)
     }
 }
-#[doc = "Interrupt enable clear register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenclr](index.html) module"]
-pub struct INTENCLR_SPEC;
-impl crate::RegisterSpec for INTENCLR_SPEC {
+#[doc = "Interrupt enable clear register.\n\nYou can [`read`](crate::Reg::read) this register and get [`intenclr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenclr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct IntenclrSpec;
+impl crate::RegisterSpec for IntenclrSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [intenclr::R](R) reader structure"]
-impl crate::Readable for INTENCLR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [intenclr::W](W) writer structure"]
-impl crate::Writable for INTENCLR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`intenclr::R`](R) reader structure"]
+impl crate::Readable for IntenclrSpec {}
+#[doc = "`write(|w| ..)` method takes [`intenclr::W`](W) writer structure"]
+impl crate::Writable for IntenclrSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets INTENCLR to value 0"]
-impl crate::Resettable for INTENCLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for IntenclrSpec {}

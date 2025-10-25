@@ -1,72 +1,44 @@
 #[doc = "Register `INVALIDATE` writer"]
-pub struct W(crate::W<INVALIDATE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INVALIDATE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INVALIDATE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INVALIDATE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<InvalidateSpec>;
 #[doc = "Invalidate the cache\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INVALIDATE_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Invalidate {
     #[doc = "1: Invalidate the cache"]
-    INVALIDATE = 1,
+    Invalidate = 1,
 }
-impl From<INVALIDATE_AW> for bool {
+impl From<Invalidate> for bool {
     #[inline(always)]
-    fn from(variant: INVALIDATE_AW) -> Self {
+    fn from(variant: Invalidate) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `INVALIDATE` writer - Invalidate the cache"]
-pub type INVALIDATE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, INVALIDATE_SPEC, INVALIDATE_AW, O>;
-impl<'a, const O: u8> INVALIDATE_W<'a, O> {
+pub type InvalidateW<'a, REG> = crate::BitWriter<'a, REG, Invalidate>;
+impl<'a, REG> InvalidateW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Invalidate the cache"]
     #[inline(always)]
-    pub fn invalidate(self) -> &'a mut W {
-        self.variant(INVALIDATE_AW::INVALIDATE)
+    pub fn invalidate(self) -> &'a mut crate::W<REG> {
+        self.variant(Invalidate::Invalidate)
     }
 }
 impl W {
     #[doc = "Bit 0 - Invalidate the cache"]
     #[inline(always)]
-    pub fn invalidate(&mut self) -> INVALIDATE_W<0> {
-        INVALIDATE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn invalidate(&mut self) -> InvalidateW<'_, InvalidateSpec> {
+        InvalidateW::new(self, 0)
     }
 }
-#[doc = "Invalidate the cache.\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [invalidate](index.html) module"]
-pub struct INVALIDATE_SPEC;
-impl crate::RegisterSpec for INVALIDATE_SPEC {
+#[doc = "Invalidate the cache.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`invalidate::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct InvalidateSpec;
+impl crate::RegisterSpec for InvalidateSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [invalidate::W](W) writer structure"]
-impl crate::Writable for INVALIDATE_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`invalidate::W`](W) writer structure"]
+impl crate::Writable for InvalidateSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets INVALIDATE to value 0"]
-impl crate::Resettable for INVALIDATE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for InvalidateSpec {}

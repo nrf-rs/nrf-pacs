@@ -1,261 +1,230 @@
 #[doc = "Register `LFCLKSRC` reader"]
-pub struct R(crate::R<LFCLKSRC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LFCLKSRC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LFCLKSRC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LFCLKSRC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LfclksrcSpec>;
 #[doc = "Register `LFCLKSRC` writer"]
-pub struct W(crate::W<LFCLKSRC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LFCLKSRC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LFCLKSRC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LFCLKSRC_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `SRC` reader - Clock source"]
-pub type SRC_R = crate::FieldReader<u8, SRC_A>;
+pub type W = crate::W<LfclksrcSpec>;
 #[doc = "Clock source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SRC_A {
+pub enum Src {
     #[doc = "0: 32.768 kHz RC oscillator (LFRC)"]
-    RC = 0,
+    Rc = 0,
     #[doc = "1: 32.768 kHz crystal oscillator (LFXO)"]
-    XTAL = 1,
+    Xtal = 1,
     #[doc = "2: 32.768 kHz synthesized from HFCLK (LFSYNT)"]
-    SYNTH = 2,
+    Synth = 2,
 }
-impl From<SRC_A> for u8 {
+impl From<Src> for u8 {
     #[inline(always)]
-    fn from(variant: SRC_A) -> Self {
+    fn from(variant: Src) -> Self {
         variant as _
     }
 }
-impl SRC_R {
+impl crate::FieldSpec for Src {
+    type Ux = u8;
+}
+impl crate::IsEnum for Src {}
+#[doc = "Field `SRC` reader - Clock source"]
+pub type SrcR = crate::FieldReader<Src>;
+impl SrcR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SRC_A> {
+    pub const fn variant(&self) -> Option<Src> {
         match self.bits {
-            0 => Some(SRC_A::RC),
-            1 => Some(SRC_A::XTAL),
-            2 => Some(SRC_A::SYNTH),
+            0 => Some(Src::Rc),
+            1 => Some(Src::Xtal),
+            2 => Some(Src::Synth),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `RC`"]
-    #[inline(always)]
-    pub fn is_rc(&self) -> bool {
-        *self == SRC_A::RC
-    }
-    #[doc = "Checks if the value of the field is `XTAL`"]
-    #[inline(always)]
-    pub fn is_xtal(&self) -> bool {
-        *self == SRC_A::XTAL
-    }
-    #[doc = "Checks if the value of the field is `SYNTH`"]
-    #[inline(always)]
-    pub fn is_synth(&self) -> bool {
-        *self == SRC_A::SYNTH
-    }
-}
-#[doc = "Field `SRC` writer - Clock source"]
-pub type SRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFCLKSRC_SPEC, u8, SRC_A, 2, O>;
-impl<'a, const O: u8> SRC_W<'a, O> {
     #[doc = "32.768 kHz RC oscillator (LFRC)"]
     #[inline(always)]
-    pub fn rc(self) -> &'a mut W {
-        self.variant(SRC_A::RC)
+    pub fn is_rc(&self) -> bool {
+        *self == Src::Rc
     }
     #[doc = "32.768 kHz crystal oscillator (LFXO)"]
     #[inline(always)]
-    pub fn xtal(self) -> &'a mut W {
-        self.variant(SRC_A::XTAL)
+    pub fn is_xtal(&self) -> bool {
+        *self == Src::Xtal
     }
     #[doc = "32.768 kHz synthesized from HFCLK (LFSYNT)"]
     #[inline(always)]
-    pub fn synth(self) -> &'a mut W {
-        self.variant(SRC_A::SYNTH)
+    pub fn is_synth(&self) -> bool {
+        *self == Src::Synth
+    }
+}
+#[doc = "Field `SRC` writer - Clock source"]
+pub type SrcW<'a, REG> = crate::FieldWriter<'a, REG, 2, Src>;
+impl<'a, REG> SrcW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "32.768 kHz RC oscillator (LFRC)"]
+    #[inline(always)]
+    pub fn rc(self) -> &'a mut crate::W<REG> {
+        self.variant(Src::Rc)
+    }
+    #[doc = "32.768 kHz crystal oscillator (LFXO)"]
+    #[inline(always)]
+    pub fn xtal(self) -> &'a mut crate::W<REG> {
+        self.variant(Src::Xtal)
+    }
+    #[doc = "32.768 kHz synthesized from HFCLK (LFSYNT)"]
+    #[inline(always)]
+    pub fn synth(self) -> &'a mut crate::W<REG> {
+        self.variant(Src::Synth)
+    }
+}
+#[doc = "Enable or disable bypass of LFCLK crystal oscillator with external clock source\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Bypass {
+    #[doc = "0: Disable (use with Xtal or low-swing external source)"]
+    Disabled = 0,
+    #[doc = "1: Enable (use with rail-to-rail external source)"]
+    Enabled = 1,
+}
+impl From<Bypass> for bool {
+    #[inline(always)]
+    fn from(variant: Bypass) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `BYPASS` reader - Enable or disable bypass of LFCLK crystal oscillator with external clock source"]
-pub type BYPASS_R = crate::BitReader<BYPASS_A>;
-#[doc = "Enable or disable bypass of LFCLK crystal oscillator with external clock source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BYPASS_A {
-    #[doc = "0: Disable (use with Xtal or low-swing external source)"]
-    DISABLED = 0,
-    #[doc = "1: Enable (use with rail-to-rail external source)"]
-    ENABLED = 1,
-}
-impl From<BYPASS_A> for bool {
-    #[inline(always)]
-    fn from(variant: BYPASS_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl BYPASS_R {
+pub type BypassR = crate::BitReader<Bypass>;
+impl BypassR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BYPASS_A {
+    pub const fn variant(&self) -> Bypass {
         match self.bits {
-            false => BYPASS_A::DISABLED,
-            true => BYPASS_A::ENABLED,
+            false => Bypass::Disabled,
+            true => Bypass::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == BYPASS_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == BYPASS_A::ENABLED
-    }
-}
-#[doc = "Field `BYPASS` writer - Enable or disable bypass of LFCLK crystal oscillator with external clock source"]
-pub type BYPASS_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFCLKSRC_SPEC, BYPASS_A, O>;
-impl<'a, const O: u8> BYPASS_W<'a, O> {
     #[doc = "Disable (use with Xtal or low-swing external source)"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(BYPASS_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Bypass::Disabled
     }
     #[doc = "Enable (use with rail-to-rail external source)"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(BYPASS_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Bypass::Enabled
     }
 }
-#[doc = "Field `EXTERNAL` reader - Enable or disable external source for LFCLK"]
-pub type EXTERNAL_R = crate::BitReader<EXTERNAL_A>;
-#[doc = "Enable or disable external source for LFCLK\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXTERNAL_A {
-    #[doc = "0: Disable external source (use with Xtal)"]
-    DISABLED = 0,
-    #[doc = "1: Enable use of external source instead of Xtal (SRC needs to be set to Xtal)"]
-    ENABLED = 1,
-}
-impl From<EXTERNAL_A> for bool {
+#[doc = "Field `BYPASS` writer - Enable or disable bypass of LFCLK crystal oscillator with external clock source"]
+pub type BypassW<'a, REG> = crate::BitWriter<'a, REG, Bypass>;
+impl<'a, REG> BypassW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable (use with Xtal or low-swing external source)"]
     #[inline(always)]
-    fn from(variant: EXTERNAL_A) -> Self {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Bypass::Disabled)
+    }
+    #[doc = "Enable (use with rail-to-rail external source)"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Bypass::Enabled)
+    }
+}
+#[doc = "Enable or disable external source for LFCLK\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum External {
+    #[doc = "0: Disable external source (use with Xtal)"]
+    Disabled = 0,
+    #[doc = "1: Enable use of external source instead of Xtal (SRC needs to be set to Xtal)"]
+    Enabled = 1,
+}
+impl From<External> for bool {
+    #[inline(always)]
+    fn from(variant: External) -> Self {
         variant as u8 != 0
     }
 }
-impl EXTERNAL_R {
+#[doc = "Field `EXTERNAL` reader - Enable or disable external source for LFCLK"]
+pub type ExternalR = crate::BitReader<External>;
+impl ExternalR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTERNAL_A {
+    pub const fn variant(&self) -> External {
         match self.bits {
-            false => EXTERNAL_A::DISABLED,
-            true => EXTERNAL_A::ENABLED,
+            false => External::Disabled,
+            true => External::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == EXTERNAL_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == EXTERNAL_A::ENABLED
-    }
-}
-#[doc = "Field `EXTERNAL` writer - Enable or disable external source for LFCLK"]
-pub type EXTERNAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFCLKSRC_SPEC, EXTERNAL_A, O>;
-impl<'a, const O: u8> EXTERNAL_W<'a, O> {
     #[doc = "Disable external source (use with Xtal)"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(EXTERNAL_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == External::Disabled
     }
     #[doc = "Enable use of external source instead of Xtal (SRC needs to be set to Xtal)"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(EXTERNAL_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == External::Enabled
+    }
+}
+#[doc = "Field `EXTERNAL` writer - Enable or disable external source for LFCLK"]
+pub type ExternalW<'a, REG> = crate::BitWriter<'a, REG, External>;
+impl<'a, REG> ExternalW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable external source (use with Xtal)"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(External::Disabled)
+    }
+    #[doc = "Enable use of external source instead of Xtal (SRC needs to be set to Xtal)"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(External::Enabled)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Clock source"]
     #[inline(always)]
-    pub fn src(&self) -> SRC_R {
-        SRC_R::new((self.bits & 3) as u8)
+    pub fn src(&self) -> SrcR {
+        SrcR::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 16 - Enable or disable bypass of LFCLK crystal oscillator with external clock source"]
     #[inline(always)]
-    pub fn bypass(&self) -> BYPASS_R {
-        BYPASS_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn bypass(&self) -> BypassR {
+        BypassR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Enable or disable external source for LFCLK"]
     #[inline(always)]
-    pub fn external(&self) -> EXTERNAL_R {
-        EXTERNAL_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn external(&self) -> ExternalR {
+        ExternalR::new(((self.bits >> 17) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Clock source"]
     #[inline(always)]
-    pub fn src(&mut self) -> SRC_W<0> {
-        SRC_W::new(self)
+    pub fn src(&mut self) -> SrcW<'_, LfclksrcSpec> {
+        SrcW::new(self, 0)
     }
     #[doc = "Bit 16 - Enable or disable bypass of LFCLK crystal oscillator with external clock source"]
     #[inline(always)]
-    pub fn bypass(&mut self) -> BYPASS_W<16> {
-        BYPASS_W::new(self)
+    pub fn bypass(&mut self) -> BypassW<'_, LfclksrcSpec> {
+        BypassW::new(self, 16)
     }
     #[doc = "Bit 17 - Enable or disable external source for LFCLK"]
     #[inline(always)]
-    pub fn external(&mut self) -> EXTERNAL_W<17> {
-        EXTERNAL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn external(&mut self) -> ExternalW<'_, LfclksrcSpec> {
+        ExternalW::new(self, 17)
     }
 }
-#[doc = "Clock source for the LFCLK\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lfclksrc](index.html) module"]
-pub struct LFCLKSRC_SPEC;
-impl crate::RegisterSpec for LFCLKSRC_SPEC {
+#[doc = "Clock source for the LFCLK\n\nYou can [`read`](crate::Reg::read) this register and get [`lfclksrc::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lfclksrc::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct LfclksrcSpec;
+impl crate::RegisterSpec for LfclksrcSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lfclksrc::R](R) reader structure"]
-impl crate::Readable for LFCLKSRC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [lfclksrc::W](W) writer structure"]
-impl crate::Writable for LFCLKSRC_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`lfclksrc::R`](R) reader structure"]
+impl crate::Readable for LfclksrcSpec {}
+#[doc = "`write(|w| ..)` method takes [`lfclksrc::W`](W) writer structure"]
+impl crate::Writable for LfclksrcSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets LFCLKSRC to value 0"]
-impl crate::Resettable for LFCLKSRC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for LfclksrcSpec {}

@@ -1,72 +1,54 @@
 #[doc = "Register `CIDR3` reader"]
-pub struct R(crate::R<CIDR3_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CIDR3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CIDR3_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CIDR3_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `PRMBL_3` reader - Preamble\\[3\\]. Contains bits\\[31:24\\]
-of the component identification code."]
-pub type PRMBL_3_R = crate::FieldReader<u8, PRMBL_3_A>;
-#[doc = "Preamble\\[3\\]. Contains bits\\[31:24\\]
-of the component identification code.\n\nValue on reset: 177"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+pub type R = crate::R<Cidr3Spec>;
+#[doc = "Preamble\\[3\\]. Contains bits\\[31:24\\] of the component identification code.\n\nValue on reset: 177"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PRMBL_3_A {
-    #[doc = "177: Bits\\[31:24\\]
-of the identification code."]
-    VALUE = 177,
+pub enum Prmbl3 {
+    #[doc = "177: Bits\\[31:24\\] of the identification code."]
+    Value = 177,
 }
-impl From<PRMBL_3_A> for u8 {
+impl From<Prmbl3> for u8 {
     #[inline(always)]
-    fn from(variant: PRMBL_3_A) -> Self {
+    fn from(variant: Prmbl3) -> Self {
         variant as _
     }
 }
-impl PRMBL_3_R {
+impl crate::FieldSpec for Prmbl3 {
+    type Ux = u8;
+}
+impl crate::IsEnum for Prmbl3 {}
+#[doc = "Field `PRMBL_3` reader - Preamble\\[3\\]. Contains bits\\[31:24\\] of the component identification code."]
+pub type Prmbl3R = crate::FieldReader<Prmbl3>;
+impl Prmbl3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRMBL_3_A> {
+    pub const fn variant(&self) -> Option<Prmbl3> {
         match self.bits {
-            177 => Some(PRMBL_3_A::VALUE),
+            177 => Some(Prmbl3::Value),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE`"]
+    #[doc = "Bits\\[31:24\\] of the identification code."]
     #[inline(always)]
     pub fn is_value(&self) -> bool {
-        *self == PRMBL_3_A::VALUE
+        *self == Prmbl3::Value
     }
 }
 impl R {
-    #[doc = "Bits 0:7 - Preamble\\[3\\]. Contains bits\\[31:24\\]
-of the component identification code."]
+    #[doc = "Bits 0:7 - Preamble\\[3\\]. Contains bits\\[31:24\\] of the component identification code."]
     #[inline(always)]
-    pub fn prmbl_3(&self) -> PRMBL_3_R {
-        PRMBL_3_R::new((self.bits & 0xff) as u8)
+    pub fn prmbl_3(&self) -> Prmbl3R {
+        Prmbl3R::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "Component ID3 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cidr3](index.html) module"]
-pub struct CIDR3_SPEC;
-impl crate::RegisterSpec for CIDR3_SPEC {
+#[doc = "Component ID3 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cidr3::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Cidr3Spec;
+impl crate::RegisterSpec for Cidr3Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cidr3::R](R) reader structure"]
-impl crate::Readable for CIDR3_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`cidr3::R`](R) reader structure"]
+impl crate::Readable for Cidr3Spec {}
 #[doc = "`reset()` method sets CIDR3 to value 0xb1"]
-impl crate::Resettable for CIDR3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xb1
-    }
+impl crate::Resettable for Cidr3Spec {
+    const RESET_VALUE: u32 = 0xb1;
 }

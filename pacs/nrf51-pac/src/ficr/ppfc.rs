@@ -1,76 +1,62 @@
 #[doc = "Register `PPFC` reader"]
-pub struct R(crate::R<PPFC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PPFC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PPFC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PPFC_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `PPFC` reader - Pre-programmed factory code present."]
-pub type PPFC_R = crate::FieldReader<u8, PPFC_A>;
+pub type R = crate::R<PpfcSpec>;
 #[doc = "Pre-programmed factory code present.\n\nValue on reset: 255"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PPFC_A {
+pub enum Ppfc {
     #[doc = "255: Not present."]
-    NOT_PRESENT = 255,
+    NotPresent = 255,
     #[doc = "0: Present."]
-    PRESENT = 0,
+    Present = 0,
 }
-impl From<PPFC_A> for u8 {
+impl From<Ppfc> for u8 {
     #[inline(always)]
-    fn from(variant: PPFC_A) -> Self {
+    fn from(variant: Ppfc) -> Self {
         variant as _
     }
 }
-impl PPFC_R {
+impl crate::FieldSpec for Ppfc {
+    type Ux = u8;
+}
+impl crate::IsEnum for Ppfc {}
+#[doc = "Field `PPFC` reader - Pre-programmed factory code present."]
+pub type PpfcR = crate::FieldReader<Ppfc>;
+impl PpfcR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PPFC_A> {
+    pub const fn variant(&self) -> Option<Ppfc> {
         match self.bits {
-            255 => Some(PPFC_A::NOT_PRESENT),
-            0 => Some(PPFC_A::PRESENT),
+            255 => Some(Ppfc::NotPresent),
+            0 => Some(Ppfc::Present),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
+    #[doc = "Not present."]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        *self == PPFC_A::NOT_PRESENT
+        *self == Ppfc::NotPresent
     }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[doc = "Present."]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == PPFC_A::PRESENT
+        *self == Ppfc::Present
     }
 }
 impl R {
     #[doc = "Bits 0:7 - Pre-programmed factory code present."]
     #[inline(always)]
-    pub fn ppfc(&self) -> PPFC_R {
-        PPFC_R::new((self.bits & 0xff) as u8)
+    pub fn ppfc(&self) -> PpfcR {
+        PpfcR::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "Pre-programmed factory code present.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ppfc](index.html) module"]
-pub struct PPFC_SPEC;
-impl crate::RegisterSpec for PPFC_SPEC {
+#[doc = "Pre-programmed factory code present.\n\nYou can [`read`](crate::Reg::read) this register and get [`ppfc::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct PpfcSpec;
+impl crate::RegisterSpec for PpfcSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ppfc::R](R) reader structure"]
-impl crate::Readable for PPFC_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ppfc::R`](R) reader structure"]
+impl crate::Readable for PpfcSpec {}
 #[doc = "`reset()` method sets PPFC to value 0xffff_ffff"]
-impl crate::Resettable for PPFC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for PpfcSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

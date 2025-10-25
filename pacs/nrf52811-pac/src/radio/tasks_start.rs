@@ -1,72 +1,44 @@
 #[doc = "Register `TASKS_START` writer"]
-pub struct W(crate::W<TASKS_START_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TASKS_START_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TASKS_START_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TASKS_START_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TasksStartSpec>;
 #[doc = "Start RADIO\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TASKS_START_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TasksStart {
     #[doc = "1: Trigger task"]
-    TRIGGER = 1,
+    Trigger = 1,
 }
-impl From<TASKS_START_AW> for bool {
+impl From<TasksStart> for bool {
     #[inline(always)]
-    fn from(variant: TASKS_START_AW) -> Self {
+    fn from(variant: TasksStart) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TASKS_START` writer - Start RADIO"]
-pub type TASKS_START_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TASKS_START_SPEC, TASKS_START_AW, O>;
-impl<'a, const O: u8> TASKS_START_W<'a, O> {
+pub type TasksStartW<'a, REG> = crate::BitWriter<'a, REG, TasksStart>;
+impl<'a, REG> TasksStartW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Trigger task"]
     #[inline(always)]
-    pub fn trigger(self) -> &'a mut W {
-        self.variant(TASKS_START_AW::TRIGGER)
+    pub fn trigger(self) -> &'a mut crate::W<REG> {
+        self.variant(TasksStart::Trigger)
     }
 }
 impl W {
     #[doc = "Bit 0 - Start RADIO"]
     #[inline(always)]
-    pub fn tasks_start(&mut self) -> TASKS_START_W<0> {
-        TASKS_START_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn tasks_start(&mut self) -> TasksStartW<'_, TasksStartSpec> {
+        TasksStartW::new(self, 0)
     }
 }
-#[doc = "Start RADIO\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_start](index.html) module"]
-pub struct TASKS_START_SPEC;
-impl crate::RegisterSpec for TASKS_START_SPEC {
+#[doc = "Start RADIO\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_start::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TasksStartSpec;
+impl crate::RegisterSpec for TasksStartSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [tasks_start::W](W) writer structure"]
-impl crate::Writable for TASKS_START_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`tasks_start::W`](W) writer structure"]
+impl crate::Writable for TasksStartSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TASKS_START to value 0"]
-impl crate::Resettable for TASKS_START_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for TasksStartSpec {}

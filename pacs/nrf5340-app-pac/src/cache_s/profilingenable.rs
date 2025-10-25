@@ -1,126 +1,84 @@
 #[doc = "Register `PROFILINGENABLE` reader"]
-pub struct R(crate::R<PROFILINGENABLE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PROFILINGENABLE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PROFILINGENABLE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PROFILINGENABLE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ProfilingenableSpec>;
 #[doc = "Register `PROFILINGENABLE` writer"]
-pub struct W(crate::W<PROFILINGENABLE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PROFILINGENABLE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PROFILINGENABLE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PROFILINGENABLE_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `ENABLE` reader - Enable the profiling counters"]
-pub type ENABLE_R = crate::BitReader<ENABLE_A>;
+pub type W = crate::W<ProfilingenableSpec>;
 #[doc = "Enable the profiling counters\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENABLE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Enable {
     #[doc = "0: Disable profiling"]
-    DISABLE = 0,
+    Disable = 0,
     #[doc = "1: Enable profiling"]
-    ENABLE = 1,
+    Enable = 1,
 }
-impl From<ENABLE_A> for bool {
+impl From<Enable> for bool {
     #[inline(always)]
-    fn from(variant: ENABLE_A) -> Self {
+    fn from(variant: Enable) -> Self {
         variant as u8 != 0
     }
 }
-impl ENABLE_R {
+#[doc = "Field `ENABLE` reader - Enable the profiling counters"]
+pub type EnableR = crate::BitReader<Enable>;
+impl EnableR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENABLE_A {
+    pub const fn variant(&self) -> Enable {
         match self.bits {
-            false => ENABLE_A::DISABLE,
-            true => ENABLE_A::ENABLE,
+            false => Enable::Disable,
+            true => Enable::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == ENABLE_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == ENABLE_A::ENABLE
-    }
-}
-#[doc = "Field `ENABLE` writer - Enable the profiling counters"]
-pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PROFILINGENABLE_SPEC, ENABLE_A, O>;
-impl<'a, const O: u8> ENABLE_W<'a, O> {
     #[doc = "Disable profiling"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(ENABLE_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == Enable::Disable
     }
     #[doc = "Enable profiling"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(ENABLE_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == Enable::Enable
+    }
+}
+#[doc = "Field `ENABLE` writer - Enable the profiling counters"]
+pub type EnableW<'a, REG> = crate::BitWriter<'a, REG, Enable>;
+impl<'a, REG> EnableW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable profiling"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(Enable::Disable)
+    }
+    #[doc = "Enable profiling"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(Enable::Enable)
     }
 }
 impl R {
     #[doc = "Bit 0 - Enable the profiling counters"]
     #[inline(always)]
-    pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new((self.bits & 1) != 0)
+    pub fn enable(&self) -> EnableR {
+        EnableR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable the profiling counters"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W<0> {
-        ENABLE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn enable(&mut self) -> EnableW<'_, ProfilingenableSpec> {
+        EnableW::new(self, 0)
     }
 }
-#[doc = "Enable the profiling counters.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [profilingenable](index.html) module"]
-pub struct PROFILINGENABLE_SPEC;
-impl crate::RegisterSpec for PROFILINGENABLE_SPEC {
+#[doc = "Enable the profiling counters.\n\nYou can [`read`](crate::Reg::read) this register and get [`profilingenable::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`profilingenable::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ProfilingenableSpec;
+impl crate::RegisterSpec for ProfilingenableSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [profilingenable::R](R) reader structure"]
-impl crate::Readable for PROFILINGENABLE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [profilingenable::W](W) writer structure"]
-impl crate::Writable for PROFILINGENABLE_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`profilingenable::R`](R) reader structure"]
+impl crate::Readable for ProfilingenableSpec {}
+#[doc = "`write(|w| ..)` method takes [`profilingenable::W`](W) writer structure"]
+impl crate::Writable for ProfilingenableSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets PROFILINGENABLE to value 0"]
-impl crate::Resettable for PROFILINGENABLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for ProfilingenableSpec {}

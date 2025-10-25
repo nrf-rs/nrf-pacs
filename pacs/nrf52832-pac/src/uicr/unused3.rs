@@ -1,64 +1,23 @@
 #[doc = "Register `UNUSED3` reader"]
-pub struct R(crate::R<UNUSED3_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UNUSED3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UNUSED3_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UNUSED3_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Unused3Spec>;
 #[doc = "Register `UNUSED3` writer"]
-pub struct W(crate::W<UNUSED3_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UNUSED3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type W = crate::W<Unused3Spec>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UNUSED3_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UNUSED3_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "Unspecified\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [unused3](index.html) module"]
-pub struct UNUSED3_SPEC;
-impl crate::RegisterSpec for UNUSED3_SPEC {
+impl W {}
+#[doc = "Unspecified\n\nYou can [`read`](crate::Reg::read) this register and get [`unused3::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`unused3::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Unused3Spec;
+impl crate::RegisterSpec for Unused3Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [unused3::R](R) reader structure"]
-impl crate::Readable for UNUSED3_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [unused3::W](W) writer structure"]
-impl crate::Writable for UNUSED3_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`unused3::R`](R) reader structure"]
+impl crate::Readable for Unused3Spec {}
+#[doc = "`write(|w| ..)` method takes [`unused3::W`](W) writer structure"]
+impl crate::Writable for Unused3Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UNUSED3 to value 0"]
-impl crate::Resettable for UNUSED3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Unused3Spec {}

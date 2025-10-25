@@ -1,40 +1,22 @@
 #[doc = "Register `CODESIZE` reader"]
-pub struct R(crate::R<CODESIZE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CODESIZE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CODESIZE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CODESIZE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CodesizeSpec>;
 #[doc = "Field `CODESIZE` reader - Code memory size in number of pages"]
-pub type CODESIZE_R = crate::FieldReader<u32, u32>;
+pub type CodesizeR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Code memory size in number of pages"]
     #[inline(always)]
-    pub fn codesize(&self) -> CODESIZE_R {
-        CODESIZE_R::new(self.bits)
+    pub fn codesize(&self) -> CodesizeR {
+        CodesizeR::new(self.bits)
     }
 }
-#[doc = "Code memory size\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [codesize](index.html) module"]
-pub struct CODESIZE_SPEC;
-impl crate::RegisterSpec for CODESIZE_SPEC {
+#[doc = "Code memory size\n\nYou can [`read`](crate::Reg::read) this register and get [`codesize::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CodesizeSpec;
+impl crate::RegisterSpec for CodesizeSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [codesize::R](R) reader structure"]
-impl crate::Readable for CODESIZE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`codesize::R`](R) reader structure"]
+impl crate::Readable for CodesizeSpec {}
 #[doc = "`reset()` method sets CODESIZE to value 0xffff_ffff"]
-impl crate::Resettable for CODESIZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for CodesizeSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

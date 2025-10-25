@@ -1,133 +1,91 @@
 #[doc = "Register `INTENCLR` reader"]
-pub struct R(crate::R<INTENCLR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTENCLR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTENCLR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTENCLR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IntenclrSpec>;
 #[doc = "Register `INTENCLR` writer"]
-pub struct W(crate::W<INTENCLR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INTENCLR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INTENCLR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INTENCLR_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `DATARDY` reader - Write '1' to Disable interrupt for DATARDY event"]
-pub type DATARDY_R = crate::BitReader<DATARDY_A>;
+pub type W = crate::W<IntenclrSpec>;
 #[doc = "Write '1' to Disable interrupt for DATARDY event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATARDY_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Datardy {
     #[doc = "0: Read: Disabled"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<DATARDY_A> for bool {
+impl From<Datardy> for bool {
     #[inline(always)]
-    fn from(variant: DATARDY_A) -> Self {
+    fn from(variant: Datardy) -> Self {
         variant as u8 != 0
     }
 }
-impl DATARDY_R {
+#[doc = "Field `DATARDY` reader - Write '1' to Disable interrupt for DATARDY event"]
+pub type DatardyR = crate::BitReader<Datardy>;
+impl DatardyR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATARDY_A {
+    pub const fn variant(&self) -> Datardy {
         match self.bits {
-            false => DATARDY_A::DISABLED,
-            true => DATARDY_A::ENABLED,
+            false => Datardy::Disabled,
+            true => Datardy::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Read: Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == DATARDY_A::DISABLED
+        *self == Datardy::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Read: Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == DATARDY_A::ENABLED
+        *self == Datardy::Enabled
     }
 }
 #[doc = "Write '1' to Disable interrupt for DATARDY event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATARDY_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum DatardyWO {
     #[doc = "1: Disable"]
-    CLEAR = 1,
+    Clear = 1,
 }
-impl From<DATARDY_AW> for bool {
+impl From<DatardyWO> for bool {
     #[inline(always)]
-    fn from(variant: DATARDY_AW) -> Self {
+    fn from(variant: DatardyWO) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DATARDY` writer - Write '1' to Disable interrupt for DATARDY event"]
-pub type DATARDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENCLR_SPEC, DATARDY_AW, O>;
-impl<'a, const O: u8> DATARDY_W<'a, O> {
+pub type DatardyW<'a, REG> = crate::BitWriter<'a, REG, DatardyWO>;
+impl<'a, REG> DatardyW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(DATARDY_AW::CLEAR)
+    pub fn clear(self) -> &'a mut crate::W<REG> {
+        self.variant(DatardyWO::Clear)
     }
 }
 impl R {
     #[doc = "Bit 0 - Write '1' to Disable interrupt for DATARDY event"]
     #[inline(always)]
-    pub fn datardy(&self) -> DATARDY_R {
-        DATARDY_R::new((self.bits & 1) != 0)
+    pub fn datardy(&self) -> DatardyR {
+        DatardyR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write '1' to Disable interrupt for DATARDY event"]
     #[inline(always)]
-    pub fn datardy(&mut self) -> DATARDY_W<0> {
-        DATARDY_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn datardy(&mut self) -> DatardyW<'_, IntenclrSpec> {
+        DatardyW::new(self, 0)
     }
 }
-#[doc = "Disable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenclr](index.html) module"]
-pub struct INTENCLR_SPEC;
-impl crate::RegisterSpec for INTENCLR_SPEC {
+#[doc = "Disable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`intenclr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenclr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct IntenclrSpec;
+impl crate::RegisterSpec for IntenclrSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [intenclr::R](R) reader structure"]
-impl crate::Readable for INTENCLR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [intenclr::W](W) writer structure"]
-impl crate::Writable for INTENCLR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`intenclr::R`](R) reader structure"]
+impl crate::Readable for IntenclrSpec {}
+#[doc = "`write(|w| ..)` method takes [`intenclr::W`](W) writer structure"]
+impl crate::Writable for IntenclrSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets INTENCLR to value 0"]
-impl crate::Resettable for INTENCLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for IntenclrSpec {}

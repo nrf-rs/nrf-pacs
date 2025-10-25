@@ -1,184 +1,172 @@
 #[doc = "Register `BMREQUESTTYPE` reader"]
-pub struct R(crate::R<BMREQUESTTYPE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BMREQUESTTYPE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BMREQUESTTYPE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BMREQUESTTYPE_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `RECIPIENT` reader - Data transfer type"]
-pub type RECIPIENT_R = crate::FieldReader<u8, RECIPIENT_A>;
+pub type R = crate::R<BmrequesttypeSpec>;
 #[doc = "Data transfer type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RECIPIENT_A {
+pub enum Recipient {
     #[doc = "0: Device"]
-    DEVICE = 0,
+    Device = 0,
     #[doc = "1: Interface"]
-    INTERFACE = 1,
+    Interface = 1,
     #[doc = "2: Endpoint"]
-    ENDPOINT = 2,
+    Endpoint = 2,
     #[doc = "3: Other"]
-    OTHER = 3,
+    Other = 3,
 }
-impl From<RECIPIENT_A> for u8 {
+impl From<Recipient> for u8 {
     #[inline(always)]
-    fn from(variant: RECIPIENT_A) -> Self {
+    fn from(variant: Recipient) -> Self {
         variant as _
     }
 }
-impl RECIPIENT_R {
+impl crate::FieldSpec for Recipient {
+    type Ux = u8;
+}
+impl crate::IsEnum for Recipient {}
+#[doc = "Field `RECIPIENT` reader - Data transfer type"]
+pub type RecipientR = crate::FieldReader<Recipient>;
+impl RecipientR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RECIPIENT_A> {
+    pub const fn variant(&self) -> Option<Recipient> {
         match self.bits {
-            0 => Some(RECIPIENT_A::DEVICE),
-            1 => Some(RECIPIENT_A::INTERFACE),
-            2 => Some(RECIPIENT_A::ENDPOINT),
-            3 => Some(RECIPIENT_A::OTHER),
+            0 => Some(Recipient::Device),
+            1 => Some(Recipient::Interface),
+            2 => Some(Recipient::Endpoint),
+            3 => Some(Recipient::Other),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DEVICE`"]
+    #[doc = "Device"]
     #[inline(always)]
     pub fn is_device(&self) -> bool {
-        *self == RECIPIENT_A::DEVICE
+        *self == Recipient::Device
     }
-    #[doc = "Checks if the value of the field is `INTERFACE`"]
+    #[doc = "Interface"]
     #[inline(always)]
     pub fn is_interface(&self) -> bool {
-        *self == RECIPIENT_A::INTERFACE
+        *self == Recipient::Interface
     }
-    #[doc = "Checks if the value of the field is `ENDPOINT`"]
+    #[doc = "Endpoint"]
     #[inline(always)]
     pub fn is_endpoint(&self) -> bool {
-        *self == RECIPIENT_A::ENDPOINT
+        *self == Recipient::Endpoint
     }
-    #[doc = "Checks if the value of the field is `OTHER`"]
+    #[doc = "Other"]
     #[inline(always)]
     pub fn is_other(&self) -> bool {
-        *self == RECIPIENT_A::OTHER
+        *self == Recipient::Other
     }
 }
-#[doc = "Field `TYPE` reader - Data transfer type"]
-pub type TYPE_R = crate::FieldReader<u8, TYPE_A>;
 #[doc = "Data transfer type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TYPE_A {
+pub enum Type {
     #[doc = "0: Standard"]
-    STANDARD = 0,
+    Standard = 0,
     #[doc = "1: Class"]
-    CLASS = 1,
+    Class = 1,
     #[doc = "2: Vendor"]
-    VENDOR = 2,
+    Vendor = 2,
 }
-impl From<TYPE_A> for u8 {
+impl From<Type> for u8 {
     #[inline(always)]
-    fn from(variant: TYPE_A) -> Self {
+    fn from(variant: Type) -> Self {
         variant as _
     }
 }
-impl TYPE_R {
+impl crate::FieldSpec for Type {
+    type Ux = u8;
+}
+impl crate::IsEnum for Type {}
+#[doc = "Field `TYPE` reader - Data transfer type"]
+pub type TypeR = crate::FieldReader<Type>;
+impl TypeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TYPE_A> {
+    pub const fn variant(&self) -> Option<Type> {
         match self.bits {
-            0 => Some(TYPE_A::STANDARD),
-            1 => Some(TYPE_A::CLASS),
-            2 => Some(TYPE_A::VENDOR),
+            0 => Some(Type::Standard),
+            1 => Some(Type::Class),
+            2 => Some(Type::Vendor),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `STANDARD`"]
+    #[doc = "Standard"]
     #[inline(always)]
     pub fn is_standard(&self) -> bool {
-        *self == TYPE_A::STANDARD
+        *self == Type::Standard
     }
-    #[doc = "Checks if the value of the field is `CLASS`"]
+    #[doc = "Class"]
     #[inline(always)]
     pub fn is_class(&self) -> bool {
-        *self == TYPE_A::CLASS
+        *self == Type::Class
     }
-    #[doc = "Checks if the value of the field is `VENDOR`"]
+    #[doc = "Vendor"]
     #[inline(always)]
     pub fn is_vendor(&self) -> bool {
-        *self == TYPE_A::VENDOR
+        *self == Type::Vendor
     }
 }
-#[doc = "Field `DIRECTION` reader - Data transfer direction"]
-pub type DIRECTION_R = crate::BitReader<DIRECTION_A>;
 #[doc = "Data transfer direction\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIRECTION_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Direction {
     #[doc = "0: Host-to-device"]
-    HOST_TO_DEVICE = 0,
+    HostToDevice = 0,
     #[doc = "1: Device-to-host"]
-    DEVICE_TO_HOST = 1,
+    DeviceToHost = 1,
 }
-impl From<DIRECTION_A> for bool {
+impl From<Direction> for bool {
     #[inline(always)]
-    fn from(variant: DIRECTION_A) -> Self {
+    fn from(variant: Direction) -> Self {
         variant as u8 != 0
     }
 }
-impl DIRECTION_R {
+#[doc = "Field `DIRECTION` reader - Data transfer direction"]
+pub type DirectionR = crate::BitReader<Direction>;
+impl DirectionR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIRECTION_A {
+    pub const fn variant(&self) -> Direction {
         match self.bits {
-            false => DIRECTION_A::HOST_TO_DEVICE,
-            true => DIRECTION_A::DEVICE_TO_HOST,
+            false => Direction::HostToDevice,
+            true => Direction::DeviceToHost,
         }
     }
-    #[doc = "Checks if the value of the field is `HOST_TO_DEVICE`"]
+    #[doc = "Host-to-device"]
     #[inline(always)]
     pub fn is_host_to_device(&self) -> bool {
-        *self == DIRECTION_A::HOST_TO_DEVICE
+        *self == Direction::HostToDevice
     }
-    #[doc = "Checks if the value of the field is `DEVICE_TO_HOST`"]
+    #[doc = "Device-to-host"]
     #[inline(always)]
     pub fn is_device_to_host(&self) -> bool {
-        *self == DIRECTION_A::DEVICE_TO_HOST
+        *self == Direction::DeviceToHost
     }
 }
 impl R {
     #[doc = "Bits 0:4 - Data transfer type"]
     #[inline(always)]
-    pub fn recipient(&self) -> RECIPIENT_R {
-        RECIPIENT_R::new((self.bits & 0x1f) as u8)
+    pub fn recipient(&self) -> RecipientR {
+        RecipientR::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bits 5:6 - Data transfer type"]
     #[inline(always)]
-    pub fn type_(&self) -> TYPE_R {
-        TYPE_R::new(((self.bits >> 5) & 3) as u8)
+    pub fn type_(&self) -> TypeR {
+        TypeR::new(((self.bits >> 5) & 3) as u8)
     }
     #[doc = "Bit 7 - Data transfer direction"]
     #[inline(always)]
-    pub fn direction(&self) -> DIRECTION_R {
-        DIRECTION_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn direction(&self) -> DirectionR {
+        DirectionR::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "SETUP data, byte 0, bmRequestType\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bmrequesttype](index.html) module"]
-pub struct BMREQUESTTYPE_SPEC;
-impl crate::RegisterSpec for BMREQUESTTYPE_SPEC {
+#[doc = "SETUP data, byte 0, bmRequestType\n\nYou can [`read`](crate::Reg::read) this register and get [`bmrequesttype::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct BmrequesttypeSpec;
+impl crate::RegisterSpec for BmrequesttypeSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [bmrequesttype::R](R) reader structure"]
-impl crate::Readable for BMREQUESTTYPE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`bmrequesttype::R`](R) reader structure"]
+impl crate::Readable for BmrequesttypeSpec {}
 #[doc = "`reset()` method sets BMREQUESTTYPE to value 0"]
-impl crate::Resettable for BMREQUESTTYPE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for BmrequesttypeSpec {}

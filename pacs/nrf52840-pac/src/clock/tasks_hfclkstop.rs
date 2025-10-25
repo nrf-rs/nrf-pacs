@@ -1,53 +1,44 @@
 #[doc = "Register `TASKS_HFCLKSTOP` writer"]
-pub struct W(crate::W<TASKS_HFCLKSTOP_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TASKS_HFCLKSTOP_SPEC>;
+pub type W = crate::W<TasksHfclkstopSpec>;
+#[doc = "Stop HFXO crystal oscillator\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TasksHfclkstop {
+    #[doc = "1: Trigger task"]
+    Trigger = 1,
+}
+impl From<TasksHfclkstop> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: TasksHfclkstop) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `TASKS_HFCLKSTOP` writer - Stop HFXO crystal oscillator"]
+pub type TasksHfclkstopW<'a, REG> = crate::BitWriter<'a, REG, TasksHfclkstop>;
+impl<'a, REG> TasksHfclkstopW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Trigger task"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn trigger(self) -> &'a mut crate::W<REG> {
+        self.variant(TasksHfclkstop::Trigger)
     }
 }
-impl From<crate::W<TASKS_HFCLKSTOP_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TASKS_HFCLKSTOP_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `TASKS_HFCLKSTOP` writer - "]
-pub type TASKS_HFCLKSTOP_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TASKS_HFCLKSTOP_SPEC, bool, O>;
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Stop HFXO crystal oscillator"]
     #[inline(always)]
-    pub fn tasks_hfclkstop(&mut self) -> TASKS_HFCLKSTOP_W<0> {
-        TASKS_HFCLKSTOP_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn tasks_hfclkstop(&mut self) -> TasksHfclkstopW<'_, TasksHfclkstopSpec> {
+        TasksHfclkstopW::new(self, 0)
     }
 }
-#[doc = "Stop HFXO crystal oscillator\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_hfclkstop](index.html) module"]
-pub struct TASKS_HFCLKSTOP_SPEC;
-impl crate::RegisterSpec for TASKS_HFCLKSTOP_SPEC {
+#[doc = "Stop HFXO crystal oscillator\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_hfclkstop::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TasksHfclkstopSpec;
+impl crate::RegisterSpec for TasksHfclkstopSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [tasks_hfclkstop::W](W) writer structure"]
-impl crate::Writable for TASKS_HFCLKSTOP_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`tasks_hfclkstop::W`](W) writer structure"]
+impl crate::Writable for TasksHfclkstopSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TASKS_HFCLKSTOP to value 0"]
-impl crate::Resettable for TASKS_HFCLKSTOP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for TasksHfclkstopSpec {}

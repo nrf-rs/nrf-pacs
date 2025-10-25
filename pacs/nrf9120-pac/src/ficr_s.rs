@@ -1,36 +1,48 @@
-#[doc = r"Register block"]
 #[repr(C)]
+#[doc = "Register block"]
 pub struct RegisterBlock {
-    _reserved0: [u8; 0x0140],
-    #[doc = "0x140..0x14c - SIP-specific device info"]
-    pub sipinfo: SIPINFO,
-    _reserved1: [u8; 0xb4],
-    #[doc = "0x200..0x22c - Device info"]
-    pub info: INFO,
-    _reserved2: [u8; 0xd4],
-    #[doc = "0x300..0xb00 - Unspecified"]
-    pub trimcnf: [TRIMCNF; 256],
-    _reserved3: [u8; 0x0100],
-    #[doc = "0xc00..0xc20 - NIST800-90B RNG calibration data"]
-    pub trng90b: TRNG90B,
+    _reserved0: [u8; 0x0200],
+    info: Info,
+    _reserved1: [u8; 0xd4],
+    trimcnf: [Trimcnf; 256],
+    _reserved2: [u8; 0x0100],
+    trng90b: Trng90b,
 }
-#[doc = "SIP-specific device info"]
-pub use sipinfo::SIPINFO;
-#[doc = r"Cluster"]
-#[doc = "SIP-specific device info"]
-pub mod sipinfo;
+impl RegisterBlock {
+    #[doc = "0x200..0x22c - Device info"]
+    #[inline(always)]
+    pub const fn info(&self) -> &Info {
+        &self.info
+    }
+    #[doc = "0x300..0xb00 - Unspecified"]
+    #[inline(always)]
+    pub const fn trimcnf(&self, n: usize) -> &Trimcnf {
+        &self.trimcnf[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x300..0xb00 - Unspecified"]
+    #[inline(always)]
+    pub fn trimcnf_iter(&self) -> impl Iterator<Item = &Trimcnf> {
+        self.trimcnf.iter()
+    }
+    #[doc = "0xc00..0xc20 - NIST800-90B RNG calibration data"]
+    #[inline(always)]
+    pub const fn trng90b(&self) -> &Trng90b {
+        &self.trng90b
+    }
+}
 #[doc = "Device info"]
-pub use info::INFO;
+pub use self::info::Info;
 #[doc = r"Cluster"]
 #[doc = "Device info"]
 pub mod info;
 #[doc = "Unspecified"]
-pub use trimcnf::TRIMCNF;
+pub use self::trimcnf::Trimcnf;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod trimcnf;
 #[doc = "NIST800-90B RNG calibration data"]
-pub use trng90b::TRNG90B;
+pub use self::trng90b::Trng90b;
 #[doc = r"Cluster"]
 #[doc = "NIST800-90B RNG calibration data"]
 pub mod trng90b;

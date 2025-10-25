@@ -1,126 +1,86 @@
 #[doc = "Register `NFCPINS` reader"]
-pub struct R(crate::R<NFCPINS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NFCPINS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NFCPINS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NFCPINS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<NfcpinsSpec>;
 #[doc = "Register `NFCPINS` writer"]
-pub struct W(crate::W<NFCPINS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NFCPINS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NFCPINS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NFCPINS_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `PROTECT` reader - Setting of pins dedicated to NFC functionality"]
-pub type PROTECT_R = crate::BitReader<PROTECT_A>;
+pub type W = crate::W<NfcpinsSpec>;
 #[doc = "Setting of pins dedicated to NFC functionality\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PROTECT_A {
-    #[doc = "0: Operation as GPIO pins. Same protection as normal GPIO pins"]
-    DISABLED = 0,
-    #[doc = "1: Operation as NFC antenna pins. Configures the protection for NFC operation"]
-    NFC = 1,
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Protect {
+    #[doc = "0: Operation as GPIO pins. Same protection as normal GPIO pins."]
+    Disabled = 0,
+    #[doc = "1: Operation as NFC antenna pins. Configures the protection for NFC operation."]
+    Nfc = 1,
 }
-impl From<PROTECT_A> for bool {
+impl From<Protect> for bool {
     #[inline(always)]
-    fn from(variant: PROTECT_A) -> Self {
+    fn from(variant: Protect) -> Self {
         variant as u8 != 0
     }
 }
-impl PROTECT_R {
+#[doc = "Field `PROTECT` reader - Setting of pins dedicated to NFC functionality"]
+pub type ProtectR = crate::BitReader<Protect>;
+impl ProtectR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PROTECT_A {
+    pub const fn variant(&self) -> Protect {
         match self.bits {
-            false => PROTECT_A::DISABLED,
-            true => PROTECT_A::NFC,
+            false => Protect::Disabled,
+            true => Protect::Nfc,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Operation as GPIO pins. Same protection as normal GPIO pins."]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == PROTECT_A::DISABLED
+        *self == Protect::Disabled
     }
-    #[doc = "Checks if the value of the field is `NFC`"]
+    #[doc = "Operation as NFC antenna pins. Configures the protection for NFC operation."]
     #[inline(always)]
     pub fn is_nfc(&self) -> bool {
-        *self == PROTECT_A::NFC
+        *self == Protect::Nfc
     }
 }
 #[doc = "Field `PROTECT` writer - Setting of pins dedicated to NFC functionality"]
-pub type PROTECT_W<'a, const O: u8> = crate::BitWriter<'a, u32, NFCPINS_SPEC, PROTECT_A, O>;
-impl<'a, const O: u8> PROTECT_W<'a, O> {
-    #[doc = "Operation as GPIO pins. Same protection as normal GPIO pins"]
+pub type ProtectW<'a, REG> = crate::BitWriter<'a, REG, Protect>;
+impl<'a, REG> ProtectW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Operation as GPIO pins. Same protection as normal GPIO pins."]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PROTECT_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Protect::Disabled)
     }
-    #[doc = "Operation as NFC antenna pins. Configures the protection for NFC operation"]
+    #[doc = "Operation as NFC antenna pins. Configures the protection for NFC operation."]
     #[inline(always)]
-    pub fn nfc(self) -> &'a mut W {
-        self.variant(PROTECT_A::NFC)
+    pub fn nfc(self) -> &'a mut crate::W<REG> {
+        self.variant(Protect::Nfc)
     }
 }
 impl R {
     #[doc = "Bit 0 - Setting of pins dedicated to NFC functionality"]
     #[inline(always)]
-    pub fn protect(&self) -> PROTECT_R {
-        PROTECT_R::new((self.bits & 1) != 0)
+    pub fn protect(&self) -> ProtectR {
+        ProtectR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Setting of pins dedicated to NFC functionality"]
     #[inline(always)]
-    pub fn protect(&mut self) -> PROTECT_W<0> {
-        PROTECT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn protect(&mut self) -> ProtectW<'_, NfcpinsSpec> {
+        ProtectW::new(self, 0)
     }
 }
-#[doc = "Setting of pins dedicated to NFC functionality: NFC antenna or GPIO\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nfcpins](index.html) module"]
-pub struct NFCPINS_SPEC;
-impl crate::RegisterSpec for NFCPINS_SPEC {
+#[doc = "Setting of pins dedicated to NFC functionality: NFC antenna or GPIO\n\nYou can [`read`](crate::Reg::read) this register and get [`nfcpins::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`nfcpins::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct NfcpinsSpec;
+impl crate::RegisterSpec for NfcpinsSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [nfcpins::R](R) reader structure"]
-impl crate::Readable for NFCPINS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [nfcpins::W](W) writer structure"]
-impl crate::Writable for NFCPINS_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`nfcpins::R`](R) reader structure"]
+impl crate::Readable for NfcpinsSpec {}
+#[doc = "`write(|w| ..)` method takes [`nfcpins::W`](W) writer structure"]
+impl crate::Writable for NfcpinsSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets NFCPINS to value 0xffff_ffff"]
-impl crate::Resettable for NFCPINS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for NfcpinsSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

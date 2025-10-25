@@ -1,52 +1,22 @@
 #[doc = "Register `NONCE0` writer"]
-pub struct W(crate::W<NONCE0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NONCE0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NONCE0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NONCE0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Nonce0Spec>;
 #[doc = "Field `NONCE0` writer - Bits 31:0 of DMA NONCE"]
-pub type NONCE0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NONCE0_SPEC, u32, u32, 32, O>;
+pub type Nonce0W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
     #[doc = "Bits 0:31 - Bits 31:0 of DMA NONCE"]
     #[inline(always)]
-    pub fn nonce0(&mut self) -> NONCE0_W<0> {
-        NONCE0_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn nonce0(&mut self) -> Nonce0W<'_, Nonce0Spec> {
+        Nonce0W::new(self, 0)
     }
 }
-#[doc = "Bits 31:0 of DMA NONCE\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nonce0](index.html) module"]
-pub struct NONCE0_SPEC;
-impl crate::RegisterSpec for NONCE0_SPEC {
+#[doc = "Bits 31:0 of DMA NONCE\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`nonce0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Nonce0Spec;
+impl crate::RegisterSpec for Nonce0Spec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [nonce0::W](W) writer structure"]
-impl crate::Writable for NONCE0_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`nonce0::W`](W) writer structure"]
+impl crate::Writable for Nonce0Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets NONCE0 to value 0"]
-impl crate::Resettable for NONCE0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Nonce0Spec {}

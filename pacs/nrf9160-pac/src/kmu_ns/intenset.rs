@@ -1,270 +1,231 @@
 #[doc = "Register `INTENSET` reader"]
-pub struct R(crate::R<INTENSET_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTENSET_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTENSET_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTENSET_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IntensetSpec>;
 #[doc = "Register `INTENSET` writer"]
-pub struct W(crate::W<INTENSET_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INTENSET_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INTENSET_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INTENSET_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `KEYSLOT_PUSHED` reader - Write '1' to enable interrupt for event KEYSLOT_PUSHED"]
-pub type KEYSLOT_PUSHED_R = crate::BitReader<KEYSLOT_PUSHED_A>;
+pub type W = crate::W<IntensetSpec>;
 #[doc = "Write '1' to enable interrupt for event KEYSLOT_PUSHED\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum KEYSLOT_PUSHED_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum KeyslotPushed {
     #[doc = "0: Read: Disabled"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<KEYSLOT_PUSHED_A> for bool {
+impl From<KeyslotPushed> for bool {
     #[inline(always)]
-    fn from(variant: KEYSLOT_PUSHED_A) -> Self {
+    fn from(variant: KeyslotPushed) -> Self {
         variant as u8 != 0
     }
 }
-impl KEYSLOT_PUSHED_R {
+#[doc = "Field `KEYSLOT_PUSHED` reader - Write '1' to enable interrupt for event KEYSLOT_PUSHED"]
+pub type KeyslotPushedR = crate::BitReader<KeyslotPushed>;
+impl KeyslotPushedR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> KEYSLOT_PUSHED_A {
+    pub const fn variant(&self) -> KeyslotPushed {
         match self.bits {
-            false => KEYSLOT_PUSHED_A::DISABLED,
-            true => KEYSLOT_PUSHED_A::ENABLED,
+            false => KeyslotPushed::Disabled,
+            true => KeyslotPushed::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Read: Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == KEYSLOT_PUSHED_A::DISABLED
+        *self == KeyslotPushed::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Read: Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == KEYSLOT_PUSHED_A::ENABLED
+        *self == KeyslotPushed::Enabled
     }
 }
 #[doc = "Write '1' to enable interrupt for event KEYSLOT_PUSHED\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum KEYSLOT_PUSHED_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum KeyslotPushedWO {
     #[doc = "1: Enable"]
-    SET = 1,
+    Set = 1,
 }
-impl From<KEYSLOT_PUSHED_AW> for bool {
+impl From<KeyslotPushedWO> for bool {
     #[inline(always)]
-    fn from(variant: KEYSLOT_PUSHED_AW) -> Self {
+    fn from(variant: KeyslotPushedWO) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `KEYSLOT_PUSHED` writer - Write '1' to enable interrupt for event KEYSLOT_PUSHED"]
-pub type KEYSLOT_PUSHED_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, INTENSET_SPEC, KEYSLOT_PUSHED_AW, O>;
-impl<'a, const O: u8> KEYSLOT_PUSHED_W<'a, O> {
+pub type KeyslotPushedW<'a, REG> = crate::BitWriter<'a, REG, KeyslotPushedWO>;
+impl<'a, REG> KeyslotPushedW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut W {
-        self.variant(KEYSLOT_PUSHED_AW::SET)
+    pub fn set_(self) -> &'a mut crate::W<REG> {
+        self.variant(KeyslotPushedWO::Set)
     }
 }
-#[doc = "Field `KEYSLOT_REVOKED` reader - Write '1' to enable interrupt for event KEYSLOT_REVOKED"]
-pub type KEYSLOT_REVOKED_R = crate::BitReader<KEYSLOT_REVOKED_A>;
 #[doc = "Write '1' to enable interrupt for event KEYSLOT_REVOKED\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum KEYSLOT_REVOKED_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum KeyslotRevoked {
     #[doc = "0: Read: Disabled"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<KEYSLOT_REVOKED_A> for bool {
+impl From<KeyslotRevoked> for bool {
     #[inline(always)]
-    fn from(variant: KEYSLOT_REVOKED_A) -> Self {
+    fn from(variant: KeyslotRevoked) -> Self {
         variant as u8 != 0
     }
 }
-impl KEYSLOT_REVOKED_R {
+#[doc = "Field `KEYSLOT_REVOKED` reader - Write '1' to enable interrupt for event KEYSLOT_REVOKED"]
+pub type KeyslotRevokedR = crate::BitReader<KeyslotRevoked>;
+impl KeyslotRevokedR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> KEYSLOT_REVOKED_A {
+    pub const fn variant(&self) -> KeyslotRevoked {
         match self.bits {
-            false => KEYSLOT_REVOKED_A::DISABLED,
-            true => KEYSLOT_REVOKED_A::ENABLED,
+            false => KeyslotRevoked::Disabled,
+            true => KeyslotRevoked::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Read: Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == KEYSLOT_REVOKED_A::DISABLED
+        *self == KeyslotRevoked::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Read: Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == KEYSLOT_REVOKED_A::ENABLED
+        *self == KeyslotRevoked::Enabled
     }
 }
 #[doc = "Write '1' to enable interrupt for event KEYSLOT_REVOKED\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum KEYSLOT_REVOKED_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum KeyslotRevokedWO {
     #[doc = "1: Enable"]
-    SET = 1,
+    Set = 1,
 }
-impl From<KEYSLOT_REVOKED_AW> for bool {
+impl From<KeyslotRevokedWO> for bool {
     #[inline(always)]
-    fn from(variant: KEYSLOT_REVOKED_AW) -> Self {
+    fn from(variant: KeyslotRevokedWO) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `KEYSLOT_REVOKED` writer - Write '1' to enable interrupt for event KEYSLOT_REVOKED"]
-pub type KEYSLOT_REVOKED_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, INTENSET_SPEC, KEYSLOT_REVOKED_AW, O>;
-impl<'a, const O: u8> KEYSLOT_REVOKED_W<'a, O> {
+pub type KeyslotRevokedW<'a, REG> = crate::BitWriter<'a, REG, KeyslotRevokedWO>;
+impl<'a, REG> KeyslotRevokedW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut W {
-        self.variant(KEYSLOT_REVOKED_AW::SET)
+    pub fn set_(self) -> &'a mut crate::W<REG> {
+        self.variant(KeyslotRevokedWO::Set)
     }
 }
-#[doc = "Field `KEYSLOT_ERROR` reader - Write '1' to enable interrupt for event KEYSLOT_ERROR"]
-pub type KEYSLOT_ERROR_R = crate::BitReader<KEYSLOT_ERROR_A>;
 #[doc = "Write '1' to enable interrupt for event KEYSLOT_ERROR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum KEYSLOT_ERROR_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum KeyslotError {
     #[doc = "0: Read: Disabled"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<KEYSLOT_ERROR_A> for bool {
+impl From<KeyslotError> for bool {
     #[inline(always)]
-    fn from(variant: KEYSLOT_ERROR_A) -> Self {
+    fn from(variant: KeyslotError) -> Self {
         variant as u8 != 0
     }
 }
-impl KEYSLOT_ERROR_R {
+#[doc = "Field `KEYSLOT_ERROR` reader - Write '1' to enable interrupt for event KEYSLOT_ERROR"]
+pub type KeyslotErrorR = crate::BitReader<KeyslotError>;
+impl KeyslotErrorR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> KEYSLOT_ERROR_A {
+    pub const fn variant(&self) -> KeyslotError {
         match self.bits {
-            false => KEYSLOT_ERROR_A::DISABLED,
-            true => KEYSLOT_ERROR_A::ENABLED,
+            false => KeyslotError::Disabled,
+            true => KeyslotError::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Read: Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == KEYSLOT_ERROR_A::DISABLED
+        *self == KeyslotError::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Read: Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == KEYSLOT_ERROR_A::ENABLED
+        *self == KeyslotError::Enabled
     }
 }
 #[doc = "Write '1' to enable interrupt for event KEYSLOT_ERROR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum KEYSLOT_ERROR_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum KeyslotErrorWO {
     #[doc = "1: Enable"]
-    SET = 1,
+    Set = 1,
 }
-impl From<KEYSLOT_ERROR_AW> for bool {
+impl From<KeyslotErrorWO> for bool {
     #[inline(always)]
-    fn from(variant: KEYSLOT_ERROR_AW) -> Self {
+    fn from(variant: KeyslotErrorWO) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `KEYSLOT_ERROR` writer - Write '1' to enable interrupt for event KEYSLOT_ERROR"]
-pub type KEYSLOT_ERROR_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, INTENSET_SPEC, KEYSLOT_ERROR_AW, O>;
-impl<'a, const O: u8> KEYSLOT_ERROR_W<'a, O> {
+pub type KeyslotErrorW<'a, REG> = crate::BitWriter<'a, REG, KeyslotErrorWO>;
+impl<'a, REG> KeyslotErrorW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut W {
-        self.variant(KEYSLOT_ERROR_AW::SET)
+    pub fn set_(self) -> &'a mut crate::W<REG> {
+        self.variant(KeyslotErrorWO::Set)
     }
 }
 impl R {
     #[doc = "Bit 0 - Write '1' to enable interrupt for event KEYSLOT_PUSHED"]
     #[inline(always)]
-    pub fn keyslot_pushed(&self) -> KEYSLOT_PUSHED_R {
-        KEYSLOT_PUSHED_R::new((self.bits & 1) != 0)
+    pub fn keyslot_pushed(&self) -> KeyslotPushedR {
+        KeyslotPushedR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Write '1' to enable interrupt for event KEYSLOT_REVOKED"]
     #[inline(always)]
-    pub fn keyslot_revoked(&self) -> KEYSLOT_REVOKED_R {
-        KEYSLOT_REVOKED_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn keyslot_revoked(&self) -> KeyslotRevokedR {
+        KeyslotRevokedR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Write '1' to enable interrupt for event KEYSLOT_ERROR"]
     #[inline(always)]
-    pub fn keyslot_error(&self) -> KEYSLOT_ERROR_R {
-        KEYSLOT_ERROR_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn keyslot_error(&self) -> KeyslotErrorR {
+        KeyslotErrorR::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write '1' to enable interrupt for event KEYSLOT_PUSHED"]
     #[inline(always)]
-    pub fn keyslot_pushed(&mut self) -> KEYSLOT_PUSHED_W<0> {
-        KEYSLOT_PUSHED_W::new(self)
+    pub fn keyslot_pushed(&mut self) -> KeyslotPushedW<'_, IntensetSpec> {
+        KeyslotPushedW::new(self, 0)
     }
     #[doc = "Bit 1 - Write '1' to enable interrupt for event KEYSLOT_REVOKED"]
     #[inline(always)]
-    pub fn keyslot_revoked(&mut self) -> KEYSLOT_REVOKED_W<1> {
-        KEYSLOT_REVOKED_W::new(self)
+    pub fn keyslot_revoked(&mut self) -> KeyslotRevokedW<'_, IntensetSpec> {
+        KeyslotRevokedW::new(self, 1)
     }
     #[doc = "Bit 2 - Write '1' to enable interrupt for event KEYSLOT_ERROR"]
     #[inline(always)]
-    pub fn keyslot_error(&mut self) -> KEYSLOT_ERROR_W<2> {
-        KEYSLOT_ERROR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn keyslot_error(&mut self) -> KeyslotErrorW<'_, IntensetSpec> {
+        KeyslotErrorW::new(self, 2)
     }
 }
-#[doc = "Enable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenset](index.html) module"]
-pub struct INTENSET_SPEC;
-impl crate::RegisterSpec for INTENSET_SPEC {
+#[doc = "Enable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`intenset::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenset::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct IntensetSpec;
+impl crate::RegisterSpec for IntensetSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [intenset::R](R) reader structure"]
-impl crate::Readable for INTENSET_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [intenset::W](W) writer structure"]
-impl crate::Writable for INTENSET_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`intenset::R`](R) reader structure"]
+impl crate::Readable for IntensetSpec {}
+#[doc = "`write(|w| ..)` method takes [`intenset::W`](W) writer structure"]
+impl crate::Writable for IntensetSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets INTENSET to value 0"]
-impl crate::Resettable for INTENSET_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for IntensetSpec {}

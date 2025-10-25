@@ -1,127 +1,84 @@
 #[doc = "Register `EVENTS_ENDECB` reader"]
-pub struct R(crate::R<EVENTS_ENDECB_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_ENDECB_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_ENDECB_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_ENDECB_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsEndecbSpec>;
 #[doc = "Register `EVENTS_ENDECB` writer"]
-pub struct W(crate::W<EVENTS_ENDECB_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_ENDECB_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVENTS_ENDECB_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVENTS_ENDECB_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `EVENTS_ENDECB` reader - ECB block encrypt complete"]
-pub type EVENTS_ENDECB_R = crate::BitReader<EVENTS_ENDECB_A>;
+pub type W = crate::W<EventsEndecbSpec>;
 #[doc = "ECB block encrypt complete\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVENTS_ENDECB_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsEndecb {
     #[doc = "0: Event not generated"]
-    NOT_GENERATED = 0,
+    NotGenerated = 0,
     #[doc = "1: Event generated"]
-    GENERATED = 1,
+    Generated = 1,
 }
-impl From<EVENTS_ENDECB_A> for bool {
+impl From<EventsEndecb> for bool {
     #[inline(always)]
-    fn from(variant: EVENTS_ENDECB_A) -> Self {
+    fn from(variant: EventsEndecb) -> Self {
         variant as u8 != 0
     }
 }
-impl EVENTS_ENDECB_R {
+#[doc = "Field `EVENTS_ENDECB` reader - ECB block encrypt complete"]
+pub type EventsEndecbR = crate::BitReader<EventsEndecb>;
+impl EventsEndecbR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVENTS_ENDECB_A {
+    pub const fn variant(&self) -> EventsEndecb {
         match self.bits {
-            false => EVENTS_ENDECB_A::NOT_GENERATED,
-            true => EVENTS_ENDECB_A::GENERATED,
+            false => EventsEndecb::NotGenerated,
+            true => EventsEndecb::Generated,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
-    #[inline(always)]
-    pub fn is_not_generated(&self) -> bool {
-        *self == EVENTS_ENDECB_A::NOT_GENERATED
-    }
-    #[doc = "Checks if the value of the field is `GENERATED`"]
-    #[inline(always)]
-    pub fn is_generated(&self) -> bool {
-        *self == EVENTS_ENDECB_A::GENERATED
-    }
-}
-#[doc = "Field `EVENTS_ENDECB` writer - ECB block encrypt complete"]
-pub type EVENTS_ENDECB_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_ENDECB_SPEC, EVENTS_ENDECB_A, O>;
-impl<'a, const O: u8> EVENTS_ENDECB_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_ENDECB_A::NOT_GENERATED)
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsEndecb::NotGenerated
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut W {
-        self.variant(EVENTS_ENDECB_A::GENERATED)
+    pub fn is_generated(&self) -> bool {
+        *self == EventsEndecb::Generated
+    }
+}
+#[doc = "Field `EVENTS_ENDECB` writer - ECB block encrypt complete"]
+pub type EventsEndecbW<'a, REG> = crate::BitWriter<'a, REG, EventsEndecb>;
+impl<'a, REG> EventsEndecbW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsEndecb::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsEndecb::Generated)
     }
 }
 impl R {
     #[doc = "Bit 0 - ECB block encrypt complete"]
     #[inline(always)]
-    pub fn events_endecb(&self) -> EVENTS_ENDECB_R {
-        EVENTS_ENDECB_R::new((self.bits & 1) != 0)
+    pub fn events_endecb(&self) -> EventsEndecbR {
+        EventsEndecbR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - ECB block encrypt complete"]
     #[inline(always)]
-    pub fn events_endecb(&mut self) -> EVENTS_ENDECB_W<0> {
-        EVENTS_ENDECB_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_endecb(&mut self) -> EventsEndecbW<'_, EventsEndecbSpec> {
+        EventsEndecbW::new(self, 0)
     }
 }
-#[doc = "ECB block encrypt complete\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_endecb](index.html) module"]
-pub struct EVENTS_ENDECB_SPEC;
-impl crate::RegisterSpec for EVENTS_ENDECB_SPEC {
+#[doc = "ECB block encrypt complete\n\nYou can [`read`](crate::Reg::read) this register and get [`events_endecb::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_endecb::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsEndecbSpec;
+impl crate::RegisterSpec for EventsEndecbSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_endecb::R](R) reader structure"]
-impl crate::Readable for EVENTS_ENDECB_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_endecb::W](W) writer structure"]
-impl crate::Writable for EVENTS_ENDECB_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_endecb::R`](R) reader structure"]
+impl crate::Readable for EventsEndecbSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_endecb::W`](W) writer structure"]
+impl crate::Writable for EventsEndecbSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_ENDECB to value 0"]
-impl crate::Resettable for EVENTS_ENDECB_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsEndecbSpec {}

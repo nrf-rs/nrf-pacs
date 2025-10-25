@@ -1,127 +1,84 @@
 #[doc = "Register `EVENTS_DEVMISS` reader"]
-pub struct R(crate::R<EVENTS_DEVMISS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_DEVMISS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_DEVMISS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_DEVMISS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsDevmissSpec>;
 #[doc = "Register `EVENTS_DEVMISS` writer"]
-pub struct W(crate::W<EVENTS_DEVMISS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_DEVMISS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVENTS_DEVMISS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVENTS_DEVMISS_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `EVENTS_DEVMISS` reader - No device address match occurred on the last received packet"]
-pub type EVENTS_DEVMISS_R = crate::BitReader<EVENTS_DEVMISS_A>;
+pub type W = crate::W<EventsDevmissSpec>;
 #[doc = "No device address match occurred on the last received packet\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVENTS_DEVMISS_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsDevmiss {
     #[doc = "0: Event not generated"]
-    NOT_GENERATED = 0,
+    NotGenerated = 0,
     #[doc = "1: Event generated"]
-    GENERATED = 1,
+    Generated = 1,
 }
-impl From<EVENTS_DEVMISS_A> for bool {
+impl From<EventsDevmiss> for bool {
     #[inline(always)]
-    fn from(variant: EVENTS_DEVMISS_A) -> Self {
+    fn from(variant: EventsDevmiss) -> Self {
         variant as u8 != 0
     }
 }
-impl EVENTS_DEVMISS_R {
+#[doc = "Field `EVENTS_DEVMISS` reader - No device address match occurred on the last received packet"]
+pub type EventsDevmissR = crate::BitReader<EventsDevmiss>;
+impl EventsDevmissR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVENTS_DEVMISS_A {
+    pub const fn variant(&self) -> EventsDevmiss {
         match self.bits {
-            false => EVENTS_DEVMISS_A::NOT_GENERATED,
-            true => EVENTS_DEVMISS_A::GENERATED,
+            false => EventsDevmiss::NotGenerated,
+            true => EventsDevmiss::Generated,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
-    #[inline(always)]
-    pub fn is_not_generated(&self) -> bool {
-        *self == EVENTS_DEVMISS_A::NOT_GENERATED
-    }
-    #[doc = "Checks if the value of the field is `GENERATED`"]
-    #[inline(always)]
-    pub fn is_generated(&self) -> bool {
-        *self == EVENTS_DEVMISS_A::GENERATED
-    }
-}
-#[doc = "Field `EVENTS_DEVMISS` writer - No device address match occurred on the last received packet"]
-pub type EVENTS_DEVMISS_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_DEVMISS_SPEC, EVENTS_DEVMISS_A, O>;
-impl<'a, const O: u8> EVENTS_DEVMISS_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_DEVMISS_A::NOT_GENERATED)
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsDevmiss::NotGenerated
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut W {
-        self.variant(EVENTS_DEVMISS_A::GENERATED)
+    pub fn is_generated(&self) -> bool {
+        *self == EventsDevmiss::Generated
+    }
+}
+#[doc = "Field `EVENTS_DEVMISS` writer - No device address match occurred on the last received packet"]
+pub type EventsDevmissW<'a, REG> = crate::BitWriter<'a, REG, EventsDevmiss>;
+impl<'a, REG> EventsDevmissW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsDevmiss::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsDevmiss::Generated)
     }
 }
 impl R {
     #[doc = "Bit 0 - No device address match occurred on the last received packet"]
     #[inline(always)]
-    pub fn events_devmiss(&self) -> EVENTS_DEVMISS_R {
-        EVENTS_DEVMISS_R::new((self.bits & 1) != 0)
+    pub fn events_devmiss(&self) -> EventsDevmissR {
+        EventsDevmissR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - No device address match occurred on the last received packet"]
     #[inline(always)]
-    pub fn events_devmiss(&mut self) -> EVENTS_DEVMISS_W<0> {
-        EVENTS_DEVMISS_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_devmiss(&mut self) -> EventsDevmissW<'_, EventsDevmissSpec> {
+        EventsDevmissW::new(self, 0)
     }
 }
-#[doc = "No device address match occurred on the last received packet\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_devmiss](index.html) module"]
-pub struct EVENTS_DEVMISS_SPEC;
-impl crate::RegisterSpec for EVENTS_DEVMISS_SPEC {
+#[doc = "No device address match occurred on the last received packet\n\nYou can [`read`](crate::Reg::read) this register and get [`events_devmiss::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_devmiss::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsDevmissSpec;
+impl crate::RegisterSpec for EventsDevmissSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_devmiss::R](R) reader structure"]
-impl crate::Readable for EVENTS_DEVMISS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_devmiss::W](W) writer structure"]
-impl crate::Writable for EVENTS_DEVMISS_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_devmiss::R`](R) reader structure"]
+impl crate::Readable for EventsDevmissSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_devmiss::W`](W) writer structure"]
+impl crate::Writable for EventsDevmissSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_DEVMISS to value 0"]
-impl crate::Resettable for EVENTS_DEVMISS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsDevmissSpec {}

@@ -1,220 +1,182 @@
 #[doc = "Register `REPORTPER` reader"]
-pub struct R(crate::R<REPORTPER_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<REPORTPER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<REPORTPER_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<REPORTPER_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ReportperSpec>;
 #[doc = "Register `REPORTPER` writer"]
-pub struct W(crate::W<REPORTPER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<REPORTPER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<REPORTPER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<REPORTPER_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `REPORTPER` reader - Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated"]
-pub type REPORTPER_R = crate::FieldReader<u8, REPORTPER_A>;
-#[doc = "Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+pub type W = crate::W<ReportperSpec>;
+#[doc = "Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum REPORTPER_A {
-    #[doc = "0: 10 samples / report"]
-    _10SMPL = 0,
-    #[doc = "1: 40 samples / report"]
-    _40SMPL = 1,
-    #[doc = "2: 80 samples / report"]
-    _80SMPL = 2,
-    #[doc = "3: 120 samples / report"]
-    _120SMPL = 3,
-    #[doc = "4: 160 samples / report"]
-    _160SMPL = 4,
-    #[doc = "5: 200 samples / report"]
-    _200SMPL = 5,
-    #[doc = "6: 240 samples / report"]
-    _240SMPL = 6,
-    #[doc = "7: 280 samples / report"]
-    _280SMPL = 7,
-    #[doc = "8: 1 sample / report"]
-    _1SMPL = 8,
+pub enum Reportper {
+    #[doc = "0: 10 samples/report"]
+    _10smpl = 0,
+    #[doc = "1: 40 samples/report"]
+    _40smpl = 1,
+    #[doc = "2: 80 samples/report"]
+    _80smpl = 2,
+    #[doc = "3: 120 samples/report"]
+    _120smpl = 3,
+    #[doc = "4: 160 samples/report"]
+    _160smpl = 4,
+    #[doc = "5: 200 samples/report"]
+    _200smpl = 5,
+    #[doc = "6: 240 samples/report"]
+    _240smpl = 6,
+    #[doc = "7: 280 samples/report"]
+    _280smpl = 7,
+    #[doc = "8: 1 sample/report"]
+    _1smpl = 8,
 }
-impl From<REPORTPER_A> for u8 {
+impl From<Reportper> for u8 {
     #[inline(always)]
-    fn from(variant: REPORTPER_A) -> Self {
+    fn from(variant: Reportper) -> Self {
         variant as _
     }
 }
-impl REPORTPER_R {
+impl crate::FieldSpec for Reportper {
+    type Ux = u8;
+}
+impl crate::IsEnum for Reportper {}
+#[doc = "Field `REPORTPER` reader - Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated."]
+pub type ReportperR = crate::FieldReader<Reportper>;
+impl ReportperR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<REPORTPER_A> {
+    pub const fn variant(&self) -> Option<Reportper> {
         match self.bits {
-            0 => Some(REPORTPER_A::_10SMPL),
-            1 => Some(REPORTPER_A::_40SMPL),
-            2 => Some(REPORTPER_A::_80SMPL),
-            3 => Some(REPORTPER_A::_120SMPL),
-            4 => Some(REPORTPER_A::_160SMPL),
-            5 => Some(REPORTPER_A::_200SMPL),
-            6 => Some(REPORTPER_A::_240SMPL),
-            7 => Some(REPORTPER_A::_280SMPL),
-            8 => Some(REPORTPER_A::_1SMPL),
+            0 => Some(Reportper::_10smpl),
+            1 => Some(Reportper::_40smpl),
+            2 => Some(Reportper::_80smpl),
+            3 => Some(Reportper::_120smpl),
+            4 => Some(Reportper::_160smpl),
+            5 => Some(Reportper::_200smpl),
+            6 => Some(Reportper::_240smpl),
+            7 => Some(Reportper::_280smpl),
+            8 => Some(Reportper::_1smpl),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_10SMPL`"]
+    #[doc = "10 samples/report"]
     #[inline(always)]
     pub fn is_10smpl(&self) -> bool {
-        *self == REPORTPER_A::_10SMPL
+        *self == Reportper::_10smpl
     }
-    #[doc = "Checks if the value of the field is `_40SMPL`"]
+    #[doc = "40 samples/report"]
     #[inline(always)]
     pub fn is_40smpl(&self) -> bool {
-        *self == REPORTPER_A::_40SMPL
+        *self == Reportper::_40smpl
     }
-    #[doc = "Checks if the value of the field is `_80SMPL`"]
+    #[doc = "80 samples/report"]
     #[inline(always)]
     pub fn is_80smpl(&self) -> bool {
-        *self == REPORTPER_A::_80SMPL
+        *self == Reportper::_80smpl
     }
-    #[doc = "Checks if the value of the field is `_120SMPL`"]
+    #[doc = "120 samples/report"]
     #[inline(always)]
     pub fn is_120smpl(&self) -> bool {
-        *self == REPORTPER_A::_120SMPL
+        *self == Reportper::_120smpl
     }
-    #[doc = "Checks if the value of the field is `_160SMPL`"]
+    #[doc = "160 samples/report"]
     #[inline(always)]
     pub fn is_160smpl(&self) -> bool {
-        *self == REPORTPER_A::_160SMPL
+        *self == Reportper::_160smpl
     }
-    #[doc = "Checks if the value of the field is `_200SMPL`"]
+    #[doc = "200 samples/report"]
     #[inline(always)]
     pub fn is_200smpl(&self) -> bool {
-        *self == REPORTPER_A::_200SMPL
+        *self == Reportper::_200smpl
     }
-    #[doc = "Checks if the value of the field is `_240SMPL`"]
+    #[doc = "240 samples/report"]
     #[inline(always)]
     pub fn is_240smpl(&self) -> bool {
-        *self == REPORTPER_A::_240SMPL
+        *self == Reportper::_240smpl
     }
-    #[doc = "Checks if the value of the field is `_280SMPL`"]
+    #[doc = "280 samples/report"]
     #[inline(always)]
     pub fn is_280smpl(&self) -> bool {
-        *self == REPORTPER_A::_280SMPL
+        *self == Reportper::_280smpl
     }
-    #[doc = "Checks if the value of the field is `_1SMPL`"]
+    #[doc = "1 sample/report"]
     #[inline(always)]
     pub fn is_1smpl(&self) -> bool {
-        *self == REPORTPER_A::_1SMPL
+        *self == Reportper::_1smpl
     }
 }
-#[doc = "Field `REPORTPER` writer - Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated"]
-pub type REPORTPER_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, REPORTPER_SPEC, u8, REPORTPER_A, 4, O>;
-impl<'a, const O: u8> REPORTPER_W<'a, O> {
-    #[doc = "10 samples / report"]
+#[doc = "Field `REPORTPER` writer - Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated."]
+pub type ReportperW<'a, REG> = crate::FieldWriter<'a, REG, 4, Reportper>;
+impl<'a, REG> ReportperW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "10 samples/report"]
     #[inline(always)]
-    pub fn _10smpl(self) -> &'a mut W {
-        self.variant(REPORTPER_A::_10SMPL)
+    pub fn _10smpl(self) -> &'a mut crate::W<REG> {
+        self.variant(Reportper::_10smpl)
     }
-    #[doc = "40 samples / report"]
+    #[doc = "40 samples/report"]
     #[inline(always)]
-    pub fn _40smpl(self) -> &'a mut W {
-        self.variant(REPORTPER_A::_40SMPL)
+    pub fn _40smpl(self) -> &'a mut crate::W<REG> {
+        self.variant(Reportper::_40smpl)
     }
-    #[doc = "80 samples / report"]
+    #[doc = "80 samples/report"]
     #[inline(always)]
-    pub fn _80smpl(self) -> &'a mut W {
-        self.variant(REPORTPER_A::_80SMPL)
+    pub fn _80smpl(self) -> &'a mut crate::W<REG> {
+        self.variant(Reportper::_80smpl)
     }
-    #[doc = "120 samples / report"]
+    #[doc = "120 samples/report"]
     #[inline(always)]
-    pub fn _120smpl(self) -> &'a mut W {
-        self.variant(REPORTPER_A::_120SMPL)
+    pub fn _120smpl(self) -> &'a mut crate::W<REG> {
+        self.variant(Reportper::_120smpl)
     }
-    #[doc = "160 samples / report"]
+    #[doc = "160 samples/report"]
     #[inline(always)]
-    pub fn _160smpl(self) -> &'a mut W {
-        self.variant(REPORTPER_A::_160SMPL)
+    pub fn _160smpl(self) -> &'a mut crate::W<REG> {
+        self.variant(Reportper::_160smpl)
     }
-    #[doc = "200 samples / report"]
+    #[doc = "200 samples/report"]
     #[inline(always)]
-    pub fn _200smpl(self) -> &'a mut W {
-        self.variant(REPORTPER_A::_200SMPL)
+    pub fn _200smpl(self) -> &'a mut crate::W<REG> {
+        self.variant(Reportper::_200smpl)
     }
-    #[doc = "240 samples / report"]
+    #[doc = "240 samples/report"]
     #[inline(always)]
-    pub fn _240smpl(self) -> &'a mut W {
-        self.variant(REPORTPER_A::_240SMPL)
+    pub fn _240smpl(self) -> &'a mut crate::W<REG> {
+        self.variant(Reportper::_240smpl)
     }
-    #[doc = "280 samples / report"]
+    #[doc = "280 samples/report"]
     #[inline(always)]
-    pub fn _280smpl(self) -> &'a mut W {
-        self.variant(REPORTPER_A::_280SMPL)
+    pub fn _280smpl(self) -> &'a mut crate::W<REG> {
+        self.variant(Reportper::_280smpl)
     }
-    #[doc = "1 sample / report"]
+    #[doc = "1 sample/report"]
     #[inline(always)]
-    pub fn _1smpl(self) -> &'a mut W {
-        self.variant(REPORTPER_A::_1SMPL)
+    pub fn _1smpl(self) -> &'a mut crate::W<REG> {
+        self.variant(Reportper::_1smpl)
     }
 }
 impl R {
-    #[doc = "Bits 0:3 - Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated"]
+    #[doc = "Bits 0:3 - Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated."]
     #[inline(always)]
-    pub fn reportper(&self) -> REPORTPER_R {
-        REPORTPER_R::new((self.bits & 0x0f) as u8)
+    pub fn reportper(&self) -> ReportperR {
+        ReportperR::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated"]
+    #[doc = "Bits 0:3 - Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated."]
     #[inline(always)]
-    pub fn reportper(&mut self) -> REPORTPER_W<0> {
-        REPORTPER_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn reportper(&mut self) -> ReportperW<'_, ReportperSpec> {
+        ReportperW::new(self, 0)
     }
 }
-#[doc = "Number of samples to be taken before REPORTRDY and DBLRDY events can be generated\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [reportper](index.html) module"]
-pub struct REPORTPER_SPEC;
-impl crate::RegisterSpec for REPORTPER_SPEC {
+#[doc = "Number of samples to be taken before REPORTRDY and DBLRDY events can be generated\n\nYou can [`read`](crate::Reg::read) this register and get [`reportper::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reportper::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ReportperSpec;
+impl crate::RegisterSpec for ReportperSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [reportper::R](R) reader structure"]
-impl crate::Readable for REPORTPER_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [reportper::W](W) writer structure"]
-impl crate::Writable for REPORTPER_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`reportper::R`](R) reader structure"]
+impl crate::Readable for ReportperSpec {}
+#[doc = "`write(|w| ..)` method takes [`reportper::W`](W) writer structure"]
+impl crate::Writable for ReportperSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets REPORTPER to value 0"]
-impl crate::Resettable for REPORTPER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for ReportperSpec {}

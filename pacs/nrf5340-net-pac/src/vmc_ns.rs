@@ -1,21 +1,38 @@
-#[doc = r"Register block"]
 #[repr(C)]
+#[doc = "Register block"]
 pub struct RegisterBlock {
     _reserved0: [u8; 0x0600],
-    #[doc = "0x600..0x60c - Unspecified"]
-    pub ram0: RAM,
-    _reserved1: [u8; 0x04],
-    #[doc = "0x610..0x61c - Unspecified"]
-    pub ram1: RAM,
-    _reserved2: [u8; 0x04],
-    #[doc = "0x620..0x62c - Unspecified"]
-    pub ram2: RAM,
-    _reserved3: [u8; 0x04],
-    #[doc = "0x630..0x63c - Unspecified"]
-    pub ram3: RAM,
+    ram: (),
+}
+impl RegisterBlock {
+    #[doc = "0x600..0x630 - Unspecified"]
+    #[inline(always)]
+    pub const fn ram(&self, n: usize) -> &Ram {
+        #[allow(clippy::no_effect)]
+        [(); 4][n];
+        unsafe {
+            &*core::ptr::from_ref(self)
+                .cast::<u8>()
+                .add(1536)
+                .add(16 * n)
+                .cast()
+        }
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x600..0x630 - Unspecified"]
+    #[inline(always)]
+    pub fn ram_iter(&self) -> impl Iterator<Item = &Ram> {
+        (0..4).map(move |n| unsafe {
+            &*core::ptr::from_ref(self)
+                .cast::<u8>()
+                .add(1536)
+                .add(16 * n)
+                .cast()
+        })
+    }
 }
 #[doc = "Unspecified"]
-pub use ram::RAM;
+pub use self::ram::Ram;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod ram;

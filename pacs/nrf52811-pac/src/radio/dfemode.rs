@@ -1,142 +1,104 @@
 #[doc = "Register `DFEMODE` reader"]
-pub struct R(crate::R<DFEMODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DFEMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DFEMODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DFEMODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DfemodeSpec>;
 #[doc = "Register `DFEMODE` writer"]
-pub struct W(crate::W<DFEMODE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DFEMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DFEMODE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DFEMODE_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `DFEOPMODE` reader - Direction finding operation mode"]
-pub type DFEOPMODE_R = crate::FieldReader<u8, DFEOPMODE_A>;
+pub type W = crate::W<DfemodeSpec>;
 #[doc = "Direction finding operation mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum DFEOPMODE_A {
+pub enum Dfeopmode {
     #[doc = "0: Direction finding mode disabled"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "2: Direction finding mode set to AoD"]
-    AO_D = 2,
+    AoD = 2,
     #[doc = "3: Direction finding mode set to AoA"]
-    AO_A = 3,
+    AoA = 3,
 }
-impl From<DFEOPMODE_A> for u8 {
+impl From<Dfeopmode> for u8 {
     #[inline(always)]
-    fn from(variant: DFEOPMODE_A) -> Self {
+    fn from(variant: Dfeopmode) -> Self {
         variant as _
     }
 }
-impl DFEOPMODE_R {
+impl crate::FieldSpec for Dfeopmode {
+    type Ux = u8;
+}
+impl crate::IsEnum for Dfeopmode {}
+#[doc = "Field `DFEOPMODE` reader - Direction finding operation mode"]
+pub type DfeopmodeR = crate::FieldReader<Dfeopmode>;
+impl DfeopmodeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DFEOPMODE_A> {
+    pub const fn variant(&self) -> Option<Dfeopmode> {
         match self.bits {
-            0 => Some(DFEOPMODE_A::DISABLED),
-            2 => Some(DFEOPMODE_A::AO_D),
-            3 => Some(DFEOPMODE_A::AO_A),
+            0 => Some(Dfeopmode::Disabled),
+            2 => Some(Dfeopmode::AoD),
+            3 => Some(Dfeopmode::AoA),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == DFEOPMODE_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `AO_D`"]
-    #[inline(always)]
-    pub fn is_ao_d(&self) -> bool {
-        *self == DFEOPMODE_A::AO_D
-    }
-    #[doc = "Checks if the value of the field is `AO_A`"]
-    #[inline(always)]
-    pub fn is_ao_a(&self) -> bool {
-        *self == DFEOPMODE_A::AO_A
-    }
-}
-#[doc = "Field `DFEOPMODE` writer - Direction finding operation mode"]
-pub type DFEOPMODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DFEMODE_SPEC, u8, DFEOPMODE_A, 2, O>;
-impl<'a, const O: u8> DFEOPMODE_W<'a, O> {
     #[doc = "Direction finding mode disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(DFEOPMODE_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Dfeopmode::Disabled
     }
     #[doc = "Direction finding mode set to AoD"]
     #[inline(always)]
-    pub fn ao_d(self) -> &'a mut W {
-        self.variant(DFEOPMODE_A::AO_D)
+    pub fn is_ao_d(&self) -> bool {
+        *self == Dfeopmode::AoD
     }
     #[doc = "Direction finding mode set to AoA"]
     #[inline(always)]
-    pub fn ao_a(self) -> &'a mut W {
-        self.variant(DFEOPMODE_A::AO_A)
+    pub fn is_ao_a(&self) -> bool {
+        *self == Dfeopmode::AoA
+    }
+}
+#[doc = "Field `DFEOPMODE` writer - Direction finding operation mode"]
+pub type DfeopmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Dfeopmode>;
+impl<'a, REG> DfeopmodeW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Direction finding mode disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Dfeopmode::Disabled)
+    }
+    #[doc = "Direction finding mode set to AoD"]
+    #[inline(always)]
+    pub fn ao_d(self) -> &'a mut crate::W<REG> {
+        self.variant(Dfeopmode::AoD)
+    }
+    #[doc = "Direction finding mode set to AoA"]
+    #[inline(always)]
+    pub fn ao_a(self) -> &'a mut crate::W<REG> {
+        self.variant(Dfeopmode::AoA)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Direction finding operation mode"]
     #[inline(always)]
-    pub fn dfeopmode(&self) -> DFEOPMODE_R {
-        DFEOPMODE_R::new((self.bits & 3) as u8)
+    pub fn dfeopmode(&self) -> DfeopmodeR {
+        DfeopmodeR::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Direction finding operation mode"]
     #[inline(always)]
-    pub fn dfeopmode(&mut self) -> DFEOPMODE_W<0> {
-        DFEOPMODE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn dfeopmode(&mut self) -> DfeopmodeW<'_, DfemodeSpec> {
+        DfeopmodeW::new(self, 0)
     }
 }
-#[doc = "Whether to use Angle-of-Arrival (AOA) or Angle-of-Departure (AOD)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dfemode](index.html) module"]
-pub struct DFEMODE_SPEC;
-impl crate::RegisterSpec for DFEMODE_SPEC {
+#[doc = "Whether to use Angle-of-Arrival (AOA) or Angle-of-Departure (AOD)\n\nYou can [`read`](crate::Reg::read) this register and get [`dfemode::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dfemode::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct DfemodeSpec;
+impl crate::RegisterSpec for DfemodeSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dfemode::R](R) reader structure"]
-impl crate::Readable for DFEMODE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dfemode::W](W) writer structure"]
-impl crate::Writable for DFEMODE_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`dfemode::R`](R) reader structure"]
+impl crate::Readable for DfemodeSpec {}
+#[doc = "`write(|w| ..)` method takes [`dfemode::W`](W) writer structure"]
+impl crate::Writable for DfemodeSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets DFEMODE to value 0"]
-impl crate::Resettable for DFEMODE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for DfemodeSpec {}

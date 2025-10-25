@@ -1,33 +1,38 @@
-#[doc = r"Register block"]
 #[repr(C)]
+#[doc = "Register block"]
 pub struct RegisterBlock {
     _reserved0: [u8; 0x0800],
-    #[doc = "0x800..0x80c - Unspecified"]
-    pub acl0: ACL,
-    _reserved1: [u8; 0x04],
-    #[doc = "0x810..0x81c - Unspecified"]
-    pub acl1: ACL,
-    _reserved2: [u8; 0x04],
-    #[doc = "0x820..0x82c - Unspecified"]
-    pub acl2: ACL,
-    _reserved3: [u8; 0x04],
-    #[doc = "0x830..0x83c - Unspecified"]
-    pub acl3: ACL,
-    _reserved4: [u8; 0x04],
-    #[doc = "0x840..0x84c - Unspecified"]
-    pub acl4: ACL,
-    _reserved5: [u8; 0x04],
-    #[doc = "0x850..0x85c - Unspecified"]
-    pub acl5: ACL,
-    _reserved6: [u8; 0x04],
-    #[doc = "0x860..0x86c - Unspecified"]
-    pub acl6: ACL,
-    _reserved7: [u8; 0x04],
-    #[doc = "0x870..0x87c - Unspecified"]
-    pub acl7: ACL,
+    acl: (),
+}
+impl RegisterBlock {
+    #[doc = "0x800..0x860 - Unspecified"]
+    #[inline(always)]
+    pub const fn acl(&self, n: usize) -> &Acl {
+        #[allow(clippy::no_effect)]
+        [(); 8][n];
+        unsafe {
+            &*core::ptr::from_ref(self)
+                .cast::<u8>()
+                .add(2048)
+                .add(16 * n)
+                .cast()
+        }
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x800..0x860 - Unspecified"]
+    #[inline(always)]
+    pub fn acl_iter(&self) -> impl Iterator<Item = &Acl> {
+        (0..8).map(move |n| unsafe {
+            &*core::ptr::from_ref(self)
+                .cast::<u8>()
+                .add(2048)
+                .add(16 * n)
+                .cast()
+        })
+    }
 }
 #[doc = "Unspecified"]
-pub use acl::ACL;
+pub use self::acl::Acl;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod acl;

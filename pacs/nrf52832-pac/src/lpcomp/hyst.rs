@@ -1,126 +1,84 @@
 #[doc = "Register `HYST` reader"]
-pub struct R(crate::R<HYST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HYST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HYST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HYST_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HystSpec>;
 #[doc = "Register `HYST` writer"]
-pub struct W(crate::W<HYST_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HYST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HYST_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HYST_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `HYST` reader - Comparator hysteresis enable"]
-pub type HYST_R = crate::BitReader<HYST_A>;
+pub type W = crate::W<HystSpec>;
 #[doc = "Comparator hysteresis enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HYST_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Hyst {
     #[doc = "0: Comparator hysteresis disabled"]
-    NO_HYST = 0,
+    NoHyst = 0,
     #[doc = "1: Comparator hysteresis disabled (typ. 50 mV)"]
-    HYST50M_V = 1,
+    Hyst50mV = 1,
 }
-impl From<HYST_A> for bool {
+impl From<Hyst> for bool {
     #[inline(always)]
-    fn from(variant: HYST_A) -> Self {
+    fn from(variant: Hyst) -> Self {
         variant as u8 != 0
     }
 }
-impl HYST_R {
+#[doc = "Field `HYST` reader - Comparator hysteresis enable"]
+pub type HystR = crate::BitReader<Hyst>;
+impl HystR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HYST_A {
+    pub const fn variant(&self) -> Hyst {
         match self.bits {
-            false => HYST_A::NO_HYST,
-            true => HYST_A::HYST50M_V,
+            false => Hyst::NoHyst,
+            true => Hyst::Hyst50mV,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_HYST`"]
-    #[inline(always)]
-    pub fn is_no_hyst(&self) -> bool {
-        *self == HYST_A::NO_HYST
-    }
-    #[doc = "Checks if the value of the field is `HYST50M_V`"]
-    #[inline(always)]
-    pub fn is_hyst50m_v(&self) -> bool {
-        *self == HYST_A::HYST50M_V
-    }
-}
-#[doc = "Field `HYST` writer - Comparator hysteresis enable"]
-pub type HYST_W<'a, const O: u8> = crate::BitWriter<'a, u32, HYST_SPEC, HYST_A, O>;
-impl<'a, const O: u8> HYST_W<'a, O> {
     #[doc = "Comparator hysteresis disabled"]
     #[inline(always)]
-    pub fn no_hyst(self) -> &'a mut W {
-        self.variant(HYST_A::NO_HYST)
+    pub fn is_no_hyst(&self) -> bool {
+        *self == Hyst::NoHyst
     }
     #[doc = "Comparator hysteresis disabled (typ. 50 mV)"]
     #[inline(always)]
-    pub fn hyst50m_v(self) -> &'a mut W {
-        self.variant(HYST_A::HYST50M_V)
+    pub fn is_hyst50m_v(&self) -> bool {
+        *self == Hyst::Hyst50mV
+    }
+}
+#[doc = "Field `HYST` writer - Comparator hysteresis enable"]
+pub type HystW<'a, REG> = crate::BitWriter<'a, REG, Hyst>;
+impl<'a, REG> HystW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Comparator hysteresis disabled"]
+    #[inline(always)]
+    pub fn no_hyst(self) -> &'a mut crate::W<REG> {
+        self.variant(Hyst::NoHyst)
+    }
+    #[doc = "Comparator hysteresis disabled (typ. 50 mV)"]
+    #[inline(always)]
+    pub fn hyst50m_v(self) -> &'a mut crate::W<REG> {
+        self.variant(Hyst::Hyst50mV)
     }
 }
 impl R {
     #[doc = "Bit 0 - Comparator hysteresis enable"]
     #[inline(always)]
-    pub fn hyst(&self) -> HYST_R {
-        HYST_R::new((self.bits & 1) != 0)
+    pub fn hyst(&self) -> HystR {
+        HystR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Comparator hysteresis enable"]
     #[inline(always)]
-    pub fn hyst(&mut self) -> HYST_W<0> {
-        HYST_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn hyst(&mut self) -> HystW<'_, HystSpec> {
+        HystW::new(self, 0)
     }
 }
-#[doc = "Comparator hysteresis enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hyst](index.html) module"]
-pub struct HYST_SPEC;
-impl crate::RegisterSpec for HYST_SPEC {
+#[doc = "Comparator hysteresis enable\n\nYou can [`read`](crate::Reg::read) this register and get [`hyst::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hyst::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct HystSpec;
+impl crate::RegisterSpec for HystSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hyst::R](R) reader structure"]
-impl crate::Readable for HYST_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hyst::W](W) writer structure"]
-impl crate::Writable for HYST_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`hyst::R`](R) reader structure"]
+impl crate::Readable for HystSpec {}
+#[doc = "`write(|w| ..)` method takes [`hyst::W`](W) writer structure"]
+impl crate::Writable for HystSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets HYST to value 0"]
-impl crate::Resettable for HYST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for HystSpec {}

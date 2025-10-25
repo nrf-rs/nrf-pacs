@@ -1,117 +1,101 @@
 #[doc = "Register `PDUSTAT` reader"]
-pub struct R(crate::R<PDUSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PDUSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PDUSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PDUSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `PDUSTAT` reader - Status on payload length vs. PCNF1.MAXLEN"]
-pub type PDUSTAT_R = crate::BitReader<PDUSTAT_A>;
+pub type R = crate::R<PdustatSpec>;
 #[doc = "Status on payload length vs. PCNF1.MAXLEN\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDUSTAT_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pdustat {
     #[doc = "0: Payload less than PCNF1.MAXLEN"]
-    LESS_THAN = 0,
+    LessThan = 0,
     #[doc = "1: Payload greater than PCNF1.MAXLEN"]
-    GREATER_THAN = 1,
+    GreaterThan = 1,
 }
-impl From<PDUSTAT_A> for bool {
+impl From<Pdustat> for bool {
     #[inline(always)]
-    fn from(variant: PDUSTAT_A) -> Self {
+    fn from(variant: Pdustat) -> Self {
         variant as u8 != 0
     }
 }
-impl PDUSTAT_R {
+#[doc = "Field `PDUSTAT` reader - Status on payload length vs. PCNF1.MAXLEN"]
+pub type PdustatR = crate::BitReader<Pdustat>;
+impl PdustatR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDUSTAT_A {
+    pub const fn variant(&self) -> Pdustat {
         match self.bits {
-            false => PDUSTAT_A::LESS_THAN,
-            true => PDUSTAT_A::GREATER_THAN,
+            false => Pdustat::LessThan,
+            true => Pdustat::GreaterThan,
         }
     }
-    #[doc = "Checks if the value of the field is `LESS_THAN`"]
+    #[doc = "Payload less than PCNF1.MAXLEN"]
     #[inline(always)]
     pub fn is_less_than(&self) -> bool {
-        *self == PDUSTAT_A::LESS_THAN
+        *self == Pdustat::LessThan
     }
-    #[doc = "Checks if the value of the field is `GREATER_THAN`"]
+    #[doc = "Payload greater than PCNF1.MAXLEN"]
     #[inline(always)]
     pub fn is_greater_than(&self) -> bool {
-        *self == PDUSTAT_A::GREATER_THAN
+        *self == Pdustat::GreaterThan
     }
 }
-#[doc = "Field `CISTAT` reader - Status on what rate packet is received with in Long Range"]
-pub type CISTAT_R = crate::FieldReader<u8, CISTAT_A>;
 #[doc = "Status on what rate packet is received with in Long Range\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CISTAT_A {
+pub enum Cistat {
     #[doc = "0: Frame is received at 125 kbps"]
-    LR125KBIT = 0,
+    Lr125kbit = 0,
     #[doc = "1: Frame is received at 500 kbps"]
-    LR500KBIT = 1,
+    Lr500kbit = 1,
 }
-impl From<CISTAT_A> for u8 {
+impl From<Cistat> for u8 {
     #[inline(always)]
-    fn from(variant: CISTAT_A) -> Self {
+    fn from(variant: Cistat) -> Self {
         variant as _
     }
 }
-impl CISTAT_R {
+impl crate::FieldSpec for Cistat {
+    type Ux = u8;
+}
+impl crate::IsEnum for Cistat {}
+#[doc = "Field `CISTAT` reader - Status on what rate packet is received with in Long Range"]
+pub type CistatR = crate::FieldReader<Cistat>;
+impl CistatR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CISTAT_A> {
+    pub const fn variant(&self) -> Option<Cistat> {
         match self.bits {
-            0 => Some(CISTAT_A::LR125KBIT),
-            1 => Some(CISTAT_A::LR500KBIT),
+            0 => Some(Cistat::Lr125kbit),
+            1 => Some(Cistat::Lr500kbit),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `LR125KBIT`"]
+    #[doc = "Frame is received at 125 kbps"]
     #[inline(always)]
     pub fn is_lr125kbit(&self) -> bool {
-        *self == CISTAT_A::LR125KBIT
+        *self == Cistat::Lr125kbit
     }
-    #[doc = "Checks if the value of the field is `LR500KBIT`"]
+    #[doc = "Frame is received at 500 kbps"]
     #[inline(always)]
     pub fn is_lr500kbit(&self) -> bool {
-        *self == CISTAT_A::LR500KBIT
+        *self == Cistat::Lr500kbit
     }
 }
 impl R {
     #[doc = "Bit 0 - Status on payload length vs. PCNF1.MAXLEN"]
     #[inline(always)]
-    pub fn pdustat(&self) -> PDUSTAT_R {
-        PDUSTAT_R::new((self.bits & 1) != 0)
+    pub fn pdustat(&self) -> PdustatR {
+        PdustatR::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - Status on what rate packet is received with in Long Range"]
     #[inline(always)]
-    pub fn cistat(&self) -> CISTAT_R {
-        CISTAT_R::new(((self.bits >> 1) & 3) as u8)
+    pub fn cistat(&self) -> CistatR {
+        CistatR::new(((self.bits >> 1) & 3) as u8)
     }
 }
-#[doc = "Payload status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdustat](index.html) module"]
-pub struct PDUSTAT_SPEC;
-impl crate::RegisterSpec for PDUSTAT_SPEC {
+#[doc = "Payload status\n\nYou can [`read`](crate::Reg::read) this register and get [`pdustat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct PdustatSpec;
+impl crate::RegisterSpec for PdustatSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pdustat::R](R) reader structure"]
-impl crate::Readable for PDUSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pdustat::R`](R) reader structure"]
+impl crate::Readable for PdustatSpec {}
 #[doc = "`reset()` method sets PDUSTAT to value 0"]
-impl crate::Resettable for PDUSTAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for PdustatSpec {}

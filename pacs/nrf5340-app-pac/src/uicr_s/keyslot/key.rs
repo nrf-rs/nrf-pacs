@@ -1,12 +1,24 @@
-#[doc = r"Register block"]
 #[repr(C)]
-pub struct KEY {
-    #[doc = "0x00..0x10 - Description collection: Define bits \\[31+o*32:0+o*32\\]
-of value assigned to KMU key slot."]
-    pub value: [VALUE; 4],
+#[doc = "Unspecified"]
+#[doc(alias = "KEY")]
+pub struct Key {
+    value: [Value; 4],
 }
-#[doc = "VALUE (rw) register accessor: an alias for `Reg<VALUE_SPEC>`"]
-pub type VALUE = crate::Reg<value::VALUE_SPEC>;
-#[doc = "Description collection: Define bits \\[31+o*32:0+o*32\\]
-of value assigned to KMU key slot."]
+impl Key {
+    #[doc = "0x00..0x10 - Description collection: Define bits \\[31+o*32:0+o*32\\] of value assigned to KMU key slot."]
+    #[inline(always)]
+    pub const fn value(&self, n: usize) -> &Value {
+        &self.value[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x00..0x10 - Description collection: Define bits \\[31+o*32:0+o*32\\] of value assigned to KMU key slot."]
+    #[inline(always)]
+    pub fn value_iter(&self) -> impl Iterator<Item = &Value> {
+        self.value.iter()
+    }
+}
+#[doc = "VALUE (rw) register accessor: Description collection: Define bits \\[31+o*32:0+o*32\\] of value assigned to KMU key slot.\n\nYou can [`read`](crate::Reg::read) this register and get [`value::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`value::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@value`] module"]
+#[doc(alias = "VALUE")]
+pub type Value = crate::Reg<value::ValueSpec>;
+#[doc = "Description collection: Define bits \\[31+o*32:0+o*32\\] of value assigned to KMU key slot."]
 pub mod value;

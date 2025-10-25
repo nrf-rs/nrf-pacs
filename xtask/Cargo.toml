@@ -10,4 +10,4 @@ name = "ci"
 harness = false
 
 [dependencies]
-xshell = "0.1.14"
+xshell = "0.2.7"

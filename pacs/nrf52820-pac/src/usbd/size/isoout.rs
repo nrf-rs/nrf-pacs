@@ -1,81 +1,63 @@
 #[doc = "Register `ISOOUT` reader"]
-pub struct R(crate::R<ISOOUT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ISOOUT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ISOOUT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ISOOUT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IsooutSpec>;
 #[doc = "Field `SIZE` reader - Number of bytes received last on this ISO OUT data endpoint"]
-pub type SIZE_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `ZERO` reader - Zero-length data packet received"]
-pub type ZERO_R = crate::BitReader<ZERO_A>;
+pub type SizeR = crate::FieldReader<u16>;
 #[doc = "Zero-length data packet received\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ZERO_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Zero {
     #[doc = "0: No zero-length data received, use value in SIZE"]
-    NORMAL = 0,
+    Normal = 0,
     #[doc = "1: Zero-length data received, ignore value in SIZE"]
-    ZERO_DATA = 1,
+    ZeroData = 1,
 }
-impl From<ZERO_A> for bool {
+impl From<Zero> for bool {
     #[inline(always)]
-    fn from(variant: ZERO_A) -> Self {
+    fn from(variant: Zero) -> Self {
         variant as u8 != 0
     }
 }
-impl ZERO_R {
+#[doc = "Field `ZERO` reader - Zero-length data packet received"]
+pub type ZeroR = crate::BitReader<Zero>;
+impl ZeroR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ZERO_A {
+    pub const fn variant(&self) -> Zero {
         match self.bits {
-            false => ZERO_A::NORMAL,
-            true => ZERO_A::ZERO_DATA,
+            false => Zero::Normal,
+            true => Zero::ZeroData,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "No zero-length data received, use value in SIZE"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        *self == ZERO_A::NORMAL
+        *self == Zero::Normal
     }
-    #[doc = "Checks if the value of the field is `ZERO_DATA`"]
+    #[doc = "Zero-length data received, ignore value in SIZE"]
     #[inline(always)]
     pub fn is_zero_data(&self) -> bool {
-        *self == ZERO_A::ZERO_DATA
+        *self == Zero::ZeroData
     }
 }
 impl R {
     #[doc = "Bits 0:9 - Number of bytes received last on this ISO OUT data endpoint"]
     #[inline(always)]
-    pub fn size(&self) -> SIZE_R {
-        SIZE_R::new((self.bits & 0x03ff) as u16)
+    pub fn size(&self) -> SizeR {
+        SizeR::new((self.bits & 0x03ff) as u16)
     }
     #[doc = "Bit 16 - Zero-length data packet received"]
     #[inline(always)]
-    pub fn zero(&self) -> ZERO_R {
-        ZERO_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn zero(&self) -> ZeroR {
+        ZeroR::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "Number of bytes received last on this ISO OUT data endpoint\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isoout](index.html) module"]
-pub struct ISOOUT_SPEC;
-impl crate::RegisterSpec for ISOOUT_SPEC {
+#[doc = "Number of bytes received last on this ISO OUT data endpoint\n\nYou can [`read`](crate::Reg::read) this register and get [`isoout::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct IsooutSpec;
+impl crate::RegisterSpec for IsooutSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [isoout::R](R) reader structure"]
-impl crate::Readable for ISOOUT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`isoout::R`](R) reader structure"]
+impl crate::Readable for IsooutSpec {}
 #[doc = "`reset()` method sets ISOOUT to value 0x0001_0000"]
-impl crate::Resettable for ISOOUT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0001_0000
-    }
+impl crate::Resettable for IsooutSpec {
+    const RESET_VALUE: u32 = 0x0001_0000;
 }

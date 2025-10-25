@@ -1,74 +1,56 @@
 #[doc = "Register `CAP` reader"]
-pub struct R(crate::R<CAP_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CAP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CAP_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CAP_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `TZM` reader - Show Arm TrustZone status"]
-pub type TZM_R = crate::BitReader<TZM_A>;
+pub type R = crate::R<CapSpec>;
 #[doc = "Show Arm TrustZone status\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TZM_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Tzm {
     #[doc = "0: Arm TrustZone support not available"]
-    NOT_AVAILABLE = 0,
+    NotAvailable = 0,
     #[doc = "1: Arm TrustZone support is available"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<TZM_A> for bool {
+impl From<Tzm> for bool {
     #[inline(always)]
-    fn from(variant: TZM_A) -> Self {
+    fn from(variant: Tzm) -> Self {
         variant as u8 != 0
     }
 }
-impl TZM_R {
+#[doc = "Field `TZM` reader - Show Arm TrustZone status"]
+pub type TzmR = crate::BitReader<Tzm>;
+impl TzmR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TZM_A {
+    pub const fn variant(&self) -> Tzm {
         match self.bits {
-            false => TZM_A::NOT_AVAILABLE,
-            true => TZM_A::ENABLED,
+            false => Tzm::NotAvailable,
+            true => Tzm::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_AVAILABLE`"]
+    #[doc = "Arm TrustZone support not available"]
     #[inline(always)]
     pub fn is_not_available(&self) -> bool {
-        *self == TZM_A::NOT_AVAILABLE
+        *self == Tzm::NotAvailable
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Arm TrustZone support is available"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == TZM_A::ENABLED
+        *self == Tzm::Enabled
     }
 }
 impl R {
     #[doc = "Bit 0 - Show Arm TrustZone status"]
     #[inline(always)]
-    pub fn tzm(&self) -> TZM_R {
-        TZM_R::new((self.bits & 1) != 0)
+    pub fn tzm(&self) -> TzmR {
+        TzmR::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Show implemented features for the current device\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap](index.html) module"]
-pub struct CAP_SPEC;
-impl crate::RegisterSpec for CAP_SPEC {
+#[doc = "Show implemented features for the current device\n\nYou can [`read`](crate::Reg::read) this register and get [`cap::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CapSpec;
+impl crate::RegisterSpec for CapSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cap::R](R) reader structure"]
-impl crate::Readable for CAP_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`cap::R`](R) reader structure"]
+impl crate::Readable for CapSpec {}
 #[doc = "`reset()` method sets CAP to value 0x01"]
-impl crate::Resettable for CAP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+impl crate::Resettable for CapSpec {
+    const RESET_VALUE: u32 = 0x01;
 }

@@ -1,31 +1,18 @@
 #[doc = "Register `CLENR0` reader"]
-pub struct R(crate::R<CLENR0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CLENR0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type R = crate::R<Clenr0Spec>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
     }
 }
-impl From<crate::R<CLENR0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CLENR0_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Length of code region 0 in bytes.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clenr0](index.html) module"]
-pub struct CLENR0_SPEC;
-impl crate::RegisterSpec for CLENR0_SPEC {
+#[doc = "Length of code region 0 in bytes.\n\nYou can [`read`](crate::Reg::read) this register and get [`clenr0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Clenr0Spec;
+impl crate::RegisterSpec for Clenr0Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clenr0::R](R) reader structure"]
-impl crate::Readable for CLENR0_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`clenr0::R`](R) reader structure"]
+impl crate::Readable for Clenr0Spec {}
 #[doc = "`reset()` method sets CLENR0 to value 0xffff_ffff"]
-impl crate::Resettable for CLENR0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for Clenr0Spec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

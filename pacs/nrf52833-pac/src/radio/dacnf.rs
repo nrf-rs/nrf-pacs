@@ -1,658 +1,637 @@
 #[doc = "Register `DACNF` reader"]
-pub struct R(crate::R<DACNF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DACNF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DACNF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DACNF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DacnfSpec>;
 #[doc = "Register `DACNF` writer"]
-pub struct W(crate::W<DACNF_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DACNF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<DacnfSpec>;
+#[doc = "Enable or disable device address matching using device address 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ena0 {
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Ena0> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DACNF_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DACNF_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Ena0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ENA0` reader - Enable or disable device address matching using device address 0"]
-pub type ENA0_R = crate::BitReader<ENA0_A>;
-#[doc = "Enable or disable device address matching using device address 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA0_A {
-    #[doc = "0: Disabled"]
-    DISABLED = 0,
-    #[doc = "1: Enabled"]
-    ENABLED = 1,
-}
-impl From<ENA0_A> for bool {
-    #[inline(always)]
-    fn from(variant: ENA0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ENA0_R {
+pub type Ena0R = crate::BitReader<Ena0>;
+impl Ena0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENA0_A {
+    pub const fn variant(&self) -> Ena0 {
         match self.bits {
-            false => ENA0_A::DISABLED,
-            true => ENA0_A::ENABLED,
+            false => Ena0::Disabled,
+            true => Ena0::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA0_A::DISABLED
+        *self == Ena0::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA0_A::ENABLED
+        *self == Ena0::Enabled
     }
 }
 #[doc = "Field `ENA0` writer - Enable or disable device address matching using device address 0"]
-pub type ENA0_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, ENA0_A, O>;
-impl<'a, const O: u8> ENA0_W<'a, O> {
+pub type Ena0W<'a, REG> = crate::BitWriter<'a, REG, Ena0>;
+impl<'a, REG> Ena0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA0_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena0::Disabled)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA0_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena0::Enabled)
+    }
+}
+#[doc = "Enable or disable device address matching using device address 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ena1 {
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
+}
+impl From<Ena1> for bool {
+    #[inline(always)]
+    fn from(variant: Ena1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ENA1` reader - Enable or disable device address matching using device address 1"]
-pub type ENA1_R = crate::BitReader<ENA1_A>;
-#[doc = "Enable or disable device address matching using device address 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA1_A {
-    #[doc = "0: Disabled"]
-    DISABLED = 0,
-    #[doc = "1: Enabled"]
-    ENABLED = 1,
-}
-impl From<ENA1_A> for bool {
-    #[inline(always)]
-    fn from(variant: ENA1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ENA1_R {
+pub type Ena1R = crate::BitReader<Ena1>;
+impl Ena1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENA1_A {
+    pub const fn variant(&self) -> Ena1 {
         match self.bits {
-            false => ENA1_A::DISABLED,
-            true => ENA1_A::ENABLED,
+            false => Ena1::Disabled,
+            true => Ena1::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA1_A::DISABLED
+        *self == Ena1::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA1_A::ENABLED
+        *self == Ena1::Enabled
     }
 }
 #[doc = "Field `ENA1` writer - Enable or disable device address matching using device address 1"]
-pub type ENA1_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, ENA1_A, O>;
-impl<'a, const O: u8> ENA1_W<'a, O> {
+pub type Ena1W<'a, REG> = crate::BitWriter<'a, REG, Ena1>;
+impl<'a, REG> Ena1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA1_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena1::Disabled)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA1_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena1::Enabled)
+    }
+}
+#[doc = "Enable or disable device address matching using device address 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ena2 {
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
+}
+impl From<Ena2> for bool {
+    #[inline(always)]
+    fn from(variant: Ena2) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ENA2` reader - Enable or disable device address matching using device address 2"]
-pub type ENA2_R = crate::BitReader<ENA2_A>;
-#[doc = "Enable or disable device address matching using device address 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA2_A {
-    #[doc = "0: Disabled"]
-    DISABLED = 0,
-    #[doc = "1: Enabled"]
-    ENABLED = 1,
-}
-impl From<ENA2_A> for bool {
-    #[inline(always)]
-    fn from(variant: ENA2_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ENA2_R {
+pub type Ena2R = crate::BitReader<Ena2>;
+impl Ena2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENA2_A {
+    pub const fn variant(&self) -> Ena2 {
         match self.bits {
-            false => ENA2_A::DISABLED,
-            true => ENA2_A::ENABLED,
+            false => Ena2::Disabled,
+            true => Ena2::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA2_A::DISABLED
+        *self == Ena2::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA2_A::ENABLED
+        *self == Ena2::Enabled
     }
 }
 #[doc = "Field `ENA2` writer - Enable or disable device address matching using device address 2"]
-pub type ENA2_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, ENA2_A, O>;
-impl<'a, const O: u8> ENA2_W<'a, O> {
+pub type Ena2W<'a, REG> = crate::BitWriter<'a, REG, Ena2>;
+impl<'a, REG> Ena2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA2_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena2::Disabled)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA2_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena2::Enabled)
+    }
+}
+#[doc = "Enable or disable device address matching using device address 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ena3 {
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
+}
+impl From<Ena3> for bool {
+    #[inline(always)]
+    fn from(variant: Ena3) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ENA3` reader - Enable or disable device address matching using device address 3"]
-pub type ENA3_R = crate::BitReader<ENA3_A>;
-#[doc = "Enable or disable device address matching using device address 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA3_A {
-    #[doc = "0: Disabled"]
-    DISABLED = 0,
-    #[doc = "1: Enabled"]
-    ENABLED = 1,
-}
-impl From<ENA3_A> for bool {
-    #[inline(always)]
-    fn from(variant: ENA3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ENA3_R {
+pub type Ena3R = crate::BitReader<Ena3>;
+impl Ena3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENA3_A {
+    pub const fn variant(&self) -> Ena3 {
         match self.bits {
-            false => ENA3_A::DISABLED,
-            true => ENA3_A::ENABLED,
+            false => Ena3::Disabled,
+            true => Ena3::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA3_A::DISABLED
+        *self == Ena3::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA3_A::ENABLED
+        *self == Ena3::Enabled
     }
 }
 #[doc = "Field `ENA3` writer - Enable or disable device address matching using device address 3"]
-pub type ENA3_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, ENA3_A, O>;
-impl<'a, const O: u8> ENA3_W<'a, O> {
+pub type Ena3W<'a, REG> = crate::BitWriter<'a, REG, Ena3>;
+impl<'a, REG> Ena3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA3_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena3::Disabled)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA3_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena3::Enabled)
+    }
+}
+#[doc = "Enable or disable device address matching using device address 4\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ena4 {
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
+}
+impl From<Ena4> for bool {
+    #[inline(always)]
+    fn from(variant: Ena4) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ENA4` reader - Enable or disable device address matching using device address 4"]
-pub type ENA4_R = crate::BitReader<ENA4_A>;
-#[doc = "Enable or disable device address matching using device address 4\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA4_A {
-    #[doc = "0: Disabled"]
-    DISABLED = 0,
-    #[doc = "1: Enabled"]
-    ENABLED = 1,
-}
-impl From<ENA4_A> for bool {
-    #[inline(always)]
-    fn from(variant: ENA4_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ENA4_R {
+pub type Ena4R = crate::BitReader<Ena4>;
+impl Ena4R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENA4_A {
+    pub const fn variant(&self) -> Ena4 {
         match self.bits {
-            false => ENA4_A::DISABLED,
-            true => ENA4_A::ENABLED,
+            false => Ena4::Disabled,
+            true => Ena4::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA4_A::DISABLED
+        *self == Ena4::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA4_A::ENABLED
+        *self == Ena4::Enabled
     }
 }
 #[doc = "Field `ENA4` writer - Enable or disable device address matching using device address 4"]
-pub type ENA4_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, ENA4_A, O>;
-impl<'a, const O: u8> ENA4_W<'a, O> {
+pub type Ena4W<'a, REG> = crate::BitWriter<'a, REG, Ena4>;
+impl<'a, REG> Ena4W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA4_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena4::Disabled)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA4_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena4::Enabled)
+    }
+}
+#[doc = "Enable or disable device address matching using device address 5\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ena5 {
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
+}
+impl From<Ena5> for bool {
+    #[inline(always)]
+    fn from(variant: Ena5) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ENA5` reader - Enable or disable device address matching using device address 5"]
-pub type ENA5_R = crate::BitReader<ENA5_A>;
-#[doc = "Enable or disable device address matching using device address 5\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA5_A {
-    #[doc = "0: Disabled"]
-    DISABLED = 0,
-    #[doc = "1: Enabled"]
-    ENABLED = 1,
-}
-impl From<ENA5_A> for bool {
-    #[inline(always)]
-    fn from(variant: ENA5_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ENA5_R {
+pub type Ena5R = crate::BitReader<Ena5>;
+impl Ena5R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENA5_A {
+    pub const fn variant(&self) -> Ena5 {
         match self.bits {
-            false => ENA5_A::DISABLED,
-            true => ENA5_A::ENABLED,
+            false => Ena5::Disabled,
+            true => Ena5::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA5_A::DISABLED
+        *self == Ena5::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA5_A::ENABLED
+        *self == Ena5::Enabled
     }
 }
 #[doc = "Field `ENA5` writer - Enable or disable device address matching using device address 5"]
-pub type ENA5_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, ENA5_A, O>;
-impl<'a, const O: u8> ENA5_W<'a, O> {
+pub type Ena5W<'a, REG> = crate::BitWriter<'a, REG, Ena5>;
+impl<'a, REG> Ena5W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA5_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena5::Disabled)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA5_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena5::Enabled)
+    }
+}
+#[doc = "Enable or disable device address matching using device address 6\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ena6 {
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
+}
+impl From<Ena6> for bool {
+    #[inline(always)]
+    fn from(variant: Ena6) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ENA6` reader - Enable or disable device address matching using device address 6"]
-pub type ENA6_R = crate::BitReader<ENA6_A>;
-#[doc = "Enable or disable device address matching using device address 6\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA6_A {
-    #[doc = "0: Disabled"]
-    DISABLED = 0,
-    #[doc = "1: Enabled"]
-    ENABLED = 1,
-}
-impl From<ENA6_A> for bool {
-    #[inline(always)]
-    fn from(variant: ENA6_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ENA6_R {
+pub type Ena6R = crate::BitReader<Ena6>;
+impl Ena6R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENA6_A {
+    pub const fn variant(&self) -> Ena6 {
         match self.bits {
-            false => ENA6_A::DISABLED,
-            true => ENA6_A::ENABLED,
+            false => Ena6::Disabled,
+            true => Ena6::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA6_A::DISABLED
+        *self == Ena6::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA6_A::ENABLED
+        *self == Ena6::Enabled
     }
 }
 #[doc = "Field `ENA6` writer - Enable or disable device address matching using device address 6"]
-pub type ENA6_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, ENA6_A, O>;
-impl<'a, const O: u8> ENA6_W<'a, O> {
+pub type Ena6W<'a, REG> = crate::BitWriter<'a, REG, Ena6>;
+impl<'a, REG> Ena6W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA6_A::DISABLED)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena6::Disabled)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA6_A::ENABLED)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena6::Enabled)
     }
 }
-#[doc = "Field `ENA7` reader - Enable or disable device address matching using device address 7"]
-pub type ENA7_R = crate::BitReader<ENA7_A>;
 #[doc = "Enable or disable device address matching using device address 7\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA7_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ena7 {
     #[doc = "0: Disabled"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Enabled"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<ENA7_A> for bool {
+impl From<Ena7> for bool {
     #[inline(always)]
-    fn from(variant: ENA7_A) -> Self {
+    fn from(variant: Ena7) -> Self {
         variant as u8 != 0
     }
 }
-impl ENA7_R {
+#[doc = "Field `ENA7` reader - Enable or disable device address matching using device address 7"]
+pub type Ena7R = crate::BitReader<Ena7>;
+impl Ena7R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENA7_A {
+    pub const fn variant(&self) -> Ena7 {
         match self.bits {
-            false => ENA7_A::DISABLED,
-            true => ENA7_A::ENABLED,
+            false => Ena7::Disabled,
+            true => Ena7::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == ENA7_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == ENA7_A::ENABLED
-    }
-}
-#[doc = "Field `ENA7` writer - Enable or disable device address matching using device address 7"]
-pub type ENA7_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, ENA7_A, O>;
-impl<'a, const O: u8> ENA7_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA7_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Ena7::Disabled
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA7_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Ena7::Enabled
+    }
+}
+#[doc = "Field `ENA7` writer - Enable or disable device address matching using device address 7"]
+pub type Ena7W<'a, REG> = crate::BitWriter<'a, REG, Ena7>;
+impl<'a, REG> Ena7W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena7::Disabled)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Ena7::Enabled)
     }
 }
 #[doc = "Field `TXADD0` reader - TxAdd for device address 0"]
-pub type TXADD0_R = crate::BitReader<bool>;
+pub type Txadd0R = crate::BitReader;
 #[doc = "Field `TXADD0` writer - TxAdd for device address 0"]
-pub type TXADD0_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, bool, O>;
+pub type Txadd0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXADD1` reader - TxAdd for device address 1"]
-pub type TXADD1_R = crate::BitReader<bool>;
+pub type Txadd1R = crate::BitReader;
 #[doc = "Field `TXADD1` writer - TxAdd for device address 1"]
-pub type TXADD1_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, bool, O>;
+pub type Txadd1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXADD2` reader - TxAdd for device address 2"]
-pub type TXADD2_R = crate::BitReader<bool>;
+pub type Txadd2R = crate::BitReader;
 #[doc = "Field `TXADD2` writer - TxAdd for device address 2"]
-pub type TXADD2_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, bool, O>;
+pub type Txadd2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXADD3` reader - TxAdd for device address 3"]
-pub type TXADD3_R = crate::BitReader<bool>;
+pub type Txadd3R = crate::BitReader;
 #[doc = "Field `TXADD3` writer - TxAdd for device address 3"]
-pub type TXADD3_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, bool, O>;
+pub type Txadd3W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXADD4` reader - TxAdd for device address 4"]
-pub type TXADD4_R = crate::BitReader<bool>;
+pub type Txadd4R = crate::BitReader;
 #[doc = "Field `TXADD4` writer - TxAdd for device address 4"]
-pub type TXADD4_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, bool, O>;
+pub type Txadd4W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXADD5` reader - TxAdd for device address 5"]
-pub type TXADD5_R = crate::BitReader<bool>;
+pub type Txadd5R = crate::BitReader;
 #[doc = "Field `TXADD5` writer - TxAdd for device address 5"]
-pub type TXADD5_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, bool, O>;
+pub type Txadd5W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXADD6` reader - TxAdd for device address 6"]
-pub type TXADD6_R = crate::BitReader<bool>;
+pub type Txadd6R = crate::BitReader;
 #[doc = "Field `TXADD6` writer - TxAdd for device address 6"]
-pub type TXADD6_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, bool, O>;
+pub type Txadd6W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXADD7` reader - TxAdd for device address 7"]
-pub type TXADD7_R = crate::BitReader<bool>;
+pub type Txadd7R = crate::BitReader;
 #[doc = "Field `TXADD7` writer - TxAdd for device address 7"]
-pub type TXADD7_W<'a, const O: u8> = crate::BitWriter<'a, u32, DACNF_SPEC, bool, O>;
+pub type Txadd7W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Enable or disable device address matching using device address 0"]
     #[inline(always)]
-    pub fn ena0(&self) -> ENA0_R {
-        ENA0_R::new((self.bits & 1) != 0)
+    pub fn ena0(&self) -> Ena0R {
+        Ena0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable or disable device address matching using device address 1"]
     #[inline(always)]
-    pub fn ena1(&self) -> ENA1_R {
-        ENA1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn ena1(&self) -> Ena1R {
+        Ena1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable or disable device address matching using device address 2"]
     #[inline(always)]
-    pub fn ena2(&self) -> ENA2_R {
-        ENA2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn ena2(&self) -> Ena2R {
+        Ena2R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable or disable device address matching using device address 3"]
     #[inline(always)]
-    pub fn ena3(&self) -> ENA3_R {
-        ENA3_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn ena3(&self) -> Ena3R {
+        Ena3R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable or disable device address matching using device address 4"]
     #[inline(always)]
-    pub fn ena4(&self) -> ENA4_R {
-        ENA4_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn ena4(&self) -> Ena4R {
+        Ena4R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable or disable device address matching using device address 5"]
     #[inline(always)]
-    pub fn ena5(&self) -> ENA5_R {
-        ENA5_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn ena5(&self) -> Ena5R {
+        Ena5R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable or disable device address matching using device address 6"]
     #[inline(always)]
-    pub fn ena6(&self) -> ENA6_R {
-        ENA6_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn ena6(&self) -> Ena6R {
+        Ena6R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable or disable device address matching using device address 7"]
     #[inline(always)]
-    pub fn ena7(&self) -> ENA7_R {
-        ENA7_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn ena7(&self) -> Ena7R {
+        Ena7R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - TxAdd for device address 0"]
     #[inline(always)]
-    pub fn txadd0(&self) -> TXADD0_R {
-        TXADD0_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn txadd0(&self) -> Txadd0R {
+        Txadd0R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - TxAdd for device address 1"]
     #[inline(always)]
-    pub fn txadd1(&self) -> TXADD1_R {
-        TXADD1_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn txadd1(&self) -> Txadd1R {
+        Txadd1R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - TxAdd for device address 2"]
     #[inline(always)]
-    pub fn txadd2(&self) -> TXADD2_R {
-        TXADD2_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn txadd2(&self) -> Txadd2R {
+        Txadd2R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - TxAdd for device address 3"]
     #[inline(always)]
-    pub fn txadd3(&self) -> TXADD3_R {
-        TXADD3_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn txadd3(&self) -> Txadd3R {
+        Txadd3R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - TxAdd for device address 4"]
     #[inline(always)]
-    pub fn txadd4(&self) -> TXADD4_R {
-        TXADD4_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn txadd4(&self) -> Txadd4R {
+        Txadd4R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - TxAdd for device address 5"]
     #[inline(always)]
-    pub fn txadd5(&self) -> TXADD5_R {
-        TXADD5_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn txadd5(&self) -> Txadd5R {
+        Txadd5R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - TxAdd for device address 6"]
     #[inline(always)]
-    pub fn txadd6(&self) -> TXADD6_R {
-        TXADD6_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn txadd6(&self) -> Txadd6R {
+        Txadd6R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - TxAdd for device address 7"]
     #[inline(always)]
-    pub fn txadd7(&self) -> TXADD7_R {
-        TXADD7_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn txadd7(&self) -> Txadd7R {
+        Txadd7R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable or disable device address matching using device address 0"]
     #[inline(always)]
-    pub fn ena0(&mut self) -> ENA0_W<0> {
-        ENA0_W::new(self)
+    pub fn ena0(&mut self) -> Ena0W<'_, DacnfSpec> {
+        Ena0W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable or disable device address matching using device address 1"]
     #[inline(always)]
-    pub fn ena1(&mut self) -> ENA1_W<1> {
-        ENA1_W::new(self)
+    pub fn ena1(&mut self) -> Ena1W<'_, DacnfSpec> {
+        Ena1W::new(self, 1)
     }
     #[doc = "Bit 2 - Enable or disable device address matching using device address 2"]
     #[inline(always)]
-    pub fn ena2(&mut self) -> ENA2_W<2> {
-        ENA2_W::new(self)
+    pub fn ena2(&mut self) -> Ena2W<'_, DacnfSpec> {
+        Ena2W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable or disable device address matching using device address 3"]
     #[inline(always)]
-    pub fn ena3(&mut self) -> ENA3_W<3> {
-        ENA3_W::new(self)
+    pub fn ena3(&mut self) -> Ena3W<'_, DacnfSpec> {
+        Ena3W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable or disable device address matching using device address 4"]
     #[inline(always)]
-    pub fn ena4(&mut self) -> ENA4_W<4> {
-        ENA4_W::new(self)
+    pub fn ena4(&mut self) -> Ena4W<'_, DacnfSpec> {
+        Ena4W::new(self, 4)
     }
     #[doc = "Bit 5 - Enable or disable device address matching using device address 5"]
     #[inline(always)]
-    pub fn ena5(&mut self) -> ENA5_W<5> {
-        ENA5_W::new(self)
+    pub fn ena5(&mut self) -> Ena5W<'_, DacnfSpec> {
+        Ena5W::new(self, 5)
     }
     #[doc = "Bit 6 - Enable or disable device address matching using device address 6"]
     #[inline(always)]
-    pub fn ena6(&mut self) -> ENA6_W<6> {
-        ENA6_W::new(self)
+    pub fn ena6(&mut self) -> Ena6W<'_, DacnfSpec> {
+        Ena6W::new(self, 6)
     }
     #[doc = "Bit 7 - Enable or disable device address matching using device address 7"]
     #[inline(always)]
-    pub fn ena7(&mut self) -> ENA7_W<7> {
-        ENA7_W::new(self)
+    pub fn ena7(&mut self) -> Ena7W<'_, DacnfSpec> {
+        Ena7W::new(self, 7)
     }
     #[doc = "Bit 8 - TxAdd for device address 0"]
     #[inline(always)]
-    pub fn txadd0(&mut self) -> TXADD0_W<8> {
-        TXADD0_W::new(self)
+    pub fn txadd0(&mut self) -> Txadd0W<'_, DacnfSpec> {
+        Txadd0W::new(self, 8)
     }
     #[doc = "Bit 9 - TxAdd for device address 1"]
     #[inline(always)]
-    pub fn txadd1(&mut self) -> TXADD1_W<9> {
-        TXADD1_W::new(self)
+    pub fn txadd1(&mut self) -> Txadd1W<'_, DacnfSpec> {
+        Txadd1W::new(self, 9)
     }
     #[doc = "Bit 10 - TxAdd for device address 2"]
     #[inline(always)]
-    pub fn txadd2(&mut self) -> TXADD2_W<10> {
-        TXADD2_W::new(self)
+    pub fn txadd2(&mut self) -> Txadd2W<'_, DacnfSpec> {
+        Txadd2W::new(self, 10)
     }
     #[doc = "Bit 11 - TxAdd for device address 3"]
     #[inline(always)]
-    pub fn txadd3(&mut self) -> TXADD3_W<11> {
-        TXADD3_W::new(self)
+    pub fn txadd3(&mut self) -> Txadd3W<'_, DacnfSpec> {
+        Txadd3W::new(self, 11)
     }
     #[doc = "Bit 12 - TxAdd for device address 4"]
     #[inline(always)]
-    pub fn txadd4(&mut self) -> TXADD4_W<12> {
-        TXADD4_W::new(self)
+    pub fn txadd4(&mut self) -> Txadd4W<'_, DacnfSpec> {
+        Txadd4W::new(self, 12)
     }
     #[doc = "Bit 13 - TxAdd for device address 5"]
     #[inline(always)]
-    pub fn txadd5(&mut self) -> TXADD5_W<13> {
-        TXADD5_W::new(self)
+    pub fn txadd5(&mut self) -> Txadd5W<'_, DacnfSpec> {
+        Txadd5W::new(self, 13)
     }
     #[doc = "Bit 14 - TxAdd for device address 6"]
     #[inline(always)]
-    pub fn txadd6(&mut self) -> TXADD6_W<14> {
-        TXADD6_W::new(self)
+    pub fn txadd6(&mut self) -> Txadd6W<'_, DacnfSpec> {
+        Txadd6W::new(self, 14)
     }
     #[doc = "Bit 15 - TxAdd for device address 7"]
     #[inline(always)]
-    pub fn txadd7(&mut self) -> TXADD7_W<15> {
-        TXADD7_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn txadd7(&mut self) -> Txadd7W<'_, DacnfSpec> {
+        Txadd7W::new(self, 15)
     }
 }
-#[doc = "Device address match configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dacnf](index.html) module"]
-pub struct DACNF_SPEC;
-impl crate::RegisterSpec for DACNF_SPEC {
+#[doc = "Device address match configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`dacnf::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dacnf::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct DacnfSpec;
+impl crate::RegisterSpec for DacnfSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dacnf::R](R) reader structure"]
-impl crate::Readable for DACNF_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dacnf::W](W) writer structure"]
-impl crate::Writable for DACNF_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`dacnf::R`](R) reader structure"]
+impl crate::Readable for DacnfSpec {}
+#[doc = "`write(|w| ..)` method takes [`dacnf::W`](W) writer structure"]
+impl crate::Writable for DacnfSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets DACNF to value 0"]
-impl crate::Resettable for DACNF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for DacnfSpec {}

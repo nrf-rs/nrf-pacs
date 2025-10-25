@@ -1,80 +1,37 @@
 #[doc = "Register `CSNDUR` reader"]
-pub struct R(crate::R<CSNDUR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSNDUR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSNDUR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSNDUR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CsndurSpec>;
 #[doc = "Register `CSNDUR` writer"]
-pub struct W(crate::W<CSNDUR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CSNDUR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CSNDUR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CSNDUR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CsndurSpec>;
 #[doc = "Field `CSNDUR` reader - Minimum duration between edge of CSN and edge of SCK and minimum duration CSN must stay high between transactions. The value is specified in number of 64 MHz clock cycles (15.625 ns)."]
-pub type CSNDUR_R = crate::FieldReader<u8, u8>;
+pub type CsndurR = crate::FieldReader;
 #[doc = "Field `CSNDUR` writer - Minimum duration between edge of CSN and edge of SCK and minimum duration CSN must stay high between transactions. The value is specified in number of 64 MHz clock cycles (15.625 ns)."]
-pub type CSNDUR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSNDUR_SPEC, u8, u8, 8, O>;
+pub type CsndurW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Minimum duration between edge of CSN and edge of SCK and minimum duration CSN must stay high between transactions. The value is specified in number of 64 MHz clock cycles (15.625 ns)."]
     #[inline(always)]
-    pub fn csndur(&self) -> CSNDUR_R {
-        CSNDUR_R::new((self.bits & 0xff) as u8)
+    pub fn csndur(&self) -> CsndurR {
+        CsndurR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Minimum duration between edge of CSN and edge of SCK and minimum duration CSN must stay high between transactions. The value is specified in number of 64 MHz clock cycles (15.625 ns)."]
     #[inline(always)]
-    pub fn csndur(&mut self) -> CSNDUR_W<0> {
-        CSNDUR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn csndur(&mut self) -> CsndurW<'_, CsndurSpec> {
+        CsndurW::new(self, 0)
     }
 }
-#[doc = "Minimum duration between edge of CSN and edge of SCK and minimum duration CSN must stay high between transactions\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csndur](index.html) module"]
-pub struct CSNDUR_SPEC;
-impl crate::RegisterSpec for CSNDUR_SPEC {
+#[doc = "Minimum duration between edge of CSN and edge of SCK and minimum duration CSN must stay high between transactions\n\nYou can [`read`](crate::Reg::read) this register and get [`csndur::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`csndur::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CsndurSpec;
+impl crate::RegisterSpec for CsndurSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [csndur::R](R) reader structure"]
-impl crate::Readable for CSNDUR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [csndur::W](W) writer structure"]
-impl crate::Writable for CSNDUR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`csndur::R`](R) reader structure"]
+impl crate::Readable for CsndurSpec {}
+#[doc = "`write(|w| ..)` method takes [`csndur::W`](W) writer structure"]
+impl crate::Writable for CsndurSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CSNDUR to value 0x02"]
-impl crate::Resettable for CSNDUR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+impl crate::Resettable for CsndurSpec {
+    const RESET_VALUE: u32 = 0x02;
 }

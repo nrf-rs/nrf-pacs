@@ -1,133 +1,91 @@
 #[doc = "Register `INTENSET` reader"]
-pub struct R(crate::R<INTENSET_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTENSET_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTENSET_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTENSET_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IntensetSpec>;
 #[doc = "Register `INTENSET` writer"]
-pub struct W(crate::W<INTENSET_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INTENSET_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INTENSET_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INTENSET_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `READY` reader - Write '1' to enable interrupt for event READY"]
-pub type READY_R = crate::BitReader<READY_A>;
+pub type W = crate::W<IntensetSpec>;
 #[doc = "Write '1' to enable interrupt for event READY\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum READY_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ready {
     #[doc = "0: Read: Disabled"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<READY_A> for bool {
+impl From<Ready> for bool {
     #[inline(always)]
-    fn from(variant: READY_A) -> Self {
+    fn from(variant: Ready) -> Self {
         variant as u8 != 0
     }
 }
-impl READY_R {
+#[doc = "Field `READY` reader - Write '1' to enable interrupt for event READY"]
+pub type ReadyR = crate::BitReader<Ready>;
+impl ReadyR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> READY_A {
+    pub const fn variant(&self) -> Ready {
         match self.bits {
-            false => READY_A::DISABLED,
-            true => READY_A::ENABLED,
+            false => Ready::Disabled,
+            true => Ready::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Read: Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == READY_A::DISABLED
+        *self == Ready::Disabled
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Read: Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == READY_A::ENABLED
+        *self == Ready::Enabled
     }
 }
 #[doc = "Write '1' to enable interrupt for event READY\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum READY_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ReadyWO {
     #[doc = "1: Enable"]
-    SET = 1,
+    Set = 1,
 }
-impl From<READY_AW> for bool {
+impl From<ReadyWO> for bool {
     #[inline(always)]
-    fn from(variant: READY_AW) -> Self {
+    fn from(variant: ReadyWO) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `READY` writer - Write '1' to enable interrupt for event READY"]
-pub type READY_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTENSET_SPEC, READY_AW, O>;
-impl<'a, const O: u8> READY_W<'a, O> {
+pub type ReadyW<'a, REG> = crate::BitWriter<'a, REG, ReadyWO>;
+impl<'a, REG> ReadyW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut W {
-        self.variant(READY_AW::SET)
+    pub fn set_(self) -> &'a mut crate::W<REG> {
+        self.variant(ReadyWO::Set)
     }
 }
 impl R {
     #[doc = "Bit 0 - Write '1' to enable interrupt for event READY"]
     #[inline(always)]
-    pub fn ready(&self) -> READY_R {
-        READY_R::new((self.bits & 1) != 0)
+    pub fn ready(&self) -> ReadyR {
+        ReadyR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write '1' to enable interrupt for event READY"]
     #[inline(always)]
-    pub fn ready(&mut self) -> READY_W<0> {
-        READY_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn ready(&mut self) -> ReadyW<'_, IntensetSpec> {
+        ReadyW::new(self, 0)
     }
 }
-#[doc = "Enable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenset](index.html) module"]
-pub struct INTENSET_SPEC;
-impl crate::RegisterSpec for INTENSET_SPEC {
+#[doc = "Enable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`intenset::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenset::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct IntensetSpec;
+impl crate::RegisterSpec for IntensetSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [intenset::R](R) reader structure"]
-impl crate::Readable for INTENSET_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [intenset::W](W) writer structure"]
-impl crate::Writable for INTENSET_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`intenset::R`](R) reader structure"]
+impl crate::Readable for IntensetSpec {}
+#[doc = "`write(|w| ..)` method takes [`intenset::W`](W) writer structure"]
+impl crate::Writable for IntensetSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets INTENSET to value 0"]
-impl crate::Resettable for INTENSET_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for IntensetSpec {}

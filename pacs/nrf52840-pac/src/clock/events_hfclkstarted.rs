@@ -1,81 +1,84 @@
 #[doc = "Register `EVENTS_HFCLKSTARTED` reader"]
-pub struct R(crate::R<EVENTS_HFCLKSTARTED_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_HFCLKSTARTED_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_HFCLKSTARTED_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_HFCLKSTARTED_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsHfclkstartedSpec>;
 #[doc = "Register `EVENTS_HFCLKSTARTED` writer"]
-pub struct W(crate::W<EVENTS_HFCLKSTARTED_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_HFCLKSTARTED_SPEC>;
+pub type W = crate::W<EventsHfclkstartedSpec>;
+#[doc = "HFXO crystal oscillator started\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsHfclkstarted {
+    #[doc = "0: Event not generated"]
+    NotGenerated = 0,
+    #[doc = "1: Event generated"]
+    Generated = 1,
+}
+impl From<EventsHfclkstarted> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: EventsHfclkstarted) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `EVENTS_HFCLKSTARTED` reader - HFXO crystal oscillator started"]
+pub type EventsHfclkstartedR = crate::BitReader<EventsHfclkstarted>;
+impl EventsHfclkstartedR {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub const fn variant(&self) -> EventsHfclkstarted {
+        match self.bits {
+            false => EventsHfclkstarted::NotGenerated,
+            true => EventsHfclkstarted::Generated,
+        }
+    }
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsHfclkstarted::NotGenerated
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn is_generated(&self) -> bool {
+        *self == EventsHfclkstarted::Generated
     }
 }
-impl From<crate::W<EVENTS_HFCLKSTARTED_SPEC>> for W {
+#[doc = "Field `EVENTS_HFCLKSTARTED` writer - HFXO crystal oscillator started"]
+pub type EventsHfclkstartedW<'a, REG> = crate::BitWriter<'a, REG, EventsHfclkstarted>;
+impl<'a, REG> EventsHfclkstartedW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
     #[inline(always)]
-    fn from(writer: crate::W<EVENTS_HFCLKSTARTED_SPEC>) -> Self {
-        W(writer)
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsHfclkstarted::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsHfclkstarted::Generated)
     }
 }
-#[doc = "Field `EVENTS_HFCLKSTARTED` reader - "]
-pub type EVENTS_HFCLKSTARTED_R = crate::BitReader<bool>;
-#[doc = "Field `EVENTS_HFCLKSTARTED` writer - "]
-pub type EVENTS_HFCLKSTARTED_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_HFCLKSTARTED_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - HFXO crystal oscillator started"]
     #[inline(always)]
-    pub fn events_hfclkstarted(&self) -> EVENTS_HFCLKSTARTED_R {
-        EVENTS_HFCLKSTARTED_R::new((self.bits & 1) != 0)
+    pub fn events_hfclkstarted(&self) -> EventsHfclkstartedR {
+        EventsHfclkstartedR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - HFXO crystal oscillator started"]
     #[inline(always)]
-    pub fn events_hfclkstarted(&mut self) -> EVENTS_HFCLKSTARTED_W<0> {
-        EVENTS_HFCLKSTARTED_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_hfclkstarted(&mut self) -> EventsHfclkstartedW<'_, EventsHfclkstartedSpec> {
+        EventsHfclkstartedW::new(self, 0)
     }
 }
-#[doc = "HFXO crystal oscillator started\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_hfclkstarted](index.html) module"]
-pub struct EVENTS_HFCLKSTARTED_SPEC;
-impl crate::RegisterSpec for EVENTS_HFCLKSTARTED_SPEC {
+#[doc = "HFXO crystal oscillator started\n\nYou can [`read`](crate::Reg::read) this register and get [`events_hfclkstarted::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_hfclkstarted::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsHfclkstartedSpec;
+impl crate::RegisterSpec for EventsHfclkstartedSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_hfclkstarted::R](R) reader structure"]
-impl crate::Readable for EVENTS_HFCLKSTARTED_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_hfclkstarted::W](W) writer structure"]
-impl crate::Writable for EVENTS_HFCLKSTARTED_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_hfclkstarted::R`](R) reader structure"]
+impl crate::Readable for EventsHfclkstartedSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_hfclkstarted::W`](W) writer structure"]
+impl crate::Writable for EventsHfclkstartedSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_HFCLKSTARTED to value 0"]
-impl crate::Resettable for EVENTS_HFCLKSTARTED_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsHfclkstartedSpec {}

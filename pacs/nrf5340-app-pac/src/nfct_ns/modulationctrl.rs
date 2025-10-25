@@ -1,155 +1,119 @@
 #[doc = "Register `MODULATIONCTRL` reader"]
-pub struct R(crate::R<MODULATIONCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MODULATIONCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MODULATIONCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MODULATIONCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ModulationctrlSpec>;
 #[doc = "Register `MODULATIONCTRL` writer"]
-pub struct W(crate::W<MODULATIONCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MODULATIONCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MODULATIONCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MODULATIONCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `MODULATIONCTRL` reader - Configuration of modulation control."]
-pub type MODULATIONCTRL_R = crate::FieldReader<u8, MODULATIONCTRL_A>;
+pub type W = crate::W<ModulationctrlSpec>;
 #[doc = "Configuration of modulation control.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum MODULATIONCTRL_A {
+pub enum Modulationctrl {
     #[doc = "0: Invalid, defaults to same behaviour as for Internal"]
-    INVALID = 0,
+    Invalid = 0,
     #[doc = "1: Use internal modulator only"]
-    INTERNAL = 1,
+    Internal = 1,
     #[doc = "2: Output digital modulation signal to a GPIO pin."]
-    MOD_TO_GPIO = 2,
+    ModToGpio = 2,
     #[doc = "3: Use internal modulator and output digital modulation signal to a GPIO pin."]
-    INTERNAL_AND_MOD_TO_GPIO = 3,
+    InternalAndModToGpio = 3,
 }
-impl From<MODULATIONCTRL_A> for u8 {
+impl From<Modulationctrl> for u8 {
     #[inline(always)]
-    fn from(variant: MODULATIONCTRL_A) -> Self {
+    fn from(variant: Modulationctrl) -> Self {
         variant as _
     }
 }
-impl MODULATIONCTRL_R {
+impl crate::FieldSpec for Modulationctrl {
+    type Ux = u8;
+}
+impl crate::IsEnum for Modulationctrl {}
+#[doc = "Field `MODULATIONCTRL` reader - Configuration of modulation control."]
+pub type ModulationctrlR = crate::FieldReader<Modulationctrl>;
+impl ModulationctrlR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MODULATIONCTRL_A {
+    pub const fn variant(&self) -> Modulationctrl {
         match self.bits {
-            0 => MODULATIONCTRL_A::INVALID,
-            1 => MODULATIONCTRL_A::INTERNAL,
-            2 => MODULATIONCTRL_A::MOD_TO_GPIO,
-            3 => MODULATIONCTRL_A::INTERNAL_AND_MOD_TO_GPIO,
+            0 => Modulationctrl::Invalid,
+            1 => Modulationctrl::Internal,
+            2 => Modulationctrl::ModToGpio,
+            3 => Modulationctrl::InternalAndModToGpio,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `INVALID`"]
-    #[inline(always)]
-    pub fn is_invalid(&self) -> bool {
-        *self == MODULATIONCTRL_A::INVALID
-    }
-    #[doc = "Checks if the value of the field is `INTERNAL`"]
-    #[inline(always)]
-    pub fn is_internal(&self) -> bool {
-        *self == MODULATIONCTRL_A::INTERNAL
-    }
-    #[doc = "Checks if the value of the field is `MOD_TO_GPIO`"]
-    #[inline(always)]
-    pub fn is_mod_to_gpio(&self) -> bool {
-        *self == MODULATIONCTRL_A::MOD_TO_GPIO
-    }
-    #[doc = "Checks if the value of the field is `INTERNAL_AND_MOD_TO_GPIO`"]
-    #[inline(always)]
-    pub fn is_internal_and_mod_to_gpio(&self) -> bool {
-        *self == MODULATIONCTRL_A::INTERNAL_AND_MOD_TO_GPIO
-    }
-}
-#[doc = "Field `MODULATIONCTRL` writer - Configuration of modulation control."]
-pub type MODULATIONCTRL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, MODULATIONCTRL_SPEC, u8, MODULATIONCTRL_A, 2, O>;
-impl<'a, const O: u8> MODULATIONCTRL_W<'a, O> {
     #[doc = "Invalid, defaults to same behaviour as for Internal"]
     #[inline(always)]
-    pub fn invalid(self) -> &'a mut W {
-        self.variant(MODULATIONCTRL_A::INVALID)
+    pub fn is_invalid(&self) -> bool {
+        *self == Modulationctrl::Invalid
     }
     #[doc = "Use internal modulator only"]
     #[inline(always)]
-    pub fn internal(self) -> &'a mut W {
-        self.variant(MODULATIONCTRL_A::INTERNAL)
+    pub fn is_internal(&self) -> bool {
+        *self == Modulationctrl::Internal
     }
     #[doc = "Output digital modulation signal to a GPIO pin."]
     #[inline(always)]
-    pub fn mod_to_gpio(self) -> &'a mut W {
-        self.variant(MODULATIONCTRL_A::MOD_TO_GPIO)
+    pub fn is_mod_to_gpio(&self) -> bool {
+        *self == Modulationctrl::ModToGpio
     }
     #[doc = "Use internal modulator and output digital modulation signal to a GPIO pin."]
     #[inline(always)]
-    pub fn internal_and_mod_to_gpio(self) -> &'a mut W {
-        self.variant(MODULATIONCTRL_A::INTERNAL_AND_MOD_TO_GPIO)
+    pub fn is_internal_and_mod_to_gpio(&self) -> bool {
+        *self == Modulationctrl::InternalAndModToGpio
+    }
+}
+#[doc = "Field `MODULATIONCTRL` writer - Configuration of modulation control."]
+pub type ModulationctrlW<'a, REG> = crate::FieldWriter<'a, REG, 2, Modulationctrl, crate::Safe>;
+impl<'a, REG> ModulationctrlW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Invalid, defaults to same behaviour as for Internal"]
+    #[inline(always)]
+    pub fn invalid(self) -> &'a mut crate::W<REG> {
+        self.variant(Modulationctrl::Invalid)
+    }
+    #[doc = "Use internal modulator only"]
+    #[inline(always)]
+    pub fn internal(self) -> &'a mut crate::W<REG> {
+        self.variant(Modulationctrl::Internal)
+    }
+    #[doc = "Output digital modulation signal to a GPIO pin."]
+    #[inline(always)]
+    pub fn mod_to_gpio(self) -> &'a mut crate::W<REG> {
+        self.variant(Modulationctrl::ModToGpio)
+    }
+    #[doc = "Use internal modulator and output digital modulation signal to a GPIO pin."]
+    #[inline(always)]
+    pub fn internal_and_mod_to_gpio(self) -> &'a mut crate::W<REG> {
+        self.variant(Modulationctrl::InternalAndModToGpio)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Configuration of modulation control."]
     #[inline(always)]
-    pub fn modulationctrl(&self) -> MODULATIONCTRL_R {
-        MODULATIONCTRL_R::new((self.bits & 3) as u8)
+    pub fn modulationctrl(&self) -> ModulationctrlR {
+        ModulationctrlR::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Configuration of modulation control."]
     #[inline(always)]
-    pub fn modulationctrl(&mut self) -> MODULATIONCTRL_W<0> {
-        MODULATIONCTRL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn modulationctrl(&mut self) -> ModulationctrlW<'_, ModulationctrlSpec> {
+        ModulationctrlW::new(self, 0)
     }
 }
-#[doc = "Enables the modulation output to a GPIO pin which can be connected to a second external antenna.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [modulationctrl](index.html) module"]
-pub struct MODULATIONCTRL_SPEC;
-impl crate::RegisterSpec for MODULATIONCTRL_SPEC {
+#[doc = "Enables the modulation output to a GPIO pin which can be connected to a second external antenna.\n\nYou can [`read`](crate::Reg::read) this register and get [`modulationctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`modulationctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ModulationctrlSpec;
+impl crate::RegisterSpec for ModulationctrlSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [modulationctrl::R](R) reader structure"]
-impl crate::Readable for MODULATIONCTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [modulationctrl::W](W) writer structure"]
-impl crate::Writable for MODULATIONCTRL_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`modulationctrl::R`](R) reader structure"]
+impl crate::Readable for ModulationctrlSpec {}
+#[doc = "`write(|w| ..)` method takes [`modulationctrl::W`](W) writer structure"]
+impl crate::Writable for ModulationctrlSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets MODULATIONCTRL to value 0x01"]
-impl crate::Resettable for MODULATIONCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+impl crate::Resettable for ModulationctrlSpec {
+    const RESET_VALUE: u32 = 0x01;
 }

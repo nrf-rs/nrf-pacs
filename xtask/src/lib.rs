@@ -1,6 +1,6 @@
 use std::collections::BTreeMap;
 use std::fs;
-use xshell::cmd;
+use xshell::{cmd, Shell};
 
 pub static PACS: &[(&str, &str)] = &[
     ("nrf51", "thumbv6m-none-eabi"),
@@ -17,13 +17,13 @@ pub static PACS: &[(&str, &str)] = &[
     ("nrf9120", "thumbv8m.main-none-eabihf"),
 ];
 
-pub fn install_tools() {
+pub fn install_tools(sh: &Shell) {
     // Install embedded Rust targets.
     let mut targets = PACS.iter().map(|(_, target)| *target).collect::<Vec<_>>();
     targets.sort();
     targets.dedup();
 
-    cmd!("rustup target add {targets...}").run().unwrap();
+    cmd!(sh, "rustup target add {targets...}").run().unwrap();
 
     // Install meta-dependencies used for generating the crates.
     let toml = fs::read_to_string("Cargo.toml").unwrap();
@@ -42,47 +42,36 @@ pub fn install_tools() {
 
     for (name, version) in metadeps {
         println!("installing {} {}", name, version);
-        cmd!("cargo install {name} --version {version}")
+        cmd!(sh, "cargo install {name} --version {version}")
             .run()
             .unwrap();
     }
 }
 
 pub fn generate() {
-    install_tools();
+    let sh = Shell::new().unwrap();
+    install_tools(&sh);
 
     for (pac, _target) in PACS {
         let svd_path = format!("svds/{}.svd", pac);
         let crate_dir = format!("pacs/{}-pac", pac);
         fs::create_dir_all(&crate_dir).unwrap();
 
-        cmd!("svd2rust -i {svd_path} -o {crate_dir}").run().unwrap();
-        cmd!("form -i {crate_dir}/lib.rs -o {crate_dir}/src")
+        cmd!(sh, "svd2rust -i {svd_path} -o {crate_dir}")
+            .run()
+            .unwrap();
+        cmd!(sh, "form -i {crate_dir}/lib.rs -o {crate_dir}/src")
             .run()
             .unwrap();
         fs::remove_file(format!("{}/lib.rs", crate_dir)).unwrap();
     }
 
-    cmd!("cargo fmt").run().unwrap();
-
-    clean_generation();
-}
-
-// Remove deprecated lint warnings
-pub fn clean_generation() {
-    for (pac, _target) in PACS {
-        let crate_dir = format!("pacs/{}-pac", pac);
-
-        cmd!("sed -i '/#!\\[deny(const_err)\\]/d' {crate_dir}/src/lib.rs")
-            .run()
-            .unwrap();
-        cmd!("sed -i '/#!\\[deny(private_in_public)\\]/d' {crate_dir}/src/lib.rs")
-            .run()
-            .unwrap();
-    }
+    cmd!(sh, "cargo fmt").run().unwrap();
 }
 
 pub fn build() {
+    let sh = Shell::new().unwrap();
+
     // We group them by target so that we can have Cargo build some of them in parallel.
     // FIXME: With https://github.com/rust-lang/cargo/issues/8176 this could be a single invocation.
     let mut target_map: BTreeMap<_, Vec<_>> = BTreeMap::new();
@@ -91,7 +80,7 @@ pub fn build() {
     }
 
     for (target, pacs) in target_map {
-        let mut cmd = cmd!("cargo build --target {target}");
+        let mut cmd = cmd!(sh, "cargo build --target {target}");
         for pac in pacs {
             let package = format!("{}-pac", pac);
             cmd = cmd.args(&["-p", &package]);
@@ -100,8 +89,11 @@ pub fn build() {
     }
 }
 
-pub fn is_git_clean() -> bool {
-    cmd!("git status --porcelain").read().unwrap().is_empty()
+pub fn is_git_clean(sh: &Shell) -> bool {
+    cmd!(sh, "git status --porcelain")
+        .read()
+        .unwrap()
+        .is_empty()
 }
 
 fn file_replace(path: &str, from: &str, to: &str, dry_run: bool) {
@@ -117,13 +109,14 @@ fn file_replace(path: &str, from: &str, to: &str, dry_run: bool) {
 }
 
 pub fn publish(dry_run: bool) {
+    let sh = Shell::new().unwrap();
     // Pre-publish checks.
 
     generate();
 
     if !dry_run {
         assert!(
-            !is_git_clean(),
+            !is_git_clean(&sh),
             "working directory clean, please leave it dirty, containing the desired version bump"
         );
     }
@@ -172,14 +165,16 @@ pub fn publish(dry_run: bool) {
     if !dry_run {
         let message = format!("Release v{}", version);
         let tag = format!("v{}", version);
-        cmd!("git commit -am {message}").run().unwrap();
-        cmd!("git tag -a {tag} -m {tag}").run().unwrap();
+        cmd!(sh, "git commit -am {message}").run().unwrap();
+        cmd!(sh, "git tag -a {tag} -m {tag}").run().unwrap();
     }
 
     // Run `cargo publish` on each crate.
     for (pac, target) in PACS {
-        let mut cmd =
-            cmd!("cargo publish --manifest-path pacs/{pac}-pac/Cargo.toml --target {target}");
+        let mut cmd = cmd!(
+            sh,
+            "cargo publish --manifest-path pacs/{pac}-pac/Cargo.toml --target {target}"
+        );
         if dry_run {
             cmd = cmd.arg("--dry-run").arg("--no-verify");
         }

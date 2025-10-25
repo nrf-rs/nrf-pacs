@@ -1,127 +1,84 @@
 #[doc = "Register `EVENTS_CRCERROR` reader"]
-pub struct R(crate::R<EVENTS_CRCERROR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_CRCERROR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_CRCERROR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_CRCERROR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsCrcerrorSpec>;
 #[doc = "Register `EVENTS_CRCERROR` writer"]
-pub struct W(crate::W<EVENTS_CRCERROR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_CRCERROR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVENTS_CRCERROR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVENTS_CRCERROR_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `EVENTS_CRCERROR` reader - Packet received with CRC error"]
-pub type EVENTS_CRCERROR_R = crate::BitReader<EVENTS_CRCERROR_A>;
+pub type W = crate::W<EventsCrcerrorSpec>;
 #[doc = "Packet received with CRC error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVENTS_CRCERROR_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsCrcerror {
     #[doc = "0: Event not generated"]
-    NOT_GENERATED = 0,
+    NotGenerated = 0,
     #[doc = "1: Event generated"]
-    GENERATED = 1,
+    Generated = 1,
 }
-impl From<EVENTS_CRCERROR_A> for bool {
+impl From<EventsCrcerror> for bool {
     #[inline(always)]
-    fn from(variant: EVENTS_CRCERROR_A) -> Self {
+    fn from(variant: EventsCrcerror) -> Self {
         variant as u8 != 0
     }
 }
-impl EVENTS_CRCERROR_R {
+#[doc = "Field `EVENTS_CRCERROR` reader - Packet received with CRC error"]
+pub type EventsCrcerrorR = crate::BitReader<EventsCrcerror>;
+impl EventsCrcerrorR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVENTS_CRCERROR_A {
+    pub const fn variant(&self) -> EventsCrcerror {
         match self.bits {
-            false => EVENTS_CRCERROR_A::NOT_GENERATED,
-            true => EVENTS_CRCERROR_A::GENERATED,
+            false => EventsCrcerror::NotGenerated,
+            true => EventsCrcerror::Generated,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
-    #[inline(always)]
-    pub fn is_not_generated(&self) -> bool {
-        *self == EVENTS_CRCERROR_A::NOT_GENERATED
-    }
-    #[doc = "Checks if the value of the field is `GENERATED`"]
-    #[inline(always)]
-    pub fn is_generated(&self) -> bool {
-        *self == EVENTS_CRCERROR_A::GENERATED
-    }
-}
-#[doc = "Field `EVENTS_CRCERROR` writer - Packet received with CRC error"]
-pub type EVENTS_CRCERROR_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_CRCERROR_SPEC, EVENTS_CRCERROR_A, O>;
-impl<'a, const O: u8> EVENTS_CRCERROR_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_CRCERROR_A::NOT_GENERATED)
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsCrcerror::NotGenerated
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut W {
-        self.variant(EVENTS_CRCERROR_A::GENERATED)
+    pub fn is_generated(&self) -> bool {
+        *self == EventsCrcerror::Generated
+    }
+}
+#[doc = "Field `EVENTS_CRCERROR` writer - Packet received with CRC error"]
+pub type EventsCrcerrorW<'a, REG> = crate::BitWriter<'a, REG, EventsCrcerror>;
+impl<'a, REG> EventsCrcerrorW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsCrcerror::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsCrcerror::Generated)
     }
 }
 impl R {
     #[doc = "Bit 0 - Packet received with CRC error"]
     #[inline(always)]
-    pub fn events_crcerror(&self) -> EVENTS_CRCERROR_R {
-        EVENTS_CRCERROR_R::new((self.bits & 1) != 0)
+    pub fn events_crcerror(&self) -> EventsCrcerrorR {
+        EventsCrcerrorR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Packet received with CRC error"]
     #[inline(always)]
-    pub fn events_crcerror(&mut self) -> EVENTS_CRCERROR_W<0> {
-        EVENTS_CRCERROR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_crcerror(&mut self) -> EventsCrcerrorW<'_, EventsCrcerrorSpec> {
+        EventsCrcerrorW::new(self, 0)
     }
 }
-#[doc = "Packet received with CRC error\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_crcerror](index.html) module"]
-pub struct EVENTS_CRCERROR_SPEC;
-impl crate::RegisterSpec for EVENTS_CRCERROR_SPEC {
+#[doc = "Packet received with CRC error\n\nYou can [`read`](crate::Reg::read) this register and get [`events_crcerror::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_crcerror::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsCrcerrorSpec;
+impl crate::RegisterSpec for EventsCrcerrorSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_crcerror::R](R) reader structure"]
-impl crate::Readable for EVENTS_CRCERROR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_crcerror::W](W) writer structure"]
-impl crate::Writable for EVENTS_CRCERROR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_crcerror::R`](R) reader structure"]
+impl crate::Readable for EventsCrcerrorSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_crcerror::W`](W) writer structure"]
+impl crate::Writable for EventsCrcerrorSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_CRCERROR to value 0"]
-impl crate::Resettable for EVENTS_CRCERROR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsCrcerrorSpec {}

@@ -1,53 +1,44 @@
 #[doc = "Register `TASKS_LFCLKSTART` writer"]
-pub struct W(crate::W<TASKS_LFCLKSTART_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TASKS_LFCLKSTART_SPEC>;
+pub type W = crate::W<TasksLfclkstartSpec>;
+#[doc = "Start LFCLK\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TasksLfclkstart {
+    #[doc = "1: Trigger task"]
+    Trigger = 1,
+}
+impl From<TasksLfclkstart> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: TasksLfclkstart) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `TASKS_LFCLKSTART` writer - Start LFCLK"]
+pub type TasksLfclkstartW<'a, REG> = crate::BitWriter<'a, REG, TasksLfclkstart>;
+impl<'a, REG> TasksLfclkstartW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Trigger task"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn trigger(self) -> &'a mut crate::W<REG> {
+        self.variant(TasksLfclkstart::Trigger)
     }
 }
-impl From<crate::W<TASKS_LFCLKSTART_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TASKS_LFCLKSTART_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `TASKS_LFCLKSTART` writer - "]
-pub type TASKS_LFCLKSTART_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TASKS_LFCLKSTART_SPEC, bool, O>;
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Start LFCLK"]
     #[inline(always)]
-    pub fn tasks_lfclkstart(&mut self) -> TASKS_LFCLKSTART_W<0> {
-        TASKS_LFCLKSTART_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn tasks_lfclkstart(&mut self) -> TasksLfclkstartW<'_, TasksLfclkstartSpec> {
+        TasksLfclkstartW::new(self, 0)
     }
 }
-#[doc = "Start LFCLK\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_lfclkstart](index.html) module"]
-pub struct TASKS_LFCLKSTART_SPEC;
-impl crate::RegisterSpec for TASKS_LFCLKSTART_SPEC {
+#[doc = "Start LFCLK\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_lfclkstart::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TasksLfclkstartSpec;
+impl crate::RegisterSpec for TasksLfclkstartSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [tasks_lfclkstart::W](W) writer structure"]
-impl crate::Writable for TASKS_LFCLKSTART_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`tasks_lfclkstart::W`](W) writer structure"]
+impl crate::Writable for TasksLfclkstartSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TASKS_LFCLKSTART to value 0"]
-impl crate::Resettable for TASKS_LFCLKSTART_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for TasksLfclkstartSpec {}

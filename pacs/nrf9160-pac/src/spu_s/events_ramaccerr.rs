@@ -1,127 +1,84 @@
 #[doc = "Register `EVENTS_RAMACCERR` reader"]
-pub struct R(crate::R<EVENTS_RAMACCERR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_RAMACCERR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_RAMACCERR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_RAMACCERR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsRamaccerrSpec>;
 #[doc = "Register `EVENTS_RAMACCERR` writer"]
-pub struct W(crate::W<EVENTS_RAMACCERR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_RAMACCERR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVENTS_RAMACCERR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVENTS_RAMACCERR_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `EVENTS_RAMACCERR` reader - A security violation has been detected for the RAM memory space"]
-pub type EVENTS_RAMACCERR_R = crate::BitReader<EVENTS_RAMACCERR_A>;
+pub type W = crate::W<EventsRamaccerrSpec>;
 #[doc = "A security violation has been detected for the RAM memory space\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVENTS_RAMACCERR_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsRamaccerr {
     #[doc = "0: Event not generated"]
-    NOT_GENERATED = 0,
+    NotGenerated = 0,
     #[doc = "1: Event generated"]
-    GENERATED = 1,
+    Generated = 1,
 }
-impl From<EVENTS_RAMACCERR_A> for bool {
+impl From<EventsRamaccerr> for bool {
     #[inline(always)]
-    fn from(variant: EVENTS_RAMACCERR_A) -> Self {
+    fn from(variant: EventsRamaccerr) -> Self {
         variant as u8 != 0
     }
 }
-impl EVENTS_RAMACCERR_R {
+#[doc = "Field `EVENTS_RAMACCERR` reader - A security violation has been detected for the RAM memory space"]
+pub type EventsRamaccerrR = crate::BitReader<EventsRamaccerr>;
+impl EventsRamaccerrR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVENTS_RAMACCERR_A {
+    pub const fn variant(&self) -> EventsRamaccerr {
         match self.bits {
-            false => EVENTS_RAMACCERR_A::NOT_GENERATED,
-            true => EVENTS_RAMACCERR_A::GENERATED,
+            false => EventsRamaccerr::NotGenerated,
+            true => EventsRamaccerr::Generated,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
-    #[inline(always)]
-    pub fn is_not_generated(&self) -> bool {
-        *self == EVENTS_RAMACCERR_A::NOT_GENERATED
-    }
-    #[doc = "Checks if the value of the field is `GENERATED`"]
-    #[inline(always)]
-    pub fn is_generated(&self) -> bool {
-        *self == EVENTS_RAMACCERR_A::GENERATED
-    }
-}
-#[doc = "Field `EVENTS_RAMACCERR` writer - A security violation has been detected for the RAM memory space"]
-pub type EVENTS_RAMACCERR_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_RAMACCERR_SPEC, EVENTS_RAMACCERR_A, O>;
-impl<'a, const O: u8> EVENTS_RAMACCERR_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_RAMACCERR_A::NOT_GENERATED)
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsRamaccerr::NotGenerated
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut W {
-        self.variant(EVENTS_RAMACCERR_A::GENERATED)
+    pub fn is_generated(&self) -> bool {
+        *self == EventsRamaccerr::Generated
+    }
+}
+#[doc = "Field `EVENTS_RAMACCERR` writer - A security violation has been detected for the RAM memory space"]
+pub type EventsRamaccerrW<'a, REG> = crate::BitWriter<'a, REG, EventsRamaccerr>;
+impl<'a, REG> EventsRamaccerrW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsRamaccerr::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsRamaccerr::Generated)
     }
 }
 impl R {
     #[doc = "Bit 0 - A security violation has been detected for the RAM memory space"]
     #[inline(always)]
-    pub fn events_ramaccerr(&self) -> EVENTS_RAMACCERR_R {
-        EVENTS_RAMACCERR_R::new((self.bits & 1) != 0)
+    pub fn events_ramaccerr(&self) -> EventsRamaccerrR {
+        EventsRamaccerrR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - A security violation has been detected for the RAM memory space"]
     #[inline(always)]
-    pub fn events_ramaccerr(&mut self) -> EVENTS_RAMACCERR_W<0> {
-        EVENTS_RAMACCERR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_ramaccerr(&mut self) -> EventsRamaccerrW<'_, EventsRamaccerrSpec> {
+        EventsRamaccerrW::new(self, 0)
     }
 }
-#[doc = "A security violation has been detected for the RAM memory space\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_ramaccerr](index.html) module"]
-pub struct EVENTS_RAMACCERR_SPEC;
-impl crate::RegisterSpec for EVENTS_RAMACCERR_SPEC {
+#[doc = "A security violation has been detected for the RAM memory space\n\nYou can [`read`](crate::Reg::read) this register and get [`events_ramaccerr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_ramaccerr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsRamaccerrSpec;
+impl crate::RegisterSpec for EventsRamaccerrSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_ramaccerr::R](R) reader structure"]
-impl crate::Readable for EVENTS_RAMACCERR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_ramaccerr::W](W) writer structure"]
-impl crate::Writable for EVENTS_RAMACCERR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_ramaccerr::R`](R) reader structure"]
+impl crate::Readable for EventsRamaccerrSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_ramaccerr::W`](W) writer structure"]
+impl crate::Writable for EventsRamaccerrSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_RAMACCERR to value 0"]
-impl crate::Resettable for EVENTS_RAMACCERR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsRamaccerrSpec {}

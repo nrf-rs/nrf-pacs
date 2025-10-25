@@ -1,122 +1,77 @@
 #[doc = "Register `PREFIX0` reader"]
-pub struct R(crate::R<PREFIX0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PREFIX0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PREFIX0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PREFIX0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Prefix0Spec>;
 #[doc = "Register `PREFIX0` writer"]
-pub struct W(crate::W<PREFIX0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PREFIX0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PREFIX0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PREFIX0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Prefix0Spec>;
 #[doc = "Field `AP0` reader - Address prefix 0. Decision point: START task."]
-pub type AP0_R = crate::FieldReader<u8, u8>;
+pub type Ap0R = crate::FieldReader;
 #[doc = "Field `AP0` writer - Address prefix 0. Decision point: START task."]
-pub type AP0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX0_SPEC, u8, u8, 8, O>;
+pub type Ap0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `AP1` reader - Address prefix 1. Decision point: START task."]
-pub type AP1_R = crate::FieldReader<u8, u8>;
+pub type Ap1R = crate::FieldReader;
 #[doc = "Field `AP1` writer - Address prefix 1. Decision point: START task."]
-pub type AP1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX0_SPEC, u8, u8, 8, O>;
+pub type Ap1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `AP2` reader - Address prefix 2. Decision point: START task."]
-pub type AP2_R = crate::FieldReader<u8, u8>;
+pub type Ap2R = crate::FieldReader;
 #[doc = "Field `AP2` writer - Address prefix 2. Decision point: START task."]
-pub type AP2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX0_SPEC, u8, u8, 8, O>;
+pub type Ap2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `AP3` reader - Address prefix 3. Decision point: START task."]
-pub type AP3_R = crate::FieldReader<u8, u8>;
+pub type Ap3R = crate::FieldReader;
 #[doc = "Field `AP3` writer - Address prefix 3. Decision point: START task."]
-pub type AP3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PREFIX0_SPEC, u8, u8, 8, O>;
+pub type Ap3W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Address prefix 0. Decision point: START task."]
     #[inline(always)]
-    pub fn ap0(&self) -> AP0_R {
-        AP0_R::new((self.bits & 0xff) as u8)
+    pub fn ap0(&self) -> Ap0R {
+        Ap0R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Address prefix 1. Decision point: START task."]
     #[inline(always)]
-    pub fn ap1(&self) -> AP1_R {
-        AP1_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn ap1(&self) -> Ap1R {
+        Ap1R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - Address prefix 2. Decision point: START task."]
     #[inline(always)]
-    pub fn ap2(&self) -> AP2_R {
-        AP2_R::new(((self.bits >> 16) & 0xff) as u8)
+    pub fn ap2(&self) -> Ap2R {
+        Ap2R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Address prefix 3. Decision point: START task."]
     #[inline(always)]
-    pub fn ap3(&self) -> AP3_R {
-        AP3_R::new(((self.bits >> 24) & 0xff) as u8)
+    pub fn ap3(&self) -> Ap3R {
+        Ap3R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Address prefix 0. Decision point: START task."]
     #[inline(always)]
-    pub fn ap0(&mut self) -> AP0_W<0> {
-        AP0_W::new(self)
+    pub fn ap0(&mut self) -> Ap0W<'_, Prefix0Spec> {
+        Ap0W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Address prefix 1. Decision point: START task."]
     #[inline(always)]
-    pub fn ap1(&mut self) -> AP1_W<8> {
-        AP1_W::new(self)
+    pub fn ap1(&mut self) -> Ap1W<'_, Prefix0Spec> {
+        Ap1W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Address prefix 2. Decision point: START task."]
     #[inline(always)]
-    pub fn ap2(&mut self) -> AP2_W<16> {
-        AP2_W::new(self)
+    pub fn ap2(&mut self) -> Ap2W<'_, Prefix0Spec> {
+        Ap2W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Address prefix 3. Decision point: START task."]
     #[inline(always)]
-    pub fn ap3(&mut self) -> AP3_W<24> {
-        AP3_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn ap3(&mut self) -> Ap3W<'_, Prefix0Spec> {
+        Ap3W::new(self, 24)
     }
 }
-#[doc = "Prefixes bytes for logical addresses 0 to 3.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prefix0](index.html) module"]
-pub struct PREFIX0_SPEC;
-impl crate::RegisterSpec for PREFIX0_SPEC {
+#[doc = "Prefixes bytes for logical addresses 0 to 3.\n\nYou can [`read`](crate::Reg::read) this register and get [`prefix0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prefix0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Prefix0Spec;
+impl crate::RegisterSpec for Prefix0Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [prefix0::R](R) reader structure"]
-impl crate::Readable for PREFIX0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [prefix0::W](W) writer structure"]
-impl crate::Writable for PREFIX0_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`prefix0::R`](R) reader structure"]
+impl crate::Readable for Prefix0Spec {}
+#[doc = "`write(|w| ..)` method takes [`prefix0::W`](W) writer structure"]
+impl crate::Writable for Prefix0Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets PREFIX0 to value 0"]
-impl crate::Resettable for PREFIX0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Prefix0Spec {}

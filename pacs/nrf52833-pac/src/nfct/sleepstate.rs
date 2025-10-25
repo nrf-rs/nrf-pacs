@@ -1,74 +1,54 @@
 #[doc = "Register `SLEEPSTATE` reader"]
-pub struct R(crate::R<SLEEPSTATE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SLEEPSTATE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SLEEPSTATE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SLEEPSTATE_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `SLEEPSTATE` reader - Reflects the sleep state during automatic collision resolution. Set to IDLE by a GOIDLE task. Set to SLEEP_A when a valid SLEEP_REQ frame is received or by a GOSLEEP task."]
-pub type SLEEPSTATE_R = crate::BitReader<SLEEPSTATE_A>;
+pub type R = crate::R<SleepstateSpec>;
 #[doc = "Reflects the sleep state during automatic collision resolution. Set to IDLE by a GOIDLE task. Set to SLEEP_A when a valid SLEEP_REQ frame is received or by a GOSLEEP task.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SLEEPSTATE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sleepstate {
     #[doc = "0: State is IDLE."]
-    IDLE = 0,
+    Idle = 0,
     #[doc = "1: State is SLEEP_A."]
-    SLEEP_A = 1,
+    SleepA = 1,
 }
-impl From<SLEEPSTATE_A> for bool {
+impl From<Sleepstate> for bool {
     #[inline(always)]
-    fn from(variant: SLEEPSTATE_A) -> Self {
+    fn from(variant: Sleepstate) -> Self {
         variant as u8 != 0
     }
 }
-impl SLEEPSTATE_R {
+#[doc = "Field `SLEEPSTATE` reader - Reflects the sleep state during automatic collision resolution. Set to IDLE by a GOIDLE task. Set to SLEEP_A when a valid SLEEP_REQ frame is received or by a GOSLEEP task."]
+pub type SleepstateR = crate::BitReader<Sleepstate>;
+impl SleepstateR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SLEEPSTATE_A {
+    pub const fn variant(&self) -> Sleepstate {
         match self.bits {
-            false => SLEEPSTATE_A::IDLE,
-            true => SLEEPSTATE_A::SLEEP_A,
+            false => Sleepstate::Idle,
+            true => Sleepstate::SleepA,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "State is IDLE."]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        *self == SLEEPSTATE_A::IDLE
+        *self == Sleepstate::Idle
     }
-    #[doc = "Checks if the value of the field is `SLEEP_A`"]
+    #[doc = "State is SLEEP_A."]
     #[inline(always)]
     pub fn is_sleep_a(&self) -> bool {
-        *self == SLEEPSTATE_A::SLEEP_A
+        *self == Sleepstate::SleepA
     }
 }
 impl R {
     #[doc = "Bit 0 - Reflects the sleep state during automatic collision resolution. Set to IDLE by a GOIDLE task. Set to SLEEP_A when a valid SLEEP_REQ frame is received or by a GOSLEEP task."]
     #[inline(always)]
-    pub fn sleepstate(&self) -> SLEEPSTATE_R {
-        SLEEPSTATE_R::new((self.bits & 1) != 0)
+    pub fn sleepstate(&self) -> SleepstateR {
+        SleepstateR::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Sleep state during automatic collision resolution\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sleepstate](index.html) module"]
-pub struct SLEEPSTATE_SPEC;
-impl crate::RegisterSpec for SLEEPSTATE_SPEC {
+#[doc = "Sleep state during automatic collision resolution\n\nYou can [`read`](crate::Reg::read) this register and get [`sleepstate::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct SleepstateSpec;
+impl crate::RegisterSpec for SleepstateSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sleepstate::R](R) reader structure"]
-impl crate::Readable for SLEEPSTATE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sleepstate::R`](R) reader structure"]
+impl crate::Readable for SleepstateSpec {}
 #[doc = "`reset()` method sets SLEEPSTATE to value 0"]
-impl crate::Resettable for SLEEPSTATE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for SleepstateSpec {}

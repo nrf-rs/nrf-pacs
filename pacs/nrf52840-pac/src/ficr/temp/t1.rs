@@ -1,40 +1,22 @@
 #[doc = "Register `T1` reader"]
-pub struct R(crate::R<T1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<T1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<T1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<T1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<T1Spec>;
 #[doc = "Field `T` reader - T (segment end) register"]
-pub type T_R = crate::FieldReader<u8, u8>;
+pub type TR = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - T (segment end) register"]
     #[inline(always)]
-    pub fn t(&self) -> T_R {
-        T_R::new((self.bits & 0xff) as u8)
+    pub fn t(&self) -> TR {
+        TR::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "Segment end T1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t1](index.html) module"]
-pub struct T1_SPEC;
-impl crate::RegisterSpec for T1_SPEC {
+#[doc = "Segment end T1\n\nYou can [`read`](crate::Reg::read) this register and get [`t1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct T1Spec;
+impl crate::RegisterSpec for T1Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [t1::R](R) reader structure"]
-impl crate::Readable for T1_SPEC {
-    type Reader = R;
-}
-#[doc = "`reset()` method sets T1 to value 0xffff_ff00"]
-impl crate::Resettable for T1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ff00
-    }
+#[doc = "`read()` method returns [`t1::R`](R) reader structure"]
+impl crate::Readable for T1Spec {}
+#[doc = "`reset()` method sets T1 to value 0xffff_ffff"]
+impl crate::Resettable for T1Spec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

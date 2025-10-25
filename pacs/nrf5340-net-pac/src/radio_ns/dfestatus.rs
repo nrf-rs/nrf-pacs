@@ -1,149 +1,133 @@
 #[doc = "Register `DFESTATUS` reader"]
-pub struct R(crate::R<DFESTATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DFESTATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DFESTATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DFESTATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `SWITCHINGSTATE` reader - Internal state of switching state machine"]
-pub type SWITCHINGSTATE_R = crate::FieldReader<u8, SWITCHINGSTATE_A>;
+pub type R = crate::R<DfestatusSpec>;
 #[doc = "Internal state of switching state machine\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SWITCHINGSTATE_A {
+pub enum Switchingstate {
     #[doc = "0: Switching state Idle"]
-    IDLE = 0,
+    Idle = 0,
     #[doc = "1: Switching state Offset"]
-    OFFSET = 1,
+    Offset = 1,
     #[doc = "2: Switching state Guard"]
-    GUARD = 2,
+    Guard = 2,
     #[doc = "3: Switching state Ref"]
-    REF = 3,
+    Ref = 3,
     #[doc = "4: Switching state Switching"]
-    SWITCHING = 4,
+    Switching = 4,
     #[doc = "5: Switching state Ending"]
-    ENDING = 5,
+    Ending = 5,
 }
-impl From<SWITCHINGSTATE_A> for u8 {
+impl From<Switchingstate> for u8 {
     #[inline(always)]
-    fn from(variant: SWITCHINGSTATE_A) -> Self {
+    fn from(variant: Switchingstate) -> Self {
         variant as _
     }
 }
-impl SWITCHINGSTATE_R {
+impl crate::FieldSpec for Switchingstate {
+    type Ux = u8;
+}
+impl crate::IsEnum for Switchingstate {}
+#[doc = "Field `SWITCHINGSTATE` reader - Internal state of switching state machine"]
+pub type SwitchingstateR = crate::FieldReader<Switchingstate>;
+impl SwitchingstateR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SWITCHINGSTATE_A> {
+    pub const fn variant(&self) -> Option<Switchingstate> {
         match self.bits {
-            0 => Some(SWITCHINGSTATE_A::IDLE),
-            1 => Some(SWITCHINGSTATE_A::OFFSET),
-            2 => Some(SWITCHINGSTATE_A::GUARD),
-            3 => Some(SWITCHINGSTATE_A::REF),
-            4 => Some(SWITCHINGSTATE_A::SWITCHING),
-            5 => Some(SWITCHINGSTATE_A::ENDING),
+            0 => Some(Switchingstate::Idle),
+            1 => Some(Switchingstate::Offset),
+            2 => Some(Switchingstate::Guard),
+            3 => Some(Switchingstate::Ref),
+            4 => Some(Switchingstate::Switching),
+            5 => Some(Switchingstate::Ending),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "Switching state Idle"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        *self == SWITCHINGSTATE_A::IDLE
+        *self == Switchingstate::Idle
     }
-    #[doc = "Checks if the value of the field is `OFFSET`"]
+    #[doc = "Switching state Offset"]
     #[inline(always)]
     pub fn is_offset(&self) -> bool {
-        *self == SWITCHINGSTATE_A::OFFSET
+        *self == Switchingstate::Offset
     }
-    #[doc = "Checks if the value of the field is `GUARD`"]
+    #[doc = "Switching state Guard"]
     #[inline(always)]
     pub fn is_guard(&self) -> bool {
-        *self == SWITCHINGSTATE_A::GUARD
+        *self == Switchingstate::Guard
     }
-    #[doc = "Checks if the value of the field is `REF`"]
+    #[doc = "Switching state Ref"]
     #[inline(always)]
     pub fn is_ref(&self) -> bool {
-        *self == SWITCHINGSTATE_A::REF
+        *self == Switchingstate::Ref
     }
-    #[doc = "Checks if the value of the field is `SWITCHING`"]
+    #[doc = "Switching state Switching"]
     #[inline(always)]
     pub fn is_switching(&self) -> bool {
-        *self == SWITCHINGSTATE_A::SWITCHING
+        *self == Switchingstate::Switching
     }
-    #[doc = "Checks if the value of the field is `ENDING`"]
+    #[doc = "Switching state Ending"]
     #[inline(always)]
     pub fn is_ending(&self) -> bool {
-        *self == SWITCHINGSTATE_A::ENDING
+        *self == Switchingstate::Ending
     }
 }
-#[doc = "Field `SAMPLINGSTATE` reader - Internal state of sampling state machine"]
-pub type SAMPLINGSTATE_R = crate::BitReader<SAMPLINGSTATE_A>;
 #[doc = "Internal state of sampling state machine\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SAMPLINGSTATE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Samplingstate {
     #[doc = "0: Sampling state Idle"]
-    IDLE = 0,
+    Idle = 0,
     #[doc = "1: Sampling state Sampling"]
-    SAMPLING = 1,
+    Sampling = 1,
 }
-impl From<SAMPLINGSTATE_A> for bool {
+impl From<Samplingstate> for bool {
     #[inline(always)]
-    fn from(variant: SAMPLINGSTATE_A) -> Self {
+    fn from(variant: Samplingstate) -> Self {
         variant as u8 != 0
     }
 }
-impl SAMPLINGSTATE_R {
+#[doc = "Field `SAMPLINGSTATE` reader - Internal state of sampling state machine"]
+pub type SamplingstateR = crate::BitReader<Samplingstate>;
+impl SamplingstateR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SAMPLINGSTATE_A {
+    pub const fn variant(&self) -> Samplingstate {
         match self.bits {
-            false => SAMPLINGSTATE_A::IDLE,
-            true => SAMPLINGSTATE_A::SAMPLING,
+            false => Samplingstate::Idle,
+            true => Samplingstate::Sampling,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "Sampling state Idle"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        *self == SAMPLINGSTATE_A::IDLE
+        *self == Samplingstate::Idle
     }
-    #[doc = "Checks if the value of the field is `SAMPLING`"]
+    #[doc = "Sampling state Sampling"]
     #[inline(always)]
     pub fn is_sampling(&self) -> bool {
-        *self == SAMPLINGSTATE_A::SAMPLING
+        *self == Samplingstate::Sampling
     }
 }
 impl R {
     #[doc = "Bits 0:2 - Internal state of switching state machine"]
     #[inline(always)]
-    pub fn switchingstate(&self) -> SWITCHINGSTATE_R {
-        SWITCHINGSTATE_R::new((self.bits & 7) as u8)
+    pub fn switchingstate(&self) -> SwitchingstateR {
+        SwitchingstateR::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 4 - Internal state of sampling state machine"]
     #[inline(always)]
-    pub fn samplingstate(&self) -> SAMPLINGSTATE_R {
-        SAMPLINGSTATE_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn samplingstate(&self) -> SamplingstateR {
+        SamplingstateR::new(((self.bits >> 4) & 1) != 0)
     }
 }
-#[doc = "DFE status information\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dfestatus](index.html) module"]
-pub struct DFESTATUS_SPEC;
-impl crate::RegisterSpec for DFESTATUS_SPEC {
+#[doc = "DFE status information\n\nYou can [`read`](crate::Reg::read) this register and get [`dfestatus::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct DfestatusSpec;
+impl crate::RegisterSpec for DfestatusSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dfestatus::R](R) reader structure"]
-impl crate::Readable for DFESTATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dfestatus::R`](R) reader structure"]
+impl crate::Readable for DfestatusSpec {}
 #[doc = "`reset()` method sets DFESTATUS to value 0"]
-impl crate::Resettable for DFESTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for DfestatusSpec {}

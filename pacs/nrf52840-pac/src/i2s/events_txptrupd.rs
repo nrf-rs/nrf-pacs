@@ -1,81 +1,84 @@
 #[doc = "Register `EVENTS_TXPTRUPD` reader"]
-pub struct R(crate::R<EVENTS_TXPTRUPD_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_TXPTRUPD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_TXPTRUPD_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_TXPTRUPD_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsTxptrupdSpec>;
 #[doc = "Register `EVENTS_TXPTRUPD` writer"]
-pub struct W(crate::W<EVENTS_TXPTRUPD_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_TXPTRUPD_SPEC>;
+pub type W = crate::W<EventsTxptrupdSpec>;
+#[doc = "The TDX.PTR register has been copied to internal double-buffers. When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsTxptrupd {
+    #[doc = "0: Event not generated"]
+    NotGenerated = 0,
+    #[doc = "1: Event generated"]
+    Generated = 1,
+}
+impl From<EventsTxptrupd> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: EventsTxptrupd) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `EVENTS_TXPTRUPD` reader - The TDX.PTR register has been copied to internal double-buffers. When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin."]
+pub type EventsTxptrupdR = crate::BitReader<EventsTxptrupd>;
+impl EventsTxptrupdR {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub const fn variant(&self) -> EventsTxptrupd {
+        match self.bits {
+            false => EventsTxptrupd::NotGenerated,
+            true => EventsTxptrupd::Generated,
+        }
+    }
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsTxptrupd::NotGenerated
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn is_generated(&self) -> bool {
+        *self == EventsTxptrupd::Generated
     }
 }
-impl From<crate::W<EVENTS_TXPTRUPD_SPEC>> for W {
+#[doc = "Field `EVENTS_TXPTRUPD` writer - The TDX.PTR register has been copied to internal double-buffers. When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin."]
+pub type EventsTxptrupdW<'a, REG> = crate::BitWriter<'a, REG, EventsTxptrupd>;
+impl<'a, REG> EventsTxptrupdW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
     #[inline(always)]
-    fn from(writer: crate::W<EVENTS_TXPTRUPD_SPEC>) -> Self {
-        W(writer)
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsTxptrupd::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsTxptrupd::Generated)
     }
 }
-#[doc = "Field `EVENTS_TXPTRUPD` reader - "]
-pub type EVENTS_TXPTRUPD_R = crate::BitReader<bool>;
-#[doc = "Field `EVENTS_TXPTRUPD` writer - "]
-pub type EVENTS_TXPTRUPD_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_TXPTRUPD_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - The TDX.PTR register has been copied to internal double-buffers. When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin."]
     #[inline(always)]
-    pub fn events_txptrupd(&self) -> EVENTS_TXPTRUPD_R {
-        EVENTS_TXPTRUPD_R::new((self.bits & 1) != 0)
+    pub fn events_txptrupd(&self) -> EventsTxptrupdR {
+        EventsTxptrupdR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - The TDX.PTR register has been copied to internal double-buffers. When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin."]
     #[inline(always)]
-    pub fn events_txptrupd(&mut self) -> EVENTS_TXPTRUPD_W<0> {
-        EVENTS_TXPTRUPD_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_txptrupd(&mut self) -> EventsTxptrupdW<'_, EventsTxptrupdSpec> {
+        EventsTxptrupdW::new(self, 0)
     }
 }
-#[doc = "The TDX.PTR register has been copied to internal double-buffers. When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_txptrupd](index.html) module"]
-pub struct EVENTS_TXPTRUPD_SPEC;
-impl crate::RegisterSpec for EVENTS_TXPTRUPD_SPEC {
+#[doc = "The TDX.PTR register has been copied to internal double-buffers. When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin.\n\nYou can [`read`](crate::Reg::read) this register and get [`events_txptrupd::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_txptrupd::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsTxptrupdSpec;
+impl crate::RegisterSpec for EventsTxptrupdSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_txptrupd::R](R) reader structure"]
-impl crate::Readable for EVENTS_TXPTRUPD_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_txptrupd::W](W) writer structure"]
-impl crate::Writable for EVENTS_TXPTRUPD_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_txptrupd::R`](R) reader structure"]
+impl crate::Readable for EventsTxptrupdSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_txptrupd::W`](W) writer structure"]
+impl crate::Writable for EventsTxptrupdSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_TXPTRUPD to value 0"]
-impl crate::Resettable for EVENTS_TXPTRUPD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsTxptrupdSpec {}

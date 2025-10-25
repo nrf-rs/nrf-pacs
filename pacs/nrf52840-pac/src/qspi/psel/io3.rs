@@ -1,154 +1,114 @@
 #[doc = "Register `IO3` reader"]
-pub struct R(crate::R<IO3_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IO3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IO3_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IO3_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Io3Spec>;
 #[doc = "Register `IO3` writer"]
-pub struct W(crate::W<IO3_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IO3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IO3_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IO3_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Io3Spec>;
 #[doc = "Field `PIN` reader - Pin number"]
-pub type PIN_R = crate::FieldReader<u8, u8>;
+pub type PinR = crate::FieldReader;
 #[doc = "Field `PIN` writer - Pin number"]
-pub type PIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IO3_SPEC, u8, u8, 5, O>;
+pub type PinW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PORT` reader - Port number"]
-pub type PORT_R = crate::BitReader<bool>;
+pub type PortR = crate::BitReader;
 #[doc = "Field `PORT` writer - Port number"]
-pub type PORT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IO3_SPEC, bool, O>;
-#[doc = "Field `CONNECT` reader - Connection"]
-pub type CONNECT_R = crate::BitReader<CONNECT_A>;
+pub type PortW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Connection\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CONNECT_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Connect {
     #[doc = "1: Disconnect"]
-    DISCONNECTED = 1,
+    Disconnected = 1,
     #[doc = "0: Connect"]
-    CONNECTED = 0,
+    Connected = 0,
 }
-impl From<CONNECT_A> for bool {
+impl From<Connect> for bool {
     #[inline(always)]
-    fn from(variant: CONNECT_A) -> Self {
+    fn from(variant: Connect) -> Self {
         variant as u8 != 0
     }
 }
-impl CONNECT_R {
+#[doc = "Field `CONNECT` reader - Connection"]
+pub type ConnectR = crate::BitReader<Connect>;
+impl ConnectR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CONNECT_A {
+    pub const fn variant(&self) -> Connect {
         match self.bits {
-            true => CONNECT_A::DISCONNECTED,
-            false => CONNECT_A::CONNECTED,
+            true => Connect::Disconnected,
+            false => Connect::Connected,
         }
     }
-    #[doc = "Checks if the value of the field is `DISCONNECTED`"]
-    #[inline(always)]
-    pub fn is_disconnected(&self) -> bool {
-        *self == CONNECT_A::DISCONNECTED
-    }
-    #[doc = "Checks if the value of the field is `CONNECTED`"]
-    #[inline(always)]
-    pub fn is_connected(&self) -> bool {
-        *self == CONNECT_A::CONNECTED
-    }
-}
-#[doc = "Field `CONNECT` writer - Connection"]
-pub type CONNECT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IO3_SPEC, CONNECT_A, O>;
-impl<'a, const O: u8> CONNECT_W<'a, O> {
     #[doc = "Disconnect"]
     #[inline(always)]
-    pub fn disconnected(self) -> &'a mut W {
-        self.variant(CONNECT_A::DISCONNECTED)
+    pub fn is_disconnected(&self) -> bool {
+        *self == Connect::Disconnected
     }
     #[doc = "Connect"]
     #[inline(always)]
-    pub fn connected(self) -> &'a mut W {
-        self.variant(CONNECT_A::CONNECTED)
+    pub fn is_connected(&self) -> bool {
+        *self == Connect::Connected
+    }
+}
+#[doc = "Field `CONNECT` writer - Connection"]
+pub type ConnectW<'a, REG> = crate::BitWriter<'a, REG, Connect>;
+impl<'a, REG> ConnectW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disconnect"]
+    #[inline(always)]
+    pub fn disconnected(self) -> &'a mut crate::W<REG> {
+        self.variant(Connect::Disconnected)
+    }
+    #[doc = "Connect"]
+    #[inline(always)]
+    pub fn connected(self) -> &'a mut crate::W<REG> {
+        self.variant(Connect::Connected)
     }
 }
 impl R {
     #[doc = "Bits 0:4 - Pin number"]
     #[inline(always)]
-    pub fn pin(&self) -> PIN_R {
-        PIN_R::new((self.bits & 0x1f) as u8)
+    pub fn pin(&self) -> PinR {
+        PinR::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bit 5 - Port number"]
     #[inline(always)]
-    pub fn port(&self) -> PORT_R {
-        PORT_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn port(&self) -> PortR {
+        PortR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 31 - Connection"]
     #[inline(always)]
-    pub fn connect(&self) -> CONNECT_R {
-        CONNECT_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn connect(&self) -> ConnectR {
+        ConnectR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Pin number"]
     #[inline(always)]
-    pub fn pin(&mut self) -> PIN_W<0> {
-        PIN_W::new(self)
+    pub fn pin(&mut self) -> PinW<'_, Io3Spec> {
+        PinW::new(self, 0)
     }
     #[doc = "Bit 5 - Port number"]
     #[inline(always)]
-    pub fn port(&mut self) -> PORT_W<5> {
-        PORT_W::new(self)
+    pub fn port(&mut self) -> PortW<'_, Io3Spec> {
+        PortW::new(self, 5)
     }
     #[doc = "Bit 31 - Connection"]
     #[inline(always)]
-    pub fn connect(&mut self) -> CONNECT_W<31> {
-        CONNECT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn connect(&mut self) -> ConnectW<'_, Io3Spec> {
+        ConnectW::new(self, 31)
     }
 }
-#[doc = "Pin select for serial data IO3.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [io3](index.html) module"]
-pub struct IO3_SPEC;
-impl crate::RegisterSpec for IO3_SPEC {
+#[doc = "Pin select for serial data IO3.\n\nYou can [`read`](crate::Reg::read) this register and get [`io3::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`io3::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Io3Spec;
+impl crate::RegisterSpec for Io3Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [io3::R](R) reader structure"]
-impl crate::Readable for IO3_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [io3::W](W) writer structure"]
-impl crate::Writable for IO3_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`io3::R`](R) reader structure"]
+impl crate::Readable for Io3Spec {}
+#[doc = "`write(|w| ..)` method takes [`io3::W`](W) writer structure"]
+impl crate::Writable for Io3Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets IO3 to value 0xffff_ffff"]
-impl crate::Resettable for IO3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for Io3Spec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

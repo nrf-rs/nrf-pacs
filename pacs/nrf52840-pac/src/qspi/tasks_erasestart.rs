@@ -1,53 +1,44 @@
 #[doc = "Register `TASKS_ERASESTART` writer"]
-pub struct W(crate::W<TASKS_ERASESTART_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TASKS_ERASESTART_SPEC>;
+pub type W = crate::W<TasksErasestartSpec>;
+#[doc = "Start external flash memory erase operation\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TasksErasestart {
+    #[doc = "1: Trigger task"]
+    Trigger = 1,
+}
+impl From<TasksErasestart> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: TasksErasestart) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `TASKS_ERASESTART` writer - Start external flash memory erase operation"]
+pub type TasksErasestartW<'a, REG> = crate::BitWriter<'a, REG, TasksErasestart>;
+impl<'a, REG> TasksErasestartW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Trigger task"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn trigger(self) -> &'a mut crate::W<REG> {
+        self.variant(TasksErasestart::Trigger)
     }
 }
-impl From<crate::W<TASKS_ERASESTART_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TASKS_ERASESTART_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `TASKS_ERASESTART` writer - "]
-pub type TASKS_ERASESTART_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TASKS_ERASESTART_SPEC, bool, O>;
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Start external flash memory erase operation"]
     #[inline(always)]
-    pub fn tasks_erasestart(&mut self) -> TASKS_ERASESTART_W<0> {
-        TASKS_ERASESTART_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn tasks_erasestart(&mut self) -> TasksErasestartW<'_, TasksErasestartSpec> {
+        TasksErasestartW::new(self, 0)
     }
 }
-#[doc = "Start external flash memory erase operation\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_erasestart](index.html) module"]
-pub struct TASKS_ERASESTART_SPEC;
-impl crate::RegisterSpec for TASKS_ERASESTART_SPEC {
+#[doc = "Start external flash memory erase operation\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_erasestart::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TasksErasestartSpec;
+impl crate::RegisterSpec for TasksErasestartSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [tasks_erasestart::W](W) writer structure"]
-impl crate::Writable for TASKS_ERASESTART_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`tasks_erasestart::W`](W) writer structure"]
+impl crate::Writable for TasksErasestartSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TASKS_ERASESTART to value 0"]
-impl crate::Resettable for TASKS_ERASESTART_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for TasksErasestartSpec {}

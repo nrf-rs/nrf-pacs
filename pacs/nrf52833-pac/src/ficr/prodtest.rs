@@ -1,77 +1,62 @@
 #[doc = "Register `PRODTEST[%s]` reader"]
-pub struct R(crate::R<PRODTEST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PRODTEST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PRODTEST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PRODTEST_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `PRODTEST` reader - Production test signature n"]
-pub type PRODTEST_R = crate::FieldReader<u32, PRODTEST_A>;
+pub type R = crate::R<ProdtestSpec>;
 #[doc = "Production test signature n\n\nValue on reset: 4294967295"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
-pub enum PRODTEST_A {
+pub enum Prodtest {
     #[doc = "3141677471: Production tests done"]
-    DONE = 3141677471,
+    Done = 3141677471,
     #[doc = "4294967295: Production tests not done"]
-    NOT_DONE = 4294967295,
+    NotDone = 4294967295,
 }
-impl From<PRODTEST_A> for u32 {
+impl From<Prodtest> for u32 {
     #[inline(always)]
-    fn from(variant: PRODTEST_A) -> Self {
+    fn from(variant: Prodtest) -> Self {
         variant as _
     }
 }
-impl PRODTEST_R {
+impl crate::FieldSpec for Prodtest {
+    type Ux = u32;
+}
+impl crate::IsEnum for Prodtest {}
+#[doc = "Field `PRODTEST` reader - Production test signature n"]
+pub type ProdtestR = crate::FieldReader<Prodtest>;
+impl ProdtestR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRODTEST_A> {
+    pub const fn variant(&self) -> Option<Prodtest> {
         match self.bits {
-            3141677471 => Some(PRODTEST_A::DONE),
-            4294967295 => Some(PRODTEST_A::NOT_DONE),
+            3141677471 => Some(Prodtest::Done),
+            4294967295 => Some(Prodtest::NotDone),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DONE`"]
+    #[doc = "Production tests done"]
     #[inline(always)]
     pub fn is_done(&self) -> bool {
-        *self == PRODTEST_A::DONE
+        *self == Prodtest::Done
     }
-    #[doc = "Checks if the value of the field is `NOT_DONE`"]
+    #[doc = "Production tests not done"]
     #[inline(always)]
     pub fn is_not_done(&self) -> bool {
-        *self == PRODTEST_A::NOT_DONE
+        *self == Prodtest::NotDone
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Production test signature n"]
     #[inline(always)]
-    pub fn prodtest(&self) -> PRODTEST_R {
-        PRODTEST_R::new(self.bits)
+    pub fn prodtest(&self) -> ProdtestR {
+        ProdtestR::new(self.bits)
     }
 }
-#[doc = "Description collection: Production test signature n\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prodtest](index.html) module"]
-pub struct PRODTEST_SPEC;
-impl crate::RegisterSpec for PRODTEST_SPEC {
+#[doc = "Description collection: Production test signature n\n\nYou can [`read`](crate::Reg::read) this register and get [`prodtest::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ProdtestSpec;
+impl crate::RegisterSpec for ProdtestSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [prodtest::R](R) reader structure"]
-impl crate::Readable for PRODTEST_SPEC {
-    type Reader = R;
-}
-#[doc = "`reset()` method sets PRODTEST[%s]
-to value 0xffff_ffff"]
-impl crate::Resettable for PRODTEST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+#[doc = "`read()` method returns [`prodtest::R`](R) reader structure"]
+impl crate::Readable for ProdtestSpec {}
+#[doc = "`reset()` method sets PRODTEST[%s] to value 0xffff_ffff"]
+impl crate::Resettable for ProdtestSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

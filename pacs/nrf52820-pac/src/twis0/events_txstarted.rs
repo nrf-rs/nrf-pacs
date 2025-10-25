@@ -1,127 +1,84 @@
 #[doc = "Register `EVENTS_TXSTARTED` reader"]
-pub struct R(crate::R<EVENTS_TXSTARTED_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_TXSTARTED_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_TXSTARTED_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_TXSTARTED_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsTxstartedSpec>;
 #[doc = "Register `EVENTS_TXSTARTED` writer"]
-pub struct W(crate::W<EVENTS_TXSTARTED_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_TXSTARTED_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVENTS_TXSTARTED_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVENTS_TXSTARTED_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `EVENTS_TXSTARTED` reader - Transmit sequence started"]
-pub type EVENTS_TXSTARTED_R = crate::BitReader<EVENTS_TXSTARTED_A>;
+pub type W = crate::W<EventsTxstartedSpec>;
 #[doc = "Transmit sequence started\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVENTS_TXSTARTED_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsTxstarted {
     #[doc = "0: Event not generated"]
-    NOT_GENERATED = 0,
+    NotGenerated = 0,
     #[doc = "1: Event generated"]
-    GENERATED = 1,
+    Generated = 1,
 }
-impl From<EVENTS_TXSTARTED_A> for bool {
+impl From<EventsTxstarted> for bool {
     #[inline(always)]
-    fn from(variant: EVENTS_TXSTARTED_A) -> Self {
+    fn from(variant: EventsTxstarted) -> Self {
         variant as u8 != 0
     }
 }
-impl EVENTS_TXSTARTED_R {
+#[doc = "Field `EVENTS_TXSTARTED` reader - Transmit sequence started"]
+pub type EventsTxstartedR = crate::BitReader<EventsTxstarted>;
+impl EventsTxstartedR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVENTS_TXSTARTED_A {
+    pub const fn variant(&self) -> EventsTxstarted {
         match self.bits {
-            false => EVENTS_TXSTARTED_A::NOT_GENERATED,
-            true => EVENTS_TXSTARTED_A::GENERATED,
+            false => EventsTxstarted::NotGenerated,
+            true => EventsTxstarted::Generated,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
-    #[inline(always)]
-    pub fn is_not_generated(&self) -> bool {
-        *self == EVENTS_TXSTARTED_A::NOT_GENERATED
-    }
-    #[doc = "Checks if the value of the field is `GENERATED`"]
-    #[inline(always)]
-    pub fn is_generated(&self) -> bool {
-        *self == EVENTS_TXSTARTED_A::GENERATED
-    }
-}
-#[doc = "Field `EVENTS_TXSTARTED` writer - Transmit sequence started"]
-pub type EVENTS_TXSTARTED_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_TXSTARTED_SPEC, EVENTS_TXSTARTED_A, O>;
-impl<'a, const O: u8> EVENTS_TXSTARTED_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_TXSTARTED_A::NOT_GENERATED)
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsTxstarted::NotGenerated
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut W {
-        self.variant(EVENTS_TXSTARTED_A::GENERATED)
+    pub fn is_generated(&self) -> bool {
+        *self == EventsTxstarted::Generated
+    }
+}
+#[doc = "Field `EVENTS_TXSTARTED` writer - Transmit sequence started"]
+pub type EventsTxstartedW<'a, REG> = crate::BitWriter<'a, REG, EventsTxstarted>;
+impl<'a, REG> EventsTxstartedW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsTxstarted::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsTxstarted::Generated)
     }
 }
 impl R {
     #[doc = "Bit 0 - Transmit sequence started"]
     #[inline(always)]
-    pub fn events_txstarted(&self) -> EVENTS_TXSTARTED_R {
-        EVENTS_TXSTARTED_R::new((self.bits & 1) != 0)
+    pub fn events_txstarted(&self) -> EventsTxstartedR {
+        EventsTxstartedR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Transmit sequence started"]
     #[inline(always)]
-    pub fn events_txstarted(&mut self) -> EVENTS_TXSTARTED_W<0> {
-        EVENTS_TXSTARTED_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_txstarted(&mut self) -> EventsTxstartedW<'_, EventsTxstartedSpec> {
+        EventsTxstartedW::new(self, 0)
     }
 }
-#[doc = "Transmit sequence started\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_txstarted](index.html) module"]
-pub struct EVENTS_TXSTARTED_SPEC;
-impl crate::RegisterSpec for EVENTS_TXSTARTED_SPEC {
+#[doc = "Transmit sequence started\n\nYou can [`read`](crate::Reg::read) this register and get [`events_txstarted::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_txstarted::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsTxstartedSpec;
+impl crate::RegisterSpec for EventsTxstartedSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_txstarted::R](R) reader structure"]
-impl crate::Readable for EVENTS_TXSTARTED_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_txstarted::W](W) writer structure"]
-impl crate::Writable for EVENTS_TXSTARTED_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_txstarted::R`](R) reader structure"]
+impl crate::Readable for EventsTxstartedSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_txstarted::W`](W) writer structure"]
+impl crate::Writable for EventsTxstartedSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_TXSTARTED to value 0"]
-impl crate::Resettable for EVENTS_TXSTARTED_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsTxstartedSpec {}

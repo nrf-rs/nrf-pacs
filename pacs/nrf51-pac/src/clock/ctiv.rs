@@ -1,80 +1,35 @@
 #[doc = "Register `CTIV` reader"]
-pub struct R(crate::R<CTIV_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTIV_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTIV_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CtivSpec>;
 #[doc = "Register `CTIV` writer"]
-pub struct W(crate::W<CTIV_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTIV_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTIV_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CtivSpec>;
 #[doc = "Field `CTIV` reader - Calibration timer interval in 0.25s resolution."]
-pub type CTIV_R = crate::FieldReader<u8, u8>;
+pub type CtivR = crate::FieldReader;
 #[doc = "Field `CTIV` writer - Calibration timer interval in 0.25s resolution."]
-pub type CTIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTIV_SPEC, u8, u8, 7, O>;
+pub type CtivW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 impl R {
     #[doc = "Bits 0:6 - Calibration timer interval in 0.25s resolution."]
     #[inline(always)]
-    pub fn ctiv(&self) -> CTIV_R {
-        CTIV_R::new((self.bits & 0x7f) as u8)
+    pub fn ctiv(&self) -> CtivR {
+        CtivR::new((self.bits & 0x7f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:6 - Calibration timer interval in 0.25s resolution."]
     #[inline(always)]
-    pub fn ctiv(&mut self) -> CTIV_W<0> {
-        CTIV_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn ctiv(&mut self) -> CtivW<'_, CtivSpec> {
+        CtivW::new(self, 0)
     }
 }
-#[doc = "Calibration timer interval.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctiv](index.html) module"]
-pub struct CTIV_SPEC;
-impl crate::RegisterSpec for CTIV_SPEC {
+#[doc = "Calibration timer interval.\n\nYou can [`read`](crate::Reg::read) this register and get [`ctiv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctiv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CtivSpec;
+impl crate::RegisterSpec for CtivSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ctiv::R](R) reader structure"]
-impl crate::Readable for CTIV_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ctiv::W](W) writer structure"]
-impl crate::Writable for CTIV_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ctiv::R`](R) reader structure"]
+impl crate::Readable for CtivSpec {}
+#[doc = "`write(|w| ..)` method takes [`ctiv::W`](W) writer structure"]
+impl crate::Writable for CtivSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CTIV to value 0"]
-impl crate::Resettable for CTIV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for CtivSpec {}

@@ -1,126 +1,84 @@
 #[doc = "Register `LEDPOL` reader"]
-pub struct R(crate::R<LEDPOL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LEDPOL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LEDPOL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LEDPOL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LedpolSpec>;
 #[doc = "Register `LEDPOL` writer"]
-pub struct W(crate::W<LEDPOL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LEDPOL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LEDPOL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LEDPOL_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `LEDPOL` reader - LED output pin polarity"]
-pub type LEDPOL_R = crate::BitReader<LEDPOL_A>;
+pub type W = crate::W<LedpolSpec>;
 #[doc = "LED output pin polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LEDPOL_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ledpol {
     #[doc = "0: Led active on output pin low"]
-    ACTIVE_LOW = 0,
+    ActiveLow = 0,
     #[doc = "1: Led active on output pin high"]
-    ACTIVE_HIGH = 1,
+    ActiveHigh = 1,
 }
-impl From<LEDPOL_A> for bool {
+impl From<Ledpol> for bool {
     #[inline(always)]
-    fn from(variant: LEDPOL_A) -> Self {
+    fn from(variant: Ledpol) -> Self {
         variant as u8 != 0
     }
 }
-impl LEDPOL_R {
+#[doc = "Field `LEDPOL` reader - LED output pin polarity"]
+pub type LedpolR = crate::BitReader<Ledpol>;
+impl LedpolR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LEDPOL_A {
+    pub const fn variant(&self) -> Ledpol {
         match self.bits {
-            false => LEDPOL_A::ACTIVE_LOW,
-            true => LEDPOL_A::ACTIVE_HIGH,
+            false => Ledpol::ActiveLow,
+            true => Ledpol::ActiveHigh,
         }
     }
-    #[doc = "Checks if the value of the field is `ACTIVE_LOW`"]
-    #[inline(always)]
-    pub fn is_active_low(&self) -> bool {
-        *self == LEDPOL_A::ACTIVE_LOW
-    }
-    #[doc = "Checks if the value of the field is `ACTIVE_HIGH`"]
-    #[inline(always)]
-    pub fn is_active_high(&self) -> bool {
-        *self == LEDPOL_A::ACTIVE_HIGH
-    }
-}
-#[doc = "Field `LEDPOL` writer - LED output pin polarity"]
-pub type LEDPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDPOL_SPEC, LEDPOL_A, O>;
-impl<'a, const O: u8> LEDPOL_W<'a, O> {
     #[doc = "Led active on output pin low"]
     #[inline(always)]
-    pub fn active_low(self) -> &'a mut W {
-        self.variant(LEDPOL_A::ACTIVE_LOW)
+    pub fn is_active_low(&self) -> bool {
+        *self == Ledpol::ActiveLow
     }
     #[doc = "Led active on output pin high"]
     #[inline(always)]
-    pub fn active_high(self) -> &'a mut W {
-        self.variant(LEDPOL_A::ACTIVE_HIGH)
+    pub fn is_active_high(&self) -> bool {
+        *self == Ledpol::ActiveHigh
+    }
+}
+#[doc = "Field `LEDPOL` writer - LED output pin polarity"]
+pub type LedpolW<'a, REG> = crate::BitWriter<'a, REG, Ledpol>;
+impl<'a, REG> LedpolW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Led active on output pin low"]
+    #[inline(always)]
+    pub fn active_low(self) -> &'a mut crate::W<REG> {
+        self.variant(Ledpol::ActiveLow)
+    }
+    #[doc = "Led active on output pin high"]
+    #[inline(always)]
+    pub fn active_high(self) -> &'a mut crate::W<REG> {
+        self.variant(Ledpol::ActiveHigh)
     }
 }
 impl R {
     #[doc = "Bit 0 - LED output pin polarity"]
     #[inline(always)]
-    pub fn ledpol(&self) -> LEDPOL_R {
-        LEDPOL_R::new((self.bits & 1) != 0)
+    pub fn ledpol(&self) -> LedpolR {
+        LedpolR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - LED output pin polarity"]
     #[inline(always)]
-    pub fn ledpol(&mut self) -> LEDPOL_W<0> {
-        LEDPOL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn ledpol(&mut self) -> LedpolW<'_, LedpolSpec> {
+        LedpolW::new(self, 0)
     }
 }
-#[doc = "LED output pin polarity\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ledpol](index.html) module"]
-pub struct LEDPOL_SPEC;
-impl crate::RegisterSpec for LEDPOL_SPEC {
+#[doc = "LED output pin polarity\n\nYou can [`read`](crate::Reg::read) this register and get [`ledpol::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ledpol::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct LedpolSpec;
+impl crate::RegisterSpec for LedpolSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ledpol::R](R) reader structure"]
-impl crate::Readable for LEDPOL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ledpol::W](W) writer structure"]
-impl crate::Writable for LEDPOL_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ledpol::R`](R) reader structure"]
+impl crate::Readable for LedpolSpec {}
+#[doc = "`write(|w| ..)` method takes [`ledpol::W`](W) writer structure"]
+impl crate::Writable for LedpolSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets LEDPOL to value 0"]
-impl crate::Resettable for LEDPOL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for LedpolSpec {}

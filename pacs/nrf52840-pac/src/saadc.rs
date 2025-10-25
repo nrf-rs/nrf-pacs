@@ -1,140 +1,256 @@
-#[doc = r"Register block"]
 #[repr(C)]
+#[doc = "Register block"]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Starts the SAADC and prepares the result buffer in RAM"]
-    pub tasks_start: TASKS_START,
-    #[doc = "0x04 - Takes one SAADC sample"]
-    pub tasks_sample: TASKS_SAMPLE,
-    #[doc = "0x08 - Stops the SAADC and terminates all on-going conversions"]
-    pub tasks_stop: TASKS_STOP,
-    #[doc = "0x0c - Starts offset auto-calibration"]
-    pub tasks_calibrateoffset: TASKS_CALIBRATEOFFSET,
+    tasks_start: TasksStart,
+    tasks_sample: TasksSample,
+    tasks_stop: TasksStop,
+    tasks_calibrateoffset: TasksCalibrateoffset,
     _reserved4: [u8; 0xf0],
-    #[doc = "0x100 - The SAADC has started"]
-    pub events_started: EVENTS_STARTED,
-    #[doc = "0x104 - The SAADC has filled up the result buffer"]
-    pub events_end: EVENTS_END,
-    #[doc = "0x108 - A conversion task has been completed. Depending on the configuration, multiple conversions might be needed for a result to be transferred to RAM."]
-    pub events_done: EVENTS_DONE,
-    #[doc = "0x10c - Result ready for transfer to RAM"]
-    pub events_resultdone: EVENTS_RESULTDONE,
-    #[doc = "0x110 - Calibration is complete"]
-    pub events_calibratedone: EVENTS_CALIBRATEDONE,
-    #[doc = "0x114 - The SAADC has stopped"]
-    pub events_stopped: EVENTS_STOPPED,
-    #[doc = "0x118..0x158 - Unspecified"]
-    pub events_ch: [EVENTS_CH; 8],
+    events_started: EventsStarted,
+    events_end: EventsEnd,
+    events_done: EventsDone,
+    events_resultdone: EventsResultdone,
+    events_calibratedone: EventsCalibratedone,
+    events_stopped: EventsStopped,
+    events_ch: [EventsCh; 8],
     _reserved11: [u8; 0x01a8],
-    #[doc = "0x300 - Enable or disable interrupt"]
-    pub inten: INTEN,
-    #[doc = "0x304 - Enable interrupt"]
-    pub intenset: INTENSET,
-    #[doc = "0x308 - Disable interrupt"]
-    pub intenclr: INTENCLR,
+    inten: Inten,
+    intenset: Intenset,
+    intenclr: Intenclr,
     _reserved14: [u8; 0xf4],
-    #[doc = "0x400 - Status"]
-    pub status: STATUS,
+    status: Status,
     _reserved15: [u8; 0xfc],
-    #[doc = "0x500 - Enable or disable SAADC"]
-    pub enable: ENABLE,
+    enable: Enable,
     _reserved16: [u8; 0x0c],
-    #[doc = "0x510..0x590 - Unspecified"]
-    pub ch: [CH; 8],
+    ch: [Ch; 8],
     _reserved17: [u8; 0x60],
-    #[doc = "0x5f0 - Resolution configuration"]
-    pub resolution: RESOLUTION,
-    #[doc = "0x5f4 - Oversampling configuration. The RESOLUTION is applied before averaging, thus for high OVERSAMPLE a higher RESOLUTION should be used."]
-    pub oversample: OVERSAMPLE,
-    #[doc = "0x5f8 - Controls normal or continuous sample rate"]
-    pub samplerate: SAMPLERATE,
+    resolution: Resolution,
+    oversample: Oversample,
+    samplerate: Samplerate,
     _reserved20: [u8; 0x30],
-    #[doc = "0x62c..0x638 - RESULT EasyDMA channel"]
-    pub result: RESULT,
+    result: Result,
 }
-#[doc = "TASKS_START (w) register accessor: an alias for `Reg<TASKS_START_SPEC>`"]
-pub type TASKS_START = crate::Reg<tasks_start::TASKS_START_SPEC>;
+impl RegisterBlock {
+    #[doc = "0x00 - Starts the SAADC and prepares the result buffer in RAM"]
+    #[inline(always)]
+    pub const fn tasks_start(&self) -> &TasksStart {
+        &self.tasks_start
+    }
+    #[doc = "0x04 - Takes one SAADC sample"]
+    #[inline(always)]
+    pub const fn tasks_sample(&self) -> &TasksSample {
+        &self.tasks_sample
+    }
+    #[doc = "0x08 - Stops the SAADC and terminates all on-going conversions"]
+    #[inline(always)]
+    pub const fn tasks_stop(&self) -> &TasksStop {
+        &self.tasks_stop
+    }
+    #[doc = "0x0c - Starts offset auto-calibration"]
+    #[inline(always)]
+    pub const fn tasks_calibrateoffset(&self) -> &TasksCalibrateoffset {
+        &self.tasks_calibrateoffset
+    }
+    #[doc = "0x100 - The SAADC has started"]
+    #[inline(always)]
+    pub const fn events_started(&self) -> &EventsStarted {
+        &self.events_started
+    }
+    #[doc = "0x104 - The SAADC has filled up the result buffer"]
+    #[inline(always)]
+    pub const fn events_end(&self) -> &EventsEnd {
+        &self.events_end
+    }
+    #[doc = "0x108 - A conversion task has been completed. Depending on the configuration, multiple conversions might be needed for a result to be transferred to RAM."]
+    #[inline(always)]
+    pub const fn events_done(&self) -> &EventsDone {
+        &self.events_done
+    }
+    #[doc = "0x10c - Result ready for transfer to RAM"]
+    #[inline(always)]
+    pub const fn events_resultdone(&self) -> &EventsResultdone {
+        &self.events_resultdone
+    }
+    #[doc = "0x110 - Calibration is complete"]
+    #[inline(always)]
+    pub const fn events_calibratedone(&self) -> &EventsCalibratedone {
+        &self.events_calibratedone
+    }
+    #[doc = "0x114 - The SAADC has stopped"]
+    #[inline(always)]
+    pub const fn events_stopped(&self) -> &EventsStopped {
+        &self.events_stopped
+    }
+    #[doc = "0x118..0x158 - Peripheral events."]
+    #[inline(always)]
+    pub const fn events_ch(&self, n: usize) -> &EventsCh {
+        &self.events_ch[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x118..0x158 - Peripheral events."]
+    #[inline(always)]
+    pub fn events_ch_iter(&self) -> impl Iterator<Item = &EventsCh> {
+        self.events_ch.iter()
+    }
+    #[doc = "0x300 - Enable or disable interrupt"]
+    #[inline(always)]
+    pub const fn inten(&self) -> &Inten {
+        &self.inten
+    }
+    #[doc = "0x304 - Enable interrupt"]
+    #[inline(always)]
+    pub const fn intenset(&self) -> &Intenset {
+        &self.intenset
+    }
+    #[doc = "0x308 - Disable interrupt"]
+    #[inline(always)]
+    pub const fn intenclr(&self) -> &Intenclr {
+        &self.intenclr
+    }
+    #[doc = "0x400 - Status"]
+    #[inline(always)]
+    pub const fn status(&self) -> &Status {
+        &self.status
+    }
+    #[doc = "0x500 - Enable or disable SAADC"]
+    #[inline(always)]
+    pub const fn enable(&self) -> &Enable {
+        &self.enable
+    }
+    #[doc = "0x510..0x590 - Unspecified"]
+    #[inline(always)]
+    pub const fn ch(&self, n: usize) -> &Ch {
+        &self.ch[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x510..0x590 - Unspecified"]
+    #[inline(always)]
+    pub fn ch_iter(&self) -> impl Iterator<Item = &Ch> {
+        self.ch.iter()
+    }
+    #[doc = "0x5f0 - Resolution configuration"]
+    #[inline(always)]
+    pub const fn resolution(&self) -> &Resolution {
+        &self.resolution
+    }
+    #[doc = "0x5f4 - Oversampling configuration. The RESOLUTION is applied before averaging, thus for high OVERSAMPLE a higher RESOLUTION should be used."]
+    #[inline(always)]
+    pub const fn oversample(&self) -> &Oversample {
+        &self.oversample
+    }
+    #[doc = "0x5f8 - Controls normal or continuous sample rate"]
+    #[inline(always)]
+    pub const fn samplerate(&self) -> &Samplerate {
+        &self.samplerate
+    }
+    #[doc = "0x62c..0x638 - RESULT EasyDMA channel"]
+    #[inline(always)]
+    pub const fn result(&self) -> &Result {
+        &self.result
+    }
+}
+#[doc = "TASKS_START (w) register accessor: Starts the SAADC and prepares the result buffer in RAM\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_start::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_start`] module"]
+#[doc(alias = "TASKS_START")]
+pub type TasksStart = crate::Reg<tasks_start::TasksStartSpec>;
 #[doc = "Starts the SAADC and prepares the result buffer in RAM"]
 pub mod tasks_start;
-#[doc = "TASKS_SAMPLE (w) register accessor: an alias for `Reg<TASKS_SAMPLE_SPEC>`"]
-pub type TASKS_SAMPLE = crate::Reg<tasks_sample::TASKS_SAMPLE_SPEC>;
+#[doc = "TASKS_SAMPLE (w) register accessor: Takes one SAADC sample\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_sample::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_sample`] module"]
+#[doc(alias = "TASKS_SAMPLE")]
+pub type TasksSample = crate::Reg<tasks_sample::TasksSampleSpec>;
 #[doc = "Takes one SAADC sample"]
 pub mod tasks_sample;
-#[doc = "TASKS_STOP (w) register accessor: an alias for `Reg<TASKS_STOP_SPEC>`"]
-pub type TASKS_STOP = crate::Reg<tasks_stop::TASKS_STOP_SPEC>;
+#[doc = "TASKS_STOP (w) register accessor: Stops the SAADC and terminates all on-going conversions\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_stop::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_stop`] module"]
+#[doc(alias = "TASKS_STOP")]
+pub type TasksStop = crate::Reg<tasks_stop::TasksStopSpec>;
 #[doc = "Stops the SAADC and terminates all on-going conversions"]
 pub mod tasks_stop;
-#[doc = "TASKS_CALIBRATEOFFSET (w) register accessor: an alias for `Reg<TASKS_CALIBRATEOFFSET_SPEC>`"]
-pub type TASKS_CALIBRATEOFFSET = crate::Reg<tasks_calibrateoffset::TASKS_CALIBRATEOFFSET_SPEC>;
+#[doc = "TASKS_CALIBRATEOFFSET (w) register accessor: Starts offset auto-calibration\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_calibrateoffset::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_calibrateoffset`] module"]
+#[doc(alias = "TASKS_CALIBRATEOFFSET")]
+pub type TasksCalibrateoffset = crate::Reg<tasks_calibrateoffset::TasksCalibrateoffsetSpec>;
 #[doc = "Starts offset auto-calibration"]
 pub mod tasks_calibrateoffset;
-#[doc = "EVENTS_STARTED (rw) register accessor: an alias for `Reg<EVENTS_STARTED_SPEC>`"]
-pub type EVENTS_STARTED = crate::Reg<events_started::EVENTS_STARTED_SPEC>;
+#[doc = "EVENTS_STARTED (rw) register accessor: The SAADC has started\n\nYou can [`read`](crate::Reg::read) this register and get [`events_started::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_started::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_started`] module"]
+#[doc(alias = "EVENTS_STARTED")]
+pub type EventsStarted = crate::Reg<events_started::EventsStartedSpec>;
 #[doc = "The SAADC has started"]
 pub mod events_started;
-#[doc = "EVENTS_END (rw) register accessor: an alias for `Reg<EVENTS_END_SPEC>`"]
-pub type EVENTS_END = crate::Reg<events_end::EVENTS_END_SPEC>;
+#[doc = "EVENTS_END (rw) register accessor: The SAADC has filled up the result buffer\n\nYou can [`read`](crate::Reg::read) this register and get [`events_end::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_end::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_end`] module"]
+#[doc(alias = "EVENTS_END")]
+pub type EventsEnd = crate::Reg<events_end::EventsEndSpec>;
 #[doc = "The SAADC has filled up the result buffer"]
 pub mod events_end;
-#[doc = "EVENTS_DONE (rw) register accessor: an alias for `Reg<EVENTS_DONE_SPEC>`"]
-pub type EVENTS_DONE = crate::Reg<events_done::EVENTS_DONE_SPEC>;
+#[doc = "EVENTS_DONE (rw) register accessor: A conversion task has been completed. Depending on the configuration, multiple conversions might be needed for a result to be transferred to RAM.\n\nYou can [`read`](crate::Reg::read) this register and get [`events_done::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_done::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_done`] module"]
+#[doc(alias = "EVENTS_DONE")]
+pub type EventsDone = crate::Reg<events_done::EventsDoneSpec>;
 #[doc = "A conversion task has been completed. Depending on the configuration, multiple conversions might be needed for a result to be transferred to RAM."]
 pub mod events_done;
-#[doc = "EVENTS_RESULTDONE (rw) register accessor: an alias for `Reg<EVENTS_RESULTDONE_SPEC>`"]
-pub type EVENTS_RESULTDONE = crate::Reg<events_resultdone::EVENTS_RESULTDONE_SPEC>;
+#[doc = "EVENTS_RESULTDONE (rw) register accessor: Result ready for transfer to RAM\n\nYou can [`read`](crate::Reg::read) this register and get [`events_resultdone::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_resultdone::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_resultdone`] module"]
+#[doc(alias = "EVENTS_RESULTDONE")]
+pub type EventsResultdone = crate::Reg<events_resultdone::EventsResultdoneSpec>;
 #[doc = "Result ready for transfer to RAM"]
 pub mod events_resultdone;
-#[doc = "EVENTS_CALIBRATEDONE (rw) register accessor: an alias for `Reg<EVENTS_CALIBRATEDONE_SPEC>`"]
-pub type EVENTS_CALIBRATEDONE = crate::Reg<events_calibratedone::EVENTS_CALIBRATEDONE_SPEC>;
+#[doc = "EVENTS_CALIBRATEDONE (rw) register accessor: Calibration is complete\n\nYou can [`read`](crate::Reg::read) this register and get [`events_calibratedone::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_calibratedone::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_calibratedone`] module"]
+#[doc(alias = "EVENTS_CALIBRATEDONE")]
+pub type EventsCalibratedone = crate::Reg<events_calibratedone::EventsCalibratedoneSpec>;
 #[doc = "Calibration is complete"]
 pub mod events_calibratedone;
-#[doc = "EVENTS_STOPPED (rw) register accessor: an alias for `Reg<EVENTS_STOPPED_SPEC>`"]
-pub type EVENTS_STOPPED = crate::Reg<events_stopped::EVENTS_STOPPED_SPEC>;
+#[doc = "EVENTS_STOPPED (rw) register accessor: The SAADC has stopped\n\nYou can [`read`](crate::Reg::read) this register and get [`events_stopped::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_stopped::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_stopped`] module"]
+#[doc(alias = "EVENTS_STOPPED")]
+pub type EventsStopped = crate::Reg<events_stopped::EventsStoppedSpec>;
 #[doc = "The SAADC has stopped"]
 pub mod events_stopped;
-#[doc = "Unspecified"]
-pub use events_ch::EVENTS_CH;
+#[doc = "Peripheral events."]
+pub use self::events_ch::EventsCh;
 #[doc = r"Cluster"]
-#[doc = "Unspecified"]
+#[doc = "Peripheral events."]
 pub mod events_ch;
-#[doc = "INTEN (rw) register accessor: an alias for `Reg<INTEN_SPEC>`"]
-pub type INTEN = crate::Reg<inten::INTEN_SPEC>;
+#[doc = "INTEN (rw) register accessor: Enable or disable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`inten::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`inten::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@inten`] module"]
+#[doc(alias = "INTEN")]
+pub type Inten = crate::Reg<inten::IntenSpec>;
 #[doc = "Enable or disable interrupt"]
 pub mod inten;
-#[doc = "INTENSET (rw) register accessor: an alias for `Reg<INTENSET_SPEC>`"]
-pub type INTENSET = crate::Reg<intenset::INTENSET_SPEC>;
+#[doc = "INTENSET (rw) register accessor: Enable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`intenset::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenset::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenset`] module"]
+#[doc(alias = "INTENSET")]
+pub type Intenset = crate::Reg<intenset::IntensetSpec>;
 #[doc = "Enable interrupt"]
 pub mod intenset;
-#[doc = "INTENCLR (rw) register accessor: an alias for `Reg<INTENCLR_SPEC>`"]
-pub type INTENCLR = crate::Reg<intenclr::INTENCLR_SPEC>;
+#[doc = "INTENCLR (rw) register accessor: Disable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`intenclr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenclr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenclr`] module"]
+#[doc(alias = "INTENCLR")]
+pub type Intenclr = crate::Reg<intenclr::IntenclrSpec>;
 #[doc = "Disable interrupt"]
 pub mod intenclr;
-#[doc = "STATUS (r) register accessor: an alias for `Reg<STATUS_SPEC>`"]
-pub type STATUS = crate::Reg<status::STATUS_SPEC>;
+#[doc = "STATUS (r) register accessor: Status\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@status`] module"]
+#[doc(alias = "STATUS")]
+pub type Status = crate::Reg<status::StatusSpec>;
 #[doc = "Status"]
 pub mod status;
-#[doc = "ENABLE (rw) register accessor: an alias for `Reg<ENABLE_SPEC>`"]
-pub type ENABLE = crate::Reg<enable::ENABLE_SPEC>;
+#[doc = "ENABLE (rw) register accessor: Enable or disable SAADC\n\nYou can [`read`](crate::Reg::read) this register and get [`enable::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`enable::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@enable`] module"]
+#[doc(alias = "ENABLE")]
+pub type Enable = crate::Reg<enable::EnableSpec>;
 #[doc = "Enable or disable SAADC"]
 pub mod enable;
 #[doc = "Unspecified"]
-pub use ch::CH;
+pub use self::ch::Ch;
 #[doc = r"Cluster"]
 #[doc = "Unspecified"]
 pub mod ch;
-#[doc = "RESOLUTION (rw) register accessor: an alias for `Reg<RESOLUTION_SPEC>`"]
-pub type RESOLUTION = crate::Reg<resolution::RESOLUTION_SPEC>;
+#[doc = "RESOLUTION (rw) register accessor: Resolution configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`resolution::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`resolution::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@resolution`] module"]
+#[doc(alias = "RESOLUTION")]
+pub type Resolution = crate::Reg<resolution::ResolutionSpec>;
 #[doc = "Resolution configuration"]
 pub mod resolution;
-#[doc = "OVERSAMPLE (rw) register accessor: an alias for `Reg<OVERSAMPLE_SPEC>`"]
-pub type OVERSAMPLE = crate::Reg<oversample::OVERSAMPLE_SPEC>;
+#[doc = "OVERSAMPLE (rw) register accessor: Oversampling configuration. The RESOLUTION is applied before averaging, thus for high OVERSAMPLE a higher RESOLUTION should be used.\n\nYou can [`read`](crate::Reg::read) this register and get [`oversample::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`oversample::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@oversample`] module"]
+#[doc(alias = "OVERSAMPLE")]
+pub type Oversample = crate::Reg<oversample::OversampleSpec>;
 #[doc = "Oversampling configuration. The RESOLUTION is applied before averaging, thus for high OVERSAMPLE a higher RESOLUTION should be used."]
 pub mod oversample;
-#[doc = "SAMPLERATE (rw) register accessor: an alias for `Reg<SAMPLERATE_SPEC>`"]
-pub type SAMPLERATE = crate::Reg<samplerate::SAMPLERATE_SPEC>;
+#[doc = "SAMPLERATE (rw) register accessor: Controls normal or continuous sample rate\n\nYou can [`read`](crate::Reg::read) this register and get [`samplerate::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`samplerate::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@samplerate`] module"]
+#[doc(alias = "SAMPLERATE")]
+pub type Samplerate = crate::Reg<samplerate::SamplerateSpec>;
 #[doc = "Controls normal or continuous sample rate"]
 pub mod samplerate;
 #[doc = "RESULT EasyDMA channel"]
-pub use result::RESULT;
+pub use self::result::Result;
 #[doc = r"Cluster"]
 #[doc = "RESULT EasyDMA channel"]
 pub mod result;

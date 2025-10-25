@@ -1,103 +1,91 @@
 #[doc = "Register `PIDR3` reader"]
-pub struct R(crate::R<PIDR3_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PIDR3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PIDR3_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PIDR3_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `CMOD` reader - Customer Modified. Indicates whether the customer has modified the behavior of the component. In most cases, this field is 0b0000. Customers change this value when they make authorized modifications to this component."]
-pub type CMOD_R = crate::FieldReader<u8, CMOD_A>;
+pub type R = crate::R<Pidr3Spec>;
 #[doc = "Customer Modified. Indicates whether the customer has modified the behavior of the component. In most cases, this field is 0b0000. Customers change this value when they make authorized modifications to this component.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CMOD_A {
+pub enum Cmod {
     #[doc = "0: Indicates that the customer has not modified this component."]
-    UNMODIFIED = 0,
+    Unmodified = 0,
 }
-impl From<CMOD_A> for u8 {
+impl From<Cmod> for u8 {
     #[inline(always)]
-    fn from(variant: CMOD_A) -> Self {
+    fn from(variant: Cmod) -> Self {
         variant as _
     }
 }
-impl CMOD_R {
+impl crate::FieldSpec for Cmod {
+    type Ux = u8;
+}
+impl crate::IsEnum for Cmod {}
+#[doc = "Field `CMOD` reader - Customer Modified. Indicates whether the customer has modified the behavior of the component. In most cases, this field is 0b0000. Customers change this value when they make authorized modifications to this component."]
+pub type CmodR = crate::FieldReader<Cmod>;
+impl CmodR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CMOD_A> {
+    pub const fn variant(&self) -> Option<Cmod> {
         match self.bits {
-            0 => Some(CMOD_A::UNMODIFIED),
+            0 => Some(Cmod::Unmodified),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `UNMODIFIED`"]
+    #[doc = "Indicates that the customer has not modified this component."]
     #[inline(always)]
     pub fn is_unmodified(&self) -> bool {
-        *self == CMOD_A::UNMODIFIED
+        *self == Cmod::Unmodified
     }
 }
-#[doc = "Field `REVAND` reader - Indicates minor errata fixes specific to the revision of the component being used, for example metal fixes after implementation. In most cases, this field is 0b0000. Arm recommends that the component designers ensure that a metal fix can change this field if required, for example, by driving it from registers that reset to 0b0000."]
-pub type REVAND_R = crate::FieldReader<u8, REVAND_A>;
 #[doc = "Indicates minor errata fixes specific to the revision of the component being used, for example metal fixes after implementation. In most cases, this field is 0b0000. Arm recommends that the component designers ensure that a metal fix can change this field if required, for example, by driving it from registers that reset to 0b0000.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum REVAND_A {
+pub enum Revand {
     #[doc = "0: Indicates that there are no errata fixes to this component."]
-    NO_ERRATA = 0,
+    NoErrata = 0,
 }
-impl From<REVAND_A> for u8 {
+impl From<Revand> for u8 {
     #[inline(always)]
-    fn from(variant: REVAND_A) -> Self {
+    fn from(variant: Revand) -> Self {
         variant as _
     }
 }
-impl REVAND_R {
+impl crate::FieldSpec for Revand {
+    type Ux = u8;
+}
+impl crate::IsEnum for Revand {}
+#[doc = "Field `REVAND` reader - Indicates minor errata fixes specific to the revision of the component being used, for example metal fixes after implementation. In most cases, this field is 0b0000. Arm recommends that the component designers ensure that a metal fix can change this field if required, for example, by driving it from registers that reset to 0b0000."]
+pub type RevandR = crate::FieldReader<Revand>;
+impl RevandR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<REVAND_A> {
+    pub const fn variant(&self) -> Option<Revand> {
         match self.bits {
-            0 => Some(REVAND_A::NO_ERRATA),
+            0 => Some(Revand::NoErrata),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_ERRATA`"]
+    #[doc = "Indicates that there are no errata fixes to this component."]
     #[inline(always)]
     pub fn is_no_errata(&self) -> bool {
-        *self == REVAND_A::NO_ERRATA
+        *self == Revand::NoErrata
     }
 }
 impl R {
     #[doc = "Bits 0:3 - Customer Modified. Indicates whether the customer has modified the behavior of the component. In most cases, this field is 0b0000. Customers change this value when they make authorized modifications to this component."]
     #[inline(always)]
-    pub fn cmod(&self) -> CMOD_R {
-        CMOD_R::new((self.bits & 0x0f) as u8)
+    pub fn cmod(&self) -> CmodR {
+        CmodR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Indicates minor errata fixes specific to the revision of the component being used, for example metal fixes after implementation. In most cases, this field is 0b0000. Arm recommends that the component designers ensure that a metal fix can change this field if required, for example, by driving it from registers that reset to 0b0000."]
     #[inline(always)]
-    pub fn revand(&self) -> REVAND_R {
-        REVAND_R::new(((self.bits >> 4) & 0x0f) as u8)
+    pub fn revand(&self) -> RevandR {
+        RevandR::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }
-#[doc = "Peripheral ID3 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pidr3](index.html) module"]
-pub struct PIDR3_SPEC;
-impl crate::RegisterSpec for PIDR3_SPEC {
+#[doc = "Peripheral ID3 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pidr3::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Pidr3Spec;
+impl crate::RegisterSpec for Pidr3Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pidr3::R](R) reader structure"]
-impl crate::Readable for PIDR3_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pidr3::R`](R) reader structure"]
+impl crate::Readable for Pidr3Spec {}
 #[doc = "`reset()` method sets PIDR3 to value 0"]
-impl crate::Resettable for PIDR3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Pidr3Spec {}

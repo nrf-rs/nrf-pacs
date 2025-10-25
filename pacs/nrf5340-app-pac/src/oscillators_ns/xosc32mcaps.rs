@@ -1,140 +1,98 @@
 #[doc = "Register `XOSC32MCAPS` reader"]
-pub struct R(crate::R<XOSC32MCAPS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<XOSC32MCAPS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<XOSC32MCAPS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<XOSC32MCAPS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Xosc32mcapsSpec>;
 #[doc = "Register `XOSC32MCAPS` writer"]
-pub struct W(crate::W<XOSC32MCAPS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<XOSC32MCAPS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<XOSC32MCAPS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<XOSC32MCAPS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Xosc32mcapsSpec>;
 #[doc = "Field `CAPVALUE` reader - Value representing capacitance, calculated using provided equation"]
-pub type CAPVALUE_R = crate::FieldReader<u8, u8>;
+pub type CapvalueR = crate::FieldReader;
 #[doc = "Field `CAPVALUE` writer - Value representing capacitance, calculated using provided equation"]
-pub type CAPVALUE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, XOSC32MCAPS_SPEC, u8, u8, 5, O>;
-#[doc = "Field `ENABLE` reader - Enable on-chip capacitors on XC1 and XC2"]
-pub type ENABLE_R = crate::BitReader<ENABLE_A>;
+pub type CapvalueW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Enable on-chip capacitors on XC1 and XC2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENABLE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Enable {
     #[doc = "0: Capacitor disabled (use external caps)"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Capacitor enabled"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<ENABLE_A> for bool {
+impl From<Enable> for bool {
     #[inline(always)]
-    fn from(variant: ENABLE_A) -> Self {
+    fn from(variant: Enable) -> Self {
         variant as u8 != 0
     }
 }
-impl ENABLE_R {
+#[doc = "Field `ENABLE` reader - Enable on-chip capacitors on XC1 and XC2"]
+pub type EnableR = crate::BitReader<Enable>;
+impl EnableR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENABLE_A {
+    pub const fn variant(&self) -> Enable {
         match self.bits {
-            false => ENABLE_A::DISABLED,
-            true => ENABLE_A::ENABLED,
+            false => Enable::Disabled,
+            true => Enable::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == ENABLE_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == ENABLE_A::ENABLED
-    }
-}
-#[doc = "Field `ENABLE` writer - Enable on-chip capacitors on XC1 and XC2"]
-pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, XOSC32MCAPS_SPEC, ENABLE_A, O>;
-impl<'a, const O: u8> ENABLE_W<'a, O> {
     #[doc = "Capacitor disabled (use external caps)"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENABLE_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Enable::Disabled
     }
     #[doc = "Capacitor enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENABLE_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Enable::Enabled
+    }
+}
+#[doc = "Field `ENABLE` writer - Enable on-chip capacitors on XC1 and XC2"]
+pub type EnableW<'a, REG> = crate::BitWriter<'a, REG, Enable>;
+impl<'a, REG> EnableW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Capacitor disabled (use external caps)"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Enable::Disabled)
+    }
+    #[doc = "Capacitor enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Enable::Enabled)
     }
 }
 impl R {
     #[doc = "Bits 0:4 - Value representing capacitance, calculated using provided equation"]
     #[inline(always)]
-    pub fn capvalue(&self) -> CAPVALUE_R {
-        CAPVALUE_R::new((self.bits & 0x1f) as u8)
+    pub fn capvalue(&self) -> CapvalueR {
+        CapvalueR::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bit 8 - Enable on-chip capacitors on XC1 and XC2"]
     #[inline(always)]
-    pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn enable(&self) -> EnableR {
+        EnableR::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Value representing capacitance, calculated using provided equation"]
     #[inline(always)]
-    pub fn capvalue(&mut self) -> CAPVALUE_W<0> {
-        CAPVALUE_W::new(self)
+    pub fn capvalue(&mut self) -> CapvalueW<'_, Xosc32mcapsSpec> {
+        CapvalueW::new(self, 0)
     }
     #[doc = "Bit 8 - Enable on-chip capacitors on XC1 and XC2"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W<8> {
-        ENABLE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn enable(&mut self) -> EnableW<'_, Xosc32mcapsSpec> {
+        EnableW::new(self, 8)
     }
 }
-#[doc = "Programmable capacitance of XC1 and XC2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [xosc32mcaps](index.html) module"]
-pub struct XOSC32MCAPS_SPEC;
-impl crate::RegisterSpec for XOSC32MCAPS_SPEC {
+#[doc = "Programmable capacitance of XC1 and XC2\n\nYou can [`read`](crate::Reg::read) this register and get [`xosc32mcaps::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`xosc32mcaps::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Xosc32mcapsSpec;
+impl crate::RegisterSpec for Xosc32mcapsSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [xosc32mcaps::R](R) reader structure"]
-impl crate::Readable for XOSC32MCAPS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [xosc32mcaps::W](W) writer structure"]
-impl crate::Writable for XOSC32MCAPS_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`xosc32mcaps::R`](R) reader structure"]
+impl crate::Readable for Xosc32mcapsSpec {}
+#[doc = "`write(|w| ..)` method takes [`xosc32mcaps::W`](W) writer structure"]
+impl crate::Writable for Xosc32mcapsSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets XOSC32MCAPS to value 0"]
-impl crate::Resettable for XOSC32MCAPS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Xosc32mcapsSpec {}

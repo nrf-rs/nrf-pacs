@@ -1,41 +1,22 @@
 #[doc = "Register `ER[%s]` reader"]
-pub struct R(crate::R<ER_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ER_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ER_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ErSpec>;
 #[doc = "Field `ER` reader - Encryption Root, word n"]
-pub type ER_R = crate::FieldReader<u32, u32>;
+pub type ErR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Encryption Root, word n"]
     #[inline(always)]
-    pub fn er(&self) -> ER_R {
-        ER_R::new(self.bits)
+    pub fn er(&self) -> ErR {
+        ErR::new(self.bits)
     }
 }
-#[doc = "Description collection\\[0\\]: Encryption Root, word 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [er](index.html) module"]
-pub struct ER_SPEC;
-impl crate::RegisterSpec for ER_SPEC {
+#[doc = "Description collection\\[0\\]: Encryption Root, word 0\n\nYou can [`read`](crate::Reg::read) this register and get [`er::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ErSpec;
+impl crate::RegisterSpec for ErSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [er::R](R) reader structure"]
-impl crate::Readable for ER_SPEC {
-    type Reader = R;
-}
-#[doc = "`reset()` method sets ER[%s]
-to value 0xffff_ffff"]
-impl crate::Resettable for ER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+#[doc = "`read()` method returns [`er::R`](R) reader structure"]
+impl crate::Readable for ErSpec {}
+#[doc = "`reset()` method sets ER[%s] to value 0xffff_ffff"]
+impl crate::Resettable for ErSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

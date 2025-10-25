@@ -1,140 +1,98 @@
 #[doc = "Register `LIMITH` reader"]
-pub struct R(crate::R<LIMITH_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LIMITH_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LIMITH_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LIMITH_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LimithSpec>;
 #[doc = "Register `LIMITH` writer"]
-pub struct W(crate::W<LIMITH_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LIMITH_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LIMITH_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LIMITH_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `CHIDX` reader - Channel that event CH\\[n\\].LIMITH will publish to."]
-pub type CHIDX_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `CHIDX` writer - Channel that event CH\\[n\\].LIMITH will publish to."]
-pub type CHIDX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LIMITH_SPEC, u8, u8, 4, O>;
-#[doc = "Field `EN` reader - "]
-pub type EN_R = crate::BitReader<EN_A>;
+pub type W = crate::W<LimithSpec>;
+#[doc = "Field `CHIDX` reader - DPPI channel that event CH\\[n\\].LIMITH will publish to"]
+pub type ChidxR = crate::FieldReader;
+#[doc = "Field `CHIDX` writer - DPPI channel that event CH\\[n\\].LIMITH will publish to"]
+pub type ChidxW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EN_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum En {
     #[doc = "0: Disable publishing"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: Enable publishing"]
-    ENABLED = 1,
+    Enabled = 1,
 }
-impl From<EN_A> for bool {
+impl From<En> for bool {
     #[inline(always)]
-    fn from(variant: EN_A) -> Self {
+    fn from(variant: En) -> Self {
         variant as u8 != 0
     }
 }
-impl EN_R {
+#[doc = "Field `EN` reader - "]
+pub type EnR = crate::BitReader<En>;
+impl EnR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_A {
+    pub const fn variant(&self) -> En {
         match self.bits {
-            false => EN_A::DISABLED,
-            true => EN_A::ENABLED,
+            false => En::Disabled,
+            true => En::Enabled,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == EN_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == EN_A::ENABLED
-    }
-}
-#[doc = "Field `EN` writer - "]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LIMITH_SPEC, EN_A, O>;
-impl<'a, const O: u8> EN_W<'a, O> {
     #[doc = "Disable publishing"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(EN_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == En::Disabled
     }
     #[doc = "Enable publishing"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(EN_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == En::Enabled
+    }
+}
+#[doc = "Field `EN` writer - "]
+pub type EnW<'a, REG> = crate::BitWriter<'a, REG, En>;
+impl<'a, REG> EnW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disable publishing"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(En::Disabled)
+    }
+    #[doc = "Enable publishing"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(En::Enabled)
     }
 }
 impl R {
-    #[doc = "Bits 0:3 - Channel that event CH\\[n\\].LIMITH will publish to."]
+    #[doc = "Bits 0:7 - DPPI channel that event CH\\[n\\].LIMITH will publish to"]
     #[inline(always)]
-    pub fn chidx(&self) -> CHIDX_R {
-        CHIDX_R::new((self.bits & 0x0f) as u8)
+    pub fn chidx(&self) -> ChidxR {
+        ChidxR::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn en(&self) -> EN_R {
-        EN_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn en(&self) -> EnR {
+        EnR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Channel that event CH\\[n\\].LIMITH will publish to."]
+    #[doc = "Bits 0:7 - DPPI channel that event CH\\[n\\].LIMITH will publish to"]
     #[inline(always)]
-    pub fn chidx(&mut self) -> CHIDX_W<0> {
-        CHIDX_W::new(self)
+    pub fn chidx(&mut self) -> ChidxW<'_, LimithSpec> {
+        ChidxW::new(self, 0)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W<31> {
-        EN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn en(&mut self) -> EnW<'_, LimithSpec> {
+        EnW::new(self, 31)
     }
 }
-#[doc = "Description cluster: Publish configuration for event CH\\[n\\].LIMITH\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [limith](index.html) module"]
-pub struct LIMITH_SPEC;
-impl crate::RegisterSpec for LIMITH_SPEC {
+#[doc = "Description cluster: Publish configuration for event CH\\[n\\].LIMITH\n\nYou can [`read`](crate::Reg::read) this register and get [`limith::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`limith::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct LimithSpec;
+impl crate::RegisterSpec for LimithSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [limith::R](R) reader structure"]
-impl crate::Readable for LIMITH_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [limith::W](W) writer structure"]
-impl crate::Writable for LIMITH_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`limith::R`](R) reader structure"]
+impl crate::Readable for LimithSpec {}
+#[doc = "`write(|w| ..)` method takes [`limith::W`](W) writer structure"]
+impl crate::Writable for LimithSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets LIMITH to value 0"]
-impl crate::Resettable for LIMITH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for LimithSpec {}

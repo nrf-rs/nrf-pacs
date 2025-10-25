@@ -1,142 +1,104 @@
 #[doc = "Register `ANADETECT` reader"]
-pub struct R(crate::R<ANADETECT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ANADETECT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ANADETECT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ANADETECT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<AnadetectSpec>;
 #[doc = "Register `ANADETECT` writer"]
-pub struct W(crate::W<ANADETECT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ANADETECT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ANADETECT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ANADETECT_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `ANADETECT` reader - Analog detect configuration"]
-pub type ANADETECT_R = crate::FieldReader<u8, ANADETECT_A>;
+pub type W = crate::W<AnadetectSpec>;
 #[doc = "Analog detect configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ANADETECT_A {
+pub enum Anadetect {
     #[doc = "0: Generate ANADETECT on crossing, both upward crossing and downward crossing"]
-    CROSS = 0,
+    Cross = 0,
     #[doc = "1: Generate ANADETECT on upward crossing only"]
-    UP = 1,
+    Up = 1,
     #[doc = "2: Generate ANADETECT on downward crossing only"]
-    DOWN = 2,
+    Down = 2,
 }
-impl From<ANADETECT_A> for u8 {
+impl From<Anadetect> for u8 {
     #[inline(always)]
-    fn from(variant: ANADETECT_A) -> Self {
+    fn from(variant: Anadetect) -> Self {
         variant as _
     }
 }
-impl ANADETECT_R {
+impl crate::FieldSpec for Anadetect {
+    type Ux = u8;
+}
+impl crate::IsEnum for Anadetect {}
+#[doc = "Field `ANADETECT` reader - Analog detect configuration"]
+pub type AnadetectR = crate::FieldReader<Anadetect>;
+impl AnadetectR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ANADETECT_A> {
+    pub const fn variant(&self) -> Option<Anadetect> {
         match self.bits {
-            0 => Some(ANADETECT_A::CROSS),
-            1 => Some(ANADETECT_A::UP),
-            2 => Some(ANADETECT_A::DOWN),
+            0 => Some(Anadetect::Cross),
+            1 => Some(Anadetect::Up),
+            2 => Some(Anadetect::Down),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CROSS`"]
-    #[inline(always)]
-    pub fn is_cross(&self) -> bool {
-        *self == ANADETECT_A::CROSS
-    }
-    #[doc = "Checks if the value of the field is `UP`"]
-    #[inline(always)]
-    pub fn is_up(&self) -> bool {
-        *self == ANADETECT_A::UP
-    }
-    #[doc = "Checks if the value of the field is `DOWN`"]
-    #[inline(always)]
-    pub fn is_down(&self) -> bool {
-        *self == ANADETECT_A::DOWN
-    }
-}
-#[doc = "Field `ANADETECT` writer - Analog detect configuration"]
-pub type ANADETECT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ANADETECT_SPEC, u8, ANADETECT_A, 2, O>;
-impl<'a, const O: u8> ANADETECT_W<'a, O> {
     #[doc = "Generate ANADETECT on crossing, both upward crossing and downward crossing"]
     #[inline(always)]
-    pub fn cross(self) -> &'a mut W {
-        self.variant(ANADETECT_A::CROSS)
+    pub fn is_cross(&self) -> bool {
+        *self == Anadetect::Cross
     }
     #[doc = "Generate ANADETECT on upward crossing only"]
     #[inline(always)]
-    pub fn up(self) -> &'a mut W {
-        self.variant(ANADETECT_A::UP)
+    pub fn is_up(&self) -> bool {
+        *self == Anadetect::Up
     }
     #[doc = "Generate ANADETECT on downward crossing only"]
     #[inline(always)]
-    pub fn down(self) -> &'a mut W {
-        self.variant(ANADETECT_A::DOWN)
+    pub fn is_down(&self) -> bool {
+        *self == Anadetect::Down
+    }
+}
+#[doc = "Field `ANADETECT` writer - Analog detect configuration"]
+pub type AnadetectW<'a, REG> = crate::FieldWriter<'a, REG, 2, Anadetect>;
+impl<'a, REG> AnadetectW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Generate ANADETECT on crossing, both upward crossing and downward crossing"]
+    #[inline(always)]
+    pub fn cross(self) -> &'a mut crate::W<REG> {
+        self.variant(Anadetect::Cross)
+    }
+    #[doc = "Generate ANADETECT on upward crossing only"]
+    #[inline(always)]
+    pub fn up(self) -> &'a mut crate::W<REG> {
+        self.variant(Anadetect::Up)
+    }
+    #[doc = "Generate ANADETECT on downward crossing only"]
+    #[inline(always)]
+    pub fn down(self) -> &'a mut crate::W<REG> {
+        self.variant(Anadetect::Down)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Analog detect configuration"]
     #[inline(always)]
-    pub fn anadetect(&self) -> ANADETECT_R {
-        ANADETECT_R::new((self.bits & 3) as u8)
+    pub fn anadetect(&self) -> AnadetectR {
+        AnadetectR::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Analog detect configuration"]
     #[inline(always)]
-    pub fn anadetect(&mut self) -> ANADETECT_W<0> {
-        ANADETECT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn anadetect(&mut self) -> AnadetectW<'_, AnadetectSpec> {
+        AnadetectW::new(self, 0)
     }
 }
-#[doc = "Analog detect configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [anadetect](index.html) module"]
-pub struct ANADETECT_SPEC;
-impl crate::RegisterSpec for ANADETECT_SPEC {
+#[doc = "Analog detect configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`anadetect::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`anadetect::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct AnadetectSpec;
+impl crate::RegisterSpec for AnadetectSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [anadetect::R](R) reader structure"]
-impl crate::Readable for ANADETECT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [anadetect::W](W) writer structure"]
-impl crate::Writable for ANADETECT_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`anadetect::R`](R) reader structure"]
+impl crate::Readable for AnadetectSpec {}
+#[doc = "`write(|w| ..)` method takes [`anadetect::W`](W) writer structure"]
+impl crate::Writable for AnadetectSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets ANADETECT to value 0"]
-impl crate::Resettable for ANADETECT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for AnadetectSpec {}

@@ -1,127 +1,84 @@
 #[doc = "Register `EVENTS_RXFRAMESTART` reader"]
-pub struct R(crate::R<EVENTS_RXFRAMESTART_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENTS_RXFRAMESTART_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENTS_RXFRAMESTART_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENTS_RXFRAMESTART_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EventsRxframestartSpec>;
 #[doc = "Register `EVENTS_RXFRAMESTART` writer"]
-pub struct W(crate::W<EVENTS_RXFRAMESTART_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVENTS_RXFRAMESTART_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVENTS_RXFRAMESTART_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVENTS_RXFRAMESTART_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `EVENTS_RXFRAMESTART` reader - Marks the end of the first symbol of a received frame"]
-pub type EVENTS_RXFRAMESTART_R = crate::BitReader<EVENTS_RXFRAMESTART_A>;
+pub type W = crate::W<EventsRxframestartSpec>;
 #[doc = "Marks the end of the first symbol of a received frame\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVENTS_RXFRAMESTART_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EventsRxframestart {
     #[doc = "0: Event not generated"]
-    NOT_GENERATED = 0,
+    NotGenerated = 0,
     #[doc = "1: Event generated"]
-    GENERATED = 1,
+    Generated = 1,
 }
-impl From<EVENTS_RXFRAMESTART_A> for bool {
+impl From<EventsRxframestart> for bool {
     #[inline(always)]
-    fn from(variant: EVENTS_RXFRAMESTART_A) -> Self {
+    fn from(variant: EventsRxframestart) -> Self {
         variant as u8 != 0
     }
 }
-impl EVENTS_RXFRAMESTART_R {
+#[doc = "Field `EVENTS_RXFRAMESTART` reader - Marks the end of the first symbol of a received frame"]
+pub type EventsRxframestartR = crate::BitReader<EventsRxframestart>;
+impl EventsRxframestartR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVENTS_RXFRAMESTART_A {
+    pub const fn variant(&self) -> EventsRxframestart {
         match self.bits {
-            false => EVENTS_RXFRAMESTART_A::NOT_GENERATED,
-            true => EVENTS_RXFRAMESTART_A::GENERATED,
+            false => EventsRxframestart::NotGenerated,
+            true => EventsRxframestart::Generated,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_GENERATED`"]
-    #[inline(always)]
-    pub fn is_not_generated(&self) -> bool {
-        *self == EVENTS_RXFRAMESTART_A::NOT_GENERATED
-    }
-    #[doc = "Checks if the value of the field is `GENERATED`"]
-    #[inline(always)]
-    pub fn is_generated(&self) -> bool {
-        *self == EVENTS_RXFRAMESTART_A::GENERATED
-    }
-}
-#[doc = "Field `EVENTS_RXFRAMESTART` writer - Marks the end of the first symbol of a received frame"]
-pub type EVENTS_RXFRAMESTART_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EVENTS_RXFRAMESTART_SPEC, EVENTS_RXFRAMESTART_A, O>;
-impl<'a, const O: u8> EVENTS_RXFRAMESTART_W<'a, O> {
     #[doc = "Event not generated"]
     #[inline(always)]
-    pub fn not_generated(self) -> &'a mut W {
-        self.variant(EVENTS_RXFRAMESTART_A::NOT_GENERATED)
+    pub fn is_not_generated(&self) -> bool {
+        *self == EventsRxframestart::NotGenerated
     }
     #[doc = "Event generated"]
     #[inline(always)]
-    pub fn generated(self) -> &'a mut W {
-        self.variant(EVENTS_RXFRAMESTART_A::GENERATED)
+    pub fn is_generated(&self) -> bool {
+        *self == EventsRxframestart::Generated
+    }
+}
+#[doc = "Field `EVENTS_RXFRAMESTART` writer - Marks the end of the first symbol of a received frame"]
+pub type EventsRxframestartW<'a, REG> = crate::BitWriter<'a, REG, EventsRxframestart>;
+impl<'a, REG> EventsRxframestartW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Event not generated"]
+    #[inline(always)]
+    pub fn not_generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsRxframestart::NotGenerated)
+    }
+    #[doc = "Event generated"]
+    #[inline(always)]
+    pub fn generated(self) -> &'a mut crate::W<REG> {
+        self.variant(EventsRxframestart::Generated)
     }
 }
 impl R {
     #[doc = "Bit 0 - Marks the end of the first symbol of a received frame"]
     #[inline(always)]
-    pub fn events_rxframestart(&self) -> EVENTS_RXFRAMESTART_R {
-        EVENTS_RXFRAMESTART_R::new((self.bits & 1) != 0)
+    pub fn events_rxframestart(&self) -> EventsRxframestartR {
+        EventsRxframestartR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Marks the end of the first symbol of a received frame"]
     #[inline(always)]
-    pub fn events_rxframestart(&mut self) -> EVENTS_RXFRAMESTART_W<0> {
-        EVENTS_RXFRAMESTART_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn events_rxframestart(&mut self) -> EventsRxframestartW<'_, EventsRxframestartSpec> {
+        EventsRxframestartW::new(self, 0)
     }
 }
-#[doc = "Marks the end of the first symbol of a received frame\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_rxframestart](index.html) module"]
-pub struct EVENTS_RXFRAMESTART_SPEC;
-impl crate::RegisterSpec for EVENTS_RXFRAMESTART_SPEC {
+#[doc = "Marks the end of the first symbol of a received frame\n\nYou can [`read`](crate::Reg::read) this register and get [`events_rxframestart::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_rxframestart::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EventsRxframestartSpec;
+impl crate::RegisterSpec for EventsRxframestartSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [events_rxframestart::R](R) reader structure"]
-impl crate::Readable for EVENTS_RXFRAMESTART_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [events_rxframestart::W](W) writer structure"]
-impl crate::Writable for EVENTS_RXFRAMESTART_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`events_rxframestart::R`](R) reader structure"]
+impl crate::Readable for EventsRxframestartSpec {}
+#[doc = "`write(|w| ..)` method takes [`events_rxframestart::W`](W) writer structure"]
+impl crate::Writable for EventsRxframestartSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets EVENTS_RXFRAMESTART to value 0"]
-impl crate::Resettable for EVENTS_RXFRAMESTART_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EventsRxframestartSpec {}

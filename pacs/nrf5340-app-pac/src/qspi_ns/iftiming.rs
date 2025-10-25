@@ -1,80 +1,37 @@
 #[doc = "Register `IFTIMING` reader"]
-pub struct R(crate::R<IFTIMING_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IFTIMING_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IFTIMING_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IFTIMING_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IftimingSpec>;
 #[doc = "Register `IFTIMING` writer"]
-pub struct W(crate::W<IFTIMING_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IFTIMING_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IFTIMING_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IFTIMING_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<IftimingSpec>;
 #[doc = "Field `RXDELAY` reader - Timing related to sampling of the input serial data. The value of RXDELAY specifies the number of prescaled 192 MHz cycles delay from the the rising edge of the SPI Clock (SCK) until the input serial data is sampled. For example, if RXDELAY is set to 0, the input serial data is sampled on the rising edge of SCK."]
-pub type RXDELAY_R = crate::FieldReader<u8, u8>;
+pub type RxdelayR = crate::FieldReader;
 #[doc = "Field `RXDELAY` writer - Timing related to sampling of the input serial data. The value of RXDELAY specifies the number of prescaled 192 MHz cycles delay from the the rising edge of the SPI Clock (SCK) until the input serial data is sampled. For example, if RXDELAY is set to 0, the input serial data is sampled on the rising edge of SCK."]
-pub type RXDELAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IFTIMING_SPEC, u8, u8, 3, O>;
+pub type RxdelayW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 8:10 - Timing related to sampling of the input serial data. The value of RXDELAY specifies the number of prescaled 192 MHz cycles delay from the the rising edge of the SPI Clock (SCK) until the input serial data is sampled. For example, if RXDELAY is set to 0, the input serial data is sampled on the rising edge of SCK."]
     #[inline(always)]
-    pub fn rxdelay(&self) -> RXDELAY_R {
-        RXDELAY_R::new(((self.bits >> 8) & 7) as u8)
+    pub fn rxdelay(&self) -> RxdelayR {
+        RxdelayR::new(((self.bits >> 8) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 8:10 - Timing related to sampling of the input serial data. The value of RXDELAY specifies the number of prescaled 192 MHz cycles delay from the the rising edge of the SPI Clock (SCK) until the input serial data is sampled. For example, if RXDELAY is set to 0, the input serial data is sampled on the rising edge of SCK."]
     #[inline(always)]
-    pub fn rxdelay(&mut self) -> RXDELAY_W<8> {
-        RXDELAY_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn rxdelay(&mut self) -> RxdelayW<'_, IftimingSpec> {
+        RxdelayW::new(self, 8)
     }
 }
-#[doc = "SPI interface timing.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iftiming](index.html) module"]
-pub struct IFTIMING_SPEC;
-impl crate::RegisterSpec for IFTIMING_SPEC {
+#[doc = "SPI interface timing.\n\nYou can [`read`](crate::Reg::read) this register and get [`iftiming::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`iftiming::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct IftimingSpec;
+impl crate::RegisterSpec for IftimingSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [iftiming::R](R) reader structure"]
-impl crate::Readable for IFTIMING_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [iftiming::W](W) writer structure"]
-impl crate::Writable for IFTIMING_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`iftiming::R`](R) reader structure"]
+impl crate::Readable for IftimingSpec {}
+#[doc = "`write(|w| ..)` method takes [`iftiming::W`](W) writer structure"]
+impl crate::Writable for IftimingSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets IFTIMING to value 0x0200"]
-impl crate::Resettable for IFTIMING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0200
-    }
+impl crate::Resettable for IftimingSpec {
+    const RESET_VALUE: u32 = 0x0200;
 }

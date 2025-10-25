@@ -1,47 +1,13 @@
 #[doc = "Register `SIZE` reader"]
-pub struct R(crate::R<SIZE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SIZE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SIZE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SIZE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SizeSpec>;
 #[doc = "Register `SIZE` writer"]
-pub struct W(crate::W<SIZE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SIZE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SIZE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SIZE_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `SIZE` reader - Size of the non-secure callable (NSC) region n"]
-pub type SIZE_R = crate::FieldReader<u8, SIZE_A>;
+pub type W = crate::W<SizeSpec>;
 #[doc = "Size of the non-secure callable (NSC) region n\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SIZE_A {
+pub enum Size {
     #[doc = "0: The region n is not defined as a non-secure callable region. Normal security attributes (secure or non-secure) are enforced."]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "1: The region n is defined as non-secure callable with a 32-byte size"]
     _32 = 1,
     #[doc = "2: The region n is defined as non-secure callable with a 64-byte size"]
@@ -59,221 +25,221 @@ pub enum SIZE_A {
     #[doc = "8: The region n is defined as non-secure callable with a 4096-byte size"]
     _4096 = 8,
 }
-impl From<SIZE_A> for u8 {
+impl From<Size> for u8 {
     #[inline(always)]
-    fn from(variant: SIZE_A) -> Self {
+    fn from(variant: Size) -> Self {
         variant as _
     }
 }
-impl SIZE_R {
+impl crate::FieldSpec for Size {
+    type Ux = u8;
+}
+impl crate::IsEnum for Size {}
+#[doc = "Field `SIZE` reader - Size of the non-secure callable (NSC) region n"]
+pub type SizeR = crate::FieldReader<Size>;
+impl SizeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SIZE_A> {
+    pub const fn variant(&self) -> Option<Size> {
         match self.bits {
-            0 => Some(SIZE_A::DISABLED),
-            1 => Some(SIZE_A::_32),
-            2 => Some(SIZE_A::_64),
-            3 => Some(SIZE_A::_128),
-            4 => Some(SIZE_A::_256),
-            5 => Some(SIZE_A::_512),
-            6 => Some(SIZE_A::_1024),
-            7 => Some(SIZE_A::_2048),
-            8 => Some(SIZE_A::_4096),
+            0 => Some(Size::Disabled),
+            1 => Some(Size::_32),
+            2 => Some(Size::_64),
+            3 => Some(Size::_128),
+            4 => Some(Size::_256),
+            5 => Some(Size::_512),
+            6 => Some(Size::_1024),
+            7 => Some(Size::_2048),
+            8 => Some(Size::_4096),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == SIZE_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `_32`"]
-    #[inline(always)]
-    pub fn is_32(&self) -> bool {
-        *self == SIZE_A::_32
-    }
-    #[doc = "Checks if the value of the field is `_64`"]
-    #[inline(always)]
-    pub fn is_64(&self) -> bool {
-        *self == SIZE_A::_64
-    }
-    #[doc = "Checks if the value of the field is `_128`"]
-    #[inline(always)]
-    pub fn is_128(&self) -> bool {
-        *self == SIZE_A::_128
-    }
-    #[doc = "Checks if the value of the field is `_256`"]
-    #[inline(always)]
-    pub fn is_256(&self) -> bool {
-        *self == SIZE_A::_256
-    }
-    #[doc = "Checks if the value of the field is `_512`"]
-    #[inline(always)]
-    pub fn is_512(&self) -> bool {
-        *self == SIZE_A::_512
-    }
-    #[doc = "Checks if the value of the field is `_1024`"]
-    #[inline(always)]
-    pub fn is_1024(&self) -> bool {
-        *self == SIZE_A::_1024
-    }
-    #[doc = "Checks if the value of the field is `_2048`"]
-    #[inline(always)]
-    pub fn is_2048(&self) -> bool {
-        *self == SIZE_A::_2048
-    }
-    #[doc = "Checks if the value of the field is `_4096`"]
-    #[inline(always)]
-    pub fn is_4096(&self) -> bool {
-        *self == SIZE_A::_4096
-    }
-}
-#[doc = "Field `SIZE` writer - Size of the non-secure callable (NSC) region n"]
-pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SIZE_SPEC, u8, SIZE_A, 4, O>;
-impl<'a, const O: u8> SIZE_W<'a, O> {
     #[doc = "The region n is not defined as a non-secure callable region. Normal security attributes (secure or non-secure) are enforced."]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(SIZE_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Size::Disabled
     }
     #[doc = "The region n is defined as non-secure callable with a 32-byte size"]
     #[inline(always)]
-    pub fn _32(self) -> &'a mut W {
-        self.variant(SIZE_A::_32)
+    pub fn is_32(&self) -> bool {
+        *self == Size::_32
     }
     #[doc = "The region n is defined as non-secure callable with a 64-byte size"]
     #[inline(always)]
-    pub fn _64(self) -> &'a mut W {
-        self.variant(SIZE_A::_64)
+    pub fn is_64(&self) -> bool {
+        *self == Size::_64
     }
     #[doc = "The region n is defined as non-secure callable with a 128-byte size"]
     #[inline(always)]
-    pub fn _128(self) -> &'a mut W {
-        self.variant(SIZE_A::_128)
+    pub fn is_128(&self) -> bool {
+        *self == Size::_128
     }
     #[doc = "The region n is defined as non-secure callable with a 256-byte size"]
     #[inline(always)]
-    pub fn _256(self) -> &'a mut W {
-        self.variant(SIZE_A::_256)
+    pub fn is_256(&self) -> bool {
+        *self == Size::_256
     }
     #[doc = "The region n is defined as non-secure callable with a 512-byte size"]
     #[inline(always)]
-    pub fn _512(self) -> &'a mut W {
-        self.variant(SIZE_A::_512)
+    pub fn is_512(&self) -> bool {
+        *self == Size::_512
     }
     #[doc = "The region n is defined as non-secure callable with a 1024-byte size"]
     #[inline(always)]
-    pub fn _1024(self) -> &'a mut W {
-        self.variant(SIZE_A::_1024)
+    pub fn is_1024(&self) -> bool {
+        *self == Size::_1024
     }
     #[doc = "The region n is defined as non-secure callable with a 2048-byte size"]
     #[inline(always)]
-    pub fn _2048(self) -> &'a mut W {
-        self.variant(SIZE_A::_2048)
+    pub fn is_2048(&self) -> bool {
+        *self == Size::_2048
     }
     #[doc = "The region n is defined as non-secure callable with a 4096-byte size"]
     #[inline(always)]
-    pub fn _4096(self) -> &'a mut W {
-        self.variant(SIZE_A::_4096)
+    pub fn is_4096(&self) -> bool {
+        *self == Size::_4096
     }
 }
-#[doc = "Field `LOCK` reader - "]
-pub type LOCK_R = crate::BitReader<LOCK_A>;
-#[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_A {
-    #[doc = "0: This register can be updated"]
-    UNLOCKED = 0,
-    #[doc = "1: The content of this register can't be changed until the next reset"]
-    LOCKED = 1,
-}
-impl From<LOCK_A> for bool {
+#[doc = "Field `SIZE` writer - Size of the non-secure callable (NSC) region n"]
+pub type SizeW<'a, REG> = crate::FieldWriter<'a, REG, 4, Size>;
+impl<'a, REG> SizeW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "The region n is not defined as a non-secure callable region. Normal security attributes (secure or non-secure) are enforced."]
     #[inline(always)]
-    fn from(variant: LOCK_A) -> Self {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Size::Disabled)
+    }
+    #[doc = "The region n is defined as non-secure callable with a 32-byte size"]
+    #[inline(always)]
+    pub fn _32(self) -> &'a mut crate::W<REG> {
+        self.variant(Size::_32)
+    }
+    #[doc = "The region n is defined as non-secure callable with a 64-byte size"]
+    #[inline(always)]
+    pub fn _64(self) -> &'a mut crate::W<REG> {
+        self.variant(Size::_64)
+    }
+    #[doc = "The region n is defined as non-secure callable with a 128-byte size"]
+    #[inline(always)]
+    pub fn _128(self) -> &'a mut crate::W<REG> {
+        self.variant(Size::_128)
+    }
+    #[doc = "The region n is defined as non-secure callable with a 256-byte size"]
+    #[inline(always)]
+    pub fn _256(self) -> &'a mut crate::W<REG> {
+        self.variant(Size::_256)
+    }
+    #[doc = "The region n is defined as non-secure callable with a 512-byte size"]
+    #[inline(always)]
+    pub fn _512(self) -> &'a mut crate::W<REG> {
+        self.variant(Size::_512)
+    }
+    #[doc = "The region n is defined as non-secure callable with a 1024-byte size"]
+    #[inline(always)]
+    pub fn _1024(self) -> &'a mut crate::W<REG> {
+        self.variant(Size::_1024)
+    }
+    #[doc = "The region n is defined as non-secure callable with a 2048-byte size"]
+    #[inline(always)]
+    pub fn _2048(self) -> &'a mut crate::W<REG> {
+        self.variant(Size::_2048)
+    }
+    #[doc = "The region n is defined as non-secure callable with a 4096-byte size"]
+    #[inline(always)]
+    pub fn _4096(self) -> &'a mut crate::W<REG> {
+        self.variant(Size::_4096)
+    }
+}
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Lock {
+    #[doc = "0: This register can be updated"]
+    Unlocked = 0,
+    #[doc = "1: The content of this register can't be changed until the next reset"]
+    Locked = 1,
+}
+impl From<Lock> for bool {
+    #[inline(always)]
+    fn from(variant: Lock) -> Self {
         variant as u8 != 0
     }
 }
-impl LOCK_R {
+#[doc = "Field `LOCK` reader - "]
+pub type LockR = crate::BitReader<Lock>;
+impl LockR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCK_A {
+    pub const fn variant(&self) -> Lock {
         match self.bits {
-            false => LOCK_A::UNLOCKED,
-            true => LOCK_A::LOCKED,
+            false => Lock::Unlocked,
+            true => Lock::Locked,
         }
     }
-    #[doc = "Checks if the value of the field is `UNLOCKED`"]
-    #[inline(always)]
-    pub fn is_unlocked(&self) -> bool {
-        *self == LOCK_A::UNLOCKED
-    }
-    #[doc = "Checks if the value of the field is `LOCKED`"]
-    #[inline(always)]
-    pub fn is_locked(&self) -> bool {
-        *self == LOCK_A::LOCKED
-    }
-}
-#[doc = "Field `LOCK` writer - "]
-pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SIZE_SPEC, LOCK_A, O>;
-impl<'a, const O: u8> LOCK_W<'a, O> {
     #[doc = "This register can be updated"]
     #[inline(always)]
-    pub fn unlocked(self) -> &'a mut W {
-        self.variant(LOCK_A::UNLOCKED)
+    pub fn is_unlocked(&self) -> bool {
+        *self == Lock::Unlocked
     }
     #[doc = "The content of this register can't be changed until the next reset"]
     #[inline(always)]
-    pub fn locked(self) -> &'a mut W {
-        self.variant(LOCK_A::LOCKED)
+    pub fn is_locked(&self) -> bool {
+        *self == Lock::Locked
+    }
+}
+#[doc = "Field `LOCK` writer - "]
+pub type LockW<'a, REG> = crate::BitWriter<'a, REG, Lock>;
+impl<'a, REG> LockW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "This register can be updated"]
+    #[inline(always)]
+    pub fn unlocked(self) -> &'a mut crate::W<REG> {
+        self.variant(Lock::Unlocked)
+    }
+    #[doc = "The content of this register can't be changed until the next reset"]
+    #[inline(always)]
+    pub fn locked(self) -> &'a mut crate::W<REG> {
+        self.variant(Lock::Locked)
     }
 }
 impl R {
     #[doc = "Bits 0:3 - Size of the non-secure callable (NSC) region n"]
     #[inline(always)]
-    pub fn size(&self) -> SIZE_R {
-        SIZE_R::new((self.bits & 0x0f) as u8)
+    pub fn size(&self) -> SizeR {
+        SizeR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    pub fn lock(&self) -> LOCK_R {
-        LOCK_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn lock(&self) -> LockR {
+        LockR::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Size of the non-secure callable (NSC) region n"]
     #[inline(always)]
-    pub fn size(&mut self) -> SIZE_W<0> {
-        SIZE_W::new(self)
+    pub fn size(&mut self) -> SizeW<'_, SizeSpec> {
+        SizeW::new(self, 0)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LOCK_W<8> {
-        LOCK_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn lock(&mut self) -> LockW<'_, SizeSpec> {
+        LockW::new(self, 8)
     }
 }
-#[doc = "Description cluster: Define the size of the non-secure callable (NSC) region n\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [size](index.html) module"]
-pub struct SIZE_SPEC;
-impl crate::RegisterSpec for SIZE_SPEC {
+#[doc = "Description cluster: Define the size of the non-secure callable (NSC) region n\n\nYou can [`read`](crate::Reg::read) this register and get [`size::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`size::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct SizeSpec;
+impl crate::RegisterSpec for SizeSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [size::R](R) reader structure"]
-impl crate::Readable for SIZE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [size::W](W) writer structure"]
-impl crate::Writable for SIZE_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`size::R`](R) reader structure"]
+impl crate::Readable for SizeSpec {}
+#[doc = "`write(|w| ..)` method takes [`size::W`](W) writer structure"]
+impl crate::Writable for SizeSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets SIZE to value 0"]
-impl crate::Resettable for SIZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for SizeSpec {}

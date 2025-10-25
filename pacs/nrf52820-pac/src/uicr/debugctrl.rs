@@ -1,129 +1,93 @@
 #[doc = "Register `DEBUGCTRL` reader"]
-pub struct R(crate::R<DEBUGCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DEBUGCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DEBUGCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DEBUGCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DebugctrlSpec>;
 #[doc = "Register `DEBUGCTRL` writer"]
-pub struct W(crate::W<DEBUGCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DEBUGCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DEBUGCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DEBUGCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `CPUFPBEN` reader - Configure CPU flash patch and breakpoint (FPB) unit behavior"]
-pub type CPUFPBEN_R = crate::FieldReader<u8, CPUFPBEN_A>;
+pub type W = crate::W<DebugctrlSpec>;
 #[doc = "Configure CPU flash patch and breakpoint (FPB) unit behavior\n\nValue on reset: 255"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CPUFPBEN_A {
+pub enum Cpufpben {
     #[doc = "255: Enable CPU FPB unit (default behavior)"]
-    ENABLED = 255,
+    Enabled = 255,
     #[doc = "0: Disable CPU FPB unit. Writes into the FPB registers will be ignored."]
-    DISABLED = 0,
+    Disabled = 0,
 }
-impl From<CPUFPBEN_A> for u8 {
+impl From<Cpufpben> for u8 {
     #[inline(always)]
-    fn from(variant: CPUFPBEN_A) -> Self {
+    fn from(variant: Cpufpben) -> Self {
         variant as _
     }
 }
-impl CPUFPBEN_R {
+impl crate::FieldSpec for Cpufpben {
+    type Ux = u8;
+}
+impl crate::IsEnum for Cpufpben {}
+#[doc = "Field `CPUFPBEN` reader - Configure CPU flash patch and breakpoint (FPB) unit behavior"]
+pub type CpufpbenR = crate::FieldReader<Cpufpben>;
+impl CpufpbenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CPUFPBEN_A> {
+    pub const fn variant(&self) -> Option<Cpufpben> {
         match self.bits {
-            255 => Some(CPUFPBEN_A::ENABLED),
-            0 => Some(CPUFPBEN_A::DISABLED),
+            255 => Some(Cpufpben::Enabled),
+            0 => Some(Cpufpben::Disabled),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == CPUFPBEN_A::ENABLED
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == CPUFPBEN_A::DISABLED
-    }
-}
-#[doc = "Field `CPUFPBEN` writer - Configure CPU flash patch and breakpoint (FPB) unit behavior"]
-pub type CPUFPBEN_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DEBUGCTRL_SPEC, u8, CPUFPBEN_A, 8, O>;
-impl<'a, const O: u8> CPUFPBEN_W<'a, O> {
     #[doc = "Enable CPU FPB unit (default behavior)"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(CPUFPBEN_A::ENABLED)
+    pub fn is_enabled(&self) -> bool {
+        *self == Cpufpben::Enabled
     }
     #[doc = "Disable CPU FPB unit. Writes into the FPB registers will be ignored."]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(CPUFPBEN_A::DISABLED)
+    pub fn is_disabled(&self) -> bool {
+        *self == Cpufpben::Disabled
+    }
+}
+#[doc = "Field `CPUFPBEN` writer - Configure CPU flash patch and breakpoint (FPB) unit behavior"]
+pub type CpufpbenW<'a, REG> = crate::FieldWriter<'a, REG, 8, Cpufpben>;
+impl<'a, REG> CpufpbenW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Enable CPU FPB unit (default behavior)"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Cpufpben::Enabled)
+    }
+    #[doc = "Disable CPU FPB unit. Writes into the FPB registers will be ignored."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Cpufpben::Disabled)
     }
 }
 impl R {
     #[doc = "Bits 8:15 - Configure CPU flash patch and breakpoint (FPB) unit behavior"]
     #[inline(always)]
-    pub fn cpufpben(&self) -> CPUFPBEN_R {
-        CPUFPBEN_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn cpufpben(&self) -> CpufpbenR {
+        CpufpbenR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
 impl W {
     #[doc = "Bits 8:15 - Configure CPU flash patch and breakpoint (FPB) unit behavior"]
     #[inline(always)]
-    pub fn cpufpben(&mut self) -> CPUFPBEN_W<8> {
-        CPUFPBEN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn cpufpben(&mut self) -> CpufpbenW<'_, DebugctrlSpec> {
+        CpufpbenW::new(self, 8)
     }
 }
-#[doc = "Processor debug control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [debugctrl](index.html) module"]
-pub struct DEBUGCTRL_SPEC;
-impl crate::RegisterSpec for DEBUGCTRL_SPEC {
+#[doc = "Processor debug control\n\nYou can [`read`](crate::Reg::read) this register and get [`debugctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`debugctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct DebugctrlSpec;
+impl crate::RegisterSpec for DebugctrlSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [debugctrl::R](R) reader structure"]
-impl crate::Readable for DEBUGCTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [debugctrl::W](W) writer structure"]
-impl crate::Writable for DEBUGCTRL_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`debugctrl::R`](R) reader structure"]
+impl crate::Readable for DebugctrlSpec {}
+#[doc = "`write(|w| ..)` method takes [`debugctrl::W`](W) writer structure"]
+impl crate::Writable for DebugctrlSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets DEBUGCTRL to value 0xffff_ffff"]
-impl crate::Resettable for DEBUGCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for DebugctrlSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

@@ -1,126 +1,86 @@
 #[doc = "Register `HFXOSRC` reader"]
-pub struct R(crate::R<HFXOSRC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HFXOSRC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HFXOSRC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HFXOSRC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HfxosrcSpec>;
 #[doc = "Register `HFXOSRC` writer"]
-pub struct W(crate::W<HFXOSRC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HFXOSRC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HFXOSRC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HFXOSRC_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `HFXOSRC` reader - HFXO clock source selection"]
-pub type HFXOSRC_R = crate::BitReader<HFXOSRC_A>;
+pub type W = crate::W<HfxosrcSpec>;
 #[doc = "HFXO clock source selection\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HFXOSRC_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Hfxosrc {
     #[doc = "1: 32 MHz crystal oscillator"]
-    XTAL = 1,
+    Xtal = 1,
     #[doc = "0: 32 MHz temperature compensated crystal oscillator (TCXO)"]
-    TCXO = 0,
+    Tcxo = 0,
 }
-impl From<HFXOSRC_A> for bool {
+impl From<Hfxosrc> for bool {
     #[inline(always)]
-    fn from(variant: HFXOSRC_A) -> Self {
+    fn from(variant: Hfxosrc) -> Self {
         variant as u8 != 0
     }
 }
-impl HFXOSRC_R {
+#[doc = "Field `HFXOSRC` reader - HFXO clock source selection"]
+pub type HfxosrcR = crate::BitReader<Hfxosrc>;
+impl HfxosrcR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HFXOSRC_A {
+    pub const fn variant(&self) -> Hfxosrc {
         match self.bits {
-            true => HFXOSRC_A::XTAL,
-            false => HFXOSRC_A::TCXO,
+            true => Hfxosrc::Xtal,
+            false => Hfxosrc::Tcxo,
         }
     }
-    #[doc = "Checks if the value of the field is `XTAL`"]
-    #[inline(always)]
-    pub fn is_xtal(&self) -> bool {
-        *self == HFXOSRC_A::XTAL
-    }
-    #[doc = "Checks if the value of the field is `TCXO`"]
-    #[inline(always)]
-    pub fn is_tcxo(&self) -> bool {
-        *self == HFXOSRC_A::TCXO
-    }
-}
-#[doc = "Field `HFXOSRC` writer - HFXO clock source selection"]
-pub type HFXOSRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFXOSRC_SPEC, HFXOSRC_A, O>;
-impl<'a, const O: u8> HFXOSRC_W<'a, O> {
     #[doc = "32 MHz crystal oscillator"]
     #[inline(always)]
-    pub fn xtal(self) -> &'a mut W {
-        self.variant(HFXOSRC_A::XTAL)
+    pub fn is_xtal(&self) -> bool {
+        *self == Hfxosrc::Xtal
     }
     #[doc = "32 MHz temperature compensated crystal oscillator (TCXO)"]
     #[inline(always)]
-    pub fn tcxo(self) -> &'a mut W {
-        self.variant(HFXOSRC_A::TCXO)
+    pub fn is_tcxo(&self) -> bool {
+        *self == Hfxosrc::Tcxo
+    }
+}
+#[doc = "Field `HFXOSRC` writer - HFXO clock source selection"]
+pub type HfxosrcW<'a, REG> = crate::BitWriter<'a, REG, Hfxosrc>;
+impl<'a, REG> HfxosrcW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "32 MHz crystal oscillator"]
+    #[inline(always)]
+    pub fn xtal(self) -> &'a mut crate::W<REG> {
+        self.variant(Hfxosrc::Xtal)
+    }
+    #[doc = "32 MHz temperature compensated crystal oscillator (TCXO)"]
+    #[inline(always)]
+    pub fn tcxo(self) -> &'a mut crate::W<REG> {
+        self.variant(Hfxosrc::Tcxo)
     }
 }
 impl R {
     #[doc = "Bit 0 - HFXO clock source selection"]
     #[inline(always)]
-    pub fn hfxosrc(&self) -> HFXOSRC_R {
-        HFXOSRC_R::new((self.bits & 1) != 0)
+    pub fn hfxosrc(&self) -> HfxosrcR {
+        HfxosrcR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - HFXO clock source selection"]
     #[inline(always)]
-    pub fn hfxosrc(&mut self) -> HFXOSRC_W<0> {
-        HFXOSRC_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn hfxosrc(&mut self) -> HfxosrcW<'_, HfxosrcSpec> {
+        HfxosrcW::new(self, 0)
     }
 }
-#[doc = "HFXO clock source selection\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfxosrc](index.html) module"]
-pub struct HFXOSRC_SPEC;
-impl crate::RegisterSpec for HFXOSRC_SPEC {
+#[doc = "HFXO clock source selection\n\nYou can [`read`](crate::Reg::read) this register and get [`hfxosrc::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hfxosrc::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct HfxosrcSpec;
+impl crate::RegisterSpec for HfxosrcSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hfxosrc::R](R) reader structure"]
-impl crate::Readable for HFXOSRC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hfxosrc::W](W) writer structure"]
-impl crate::Writable for HFXOSRC_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`hfxosrc::R`](R) reader structure"]
+impl crate::Readable for HfxosrcSpec {}
+#[doc = "`write(|w| ..)` method takes [`hfxosrc::W`](W) writer structure"]
+impl crate::Writable for HfxosrcSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets HFXOSRC to value 0xffff_ffff"]
-impl crate::Resettable for HFXOSRC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+impl crate::Resettable for HfxosrcSpec {
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

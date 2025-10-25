@@ -1,25 +1,28 @@
-#[doc = r"Register block"]
 #[repr(C)]
-pub struct APPROTECT {
+#[doc = "Unspecified"]
+#[doc(alias = "APPROTECT")]
+pub struct Approtect {
     _reserved_0_disable: [u8; 0x04],
 }
-impl APPROTECT {
+impl Approtect {
     #[doc = "0x00 - Software force APPROTECT mechanism"]
     #[inline(always)]
-    pub fn forceprotect(&self) -> &FORCEPROTECT {
-        unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const FORCEPROTECT) }
+    pub const fn forceprotect(&self) -> &Forceprotect {
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().cast() }
     }
     #[doc = "0x00 - Software disable APPROTECT mechanism"]
     #[inline(always)]
-    pub fn disable(&self) -> &DISABLE {
-        unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const DISABLE) }
+    pub const fn disable(&self) -> &Disable {
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().cast() }
     }
 }
-#[doc = "DISABLE (rw) register accessor: an alias for `Reg<DISABLE_SPEC>`"]
-pub type DISABLE = crate::Reg<disable::DISABLE_SPEC>;
+#[doc = "DISABLE (rw) register accessor: Software disable APPROTECT mechanism\n\nYou can [`read`](crate::Reg::read) this register and get [`disable::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`disable::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@disable`] module"]
+#[doc(alias = "DISABLE")]
+pub type Disable = crate::Reg<disable::DisableSpec>;
 #[doc = "Software disable APPROTECT mechanism"]
 pub mod disable;
-#[doc = "FORCEPROTECT (rw) register accessor: an alias for `Reg<FORCEPROTECT_SPEC>`"]
-pub type FORCEPROTECT = crate::Reg<forceprotect::FORCEPROTECT_SPEC>;
+#[doc = "FORCEPROTECT (rw) register accessor: Software force APPROTECT mechanism\n\nYou can [`read`](crate::Reg::read) this register and get [`forceprotect::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`forceprotect::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@forceprotect`] module"]
+#[doc(alias = "FORCEPROTECT")]
+pub type Forceprotect = crate::Reg<forceprotect::ForceprotectSpec>;
 #[doc = "Software force APPROTECT mechanism"]
 pub mod forceprotect;

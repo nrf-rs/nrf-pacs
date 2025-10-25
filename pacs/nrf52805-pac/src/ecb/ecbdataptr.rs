@@ -1,81 +1,35 @@
 #[doc = "Register `ECBDATAPTR` reader"]
-pub struct R(crate::R<ECBDATAPTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ECBDATAPTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ECBDATAPTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ECBDATAPTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EcbdataptrSpec>;
 #[doc = "Register `ECBDATAPTR` writer"]
-pub struct W(crate::W<ECBDATAPTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ECBDATAPTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ECBDATAPTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ECBDATAPTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EcbdataptrSpec>;
 #[doc = "Field `ECBDATAPTR` reader - Pointer to the ECB data structure (see Table 1 ECB data structure overview)"]
-pub type ECBDATAPTR_R = crate::FieldReader<u32, u32>;
+pub type EcbdataptrR = crate::FieldReader<u32>;
 #[doc = "Field `ECBDATAPTR` writer - Pointer to the ECB data structure (see Table 1 ECB data structure overview)"]
-pub type ECBDATAPTR_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ECBDATAPTR_SPEC, u32, u32, 32, O>;
+pub type EcbdataptrW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Pointer to the ECB data structure (see Table 1 ECB data structure overview)"]
     #[inline(always)]
-    pub fn ecbdataptr(&self) -> ECBDATAPTR_R {
-        ECBDATAPTR_R::new(self.bits)
+    pub fn ecbdataptr(&self) -> EcbdataptrR {
+        EcbdataptrR::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Pointer to the ECB data structure (see Table 1 ECB data structure overview)"]
     #[inline(always)]
-    pub fn ecbdataptr(&mut self) -> ECBDATAPTR_W<0> {
-        ECBDATAPTR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn ecbdataptr(&mut self) -> EcbdataptrW<'_, EcbdataptrSpec> {
+        EcbdataptrW::new(self, 0)
     }
 }
-#[doc = "ECB block encrypt memory pointers\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ecbdataptr](index.html) module"]
-pub struct ECBDATAPTR_SPEC;
-impl crate::RegisterSpec for ECBDATAPTR_SPEC {
+#[doc = "ECB block encrypt memory pointers\n\nYou can [`read`](crate::Reg::read) this register and get [`ecbdataptr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ecbdataptr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EcbdataptrSpec;
+impl crate::RegisterSpec for EcbdataptrSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ecbdataptr::R](R) reader structure"]
-impl crate::Readable for ECBDATAPTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ecbdataptr::W](W) writer structure"]
-impl crate::Writable for ECBDATAPTR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ecbdataptr::R`](R) reader structure"]
+impl crate::Readable for EcbdataptrSpec {}
+#[doc = "`write(|w| ..)` method takes [`ecbdataptr::W`](W) writer structure"]
+impl crate::Writable for EcbdataptrSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets ECBDATAPTR to value 0"]
-impl crate::Resettable for ECBDATAPTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for EcbdataptrSpec {}

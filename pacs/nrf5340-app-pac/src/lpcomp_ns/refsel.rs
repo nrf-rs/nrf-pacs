@@ -1,311 +1,275 @@
 #[doc = "Register `REFSEL` reader"]
-pub struct R(crate::R<REFSEL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<REFSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<REFSEL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<REFSEL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RefselSpec>;
 #[doc = "Register `REFSEL` writer"]
-pub struct W(crate::W<REFSEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<REFSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<REFSEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<REFSEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `REFSEL` reader - Reference select"]
-pub type REFSEL_R = crate::FieldReader<u8, REFSEL_A>;
+pub type W = crate::W<RefselSpec>;
 #[doc = "Reference select\n\nValue on reset: 4"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum REFSEL_A {
+pub enum Refsel {
     #[doc = "0: VDD * 1/8 selected as reference"]
-    REF1_8VDD = 0,
+    Ref1_8vdd = 0,
     #[doc = "1: VDD * 2/8 selected as reference"]
-    REF2_8VDD = 1,
+    Ref2_8vdd = 1,
     #[doc = "2: VDD * 3/8 selected as reference"]
-    REF3_8VDD = 2,
+    Ref3_8vdd = 2,
     #[doc = "3: VDD * 4/8 selected as reference"]
-    REF4_8VDD = 3,
+    Ref4_8vdd = 3,
     #[doc = "4: VDD * 5/8 selected as reference"]
-    REF5_8VDD = 4,
+    Ref5_8vdd = 4,
     #[doc = "5: VDD * 6/8 selected as reference"]
-    REF6_8VDD = 5,
+    Ref6_8vdd = 5,
     #[doc = "6: VDD * 7/8 selected as reference"]
-    REF7_8VDD = 6,
+    Ref7_8vdd = 6,
     #[doc = "7: External analog reference selected"]
-    AREF = 7,
+    Aref = 7,
     #[doc = "8: VDD * 1/16 selected as reference"]
-    REF1_16VDD = 8,
+    Ref1_16vdd = 8,
     #[doc = "9: VDD * 3/16 selected as reference"]
-    REF3_16VDD = 9,
+    Ref3_16vdd = 9,
     #[doc = "10: VDD * 5/16 selected as reference"]
-    REF5_16VDD = 10,
+    Ref5_16vdd = 10,
     #[doc = "11: VDD * 7/16 selected as reference"]
-    REF7_16VDD = 11,
+    Ref7_16vdd = 11,
     #[doc = "12: VDD * 9/16 selected as reference"]
-    REF9_16VDD = 12,
+    Ref9_16vdd = 12,
     #[doc = "13: VDD * 11/16 selected as reference"]
-    REF11_16VDD = 13,
+    Ref11_16vdd = 13,
     #[doc = "14: VDD * 13/16 selected as reference"]
-    REF13_16VDD = 14,
+    Ref13_16vdd = 14,
     #[doc = "15: VDD * 15/16 selected as reference"]
-    REF15_16VDD = 15,
+    Ref15_16vdd = 15,
 }
-impl From<REFSEL_A> for u8 {
+impl From<Refsel> for u8 {
     #[inline(always)]
-    fn from(variant: REFSEL_A) -> Self {
+    fn from(variant: Refsel) -> Self {
         variant as _
     }
 }
-impl REFSEL_R {
+impl crate::FieldSpec for Refsel {
+    type Ux = u8;
+}
+impl crate::IsEnum for Refsel {}
+#[doc = "Field `REFSEL` reader - Reference select"]
+pub type RefselR = crate::FieldReader<Refsel>;
+impl RefselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REFSEL_A {
+    pub const fn variant(&self) -> Refsel {
         match self.bits {
-            0 => REFSEL_A::REF1_8VDD,
-            1 => REFSEL_A::REF2_8VDD,
-            2 => REFSEL_A::REF3_8VDD,
-            3 => REFSEL_A::REF4_8VDD,
-            4 => REFSEL_A::REF5_8VDD,
-            5 => REFSEL_A::REF6_8VDD,
-            6 => REFSEL_A::REF7_8VDD,
-            7 => REFSEL_A::AREF,
-            8 => REFSEL_A::REF1_16VDD,
-            9 => REFSEL_A::REF3_16VDD,
-            10 => REFSEL_A::REF5_16VDD,
-            11 => REFSEL_A::REF7_16VDD,
-            12 => REFSEL_A::REF9_16VDD,
-            13 => REFSEL_A::REF11_16VDD,
-            14 => REFSEL_A::REF13_16VDD,
-            15 => REFSEL_A::REF15_16VDD,
+            0 => Refsel::Ref1_8vdd,
+            1 => Refsel::Ref2_8vdd,
+            2 => Refsel::Ref3_8vdd,
+            3 => Refsel::Ref4_8vdd,
+            4 => Refsel::Ref5_8vdd,
+            5 => Refsel::Ref6_8vdd,
+            6 => Refsel::Ref7_8vdd,
+            7 => Refsel::Aref,
+            8 => Refsel::Ref1_16vdd,
+            9 => Refsel::Ref3_16vdd,
+            10 => Refsel::Ref5_16vdd,
+            11 => Refsel::Ref7_16vdd,
+            12 => Refsel::Ref9_16vdd,
+            13 => Refsel::Ref11_16vdd,
+            14 => Refsel::Ref13_16vdd,
+            15 => Refsel::Ref15_16vdd,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `REF1_8VDD`"]
-    #[inline(always)]
-    pub fn is_ref1_8vdd(&self) -> bool {
-        *self == REFSEL_A::REF1_8VDD
-    }
-    #[doc = "Checks if the value of the field is `REF2_8VDD`"]
-    #[inline(always)]
-    pub fn is_ref2_8vdd(&self) -> bool {
-        *self == REFSEL_A::REF2_8VDD
-    }
-    #[doc = "Checks if the value of the field is `REF3_8VDD`"]
-    #[inline(always)]
-    pub fn is_ref3_8vdd(&self) -> bool {
-        *self == REFSEL_A::REF3_8VDD
-    }
-    #[doc = "Checks if the value of the field is `REF4_8VDD`"]
-    #[inline(always)]
-    pub fn is_ref4_8vdd(&self) -> bool {
-        *self == REFSEL_A::REF4_8VDD
-    }
-    #[doc = "Checks if the value of the field is `REF5_8VDD`"]
-    #[inline(always)]
-    pub fn is_ref5_8vdd(&self) -> bool {
-        *self == REFSEL_A::REF5_8VDD
-    }
-    #[doc = "Checks if the value of the field is `REF6_8VDD`"]
-    #[inline(always)]
-    pub fn is_ref6_8vdd(&self) -> bool {
-        *self == REFSEL_A::REF6_8VDD
-    }
-    #[doc = "Checks if the value of the field is `REF7_8VDD`"]
-    #[inline(always)]
-    pub fn is_ref7_8vdd(&self) -> bool {
-        *self == REFSEL_A::REF7_8VDD
-    }
-    #[doc = "Checks if the value of the field is `AREF`"]
-    #[inline(always)]
-    pub fn is_aref(&self) -> bool {
-        *self == REFSEL_A::AREF
-    }
-    #[doc = "Checks if the value of the field is `REF1_16VDD`"]
-    #[inline(always)]
-    pub fn is_ref1_16vdd(&self) -> bool {
-        *self == REFSEL_A::REF1_16VDD
-    }
-    #[doc = "Checks if the value of the field is `REF3_16VDD`"]
-    #[inline(always)]
-    pub fn is_ref3_16vdd(&self) -> bool {
-        *self == REFSEL_A::REF3_16VDD
-    }
-    #[doc = "Checks if the value of the field is `REF5_16VDD`"]
-    #[inline(always)]
-    pub fn is_ref5_16vdd(&self) -> bool {
-        *self == REFSEL_A::REF5_16VDD
-    }
-    #[doc = "Checks if the value of the field is `REF7_16VDD`"]
-    #[inline(always)]
-    pub fn is_ref7_16vdd(&self) -> bool {
-        *self == REFSEL_A::REF7_16VDD
-    }
-    #[doc = "Checks if the value of the field is `REF9_16VDD`"]
-    #[inline(always)]
-    pub fn is_ref9_16vdd(&self) -> bool {
-        *self == REFSEL_A::REF9_16VDD
-    }
-    #[doc = "Checks if the value of the field is `REF11_16VDD`"]
-    #[inline(always)]
-    pub fn is_ref11_16vdd(&self) -> bool {
-        *self == REFSEL_A::REF11_16VDD
-    }
-    #[doc = "Checks if the value of the field is `REF13_16VDD`"]
-    #[inline(always)]
-    pub fn is_ref13_16vdd(&self) -> bool {
-        *self == REFSEL_A::REF13_16VDD
-    }
-    #[doc = "Checks if the value of the field is `REF15_16VDD`"]
-    #[inline(always)]
-    pub fn is_ref15_16vdd(&self) -> bool {
-        *self == REFSEL_A::REF15_16VDD
-    }
-}
-#[doc = "Field `REFSEL` writer - Reference select"]
-pub type REFSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, REFSEL_SPEC, u8, REFSEL_A, 4, O>;
-impl<'a, const O: u8> REFSEL_W<'a, O> {
     #[doc = "VDD * 1/8 selected as reference"]
     #[inline(always)]
-    pub fn ref1_8vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF1_8VDD)
+    pub fn is_ref1_8vdd(&self) -> bool {
+        *self == Refsel::Ref1_8vdd
     }
     #[doc = "VDD * 2/8 selected as reference"]
     #[inline(always)]
-    pub fn ref2_8vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF2_8VDD)
+    pub fn is_ref2_8vdd(&self) -> bool {
+        *self == Refsel::Ref2_8vdd
     }
     #[doc = "VDD * 3/8 selected as reference"]
     #[inline(always)]
-    pub fn ref3_8vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF3_8VDD)
+    pub fn is_ref3_8vdd(&self) -> bool {
+        *self == Refsel::Ref3_8vdd
     }
     #[doc = "VDD * 4/8 selected as reference"]
     #[inline(always)]
-    pub fn ref4_8vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF4_8VDD)
+    pub fn is_ref4_8vdd(&self) -> bool {
+        *self == Refsel::Ref4_8vdd
     }
     #[doc = "VDD * 5/8 selected as reference"]
     #[inline(always)]
-    pub fn ref5_8vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF5_8VDD)
+    pub fn is_ref5_8vdd(&self) -> bool {
+        *self == Refsel::Ref5_8vdd
     }
     #[doc = "VDD * 6/8 selected as reference"]
     #[inline(always)]
-    pub fn ref6_8vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF6_8VDD)
+    pub fn is_ref6_8vdd(&self) -> bool {
+        *self == Refsel::Ref6_8vdd
     }
     #[doc = "VDD * 7/8 selected as reference"]
     #[inline(always)]
-    pub fn ref7_8vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF7_8VDD)
+    pub fn is_ref7_8vdd(&self) -> bool {
+        *self == Refsel::Ref7_8vdd
     }
     #[doc = "External analog reference selected"]
     #[inline(always)]
-    pub fn aref(self) -> &'a mut W {
-        self.variant(REFSEL_A::AREF)
+    pub fn is_aref(&self) -> bool {
+        *self == Refsel::Aref
     }
     #[doc = "VDD * 1/16 selected as reference"]
     #[inline(always)]
-    pub fn ref1_16vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF1_16VDD)
+    pub fn is_ref1_16vdd(&self) -> bool {
+        *self == Refsel::Ref1_16vdd
     }
     #[doc = "VDD * 3/16 selected as reference"]
     #[inline(always)]
-    pub fn ref3_16vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF3_16VDD)
+    pub fn is_ref3_16vdd(&self) -> bool {
+        *self == Refsel::Ref3_16vdd
     }
     #[doc = "VDD * 5/16 selected as reference"]
     #[inline(always)]
-    pub fn ref5_16vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF5_16VDD)
+    pub fn is_ref5_16vdd(&self) -> bool {
+        *self == Refsel::Ref5_16vdd
     }
     #[doc = "VDD * 7/16 selected as reference"]
     #[inline(always)]
-    pub fn ref7_16vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF7_16VDD)
+    pub fn is_ref7_16vdd(&self) -> bool {
+        *self == Refsel::Ref7_16vdd
     }
     #[doc = "VDD * 9/16 selected as reference"]
     #[inline(always)]
-    pub fn ref9_16vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF9_16VDD)
+    pub fn is_ref9_16vdd(&self) -> bool {
+        *self == Refsel::Ref9_16vdd
     }
     #[doc = "VDD * 11/16 selected as reference"]
     #[inline(always)]
-    pub fn ref11_16vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF11_16VDD)
+    pub fn is_ref11_16vdd(&self) -> bool {
+        *self == Refsel::Ref11_16vdd
     }
     #[doc = "VDD * 13/16 selected as reference"]
     #[inline(always)]
-    pub fn ref13_16vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF13_16VDD)
+    pub fn is_ref13_16vdd(&self) -> bool {
+        *self == Refsel::Ref13_16vdd
     }
     #[doc = "VDD * 15/16 selected as reference"]
     #[inline(always)]
-    pub fn ref15_16vdd(self) -> &'a mut W {
-        self.variant(REFSEL_A::REF15_16VDD)
+    pub fn is_ref15_16vdd(&self) -> bool {
+        *self == Refsel::Ref15_16vdd
+    }
+}
+#[doc = "Field `REFSEL` writer - Reference select"]
+pub type RefselW<'a, REG> = crate::FieldWriter<'a, REG, 4, Refsel, crate::Safe>;
+impl<'a, REG> RefselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "VDD * 1/8 selected as reference"]
+    #[inline(always)]
+    pub fn ref1_8vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref1_8vdd)
+    }
+    #[doc = "VDD * 2/8 selected as reference"]
+    #[inline(always)]
+    pub fn ref2_8vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref2_8vdd)
+    }
+    #[doc = "VDD * 3/8 selected as reference"]
+    #[inline(always)]
+    pub fn ref3_8vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref3_8vdd)
+    }
+    #[doc = "VDD * 4/8 selected as reference"]
+    #[inline(always)]
+    pub fn ref4_8vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref4_8vdd)
+    }
+    #[doc = "VDD * 5/8 selected as reference"]
+    #[inline(always)]
+    pub fn ref5_8vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref5_8vdd)
+    }
+    #[doc = "VDD * 6/8 selected as reference"]
+    #[inline(always)]
+    pub fn ref6_8vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref6_8vdd)
+    }
+    #[doc = "VDD * 7/8 selected as reference"]
+    #[inline(always)]
+    pub fn ref7_8vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref7_8vdd)
+    }
+    #[doc = "External analog reference selected"]
+    #[inline(always)]
+    pub fn aref(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Aref)
+    }
+    #[doc = "VDD * 1/16 selected as reference"]
+    #[inline(always)]
+    pub fn ref1_16vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref1_16vdd)
+    }
+    #[doc = "VDD * 3/16 selected as reference"]
+    #[inline(always)]
+    pub fn ref3_16vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref3_16vdd)
+    }
+    #[doc = "VDD * 5/16 selected as reference"]
+    #[inline(always)]
+    pub fn ref5_16vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref5_16vdd)
+    }
+    #[doc = "VDD * 7/16 selected as reference"]
+    #[inline(always)]
+    pub fn ref7_16vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref7_16vdd)
+    }
+    #[doc = "VDD * 9/16 selected as reference"]
+    #[inline(always)]
+    pub fn ref9_16vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref9_16vdd)
+    }
+    #[doc = "VDD * 11/16 selected as reference"]
+    #[inline(always)]
+    pub fn ref11_16vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref11_16vdd)
+    }
+    #[doc = "VDD * 13/16 selected as reference"]
+    #[inline(always)]
+    pub fn ref13_16vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref13_16vdd)
+    }
+    #[doc = "VDD * 15/16 selected as reference"]
+    #[inline(always)]
+    pub fn ref15_16vdd(self) -> &'a mut crate::W<REG> {
+        self.variant(Refsel::Ref15_16vdd)
     }
 }
 impl R {
     #[doc = "Bits 0:3 - Reference select"]
     #[inline(always)]
-    pub fn refsel(&self) -> REFSEL_R {
-        REFSEL_R::new((self.bits & 0x0f) as u8)
+    pub fn refsel(&self) -> RefselR {
+        RefselR::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Reference select"]
     #[inline(always)]
-    pub fn refsel(&mut self) -> REFSEL_W<0> {
-        REFSEL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn refsel(&mut self) -> RefselW<'_, RefselSpec> {
+        RefselW::new(self, 0)
     }
 }
-#[doc = "Reference select\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [refsel](index.html) module"]
-pub struct REFSEL_SPEC;
-impl crate::RegisterSpec for REFSEL_SPEC {
+#[doc = "Reference select\n\nYou can [`read`](crate::Reg::read) this register and get [`refsel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`refsel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct RefselSpec;
+impl crate::RegisterSpec for RefselSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [refsel::R](R) reader structure"]
-impl crate::Readable for REFSEL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [refsel::W](W) writer structure"]
-impl crate::Writable for REFSEL_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`refsel::R`](R) reader structure"]
+impl crate::Readable for RefselSpec {}
+#[doc = "`write(|w| ..)` method takes [`refsel::W`](W) writer structure"]
+impl crate::Writable for RefselSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets REFSEL to value 0x04"]
-impl crate::Resettable for REFSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x04
-    }
+impl crate::Resettable for RefselSpec {
+    const RESET_VALUE: u32 = 0x04;
 }

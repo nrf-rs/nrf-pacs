@@ -1,1986 +1,2037 @@
 #[doc = "Register `SUBS` reader"]
-pub struct R(crate::R<SUBS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SUBS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SUBS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SUBS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SubsSpec>;
 #[doc = "Register `SUBS` writer"]
-pub struct W(crate::W<SUBS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SUBS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<SubsSpec>;
+#[doc = "Include or exclude subregion 0 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr0 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Sr0> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SUBS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SUBS_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Sr0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR0` reader - Include or exclude subregion 0 in region"]
-pub type SR0_R = crate::BitReader<SR0_A>;
-#[doc = "Include or exclude subregion 0 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR0_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR0_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR0_R {
+pub type Sr0R = crate::BitReader<Sr0>;
+impl Sr0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR0_A {
+    pub const fn variant(&self) -> Sr0 {
         match self.bits {
-            false => SR0_A::EXCLUDE,
-            true => SR0_A::INCLUDE,
+            false => Sr0::Exclude,
+            true => Sr0::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR0_A::EXCLUDE
+        *self == Sr0::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR0_A::INCLUDE
+        *self == Sr0::Include
     }
 }
 #[doc = "Field `SR0` writer - Include or exclude subregion 0 in region"]
-pub type SR0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR0_A, O>;
-impl<'a, const O: u8> SR0_W<'a, O> {
+pub type Sr0W<'a, REG> = crate::BitWriter<'a, REG, Sr0>;
+impl<'a, REG> Sr0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR0_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr0::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR0_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr0::Include)
+    }
+}
+#[doc = "Include or exclude subregion 1 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr1 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr1> for bool {
+    #[inline(always)]
+    fn from(variant: Sr1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR1` reader - Include or exclude subregion 1 in region"]
-pub type SR1_R = crate::BitReader<SR1_A>;
-#[doc = "Include or exclude subregion 1 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR1_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR1_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR1_R {
+pub type Sr1R = crate::BitReader<Sr1>;
+impl Sr1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR1_A {
+    pub const fn variant(&self) -> Sr1 {
         match self.bits {
-            false => SR1_A::EXCLUDE,
-            true => SR1_A::INCLUDE,
+            false => Sr1::Exclude,
+            true => Sr1::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR1_A::EXCLUDE
+        *self == Sr1::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR1_A::INCLUDE
+        *self == Sr1::Include
     }
 }
 #[doc = "Field `SR1` writer - Include or exclude subregion 1 in region"]
-pub type SR1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR1_A, O>;
-impl<'a, const O: u8> SR1_W<'a, O> {
+pub type Sr1W<'a, REG> = crate::BitWriter<'a, REG, Sr1>;
+impl<'a, REG> Sr1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR1_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr1::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR1_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr1::Include)
+    }
+}
+#[doc = "Include or exclude subregion 2 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr2 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr2> for bool {
+    #[inline(always)]
+    fn from(variant: Sr2) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR2` reader - Include or exclude subregion 2 in region"]
-pub type SR2_R = crate::BitReader<SR2_A>;
-#[doc = "Include or exclude subregion 2 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR2_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR2_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR2_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR2_R {
+pub type Sr2R = crate::BitReader<Sr2>;
+impl Sr2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR2_A {
+    pub const fn variant(&self) -> Sr2 {
         match self.bits {
-            false => SR2_A::EXCLUDE,
-            true => SR2_A::INCLUDE,
+            false => Sr2::Exclude,
+            true => Sr2::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR2_A::EXCLUDE
+        *self == Sr2::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR2_A::INCLUDE
+        *self == Sr2::Include
     }
 }
 #[doc = "Field `SR2` writer - Include or exclude subregion 2 in region"]
-pub type SR2_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR2_A, O>;
-impl<'a, const O: u8> SR2_W<'a, O> {
+pub type Sr2W<'a, REG> = crate::BitWriter<'a, REG, Sr2>;
+impl<'a, REG> Sr2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR2_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr2::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR2_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr2::Include)
+    }
+}
+#[doc = "Include or exclude subregion 3 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr3 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr3> for bool {
+    #[inline(always)]
+    fn from(variant: Sr3) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR3` reader - Include or exclude subregion 3 in region"]
-pub type SR3_R = crate::BitReader<SR3_A>;
-#[doc = "Include or exclude subregion 3 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR3_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR3_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR3_R {
+pub type Sr3R = crate::BitReader<Sr3>;
+impl Sr3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR3_A {
+    pub const fn variant(&self) -> Sr3 {
         match self.bits {
-            false => SR3_A::EXCLUDE,
-            true => SR3_A::INCLUDE,
+            false => Sr3::Exclude,
+            true => Sr3::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR3_A::EXCLUDE
+        *self == Sr3::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR3_A::INCLUDE
+        *self == Sr3::Include
     }
 }
 #[doc = "Field `SR3` writer - Include or exclude subregion 3 in region"]
-pub type SR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR3_A, O>;
-impl<'a, const O: u8> SR3_W<'a, O> {
+pub type Sr3W<'a, REG> = crate::BitWriter<'a, REG, Sr3>;
+impl<'a, REG> Sr3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR3_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr3::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR3_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr3::Include)
+    }
+}
+#[doc = "Include or exclude subregion 4 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr4 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr4> for bool {
+    #[inline(always)]
+    fn from(variant: Sr4) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR4` reader - Include or exclude subregion 4 in region"]
-pub type SR4_R = crate::BitReader<SR4_A>;
-#[doc = "Include or exclude subregion 4 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR4_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR4_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR4_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR4_R {
+pub type Sr4R = crate::BitReader<Sr4>;
+impl Sr4R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR4_A {
+    pub const fn variant(&self) -> Sr4 {
         match self.bits {
-            false => SR4_A::EXCLUDE,
-            true => SR4_A::INCLUDE,
+            false => Sr4::Exclude,
+            true => Sr4::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR4_A::EXCLUDE
+        *self == Sr4::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR4_A::INCLUDE
+        *self == Sr4::Include
     }
 }
 #[doc = "Field `SR4` writer - Include or exclude subregion 4 in region"]
-pub type SR4_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR4_A, O>;
-impl<'a, const O: u8> SR4_W<'a, O> {
+pub type Sr4W<'a, REG> = crate::BitWriter<'a, REG, Sr4>;
+impl<'a, REG> Sr4W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR4_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr4::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR4_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr4::Include)
+    }
+}
+#[doc = "Include or exclude subregion 5 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr5 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr5> for bool {
+    #[inline(always)]
+    fn from(variant: Sr5) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR5` reader - Include or exclude subregion 5 in region"]
-pub type SR5_R = crate::BitReader<SR5_A>;
-#[doc = "Include or exclude subregion 5 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR5_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR5_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR5_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR5_R {
+pub type Sr5R = crate::BitReader<Sr5>;
+impl Sr5R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR5_A {
+    pub const fn variant(&self) -> Sr5 {
         match self.bits {
-            false => SR5_A::EXCLUDE,
-            true => SR5_A::INCLUDE,
+            false => Sr5::Exclude,
+            true => Sr5::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR5_A::EXCLUDE
+        *self == Sr5::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR5_A::INCLUDE
+        *self == Sr5::Include
     }
 }
 #[doc = "Field `SR5` writer - Include or exclude subregion 5 in region"]
-pub type SR5_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR5_A, O>;
-impl<'a, const O: u8> SR5_W<'a, O> {
+pub type Sr5W<'a, REG> = crate::BitWriter<'a, REG, Sr5>;
+impl<'a, REG> Sr5W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR5_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr5::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR5_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr5::Include)
+    }
+}
+#[doc = "Include or exclude subregion 6 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr6 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr6> for bool {
+    #[inline(always)]
+    fn from(variant: Sr6) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR6` reader - Include or exclude subregion 6 in region"]
-pub type SR6_R = crate::BitReader<SR6_A>;
-#[doc = "Include or exclude subregion 6 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR6_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR6_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR6_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR6_R {
+pub type Sr6R = crate::BitReader<Sr6>;
+impl Sr6R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR6_A {
+    pub const fn variant(&self) -> Sr6 {
         match self.bits {
-            false => SR6_A::EXCLUDE,
-            true => SR6_A::INCLUDE,
+            false => Sr6::Exclude,
+            true => Sr6::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR6_A::EXCLUDE
+        *self == Sr6::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR6_A::INCLUDE
+        *self == Sr6::Include
     }
 }
 #[doc = "Field `SR6` writer - Include or exclude subregion 6 in region"]
-pub type SR6_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR6_A, O>;
-impl<'a, const O: u8> SR6_W<'a, O> {
+pub type Sr6W<'a, REG> = crate::BitWriter<'a, REG, Sr6>;
+impl<'a, REG> Sr6W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR6_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr6::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR6_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr6::Include)
+    }
+}
+#[doc = "Include or exclude subregion 7 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr7 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr7> for bool {
+    #[inline(always)]
+    fn from(variant: Sr7) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR7` reader - Include or exclude subregion 7 in region"]
-pub type SR7_R = crate::BitReader<SR7_A>;
-#[doc = "Include or exclude subregion 7 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR7_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR7_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR7_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR7_R {
+pub type Sr7R = crate::BitReader<Sr7>;
+impl Sr7R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR7_A {
+    pub const fn variant(&self) -> Sr7 {
         match self.bits {
-            false => SR7_A::EXCLUDE,
-            true => SR7_A::INCLUDE,
+            false => Sr7::Exclude,
+            true => Sr7::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR7_A::EXCLUDE
+        *self == Sr7::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR7_A::INCLUDE
+        *self == Sr7::Include
     }
 }
 #[doc = "Field `SR7` writer - Include or exclude subregion 7 in region"]
-pub type SR7_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR7_A, O>;
-impl<'a, const O: u8> SR7_W<'a, O> {
+pub type Sr7W<'a, REG> = crate::BitWriter<'a, REG, Sr7>;
+impl<'a, REG> Sr7W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR7_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr7::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR7_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr7::Include)
+    }
+}
+#[doc = "Include or exclude subregion 8 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr8 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr8> for bool {
+    #[inline(always)]
+    fn from(variant: Sr8) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR8` reader - Include or exclude subregion 8 in region"]
-pub type SR8_R = crate::BitReader<SR8_A>;
-#[doc = "Include or exclude subregion 8 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR8_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR8_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR8_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR8_R {
+pub type Sr8R = crate::BitReader<Sr8>;
+impl Sr8R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR8_A {
+    pub const fn variant(&self) -> Sr8 {
         match self.bits {
-            false => SR8_A::EXCLUDE,
-            true => SR8_A::INCLUDE,
+            false => Sr8::Exclude,
+            true => Sr8::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR8_A::EXCLUDE
+        *self == Sr8::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR8_A::INCLUDE
+        *self == Sr8::Include
     }
 }
 #[doc = "Field `SR8` writer - Include or exclude subregion 8 in region"]
-pub type SR8_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR8_A, O>;
-impl<'a, const O: u8> SR8_W<'a, O> {
+pub type Sr8W<'a, REG> = crate::BitWriter<'a, REG, Sr8>;
+impl<'a, REG> Sr8W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR8_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr8::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR8_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr8::Include)
+    }
+}
+#[doc = "Include or exclude subregion 9 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr9 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr9> for bool {
+    #[inline(always)]
+    fn from(variant: Sr9) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR9` reader - Include or exclude subregion 9 in region"]
-pub type SR9_R = crate::BitReader<SR9_A>;
-#[doc = "Include or exclude subregion 9 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR9_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR9_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR9_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR9_R {
+pub type Sr9R = crate::BitReader<Sr9>;
+impl Sr9R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR9_A {
+    pub const fn variant(&self) -> Sr9 {
         match self.bits {
-            false => SR9_A::EXCLUDE,
-            true => SR9_A::INCLUDE,
+            false => Sr9::Exclude,
+            true => Sr9::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR9_A::EXCLUDE
+        *self == Sr9::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR9_A::INCLUDE
+        *self == Sr9::Include
     }
 }
 #[doc = "Field `SR9` writer - Include or exclude subregion 9 in region"]
-pub type SR9_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR9_A, O>;
-impl<'a, const O: u8> SR9_W<'a, O> {
+pub type Sr9W<'a, REG> = crate::BitWriter<'a, REG, Sr9>;
+impl<'a, REG> Sr9W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR9_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr9::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR9_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr9::Include)
+    }
+}
+#[doc = "Include or exclude subregion 10 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr10 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr10> for bool {
+    #[inline(always)]
+    fn from(variant: Sr10) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR10` reader - Include or exclude subregion 10 in region"]
-pub type SR10_R = crate::BitReader<SR10_A>;
-#[doc = "Include or exclude subregion 10 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR10_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR10_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR10_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR10_R {
+pub type Sr10R = crate::BitReader<Sr10>;
+impl Sr10R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR10_A {
+    pub const fn variant(&self) -> Sr10 {
         match self.bits {
-            false => SR10_A::EXCLUDE,
-            true => SR10_A::INCLUDE,
+            false => Sr10::Exclude,
+            true => Sr10::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR10_A::EXCLUDE
+        *self == Sr10::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR10_A::INCLUDE
+        *self == Sr10::Include
     }
 }
 #[doc = "Field `SR10` writer - Include or exclude subregion 10 in region"]
-pub type SR10_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR10_A, O>;
-impl<'a, const O: u8> SR10_W<'a, O> {
+pub type Sr10W<'a, REG> = crate::BitWriter<'a, REG, Sr10>;
+impl<'a, REG> Sr10W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR10_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr10::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR10_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr10::Include)
+    }
+}
+#[doc = "Include or exclude subregion 11 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr11 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr11> for bool {
+    #[inline(always)]
+    fn from(variant: Sr11) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR11` reader - Include or exclude subregion 11 in region"]
-pub type SR11_R = crate::BitReader<SR11_A>;
-#[doc = "Include or exclude subregion 11 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR11_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR11_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR11_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR11_R {
+pub type Sr11R = crate::BitReader<Sr11>;
+impl Sr11R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR11_A {
+    pub const fn variant(&self) -> Sr11 {
         match self.bits {
-            false => SR11_A::EXCLUDE,
-            true => SR11_A::INCLUDE,
+            false => Sr11::Exclude,
+            true => Sr11::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR11_A::EXCLUDE
+        *self == Sr11::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR11_A::INCLUDE
+        *self == Sr11::Include
     }
 }
 #[doc = "Field `SR11` writer - Include or exclude subregion 11 in region"]
-pub type SR11_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR11_A, O>;
-impl<'a, const O: u8> SR11_W<'a, O> {
+pub type Sr11W<'a, REG> = crate::BitWriter<'a, REG, Sr11>;
+impl<'a, REG> Sr11W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR11_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr11::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR11_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr11::Include)
+    }
+}
+#[doc = "Include or exclude subregion 12 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr12 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr12> for bool {
+    #[inline(always)]
+    fn from(variant: Sr12) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR12` reader - Include or exclude subregion 12 in region"]
-pub type SR12_R = crate::BitReader<SR12_A>;
-#[doc = "Include or exclude subregion 12 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR12_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR12_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR12_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR12_R {
+pub type Sr12R = crate::BitReader<Sr12>;
+impl Sr12R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR12_A {
+    pub const fn variant(&self) -> Sr12 {
         match self.bits {
-            false => SR12_A::EXCLUDE,
-            true => SR12_A::INCLUDE,
+            false => Sr12::Exclude,
+            true => Sr12::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR12_A::EXCLUDE
+        *self == Sr12::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR12_A::INCLUDE
+        *self == Sr12::Include
     }
 }
 #[doc = "Field `SR12` writer - Include or exclude subregion 12 in region"]
-pub type SR12_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR12_A, O>;
-impl<'a, const O: u8> SR12_W<'a, O> {
+pub type Sr12W<'a, REG> = crate::BitWriter<'a, REG, Sr12>;
+impl<'a, REG> Sr12W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR12_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr12::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR12_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr12::Include)
+    }
+}
+#[doc = "Include or exclude subregion 13 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr13 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr13> for bool {
+    #[inline(always)]
+    fn from(variant: Sr13) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR13` reader - Include or exclude subregion 13 in region"]
-pub type SR13_R = crate::BitReader<SR13_A>;
-#[doc = "Include or exclude subregion 13 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR13_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR13_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR13_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR13_R {
+pub type Sr13R = crate::BitReader<Sr13>;
+impl Sr13R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR13_A {
+    pub const fn variant(&self) -> Sr13 {
         match self.bits {
-            false => SR13_A::EXCLUDE,
-            true => SR13_A::INCLUDE,
+            false => Sr13::Exclude,
+            true => Sr13::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR13_A::EXCLUDE
+        *self == Sr13::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR13_A::INCLUDE
+        *self == Sr13::Include
     }
 }
 #[doc = "Field `SR13` writer - Include or exclude subregion 13 in region"]
-pub type SR13_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR13_A, O>;
-impl<'a, const O: u8> SR13_W<'a, O> {
+pub type Sr13W<'a, REG> = crate::BitWriter<'a, REG, Sr13>;
+impl<'a, REG> Sr13W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR13_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr13::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR13_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr13::Include)
+    }
+}
+#[doc = "Include or exclude subregion 14 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr14 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr14> for bool {
+    #[inline(always)]
+    fn from(variant: Sr14) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR14` reader - Include or exclude subregion 14 in region"]
-pub type SR14_R = crate::BitReader<SR14_A>;
-#[doc = "Include or exclude subregion 14 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR14_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR14_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR14_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR14_R {
+pub type Sr14R = crate::BitReader<Sr14>;
+impl Sr14R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR14_A {
+    pub const fn variant(&self) -> Sr14 {
         match self.bits {
-            false => SR14_A::EXCLUDE,
-            true => SR14_A::INCLUDE,
+            false => Sr14::Exclude,
+            true => Sr14::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR14_A::EXCLUDE
+        *self == Sr14::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR14_A::INCLUDE
+        *self == Sr14::Include
     }
 }
 #[doc = "Field `SR14` writer - Include or exclude subregion 14 in region"]
-pub type SR14_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR14_A, O>;
-impl<'a, const O: u8> SR14_W<'a, O> {
+pub type Sr14W<'a, REG> = crate::BitWriter<'a, REG, Sr14>;
+impl<'a, REG> Sr14W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR14_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr14::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR14_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr14::Include)
+    }
+}
+#[doc = "Include or exclude subregion 15 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr15 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr15> for bool {
+    #[inline(always)]
+    fn from(variant: Sr15) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR15` reader - Include or exclude subregion 15 in region"]
-pub type SR15_R = crate::BitReader<SR15_A>;
-#[doc = "Include or exclude subregion 15 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR15_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR15_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR15_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR15_R {
+pub type Sr15R = crate::BitReader<Sr15>;
+impl Sr15R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR15_A {
+    pub const fn variant(&self) -> Sr15 {
         match self.bits {
-            false => SR15_A::EXCLUDE,
-            true => SR15_A::INCLUDE,
+            false => Sr15::Exclude,
+            true => Sr15::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR15_A::EXCLUDE
+        *self == Sr15::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR15_A::INCLUDE
+        *self == Sr15::Include
     }
 }
 #[doc = "Field `SR15` writer - Include or exclude subregion 15 in region"]
-pub type SR15_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR15_A, O>;
-impl<'a, const O: u8> SR15_W<'a, O> {
+pub type Sr15W<'a, REG> = crate::BitWriter<'a, REG, Sr15>;
+impl<'a, REG> Sr15W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR15_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr15::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR15_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr15::Include)
+    }
+}
+#[doc = "Include or exclude subregion 16 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr16 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr16> for bool {
+    #[inline(always)]
+    fn from(variant: Sr16) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR16` reader - Include or exclude subregion 16 in region"]
-pub type SR16_R = crate::BitReader<SR16_A>;
-#[doc = "Include or exclude subregion 16 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR16_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR16_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR16_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR16_R {
+pub type Sr16R = crate::BitReader<Sr16>;
+impl Sr16R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR16_A {
+    pub const fn variant(&self) -> Sr16 {
         match self.bits {
-            false => SR16_A::EXCLUDE,
-            true => SR16_A::INCLUDE,
+            false => Sr16::Exclude,
+            true => Sr16::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR16_A::EXCLUDE
+        *self == Sr16::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR16_A::INCLUDE
+        *self == Sr16::Include
     }
 }
 #[doc = "Field `SR16` writer - Include or exclude subregion 16 in region"]
-pub type SR16_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR16_A, O>;
-impl<'a, const O: u8> SR16_W<'a, O> {
+pub type Sr16W<'a, REG> = crate::BitWriter<'a, REG, Sr16>;
+impl<'a, REG> Sr16W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR16_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr16::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR16_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr16::Include)
+    }
+}
+#[doc = "Include or exclude subregion 17 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr17 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr17> for bool {
+    #[inline(always)]
+    fn from(variant: Sr17) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR17` reader - Include or exclude subregion 17 in region"]
-pub type SR17_R = crate::BitReader<SR17_A>;
-#[doc = "Include or exclude subregion 17 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR17_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR17_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR17_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR17_R {
+pub type Sr17R = crate::BitReader<Sr17>;
+impl Sr17R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR17_A {
+    pub const fn variant(&self) -> Sr17 {
         match self.bits {
-            false => SR17_A::EXCLUDE,
-            true => SR17_A::INCLUDE,
+            false => Sr17::Exclude,
+            true => Sr17::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR17_A::EXCLUDE
+        *self == Sr17::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR17_A::INCLUDE
+        *self == Sr17::Include
     }
 }
 #[doc = "Field `SR17` writer - Include or exclude subregion 17 in region"]
-pub type SR17_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR17_A, O>;
-impl<'a, const O: u8> SR17_W<'a, O> {
+pub type Sr17W<'a, REG> = crate::BitWriter<'a, REG, Sr17>;
+impl<'a, REG> Sr17W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR17_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr17::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR17_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr17::Include)
+    }
+}
+#[doc = "Include or exclude subregion 18 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr18 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr18> for bool {
+    #[inline(always)]
+    fn from(variant: Sr18) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR18` reader - Include or exclude subregion 18 in region"]
-pub type SR18_R = crate::BitReader<SR18_A>;
-#[doc = "Include or exclude subregion 18 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR18_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR18_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR18_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR18_R {
+pub type Sr18R = crate::BitReader<Sr18>;
+impl Sr18R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR18_A {
+    pub const fn variant(&self) -> Sr18 {
         match self.bits {
-            false => SR18_A::EXCLUDE,
-            true => SR18_A::INCLUDE,
+            false => Sr18::Exclude,
+            true => Sr18::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR18_A::EXCLUDE
+        *self == Sr18::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR18_A::INCLUDE
+        *self == Sr18::Include
     }
 }
 #[doc = "Field `SR18` writer - Include or exclude subregion 18 in region"]
-pub type SR18_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR18_A, O>;
-impl<'a, const O: u8> SR18_W<'a, O> {
+pub type Sr18W<'a, REG> = crate::BitWriter<'a, REG, Sr18>;
+impl<'a, REG> Sr18W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR18_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr18::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR18_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr18::Include)
+    }
+}
+#[doc = "Include or exclude subregion 19 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr19 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr19> for bool {
+    #[inline(always)]
+    fn from(variant: Sr19) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR19` reader - Include or exclude subregion 19 in region"]
-pub type SR19_R = crate::BitReader<SR19_A>;
-#[doc = "Include or exclude subregion 19 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR19_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR19_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR19_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR19_R {
+pub type Sr19R = crate::BitReader<Sr19>;
+impl Sr19R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR19_A {
+    pub const fn variant(&self) -> Sr19 {
         match self.bits {
-            false => SR19_A::EXCLUDE,
-            true => SR19_A::INCLUDE,
+            false => Sr19::Exclude,
+            true => Sr19::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR19_A::EXCLUDE
+        *self == Sr19::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR19_A::INCLUDE
+        *self == Sr19::Include
     }
 }
 #[doc = "Field `SR19` writer - Include or exclude subregion 19 in region"]
-pub type SR19_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR19_A, O>;
-impl<'a, const O: u8> SR19_W<'a, O> {
+pub type Sr19W<'a, REG> = crate::BitWriter<'a, REG, Sr19>;
+impl<'a, REG> Sr19W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR19_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr19::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR19_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr19::Include)
+    }
+}
+#[doc = "Include or exclude subregion 20 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr20 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr20> for bool {
+    #[inline(always)]
+    fn from(variant: Sr20) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR20` reader - Include or exclude subregion 20 in region"]
-pub type SR20_R = crate::BitReader<SR20_A>;
-#[doc = "Include or exclude subregion 20 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR20_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR20_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR20_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR20_R {
+pub type Sr20R = crate::BitReader<Sr20>;
+impl Sr20R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR20_A {
+    pub const fn variant(&self) -> Sr20 {
         match self.bits {
-            false => SR20_A::EXCLUDE,
-            true => SR20_A::INCLUDE,
+            false => Sr20::Exclude,
+            true => Sr20::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR20_A::EXCLUDE
+        *self == Sr20::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR20_A::INCLUDE
+        *self == Sr20::Include
     }
 }
 #[doc = "Field `SR20` writer - Include or exclude subregion 20 in region"]
-pub type SR20_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR20_A, O>;
-impl<'a, const O: u8> SR20_W<'a, O> {
+pub type Sr20W<'a, REG> = crate::BitWriter<'a, REG, Sr20>;
+impl<'a, REG> Sr20W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR20_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr20::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR20_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr20::Include)
+    }
+}
+#[doc = "Include or exclude subregion 21 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr21 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr21> for bool {
+    #[inline(always)]
+    fn from(variant: Sr21) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR21` reader - Include or exclude subregion 21 in region"]
-pub type SR21_R = crate::BitReader<SR21_A>;
-#[doc = "Include or exclude subregion 21 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR21_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR21_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR21_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR21_R {
+pub type Sr21R = crate::BitReader<Sr21>;
+impl Sr21R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR21_A {
+    pub const fn variant(&self) -> Sr21 {
         match self.bits {
-            false => SR21_A::EXCLUDE,
-            true => SR21_A::INCLUDE,
+            false => Sr21::Exclude,
+            true => Sr21::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR21_A::EXCLUDE
+        *self == Sr21::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR21_A::INCLUDE
+        *self == Sr21::Include
     }
 }
 #[doc = "Field `SR21` writer - Include or exclude subregion 21 in region"]
-pub type SR21_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR21_A, O>;
-impl<'a, const O: u8> SR21_W<'a, O> {
+pub type Sr21W<'a, REG> = crate::BitWriter<'a, REG, Sr21>;
+impl<'a, REG> Sr21W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR21_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr21::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR21_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr21::Include)
+    }
+}
+#[doc = "Include or exclude subregion 22 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr22 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr22> for bool {
+    #[inline(always)]
+    fn from(variant: Sr22) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR22` reader - Include or exclude subregion 22 in region"]
-pub type SR22_R = crate::BitReader<SR22_A>;
-#[doc = "Include or exclude subregion 22 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR22_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR22_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR22_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR22_R {
+pub type Sr22R = crate::BitReader<Sr22>;
+impl Sr22R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR22_A {
+    pub const fn variant(&self) -> Sr22 {
         match self.bits {
-            false => SR22_A::EXCLUDE,
-            true => SR22_A::INCLUDE,
+            false => Sr22::Exclude,
+            true => Sr22::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR22_A::EXCLUDE
+        *self == Sr22::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR22_A::INCLUDE
+        *self == Sr22::Include
     }
 }
 #[doc = "Field `SR22` writer - Include or exclude subregion 22 in region"]
-pub type SR22_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR22_A, O>;
-impl<'a, const O: u8> SR22_W<'a, O> {
+pub type Sr22W<'a, REG> = crate::BitWriter<'a, REG, Sr22>;
+impl<'a, REG> Sr22W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR22_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr22::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR22_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr22::Include)
+    }
+}
+#[doc = "Include or exclude subregion 23 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr23 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr23> for bool {
+    #[inline(always)]
+    fn from(variant: Sr23) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR23` reader - Include or exclude subregion 23 in region"]
-pub type SR23_R = crate::BitReader<SR23_A>;
-#[doc = "Include or exclude subregion 23 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR23_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR23_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR23_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR23_R {
+pub type Sr23R = crate::BitReader<Sr23>;
+impl Sr23R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR23_A {
+    pub const fn variant(&self) -> Sr23 {
         match self.bits {
-            false => SR23_A::EXCLUDE,
-            true => SR23_A::INCLUDE,
+            false => Sr23::Exclude,
+            true => Sr23::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR23_A::EXCLUDE
+        *self == Sr23::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR23_A::INCLUDE
+        *self == Sr23::Include
     }
 }
 #[doc = "Field `SR23` writer - Include or exclude subregion 23 in region"]
-pub type SR23_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR23_A, O>;
-impl<'a, const O: u8> SR23_W<'a, O> {
+pub type Sr23W<'a, REG> = crate::BitWriter<'a, REG, Sr23>;
+impl<'a, REG> Sr23W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR23_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr23::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR23_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr23::Include)
+    }
+}
+#[doc = "Include or exclude subregion 24 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr24 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr24> for bool {
+    #[inline(always)]
+    fn from(variant: Sr24) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR24` reader - Include or exclude subregion 24 in region"]
-pub type SR24_R = crate::BitReader<SR24_A>;
-#[doc = "Include or exclude subregion 24 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR24_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR24_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR24_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR24_R {
+pub type Sr24R = crate::BitReader<Sr24>;
+impl Sr24R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR24_A {
+    pub const fn variant(&self) -> Sr24 {
         match self.bits {
-            false => SR24_A::EXCLUDE,
-            true => SR24_A::INCLUDE,
+            false => Sr24::Exclude,
+            true => Sr24::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR24_A::EXCLUDE
+        *self == Sr24::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR24_A::INCLUDE
+        *self == Sr24::Include
     }
 }
 #[doc = "Field `SR24` writer - Include or exclude subregion 24 in region"]
-pub type SR24_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR24_A, O>;
-impl<'a, const O: u8> SR24_W<'a, O> {
+pub type Sr24W<'a, REG> = crate::BitWriter<'a, REG, Sr24>;
+impl<'a, REG> Sr24W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR24_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr24::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR24_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr24::Include)
+    }
+}
+#[doc = "Include or exclude subregion 25 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr25 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr25> for bool {
+    #[inline(always)]
+    fn from(variant: Sr25) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR25` reader - Include or exclude subregion 25 in region"]
-pub type SR25_R = crate::BitReader<SR25_A>;
-#[doc = "Include or exclude subregion 25 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR25_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR25_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR25_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR25_R {
+pub type Sr25R = crate::BitReader<Sr25>;
+impl Sr25R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR25_A {
+    pub const fn variant(&self) -> Sr25 {
         match self.bits {
-            false => SR25_A::EXCLUDE,
-            true => SR25_A::INCLUDE,
+            false => Sr25::Exclude,
+            true => Sr25::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR25_A::EXCLUDE
+        *self == Sr25::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR25_A::INCLUDE
+        *self == Sr25::Include
     }
 }
 #[doc = "Field `SR25` writer - Include or exclude subregion 25 in region"]
-pub type SR25_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR25_A, O>;
-impl<'a, const O: u8> SR25_W<'a, O> {
+pub type Sr25W<'a, REG> = crate::BitWriter<'a, REG, Sr25>;
+impl<'a, REG> Sr25W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR25_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr25::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR25_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr25::Include)
+    }
+}
+#[doc = "Include or exclude subregion 26 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr26 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr26> for bool {
+    #[inline(always)]
+    fn from(variant: Sr26) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR26` reader - Include or exclude subregion 26 in region"]
-pub type SR26_R = crate::BitReader<SR26_A>;
-#[doc = "Include or exclude subregion 26 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR26_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR26_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR26_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR26_R {
+pub type Sr26R = crate::BitReader<Sr26>;
+impl Sr26R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR26_A {
+    pub const fn variant(&self) -> Sr26 {
         match self.bits {
-            false => SR26_A::EXCLUDE,
-            true => SR26_A::INCLUDE,
+            false => Sr26::Exclude,
+            true => Sr26::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR26_A::EXCLUDE
+        *self == Sr26::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR26_A::INCLUDE
+        *self == Sr26::Include
     }
 }
 #[doc = "Field `SR26` writer - Include or exclude subregion 26 in region"]
-pub type SR26_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR26_A, O>;
-impl<'a, const O: u8> SR26_W<'a, O> {
+pub type Sr26W<'a, REG> = crate::BitWriter<'a, REG, Sr26>;
+impl<'a, REG> Sr26W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR26_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr26::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR26_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr26::Include)
+    }
+}
+#[doc = "Include or exclude subregion 27 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr27 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr27> for bool {
+    #[inline(always)]
+    fn from(variant: Sr27) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR27` reader - Include or exclude subregion 27 in region"]
-pub type SR27_R = crate::BitReader<SR27_A>;
-#[doc = "Include or exclude subregion 27 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR27_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR27_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR27_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR27_R {
+pub type Sr27R = crate::BitReader<Sr27>;
+impl Sr27R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR27_A {
+    pub const fn variant(&self) -> Sr27 {
         match self.bits {
-            false => SR27_A::EXCLUDE,
-            true => SR27_A::INCLUDE,
+            false => Sr27::Exclude,
+            true => Sr27::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR27_A::EXCLUDE
+        *self == Sr27::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR27_A::INCLUDE
+        *self == Sr27::Include
     }
 }
 #[doc = "Field `SR27` writer - Include or exclude subregion 27 in region"]
-pub type SR27_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR27_A, O>;
-impl<'a, const O: u8> SR27_W<'a, O> {
+pub type Sr27W<'a, REG> = crate::BitWriter<'a, REG, Sr27>;
+impl<'a, REG> Sr27W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR27_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr27::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR27_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr27::Include)
+    }
+}
+#[doc = "Include or exclude subregion 28 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr28 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr28> for bool {
+    #[inline(always)]
+    fn from(variant: Sr28) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR28` reader - Include or exclude subregion 28 in region"]
-pub type SR28_R = crate::BitReader<SR28_A>;
-#[doc = "Include or exclude subregion 28 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR28_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR28_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR28_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR28_R {
+pub type Sr28R = crate::BitReader<Sr28>;
+impl Sr28R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR28_A {
+    pub const fn variant(&self) -> Sr28 {
         match self.bits {
-            false => SR28_A::EXCLUDE,
-            true => SR28_A::INCLUDE,
+            false => Sr28::Exclude,
+            true => Sr28::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR28_A::EXCLUDE
+        *self == Sr28::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR28_A::INCLUDE
+        *self == Sr28::Include
     }
 }
 #[doc = "Field `SR28` writer - Include or exclude subregion 28 in region"]
-pub type SR28_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR28_A, O>;
-impl<'a, const O: u8> SR28_W<'a, O> {
+pub type Sr28W<'a, REG> = crate::BitWriter<'a, REG, Sr28>;
+impl<'a, REG> Sr28W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR28_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr28::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR28_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr28::Include)
+    }
+}
+#[doc = "Include or exclude subregion 29 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr29 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr29> for bool {
+    #[inline(always)]
+    fn from(variant: Sr29) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR29` reader - Include or exclude subregion 29 in region"]
-pub type SR29_R = crate::BitReader<SR29_A>;
-#[doc = "Include or exclude subregion 29 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR29_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR29_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR29_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR29_R {
+pub type Sr29R = crate::BitReader<Sr29>;
+impl Sr29R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR29_A {
+    pub const fn variant(&self) -> Sr29 {
         match self.bits {
-            false => SR29_A::EXCLUDE,
-            true => SR29_A::INCLUDE,
+            false => Sr29::Exclude,
+            true => Sr29::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR29_A::EXCLUDE
+        *self == Sr29::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR29_A::INCLUDE
+        *self == Sr29::Include
     }
 }
 #[doc = "Field `SR29` writer - Include or exclude subregion 29 in region"]
-pub type SR29_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR29_A, O>;
-impl<'a, const O: u8> SR29_W<'a, O> {
+pub type Sr29W<'a, REG> = crate::BitWriter<'a, REG, Sr29>;
+impl<'a, REG> Sr29W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR29_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr29::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR29_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr29::Include)
+    }
+}
+#[doc = "Include or exclude subregion 30 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr30 {
+    #[doc = "0: Exclude"]
+    Exclude = 0,
+    #[doc = "1: Include"]
+    Include = 1,
+}
+impl From<Sr30> for bool {
+    #[inline(always)]
+    fn from(variant: Sr30) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SR30` reader - Include or exclude subregion 30 in region"]
-pub type SR30_R = crate::BitReader<SR30_A>;
-#[doc = "Include or exclude subregion 30 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR30_A {
-    #[doc = "0: Exclude"]
-    EXCLUDE = 0,
-    #[doc = "1: Include"]
-    INCLUDE = 1,
-}
-impl From<SR30_A> for bool {
-    #[inline(always)]
-    fn from(variant: SR30_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SR30_R {
+pub type Sr30R = crate::BitReader<Sr30>;
+impl Sr30R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR30_A {
+    pub const fn variant(&self) -> Sr30 {
         match self.bits {
-            false => SR30_A::EXCLUDE,
-            true => SR30_A::INCLUDE,
+            false => Sr30::Exclude,
+            true => Sr30::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[doc = "Exclude"]
     #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR30_A::EXCLUDE
+        *self == Sr30::Exclude
     }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[doc = "Include"]
     #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR30_A::INCLUDE
+        *self == Sr30::Include
     }
 }
 #[doc = "Field `SR30` writer - Include or exclude subregion 30 in region"]
-pub type SR30_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR30_A, O>;
-impl<'a, const O: u8> SR30_W<'a, O> {
+pub type Sr30W<'a, REG> = crate::BitWriter<'a, REG, Sr30>;
+impl<'a, REG> Sr30W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR30_A::EXCLUDE)
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr30::Exclude)
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR30_A::INCLUDE)
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr30::Include)
     }
 }
-#[doc = "Field `SR31` reader - Include or exclude subregion 31 in region"]
-pub type SR31_R = crate::BitReader<SR31_A>;
 #[doc = "Include or exclude subregion 31 in region\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR31_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sr31 {
     #[doc = "0: Exclude"]
-    EXCLUDE = 0,
+    Exclude = 0,
     #[doc = "1: Include"]
-    INCLUDE = 1,
+    Include = 1,
 }
-impl From<SR31_A> for bool {
+impl From<Sr31> for bool {
     #[inline(always)]
-    fn from(variant: SR31_A) -> Self {
+    fn from(variant: Sr31) -> Self {
         variant as u8 != 0
     }
 }
-impl SR31_R {
+#[doc = "Field `SR31` reader - Include or exclude subregion 31 in region"]
+pub type Sr31R = crate::BitReader<Sr31>;
+impl Sr31R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SR31_A {
+    pub const fn variant(&self) -> Sr31 {
         match self.bits {
-            false => SR31_A::EXCLUDE,
-            true => SR31_A::INCLUDE,
+            false => Sr31::Exclude,
+            true => Sr31::Include,
         }
     }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline(always)]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR31_A::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline(always)]
-    pub fn is_include(&self) -> bool {
-        *self == SR31_A::INCLUDE
-    }
-}
-#[doc = "Field `SR31` writer - Include or exclude subregion 31 in region"]
-pub type SR31_W<'a, const O: u8> = crate::BitWriter<'a, u32, SUBS_SPEC, SR31_A, O>;
-impl<'a, const O: u8> SR31_W<'a, O> {
     #[doc = "Exclude"]
     #[inline(always)]
-    pub fn exclude(self) -> &'a mut W {
-        self.variant(SR31_A::EXCLUDE)
+    pub fn is_exclude(&self) -> bool {
+        *self == Sr31::Exclude
     }
     #[doc = "Include"]
     #[inline(always)]
-    pub fn include(self) -> &'a mut W {
-        self.variant(SR31_A::INCLUDE)
+    pub fn is_include(&self) -> bool {
+        *self == Sr31::Include
+    }
+}
+#[doc = "Field `SR31` writer - Include or exclude subregion 31 in region"]
+pub type Sr31W<'a, REG> = crate::BitWriter<'a, REG, Sr31>;
+impl<'a, REG> Sr31W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Exclude"]
+    #[inline(always)]
+    pub fn exclude(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr31::Exclude)
+    }
+    #[doc = "Include"]
+    #[inline(always)]
+    pub fn include(self) -> &'a mut crate::W<REG> {
+        self.variant(Sr31::Include)
     }
 }
 impl R {
     #[doc = "Bit 0 - Include or exclude subregion 0 in region"]
     #[inline(always)]
-    pub fn sr0(&self) -> SR0_R {
-        SR0_R::new((self.bits & 1) != 0)
+    pub fn sr0(&self) -> Sr0R {
+        Sr0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Include or exclude subregion 1 in region"]
     #[inline(always)]
-    pub fn sr1(&self) -> SR1_R {
-        SR1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn sr1(&self) -> Sr1R {
+        Sr1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Include or exclude subregion 2 in region"]
     #[inline(always)]
-    pub fn sr2(&self) -> SR2_R {
-        SR2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn sr2(&self) -> Sr2R {
+        Sr2R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Include or exclude subregion 3 in region"]
     #[inline(always)]
-    pub fn sr3(&self) -> SR3_R {
-        SR3_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn sr3(&self) -> Sr3R {
+        Sr3R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Include or exclude subregion 4 in region"]
     #[inline(always)]
-    pub fn sr4(&self) -> SR4_R {
-        SR4_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn sr4(&self) -> Sr4R {
+        Sr4R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Include or exclude subregion 5 in region"]
     #[inline(always)]
-    pub fn sr5(&self) -> SR5_R {
-        SR5_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn sr5(&self) -> Sr5R {
+        Sr5R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Include or exclude subregion 6 in region"]
     #[inline(always)]
-    pub fn sr6(&self) -> SR6_R {
-        SR6_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn sr6(&self) -> Sr6R {
+        Sr6R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Include or exclude subregion 7 in region"]
     #[inline(always)]
-    pub fn sr7(&self) -> SR7_R {
-        SR7_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn sr7(&self) -> Sr7R {
+        Sr7R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Include or exclude subregion 8 in region"]
     #[inline(always)]
-    pub fn sr8(&self) -> SR8_R {
-        SR8_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn sr8(&self) -> Sr8R {
+        Sr8R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Include or exclude subregion 9 in region"]
     #[inline(always)]
-    pub fn sr9(&self) -> SR9_R {
-        SR9_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn sr9(&self) -> Sr9R {
+        Sr9R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Include or exclude subregion 10 in region"]
     #[inline(always)]
-    pub fn sr10(&self) -> SR10_R {
-        SR10_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn sr10(&self) -> Sr10R {
+        Sr10R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Include or exclude subregion 11 in region"]
     #[inline(always)]
-    pub fn sr11(&self) -> SR11_R {
-        SR11_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn sr11(&self) -> Sr11R {
+        Sr11R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Include or exclude subregion 12 in region"]
     #[inline(always)]
-    pub fn sr12(&self) -> SR12_R {
-        SR12_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn sr12(&self) -> Sr12R {
+        Sr12R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Include or exclude subregion 13 in region"]
     #[inline(always)]
-    pub fn sr13(&self) -> SR13_R {
-        SR13_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn sr13(&self) -> Sr13R {
+        Sr13R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Include or exclude subregion 14 in region"]
     #[inline(always)]
-    pub fn sr14(&self) -> SR14_R {
-        SR14_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn sr14(&self) -> Sr14R {
+        Sr14R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Include or exclude subregion 15 in region"]
     #[inline(always)]
-    pub fn sr15(&self) -> SR15_R {
-        SR15_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn sr15(&self) -> Sr15R {
+        Sr15R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Include or exclude subregion 16 in region"]
     #[inline(always)]
-    pub fn sr16(&self) -> SR16_R {
-        SR16_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn sr16(&self) -> Sr16R {
+        Sr16R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Include or exclude subregion 17 in region"]
     #[inline(always)]
-    pub fn sr17(&self) -> SR17_R {
-        SR17_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn sr17(&self) -> Sr17R {
+        Sr17R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Include or exclude subregion 18 in region"]
     #[inline(always)]
-    pub fn sr18(&self) -> SR18_R {
-        SR18_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn sr18(&self) -> Sr18R {
+        Sr18R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Include or exclude subregion 19 in region"]
     #[inline(always)]
-    pub fn sr19(&self) -> SR19_R {
-        SR19_R::new(((self.bits >> 19) & 1) != 0)
+    pub fn sr19(&self) -> Sr19R {
+        Sr19R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Include or exclude subregion 20 in region"]
     #[inline(always)]
-    pub fn sr20(&self) -> SR20_R {
-        SR20_R::new(((self.bits >> 20) & 1) != 0)
+    pub fn sr20(&self) -> Sr20R {
+        Sr20R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Include or exclude subregion 21 in region"]
     #[inline(always)]
-    pub fn sr21(&self) -> SR21_R {
-        SR21_R::new(((self.bits >> 21) & 1) != 0)
+    pub fn sr21(&self) -> Sr21R {
+        Sr21R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Include or exclude subregion 22 in region"]
     #[inline(always)]
-    pub fn sr22(&self) -> SR22_R {
-        SR22_R::new(((self.bits >> 22) & 1) != 0)
+    pub fn sr22(&self) -> Sr22R {
+        Sr22R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - Include or exclude subregion 23 in region"]
     #[inline(always)]
-    pub fn sr23(&self) -> SR23_R {
-        SR23_R::new(((self.bits >> 23) & 1) != 0)
+    pub fn sr23(&self) -> Sr23R {
+        Sr23R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - Include or exclude subregion 24 in region"]
     #[inline(always)]
-    pub fn sr24(&self) -> SR24_R {
-        SR24_R::new(((self.bits >> 24) & 1) != 0)
+    pub fn sr24(&self) -> Sr24R {
+        Sr24R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Include or exclude subregion 25 in region"]
     #[inline(always)]
-    pub fn sr25(&self) -> SR25_R {
-        SR25_R::new(((self.bits >> 25) & 1) != 0)
+    pub fn sr25(&self) -> Sr25R {
+        Sr25R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Include or exclude subregion 26 in region"]
     #[inline(always)]
-    pub fn sr26(&self) -> SR26_R {
-        SR26_R::new(((self.bits >> 26) & 1) != 0)
+    pub fn sr26(&self) -> Sr26R {
+        Sr26R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - Include or exclude subregion 27 in region"]
     #[inline(always)]
-    pub fn sr27(&self) -> SR27_R {
-        SR27_R::new(((self.bits >> 27) & 1) != 0)
+    pub fn sr27(&self) -> Sr27R {
+        Sr27R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 28 - Include or exclude subregion 28 in region"]
     #[inline(always)]
-    pub fn sr28(&self) -> SR28_R {
-        SR28_R::new(((self.bits >> 28) & 1) != 0)
+    pub fn sr28(&self) -> Sr28R {
+        Sr28R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - Include or exclude subregion 29 in region"]
     #[inline(always)]
-    pub fn sr29(&self) -> SR29_R {
-        SR29_R::new(((self.bits >> 29) & 1) != 0)
+    pub fn sr29(&self) -> Sr29R {
+        Sr29R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - Include or exclude subregion 30 in region"]
     #[inline(always)]
-    pub fn sr30(&self) -> SR30_R {
-        SR30_R::new(((self.bits >> 30) & 1) != 0)
+    pub fn sr30(&self) -> Sr30R {
+        Sr30R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Include or exclude subregion 31 in region"]
     #[inline(always)]
-    pub fn sr31(&self) -> SR31_R {
-        SR31_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn sr31(&self) -> Sr31R {
+        Sr31R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Include or exclude subregion 0 in region"]
     #[inline(always)]
-    pub fn sr0(&mut self) -> SR0_W<0> {
-        SR0_W::new(self)
+    pub fn sr0(&mut self) -> Sr0W<'_, SubsSpec> {
+        Sr0W::new(self, 0)
     }
     #[doc = "Bit 1 - Include or exclude subregion 1 in region"]
     #[inline(always)]
-    pub fn sr1(&mut self) -> SR1_W<1> {
-        SR1_W::new(self)
+    pub fn sr1(&mut self) -> Sr1W<'_, SubsSpec> {
+        Sr1W::new(self, 1)
     }
     #[doc = "Bit 2 - Include or exclude subregion 2 in region"]
     #[inline(always)]
-    pub fn sr2(&mut self) -> SR2_W<2> {
-        SR2_W::new(self)
+    pub fn sr2(&mut self) -> Sr2W<'_, SubsSpec> {
+        Sr2W::new(self, 2)
     }
     #[doc = "Bit 3 - Include or exclude subregion 3 in region"]
     #[inline(always)]
-    pub fn sr3(&mut self) -> SR3_W<3> {
-        SR3_W::new(self)
+    pub fn sr3(&mut self) -> Sr3W<'_, SubsSpec> {
+        Sr3W::new(self, 3)
     }
     #[doc = "Bit 4 - Include or exclude subregion 4 in region"]
     #[inline(always)]
-    pub fn sr4(&mut self) -> SR4_W<4> {
-        SR4_W::new(self)
+    pub fn sr4(&mut self) -> Sr4W<'_, SubsSpec> {
+        Sr4W::new(self, 4)
     }
     #[doc = "Bit 5 - Include or exclude subregion 5 in region"]
     #[inline(always)]
-    pub fn sr5(&mut self) -> SR5_W<5> {
-        SR5_W::new(self)
+    pub fn sr5(&mut self) -> Sr5W<'_, SubsSpec> {
+        Sr5W::new(self, 5)
     }
     #[doc = "Bit 6 - Include or exclude subregion 6 in region"]
     #[inline(always)]
-    pub fn sr6(&mut self) -> SR6_W<6> {
-        SR6_W::new(self)
+    pub fn sr6(&mut self) -> Sr6W<'_, SubsSpec> {
+        Sr6W::new(self, 6)
     }
     #[doc = "Bit 7 - Include or exclude subregion 7 in region"]
     #[inline(always)]
-    pub fn sr7(&mut self) -> SR7_W<7> {
-        SR7_W::new(self)
+    pub fn sr7(&mut self) -> Sr7W<'_, SubsSpec> {
+        Sr7W::new(self, 7)
     }
     #[doc = "Bit 8 - Include or exclude subregion 8 in region"]
     #[inline(always)]
-    pub fn sr8(&mut self) -> SR8_W<8> {
-        SR8_W::new(self)
+    pub fn sr8(&mut self) -> Sr8W<'_, SubsSpec> {
+        Sr8W::new(self, 8)
     }
     #[doc = "Bit 9 - Include or exclude subregion 9 in region"]
     #[inline(always)]
-    pub fn sr9(&mut self) -> SR9_W<9> {
-        SR9_W::new(self)
+    pub fn sr9(&mut self) -> Sr9W<'_, SubsSpec> {
+        Sr9W::new(self, 9)
     }
     #[doc = "Bit 10 - Include or exclude subregion 10 in region"]
     #[inline(always)]
-    pub fn sr10(&mut self) -> SR10_W<10> {
-        SR10_W::new(self)
+    pub fn sr10(&mut self) -> Sr10W<'_, SubsSpec> {
+        Sr10W::new(self, 10)
     }
     #[doc = "Bit 11 - Include or exclude subregion 11 in region"]
     #[inline(always)]
-    pub fn sr11(&mut self) -> SR11_W<11> {
-        SR11_W::new(self)
+    pub fn sr11(&mut self) -> Sr11W<'_, SubsSpec> {
+        Sr11W::new(self, 11)
     }
     #[doc = "Bit 12 - Include or exclude subregion 12 in region"]
     #[inline(always)]
-    pub fn sr12(&mut self) -> SR12_W<12> {
-        SR12_W::new(self)
+    pub fn sr12(&mut self) -> Sr12W<'_, SubsSpec> {
+        Sr12W::new(self, 12)
     }
     #[doc = "Bit 13 - Include or exclude subregion 13 in region"]
     #[inline(always)]
-    pub fn sr13(&mut self) -> SR13_W<13> {
-        SR13_W::new(self)
+    pub fn sr13(&mut self) -> Sr13W<'_, SubsSpec> {
+        Sr13W::new(self, 13)
     }
     #[doc = "Bit 14 - Include or exclude subregion 14 in region"]
     #[inline(always)]
-    pub fn sr14(&mut self) -> SR14_W<14> {
-        SR14_W::new(self)
+    pub fn sr14(&mut self) -> Sr14W<'_, SubsSpec> {
+        Sr14W::new(self, 14)
     }
     #[doc = "Bit 15 - Include or exclude subregion 15 in region"]
     #[inline(always)]
-    pub fn sr15(&mut self) -> SR15_W<15> {
-        SR15_W::new(self)
+    pub fn sr15(&mut self) -> Sr15W<'_, SubsSpec> {
+        Sr15W::new(self, 15)
     }
     #[doc = "Bit 16 - Include or exclude subregion 16 in region"]
     #[inline(always)]
-    pub fn sr16(&mut self) -> SR16_W<16> {
-        SR16_W::new(self)
+    pub fn sr16(&mut self) -> Sr16W<'_, SubsSpec> {
+        Sr16W::new(self, 16)
     }
     #[doc = "Bit 17 - Include or exclude subregion 17 in region"]
     #[inline(always)]
-    pub fn sr17(&mut self) -> SR17_W<17> {
-        SR17_W::new(self)
+    pub fn sr17(&mut self) -> Sr17W<'_, SubsSpec> {
+        Sr17W::new(self, 17)
     }
     #[doc = "Bit 18 - Include or exclude subregion 18 in region"]
     #[inline(always)]
-    pub fn sr18(&mut self) -> SR18_W<18> {
-        SR18_W::new(self)
+    pub fn sr18(&mut self) -> Sr18W<'_, SubsSpec> {
+        Sr18W::new(self, 18)
     }
     #[doc = "Bit 19 - Include or exclude subregion 19 in region"]
     #[inline(always)]
-    pub fn sr19(&mut self) -> SR19_W<19> {
-        SR19_W::new(self)
+    pub fn sr19(&mut self) -> Sr19W<'_, SubsSpec> {
+        Sr19W::new(self, 19)
     }
     #[doc = "Bit 20 - Include or exclude subregion 20 in region"]
     #[inline(always)]
-    pub fn sr20(&mut self) -> SR20_W<20> {
-        SR20_W::new(self)
+    pub fn sr20(&mut self) -> Sr20W<'_, SubsSpec> {
+        Sr20W::new(self, 20)
     }
     #[doc = "Bit 21 - Include or exclude subregion 21 in region"]
     #[inline(always)]
-    pub fn sr21(&mut self) -> SR21_W<21> {
-        SR21_W::new(self)
+    pub fn sr21(&mut self) -> Sr21W<'_, SubsSpec> {
+        Sr21W::new(self, 21)
     }
     #[doc = "Bit 22 - Include or exclude subregion 22 in region"]
     #[inline(always)]
-    pub fn sr22(&mut self) -> SR22_W<22> {
-        SR22_W::new(self)
+    pub fn sr22(&mut self) -> Sr22W<'_, SubsSpec> {
+        Sr22W::new(self, 22)
     }
     #[doc = "Bit 23 - Include or exclude subregion 23 in region"]
     #[inline(always)]
-    pub fn sr23(&mut self) -> SR23_W<23> {
-        SR23_W::new(self)
+    pub fn sr23(&mut self) -> Sr23W<'_, SubsSpec> {
+        Sr23W::new(self, 23)
     }
     #[doc = "Bit 24 - Include or exclude subregion 24 in region"]
     #[inline(always)]
-    pub fn sr24(&mut self) -> SR24_W<24> {
-        SR24_W::new(self)
+    pub fn sr24(&mut self) -> Sr24W<'_, SubsSpec> {
+        Sr24W::new(self, 24)
     }
     #[doc = "Bit 25 - Include or exclude subregion 25 in region"]
     #[inline(always)]
-    pub fn sr25(&mut self) -> SR25_W<25> {
-        SR25_W::new(self)
+    pub fn sr25(&mut self) -> Sr25W<'_, SubsSpec> {
+        Sr25W::new(self, 25)
     }
     #[doc = "Bit 26 - Include or exclude subregion 26 in region"]
     #[inline(always)]
-    pub fn sr26(&mut self) -> SR26_W<26> {
-        SR26_W::new(self)
+    pub fn sr26(&mut self) -> Sr26W<'_, SubsSpec> {
+        Sr26W::new(self, 26)
     }
     #[doc = "Bit 27 - Include or exclude subregion 27 in region"]
     #[inline(always)]
-    pub fn sr27(&mut self) -> SR27_W<27> {
-        SR27_W::new(self)
+    pub fn sr27(&mut self) -> Sr27W<'_, SubsSpec> {
+        Sr27W::new(self, 27)
     }
     #[doc = "Bit 28 - Include or exclude subregion 28 in region"]
     #[inline(always)]
-    pub fn sr28(&mut self) -> SR28_W<28> {
-        SR28_W::new(self)
+    pub fn sr28(&mut self) -> Sr28W<'_, SubsSpec> {
+        Sr28W::new(self, 28)
     }
     #[doc = "Bit 29 - Include or exclude subregion 29 in region"]
     #[inline(always)]
-    pub fn sr29(&mut self) -> SR29_W<29> {
-        SR29_W::new(self)
+    pub fn sr29(&mut self) -> Sr29W<'_, SubsSpec> {
+        Sr29W::new(self, 29)
     }
     #[doc = "Bit 30 - Include or exclude subregion 30 in region"]
     #[inline(always)]
-    pub fn sr30(&mut self) -> SR30_W<30> {
-        SR30_W::new(self)
+    pub fn sr30(&mut self) -> Sr30W<'_, SubsSpec> {
+        Sr30W::new(self, 30)
     }
     #[doc = "Bit 31 - Include or exclude subregion 31 in region"]
     #[inline(always)]
-    pub fn sr31(&mut self) -> SR31_W<31> {
-        SR31_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn sr31(&mut self) -> Sr31W<'_, SubsSpec> {
+        Sr31W::new(self, 31)
     }
 }
-#[doc = "Description cluster: Subregions of region n\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [subs](index.html) module"]
-pub struct SUBS_SPEC;
-impl crate::RegisterSpec for SUBS_SPEC {
+#[doc = "Description cluster: Subregions of region n\n\nYou can [`read`](crate::Reg::read) this register and get [`subs::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`subs::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct SubsSpec;
+impl crate::RegisterSpec for SubsSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [subs::R](R) reader structure"]
-impl crate::Readable for SUBS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [subs::W](W) writer structure"]
-impl crate::Writable for SUBS_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`subs::R`](R) reader structure"]
+impl crate::Readable for SubsSpec {}
+#[doc = "`write(|w| ..)` method takes [`subs::W`](W) writer structure"]
+impl crate::Writable for SubsSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets SUBS to value 0"]
-impl crate::Resettable for SUBS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for SubsSpec {}

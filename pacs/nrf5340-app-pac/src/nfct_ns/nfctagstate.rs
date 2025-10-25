@@ -1,108 +1,92 @@
 #[doc = "Register `NFCTAGSTATE` reader"]
-pub struct R(crate::R<NFCTAGSTATE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NFCTAGSTATE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NFCTAGSTATE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NFCTAGSTATE_SPEC>) -> Self {
-        R(reader)
-    }
-}
-#[doc = "Field `NFCTAGSTATE` reader - NfcTag state"]
-pub type NFCTAGSTATE_R = crate::FieldReader<u8, NFCTAGSTATE_A>;
+pub type R = crate::R<NfctagstateSpec>;
 #[doc = "NfcTag state\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum NFCTAGSTATE_A {
+pub enum Nfctagstate {
     #[doc = "0: Disabled or sense"]
-    DISABLED = 0,
+    Disabled = 0,
     #[doc = "2: RampUp"]
-    RAMP_UP = 2,
+    RampUp = 2,
     #[doc = "3: Idle"]
-    IDLE = 3,
+    Idle = 3,
     #[doc = "4: Receive"]
-    RECEIVE = 4,
+    Receive = 4,
     #[doc = "5: FrameDelay"]
-    FRAME_DELAY = 5,
+    FrameDelay = 5,
     #[doc = "6: Transmit"]
-    TRANSMIT = 6,
+    Transmit = 6,
 }
-impl From<NFCTAGSTATE_A> for u8 {
+impl From<Nfctagstate> for u8 {
     #[inline(always)]
-    fn from(variant: NFCTAGSTATE_A) -> Self {
+    fn from(variant: Nfctagstate) -> Self {
         variant as _
     }
 }
-impl NFCTAGSTATE_R {
+impl crate::FieldSpec for Nfctagstate {
+    type Ux = u8;
+}
+impl crate::IsEnum for Nfctagstate {}
+#[doc = "Field `NFCTAGSTATE` reader - NfcTag state"]
+pub type NfctagstateR = crate::FieldReader<Nfctagstate>;
+impl NfctagstateR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NFCTAGSTATE_A> {
+    pub const fn variant(&self) -> Option<Nfctagstate> {
         match self.bits {
-            0 => Some(NFCTAGSTATE_A::DISABLED),
-            2 => Some(NFCTAGSTATE_A::RAMP_UP),
-            3 => Some(NFCTAGSTATE_A::IDLE),
-            4 => Some(NFCTAGSTATE_A::RECEIVE),
-            5 => Some(NFCTAGSTATE_A::FRAME_DELAY),
-            6 => Some(NFCTAGSTATE_A::TRANSMIT),
+            0 => Some(Nfctagstate::Disabled),
+            2 => Some(Nfctagstate::RampUp),
+            3 => Some(Nfctagstate::Idle),
+            4 => Some(Nfctagstate::Receive),
+            5 => Some(Nfctagstate::FrameDelay),
+            6 => Some(Nfctagstate::Transmit),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled or sense"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == NFCTAGSTATE_A::DISABLED
+        *self == Nfctagstate::Disabled
     }
-    #[doc = "Checks if the value of the field is `RAMP_UP`"]
+    #[doc = "RampUp"]
     #[inline(always)]
     pub fn is_ramp_up(&self) -> bool {
-        *self == NFCTAGSTATE_A::RAMP_UP
+        *self == Nfctagstate::RampUp
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "Idle"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        *self == NFCTAGSTATE_A::IDLE
+        *self == Nfctagstate::Idle
     }
-    #[doc = "Checks if the value of the field is `RECEIVE`"]
+    #[doc = "Receive"]
     #[inline(always)]
     pub fn is_receive(&self) -> bool {
-        *self == NFCTAGSTATE_A::RECEIVE
+        *self == Nfctagstate::Receive
     }
-    #[doc = "Checks if the value of the field is `FRAME_DELAY`"]
+    #[doc = "FrameDelay"]
     #[inline(always)]
     pub fn is_frame_delay(&self) -> bool {
-        *self == NFCTAGSTATE_A::FRAME_DELAY
+        *self == Nfctagstate::FrameDelay
     }
-    #[doc = "Checks if the value of the field is `TRANSMIT`"]
+    #[doc = "Transmit"]
     #[inline(always)]
     pub fn is_transmit(&self) -> bool {
-        *self == NFCTAGSTATE_A::TRANSMIT
+        *self == Nfctagstate::Transmit
     }
 }
 impl R {
     #[doc = "Bits 0:2 - NfcTag state"]
     #[inline(always)]
-    pub fn nfctagstate(&self) -> NFCTAGSTATE_R {
-        NFCTAGSTATE_R::new((self.bits & 7) as u8)
+    pub fn nfctagstate(&self) -> NfctagstateR {
+        NfctagstateR::new((self.bits & 7) as u8)
     }
 }
-#[doc = "Current operating state of NFC tag\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nfctagstate](index.html) module"]
-pub struct NFCTAGSTATE_SPEC;
-impl crate::RegisterSpec for NFCTAGSTATE_SPEC {
+#[doc = "Current operating state of NFC tag\n\nYou can [`read`](crate::Reg::read) this register and get [`nfctagstate::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct NfctagstateSpec;
+impl crate::RegisterSpec for NfctagstateSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [nfctagstate::R](R) reader structure"]
-impl crate::Readable for NFCTAGSTATE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`nfctagstate::R`](R) reader structure"]
+impl crate::Readable for NfctagstateSpec {}
 #[doc = "`reset()` method sets NFCTAGSTATE to value 0"]
-impl crate::Resettable for NFCTAGSTATE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for NfctagstateSpec {}

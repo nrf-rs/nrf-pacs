@@ -1,81 +1,35 @@
 #[doc = "Register `CC[%s]` reader"]
-pub struct R(crate::R<CC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CcSpec>;
 #[doc = "Register `CC[%s]` writer"]
-pub struct W(crate::W<CC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CcSpec>;
 #[doc = "Field `COMPARE` reader - Compare value"]
-pub type COMPARE_R = crate::FieldReader<u32, u32>;
+pub type CompareR = crate::FieldReader<u32>;
 #[doc = "Field `COMPARE` writer - Compare value"]
-pub type COMPARE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC_SPEC, u32, u32, 24, O>;
+pub type CompareW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bits 0:23 - Compare value"]
     #[inline(always)]
-    pub fn compare(&self) -> COMPARE_R {
-        COMPARE_R::new((self.bits & 0x00ff_ffff) as u32)
+    pub fn compare(&self) -> CompareR {
+        CompareR::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Compare value"]
     #[inline(always)]
-    pub fn compare(&mut self) -> COMPARE_W<0> {
-        COMPARE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn compare(&mut self) -> CompareW<'_, CcSpec> {
+        CompareW::new(self, 0)
     }
 }
-#[doc = "Description collection: Compare register n\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc](index.html) module"]
-pub struct CC_SPEC;
-impl crate::RegisterSpec for CC_SPEC {
+#[doc = "Description collection: Compare register n\n\nYou can [`read`](crate::Reg::read) this register and get [`cc::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CcSpec;
+impl crate::RegisterSpec for CcSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cc::R](R) reader structure"]
-impl crate::Readable for CC_SPEC {
-    type Reader = R;
+#[doc = "`read()` method returns [`cc::R`](R) reader structure"]
+impl crate::Readable for CcSpec {}
+#[doc = "`write(|w| ..)` method takes [`cc::W`](W) writer structure"]
+impl crate::Writable for CcSpec {
+    type Safety = crate::Unsafe;
 }
-#[doc = "`write(|w| ..)` method takes [cc::W](W) writer structure"]
-impl crate::Writable for CC_SPEC {
-    type Writer = W;
-}
-#[doc = "`reset()` method sets CC[%s]
-to value 0"]
-impl crate::Resettable for CC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+#[doc = "`reset()` method sets CC[%s] to value 0"]
+impl crate::Resettable for CcSpec {}

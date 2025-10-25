@@ -1,45 +1,19 @@
 #[doc = "Register `TASKS_STOPTX` writer"]
-pub struct W(crate::W<TASKS_STOPTX_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TASKS_STOPTX_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type W = crate::W<TasksStoptxSpec>;
+impl core::fmt::Debug for crate::generic::Reg<TasksStoptxSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TASKS_STOPTX_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TASKS_STOPTX_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "Stop UART transmitter\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_stoptx](index.html) module"]
-pub struct TASKS_STOPTX_SPEC;
-impl crate::RegisterSpec for TASKS_STOPTX_SPEC {
+impl W {}
+#[doc = "Stop UART transmitter\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_stoptx::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TasksStoptxSpec;
+impl crate::RegisterSpec for TasksStoptxSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [tasks_stoptx::W](W) writer structure"]
-impl crate::Writable for TASKS_STOPTX_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`tasks_stoptx::W`](W) writer structure"]
+impl crate::Writable for TasksStoptxSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TASKS_STOPTX to value 0"]
-impl crate::Resettable for TASKS_STOPTX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for TasksStoptxSpec {}

@@ -1,246 +1,212 @@
 #[doc = "Register `FRAMECONFIG` reader"]
-pub struct R(crate::R<FRAMECONFIG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FRAMECONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FRAMECONFIG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FRAMECONFIG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FrameconfigSpec>;
 #[doc = "Register `FRAMECONFIG` writer"]
-pub struct W(crate::W<FRAMECONFIG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FRAMECONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<FrameconfigSpec>;
+#[doc = "Indicates if parity expected in RX frame\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Parity {
+    #[doc = "0: Parity is not expected in RX frames"]
+    NoParity = 0,
+    #[doc = "1: Parity is expected in RX frames"]
+    Parity = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Parity> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FRAMECONFIG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FRAMECONFIG_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Parity) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `PARITY` reader - Indicates if parity expected in RX frame"]
-pub type PARITY_R = crate::BitReader<PARITY_A>;
-#[doc = "Indicates if parity expected in RX frame\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PARITY_A {
-    #[doc = "0: Parity is not expected in RX frames"]
-    NO_PARITY = 0,
-    #[doc = "1: Parity is expected in RX frames"]
-    PARITY = 1,
-}
-impl From<PARITY_A> for bool {
-    #[inline(always)]
-    fn from(variant: PARITY_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl PARITY_R {
+pub type ParityR = crate::BitReader<Parity>;
+impl ParityR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PARITY_A {
+    pub const fn variant(&self) -> Parity {
         match self.bits {
-            false => PARITY_A::NO_PARITY,
-            true => PARITY_A::PARITY,
+            false => Parity::NoParity,
+            true => Parity::Parity,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_PARITY`"]
-    #[inline(always)]
-    pub fn is_no_parity(&self) -> bool {
-        *self == PARITY_A::NO_PARITY
-    }
-    #[doc = "Checks if the value of the field is `PARITY`"]
-    #[inline(always)]
-    pub fn is_parity(&self) -> bool {
-        *self == PARITY_A::PARITY
-    }
-}
-#[doc = "Field `PARITY` writer - Indicates if parity expected in RX frame"]
-pub type PARITY_W<'a, const O: u8> = crate::BitWriter<'a, u32, FRAMECONFIG_SPEC, PARITY_A, O>;
-impl<'a, const O: u8> PARITY_W<'a, O> {
     #[doc = "Parity is not expected in RX frames"]
     #[inline(always)]
-    pub fn no_parity(self) -> &'a mut W {
-        self.variant(PARITY_A::NO_PARITY)
+    pub fn is_no_parity(&self) -> bool {
+        *self == Parity::NoParity
     }
     #[doc = "Parity is expected in RX frames"]
     #[inline(always)]
-    pub fn parity(self) -> &'a mut W {
-        self.variant(PARITY_A::PARITY)
+    pub fn is_parity(&self) -> bool {
+        *self == Parity::Parity
+    }
+}
+#[doc = "Field `PARITY` writer - Indicates if parity expected in RX frame"]
+pub type ParityW<'a, REG> = crate::BitWriter<'a, REG, Parity>;
+impl<'a, REG> ParityW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Parity is not expected in RX frames"]
+    #[inline(always)]
+    pub fn no_parity(self) -> &'a mut crate::W<REG> {
+        self.variant(Parity::NoParity)
+    }
+    #[doc = "Parity is expected in RX frames"]
+    #[inline(always)]
+    pub fn parity(self) -> &'a mut crate::W<REG> {
+        self.variant(Parity::Parity)
+    }
+}
+#[doc = "SoF expected or not in RX frames\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sof {
+    #[doc = "0: SoF symbol is not expected in RX frames"]
+    NoSoF = 0,
+    #[doc = "1: SoF symbol is expected in RX frames"]
+    SoF = 1,
+}
+impl From<Sof> for bool {
+    #[inline(always)]
+    fn from(variant: Sof) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SOF` reader - SoF expected or not in RX frames"]
-pub type SOF_R = crate::BitReader<SOF_A>;
-#[doc = "SoF expected or not in RX frames\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SOF_A {
-    #[doc = "0: SoF symbol is not expected in RX frames"]
-    NO_SO_F = 0,
-    #[doc = "1: SoF symbol is expected in RX frames"]
-    SO_F = 1,
-}
-impl From<SOF_A> for bool {
-    #[inline(always)]
-    fn from(variant: SOF_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SOF_R {
+pub type SofR = crate::BitReader<Sof>;
+impl SofR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SOF_A {
+    pub const fn variant(&self) -> Sof {
         match self.bits {
-            false => SOF_A::NO_SO_F,
-            true => SOF_A::SO_F,
+            false => Sof::NoSoF,
+            true => Sof::SoF,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_SO_F`"]
-    #[inline(always)]
-    pub fn is_no_so_f(&self) -> bool {
-        *self == SOF_A::NO_SO_F
-    }
-    #[doc = "Checks if the value of the field is `SO_F`"]
-    #[inline(always)]
-    pub fn is_so_f(&self) -> bool {
-        *self == SOF_A::SO_F
-    }
-}
-#[doc = "Field `SOF` writer - SoF expected or not in RX frames"]
-pub type SOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, FRAMECONFIG_SPEC, SOF_A, O>;
-impl<'a, const O: u8> SOF_W<'a, O> {
     #[doc = "SoF symbol is not expected in RX frames"]
     #[inline(always)]
-    pub fn no_so_f(self) -> &'a mut W {
-        self.variant(SOF_A::NO_SO_F)
+    pub fn is_no_so_f(&self) -> bool {
+        *self == Sof::NoSoF
     }
     #[doc = "SoF symbol is expected in RX frames"]
     #[inline(always)]
-    pub fn so_f(self) -> &'a mut W {
-        self.variant(SOF_A::SO_F)
+    pub fn is_so_f(&self) -> bool {
+        *self == Sof::SoF
     }
 }
-#[doc = "Field `CRCMODERX` reader - CRC mode for incoming frames"]
-pub type CRCMODERX_R = crate::BitReader<CRCMODERX_A>;
-#[doc = "CRC mode for incoming frames\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CRCMODERX_A {
-    #[doc = "0: CRC is not expected in RX frames"]
-    NO_CRCRX = 0,
-    #[doc = "1: Last 16 bits in RX frame is CRC, CRC is checked and CRCSTATUS updated"]
-    CRC16RX = 1,
-}
-impl From<CRCMODERX_A> for bool {
+#[doc = "Field `SOF` writer - SoF expected or not in RX frames"]
+pub type SofW<'a, REG> = crate::BitWriter<'a, REG, Sof>;
+impl<'a, REG> SofW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "SoF symbol is not expected in RX frames"]
     #[inline(always)]
-    fn from(variant: CRCMODERX_A) -> Self {
+    pub fn no_so_f(self) -> &'a mut crate::W<REG> {
+        self.variant(Sof::NoSoF)
+    }
+    #[doc = "SoF symbol is expected in RX frames"]
+    #[inline(always)]
+    pub fn so_f(self) -> &'a mut crate::W<REG> {
+        self.variant(Sof::SoF)
+    }
+}
+#[doc = "CRC mode for incoming frames\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Crcmoderx {
+    #[doc = "0: CRC is not expected in RX frames"]
+    NoCrcrx = 0,
+    #[doc = "1: Last 16 bits in RX frame is CRC, CRC is checked and CRCSTATUS updated"]
+    Crc16rx = 1,
+}
+impl From<Crcmoderx> for bool {
+    #[inline(always)]
+    fn from(variant: Crcmoderx) -> Self {
         variant as u8 != 0
     }
 }
-impl CRCMODERX_R {
+#[doc = "Field `CRCMODERX` reader - CRC mode for incoming frames"]
+pub type CrcmoderxR = crate::BitReader<Crcmoderx>;
+impl CrcmoderxR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CRCMODERX_A {
+    pub const fn variant(&self) -> Crcmoderx {
         match self.bits {
-            false => CRCMODERX_A::NO_CRCRX,
-            true => CRCMODERX_A::CRC16RX,
+            false => Crcmoderx::NoCrcrx,
+            true => Crcmoderx::Crc16rx,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_CRCRX`"]
-    #[inline(always)]
-    pub fn is_no_crcrx(&self) -> bool {
-        *self == CRCMODERX_A::NO_CRCRX
-    }
-    #[doc = "Checks if the value of the field is `CRC16RX`"]
-    #[inline(always)]
-    pub fn is_crc16rx(&self) -> bool {
-        *self == CRCMODERX_A::CRC16RX
-    }
-}
-#[doc = "Field `CRCMODERX` writer - CRC mode for incoming frames"]
-pub type CRCMODERX_W<'a, const O: u8> = crate::BitWriter<'a, u32, FRAMECONFIG_SPEC, CRCMODERX_A, O>;
-impl<'a, const O: u8> CRCMODERX_W<'a, O> {
     #[doc = "CRC is not expected in RX frames"]
     #[inline(always)]
-    pub fn no_crcrx(self) -> &'a mut W {
-        self.variant(CRCMODERX_A::NO_CRCRX)
+    pub fn is_no_crcrx(&self) -> bool {
+        *self == Crcmoderx::NoCrcrx
     }
     #[doc = "Last 16 bits in RX frame is CRC, CRC is checked and CRCSTATUS updated"]
     #[inline(always)]
-    pub fn crc16rx(self) -> &'a mut W {
-        self.variant(CRCMODERX_A::CRC16RX)
+    pub fn is_crc16rx(&self) -> bool {
+        *self == Crcmoderx::Crc16rx
+    }
+}
+#[doc = "Field `CRCMODERX` writer - CRC mode for incoming frames"]
+pub type CrcmoderxW<'a, REG> = crate::BitWriter<'a, REG, Crcmoderx>;
+impl<'a, REG> CrcmoderxW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "CRC is not expected in RX frames"]
+    #[inline(always)]
+    pub fn no_crcrx(self) -> &'a mut crate::W<REG> {
+        self.variant(Crcmoderx::NoCrcrx)
+    }
+    #[doc = "Last 16 bits in RX frame is CRC, CRC is checked and CRCSTATUS updated"]
+    #[inline(always)]
+    pub fn crc16rx(self) -> &'a mut crate::W<REG> {
+        self.variant(Crcmoderx::Crc16rx)
     }
 }
 impl R {
     #[doc = "Bit 0 - Indicates if parity expected in RX frame"]
     #[inline(always)]
-    pub fn parity(&self) -> PARITY_R {
-        PARITY_R::new((self.bits & 1) != 0)
+    pub fn parity(&self) -> ParityR {
+        ParityR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - SoF expected or not in RX frames"]
     #[inline(always)]
-    pub fn sof(&self) -> SOF_R {
-        SOF_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn sof(&self) -> SofR {
+        SofR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 4 - CRC mode for incoming frames"]
     #[inline(always)]
-    pub fn crcmoderx(&self) -> CRCMODERX_R {
-        CRCMODERX_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn crcmoderx(&self) -> CrcmoderxR {
+        CrcmoderxR::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Indicates if parity expected in RX frame"]
     #[inline(always)]
-    pub fn parity(&mut self) -> PARITY_W<0> {
-        PARITY_W::new(self)
+    pub fn parity(&mut self) -> ParityW<'_, FrameconfigSpec> {
+        ParityW::new(self, 0)
     }
     #[doc = "Bit 2 - SoF expected or not in RX frames"]
     #[inline(always)]
-    pub fn sof(&mut self) -> SOF_W<2> {
-        SOF_W::new(self)
+    pub fn sof(&mut self) -> SofW<'_, FrameconfigSpec> {
+        SofW::new(self, 2)
     }
     #[doc = "Bit 4 - CRC mode for incoming frames"]
     #[inline(always)]
-    pub fn crcmoderx(&mut self) -> CRCMODERX_W<4> {
-        CRCMODERX_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn crcmoderx(&mut self) -> CrcmoderxW<'_, FrameconfigSpec> {
+        CrcmoderxW::new(self, 4)
     }
 }
-#[doc = "Configuration of incoming frames\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [frameconfig](index.html) module"]
-pub struct FRAMECONFIG_SPEC;
-impl crate::RegisterSpec for FRAMECONFIG_SPEC {
+#[doc = "Configuration of incoming frames\n\nYou can [`read`](crate::Reg::read) this register and get [`frameconfig::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`frameconfig::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct FrameconfigSpec;
+impl crate::RegisterSpec for FrameconfigSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [frameconfig::R](R) reader structure"]
-impl crate::Readable for FRAMECONFIG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [frameconfig::W](W) writer structure"]
-impl crate::Writable for FRAMECONFIG_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`frameconfig::R`](R) reader structure"]
+impl crate::Readable for FrameconfigSpec {}
+#[doc = "`write(|w| ..)` method takes [`frameconfig::W`](W) writer structure"]
+impl crate::Writable for FrameconfigSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets FRAMECONFIG to value 0x15"]
-impl crate::Resettable for FRAMECONFIG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x15
-    }
+impl crate::Resettable for FrameconfigSpec {
+    const RESET_VALUE: u32 = 0x15;
 }

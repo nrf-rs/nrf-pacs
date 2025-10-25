@@ -1,131 +1,233 @@
-#[doc = r"Register block"]
 #[repr(C)]
+#[doc = "Register block"]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Start HFCLK crystal oscillator"]
-    pub tasks_hfclkstart: TASKS_HFCLKSTART,
-    #[doc = "0x04 - Stop HFCLK crystal oscillator"]
-    pub tasks_hfclkstop: TASKS_HFCLKSTOP,
-    #[doc = "0x08 - Start LFCLK source"]
-    pub tasks_lfclkstart: TASKS_LFCLKSTART,
-    #[doc = "0x0c - Stop LFCLK source"]
-    pub tasks_lfclkstop: TASKS_LFCLKSTOP,
-    #[doc = "0x10 - Start calibration of LFRC oscillator"]
-    pub tasks_cal: TASKS_CAL,
-    #[doc = "0x14 - Start calibration timer"]
-    pub tasks_ctstart: TASKS_CTSTART,
-    #[doc = "0x18 - Stop calibration timer"]
-    pub tasks_ctstop: TASKS_CTSTOP,
+    tasks_hfclkstart: TasksHfclkstart,
+    tasks_hfclkstop: TasksHfclkstop,
+    tasks_lfclkstart: TasksLfclkstart,
+    tasks_lfclkstop: TasksLfclkstop,
+    tasks_cal: TasksCal,
+    tasks_ctstart: TasksCtstart,
+    tasks_ctstop: TasksCtstop,
     _reserved7: [u8; 0xe4],
-    #[doc = "0x100 - HFCLK oscillator started"]
-    pub events_hfclkstarted: EVENTS_HFCLKSTARTED,
-    #[doc = "0x104 - LFCLK started"]
-    pub events_lfclkstarted: EVENTS_LFCLKSTARTED,
+    events_hfclkstarted: EventsHfclkstarted,
+    events_lfclkstarted: EventsLfclkstarted,
     _reserved9: [u8; 0x04],
-    #[doc = "0x10c - Calibration of LFCLK RC oscillator complete event"]
-    pub events_done: EVENTS_DONE,
-    #[doc = "0x110 - Calibration timer timeout"]
-    pub events_ctto: EVENTS_CTTO,
+    events_done: EventsDone,
+    events_ctto: EventsCtto,
     _reserved11: [u8; 0x01f0],
-    #[doc = "0x304 - Enable interrupt"]
-    pub intenset: INTENSET,
-    #[doc = "0x308 - Disable interrupt"]
-    pub intenclr: INTENCLR,
+    intenset: Intenset,
+    intenclr: Intenclr,
     _reserved13: [u8; 0xfc],
-    #[doc = "0x408 - Status indicating that HFCLKSTART task has been triggered"]
-    pub hfclkrun: HFCLKRUN,
-    #[doc = "0x40c - HFCLK status"]
-    pub hfclkstat: HFCLKSTAT,
+    hfclkrun: Hfclkrun,
+    hfclkstat: Hfclkstat,
     _reserved15: [u8; 0x04],
-    #[doc = "0x414 - Status indicating that LFCLKSTART task has been triggered"]
-    pub lfclkrun: LFCLKRUN,
-    #[doc = "0x418 - LFCLK status"]
-    pub lfclkstat: LFCLKSTAT,
-    #[doc = "0x41c - Copy of LFCLKSRC register, set when LFCLKSTART task was triggered"]
-    pub lfclksrccopy: LFCLKSRCCOPY,
+    lfclkrun: Lfclkrun,
+    lfclkstat: Lfclkstat,
+    lfclksrccopy: Lfclksrccopy,
     _reserved18: [u8; 0xf8],
-    #[doc = "0x518 - Clock source for the LFCLK"]
-    pub lfclksrc: LFCLKSRC,
+    lfclksrc: Lfclksrc,
     _reserved19: [u8; 0x1c],
-    #[doc = "0x538 - Calibration timer interval"]
-    pub ctiv: CTIV,
+    ctiv: Ctiv,
 }
-#[doc = "TASKS_HFCLKSTART (w) register accessor: an alias for `Reg<TASKS_HFCLKSTART_SPEC>`"]
-pub type TASKS_HFCLKSTART = crate::Reg<tasks_hfclkstart::TASKS_HFCLKSTART_SPEC>;
+impl RegisterBlock {
+    #[doc = "0x00 - Start HFCLK crystal oscillator"]
+    #[inline(always)]
+    pub const fn tasks_hfclkstart(&self) -> &TasksHfclkstart {
+        &self.tasks_hfclkstart
+    }
+    #[doc = "0x04 - Stop HFCLK crystal oscillator"]
+    #[inline(always)]
+    pub const fn tasks_hfclkstop(&self) -> &TasksHfclkstop {
+        &self.tasks_hfclkstop
+    }
+    #[doc = "0x08 - Start LFCLK source"]
+    #[inline(always)]
+    pub const fn tasks_lfclkstart(&self) -> &TasksLfclkstart {
+        &self.tasks_lfclkstart
+    }
+    #[doc = "0x0c - Stop LFCLK source"]
+    #[inline(always)]
+    pub const fn tasks_lfclkstop(&self) -> &TasksLfclkstop {
+        &self.tasks_lfclkstop
+    }
+    #[doc = "0x10 - Start calibration of LFRC oscillator"]
+    #[inline(always)]
+    pub const fn tasks_cal(&self) -> &TasksCal {
+        &self.tasks_cal
+    }
+    #[doc = "0x14 - Start calibration timer"]
+    #[inline(always)]
+    pub const fn tasks_ctstart(&self) -> &TasksCtstart {
+        &self.tasks_ctstart
+    }
+    #[doc = "0x18 - Stop calibration timer"]
+    #[inline(always)]
+    pub const fn tasks_ctstop(&self) -> &TasksCtstop {
+        &self.tasks_ctstop
+    }
+    #[doc = "0x100 - HFCLK oscillator started"]
+    #[inline(always)]
+    pub const fn events_hfclkstarted(&self) -> &EventsHfclkstarted {
+        &self.events_hfclkstarted
+    }
+    #[doc = "0x104 - LFCLK started"]
+    #[inline(always)]
+    pub const fn events_lfclkstarted(&self) -> &EventsLfclkstarted {
+        &self.events_lfclkstarted
+    }
+    #[doc = "0x10c - Calibration of LFCLK RC oscillator complete event"]
+    #[inline(always)]
+    pub const fn events_done(&self) -> &EventsDone {
+        &self.events_done
+    }
+    #[doc = "0x110 - Calibration timer timeout"]
+    #[inline(always)]
+    pub const fn events_ctto(&self) -> &EventsCtto {
+        &self.events_ctto
+    }
+    #[doc = "0x304 - Enable interrupt"]
+    #[inline(always)]
+    pub const fn intenset(&self) -> &Intenset {
+        &self.intenset
+    }
+    #[doc = "0x308 - Disable interrupt"]
+    #[inline(always)]
+    pub const fn intenclr(&self) -> &Intenclr {
+        &self.intenclr
+    }
+    #[doc = "0x408 - Status indicating that HFCLKSTART task has been triggered"]
+    #[inline(always)]
+    pub const fn hfclkrun(&self) -> &Hfclkrun {
+        &self.hfclkrun
+    }
+    #[doc = "0x40c - HFCLK status"]
+    #[inline(always)]
+    pub const fn hfclkstat(&self) -> &Hfclkstat {
+        &self.hfclkstat
+    }
+    #[doc = "0x414 - Status indicating that LFCLKSTART task has been triggered"]
+    #[inline(always)]
+    pub const fn lfclkrun(&self) -> &Lfclkrun {
+        &self.lfclkrun
+    }
+    #[doc = "0x418 - LFCLK status"]
+    #[inline(always)]
+    pub const fn lfclkstat(&self) -> &Lfclkstat {
+        &self.lfclkstat
+    }
+    #[doc = "0x41c - Copy of LFCLKSRC register, set when LFCLKSTART task was triggered"]
+    #[inline(always)]
+    pub const fn lfclksrccopy(&self) -> &Lfclksrccopy {
+        &self.lfclksrccopy
+    }
+    #[doc = "0x518 - Clock source for the LFCLK"]
+    #[inline(always)]
+    pub const fn lfclksrc(&self) -> &Lfclksrc {
+        &self.lfclksrc
+    }
+    #[doc = "0x538 - Calibration timer interval"]
+    #[inline(always)]
+    pub const fn ctiv(&self) -> &Ctiv {
+        &self.ctiv
+    }
+}
+#[doc = "TASKS_HFCLKSTART (w) register accessor: Start HFCLK crystal oscillator\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_hfclkstart::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_hfclkstart`] module"]
+#[doc(alias = "TASKS_HFCLKSTART")]
+pub type TasksHfclkstart = crate::Reg<tasks_hfclkstart::TasksHfclkstartSpec>;
 #[doc = "Start HFCLK crystal oscillator"]
 pub mod tasks_hfclkstart;
-#[doc = "TASKS_HFCLKSTOP (w) register accessor: an alias for `Reg<TASKS_HFCLKSTOP_SPEC>`"]
-pub type TASKS_HFCLKSTOP = crate::Reg<tasks_hfclkstop::TASKS_HFCLKSTOP_SPEC>;
+#[doc = "TASKS_HFCLKSTOP (w) register accessor: Stop HFCLK crystal oscillator\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_hfclkstop::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_hfclkstop`] module"]
+#[doc(alias = "TASKS_HFCLKSTOP")]
+pub type TasksHfclkstop = crate::Reg<tasks_hfclkstop::TasksHfclkstopSpec>;
 #[doc = "Stop HFCLK crystal oscillator"]
 pub mod tasks_hfclkstop;
-#[doc = "TASKS_LFCLKSTART (w) register accessor: an alias for `Reg<TASKS_LFCLKSTART_SPEC>`"]
-pub type TASKS_LFCLKSTART = crate::Reg<tasks_lfclkstart::TASKS_LFCLKSTART_SPEC>;
+#[doc = "TASKS_LFCLKSTART (w) register accessor: Start LFCLK source\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_lfclkstart::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_lfclkstart`] module"]
+#[doc(alias = "TASKS_LFCLKSTART")]
+pub type TasksLfclkstart = crate::Reg<tasks_lfclkstart::TasksLfclkstartSpec>;
 #[doc = "Start LFCLK source"]
 pub mod tasks_lfclkstart;
-#[doc = "TASKS_LFCLKSTOP (w) register accessor: an alias for `Reg<TASKS_LFCLKSTOP_SPEC>`"]
-pub type TASKS_LFCLKSTOP = crate::Reg<tasks_lfclkstop::TASKS_LFCLKSTOP_SPEC>;
+#[doc = "TASKS_LFCLKSTOP (w) register accessor: Stop LFCLK source\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_lfclkstop::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_lfclkstop`] module"]
+#[doc(alias = "TASKS_LFCLKSTOP")]
+pub type TasksLfclkstop = crate::Reg<tasks_lfclkstop::TasksLfclkstopSpec>;
 #[doc = "Stop LFCLK source"]
 pub mod tasks_lfclkstop;
-#[doc = "TASKS_CAL (w) register accessor: an alias for `Reg<TASKS_CAL_SPEC>`"]
-pub type TASKS_CAL = crate::Reg<tasks_cal::TASKS_CAL_SPEC>;
+#[doc = "TASKS_CAL (w) register accessor: Start calibration of LFRC oscillator\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_cal::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_cal`] module"]
+#[doc(alias = "TASKS_CAL")]
+pub type TasksCal = crate::Reg<tasks_cal::TasksCalSpec>;
 #[doc = "Start calibration of LFRC oscillator"]
 pub mod tasks_cal;
-#[doc = "TASKS_CTSTART (w) register accessor: an alias for `Reg<TASKS_CTSTART_SPEC>`"]
-pub type TASKS_CTSTART = crate::Reg<tasks_ctstart::TASKS_CTSTART_SPEC>;
+#[doc = "TASKS_CTSTART (w) register accessor: Start calibration timer\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_ctstart::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_ctstart`] module"]
+#[doc(alias = "TASKS_CTSTART")]
+pub type TasksCtstart = crate::Reg<tasks_ctstart::TasksCtstartSpec>;
 #[doc = "Start calibration timer"]
 pub mod tasks_ctstart;
-#[doc = "TASKS_CTSTOP (w) register accessor: an alias for `Reg<TASKS_CTSTOP_SPEC>`"]
-pub type TASKS_CTSTOP = crate::Reg<tasks_ctstop::TASKS_CTSTOP_SPEC>;
+#[doc = "TASKS_CTSTOP (w) register accessor: Stop calibration timer\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_ctstop::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tasks_ctstop`] module"]
+#[doc(alias = "TASKS_CTSTOP")]
+pub type TasksCtstop = crate::Reg<tasks_ctstop::TasksCtstopSpec>;
 #[doc = "Stop calibration timer"]
 pub mod tasks_ctstop;
-#[doc = "EVENTS_HFCLKSTARTED (rw) register accessor: an alias for `Reg<EVENTS_HFCLKSTARTED_SPEC>`"]
-pub type EVENTS_HFCLKSTARTED = crate::Reg<events_hfclkstarted::EVENTS_HFCLKSTARTED_SPEC>;
+#[doc = "EVENTS_HFCLKSTARTED (rw) register accessor: HFCLK oscillator started\n\nYou can [`read`](crate::Reg::read) this register and get [`events_hfclkstarted::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_hfclkstarted::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_hfclkstarted`] module"]
+#[doc(alias = "EVENTS_HFCLKSTARTED")]
+pub type EventsHfclkstarted = crate::Reg<events_hfclkstarted::EventsHfclkstartedSpec>;
 #[doc = "HFCLK oscillator started"]
 pub mod events_hfclkstarted;
-#[doc = "EVENTS_LFCLKSTARTED (rw) register accessor: an alias for `Reg<EVENTS_LFCLKSTARTED_SPEC>`"]
-pub type EVENTS_LFCLKSTARTED = crate::Reg<events_lfclkstarted::EVENTS_LFCLKSTARTED_SPEC>;
+#[doc = "EVENTS_LFCLKSTARTED (rw) register accessor: LFCLK started\n\nYou can [`read`](crate::Reg::read) this register and get [`events_lfclkstarted::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_lfclkstarted::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_lfclkstarted`] module"]
+#[doc(alias = "EVENTS_LFCLKSTARTED")]
+pub type EventsLfclkstarted = crate::Reg<events_lfclkstarted::EventsLfclkstartedSpec>;
 #[doc = "LFCLK started"]
 pub mod events_lfclkstarted;
-#[doc = "EVENTS_DONE (rw) register accessor: an alias for `Reg<EVENTS_DONE_SPEC>`"]
-pub type EVENTS_DONE = crate::Reg<events_done::EVENTS_DONE_SPEC>;
+#[doc = "EVENTS_DONE (rw) register accessor: Calibration of LFCLK RC oscillator complete event\n\nYou can [`read`](crate::Reg::read) this register and get [`events_done::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_done::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_done`] module"]
+#[doc(alias = "EVENTS_DONE")]
+pub type EventsDone = crate::Reg<events_done::EventsDoneSpec>;
 #[doc = "Calibration of LFCLK RC oscillator complete event"]
 pub mod events_done;
-#[doc = "EVENTS_CTTO (rw) register accessor: an alias for `Reg<EVENTS_CTTO_SPEC>`"]
-pub type EVENTS_CTTO = crate::Reg<events_ctto::EVENTS_CTTO_SPEC>;
+#[doc = "EVENTS_CTTO (rw) register accessor: Calibration timer timeout\n\nYou can [`read`](crate::Reg::read) this register and get [`events_ctto::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`events_ctto::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@events_ctto`] module"]
+#[doc(alias = "EVENTS_CTTO")]
+pub type EventsCtto = crate::Reg<events_ctto::EventsCttoSpec>;
 #[doc = "Calibration timer timeout"]
 pub mod events_ctto;
-#[doc = "INTENSET (rw) register accessor: an alias for `Reg<INTENSET_SPEC>`"]
-pub type INTENSET = crate::Reg<intenset::INTENSET_SPEC>;
+#[doc = "INTENSET (rw) register accessor: Enable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`intenset::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenset::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenset`] module"]
+#[doc(alias = "INTENSET")]
+pub type Intenset = crate::Reg<intenset::IntensetSpec>;
 #[doc = "Enable interrupt"]
 pub mod intenset;
-#[doc = "INTENCLR (rw) register accessor: an alias for `Reg<INTENCLR_SPEC>`"]
-pub type INTENCLR = crate::Reg<intenclr::INTENCLR_SPEC>;
+#[doc = "INTENCLR (rw) register accessor: Disable interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`intenclr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenclr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenclr`] module"]
+#[doc(alias = "INTENCLR")]
+pub type Intenclr = crate::Reg<intenclr::IntenclrSpec>;
 #[doc = "Disable interrupt"]
 pub mod intenclr;
-#[doc = "HFCLKRUN (r) register accessor: an alias for `Reg<HFCLKRUN_SPEC>`"]
-pub type HFCLKRUN = crate::Reg<hfclkrun::HFCLKRUN_SPEC>;
+#[doc = "HFCLKRUN (r) register accessor: Status indicating that HFCLKSTART task has been triggered\n\nYou can [`read`](crate::Reg::read) this register and get [`hfclkrun::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hfclkrun`] module"]
+#[doc(alias = "HFCLKRUN")]
+pub type Hfclkrun = crate::Reg<hfclkrun::HfclkrunSpec>;
 #[doc = "Status indicating that HFCLKSTART task has been triggered"]
 pub mod hfclkrun;
-#[doc = "HFCLKSTAT (r) register accessor: an alias for `Reg<HFCLKSTAT_SPEC>`"]
-pub type HFCLKSTAT = crate::Reg<hfclkstat::HFCLKSTAT_SPEC>;
+#[doc = "HFCLKSTAT (r) register accessor: HFCLK status\n\nYou can [`read`](crate::Reg::read) this register and get [`hfclkstat::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hfclkstat`] module"]
+#[doc(alias = "HFCLKSTAT")]
+pub type Hfclkstat = crate::Reg<hfclkstat::HfclkstatSpec>;
 #[doc = "HFCLK status"]
 pub mod hfclkstat;
-#[doc = "LFCLKRUN (r) register accessor: an alias for `Reg<LFCLKRUN_SPEC>`"]
-pub type LFCLKRUN = crate::Reg<lfclkrun::LFCLKRUN_SPEC>;
+#[doc = "LFCLKRUN (r) register accessor: Status indicating that LFCLKSTART task has been triggered\n\nYou can [`read`](crate::Reg::read) this register and get [`lfclkrun::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lfclkrun`] module"]
+#[doc(alias = "LFCLKRUN")]
+pub type Lfclkrun = crate::Reg<lfclkrun::LfclkrunSpec>;
 #[doc = "Status indicating that LFCLKSTART task has been triggered"]
 pub mod lfclkrun;
-#[doc = "LFCLKSTAT (r) register accessor: an alias for `Reg<LFCLKSTAT_SPEC>`"]
-pub type LFCLKSTAT = crate::Reg<lfclkstat::LFCLKSTAT_SPEC>;
+#[doc = "LFCLKSTAT (r) register accessor: LFCLK status\n\nYou can [`read`](crate::Reg::read) this register and get [`lfclkstat::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lfclkstat`] module"]
+#[doc(alias = "LFCLKSTAT")]
+pub type Lfclkstat = crate::Reg<lfclkstat::LfclkstatSpec>;
 #[doc = "LFCLK status"]
 pub mod lfclkstat;
-#[doc = "LFCLKSRCCOPY (r) register accessor: an alias for `Reg<LFCLKSRCCOPY_SPEC>`"]
-pub type LFCLKSRCCOPY = crate::Reg<lfclksrccopy::LFCLKSRCCOPY_SPEC>;
+#[doc = "LFCLKSRCCOPY (r) register accessor: Copy of LFCLKSRC register, set when LFCLKSTART task was triggered\n\nYou can [`read`](crate::Reg::read) this register and get [`lfclksrccopy::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lfclksrccopy`] module"]
+#[doc(alias = "LFCLKSRCCOPY")]
+pub type Lfclksrccopy = crate::Reg<lfclksrccopy::LfclksrccopySpec>;
 #[doc = "Copy of LFCLKSRC register, set when LFCLKSTART task was triggered"]
 pub mod lfclksrccopy;
-#[doc = "LFCLKSRC (rw) register accessor: an alias for `Reg<LFCLKSRC_SPEC>`"]
-pub type LFCLKSRC = crate::Reg<lfclksrc::LFCLKSRC_SPEC>;
+#[doc = "LFCLKSRC (rw) register accessor: Clock source for the LFCLK\n\nYou can [`read`](crate::Reg::read) this register and get [`lfclksrc::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lfclksrc::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lfclksrc`] module"]
+#[doc(alias = "LFCLKSRC")]
+pub type Lfclksrc = crate::Reg<lfclksrc::LfclksrcSpec>;
 #[doc = "Clock source for the LFCLK"]
 pub mod lfclksrc;
-#[doc = "CTIV (rw) register accessor: an alias for `Reg<CTIV_SPEC>`"]
-pub type CTIV = crate::Reg<ctiv::CTIV_SPEC>;
+#[doc = "CTIV (rw) register accessor: Calibration timer interval\n\nYou can [`read`](crate::Reg::read) this register and get [`ctiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctiv`] module"]
+#[doc(alias = "CTIV")]
+pub type Ctiv = crate::Reg<ctiv::CtivSpec>;
 #[doc = "Calibration timer interval"]
 pub mod ctiv;

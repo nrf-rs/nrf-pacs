@@ -1,52 +1,44 @@
 #[doc = "Register `TASKS_KSGEN` writer"]
-pub struct W(crate::W<TASKS_KSGEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TASKS_KSGEN_SPEC>;
+pub type W = crate::W<TasksKsgenSpec>;
+#[doc = "Start generation of keystream. This operation will stop by itself when completed.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TasksKsgen {
+    #[doc = "1: Trigger task"]
+    Trigger = 1,
+}
+impl From<TasksKsgen> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: TasksKsgen) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `TASKS_KSGEN` writer - Start generation of keystream. This operation will stop by itself when completed."]
+pub type TasksKsgenW<'a, REG> = crate::BitWriter<'a, REG, TasksKsgen>;
+impl<'a, REG> TasksKsgenW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Trigger task"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn trigger(self) -> &'a mut crate::W<REG> {
+        self.variant(TasksKsgen::Trigger)
     }
 }
-impl From<crate::W<TASKS_KSGEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TASKS_KSGEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `TASKS_KSGEN` writer - "]
-pub type TASKS_KSGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TASKS_KSGEN_SPEC, bool, O>;
 impl W {
-    #[doc = "Bit 0"]
+    #[doc = "Bit 0 - Start generation of keystream. This operation will stop by itself when completed."]
     #[inline(always)]
-    pub fn tasks_ksgen(&mut self) -> TASKS_KSGEN_W<0> {
-        TASKS_KSGEN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn tasks_ksgen(&mut self) -> TasksKsgenW<'_, TasksKsgenSpec> {
+        TasksKsgenW::new(self, 0)
     }
 }
-#[doc = "Start generation of key-stream. This operation will stop by itself when completed.\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_ksgen](index.html) module"]
-pub struct TASKS_KSGEN_SPEC;
-impl crate::RegisterSpec for TASKS_KSGEN_SPEC {
+#[doc = "Start generation of keystream. This operation will stop by itself when completed.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tasks_ksgen::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TasksKsgenSpec;
+impl crate::RegisterSpec for TasksKsgenSpec {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [tasks_ksgen::W](W) writer structure"]
-impl crate::Writable for TASKS_KSGEN_SPEC {
-    type Writer = W;
+#[doc = "`write(|w| ..)` method takes [`tasks_ksgen::W`](W) writer structure"]
+impl crate::Writable for TasksKsgenSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TASKS_KSGEN to value 0"]
-impl crate::Resettable for TASKS_KSGEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for TasksKsgenSpec {}

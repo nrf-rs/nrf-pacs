@@ -1,154 +1,119 @@
 #[doc = "Register `RESOLUTION` reader"]
-pub struct R(crate::R<RESOLUTION_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RESOLUTION_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RESOLUTION_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RESOLUTION_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ResolutionSpec>;
 #[doc = "Register `RESOLUTION` writer"]
-pub struct W(crate::W<RESOLUTION_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RESOLUTION_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RESOLUTION_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RESOLUTION_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `VAL` reader - Set the resolution"]
-pub type VAL_R = crate::FieldReader<u8, VAL_A>;
+pub type W = crate::W<ResolutionSpec>;
 #[doc = "Set the resolution\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum VAL_A {
+pub enum Val {
     #[doc = "0: 8 bits"]
-    _8BIT = 0,
+    _8bit = 0,
     #[doc = "1: 10 bits"]
-    _10BIT = 1,
+    _10bit = 1,
     #[doc = "2: 12 bits"]
-    _12BIT = 2,
+    _12bit = 2,
     #[doc = "3: 14 bits"]
-    _14BIT = 3,
+    _14bit = 3,
 }
-impl From<VAL_A> for u8 {
+impl From<Val> for u8 {
     #[inline(always)]
-    fn from(variant: VAL_A) -> Self {
+    fn from(variant: Val) -> Self {
         variant as _
     }
 }
-impl VAL_R {
+impl crate::FieldSpec for Val {
+    type Ux = u8;
+}
+impl crate::IsEnum for Val {}
+#[doc = "Field `VAL` reader - Set the resolution"]
+pub type ValR = crate::FieldReader<Val>;
+impl ValR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<VAL_A> {
+    pub const fn variant(&self) -> Option<Val> {
         match self.bits {
-            0 => Some(VAL_A::_8BIT),
-            1 => Some(VAL_A::_10BIT),
-            2 => Some(VAL_A::_12BIT),
-            3 => Some(VAL_A::_14BIT),
+            0 => Some(Val::_8bit),
+            1 => Some(Val::_10bit),
+            2 => Some(Val::_12bit),
+            3 => Some(Val::_14bit),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_8BIT`"]
-    #[inline(always)]
-    pub fn is_8bit(&self) -> bool {
-        *self == VAL_A::_8BIT
-    }
-    #[doc = "Checks if the value of the field is `_10BIT`"]
-    #[inline(always)]
-    pub fn is_10bit(&self) -> bool {
-        *self == VAL_A::_10BIT
-    }
-    #[doc = "Checks if the value of the field is `_12BIT`"]
-    #[inline(always)]
-    pub fn is_12bit(&self) -> bool {
-        *self == VAL_A::_12BIT
-    }
-    #[doc = "Checks if the value of the field is `_14BIT`"]
-    #[inline(always)]
-    pub fn is_14bit(&self) -> bool {
-        *self == VAL_A::_14BIT
-    }
-}
-#[doc = "Field `VAL` writer - Set the resolution"]
-pub type VAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RESOLUTION_SPEC, u8, VAL_A, 3, O>;
-impl<'a, const O: u8> VAL_W<'a, O> {
     #[doc = "8 bits"]
     #[inline(always)]
-    pub fn _8bit(self) -> &'a mut W {
-        self.variant(VAL_A::_8BIT)
+    pub fn is_8bit(&self) -> bool {
+        *self == Val::_8bit
     }
     #[doc = "10 bits"]
     #[inline(always)]
-    pub fn _10bit(self) -> &'a mut W {
-        self.variant(VAL_A::_10BIT)
+    pub fn is_10bit(&self) -> bool {
+        *self == Val::_10bit
     }
     #[doc = "12 bits"]
     #[inline(always)]
-    pub fn _12bit(self) -> &'a mut W {
-        self.variant(VAL_A::_12BIT)
+    pub fn is_12bit(&self) -> bool {
+        *self == Val::_12bit
     }
     #[doc = "14 bits"]
     #[inline(always)]
-    pub fn _14bit(self) -> &'a mut W {
-        self.variant(VAL_A::_14BIT)
+    pub fn is_14bit(&self) -> bool {
+        *self == Val::_14bit
+    }
+}
+#[doc = "Field `VAL` writer - Set the resolution"]
+pub type ValW<'a, REG> = crate::FieldWriter<'a, REG, 3, Val>;
+impl<'a, REG> ValW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "8 bits"]
+    #[inline(always)]
+    pub fn _8bit(self) -> &'a mut crate::W<REG> {
+        self.variant(Val::_8bit)
+    }
+    #[doc = "10 bits"]
+    #[inline(always)]
+    pub fn _10bit(self) -> &'a mut crate::W<REG> {
+        self.variant(Val::_10bit)
+    }
+    #[doc = "12 bits"]
+    #[inline(always)]
+    pub fn _12bit(self) -> &'a mut crate::W<REG> {
+        self.variant(Val::_12bit)
+    }
+    #[doc = "14 bits"]
+    #[inline(always)]
+    pub fn _14bit(self) -> &'a mut crate::W<REG> {
+        self.variant(Val::_14bit)
     }
 }
 impl R {
     #[doc = "Bits 0:2 - Set the resolution"]
     #[inline(always)]
-    pub fn val(&self) -> VAL_R {
-        VAL_R::new((self.bits & 7) as u8)
+    pub fn val(&self) -> ValR {
+        ValR::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Set the resolution"]
     #[inline(always)]
-    pub fn val(&mut self) -> VAL_W<0> {
-        VAL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn val(&mut self) -> ValW<'_, ResolutionSpec> {
+        ValW::new(self, 0)
     }
 }
-#[doc = "Resolution configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [resolution](index.html) module"]
-pub struct RESOLUTION_SPEC;
-impl crate::RegisterSpec for RESOLUTION_SPEC {
+#[doc = "Resolution configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`resolution::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`resolution::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ResolutionSpec;
+impl crate::RegisterSpec for ResolutionSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [resolution::R](R) reader structure"]
-impl crate::Readable for RESOLUTION_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [resolution::W](W) writer structure"]
-impl crate::Writable for RESOLUTION_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`resolution::R`](R) reader structure"]
+impl crate::Readable for ResolutionSpec {}
+#[doc = "`write(|w| ..)` method takes [`resolution::W`](W) writer structure"]
+impl crate::Writable for ResolutionSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets RESOLUTION to value 0x01"]
-impl crate::Resettable for RESOLUTION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+impl crate::Resettable for ResolutionSpec {
+    const RESET_VALUE: u32 = 0x01;
 }

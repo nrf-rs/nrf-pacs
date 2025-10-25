@@ -1,126 +1,84 @@
 #[doc = "Register `MODE` reader"]
-pub struct R(crate::R<MODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ModeSpec>;
 #[doc = "Register `MODE` writer"]
-pub struct W(crate::W<MODE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MODE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MODE_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `UPDOWN` reader - Selects up mode or up-and-down mode for the counter"]
-pub type UPDOWN_R = crate::BitReader<UPDOWN_A>;
+pub type W = crate::W<ModeSpec>;
 #[doc = "Selects up mode or up-and-down mode for the counter\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UPDOWN_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Updown {
     #[doc = "0: Up counter, edge-aligned PWM duty cycle"]
-    UP = 0,
+    Up = 0,
     #[doc = "1: Up and down counter, center-aligned PWM duty cycle"]
-    UP_AND_DOWN = 1,
+    UpAndDown = 1,
 }
-impl From<UPDOWN_A> for bool {
+impl From<Updown> for bool {
     #[inline(always)]
-    fn from(variant: UPDOWN_A) -> Self {
+    fn from(variant: Updown) -> Self {
         variant as u8 != 0
     }
 }
-impl UPDOWN_R {
+#[doc = "Field `UPDOWN` reader - Selects up mode or up-and-down mode for the counter"]
+pub type UpdownR = crate::BitReader<Updown>;
+impl UpdownR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UPDOWN_A {
+    pub const fn variant(&self) -> Updown {
         match self.bits {
-            false => UPDOWN_A::UP,
-            true => UPDOWN_A::UP_AND_DOWN,
+            false => Updown::Up,
+            true => Updown::UpAndDown,
         }
     }
-    #[doc = "Checks if the value of the field is `UP`"]
-    #[inline(always)]
-    pub fn is_up(&self) -> bool {
-        *self == UPDOWN_A::UP
-    }
-    #[doc = "Checks if the value of the field is `UP_AND_DOWN`"]
-    #[inline(always)]
-    pub fn is_up_and_down(&self) -> bool {
-        *self == UPDOWN_A::UP_AND_DOWN
-    }
-}
-#[doc = "Field `UPDOWN` writer - Selects up mode or up-and-down mode for the counter"]
-pub type UPDOWN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE_SPEC, UPDOWN_A, O>;
-impl<'a, const O: u8> UPDOWN_W<'a, O> {
     #[doc = "Up counter, edge-aligned PWM duty cycle"]
     #[inline(always)]
-    pub fn up(self) -> &'a mut W {
-        self.variant(UPDOWN_A::UP)
+    pub fn is_up(&self) -> bool {
+        *self == Updown::Up
     }
     #[doc = "Up and down counter, center-aligned PWM duty cycle"]
     #[inline(always)]
-    pub fn up_and_down(self) -> &'a mut W {
-        self.variant(UPDOWN_A::UP_AND_DOWN)
+    pub fn is_up_and_down(&self) -> bool {
+        *self == Updown::UpAndDown
+    }
+}
+#[doc = "Field `UPDOWN` writer - Selects up mode or up-and-down mode for the counter"]
+pub type UpdownW<'a, REG> = crate::BitWriter<'a, REG, Updown>;
+impl<'a, REG> UpdownW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Up counter, edge-aligned PWM duty cycle"]
+    #[inline(always)]
+    pub fn up(self) -> &'a mut crate::W<REG> {
+        self.variant(Updown::Up)
+    }
+    #[doc = "Up and down counter, center-aligned PWM duty cycle"]
+    #[inline(always)]
+    pub fn up_and_down(self) -> &'a mut crate::W<REG> {
+        self.variant(Updown::UpAndDown)
     }
 }
 impl R {
     #[doc = "Bit 0 - Selects up mode or up-and-down mode for the counter"]
     #[inline(always)]
-    pub fn updown(&self) -> UPDOWN_R {
-        UPDOWN_R::new((self.bits & 1) != 0)
+    pub fn updown(&self) -> UpdownR {
+        UpdownR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Selects up mode or up-and-down mode for the counter"]
     #[inline(always)]
-    pub fn updown(&mut self) -> UPDOWN_W<0> {
-        UPDOWN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn updown(&mut self) -> UpdownW<'_, ModeSpec> {
+        UpdownW::new(self, 0)
     }
 }
-#[doc = "Selects operating mode of the wave counter\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mode](index.html) module"]
-pub struct MODE_SPEC;
-impl crate::RegisterSpec for MODE_SPEC {
+#[doc = "Selects operating mode of the wave counter\n\nYou can [`read`](crate::Reg::read) this register and get [`mode::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mode::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ModeSpec;
+impl crate::RegisterSpec for ModeSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mode::R](R) reader structure"]
-impl crate::Readable for MODE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mode::W](W) writer structure"]
-impl crate::Writable for MODE_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`mode::R`](R) reader structure"]
+impl crate::Readable for ModeSpec {}
+#[doc = "`write(|w| ..)` method takes [`mode::W`](W) writer structure"]
+impl crate::Writable for ModeSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets MODE to value 0"]
-impl crate::Resettable for MODE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for ModeSpec {}

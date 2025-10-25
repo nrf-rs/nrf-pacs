@@ -1,81 +1,35 @@
 #[doc = "Register `OVERRIDE0` reader"]
-pub struct R(crate::R<OVERRIDE0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<OVERRIDE0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<OVERRIDE0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<OVERRIDE0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Override0Spec>;
 #[doc = "Register `OVERRIDE0` writer"]
-pub struct W(crate::W<OVERRIDE0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<OVERRIDE0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<OVERRIDE0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<OVERRIDE0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Override0Spec>;
 #[doc = "Field `OVERRIDE0` reader - Trim value override 0."]
-pub type OVERRIDE0_R = crate::FieldReader<u32, u32>;
+pub type Override0R = crate::FieldReader<u32>;
 #[doc = "Field `OVERRIDE0` writer - Trim value override 0."]
-pub type OVERRIDE0_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, OVERRIDE0_SPEC, u32, u32, 32, O>;
+pub type Override0W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Trim value override 0."]
     #[inline(always)]
-    pub fn override0(&self) -> OVERRIDE0_R {
-        OVERRIDE0_R::new(self.bits)
+    pub fn override0(&self) -> Override0R {
+        Override0R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Trim value override 0."]
     #[inline(always)]
-    pub fn override0(&mut self) -> OVERRIDE0_W<0> {
-        OVERRIDE0_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn override0(&mut self) -> Override0W<'_, Override0Spec> {
+        Override0W::new(self, 0)
     }
 }
-#[doc = "Trim value override register 0.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [override0](index.html) module"]
-pub struct OVERRIDE0_SPEC;
-impl crate::RegisterSpec for OVERRIDE0_SPEC {
+#[doc = "Trim value override register 0.\n\nYou can [`read`](crate::Reg::read) this register and get [`override0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`override0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Override0Spec;
+impl crate::RegisterSpec for Override0Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [override0::R](R) reader structure"]
-impl crate::Readable for OVERRIDE0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [override0::W](W) writer structure"]
-impl crate::Writable for OVERRIDE0_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`override0::R`](R) reader structure"]
+impl crate::Readable for Override0Spec {}
+#[doc = "`write(|w| ..)` method takes [`override0::W`](W) writer structure"]
+impl crate::Writable for Override0Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets OVERRIDE0 to value 0"]
-impl crate::Resettable for OVERRIDE0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Override0Spec {}
